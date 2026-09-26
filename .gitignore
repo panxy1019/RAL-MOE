@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+.archive_downloads/
+verification/
+*.npz
+*.npy
+*.pt
+*.pth
+*.pkl
+*.tar.gz
+*.tgz
