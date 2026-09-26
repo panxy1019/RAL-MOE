@@ -1,0 +1,102 @@
+\section{RAL-MoE-ROM}
+\label{sec:method}
+
+RAL-MoE-ROM separates reduced modeling into three complementary components: regime-local representations, autonomous local specialists, and
+cross-regime physical-space assembly. These components are organized by a two-level routing hierarchy. Overlapping regime-local parameter regions are equipped with independent reduced charts. Each chart supports a complete autonomous regime-local specialist that combines a projected ROM backbone with a structured sparse correction. The outer routing level then selects one specialist or an applicable adjacent pair and assembles only their reconstructed physical fields. Figure~\ref{fig:ral_overview} summarizes the overall construction; detailed
+derivations are provided in Appendices~\ref{app:problem_pod}--\ref{app:routing}.
+
+\subsection{Overlapping regime-local reduced charts}
+
+Let $r\in\{S,H,P\}$ index steady, Hopf-onset, and periodic regimes, and let $\mathcal M_r$ denote the corresponding overlapping parameter regions. Each regime-local parameter region is equipped with its own reduced coordinate system. A physical velocity field is encoded and reconstructed as
+\begin{equation}
+  \bm a^{(r)}={\Phi_u^{(r)}}^{\top}M_u(\bm u-\bar{\bm u}^{(r)}),\qquad
+  \widehat{\bm u}^{(r)}=\bar{\bm u}^{(r)}+\Phi_u^{(r)}\bm a^{(r)},
+  \label{eq:main_chart}
+\end{equation}
+where $M_u$ is the finite-volume quadrature matrix. Gauge-corrected pressure is encoded analogously, yielding local coefficients
+$\bm b^{(r)}$. 
+
+A reduced chart comprises its mean fields, velocity and pressure bases, local coordinates, and normalization statistics. Each chart is associated with a regime-local parameter region and its own projected operators.
+These quantities are constructed independently across regimes. Even when two charts have the same reduced dimension, their coordinates are not assumed to be componentwise aligned. Cross-regime assembly is consequently performed only after reconstruction in physical space.
+
+\subsection{Regime-local hybrid specialists}
+
+Within each chart, a projected Galerkin backbone describes the resolved dynamics, while a learned closure accounts for unresolved reduced dynamics:
+\begin{equation}
+  \dot{\bm a}^{(r)}=
+  \underbrace{\bm c_r+\bm A_r\bm a^{(r)}+
+  \bm H_r:\bigl(\bm a^{(r)}\otimes\bm a^{(r)}\bigr)+
+  \bm C^p_r\bm b^{(r)}}_{\mathcal F_r^{G}(\bm a^{(r)},\bm b^{(r)};\mu)}
+  +\bm\rho^u_{\theta_r}(\bm\xi^{(r)}).
+  \label{eq:main_specialist}
+\end{equation}
+The learned term $\bm\rho^u_{\theta_r}$ is the velocity closure associated with chart $r$. Its input $\bm\xi^{(r)}$ collects standardized local state variables, the projected right-hand side, the physical parameter, and a short history of preceding states.
+
+Separate sparse MoE maps are used for the velocity correction $\bm\rho^u_{\theta_r}$ and the learned pressure correction $\bm\rho^p_{\theta_r}$:
+\begin{equation}
+  \mathcal M^c_{\theta_r}(\bm\xi)=
+  \omega^c_0 E^c_{0,m^\star}(\bm\xi)+
+  \sum_{e\in\mathcal T_2^c}\omega^c_e E^c_{e,m^\star}(\bm\xi).
+  \label{eq:main_inner_moe}
+\end{equation}
+Routing is hierarchical within each specialist. An expert group $m^\star$ is selected by a chart-local router or predetermined for a single-group or fixed-group specialist. Within that group, the velocity and pressure channels $c\in\{u,p\}$ independently select their two highest-scoring routed experts, while a shared expert remains active. The nonnegative weights $\omega_e^c$ are normalized over the active experts. Each active expert combines a nonlinear feature-conditioned branch with explicit linear and low-rank quadratic responses of the local reduced state; the exact parameterization is given in Appendix~\ref{app:specialists}.
+
+After advancing velocity over one reduced time step, pressure is reconstructed algebraically as
+\begin{equation}
+  \bm b_{n+1}^{(r)}
+  =\bm\gamma_n^{(r)}\odot\mathcal Q_r^{PP}(\bm a_{n+1}^{(r)};\mu)
+  +\bm\rho^p_{\theta_r}(\bm\xi_n^{(r)}).
+  \label{eq:main_pressure_closure}
+\end{equation}
+Here $\mathcal Q_r^{PP}$ denotes the chart-local reduced Pressure--Poisson map, $\bm\rho^p_{\theta_r}$ provides the learned pressure correction, and $\bm\gamma_n^{(r)} =\operatorname{sigmoid}(\bm\eta^p_{\theta_r}(\bm\xi_n^{(r)}))$ modulates the Pressure--Poisson contribution componentwise; $\odot$ denotes componentwise multiplication. Thus velocity is advanced dynamically, whereas pressure is reconstructed algebraically rather than evolved as a separate recurrent state.
+
+
+\subsection{Closed-loop rollout training}
+
+Each specialist is initialized from an encoded physical history and is then advanced recursively using its own predicted states. To expose the learned correction to the states encountered during autonomous rollout, training unrolls each specialist for $K$ steps and minimizes the
+normalized coefficient error
+\begin{equation}
+  \mathcal L_r=\frac{1}{K}\sum_{k=1}^{K}\left[
+  \frac{\left\|(\widehat{\bm a}_{n+k}^{(r)}-\bm a_{n+k}^{(r)})
+  \oslash\bm\sigma_a^{(r)}\right\|_2^2}{d_u^{(r)}}
+  +\frac{\left\|(\widehat{\bm b}_{n+k}^{(r)}-\bm b_{n+k}^{(r)})
+  \oslash\bm\sigma_b^{(r)}\right\|_2^2}{d_p^{(r)}}\right].
+  \label{eq:main_rollout_loss}
+\end{equation}
+Here $d_u^{(r)}$ and $d_p^{(r)}$ denote the chart-specific velocity and pressure coordinate dimensions, while $\bm\sigma_a^{(r)}$ and $\bm\sigma_b^{(r)}$ are scaling
+vectors estimated from the corresponding regime-local training set; $\oslash$ denotes componentwise division. This coefficient-space objective is used for specialist training, whereas evaluation is performed on reconstructed physical fields. After initialization, no reference state from inside the prediction window is injected into the rollout. The chart-specific advancement rule is detailed in Appendix~\ref{app:specialists}, while rollout curricula and optimization settings are reported in Appendix~\ref{app:implementation}. Held-out trajectory partitions are listed in Table~\ref{tab:chart_splits}.
+
+
+
+\subsection{Cross-regime routing and physical-space T2-C assembly}
+
+The outer E2 router receives only the standardized physical parameter $\widetilde\mu$ and returns a trajectory-level preference over the
+regime-local specialists,
+\[
+\bm\pi(\mu)
+=
+\operatorname{softmax}\!\left(
+\mathcal R_{E2}(\widetilde\mu)
+\right).
+\]
+The probabilities are evaluated once and remain fixed throughout the rollout. The outer router does not use physical history. Chart-independent descriptors extracted from the initial history $\mathcal H_n$ enter only the T2-C correction described below.
+
+A validation-supported applicability mask $m_r(\mathcal H_n,\mu,K)\in\{0,1\}$ marks whether specialist $r$ is applicable for the current parameter, initial history, and rollout horizon. The mask restricts the candidate set but does not modify the E2 probability
+model itself. Under hard Top-1 routing, only the applicable specialist with the largest E2 probability is advanced.
+
+When an adjacent pair is applicable ($S$--$H$ or $H$--$P$), both specialists are initialized from the same physical history, encoded in
+their own coordinates, and advanced independently. Let $\bar\pi_r$ denote the E2 probability normalized over the selected pair. For reconstructed fields $\widehat{\bm q}^{(r)}$ and $\widehat{\bm q}^{(s)}$, T2-C predicts a history-conditioned logit correction to this pairwise preference and forms
+\begin{equation}
+  \widehat{\bm q}_{\rm T2C}(t)
+  =\alpha\,\widehat{\bm q}^{(r)}(t)
+  +(1-\alpha)\,\widehat{\bm q}^{(s)}(t),
+  \qquad
+  \alpha=
+  \sigma\!\left(
+  \operatorname{logit}(\bar\pi_r)+\Delta_\psi
+  \right).
+  \label{eq:main_t2c}
+\end{equation}
+Here $\Delta_\psi=c_\psi([\widetilde\mu;\bm d_n])$ is a learned logit correction based on the standardized parameter and the chart-independent physical-history descriptor $\bm d_n$, and $\sigma$ denotes the sigmoid. The scalar $\alpha$ is computed once for the prediction window and is shared by velocity and pressure. The field vector $\bm q$ collects reconstructed velocity and gauge-corrected pressure on the common physical mesh.
+
+The two local trajectories remain independent throughout the rollout: fusion is applied only to their reconstructed outputs and is never fed back into either specialist. If no specialist is applicable, the method abstains from producing a ROM prediction. Applicability is determined empirically from validation support and should not be interpreted as a formal stability guarantee.

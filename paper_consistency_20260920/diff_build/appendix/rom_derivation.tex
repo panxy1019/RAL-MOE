@@ -1,0 +1,399 @@
+\section{Full problem setup and weighted POD construction}
+\label{app:problem_pod}
+
+\subsection{Parameterized full-order model, gauge, and regime coverage}
+
+After spatial discretization, the velocity
+$\bm u(t;\mu)\in\mathbb R^{N_u}$ and pressure
+$p(t;\mu)\in\mathbb R^{N_p}$ satisfy
+\begin{equation}
+    \dot{\bm u}
+    =
+    \bm f_h(\mu)
+    +\mathcal L_h(\mu)\bm u
+    -\mathcal N_h(\bm u,\bm u;\mu)
+    -\nabla_h(\mu)p,
+    \qquad
+    \operatorname{div}_h(\mu)\bm u=0.
+    \label{eq:app_fom}
+\end{equation}
+Pressure is defined only up to an additive constant.
+With positive finite-volume weights $\bm w$, each pressure snapshot is mapped
+to the weighted zero-mean gauge
+\begin{equation}
+    \Gamma_p(q)
+    =
+    q-\frac{\bm w^\top q}{\bm w^\top\bm 1}\bm 1,
+    \qquad
+    p^\circ=\Gamma_p(p),
+    \qquad
+    \bm w^\top p^\circ=0.
+    \label{eq:app_pressure_gauge}
+\end{equation}
+
+The parameter domain is covered by overlapping regime-local parameter regions,
+\begin{equation}
+    \mathcal M
+    \subseteq
+    \bigcup_{r\in\{S,H,P\}}\mathcal M_r,
+    \qquad
+    \mathcal O_{SH}
+    =
+    \mathcal M_S\cap\mathcal M_H,
+    \qquad
+    \mathcal O_{HP}
+    =
+    \mathcal M_H\cap\mathcal M_P,
+    \label{eq:app_regime_cover}
+\end{equation}
+where $S$, $H$, and $P$ denote the steady, Hopf-onset, and periodic
+regimes, respectively.
+Only adjacent overlaps are used; no direct $S$--$P$ overlap is considered.
+
+
+\subsection{Area-weighted local POD}
+
+The finite-volume quadrature induces the weighted inner products
+\begin{equation}
+    \langle\bm v,\bm z\rangle_{M_u}
+    =
+    \bm v^\top M_u\bm z,
+    \qquad
+    \langle q,s\rangle_{M_p}
+    =
+    q^\top M_p s,
+    \qquad
+    M_p=\operatorname{diag}(\bm w),
+    \qquad
+    M_u=\operatorname{diag}(M_p,M_p).
+    \label{eq:app_weighted_inner_products}
+\end{equation}
+
+For chart $r$, let $d_u^{(r)}$ and $d_p^{(r)}$ denote the retained velocity
+and pressure dimensions.
+Let $X_u^{(r)}$ and $X_p^{(r)}$ collect the centered velocity and
+gauge-corrected pressure snapshots from the training trajectories assigned
+to that chart.
+The corresponding chart-specific means are denoted by
+$\bar{\bm u}^{(r)}$ and $\bar p^{(r),\circ}$.
+The local POD bases solve
+\begin{align}
+    \Phi_u^{(r)}
+    &\in
+    \underset{\Psi^\top M_u\Psi=I_{d_u^{(r)}}}
+    {\operatorname{arg\,min}}
+    \left\|
+        X_u^{(r)}
+        -\Psi\Psi^\top M_uX_u^{(r)}
+    \right\|_{M_u,F}^2,
+    \\
+    \Phi_p^{(r)}
+    &\in
+    \underset{\Psi^\top M_p\Psi=I_{d_p^{(r)}}}
+    {\operatorname{arg\,min}}
+    \left\|
+        X_p^{(r)}
+        -\Psi\Psi^\top M_pX_p^{(r)}
+    \right\|_{M_p,F}^2,
+    \label{eq:app_pod_optimization}
+\end{align}
+where
+\begin{equation}
+    \|Y\|_{M,F}^2=\operatorname{tr}(Y^\top MY).
+\end{equation}
+
+Equivalently, consider the weighted singular value decompositions
+\begin{equation}
+    M_u^{1/2}X_u^{(r)}
+    =
+    U_u^{(r)}\Sigma_u^{(r)}{V_u^{(r)}}^\top,
+    \qquad
+    M_p^{1/2}X_p^{(r)}
+    =
+    U_p^{(r)}\Sigma_p^{(r)}{V_p^{(r)}}^\top.
+\end{equation}
+The retained bases are
+\begin{equation}
+    \Phi_u^{(r)}
+    =
+    M_u^{-1/2}
+    U_u^{(r)}(:,1{:}d_u^{(r)}),
+    \qquad
+    \Phi_p^{(r)}
+    =
+    M_p^{-1/2}
+    U_p^{(r)}(:,1{:}d_p^{(r)}),
+    \label{eq:app_weighted_svd_bases}
+\end{equation}
+and satisfy
+\begin{equation}
+    {\Phi_u^{(r)}}^\top M_u\Phi_u^{(r)}=I,
+    \qquad
+    {\Phi_p^{(r)}}^\top M_p\Phi_p^{(r)}=I.
+\end{equation}
+Because the pressure snapshots and their chart mean satisfy the same weighted
+gauge condition, the pressure basis also satisfies
+\begin{equation}
+    \bm w^\top\Phi_p^{(r)}=\bm 0^\top .
+\end{equation}
+
+Encoding and decoding are performed independently within each chart:
+\begin{align}
+    \bm a^{(r)}
+    &=
+    {\Phi_u^{(r)}}^\top
+    M_u
+    \bigl(\bm u-\bar{\bm u}^{(r)}\bigr),
+    &
+    \mathcal D_r^u(\bm a^{(r)})
+    &=
+    \bar{\bm u}^{(r)}
+    +\Phi_u^{(r)}\bm a^{(r)},
+    \\
+    \bm b^{(r)}
+    &=
+    {\Phi_p^{(r)}}^\top
+    M_p
+    \bigl(\Gamma_p(p)-\bar p^{(r),\circ}\bigr),
+    &
+    \mathcal D_r^p(\bm b^{(r)})
+    &=
+    \bar p^{(r),\circ}
+    +\Phi_p^{(r)}\bm b^{(r)}.
+    \label{eq:app_encode_decode}
+\end{align}
+
+The reduced coefficients are standardized using chart-local statistics
+estimated from the corresponding training trajectories:
+\begin{equation}
+    \widetilde{\bm a}^{(r)}
+    =
+    \bigl(
+        \bm a^{(r)}-\bm\mu_a^{(r)}
+    \bigr)
+    \oslash
+    \bm\sigma_a^{(r)},
+    \qquad
+    \widetilde{\bm b}^{(r)}
+    =
+    \bigl(
+        \bm b^{(r)}-\bm\mu_b^{(r)}
+    \bigr)
+    \oslash
+    \bm\sigma_b^{(r)}.
+    \label{eq:app_local_scalers}
+\end{equation}
+Additional specialist features and their normalization are specified in
+Appendix~\ref{app:specialists}.
+
+All chart-local means, POD bases, and scaling statistics are constructed
+independently.
+Consequently, reduced coefficient vectors from different charts are not
+assumed to be componentwise comparable; only their decoded physical fields lie in a common physical comparison space.
+
+
+
+
+
+
+\section{Projected Galerkin and pressure operators}
+\label{app:rom}
+
+\subsection{Chart-local Galerkin momentum dynamics}
+
+For each chart $r\in\{S,H,P\}$, substituting the chart-local affine reconstructions
+from Appendix~\ref{app:problem_pod} into the semi-discrete
+momentum equation and testing against the local velocity basis yields
+\begin{equation}
+    \dot{\bm a}^{(r)}
+    =
+    \bm c_r(\mu)
+    +
+    A_r(\mu)\bm a^{(r)}
+    +
+    H_r(\mu):
+    \bigl(
+        \bm a^{(r)}\otimes\bm a^{(r)}
+    \bigr)
+    +
+    C_r^p(\mu)\bm b^{(r)}.
+    \label{eq:app_projected_momentum}
+\end{equation}
+Here ``$:$'' denotes the double contraction.
+For velocity modes
+$\bm\phi_i^{u,(r)}$,
+$i=1,\ldots,d_u^{(r)}$,
+and pressure modes
+$\phi_\ell^{p,(r)}$,
+$\ell=1,\ldots,d_p^{(r)}$,
+the projected operators are
+\begin{align}
+    [\bm c_r(\mu)]_i
+    &=
+    \Bigl\langle
+        \bm\phi_i^{u,(r)},
+        \bm f_h(\mu)
+        +
+        \mathcal L_h(\mu)\bar{\bm u}^{(r)}
+        -
+        \mathcal N_h
+        \bigl(
+            \bar{\bm u}^{(r)},
+            \bar{\bm u}^{(r)};
+            \mu
+        \bigr)
+        -
+        \nabla_h(\mu)\bar p^{(r),\circ}
+    \Bigr\rangle_{M_u},
+    \\
+    [A_r(\mu)]_{ij}
+    &=
+    \Bigl\langle
+        \bm\phi_i^{u,(r)},
+        \mathcal L_h(\mu)\bm\phi_j^{u,(r)}
+        -
+        \mathcal N_h
+        \bigl(
+            \bar{\bm u}^{(r)},
+            \bm\phi_j^{u,(r)};
+            \mu
+        \bigr)
+        -
+        \mathcal N_h
+        \bigl(
+            \bm\phi_j^{u,(r)},
+            \bar{\bm u}^{(r)};
+            \mu
+        \bigr)
+    \Bigr\rangle_{M_u},
+    \\
+    [H_r(\mu)]_{ijk}
+    &=
+    -
+    \Bigl\langle
+        \bm\phi_i^{u,(r)},
+        \mathcal N_h
+        \bigl(
+            \bm\phi_j^{u,(r)},
+            \bm\phi_k^{u,(r)};
+            \mu
+        \bigr)
+    \Bigr\rangle_{M_u},
+    \\
+    [C_r^p(\mu)]_{i\ell}
+    &=
+    -
+    \Bigl\langle
+        \bm\phi_i^{u,(r)},
+        \nabla_h(\mu)\phi_\ell^{p,(r)}
+    \Bigr\rangle_{M_u}.
+    \label{eq:app_projected_operators}
+\end{align}
+
+We denote the resulting chart-local projected momentum vector field by
+\begin{equation}
+    \mathcal F_r^G
+    \bigl(
+        \bm a^{(r)},
+        \bm b^{(r)};
+        \mu
+    \bigr)
+    =
+    \bm c_r(\mu)
+    +
+    A_r(\mu)\bm a^{(r)}
+    +
+    H_r(\mu):
+    \bigl(
+        \bm a^{(r)}\otimes\bm a^{(r)}
+    \bigr)
+    +
+    C_r^p(\mu)\bm b^{(r)}.
+    \label{eq:app_galerkin_backbone}
+\end{equation}
+This vector field provides the explicit projected Galerkin backbone of the
+regime-local specialist introduced in
+Eq.~(\plaineqref{eq:main_specialist}).
+
+
+\subsection{Gauge-consistent pressure--Poisson map}
+
+Where used by the deployed specialist, the static pressure base is represented through a chart-local
+Pressure--Poisson relation; chart-specific exceptions are stated below.
+At the continuous level, the gauge-corrected pressure satisfies
+\begin{equation}
+    -\Delta p^\circ
+    =
+    \nabla\!\cdot
+    \left[
+        (\bm u\!\cdot\!\nabla)\bm u
+        -
+        \bm f
+    \right],
+    \qquad
+    \int_\Omega p^\circ\,\mathrm d\Omega=0,
+    \label{eq:app_continuous_pressure_poisson}
+\end{equation}
+with boundary conditions inherited from the momentum equation. The archived Circular Periodic pressure base is a projected weak-form surrogate, not the original finite-volume pressure solve. Its asset metadata explicitly states that boundary terms are neglected.
+
+\paragraph{Verified weak-form construction for Circular Periodic.}
+Let $\psi_\ell$ be a pressure mode and $\bm\phi_j$ a velocity mode, and suppress the chart index in the following definitions. The archived construction evaluates gradients using \texttt{pyvista.UnstructuredGrid.compute\_derivative()} on the unstructured source mesh and uses the POD \texttt{point\_areas} as quadrature weights $w_i$. Define
+\begin{equation}
+ \langle x,y\rangle_w=\sum_i w_i\,x_i\cdot y_i,
+ \qquad
+ C(v,z)_i=(v_i\cdot G_h)z_i ,
+\end{equation}
+where $G_h$ denotes this post-processing gradient, not an assertion of equality with the full-order face-flux stencil. With $\bm u=\bar{\bm u}+\sum_j a_j\bm\phi_j$ and $p=\bar p+\sum_m b_m\psi_m$, the saved weak-form system is
+\begin{equation}
+ K_r^p\bm b^{PP}=\bm d_r+B_r\bm a+Q_r:(\bm a\otimes\bm a),
+ \label{eq:app_pressure_poisson_system}
+\end{equation}
+with
+\begin{align}
+ [K_r^p]_{\ell m}&=-\langle G_h\psi_\ell,G_h\psi_m\rangle_w,
+ \label{eq:app_ppe_K_definition}\\
+ [\bm d_r]_\ell&=\langle G_h\psi_\ell,C(\bar{\bm u},\bar{\bm u})+G_h\bar p\rangle_w,
+ \label{eq:app_ppe_d_definition}\\
+ [B_r]_{\ell j}&=\langle G_h\psi_\ell,C(\bar{\bm u},\bm\phi_j)+C(\bm\phi_j,\bar{\bm u})\rangle_w,
+ \label{eq:app_ppe_B_definition}\\
+ [Q_r]_{\ell jk}&=\langle G_h\psi_\ell,C(\bm\phi_j,\bm\phi_k)\rangle_w.
+ \label{eq:app_ppe_Q_definition}
+\end{align}
+Here $K_r^p\in\mathbb R^{d_p\times d_p}$, $\bm d_r\in\mathbb R^{d_p}$, $B_r\in\mathbb R^{d_p\times d_u}$, and $Q_r\in\mathbb R^{d_p\times d_u\times d_u}$. The negative sign in $K_r^p$ follows the archived convention $\Delta p=-\nabla\cdot[(\bm u\cdot\nabla)\bm u]$ after integration by parts. The velocity mean generates both constant and linear terms, and the pressure mean contributes to $\bm d_r$. Neglecting the boundary integral is an approximation; it must not be described as incorporation of the exact full-order pressure boundary closure.
+
+The asset stores an SVD pseudoinverse with relative cutoff $10^{-10}$ and the precontracted arrays
+\begin{equation}
+ \widetilde{\bm c}=(K_r^p)^\dagger\bm d_r,\qquad
+ \widetilde A=(K_r^p)^\dagger B_r,\qquad
+ \widetilde H=(K_r^p)^\dagger Q_r.
+\end{equation}
+Online evaluation is therefore
+\begin{equation}
+ \mathcal Q_r^{PP}(\bm a;\mu)
+ =\widetilde{\bm c}(\mu)+\widetilde A(\mu)\bm a+
+   \widetilde H:(\bm a\otimes\bm a).
+ \label{eq:app_pressure_poisson_map}
+\end{equation}
+No full-mesh pressure equation is solved online. The Circular Periodic asset has $d_u=d_p=32$, numerical rank 32, and a reported condition estimate of approximately $72.5$. Its metadata and construction report identify a projected polynomial surrogate, rather than a polynomial fitted to pressure targets. The inspected asset matches its archived migration hash, and its saved $\widetilde H$ agrees with $(K_r^p)^\dagger Q_r$ to a relative Frobenius error of $2.1\times10^{-16}$.
+
+\paragraph{Chart-specific provenance and deployment.}
+The Circular Hopf runtime pressure tensors are exact single-precision copies of the first 32 coordinates of a pre-inverted rank-80 projected map, with the prescribed training-parameter rows retained. Truncation after inversion is not generally equivalent to forming and inverting a rank-32 pressure matrix, so the preceding rank-32 construction should not be transferred to this chart without qualification.
+The Square Steady and Periodic asset adapters read precomputed pressure-map coefficients and represent their constant and linear terms as affine functions of $1/\mathrm{Re}$, using least squares on those operator coefficients. This parameter interpolation is distinct from fitting pressure targets. Their runtime asset hashes match the archived startup or runtime manifests. The Square Steady asset also retains the raw quadratic tensor and verifies $\widetilde H=L^\dagger H^p$; the Square Periodic runtime package omits $H^p$, and its complete upstream construction was not independently reconstructed in this audit.
+The Square Hopf pressure asset is an exact single-precision copy of its rank-11 source map, whose retained raw and transformed quadratic tensors verify the same pseudoinverse identity. However, the deployed Square Hopf evaluator uses the learned pressure output directly: possession of a projected pressure asset does not imply that it contributes to the final prediction.
+
+The pressure fields are compared after the common weighted gauge correction. Neither the approximate pressure base, its learned correction, nor the subsequent physical-space fusion is claimed to satisfy the original finite-volume PPE exactly. In particular, a residual evaluated using $G_h$ would be a post-processing consistency diagnostic, not the residual of the original face-flux solver.
+
+The pair
+\begin{equation}
+    \left(
+        \mathcal F_r^G,
+        \mathcal Q_r^{PP}
+    \right)
+\end{equation}
+is constructed in each chart's native coordinates when that specialist uses both operators.
+Accordingly, each chart carries its own parameter region, mean fields,
+POD bases, coefficient scalings, and its applicable projected momentum and
+pressure-base assets, subject to the deployment exceptions above.
+These chart-local operators are used only within their native reduced
+coordinates; no componentwise interpolation of reduced states or projected
+operators is assumed across charts.

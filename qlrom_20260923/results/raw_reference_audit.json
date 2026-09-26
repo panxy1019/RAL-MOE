@@ -1,0 +1,58 @@
+[
+  {
+    "label": "Re_100p352251",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/qlrom_20260923/raw_reference/Re_100p352251_uvp_pointData.npz",
+    "sha256": "506e9c4beca1f998f612c739aab14a1041074e8e77401c4d3d9ddb3d471790b7",
+    "bytes": 83547595,
+    "grid_exact": true,
+    "raw_time_max_abs_difference": 0.0,
+    "float32_evaluation_time_max_difference": 6.085156246626866e-05,
+    "source_url": "https://huggingface.co/datasets/panxy1019/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/resolve/main/Re_100p352251_uvp_pointData.npz",
+    "u_cache_vs_raw_projection_max_abs": 1.488162248985958e-08,
+    "u_quadratic_vs_explicit_error_max_abs": 4.756195437494171e-13,
+    "p_cache_vs_raw_projection_max_abs": 4.5816037769208506e-10,
+    "p_quadratic_vs_explicit_error_max_abs": 2.8421709430404007e-13
+  },
+  {
+    "label": "Re_149p059229",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/qlrom_20260923/raw_reference/Re_149p059229_uvp_pointData.npz",
+    "sha256": "6ecfeb62b673c7c887d2a0e762b5f3f443cc903dae258f0f664cc4502f3012e3",
+    "bytes": 83166432,
+    "grid_exact": true,
+    "raw_time_max_abs_difference": 0.0,
+    "float32_evaluation_time_max_difference": 3.4577187534523546e-05,
+    "source_url": "https://huggingface.co/datasets/panxy1019/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/resolve/main/Re_149p059229_uvp_pointData.npz",
+    "u_cache_vs_raw_projection_max_abs": 2.9660404576858923e-08,
+    "u_quadratic_vs_explicit_error_max_abs": 4.798383912429927e-13,
+    "p_cache_vs_raw_projection_max_abs": 4.777146699053159e-10,
+    "p_quadratic_vs_explicit_error_max_abs": 2.2737367544323206e-13
+  },
+  {
+    "label": "Re_189p862278",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/qlrom_20260923/raw_reference/Re_189p862278_uvp_pointData.npz",
+    "sha256": "211dbfc7f4f1b4b400b88ec1fe5749a750899bce005094946fb9365c518b70bb",
+    "bytes": 83003477,
+    "grid_exact": true,
+    "raw_time_max_abs_difference": 0.0,
+    "float32_evaluation_time_max_difference": 3.049234373975196e-05,
+    "source_url": "https://huggingface.co/datasets/panxy1019/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/resolve/main/Re_189p862278_uvp_pointData.npz",
+    "u_cache_vs_raw_projection_max_abs": 5.916549272733107e-08,
+    "u_quadratic_vs_explicit_error_max_abs": 1.0891287871572786e-12,
+    "p_cache_vs_raw_projection_max_abs": 9.433058015262397e-10,
+    "p_quadratic_vs_explicit_error_max_abs": 5.684341886080802e-14
+  },
+  {
+    "label": "Re_70p314635",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/qlrom_20260923/raw_reference/Re_70p314635_uvp_pointData.npz",
+    "sha256": "65e39e40106b2159e9758910c9e5cb7ae6258f80fafa51b3aabd9852645aab7f",
+    "bytes": 83716299,
+    "grid_exact": true,
+    "raw_time_max_abs_difference": 0.0,
+    "float32_evaluation_time_max_difference": 0.00012022687496937579,
+    "source_url": "https://huggingface.co/datasets/panxy1019/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/resolve/main/Re_70p314635_uvp_pointData.npz",
+    "u_cache_vs_raw_projection_max_abs": 5.953697668203972e-08,
+    "u_quadratic_vs_explicit_error_max_abs": 3.112621271839089e-12,
+    "p_cache_vs_raw_projection_max_abs": 4.714955665480192e-10,
+    "p_quadratic_vs_explicit_error_max_abs": 5.684341886080801e-13
+  }
+]

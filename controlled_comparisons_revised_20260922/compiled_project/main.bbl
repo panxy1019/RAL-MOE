@@ -1,0 +1,267 @@
+\begin{thebibliography}{32}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Amsallem \& Farhat(2008)Amsallem and Farhat]{amsallem2008}
+David Amsallem and Charbel Farhat.
+\newblock Interpolation method for adapting reduced-order models and
+  application to aeroelasticity.
+\newblock \emph{AIAA Journal}, 46\penalty0 (7):\penalty0 1803--1813, 2008.
+\newblock \doi{10.2514/1.35374}.
+
+\bibitem[Amsallem \& Farhat(2012)Amsallem and Farhat]{amsallem2012}
+David Amsallem and Charbel Farhat.
+\newblock Stabilization of projection-based reduced-order models.
+\newblock \emph{International Journal for Numerical Methods in Engineering},
+  91\penalty0 (4):\penalty0 358--377, 2012.
+\newblock \doi{10.1002/nme.4274}.
+
+\bibitem[Ben-Shabat et~al.(2024)Ben-Shabat, Hewa~Koneputugodage, Ramasinghe,
+  and Gould]{NEURIPS2024_b83fae17}
+Yizhak Ben-Shabat, Chamin Hewa~Koneputugodage, Sameera Ramasinghe, and Stephen
+  Gould.
+\newblock Neural experts: Mixture of experts for implicit neural
+  representations.
+\newblock In A.~Globerson, L.~Mackey, D.~Belgrave, A.~Fan, U.~Paquet,
+  J.~Tomczak, and C.~Zhang (eds.), \emph{Advances in Neural Information
+  Processing Systems}, volume~37, pp.\  101641--101670. Curran Associates,
+  Inc., 2024.
+\newblock \doi{10.52202/079017-3224}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2024/file/b83fae17d73b079b1b98ab200276db9f-Paper-Conference.pdf}.
+
+\bibitem[Benner et~al.(2015)Benner, Gugercin, and Willcox]{benner2015}
+Peter Benner, Serkan Gugercin, and Karen Willcox.
+\newblock A survey of projection-based model reduction methods for parametric
+  dynamical systems.
+\newblock \emph{SIAM Review}, 57\penalty0 (4):\penalty0 483--531, 2015.
+\newblock \doi{10.1137/130932715}.
+
+\bibitem[Berkooz et~al.(1993)Berkooz, Holmes, and Lumley]{berkooz1993}
+Gal Berkooz, Philip Holmes, and John~L. Lumley.
+\newblock The proper orthogonal decomposition in the analysis of turbulent
+  flows.
+\newblock \emph{Annual Review of Fluid Mechanics}, 25:\penalty0 539--575, 1993.
+\newblock \doi{10.1146/annurev.fl.25.010193.002543}.
+
+\bibitem[Bhat et~al.(2025)Bhat, Barral, and Ricchiuto]{bhat2025}
+Sourabh~P. Bhat, Nicolas Barral, and Mario Ricchiuto.
+\newblock Error-based efficient parameter space partitioning for mesh
+  adaptation and local reduced order models.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  435:\penalty0 117649, 2025.
+\newblock \doi{10.1016/j.cma.2024.117649}.
+
+\bibitem[Brunton et~al.(2020)Brunton, Noack, and Koumoutsakos]{brunton2020}
+Steven~L. Brunton, Bernd~R. Noack, and Petros Koumoutsakos.
+\newblock Machine learning for fluid mechanics.
+\newblock \emph{Annual Review of Fluid Mechanics}, 52:\penalty0 477--508, 2020.
+\newblock \doi{10.1146/annurev-fluid-010719-060214}.
+
+\bibitem[Chalapathi et~al.(2024)Chalapathi, Du, and
+  Krishnapriyan]{ICLR2024_9aeda582}
+Nithin Chalapathi, Yiheng Du, and Aditi Krishnapriyan.
+\newblock Scaling physics-informed hard constraints with mixture-of-experts.
+\newblock In B.~Kim, Y.~Yue, S.~Chaudhuri, K.~Fragkiadaki, M.~Khan, and Y.~Sun
+  (eds.), \emph{International Conference on Learning Representations}, volume
+  2024, pp.\  36015--36033, 2024.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2024/file/9aeda582add763c41c7b39691ce19ab0-Paper-Conference.pdf}.
+
+\bibitem[Champion et~al.(2019)Champion, Lusch, Kutz, and Brunton]{champion2019}
+Kathleen Champion, Bethany Lusch, J.~Nathan Kutz, and Steven~L. Brunton.
+\newblock Data-driven discovery of coordinates and governing equations.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 116\penalty0
+  (45):\penalty0 22445--22451, 2019.
+\newblock \doi{10.1073/pnas.1906995116}.
+
+\bibitem[Colanera \& Magri(2025)Colanera and Magri]{colanera2025}
+Antonio Colanera and Luca Magri.
+\newblock Quantized local reduced-order modeling in time (ql-rom).
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  447:\penalty0 118393, 2025.
+\newblock \doi{10.1016/j.cma.2025.118393}.
+
+\bibitem[Dar et~al.(2023)Dar, Baiges, and Codina]{dar2023}
+Zulkeefal Dar, Joan Baiges, and Ramon Codina.
+\newblock Artificial neural network based correction for reduced order models
+  in computational fluid mechanics.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  415:\penalty0 116232, 2023.
+\newblock \doi{10.1016/j.cma.2023.116232}.
+
+\bibitem[Diaz et~al.(2024)Diaz, Choi, and Heinkenschloss]{diaz2024}
+Alejandro~N. Diaz, Youngsoo Choi, and Matthias Heinkenschloss.
+\newblock A fast and accurate domain decomposition nonlinear manifold reduced
+  order model.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  425:\penalty0 116943, 2024.
+\newblock \doi{10.1016/j.cma.2024.116943}.
+
+\bibitem[Duraisamy et~al.(2019)Duraisamy, Iaccarino, and Xiao]{duraisamy2019}
+Karthik Duraisamy, Gianluca Iaccarino, and Heng Xiao.
+\newblock Turbulence modeling in the age of data.
+\newblock \emph{Annual Review of Fluid Mechanics}, 51:\penalty0 357--377, 2019.
+\newblock \doi{10.1146/annurev-fluid-010518-040547}.
+
+\bibitem[Fedus et~al.(2022)Fedus, Zoph, and Shazeer]{fedus2022}
+William Fedus, Barret Zoph, and Noam Shazeer.
+\newblock Switch transformers: Scaling to trillion parameter models with simple
+  and efficient sparsity.
+\newblock \emph{Journal of Machine Learning Research}, 23\penalty0
+  (120):\penalty0 1--39, 2022.
+\newblock URL \url{https://jmlr.org/papers/v23/21-0998.html}.
+
+\bibitem[Fresca \& Manzoni(2022)Fresca and Manzoni]{fresca2022}
+Stefania Fresca and Andrea Manzoni.
+\newblock {POD-DL-ROM}: Enhancing deep learning-based reduced order models for
+  nonlinear parametrized {PDEs} by proper orthogonal decomposition.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  388:\penalty0 114181, 2022.
+\newblock \doi{10.1016/j.cma.2021.114181}.
+
+\bibitem[Geelen et~al.(2023)Geelen, Wright, and Willcox]{geelen2023}
+Rudy Geelen, Stephen~J. Wright, and Karen~E. Willcox.
+\newblock Operator inference for non-intrusive model reduction with quadratic
+  manifolds.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  403:\penalty0 115717, 2023.
+\newblock \doi{10.1016/j.cma.2022.115717}.
+
+\bibitem[Hesthaven \& Ubbiali(2018)Hesthaven and Ubbiali]{hesthaven2018}
+Jan~S. Hesthaven and Stefano Ubbiali.
+\newblock Non-intrusive reduced order modeling of nonlinear problems using
+  neural networks.
+\newblock \emph{Journal of Computational Physics}, 363:\penalty0 55--78, 2018.
+\newblock \doi{10.1016/j.jcp.2018.02.037}.
+
+\bibitem[Jacobs et~al.(1991)Jacobs, Jordan, Nowlan, and Hinton]{jacobs1991}
+Robert~A. Jacobs, Michael~I. Jordan, Steven~J. Nowlan, and Geoffrey~E. Hinton.
+\newblock Adaptive mixtures of local experts.
+\newblock \emph{Neural Computation}, 3\penalty0 (1):\penalty0 79--87, 1991.
+\newblock \doi{10.1162/neco.1991.3.1.79}.
+
+\bibitem[Jordan \& Jacobs(1994)Jordan and Jacobs]{jordan1994}
+Michael~I. Jordan and Robert~A. Jacobs.
+\newblock Hierarchical mixtures of experts and the {EM} algorithm.
+\newblock \emph{Neural Computation}, 6\penalty0 (2):\penalty0 181--214, 1994.
+\newblock \doi{10.1162/neco.1994.6.2.181}.
+
+\bibitem[Kaiser et~al.(2014)Kaiser, Noack, Cordier, Spohn, Segond, Abel,
+  Daviller, {\"O}sth, Krajnovi{\'c}, and Niven]{kaiser2014}
+Eurika Kaiser, Bernd~R. Noack, Laurent Cordier, Andreas Spohn, Marc Segond,
+  Markus Abel, Guillaume Daviller, Jan {\"O}sth, Sini{\v{s}}a Krajnovi{\'c},
+  and Robert~K. Niven.
+\newblock Cluster-based reduced-order modelling of a mixing layer.
+\newblock \emph{Journal of Fluid Mechanics}, 754:\penalty0 365--414, 2014.
+\newblock \doi{10.1017/jfm.2014.355}.
+
+\bibitem[Kovachki et~al.(2023)Kovachki, Li, Liu, Azizzadenesheli, Bhattacharya,
+  Stuart, and Anandkumar]{kovachki2023}
+Nikola Kovachki, Zongyi Li, Burigede Liu, Kamyar Azizzadenesheli, Kaushik
+  Bhattacharya, Andrew Stuart, and Anima Anandkumar.
+\newblock Neural operator: Learning maps between function spaces with
+  applications to {PDEs}.
+\newblock \emph{Journal of Machine Learning Research}, 24\penalty0
+  (89):\penalty0 1--97, 2023.
+\newblock URL \url{https://jmlr.org/papers/v24/21-1524.html}.
+
+\bibitem[Lee \& Carlberg(2020)Lee and Carlberg]{lee2020}
+Kookjin Lee and Kevin~T. Carlberg.
+\newblock Model reduction of dynamical systems on nonlinear manifolds using
+  deep convolutional autoencoders.
+\newblock \emph{Journal of Computational Physics}, 404:\penalty0 108973, 2020.
+\newblock \doi{10.1016/j.jcp.2019.108973}.
+
+\bibitem[Li et~al.(2021)Li, Fernex, Semaan, Tan, Morzy{\'n}ski, and
+  Noack]{li2021cluster}
+Hao Li, Daniel Fernex, Richard Semaan, Jianguo Tan, Marek Morzy{\'n}ski, and
+  Bernd~R. Noack.
+\newblock Cluster-based network model.
+\newblock \emph{Journal of Fluid Mechanics}, 906:\penalty0 A21, 2021.
+\newblock \doi{10.1017/jfm.2020.785}.
+
+\bibitem[Li et~al.(2026)Li, Chen, Guo, Huang, and Xiong]{ICLR2026_754612bd}
+Siyang Li, Yize Chen, Yan Guo, Ming Huang, and Hui Xiong.
+\newblock Towards generalizable pde dynamics forecasting via physics-guided
+  invariant learning.
+\newblock In C.~Vondrick, B.~Hariharan, C.~Raffel, L.~Pinto, D.~Yang, and
+  A.~Faust (eds.), \emph{International Conference on Learning Representations},
+  volume 2026, pp.\  72050--72079, 2026.
+\newblock URL
+  \url{https://proceedings.iclr.cc/paper_files/paper/2026/file/754612bde73a8b65ad8743f1f6d8ddf6-Paper-Conference.pdf}.
+
+\bibitem[Lu et~al.(2021)Lu, Jin, Pang, Zhang, and Karniadakis]{lu2021}
+Lu~Lu, Pengzhan Jin, Guofei Pang, Zhongqiang Zhang, and George~Em Karniadakis.
+\newblock Learning nonlinear operators via {DeepONet} based on the universal
+  approximation theorem of operators.
+\newblock \emph{Nature Machine Intelligence}, 3:\penalty0 218--229, 2021.
+\newblock \doi{10.1038/s42256-021-00302-5}.
+
+\bibitem[Pan \& Xiao(2024)Pan and Xiao]{pan2024domain}
+Xinyu Pan and Dunhui Xiao.
+\newblock Domain decomposition for physics-data combined neural network based
+  parametric reduced order modelling.
+\newblock \emph{Journal of Computational Physics}, 519:\penalty0 113452, 2024.
+
+\bibitem[Park et~al.(2024)Park, Cheung, Choi, and Shin]{park2024}
+Jun Sur~Richard Park, Siu~Wun Cheung, Youngsoo Choi, and Yeonjong Shin.
+\newblock {tLaSDI}: Thermodynamics-informed latent space dynamics
+  identification.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  429:\penalty0 117144, 2024.
+\newblock \doi{10.1016/j.cma.2024.117144}.
+
+\bibitem[Peherstorfer \& Willcox(2016)Peherstorfer and
+  Willcox]{peherstorfer2016}
+Benjamin Peherstorfer and Karen Willcox.
+\newblock Data-driven operator inference for nonintrusive projection-based
+  model reduction.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  306:\penalty0 196--215, 2016.
+\newblock \doi{10.1016/j.cma.2016.03.025}.
+
+\bibitem[Peherstorfer et~al.(2014)Peherstorfer, Butnaru, Willcox, and
+  Bungartz]{peherstorfer2014}
+Benjamin Peherstorfer, Daniel Butnaru, Karen Willcox, and Hans-Joachim
+  Bungartz.
+\newblock Localized discrete empirical interpolation method.
+\newblock \emph{SIAM Journal on Scientific Computing}, 36\penalty0
+  (1):\penalty0 A168--A192, 2014.
+\newblock \doi{10.1137/130924408}.
+
+\bibitem[Shazeer et~al.(2017)Shazeer, Mirhoseini, Maziarz, Davis, Le, Hinton,
+  and Dean]{shazeer2017}
+Noam Shazeer, Azalia Mirhoseini, Krzysztof Maziarz, Andy Davis, Quoc Le,
+  Geoffrey Hinton, and Jeff Dean.
+\newblock Outrageously large neural networks: The sparsely-gated
+  mixture-of-experts layer.
+\newblock In \emph{International Conference on Learning Representations}, 2017.
+\newblock URL \url{https://openreview.net/forum?id=B1ckMDqlg}.
+
+\bibitem[Sirovich(1987)]{sirovich1987}
+Lawrence Sirovich.
+\newblock Turbulence and the dynamics of coherent structures. part i: Coherent
+  structures.
+\newblock \emph{Quarterly of Applied Mathematics}, 45\penalty0 (3):\penalty0
+  561--571, 1987.
+\newblock \doi{10.1090/qam/910462}.
+
+\bibitem[Wang et~al.(2025)Wang, Xin, Wang, Yang, Zha, Dong, and
+  Jiang]{NEURIPS2025_2d23a999}
+Hong Wang, Haiyang Xin, Jie Wang, Xuanze Yang, Fei Zha, Huanshuo Dong, and Yan
+  Jiang.
+\newblock Mixture-of-experts operator transformer for large-scale pde
+  pre-training.
+\newblock In D.~Belgrave, C.~Zhang, H.~Lin, R.~Pascanu, P.~Koniusz,
+  M.~Ghassemi, and N.~Chen (eds.), \emph{Advances in Neural Information
+  Processing Systems}, volume 38, Main Conference, pp.\  31498--31527. Curran
+  Associates, Inc., 2025.
+\newblock \doi{10.52202/085713-1057}.
+\newblock URL
+  \url{https://proceedings.neurips.cc/paper_files/paper/2025/file/2d23a9991a6f64482bf395628e279f5f-Paper-Conference.pdf}.
+
+\end{thebibliography}

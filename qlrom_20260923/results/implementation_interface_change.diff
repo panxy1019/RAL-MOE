@@ -1,0 +1,17 @@
+--- frozen_fit_validation
++++ optional_physical_input_and_precomputed_ops
+@@ -106,9 +106,11 @@
+     c,A,H=ops
+     return c[j]+np.einsum('nij,nj->ni',A[j],z)+np.einsum('nijk,nj,nk->ni',H[j],z,z)
+ 
+-def rollout(d,model,label,starts,substeps):
+-    ops,pops=local_ops(d,model,label);C,U=model['centers'],model['bases']
+-    starts=np.asarray(starts);y=d['y'][starts].copy()
++def rollout(d,model,label,starts,substeps,initial_a=None,prepared_ops=None):
++    ops,pops=local_ops(d,model,label) if prepared_ops is None else prepared_ops
++    C,U=model['centers'],model['bases']
++    starts=np.asarray(starts)
++    y=d['y'][starts].copy() if initial_a is None else np.asarray(initial_a)@d['S'].T
+     j=((y[:,None,:]-C[None,:,:])**2).sum(2).argmin(1)
+     z=np.einsum('nir,ni->nr',U[j],y-C[j]);n=len(starts)
+     initial_jump=np.linalg.norm(y-(C[j]+np.einsum('nir,nr->ni',U[j],z)),axis=1)

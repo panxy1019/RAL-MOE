@@ -1,0 +1,654 @@
+\section{Problem formulation and Galerkin reduction}
+\label{sec:problem}
+
+\subsection{Parameterized dynamics and POD coordinates}
+\label{sec:pod}
+
+Let $\mu\in\Pset\subset\R^{d_\mu}$ denote a physical parameter. The resolved
+velocity and algebraic pressure are represented by
+\begin{align}
+ u_r(x,t;\mu)
+ &=\overline u(x)+\sum_{i=1}^{r}a_i(t;\mu)\varphi_i(x),
+ \label{eq:velocity-pod}\\
+ p_{r_p}(x,t;\mu)
+ &=\overline p(x)+\sum_{\ell=1}^{r_p}b_\ell(t;\mu)\psi_\ell(x),
+ \label{eq:pressure-pod}
+\end{align}
+where $a(t;\mu)\in\R^r$ and $b(t;\mu)\in\R^{r_p}$. Projection of the
+momentum equation gives a semi-explicit velocity equation
+\begin{equation}
+ \dot a=f_G(a,b;\mu)\in\R^r.
+ \label{eq:semiexplicit-galerkin}
+\end{equation}
+The maps and matrices introduced below are fixed analytic or operator-derived
+objects. They are not neural-network weights.
+
+\subsection{Semi-explicit pressure treatment}
+\label{sec:pressure}
+
+Pressure is recovered from an algebraic Pressure--Poisson map
+\begin{equation}
+ b=\mathcal P_p(a;\mu).
+ \label{eq:pressure-map}
+\end{equation}
+The pressure-eliminated Galerkin field is
+\begin{equation}
+ F_G(a;\mu)
+ :=f_G\!\left(a,\mathcal P_p(a;\mu);\mu\right).
+ \label{eq:pressure-eliminated}
+\end{equation}
+Thus pressure has no independent time derivative in the present theory.
+Equation~\eqref{eq:pressure-map} may be evaluated analytically inside
+$F_G$, or after each accepted velocity macro-step in a semi-explicit
+implementation.
+
+\subsection{Truncation-induced non-Markovian closure}
+\label{sec:nonmarkovian}
+
+Elimination of discarded Galerkin modes generally produces an
+initial-condition term and a history operator. We therefore write the
+resolved equation as
+\begin{equation}
+ \dot a(t)=F_G(a(t);\mu)+r_{\mem}(t),
+ \label{eq:resolved-closure}
+\end{equation}
+and seek a finite-dimensional internal realization of $r_{\mem}$. The
+purpose of the memory state is to replace an explicit finite delay window,
+not to replace the resolved Galerkin field.
+
+\subsection{Assumptions}
+\label{sec:assumptions}
+
+The assumptions are stated separately so that each result can invoke only
+what it needs.
+
+\paragraph{A1 (compact parameter domain).}
+$\Pset\subset\R^{d_\mu}$ is compact.
+
+\paragraph{A2 (Galerkin regularity).}
+For each $\mu\in\Pset$, $F_G(\cdot;\mu)$ is locally Lipschitz in $a$,
+uniformly with respect to $\mu$ on compact subsets of $\R^r\times\Pset$.
+
+\paragraph{A3 (memory-coefficient regularity).}
+The maps $k,v,q,\Gamma,\eta$ are continuous in $(a,\mu)$ and locally
+Lipschitz in $a$, uniformly in $\mu$ on compact subsets. The matrix
+$\Gamma(a,\mu)\in\R^{d_k\times d_k}$ is real and diagonal.
+
+\paragraph{A4 (normalized addresses).}
+For every admissible $(a,\mu)$,
+\begin{equation}
+ \norm{k(a;\mu)}\le1,\qquad \norm{q(a;\mu)}\le1.
+ \label{eq:address-bounds}
+\end{equation}
+
+\paragraph{A5 (strict forgetting).}
+There is a constant $\gamma_{\min}>0$ such that
+\begin{equation}
+ \Gamma(a,\mu)\succeq\gamma_{\min}I_{d_k}.
+ \label{eq:gamma-lower}
+\end{equation}
+
+\paragraph{A6 (bounded write rate).}
+There is an $\eta_{\max}<\infty$ such that
+\begin{equation}
+ 0\le\eta(a,\mu)\le\eta_{\max}.
+ \label{eq:eta-bound}
+\end{equation}
+
+\paragraph{A7 (bounded write target along the trajectory).}
+For the memory boundedness result, and only for that result, there is a
+$v_{\max}<\infty$ such that
+\begin{equation}
+ \norm{v(a(t);\mu)}\le v_{\max}.
+ \label{eq:v-bound}
+\end{equation}
+This condition must follow from the construction of $v$ or from a separate
+bound on $a(t)$; it is not inferred from A1--A6.
+
+\paragraph{A8 (stable unresolved linear block).}
+In the linear resolved--unresolved correspondence,
+$A_{uu}$ is Hurwitz.
+
+\paragraph{A9 (reciprocal energy coupling).}
+The energy-stable subclass uses
+\begin{equation}
+ \dot a=F_G(a)-\sum_{j=1}^{m}C_j^\top y_j,\qquad
+ \dot y_j=\eta_jC_ja-\lambda_jy_j,
+ \quad \eta_j>0,\quad\lambda_j>0.
+ \label{eq:reciprocal-model-assumption}
+\end{equation}
+
+\section{Continuous delta-memory closure}
+\label{sec:continuous-memory}
+
+\subsection{Discrete channel-wise delta recurrence}
+\label{sec:discrete-recurrence}
+
+Let $S_n\in\R^{d_k\times d_v}$ be a fixed-capacity matrix state,
+$k_n\in\R^{d_k}$ a write address, and $v_n\in\R^{d_v}$ a write target.
+The discrete recurrence is
+\begin{equation}
+ S_{n+1}
+ =(I_{d_k}-\beta_nk_nk_n^\top)D_nS_n+\beta_nk_nv_n^\top.
+ \label{eq:discrete-delta}
+\end{equation}
+With $\overline S_n=D_nS_n$, the same update is
+\begin{equation}
+ S_{n+1}
+ =\overline S_n+\beta_nk_n
+   (v_n-\overline S_n^\top k_n)^\top.
+ \label{eq:erase-write}
+\end{equation}
+This form separates channel-wise forgetting from reconstruction-error
+writing.
+
+\subsection{Physical-time scaling and continuous limit}
+\label{sec:continuous-limit}
+
+Let $h_n=t_{n+1}-t_n>0$ and set
+\begin{equation}
+ D_n=\exp(-h_n\Gamma_n),\qquad
+ \beta_n=1-\exp(-h_n\eta_n).
+ \label{eq:physical-scaling}
+\end{equation}
+
+\phantomsection\label{lem:expansions}
+\begin{lemmaone}
+If $\Gamma_n$ and $\eta_n$ remain bounded as $h_n\to0$, then
+\begin{equation}
+ D_n=I_{d_k}-h_n\Gamma_n+O(h_n^2),\qquad
+ \beta_n=h_n\eta_n+O(h_n^2).
+ \label{eq:first-order-expansions}
+\end{equation}
+The remainder constants are uniform when $\Gamma_n$ and $\eta_n$ range over
+fixed compact sets.
+\end{lemmaone}
+
+\paragraph{Proof idea.}
+Apply Taylor's theorem to the matrix exponential and the scalar exponential.
+The complete estimate is in Appendix~\ref{app:expansions}.
+
+Substitution of \eqref{eq:first-order-expansions} into
+\eqref{eq:erase-write} gives
+\begin{equation}
+ S_{n+1}
+ =S_n+h_n\left[
+ -\Gamma_nS_n+\eta_nk_n(v_n-S_n^\top k_n)^\top
+ \right]+O(h_n^2).
+ \label{eq:discrete-first-order}
+\end{equation}
+The associated continuous memory equation is
+\begin{equation}
+ \boxed{
+ \dot S=-\Gamma S+\eta k(v-S^\top k)^\top.}
+ \label{eq:continuous-memory}
+\end{equation}
+
+\subsection{CDM-GROM augmented system}
+\label{sec:augmented-system}
+
+Let
+\begin{equation}
+ \phi(a;\mu)=
+ [1,\ a^\top,\ (a\otimes a)^\top,\ \mu^\top]^\top
+ \in\R^{d_\phi}.
+ \label{eq:analytic-features}
+\end{equation}
+For fixed compatible matrices $K,V,Q$, define
+\begin{align}
+ k(a;\mu)
+ &=\frac{K\phi(a;\mu)}
+ {\norm{K\phi(a;\mu)}+\varepsilon}\in\R^{d_k},
+ \label{eq:k-map}\\
+ v(a;\mu)&=V\phi(a;\mu)\in\R^{d_v},
+ \label{eq:v-map}\\
+ q(a;\mu)
+ &=\frac{Q\phi(a;\mu)}
+ {\norm{Q\phi(a;\mu)}+\varepsilon}\in\R^{d_k},
+ \label{eq:q-map}
+\end{align}
+where $\varepsilon>0$ is fixed. With a fixed
+$B\in\R^{r\times d_v}$, the memory read and closure are
+\begin{equation}
+ y=S^\top q\in\R^{d_v},\qquad r_{\mem}=By\in\R^r.
+ \label{eq:memory-read}
+\end{equation}
+The CDM-GROM is
+\begin{equation}
+ \boxed{
+ \begin{aligned}
+ \dot a
+ &=F_G(a;\mu)+BS^\top q(a;\mu),\\
+ \dot S
+ &=-\Gamma(a,\mu)S+
+ \eta(a,\mu)k(a,\mu)
+ [v(a,\mu)-S^\top k(a,\mu)]^\top.
+ \end{aligned}}
+ \label{eq:cdm-grom}
+\end{equation}
+The pair $(a,S)\in\R^r\times\R^{d_k\times d_v}$ is a finite-dimensional
+Markov state. Elimination of $S$ produces a history-dependent equation for
+$a$. Pressure is recovered through \eqref{eq:pressure-map}.
+
+\subsection{Gradient-flow interpretation}
+\label{sec:gradient-flow}
+
+\phantomsection\label{prop:gradient-flow}
+\begin{propositionone}
+Fix $k\in\R^{d_k}$, $v\in\R^{d_v}$, a symmetric positive-semidefinite
+$\Gamma\in\R^{d_k\times d_k}$, and $\eta>0$. Define
+\begin{equation}
+ \mathcal J(S)
+ =\frac12\norm{v-S^\top k}^2+
+ \frac{1}{2\eta}\tr(S^\top\Gamma S).
+ \label{eq:reconstruction-objective}
+\end{equation}
+Then \eqref{eq:continuous-memory} is the Frobenius gradient flow
+\begin{equation}
+ \dot S=-\eta\nabla_S\mathcal J(S).
+ \label{eq:gradient-flow}
+\end{equation}
+\end{propositionone}
+
+\paragraph{Proof idea.}
+Differentiate both quadratic terms with respect to $S$. Full algebra is in
+Appendix~\ref{app:gradient-flow}.
+
+\phantomsection\label{cor:fixed-equilibrium}
+\begin{corollarytwo}
+Under the conditions of \hyperref[prop:gradient-flow]{Proposition 1}, if
+$\Gamma\succ0$, the fixed-input memory equation has the unique equilibrium
+\begin{equation}
+ S_\star=(\Gamma+\eta kk^\top)^{-1}\eta kv^\top.
+ \label{eq:memory-equilibrium}
+\end{equation}
+Moreover,
+\begin{equation}
+ \fnorm{S(t)-S_\star}
+ \le
+ \exp[-\lambda_{\min}(\Gamma+\eta kk^\top)t]
+ \fnorm{S(0)-S_\star}.
+ \label{eq:equilibrium-convergence}
+\end{equation}
+\end{corollarytwo}
+
+\section{Finite-state and memory-kernel representations}
+\label{sec:finite-state}
+
+\subsection{Fixed-key minimal realization}
+\label{sec:fixed-key}
+
+\phantomsection\label{prop:fixed-key}
+\begin{propositionthree}
+Let $k=q=e\in\R^{d_k}$ with $\norm e=1$, let
+$\Gamma=\gamma I_{d_k}$ with $\gamma>0$, let $\eta\ge0$ be constant, and
+let $v(a)=Ca$ for $C\in\R^{d_v\times r}$. Define
+$y=S^\top e\in\R^{d_v}$. Then
+\begin{equation}
+ \dot y=-(\gamma+\eta)y+\eta Ca.
+ \label{eq:fixed-key-vector}
+\end{equation}
+If $P_\perp=I_{d_k}-ee^\top$, then
+\begin{equation}
+ P_\perp S(t)=\exp(-\gamma t)P_\perp S(0).
+ \label{eq:orthogonal-decay}
+\end{equation}
+Consequently, $P_\perp S$ neither affects the read $S^\top e$ nor the
+closure $BS^\top e$, and the vector $y$ is a minimal observable state for
+the single fixed address, up to ordinary controllability/observability
+reductions of the pair $(B,C)$.
+\end{propositionthree}
+
+\paragraph{Proof idea.}
+Left-multiply the matrix equation by $e^\top$ and by $P_\perp$,
+respectively. See Appendix~\ref{app:fixed-key}.
+
+\subsection{Volterra-kernel equivalence}
+\label{sec:volterra}
+
+\phantomsection\label{thm:volterra}
+\begin{theoremfour}
+For $j=1,\ldots,m$, let $y_j(t)\in\R^{d_j}$ satisfy
+\begin{equation}
+ \dot y_j=-\Lambda_jy_j+C_ja,
+ \qquad
+ B_j\in\R^{r\times d_j},\quad
+ C_j\in\R^{d_j\times r},
+ \label{eq:auxiliary-system}
+\end{equation}
+where every $\Lambda_j$ is exponentially stable in the convention
+$\dot y_j=-\Lambda_jy_j$. Then
+\begin{equation}
+ \dot a(t)=F_G(a(t);\mu)+g_m(t)
+ +\int_0^tK_m(t-s)a(s)\dd s,
+ \label{eq:volterra-resolved}
+\end{equation}
+where
+\begin{align}
+ g_m(t)&=\sum_{j=1}^{m}B_j\e^{-\Lambda_jt}y_j(0),
+ \label{eq:initial-slip}\\
+ K_m(\tau)&=\sum_{j=1}^{m}B_j\e^{-\Lambda_j\tau}C_j.
+ \label{eq:finite-kernel}
+\end{align}
+For $\operatorname{Re}s$ sufficiently large,
+\begin{equation}
+ \widehat K_m(s)
+ =\sum_{j=1}^{m}B_j(sI_{d_j}+\Lambda_j)^{-1}C_j.
+ \label{eq:kernel-laplace}
+\end{equation}
+\end{theoremfour}
+
+\paragraph{Proof idea.}
+Use variation of constants for every $y_j$, substitute into the resolved
+equation, and exchange a finite sum with the integral. See
+Appendix~\ref{app:volterra}.
+
+\subsection{Linear resolved--unresolved Galerkin correspondence}
+\label{sec:linear-correspondence}
+
+\phantomsection\label{thm:linear-elimination}
+\begin{theoremfive}
+Consider the linear or linearized block system
+\begin{equation}
+ \begin{bmatrix}\dot a\\\dot c\end{bmatrix}
+ =
+ \begin{bmatrix}
+ A_{rr}&A_{ru}\\
+ A_{ur}&A_{uu}
+ \end{bmatrix}
+ \begin{bmatrix}a\\c\end{bmatrix},
+ \label{eq:block-linear}
+\end{equation}
+where $a\in\R^r$ and $c\in\R^{r_u}$. Eliminating $c$ gives
+\begin{equation}
+ \dot a(t)=A_{rr}a(t)+A_{ru}\e^{A_{uu}t}c(0)
+ +\int_0^tK_{\rm exact}(t-s)a(s)\dd s,
+ \label{eq:exact-linear-memory}
+\end{equation}
+with
+\begin{equation}
+ K_{\rm exact}(\tau)=A_{ru}\e^{A_{uu}\tau}A_{ur}.
+ \label{eq:exact-kernel}
+\end{equation}
+Assumption A8 is required for exponential decay of the slip and kernel, but
+not for the finite-time elimination identity itself.
+\end{theoremfive}
+
+\paragraph{Proof idea.}
+Solve the unresolved linear equation by variation of constants. The complete
+derivation is in Appendix~\ref{app:linear-elimination}.
+
+\phantomsection\label{cor:exact-realization}
+\begin{corollarythree}
+Under A8, the choice
+\begin{equation}
+ y=c,\qquad B=A_{ru},\qquad C=A_{ur},\qquad \Lambda=-A_{uu}
+ \label{eq:exact-realization}
+\end{equation}
+is an exponentially stable finite realization that exactly recovers
+\eqref{eq:exact-kernel}. A reduced stable realization replaces
+$K_{\rm exact}$ by
+$K_m(\tau)=\sum_jB_j\e^{-\Lambda_j\tau}C_j$; its resolved-state error is
+controlled by \hyperref[thm:kernel-error]{Theorem 7}.
+\end{corollarythree}
+
+\subsection{Operator-based construction}
+\label{sec:operator-construction}
+
+Three non-neural constructions are available.
+
+\paragraph{Exact unresolved realization.}
+Construct an enlarged POD--Galerkin model, partition its linearization into
+\eqref{eq:block-linear}, and use \eqref{eq:exact-realization}. This preserves
+the exact linear kernel but retains all unresolved linear states.
+
+\paragraph{Reduced unresolved realization.}
+Apply spectral truncation, balanced truncation, rational Krylov reduction, or
+a stable projection to the unresolved subsystem. Stability of the reduced
+$-\Lambda_j$ blocks must be verified rather than inferred.
+
+\paragraph{Stable pole--residue approximation.}
+Approximate
+\begin{equation}
+ G_{\mem}(s)=A_{ru}(sI-A_{uu})^{-1}A_{ur}
+ \label{eq:memory-transfer}
+\end{equation}
+by \eqref{eq:kernel-laplace}, with every pole in the open left half-plane.
+Least-squares or vector-fitting estimation is operator/data-assisted
+identification, not neural learning.
+
+\section{Mathematical analysis}
+\label{sec:analysis}
+
+\subsection{Well-posedness and boundedness}
+\label{sec:wellposedness}
+
+\phantomsection\label{thm:local-wellposedness}
+\begin{theoremtwo}
+Under A1--A3, for every $\mu\in\Pset$ and every initial condition
+$(a_0,S_0)\in\R^r\times\R^{d_k\times d_v}$, the CDM-GROM
+\eqref{eq:cdm-grom} has a unique maximal local solution. The theorem makes no
+unconditional claim of global existence.
+\end{theoremtwo}
+
+\paragraph{Proof idea.}
+The augmented right-hand side is locally Lipschitz in $(a,S)$ on bounded
+sets. Picard--Lindel\"of then applies. See Appendix~\ref{app:wellposedness}.
+
+\phantomsection\label{thm:memory-boundedness}
+\begin{theoremthree}
+Assume A5--A7 along a solution of \eqref{eq:cdm-grom}. Then
+\begin{equation}
+ \fnorm{S(t)}^2
+ \le
+ \e^{-2\gamma_{\min}t}\fnorm{S(0)}^2+
+ \frac{\eta_{\max}v_{\max}^2}{4\gamma_{\min}}
+ \left(1-\e^{-2\gamma_{\min}t}\right).
+ \label{eq:memory-explicit-bound}
+\end{equation}
+The estimate holds throughout the maximal interval of existence. If the
+coupled solution is global, then
+\begin{equation}
+ \limsup_{t\to\infty}\fnorm{S(t)}^2
+ \le\frac{\eta_{\max}v_{\max}^2}{4\gamma_{\min}}.
+ \label{eq:memory-limsup}
+\end{equation}
+\end{theoremthree}
+
+\paragraph{Proof idea.}
+With $y=S^\top k$, take the Frobenius product of the memory equation with
+$S$ and complete the square in $y$. See Appendix~\ref{app:memory-bound}.
+
+\phantomsection\label{prop:memory-passivity}
+\begin{propositiontwo}
+Under A5--A6, the exact identity
+\begin{equation}
+ \frac12\frac{\dd}{\dd t}\fnorm S^2
+ =-\ipF{S}{\Gamma S}+\eta y^\top(v-y),
+ \qquad y=S^\top k,
+ \label{eq:memory-energy-identity}
+\end{equation}
+implies
+\begin{equation}
+ \frac12\frac{\dd}{\dd t}\fnorm S^2
+ \le
+ -\gamma_{\min}\fnorm S^2
+ -\frac{\eta}{2}\norm y^2
+ +\frac{\eta}{2}\norm v^2.
+ \label{eq:passivity-bound}
+\end{equation}
+\end{propositiontwo}
+
+\begin{remark}
+With storage $\fnorm S^2/2$, input $v$, and read output $y=S^\top k$,
+\eqref{eq:passivity-bound} is an output-strict dissipation inequality with
+supply rate $\eta\norm v^2/2$. It is also an input-to-state estimate when
+$v$ is bounded.
+\end{remark}
+
+\begin{remark}
+\hyperref[thm:memory-boundedness]{Theorem 3} bounds only the memory state along
+a trajectory for which A7 holds. It neither bounds $a$ nor prevents a
+finite-time escape of the coupled CDM-GROM.
+\end{remark}
+
+\subsection{Discrete-to-continuous consistency}
+\label{sec:consistency}
+
+\phantomsection\label{thm:local-consistency}
+\begin{theoremone}
+Assume A3 and suppose the sampled coefficient functions and the exact memory
+solution are sufficiently smooth on $[0,T]$ to admit uniform second-order
+Taylor remainders. If the exact value $S(t_n)$ is inserted into
+\eqref{eq:discrete-delta}, then its one-step defect relative to
+\eqref{eq:continuous-memory} satisfies
+\begin{equation}
+ \fnorm{S_{n+1}^{\rm rec}-S(t_{n+1})}
+ \le C_{\rm loc}h_n^2
+ \label{eq:local-defect}
+\end{equation}
+for all sufficiently small $h_n$, with $C_{\rm loc}$ independent of $n$.
+\end{theoremone}
+
+\paragraph{Proof idea.}
+Combine \hyperref[lem:expansions]{Lemma 1} with a uniform product-remainder
+estimate. See Appendix~\ref{app:local-consistency}.
+
+\phantomsection\label{cor:global-first-order}
+\begin{corollaryone}
+In addition to the conditions of \hyperref[thm:local-consistency]{Theorem 1},
+assume that the exact and discrete trajectories remain in a common compact
+set on $[0,T]$ and that the one-step map is Lipschitz there with factor
+$1+L_hh_n$. Let $h=\max_nh_n$. Then, for identical initial data,
+\begin{equation}
+ \max_{t_n\le T}\fnorm{S_n-S(t_n)}
+ \le
+ \frac{C_{\rm loc}}{L_h}
+ \left(\e^{L_hT}-1\right)h
+ \label{eq:global-first-order}
+\end{equation}
+when $L_h>0$; the right-hand side is $C_{\rm loc}Th$ when $L_h=0$.
+\end{corollaryone}
+
+\subsection{Energy-stable reciprocal subclass}
+\label{sec:energy-subclass}
+
+\phantomsection\label{thm:reciprocal-energy}
+\begin{theoremsix}
+Under A9, define
+\begin{equation}
+ \mathcal E(a,y_1,\ldots,y_m)
+ =\frac12\norm a^2+
+ \sum_{j=1}^{m}\frac{1}{2\eta_j}\norm{y_j}^2.
+ \label{eq:augmented-energy}
+\end{equation}
+Along every classical solution,
+\begin{equation}
+ \frac{\dd\mathcal E}{\dd t}
+ =a^\top F_G(a)
+ -\sum_{j=1}^{m}\frac{\lambda_j}{\eta_j}\norm{y_j}^2.
+ \label{eq:reciprocal-energy-identity}
+\end{equation}
+Hence $\mathcal E$ is non-increasing on the interval of existence if
+$a^\top F_G(a)\le0$. If A2 also holds and, more generally,
+\begin{equation}
+ a^\top F_G(a)\le c_0-c_1\norm a^2,
+ \qquad c_0\ge0,\quad c_1>0,
+ \label{eq:galerkin-absorbing}
+\end{equation}
+then, with
+\begin{equation}
+ \kappa=2\min\{c_1,\lambda_1,\ldots,\lambda_m\},
+ \label{eq:kappa}
+\end{equation}
+\begin{equation}
+ \mathcal E(t)
+ \le
+ \e^{-\kappa t}\mathcal E(0)
+ +\frac{c_0}{\kappa}(1-\e^{-\kappa t}).
+ \label{eq:augmented-absorbing-bound}
+\end{equation}
+The energy bound prevents finite-time escape; consequently the local
+solution is global and \eqref{eq:augmented-absorbing-bound} is an absorbing
+estimate.
+\end{theoremsix}
+
+\paragraph{Proof idea.}
+Differentiate \eqref{eq:augmented-energy}; reciprocal cross terms cancel
+exactly. See Appendix~\ref{app:reciprocal-energy}.
+
+\subsection{Kernel approximation error}
+\label{sec:kernel-error}
+
+\phantomsection\label{thm:kernel-error}
+\begin{theoremseven}
+Let $a$ and $a_m$ solve, respectively,
+\begin{align}
+ \dot a(t)
+ &=F_G(a(t))+g(t)+\int_0^tK(t-s)a(s)\dd s,
+ \label{eq:exact-volterra}\\
+ \dot a_m(t)
+ &=F_G(a_m(t))+g_m(t)+\int_0^tK_m(t-s)a_m(s)\dd s.
+ \label{eq:approx-volterra}
+\end{align}
+Assume A2 on a common ball containing both trajectories, with Lipschitz
+constant $L$, and suppose
+\begin{equation}
+ \sup_{0\le t\le T}\norm{a_m(t)}\le M,\qquad
+ K,K_m\in L^1(0,T),\qquad g-g_m\in L^1(0,T).
+ \label{eq:kernel-error-assumptions}
+\end{equation}
+Define
+\begin{align}
+ \delta_K(T)&=\int_0^T\norm{K(\tau)-K_m(\tau)}\dd\tau,
+ \label{eq:delta-k}\\
+ \delta_g(T)&=\int_0^T\norm{g(t)-g_m(t)}\dd t,
+ \label{eq:delta-g}\\
+ \kappa_T&=\int_0^T\norm{K(\tau)}\dd\tau.
+ \label{eq:kappa-t}
+\end{align}
+Then
+\begin{equation}
+ \sup_{0\le t\le T}\norm{a(t)-a_m(t)}
+ \le
+ \left[
+ \norm{a(0)-a_m(0)}+\delta_g(T)+MT\delta_K(T)
+ \right]\e^{(L+\kappa_T)T}.
+ \label{eq:kernel-error-bound}
+\end{equation}
+Thus one may take
+$C_T=\e^{(L+\kappa_T)T}\max\{1,MT\}$ when the three error contributions
+are grouped additively.
+\end{theoremseven}
+
+\paragraph{Proof idea.}
+Subtract the integral forms, use Fubini's theorem for the double convolution
+integral, and apply Gronwall's inequality. See
+Appendix~\ref{app:kernel-error-proof}.
+
+\subsection{Scope and limitations}
+\label{sec:limitations}
+
+The following restrictions are part of the method statement.
+\begin{enumerate}
+ \item Positive diagonal $\Gamma$ primarily generates decaying time scales.
+ Purely real exponential kernels can inefficiently represent strongly
+ oscillatory memory. Two-by-two rotational blocks are a possible extension,
+ but are not included here.
+ \item State-dependent $k$ and $q$ define a nonlinear fading-memory operator;
+ the simple convolution formula \eqref{eq:finite-kernel} then does not apply.
+ \item The matrix $S$ need not be a minimal realization for fixed addresses,
+ as shown by \hyperref[prop:fixed-key]{Proposition 3}.
+ \item Memory boundedness is not full-ROM stability.
+ \item The correspondence in
+ \hyperref[thm:linear-elimination]{Theorem 5} is exact only for a linear or
+ linearized system.
+ \item The reciprocal subclass can over-constrain energy-growth mechanisms
+ near a Hopf bifurcation.
+ \item For a nonnormal $\Lambda_j$, spectral stability implies exponential
+ decay but not monotone Euclidean energy. A Lyapunov weight is required for a
+ direct quadratic decay estimate.
+ \item The present work does not claim the first use of memory in ROMs.
+ Relevant prior-work citations remain to be supplied:
+ \textbf{[TODO citation: finite-memory and Mori--Zwanzig ROM literature]}.
+\end{enumerate}

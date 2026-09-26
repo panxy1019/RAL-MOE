@@ -1,0 +1,19 @@
+{
+  "pod": {
+    "step_rows": 19968,
+    "model_seed_windows": 416,
+    "max_summary_difference": 2.842170943040401e-14,
+    "pass_check": true
+  },
+  "raw": {
+    "step_rows": 19968,
+    "model_seed_windows": 416,
+    "max_summary_difference": 1.4210854715202004e-14,
+    "pass_check": true
+  },
+  "validation_records": 96,
+  "selected_test_predictions": 96,
+  "completion_rows": 832,
+  "all_complete": true,
+  "original_frozen_hash_matches": true
+}

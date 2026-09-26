@@ -1,0 +1,538 @@
+{
+  "status": "PASS",
+  "pages": 23,
+  "checks_passed": 246,
+  "original_performance_numbers_changed": false,
+  "checks": [
+    "Title unchanged verbatim",
+    "Abstract unchanged verbatim",
+    "Unchanged source/style: sections/method.tex",
+    "Unchanged source/style: sections/limitations.tex",
+    "Unchanged source/style: sections/conclusion.tex",
+    "Unchanged source/style: appendix/rom_derivation.tex",
+    "Unchanged source/style: appendix/specialist_details.tex",
+    "Unchanged source/style: appendix/routing_details.tex",
+    "Unchanged source/style: appendix/implementation.tex",
+    "Unchanged source/style: appendix/circular_cylinder.tex",
+    "Unchanged source/style: appendix/square_cylinder.tex",
+    "Unchanged source/style: iclr2027_conference.sty",
+    "Unchanged source/style: iclr2027_conference.bst",
+    "Unchanged source/style: math_commands.tex",
+    "Unchanged source/style: legacy_references.bib",
+    "Introduction outside Figure 1 unchanged",
+    "Every pre-existing bibliography entry preserved verbatim",
+    "No duplicate bibliography keys",
+    "Verified recent work cited: ICLR2024_9aeda582",
+    "Verified recent work cited: NEURIPS2024_b83fae17",
+    "Verified recent work cited: NEURIPS2025_2d23a999",
+    "Verified recent work cited: ICLR2026_754612bd",
+    "Original table data and bolding unchanged: sections/experiments.tex",
+    "Original table data and bolding unchanged: appendix/rom_derivation.tex",
+    "Original table data and bolding unchanged: appendix/specialist_details.tex",
+    "Original table data and bolding unchanged: appendix/routing_details.tex",
+    "Original table data and bolding unchanged: appendix/implementation.tex",
+    "Original table data and bolding unchanged: appendix/circular_cylinder.tex",
+    "Original table data and bolding unchanged: appendix/square_cylinder.tex",
+    "Original table data and bolding unchanged: appendix/fluidic_pinball.tex",
+    "All nine original experimental/protocol tables retained",
+    "Existing figure asset retained unchanged: periodic_internal_routing.pdf",
+    "Existing figure asset retained unchanged: periodic_rollout_step_routing.pdf",
+    "Existing figure asset retained unchanged: ral_moe_rom_framework_overview.tex",
+    "Existing figure asset retained unchanged: ral_moe_rom_framework_user.png",
+    "Existing figure asset retained unchanged: square_overlap_compact.png",
+    "Existing figure asset retained unchanged: hopf1.png",
+    "Existing figure asset retained unchanged: hopf1_1.png",
+    "Existing figure asset retained unchanged: hopf_physical_fields.png",
+    "Existing figure asset retained unchanged: hopf_pointwise_errors.png",
+    "Existing figure asset retained unchanged: Hopf_specialist_best_case_physical_fields.png",
+    "Existing figure asset retained unchanged: Hopf_specialist_best_case_pointwise_errors.png",
+    "Existing figure asset retained unchanged: HP_2.png",
+    "Existing figure asset retained unchanged: HP_2_1.png",
+    "Existing figure asset retained unchanged: periodic1.png",
+    "Existing figure asset retained unchanged: periodic1_1.png",
+    "Existing figure asset retained unchanged: periodic_physical_fields.png",
+    "Existing figure asset retained unchanged: periodic_pointwise_errors.png",
+    "Existing figure asset retained unchanged: Periodic_specialist_best_case_physical_fields.png",
+    "Existing figure asset retained unchanged: Periodic_specialist_best_case_pointwise_errors.png",
+    "Existing figure asset retained unchanged: PH_3.png",
+    "Existing figure asset retained unchanged: PH_3_2.png",
+    "Existing figure asset retained unchanged: SH_1.png",
+    "Existing figure asset retained unchanged: SH_1_1.png",
+    "Existing figure asset retained unchanged: SH_2.png",
+    "Existing figure asset retained unchanged: SH_2_1.png",
+    "Existing figure asset retained unchanged: SH_3.png",
+    "Existing figure asset retained unchanged: SH_3_2.png",
+    "Existing figure asset retained unchanged: SH_boundary_best_case_physical_fields.png",
+    "Existing figure asset retained unchanged: SH_boundary_best_case_pointwise_errors.png",
+    "Existing figure asset retained unchanged: sh_physical_fields.png",
+    "Existing figure asset retained unchanged: sh_pointwise_errors.png",
+    "Existing figure asset retained unchanged: steady1.png",
+    "Existing figure asset retained unchanged: steady1_1.png",
+    "Existing figure asset retained unchanged: steady_physical_fields.png",
+    "Existing figure asset retained unchanged: steady_pointwise_errors.png",
+    "Existing figure asset retained unchanged: Steady_specialist_best_case_physical_fields.png",
+    "Existing figure asset retained unchanged: Steady_specialist_best_case_pointwise_errors.png",
+    "Figure 3 and the entire main internal-routing result unchanged",
+    "Obsolete wording/reference absent: AI use statement.*TODO",
+    "Obsolete wording/reference absent: finite evaluation windows",
+    "Obsolete wording/reference absent: Periodic core is a second",
+    "Obsolete wording/reference absent: Best single is the lowest",
+    "Obsolete wording/reference absent: key innovation",
+    "Obsolete wording/reference absent: single latent chart",
+    "Obsolete wording/reference absent: ral_moe_rom_framework_user\\.png",
+    "Obsolete wording/reference absent: The history connection denotes",
+    "AI disclosure has no TODO",
+    "AI assistance and responsibility disclosed",
+    "Table 2 distinguishes numerical finiteness from the divergence threshold",
+    "Table 2 defines Periodic core",
+    "Appendix H records complete Periodic-core cadence",
+    "Best single explicitly nondeployable",
+    "Main DeepONet contrast preserves values and cadence limitation",
+    "Appendix I uses requested rounded diagnostics",
+    "No five/six-decimal routing diagnostics in Appendix I",
+    "Vector overview is one page",
+    "Overview has no embedded raster images",
+    "Parameter architecture/dispatch audit passes with honest weight-replay scope",
+    "Parameter results match current audit script",
+    "Parameter audit checkpoint inventory unchanged",
+    "Actual model source unchanged: source\\periodic_specialist_r32\\code\\train_periodic_moe.py",
+    "Actual model source unchanged: source\\Hopf\\migrated_h4_expanded\\code\\train_hopf_moe_expanded.py",
+    "Actual model source unchanged: source\\Hopf\\migrated_h4_expanded\\code\\train_h4_expanded.py",
+    "hopf table agrees with executed count: total_trainable",
+    "hopf table agrees with executed count: prediction_active_trainable",
+    "hopf table agrees with executed count: native_audit_macro_stage1_active_trainable",
+    "hopf diagnostic toggle preserves nonzero synthetic outputs",
+    "hopf active count invariant over all supports",
+    "periodic table agrees with executed count: total_trainable",
+    "periodic table agrees with executed count: prediction_active_trainable",
+    "periodic table agrees with executed count: native_audit_macro_stage1_active_trainable",
+    "periodic diagnostic toggle preserves nonzero synthetic outputs",
+    "periodic active count invariant over all supports",
+    "No unsupported parameter-matched claim",
+    "Expected label fig:ral_overview = 1",
+    "Expected label fig:periodic_internal_routing = 3",
+    "Expected label app:pinball = H",
+    "Expected label app:internal_routing = I",
+    "Expected label app:parameter_counts = J",
+    "Scientific main text concludes within nine pages",
+    "No overfull boxes, unresolved references/citations, duplicate labels or missing font shapes",
+    "Compiled PDF contains no TODO",
+    "Upload main.tex is at ZIP root",
+    "Packaged file matches: appendix/circular_cylinder.tex",
+    "No internal build/source-audit path in upload: appendix/circular_cylinder.tex",
+    "Packaged file matches: appendix/fluidic_pinball.tex",
+    "No internal build/source-audit path in upload: appendix/fluidic_pinball.tex",
+    "Packaged file matches: appendix/implementation.tex",
+    "No internal build/source-audit path in upload: appendix/implementation.tex",
+    "Packaged file matches: appendix/internal_routing.tex",
+    "No internal build/source-audit path in upload: appendix/internal_routing.tex",
+    "Packaged file matches: appendix/parameter_counts.tex",
+    "No internal build/source-audit path in upload: appendix/parameter_counts.tex",
+    "Packaged file matches: appendix/rom_derivation.tex",
+    "No internal build/source-audit path in upload: appendix/rom_derivation.tex",
+    "Packaged file matches: appendix/routing_details.tex",
+    "No internal build/source-audit path in upload: appendix/routing_details.tex",
+    "Packaged file matches: appendix/specialist_details.tex",
+    "No internal build/source-audit path in upload: appendix/specialist_details.tex",
+    "Packaged file matches: appendix/square_cylinder.tex",
+    "No internal build/source-audit path in upload: appendix/square_cylinder.tex",
+    "Packaged file matches: fancyhdr.sty",
+    "No internal build/source-audit path in upload: fancyhdr.sty",
+    "Packaged file matches: figures/original/HP_2.png",
+    "No internal build/source-audit path in upload: figures/original/HP_2.png",
+    "Packaged file matches: figures/original/HP_2_1.png",
+    "No internal build/source-audit path in upload: figures/original/HP_2_1.png",
+    "Packaged file matches: figures/original/SH_2.png",
+    "No internal build/source-audit path in upload: figures/original/SH_2.png",
+    "Packaged file matches: figures/original/SH_2_1.png",
+    "No internal build/source-audit path in upload: figures/original/SH_2_1.png",
+    "Packaged file matches: figures/periodic_internal_routing.pdf",
+    "No internal build/source-audit path in upload: figures/periodic_internal_routing.pdf",
+    "Packaged file matches: figures/periodic_rollout_step_routing.pdf",
+    "No internal build/source-audit path in upload: figures/periodic_rollout_step_routing.pdf",
+    "Packaged file matches: figures/ral_moe_rom_overview.pdf",
+    "No internal build/source-audit path in upload: figures/ral_moe_rom_overview.pdf",
+    "Packaged file matches: figures/square_overlap_compact.png",
+    "No internal build/source-audit path in upload: figures/square_overlap_compact.png",
+    "Packaged file matches: iclr2027_conference.bst",
+    "No internal build/source-audit path in upload: iclr2027_conference.bst",
+    "Packaged file matches: iclr2027_conference.sty",
+    "No internal build/source-audit path in upload: iclr2027_conference.sty",
+    "Packaged file matches: legacy_references.bib",
+    "No internal build/source-audit path in upload: legacy_references.bib",
+    "Packaged file matches: main.tex",
+    "No internal build/source-audit path in upload: main.tex",
+    "Packaged file matches: math_commands.tex",
+    "No internal build/source-audit path in upload: math_commands.tex",
+    "Packaged file matches: natbib.sty",
+    "No internal build/source-audit path in upload: natbib.sty",
+    "Packaged file matches: references.bib",
+    "No internal build/source-audit path in upload: references.bib",
+    "Packaged file matches: sections/conclusion.tex",
+    "No internal build/source-audit path in upload: sections/conclusion.tex",
+    "Packaged file matches: sections/experiments.tex",
+    "No internal build/source-audit path in upload: sections/experiments.tex",
+    "Packaged file matches: sections/introduction.tex",
+    "No internal build/source-audit path in upload: sections/introduction.tex",
+    "Packaged file matches: sections/limitations.tex",
+    "No internal build/source-audit path in upload: sections/limitations.tex",
+    "Packaged file matches: sections/method.tex",
+    "No internal build/source-audit path in upload: sections/method.tex",
+    "Packaged file matches: sections/related_work.tex",
+    "No internal build/source-audit path in upload: sections/related_work.tex",
+    "Independent upload compile has same page count",
+    "Upload page 1 text matches",
+    "Upload page 1 content stream matches",
+    "Upload page 1 render matches",
+    "Upload page 2 text matches",
+    "Upload page 2 content stream matches",
+    "Upload page 2 render matches",
+    "Upload page 3 text matches",
+    "Upload page 3 content stream matches",
+    "Upload page 3 render matches",
+    "Upload page 4 text matches",
+    "Upload page 4 content stream matches",
+    "Upload page 4 render matches",
+    "Upload page 5 text matches",
+    "Upload page 5 content stream matches",
+    "Upload page 5 render matches",
+    "Upload page 6 text matches",
+    "Upload page 6 content stream matches",
+    "Upload page 6 render matches",
+    "Upload page 7 text matches",
+    "Upload page 7 content stream matches",
+    "Upload page 7 render matches",
+    "Upload page 8 text matches",
+    "Upload page 8 content stream matches",
+    "Upload page 8 render matches",
+    "Upload page 9 text matches",
+    "Upload page 9 content stream matches",
+    "Upload page 9 render matches",
+    "Upload page 10 text matches",
+    "Upload page 10 content stream matches",
+    "Upload page 10 render matches",
+    "Upload page 11 text matches",
+    "Upload page 11 content stream matches",
+    "Upload page 11 render matches",
+    "Upload page 12 text matches",
+    "Upload page 12 content stream matches",
+    "Upload page 12 render matches",
+    "Upload page 13 text matches",
+    "Upload page 13 content stream matches",
+    "Upload page 13 render matches",
+    "Upload page 14 text matches",
+    "Upload page 14 content stream matches",
+    "Upload page 14 render matches",
+    "Upload page 15 text matches",
+    "Upload page 15 content stream matches",
+    "Upload page 15 render matches",
+    "Upload page 16 text matches",
+    "Upload page 16 content stream matches",
+    "Upload page 16 render matches",
+    "Upload page 17 text matches",
+    "Upload page 17 content stream matches",
+    "Upload page 17 render matches",
+    "Upload page 18 text matches",
+    "Upload page 18 content stream matches",
+    "Upload page 18 render matches",
+    "Upload page 19 text matches",
+    "Upload page 19 content stream matches",
+    "Upload page 19 render matches",
+    "Upload page 20 text matches",
+    "Upload page 20 content stream matches",
+    "Upload page 20 render matches",
+    "Upload page 21 text matches",
+    "Upload page 21 content stream matches",
+    "Upload page 21 render matches",
+    "Upload page 22 text matches",
+    "Upload page 22 content stream matches",
+    "Upload page 22 render matches",
+    "Upload page 23 text matches",
+    "Upload page 23 content stream matches",
+    "Upload page 23 render matches"
+  ],
+  "labels": {
+    "fig:ral_overview": [
+      "1",
+      3
+    ],
+    "sec:method": [
+      "3",
+      4
+    ],
+    "eq:main_chart": [
+      "1",
+      4
+    ],
+    "eq:main_specialist": [
+      "2",
+      4
+    ],
+    "eq:main_inner_moe": [
+      "3",
+      4
+    ],
+    "tab:benchmark_summary": [
+      "1",
+      5
+    ],
+    "eq:main_t2c": [
+      "4",
+      5
+    ],
+    "sec:experiments": [
+      "4",
+      5
+    ],
+    "tab:pinball_autonomous": [
+      "2",
+      6
+    ],
+    "tab:routing_fusion": [
+      "3",
+      7
+    ],
+    "fig:square_overlap": [
+      "2",
+      7
+    ],
+    "tab:compact_ablation": [
+      "4",
+      8
+    ],
+    "fig:periodic_internal_routing": [
+      "3",
+      8
+    ],
+    "app:problem_pod": [
+      "A",
+      11
+    ],
+    "eq:app_fom": [
+      "5",
+      11
+    ],
+    "eq:app_pressure_gauge": [
+      "6",
+      12
+    ],
+    "eq:app_regime_cover": [
+      "7",
+      12
+    ],
+    "eq:app_weighted_inner_products": [
+      "8",
+      12
+    ],
+    "eq:app_pod_optimization": [
+      "10",
+      12
+    ],
+    "eq:app_weighted_svd_bases": [
+      "12",
+      12
+    ],
+    "eq:app_encode_decode": [
+      "14",
+      12
+    ],
+    "eq:app_local_scalers": [
+      "15",
+      12
+    ],
+    "app:rom": [
+      "B",
+      12
+    ],
+    "eq:app_projected_momentum": [
+      "16",
+      12
+    ],
+    "eq:app_projected_operators": [
+      "20",
+      12
+    ],
+    "eq:app_pressure_poisson_system": [
+      "22",
+      13
+    ],
+    "eq:app_pressure_poisson_map": [
+      "23",
+      13
+    ],
+    "app:specialists": [
+      "C",
+      13
+    ],
+    "eq:app_hybrid_velocity_rhs": [
+      "24",
+      13
+    ],
+    "eq:app_pressure_poisson_candidate": [
+      "25",
+      13
+    ],
+    "eq:app_pressure_candidates": [
+      "26",
+      13
+    ],
+    "eq:app_pressure_closure": [
+      "27",
+      13
+    ],
+    "eq:app_galerkin_feature": [
+      "28",
+      13
+    ],
+    "eq:app_current_feature_block": [
+      "29",
+      13
+    ],
+    "eq:app_history_feature_blocks": [
+      "30",
+      13
+    ],
+    "eq:app_specialist_features": [
+      "31",
+      13
+    ],
+    "eq:app_group_top1": [
+      "32",
+      13
+    ],
+    "eq:app_channel_sparse_moe": [
+      "33",
+      14
+    ],
+    "eq:app_structured_expert": [
+      "34",
+      14
+    ],
+    "eq:app_frozen_context_rhs": [
+      "35",
+      14
+    ],
+    "eq:app_unified_rk4": [
+      "36",
+      14
+    ],
+    "eq:app_true_rollout_loss": [
+      "37",
+      14
+    ],
+    "app:routing": [
+      "D",
+      14
+    ],
+    "eq:app_e2_parameter_only": [
+      "38",
+      14
+    ],
+    "eq:app_adjacency": [
+      "39",
+      14
+    ],
+    "eq:app_masked_e2": [
+      "40",
+      15
+    ],
+    "eq:app_pair_logit": [
+      "41",
+      15
+    ],
+    "eq:app_t2c_energy": [
+      "42",
+      15
+    ],
+    "eq:app_t2c_rate": [
+      "43",
+      15
+    ],
+    "eq:app_t2c_growth": [
+      "44",
+      15
+    ],
+    "eq:app_t2c_curvature": [
+      "46",
+      15
+    ],
+    "eq:app_t2c_descriptor": [
+      "47",
+      15
+    ],
+    "eq:app_t2c_gate": [
+      "48",
+      15
+    ],
+    "eq:app_t2c_loss": [
+      "50",
+      15
+    ],
+    "app:implementation": [
+      "E",
+      16
+    ],
+    "tab:chart_splits": [
+      "5",
+      16
+    ],
+    "app:circular": [
+      "F",
+      16
+    ],
+    "tab:circular_full": [
+      "6",
+      17
+    ],
+    "app:square": [
+      "G",
+      17
+    ],
+    "tab:square_fusion_full": [
+      "7",
+      17
+    ],
+    "tab:square_parameter": [
+      "8",
+      18
+    ],
+    "fig:app_square_sh_full": [
+      "4",
+      19
+    ],
+    "fig:app_square_hp_full": [
+      "5",
+      20
+    ],
+    "app:pinball": [
+      "H",
+      21
+    ],
+    "tab:pinball_overlap": [
+      "9",
+      21
+    ],
+    "app:internal_routing": [
+      "I",
+      21
+    ],
+    "tab:internal_routing_summary": [
+      "10",
+      22
+    ],
+    "fig:periodic_routing_step": [
+      "6",
+      22
+    ],
+    "app:parameter_counts": [
+      "J",
+      23
+    ],
+    "tab:parameter_counts": [
+      "11",
+      23
+    ]
+  },
+  "pdf_sha256": "d30961b9442157ebdc60849c1003ef70d6155b1cb2aebd8005f7715a4ae0a288",
+  "zip_sha256": "2e1ddc1e4d979df3cafbf6655ee64204b6ab6ce60d45675d05f2a6bbfe288211"
+}

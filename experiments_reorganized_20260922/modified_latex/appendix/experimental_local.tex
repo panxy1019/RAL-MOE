@@ -1,0 +1,69 @@
+\section{Local prediction: protocols, controls, and robustness}
+\label{app:local_evidence}
+
+````````````````````````````````````````''''''''''''''''''''''''''''''''''''''''
+\subsection{Circular: controlled local-model protocol}
+\label{app:circular}
+
+\paragraph{Evaluation and aggregation protocol.}
+The neural study uses seeds 1248, 1600, and 2026.
+Hopf has 42 windows from
+$Re=47.081355,49.022357,51.786450$; Periodic has 32 windows from
+$Re=70.314635,100.352251,149.059229,189.862278$.
+Each window contains 48 prediction steps, with $K=24$ using its
+first 24 steps. Relative physical-field errors are averaged over
+steps, then windows within each Reynolds number, then equally over
+Reynolds numbers. Means and sample standard deviations are computed
+over accepted seeds. Reference fields are reconstructed from true
+POD coefficients on the corresponding basis.
+Table~\ref{tab:specialist_training} describes the archived original
+training configurations.
+
+Dense matches active neural parameter count, not total stored
+parameters or execution time. Structured removes input-dependent
+expert routing while retaining explicit response branches.
+Joint errors and their interpretation are reported once in
+Table~\ref{tab:circular_full_reorg} and the accompanying main-text
+discussion; the supplementary table below supplies component errors.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{Circular Periodic component errors (\%).}
+\label{tab:circular_full}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& \multicolumn{2}{c}{$K=24$} & \multicolumn{2}{c}{$K=48$}\\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+Model & $E_u$ & $E_p$ & $E_u$ & $E_p$\\
+\midrule
+Proposed
+& $0.2446\pm0.0323$ & $1.0805\pm0.1946$
+& $0.4790\pm0.1208$ & $1.9208\pm0.5391$\\
+Dense
+& $0.5731\pm0.3638$ & $2.3060\pm1.3681$
+& $1.0107\pm0.6513$ & $3.9337\pm2.5070$\\
+Structured
+& $0.5178\pm0.2667$ & $2.3489\pm1.1688$
+& $1.0405\pm0.5015$ & $4.2406\pm2.0664$\\
+OpInf & 15.8676 & 98.2264 & 17.6639 & 97.3258\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\paragraph{OpInf adaptation and validation.}
+The regularized polynomial model uses constant, linear, compact
+quadratic, standardized $1/Re$, and parameter--state interaction
+features. Training-trajectory derivatives are estimated by
+second-order numerical differentiation.
+Ridge regularization is selected on validation windows, with a
+non-finite window invalidating a candidate.
+Prediction uses fixed RK4 with four substeps per output interval.
+Pressure is an algebraic ridge output using the same polynomial
+features rather than the proposed PPE-plus-correction map.
+Test windows, reference reconstructions, and quadrature match the
+neural comparison. The upper endpoint of the Periodic ridge search
+is 100.

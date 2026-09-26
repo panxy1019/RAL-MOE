@@ -1,0 +1,262 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We evaluate the two levels of RAL-MoE-ROM through complementary benchmark roles.
+All three two-dimensional incompressible-flow datasets span steady, Hopf-onset,
+and periodic dynamics as the Reynolds number varies. The circular-cylinder
+benchmark provides the local-specialist ablation, the centered-square benchmark
+provides matched $S$--$H$ and $H$--$P$ routing/fusion comparisons, and the
+fluidic-pinball benchmark provides the autonomous comparison with a classical
+POD--Galerkin baseline. Table~\ref{tab:benchmark_summary} summarizes this scope.
+All training, validation, and test partitions are defined by complete parameter
+trajectories; chart-wise ranges and split counts are reported in
+Appendix~\ref{app:implementation}.
+
+Errors $E_u$ and $E_p$ are relative physical-field errors in percent
+(Appendix~\ref{app:implementation}), aggregated
+according to each benchmark's evaluation protocol; $E_{\mathrm{joint}}=E_u+E_p$.
+The sum of displayed component errors can differ slightly from the reported
+joint error because values are rounded independently.
+``Divergent'' denotes an evaluation window that violates the predefined
+rollout-divergence criterion, including non-finite states or threshold
+violations. N/E denotes not evaluable under the prescribed rollout criterion;
+table-specific notes give the reason.
+
+\begin{table}[t]
+\centering
+\caption{Experimental scope. Local rank pairs $(r_u,r_p)$ and horizons are ordered $S,H,P$;
+$K$ counts rollout steps at each benchmark's sampling interval. Additional
+overlap and periodic-core settings are specified in their comparisons.}
+\label{tab:benchmark_summary}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.15cm}
+>{\raggedright\arraybackslash}p{1.30cm}
+>{\raggedright\arraybackslash}p{4.05cm}
+>{\raggedright\arraybackslash}p{1.80cm}
+>{\raggedright\arraybackslash}p{2.50cm}@{}}
+\toprule
+Benchmark & $Re$ range & Local ranks ($S,H,P$) & Main horizons & Primary role \\
+\midrule
+Circular cylinder & 20--200 & $(32,32),\ (32,32),\ (32,32)$ & $56/56/48$ & Local specialist ablation \\
+\addlinespace
+Centered square & 50--150 & $(5,4),\ (11,11),\ (28,26)$ & $16/48/24$ & Routing and fusion \\
+\addlinespace
+Fluidic pinball & 10--60 & $(4,3),\ (5,5),\ (17,16)$ & $56/56/32$ & Autonomous baseline \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Do local specialists support long autonomous rollouts?}
+
+The learned fluidic-pinball specialists complete all four evaluation settings
+without violating the prescribed rollout-divergence criterion, whereas
+POD--Galerkin violates the criterion in all 448 Steady windows and in
+141 of 320 Hopf windows (Table~\ref{tab:pinball_autonomous}).
+The component errors reveal a substantially larger pressure discrepancy for
+POD--Galerkin in the evaluable Hopf and Periodic settings. The learned
+specialists support autonomous prediction over the evaluated finite horizons.
+The circular-cylinder ablation and centered-square local-specialist results
+provide complementary evidence in Table~\ref{tab:compact_ablation} and
+Appendix~\ref{app:square}, respectively.
+
+\begin{table}[t]
+\centering
+\caption{Autonomous local-specialist prediction on the fluidic-pinball benchmark.
+Errors are percentages; lower is better. Periodic core ($K=56$) denotes the
+longer-horizon stride-four matched final-test evaluation within the periodic
+regime; complete cadence details are given in Appendix~\ref{app:pinball}.}
+\label{tab:pinball_autonomous}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{threeparttable}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Evaluation setting & Model & $E_u$ & $E_p$ & $E_{\mathrm{joint}}$ \\
+\midrule
+Steady ($K=56$) & POD--Galerkin & N/E$^\dagger$ & N/E$^\dagger$ & N/E$^\dagger$ \\
+ & RAL-MoE-ROM & 0.2247 & 0.7593 & 0.9840 \\
+\addlinespace
+Hopf ($K=56$) & POD--Galerkin & 0.4378$^\ddagger$ & 48.50$^\ddagger$ & 48.94$^\ddagger$ \\
+ & RAL-MoE-ROM & 0.0995 & 1.986 & 2.085 \\
+\addlinespace
+Periodic ($K=32$) & POD--Galerkin & 1.641 & 41.56 & 43.20 \\
+ & RAL-MoE-ROM & 0.2897 & 0.5518 & 0.8415 \\
+\addlinespace
+Periodic core ($K=56$) & POD--Galerkin & 2.555 & 39.36 & 41.91 \\
+ & RAL-MoE-ROM & 0.6222 & 1.050 & 1.672 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item[$\dagger$] All 448 evaluation windows violate the predefined rollout-divergence criterion.
+\item[$\ddagger$] Errors are computed for all numerically finite windows;
+141 of 320 Hopf windows exceed the predefined rollout-divergence threshold.
+All RAL-MoE-ROM settings and both periodic POD--Galerkin settings have zero divergent windows.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\noindent A complementary global POD--DeepONet baseline illustrates the
+distinction between one-step fitting and autonomous prediction: it achieves
+$E_u=1.5921\%$ and $E_p=23.3447\%$ on 4,228 held-out one-step pairs, yet
+only one of 28 held-out trajectories remains finite under recursive rollout.
+Its cadence differs from the matched Periodic specialist evaluation, so this
+is a one-step versus recursive-stability contrast, not a matched long-horizon
+accuracy comparison (Appendix~\ref{app:pinball}).
+
+\subsection{Does learned physical-space fusion improve overlap prediction?}
+
+To isolate the second routing level, we compare centered-square $S$--$H$ and
+$H$--$P$ overlaps at $K=24$ (Table~\ref{tab:routing_fusion}). Alongside hard
+routing, equal and E2-probability blends, and the diagnostic oracle, we include
+T2-C $\mu$-only: the same correction network and optimization protocol with all
+standardized history-descriptor channels set to zero. This preserves the gate
+architecture and parameter count while removing history information.
+
+Parameter-only correction behaves differently across overlaps: in $S$--$H$ it
+remains close to E2-probability blending ($2.1846\%$ versus $2.1847\%$), whereas
+in $H$--$P$ it improves the blend ($1.1504\%$ versus $1.6618\%$).
+History conditioning provides an additional gain in both, yielding
+$1.1958\%$ and $0.8465\%$. Full T2-C reduces joint error by $30.9\%/29.9\%$
+relative to the best fixed specialist and $30.9\%/54.2\%$ relative to E2 Top-1
+($S$--$H$/$H$--$P$), and remains close to the diagnostic convex oracle.
+Figure~\ref{fig:square_overlap} shows representative fields and velocity errors.
+
+Across three paired gate-training seeds, full T2-C outperforms the
+architecture-matched $\mu$-only gate in all runs for both overlaps, with mean
+joint-error reductions of $45.3\%$ on $S$--$H$ and $26.2\%$ on $H$--$P$.
+Full T2-C gives
+$E_{\mathrm{joint}}=1.1957\pm0.0001\%$ on $S$--$H$ and
+$0.8500\pm0.0035\%$ on $H$--$P$ (sample standard deviation across gate-training seeds).
+Only the gate is retrained; specialists, E2, candidate rollouts, partitions,
+normalization, and optimization protocol are fixed. Component and seed-wise
+results are in Appendix~\ref{app:square}; the fluidic-pinball overlap study is
+in Appendix~\ref{app:pinball}.
+
+\begin{table}[t]
+\centering
+\caption{Fixed-run cross-regime routing and fusion on the centered-square benchmark at
+$K=24$. Entries are terminal-step $E_{\mathrm{joint}}$ (\%); lower is better.
+T2-C $\mu$-only zeroes the standardized history channels in the same gate architecture.
+The convex oracle is an a posteriori convex reference unavailable during prediction;
+three-seed gate variability is reported separately in Appendix~\ref{app:square}.
+Bold marks the best deployable assembly in this fixed-run comparison.}
+\label{tab:routing_fusion}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{threeparttable}
+\begin{tabular}{@{}lrrrrrrr@{}}
+\toprule
+Overlap & Best single$^\ast$ & E2 Top-1 & Equal & E2 prob. & T2-C $\mu$-only & T2-C & Oracle \\
+\midrule
+$S$--$H$ & 1.7298 & 1.7298 & 3.0321 & 2.1847 & 2.1846 & \textbf{1.1958} & 1.1842 \\
+$H$--$P$ & 1.2079 & 1.8473 & 1.6146 & 1.6618 & 1.1504 & \textbf{0.8465} & 0.8384 \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}[flushleft]
+\footnotesize
+\item[$\ast$] Best single is an a posteriori fixed-specialist reference selected
+by aggregate evaluation error over the corresponding overlap (Hopf for $S$--$H$,
+Periodic for $H$--$P$); it is not a routing strategy available during prediction.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/square_overlap_compact.png}
+\caption{Centered-square $S$--$H$ (left) and $H$--$P$ (right) overlap predictions.
+T2-C fuses independently evolved, reconstructed fields and reduces velocity-field
+discrepancy relative to the corresponding single specialist. Complete velocity
+and pressure fields appear in Appendix~\ref{app:square}.}
+\label{fig:square_overlap}
+\end{figure}
+
+\subsection{What do local architectural components contribute?}
+
+The circular-cylinder comparison probes the contributions of three local modeling choices
+(Table~\ref{tab:compact_ablation}). Vanilla-FNN-MoE replaces the structured
+expert map with conventional feed-forward experts, DataOnly-MoE removes the
+projected Galerkin and Pressure--Poisson contributions, and Global MoE replaces
+the local charts and specialists with one global model. The comparison uses
+physical-field errors so that models with different reduced coordinates can
+be evaluated on a common quantity.
+These comparisons probe architectural effects under the available fixed models;
+they are not parameter-matched capacity controls.
+Total and per-decision active trainable parameter counts for the analyzed
+Hopf and Periodic specialists are reported in Appendix~\ref{app:parameter_counts}.
+
+\begin{table}[!ht]
+\centering
+\caption{Local architecture ablation on the circular-cylinder benchmark.
+Each regime cell reports the min--max $E_u$ range (upper line) and $E_p$
+range (lower line) over held-out Reynolds-number trajectories, in percent.
+These are field-error ranges, not means or uncertainty intervals.
+N/E denotes not evaluable under the prescribed rollout criterion: the
+Vanilla-FNN-MoE Hopf model does not meet the validation-stage stability
+requirement and is not evaluated on held-out trajectories.}
+\label{tab:compact_ablation}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & Steady ($K=56$) & Hopf ($K=56$) & Periodic ($K=48$) \\
+\midrule
+RAL-MoE-ROM
+& \shortstack{0.0330--0.1723\\0.2500--1.3249}
+& \shortstack{0.0032--0.0288\\0.0355--0.4321}
+& \shortstack{0.3809--1.3473\\1.6825--5.9601} \\
+\addlinespace
+Vanilla-FNN-MoE
+& \shortstack{0.0384--0.2995\\2.2163--18.5603}
+& N/E
+& \shortstack{1.0393--3.0836\\3.9659--13.3257} \\
+\addlinespace
+DataOnly-MoE
+& \shortstack{0.1637--0.5122\\4751.1025--27275.4645}
+& \shortstack{0.1260--0.3880\\1280.2811--1524.5949}
+& \shortstack{0.7854--1.8677\\2.2511--10.8189} \\
+\addlinespace
+Global MoE
+& \shortstack{0.0845--0.3404\\1.5226--7.4363}
+& \shortstack{0.0110--0.0268\\0.0560--0.2882}
+& \shortstack{0.5873--1.1726\\2.1896--6.3566} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\FloatBarrier
+Structured specialists improve the steady and periodic error ranges over
+Vanilla-FNN-MoE, which does not meet the validation-stage stability requirement
+for the Hopf evaluation. Removing the physical backbone
+particularly degrades steady and Hopf pressure prediction. The global model
+remains competitive in Hopf and periodic physical-field errors, so
+localization is not uniformly superior; its role is to provide regime-specific
+coordinates and dynamics that can participate in cross-regime assembly.
+The local comparisons address expert structure, physics, and localization,
+while Table~\ref{tab:routing_fusion} separately evaluates the outer assembly.
+
+\paragraph{Internal routing behavior.}
+Post-hoc analysis of the circular-cylinder Periodic specialist shows conditional
+use of the Level-1 sparse experts (Figure~\ref{fig:periodic_internal_routing}).
+Across held-out autonomous rollouts, sampled once per macro-step, the velocity
+channel uses all 18 routed experts through 33 distinct group/pair configurations,
+while the pressure channel uses 14 of 18 experts through 16 configurations.
+Group allocation changes across the four held-out Reynolds
+numbers, and the channels exhibit distinct routing profiles. This diagnostic
+supports conditional expert utilization, not physical semantics for individual
+experts; the contrasting Hopf profile is reported in
+Appendix~\ref{app:internal_routing}.
+
+\begin{figure}[!ht]
+\centering
+\includegraphics[width=\linewidth]{figures/periodic_internal_routing.pdf}
+\caption{Internal routing of the circular-cylinder Periodic specialist on
+held-out autonomous rollout windows, with one record per macro-step at the
+first integration stage.
+(a) Top-1 group-selection fractions. (b,c) Mean routed-expert mass for velocity
+and pressure. Expert IDs are local to the specialist, channel, and group;
+they do not denote physical mechanisms.}
+\label{fig:periodic_internal_routing}
+\end{figure}

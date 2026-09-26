@@ -1,0 +1,18 @@
+% Replace the existing computational-cost subsection.
+\subsection{Computational cost and timing boundaries}
+\label{sec:exp_cost}
+
+We distinguish parameter utilization, measured local inference latency,
+and a historical CFD time reference. Circular H/P activate $44.53\%$
+and $17.09\%$ of their trainable parameters per prediction-path decision.
+However, for Circular Periodic at batch size one and $K=48$, median
+local prediction times are $2.1848$ s (proposed), $0.6579$ s (Dense),
+and $0.8652$ s (Structured): sparse activation does not yield a runtime
+advantage in the current implementation.
+A separate measurement including physical-history encoding takes
+$2.18747$ s, compared with $1996$ s for a historical FOM run over the
+same physical interval. The resulting ratio of approximately $912.5$
+is a historical FOM/warm-specialist comparison, not a complete-system
+speedup, because hardware and I/O boundaries differ and outer routing
+and fusion are excluded. Appendix~\ref{app:parameter_counts} specifies
+the counting conventions, timing protocols, and comparison boundaries.

@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "max_difference_percentage_points": 8.881784197001252e-16,
+  "check": "fresh native Global rollout vs frozen cached native Eu/Ep, all 12 windows and all 48 steps",
+  "note": "native pressure gauge used only for replay verification; final comparison separately centers pressure"
+}

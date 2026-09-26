@@ -1,0 +1,78 @@
+{
+  "schema": "field_figure_manifest/v1",
+  "qualitative_scope": "best-case qualitative snapshot; quantitative conclusions remain those of the frozen aggregate evaluator",
+  "mode": "boundary_fusion",
+  "selected": {
+    "window_index": 0,
+    "Re": 95.1,
+    "split": "heldout",
+    "time_index": 1,
+    "physical_time": 16.0,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.012376155605970718,
+    "structure_score": 0.13209620118141174,
+    "metrics": {
+      "s_only": {
+        "velocity_relative_l2": 0.027555719458353195,
+        "pressure_relative_l2": 0.05275907623483462,
+        "joint_field_error": 0.040157397846593904
+      },
+      "h_only": {
+        "velocity_relative_l2": 0.033035958660589886,
+        "pressure_relative_l2": 0.043483450469462906,
+        "joint_field_error": 0.03825970456502639
+      },
+      "t2c": {
+        "velocity_relative_l2": 0.014464764668113788,
+        "pressure_relative_l2": 0.03730233324999756,
+        "joint_field_error": 0.025883548959055674
+      }
+    }
+  },
+  "style": {
+    "target_journals": [
+      "Journal of Computational Physics",
+      "CMAME"
+    ],
+    "velocity_colormap": "cividis",
+    "pressure_colormap": "RdBu_r centered at zero",
+    "error_colormap": "haline_r",
+    "colorbars": "shared horizontal bottom colorbar per physical variable",
+    "dpi": 400
+  },
+  "inputs": {
+    "config": "config_sh_boundary_figure.json",
+    "config_sha256": "d662b9bde1f9530d8cba28a8ec55a2e3e86743a03dfc88cfc90b1cea12c62d10",
+    "bundle": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_sh/sh_heldout_cache.npz",
+    "bundle_sha256": "5d27b47202ef9d296f0c384dd7e367b2547410634c81c4af9b2bc7adb0443a88",
+    "template_vtk": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/centeredSquare_CN09_graded_Re100_internal_final_reference.vtk",
+    "template_vtk_sha256": "57423d8ebcca3f1aaf8d18311366c7f05a0df6b9f10f5973ed75e3334c7d5175",
+    "weights_csv": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/SH_T2C_weights.csv",
+    "weights_csv_sha256": "b0f19665c59ea55fb2452dc6f4c67f3c1579420a3ad579be6e90857b72084739",
+    "bases": {
+      "steady": {
+        "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+        "velocity_sha256": "3a6f412e4c60309b4f2e913c1f4d2c090e0fb976a960e46869a01b75c7d0a7ca",
+        "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+        "pressure_sha256": "85a3b5efb1c2dbf87af948217448fec01339786e7805fd591ded17118d3f91a7"
+      },
+      "hopf": {
+        "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+        "velocity_sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891",
+        "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+        "pressure_sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+      }
+    }
+  },
+  "outputs": [
+    {
+      "path": "SH/CenteredSquare_SH_boundary_T2C_physical_fields_ultra_compact_wide.png",
+      "sha256": "69646cef57a3cd943b16eaad3ba8497a2cc0fd516417fc42580b64cacd5d3c32"
+    },
+    {
+      "path": "SH/CenteredSquare_SH_boundary_T2C_pointwise_errors_ultra_compact_wide.png",
+      "sha256": "3ecff956131cf3bfc5680d2aba2e04e9c6fa76d652c8e7b8801258f76dabad40"
+    }
+  ]
+}

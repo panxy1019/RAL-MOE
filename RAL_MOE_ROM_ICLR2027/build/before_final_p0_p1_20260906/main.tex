@@ -1,0 +1,68 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{iclr2027_conference,times}
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,array,multirow,threeparttable,adjustbox}
+\usepackage{placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\hypersetup{hidelinks}
+
+\title{RAL-MoE-ROM: Hierarchical\\
+Mixture-of-Experts for Regime-Adaptive\\
+Reduced Dynamics}
+
+% Anonymous submission. Restore the author block only for the camera-ready version.
+\author{Anonymous Authors}
+
+% Keep disabled for the anonymous submission.
+% \iclrfinalcopy
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Learning reduced dynamical models over broad parameter ranges is challenging when the underlying system exhibits qualitatively different regimes. A single global representation must simultaneously encode distinct local state geometries, while a single learned dynamical model must reproduce different stability, growth, and saturation mechanisms under recursive rollout. We introduce RAL-MoE-ROM, a two-level hierarchical mixture-of-experts framework for regime-adaptive reduced dynamics. The parameterized solution set is represented by overlapping regime-local reduced charts, each equipped with an autonomous physics--data specialist. Within each specialist, a structured sparse mixture of experts learns corrections to the projected reduced dynamics using nonlinear, affine, and low-rank bilinear expert branches selected by hierarchical sparse routing. A second routing level operates across regime-local specialists. Because the local charts have independent reduced coordinates, adjacent specialists are advanced independently and combined only after reconstruction in the common physical space through a learned Top-2 convex correction. Across three parametrized incompressible-flow benchmarks spanning steady, Hopf-onset, and periodic dynamics, the proposed specialists provide accurate long-horizon autonomous predictions, while the hierarchical fusion consistently improves predictions in evaluated transition regions. Ablations further show complementary contributions from the structured expert parameterization, the projected physical backbone, regime localization, and learned cross-regime routing.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/experiments}
+\FloatBarrier
+\input{sections/limitations}
+\input{sections/conclusion}
+
+\subsubsection*{Reproducibility statement}
+The main text reports the benchmark roles, evaluation horizons, baselines, and metrics. Appendices~A--E document the local-coordinate construction, projected operators, specialist architecture, routing and fusion procedure, and implementation details. Appendices~F--H provide benchmark-specific results.
+Appendix~\ref{app:internal_routing} reports post-hoc internal-routing statistics
+from fixed validation-selected Hopf and Periodic specialists on held-out
+rollout windows; these diagnostics are not used for model selection.
+
+\subsubsection*{AI use statement}
+\textbf{TODO: authors to complete final disclosure.}
+
+\bibliography{references,legacy_references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\input{appendix/rom_derivation}
+\input{appendix/specialist_details}
+\input{appendix/routing_details}
+\input{appendix/implementation}
+\input{appendix/circular_cylinder}
+\FloatBarrier
+\input{appendix/square_cylinder}
+\FloatBarrier
+\input{appendix/fluidic_pinball}
+\FloatBarrier
+\input{appendix/internal_routing}
+
+\end{document}

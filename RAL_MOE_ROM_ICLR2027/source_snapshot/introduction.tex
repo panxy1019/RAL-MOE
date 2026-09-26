@@ -1,0 +1,201 @@
+
+
+Many-query computations for parametrized incompressible flows arise in
+aerodynamic design, flow control, optimization, uncertainty quantification,
+inverse problems, and real-time prediction. In these settings, variations in
+geometry, boundary conditions, material properties, forcing, or operating
+parameters can affect not only the magnitude of the flow response but also
+its qualitative temporal behavior. A parametrized flow may exhibit steady,
+weakly oscillatory, or sustained periodic dynamics over different portions
+of the parameter domain. High-fidelity numerical simulations can resolve
+these behaviors accurately, but their computational cost becomes prohibitive
+when solutions are required repeatedly for many parameter values or over long
+time horizons. Reduced-order models (ROMs) provide an efficient alternative
+by approximating the high-dimensional flow dynamics in a low-dimensional
+representation. For broad-range parametrized problems, an effective ROM must
+therefore provide not only accurate predictions within a given operating
+regime, but also robust predictive performance as the underlying flow
+dynamics change across the parameter domain.
+
+Reduced-order models (ROMs) reduce this computational burden by representing the high-dimensional flow state in a low-dimensional subspace\cite{benner2015,hesthaven2016,quarteroni2016}. Broadly, ROMs can be divided into projection-based methods, data-driven approaches, and Physics-data combined. Among projection-based methods, proper orthogonal decomposition (POD) constructs an energy-optimal linear basis from flow snapshots \cite{sirovich1987,berkooz1993}, and Galerkin projection transfers the governing equations onto this basis. The resulting POD–Galerkin models have been widely used for transient and post-transient flows \cite{noack2003,rowley2004,roz2007}. However, their predictive accuracy can degrade when truncation removes modes that contribute significantly to dissipation, nonlinear interactions, or pressure coupling. In such cases, the reduced dynamics may exhibit phase drift, biased mean states, and inaccurate pressure fields, even when the POD projection error itself is small. Stabilization, calibration, and closure modeling can alleviate these
+deficiencies \cite{amsallem2012}, but their effectiveness remains closely
+linked to the reduced representation and dynamical regime for which they are
+constructed.
+
+Data-driven ROMs provide a complementary approach by learning reduced
+dynamics directly from simulation or experimental trajectories. Dynamic mode
+decomposition and Koopman-based methods identify evolution in observable
+coordinates \cite{schmid2010,tu2014,williams2015}, sparse identification
+constructs parsimonious nonlinear models
+\cite{brunton2016,champion2019}, and operator inference estimates reduced
+operators non-intrusively from trajectory data \cite{peherstorfer2016}.
+Neural approaches further extend this class through coefficient-space
+regression, recurrent architectures, and neural operators
+\cite{hesthaven2018,pathak2018,vlachas2018,lu2021,li2021,kovachki2023}.
+These approaches increase the flexibility with which reduced dynamics can be
+approximated, although accurate local or one-step prediction does not by
+itself guarantee stable autonomous evolution. Errors introduced during
+prediction are recursively propagated and may gradually move the reduced
+state away from the trajectories represented in the training data
+\cite{duraisamy2019,brunton2020}.These complementary strengths and limitations motivate hybrid formulations that combine physical projection with data-driven modeling.
+
+Physics data combined reduced models seek to combine the structural information retained by
+projection-based methods with the approximation capability of learned
+corrections. Neural closures have been introduced to compensate for
+unresolved projection errors \cite{dar2023}, while nonlinear and learned
+manifolds provide more expressive reduced representations when linear
+subspaces become inefficient \cite{lee2020,fresca2022,geelen2023}.
+Domain-decomposed nonlinear manifolds, structure-informed latent models, and
+local non-intrusive approximations provide related strategies for complex
+parametrized systems \cite{diaz2024,park2024,discacciati2024}. These
+developments demonstrate that physical projection and data-driven modeling
+can be combined effectively: projected equations retain known physical
+structure, while learned components compensate for unresolved reduced
+dynamics. Nevertheless, improving the predictive accuracy of a reduced model
+within a prescribed representation does not by itself resolve the additional
+difficulty introduced when the qualitative flow regime changes across the
+parameter domain.
+
+The central issue is therefore not merely predictive accuracy, but representation itself. The reduced basis, scaling, and dynamical closure appropriate for one regime may be inappropriate for another.  Let $\mathcal{M}$ denote the set of flow states generated
+over all admissible parameters and times. Although the full discrete state
+belongs to a linear space, $\mathcal{M}$ is generally nonlinear, and its
+local geometry may vary substantially with the parameter. For a system
+passing through steady, Hopf-onset, and developed periodic dynamics, the
+corresponding state subsets can exhibit different dominant spatial
+directions and markedly different temporal characteristics. Denoting these
+subsets by $\mathcal{M}_S$, $\mathcal{M}_H$, and $\mathcal{M}_P$, one has
+\[
+  \mathcal{M}
+  =
+  \mathcal{M}_S
+  \cup
+  \mathcal{M}_H
+  \cup
+  \mathcal{M}_P .
+\]
+The Kolmogorov width of this union can decay more slowly than those of the
+individual regime-restricted subsets, so that a single linear approximation
+space may require substantially more modes to represent the complete
+parameter range. Moreover, the associated reduced dynamics must accommodate
+qualitatively different temporal behaviors, including relaxation toward a
+steady state, oscillatory growth near onset, and nonlinear saturation in the
+periodic regime. Hence, robustness across regime changes involves both the
+reduced representation and the reduced dynamics, rather than the accuracy of
+either component in isolation.
+
+Localization offers a natural means of addressing this regime dependence.
+Local reduced spaces and cluster-based models approximate different portions
+of the solution set with specialized low-dimensional representations
+\cite{kaiser2014,li2021cluster}, while mixture-of-experts architectures
+provide a general mechanism for assigning specialized predictors to
+different regions of an input space
+\cite{jacobs1991,jordan1994,shazeer2017,fedus2022}. For parametrized ROMs,
+however, localization introduces an additional mathematical challenge.
+Local models constructed from different portions of the solution manifold
+generally possess different means, POD bases, coefficient scalings, and
+reduced operators. Their reduced coordinates therefore do not admit a
+canonical componentwise correspondence. A localized ROM must consequently
+address two coupled questions: how to select an appropriate regime-local
+model as the parameter varies, and how to combine predictions from
+neighboring local models without assuming that their reduced coordinates
+belong to a common latent space.
+
+
+
+```latex
+Motivated by these considerations, we propose the
+\emph{Regime-Adaptive Localized Mixture-of-Experts Reduced-Order Model}
+(RAL-MoE-ROM), a hierarchical multi-chart framework for parametrized flows
+with regime-dependent dynamics. Rather than describing the complete
+parameter domain through a single reduced representation, RAL-MoE-ROM
+covers the solution manifold by overlapping regime-local POD charts. Each
+chart defines its own reduced coordinates and projected operators and is
+equipped with an independently evolved physics--data specialist.
+
+Within each specialist, the projected reduced dynamics provide a
+physics-based backbone, while the unresolved contribution is represented by
+a structured sparse mixture of experts. The internal MoE employs hierarchical
+routing to activate only a subset of specialized expert maps for a given
+reduced state and its recent history. Each expert combines nonlinear,
+affine, and low-rank bilinear components, providing a structured
+approximation of unresolved interactions while retaining the information
+contained in the projected reduced operator. This construction introduces
+adaptivity within each dynamical regime without replacing the underlying
+reduced model by an unconstrained black-box predictor.
+
+A second level of adaptivity operates between regime-local specialists.
+Because independently constructed local charts generally possess
+noncommensurate reduced coordinates, RAL-MoE-ROM does not combine their
+modal states or reduced operators directly. Instead, an outer hierarchical
+mechanism identifies the relevant neighboring specialists according to the
+regime structure and their dynamical admissibility. In transition regions,
+the admissible local models are advanced independently in their native
+reduced coordinates, and the proposed Top-2 convex correction (T2-C)
+combines their reconstructed physical states in the common physical space.
+The resulting architecture therefore separates intra-regime dynamical
+specialization from inter-regime model selection and coupling.
+
+The principal methodological contributions are summarized as follows:
+\begin{itemize}
+
+\item \textbf{A regime-adaptive multi-chart reduced representation.}
+The parametrized solution manifold is represented by overlapping local POD
+charts associated with qualitatively different dynamical regimes. Each chart
+retains an independent reduced coordinate system and projected dynamics,
+allowing the reduced representation to adapt to changes in the local
+geometry and temporal behavior of the solution set.
+
+\item \textbf{A structured sparse mixture-of-experts formulation for
+regime-local reduced dynamics.}
+Each local chart is augmented by an autonomous physics--data specialist in
+which a hierarchical sparse router selects among structured expert
+corrections. The expert maps combine nonlinear, affine, and low-rank
+bilinear components, so that unresolved reduced dynamics are modeled through
+a conditional architecture that retains both general nonlinear flexibility
+and explicit low-order interaction structure. This establishes a second
+level of specialization within each regime-local ROM.
+
+\item \textbf{An admissibility-constrained assembly of noncommensurate
+local ROMs.}
+The regime-local specialists are coupled without introducing a common latent
+coordinate system. The outer hierarchy restricts interaction to neighboring
+regimes and admits soft combination only when the corresponding local models
+are dynamically applicable. The T2-C mechanism then combines independently
+evolved local predictions after reconstruction in the common physical space,
+thereby avoiding direct interpolation of modal states or reduced operators.
+
+\end{itemize}
+```
+
+
+The remainder of the paper is organized as follows.
+Section~\ref{sec:regime_local_roms} introduces the regime-local reduced
+representations and projected operators.
+Section~\ref{sec:regime_local_specialists} develops the physics--data
+specialists.
+Section~\ref{sec:hierarchical_ral_moe} presents the hierarchical
+cross-chart assembly and T2-C fusion.
+The subsequent section reports the numerical experiments, and the final
+section summarizes the main findings and limitations.
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

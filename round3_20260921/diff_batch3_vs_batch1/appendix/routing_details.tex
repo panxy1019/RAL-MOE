@@ -1,0 +1,187 @@
+\section{Outer routing and T2-C details}
+\label{app:routing}
+
+\paragraph{Parameter-only regime routing.}
+The E2 router receives only the standardized scalar parameter,
+\begin{equation}
+  \widetilde\mu
+  =
+  \frac{\mu-\mu_R}{\sigma_R},
+  \qquad
+  \bm\pi(\mu)
+  =
+  \operatorname{softmax}
+  \left(
+    \mathcal R_{E2}(\widetilde\mu)
+  \right)
+  =
+  [\pi_S,\pi_H,\pi_P]^\top .
+  \label{eq:app_e2_parameter_only}
+\end{equation}
+The trajectory-level preference is evaluated once and remains fixed
+throughout the subsequent rollout. The regime graph contains only adjacent transitions,
+\begin{equation}
+  \mathcal E_{\rm adj}
+  =
+  \bigl\{
+    \{S,H\},
+    \{H,P\}
+  \bigr\},
+  \label{eq:app_adjacency}
+\end{equation}
+so direct $S$--$P$ fusion is excluded.
+Let
+$m_j(\mathcal H_n,\mu,K)\in\{0,1\}$
+denote the validation-supported applicability of specialist $j$ for the
+given initialization and rollout horizon.
+The regularized E2 weight restricted to applicable specialists is
+\begin{equation}
+  \widetilde\pi_j
+  =
+  \frac{
+    m_j\pi_j
+  }{
+    \sum_{k\in\{S,H,P\}}m_k\pi_k+\varepsilon
+  }.
+  \label{eq:app_masked_e2}
+\end{equation}
+For $Z=\sum_k m_k\pi_k>0$, these regularized weights sum to $Z/(Z+\varepsilon)$, rather than exactly one. They preserve the ranking of applicable specialists; the selected pair is normalized separately below. A single applicable specialist yields the Top-1 prediction.
+Top-2 fusion is considered only for an applicable pair belonging to
+$\mathcal E_{\rm adj}$.
+If no specialist is applicable, the hierarchy abstains from prediction. This is the general interface contract, not an experimentally validated out-of-distribution detector. In the reported centered-square overlap implementation, the evaluation cache specifies a fixed candidate pair, $(S,H)$ or $(P,H)$, and $K=24$. E2 Top-1 chooses within this supplied pair and T2-C blends its two independently generated trajectories. These experiments evaluate conditional routing and assembly on prescribed overlap support; they do not test a learned history-dependent mask, the three-applicable case, or abstention coverage on arbitrary new inputs.
+
+We use the canonical ordered pairs $(r_1,r_2)=(S,H)$ and $(P,H)$, including in all tables reporting candidate weights. Reversing the order replaces $\alpha$ by $1-\alpha$ and reverses the corresponding logit sign. For an ordered selected pair $(r_1,r_2)$, the pair-normalized E2
+preference is
+\begin{equation}
+  \bar\pi_1
+  =
+  \frac{\pi_{r_1}}
+       {\pi_{r_1}+\pi_{r_2}},
+  \qquad
+  \bar\pi_2
+  =
+  1-\bar\pi_1,
+  \qquad
+  \ell^{E2}
+  =
+  \log
+  \frac{\bar\pi_1+\varepsilon}
+       {\bar\pi_2+\varepsilon}.
+  \label{eq:app_pair_logit}
+\end{equation}
+
+
+\paragraph{Chart-independent physical-history descriptor.}
+The centered-square implementation uses eight descriptor channels and one parameter input. These features are computed from the initial three physical states at $t_{n-2}<t_{n-1}<t_n$, with pressure mapped to the common zero-mean gauge. They are independent of the specialists' POD coordinates. All quantities below use the nondimensional data conventions of the experiment, and $\epsilon=10^{-12}$ is the numerical floor.
+
+Define $A_\Omega=\sum_i w_i$, $U_j=\|\bm u_j\|_{M_u}^2$, $P_j=\|p_j^\circ\|_{M_p}^2$, and
+\begin{align}
+ h_j&=\max(t_j-t_{j-1},\epsilon),&
+ s_j^u&=\sqrt{\max(U_j,\epsilon)},&
+ s_j^p&=\sqrt{\max(P_j,\epsilon)},\\
+ v_j&=(\bm u_j-\bm u_{j-1})/h_j,&
+ g_j&=\frac{\log\max(U_j,\epsilon)-\log\max(U_{j-1},\epsilon)}{h_j}.
+\end{align}
+The ordered raw descriptor is
+\begin{equation}
+\bm s_n=\operatorname{col}\left(
+\begin{array}{l}
+ \tfrac12\log\max(U_n/A_\Omega,\epsilon),\\
+ \tfrac12\log\max(P_n/A_\Omega,\epsilon),\\
+ \log(1+\|v_n\|_{M_u}/(s_n^u+\epsilon)),\\
+ \log(1+\|v_{n-1}\|_{M_u}/(s_{n-1}^u+\epsilon)),\\
+ \tanh(g_n),\\
+ \tanh(g_n-g_{n-1}),\\
+ \log(1+\|p_n^\circ-p_{n-1}^\circ\|_{M_p}/[h_n(s_n^p+\epsilon)]),\\
+ \log(1+\|v_n-v_{n-1}\|_{M_u}/(s_n^u+\epsilon))
+\end{array}\right).
+\label{eq:app_t2c_descriptor}
+\end{equation}
+The last channel measures a difference of velocity rates: it is not divided again by a time interval and is not the second-derivative descriptor in an acceleration discretization. The log and hyperbolic-tangent transformations above are part of the actual feature construction.
+
+For the gate, the nine raw features $[\mu;\bm s_n]$ are standardized using the means and population standard deviations of training windows only. Any feature standard deviation below $10^{-8}$ is replaced by one. We denote the resulting vector by $[\widetilde\mu;\bm d_n]$; its parameter normalization is fitted for the gate and need not equal the trajectory-level E2 normalization. The architecture-matched $\mu$-only control sets all eight descriptor channels to zero after standardization. No state from inside the prediction window is used to construct these features.
+
+
+\paragraph{Physical-space T2-C fusion.}
+The logit-correction network receives
+$[\widetilde\mu;\bm d_n]\in\mathbb R^9$ and uses two hidden layers of width 64 with SiLU
+activations followed by a scalar linear output (9--64--64--1; 4,865 trainable parameters).
+The final layer is initialized at zero, so the initial correction vanishes
+and the fusion weight reduces to the E2 pair preference.
+Specifically,
+\begin{equation}
+  \Delta_\psi
+  =
+  c_\psi
+  \left(
+    [\widetilde\mu;\bm d_n]
+  \right),
+  \qquad
+  \alpha
+  =
+  \operatorname{sigmoid}
+  \left(
+    \ell^{E2}+\Delta_\psi
+  \right).
+  \label{eq:app_t2c_gate}
+\end{equation}
+
+The two selected specialists encode the same physical history in their
+respective local charts and then evolve independently.
+The scalar $\alpha$ is fixed throughout the prediction window and is shared
+by velocity and pressure.
+After reconstruction on the common physical mesh, T2-C forms
+\begin{equation}
+  \widehat{\bm q}_{\alpha}^{\,c}(t)
+  =
+  \alpha\,
+  \widehat{\bm q}_{1}^{\,c}(t)
+  +
+  (1-\alpha)\,
+  \widehat{\bm q}_{2}^{\,c}(t),
+  \qquad
+  c\in\{u,p\},
+  \label{eq:app_t2c_field_fusion}
+\end{equation}
+where the pressure field is gauge corrected.
+The fused field is an output only and is never projected back into either
+specialist.
+
+The correction network is trained directly on the reconstructed physical
+fields. For rollout windows $w$ and prediction steps $k$,
+\begin{equation}
+  \mathcal L_{\rm T2C}
+  =
+  \operatorname{mean}_{w,k}
+  \left[
+    \frac{
+      \left\|
+        \widehat{\bm u}_{\alpha}^{(w,k)}
+        -
+        \bm u_{\rm true}^{(w,k)}
+      \right\|_{M_u}^2
+    }{
+      \left\|
+        \bm u_{\rm true}^{(w,k)}
+      \right\|_{M_u}^2+\varepsilon
+    }
+    +
+    \frac{
+      \left\|
+        \widehat p_{\alpha}^{\circ,(w,k)}
+        -
+        p_{\rm true}^{\circ,(w,k)}
+      \right\|_{M_p}^2
+    }{
+      \left\|
+        p_{\rm true}^{\circ,(w,k)}
+      \right\|_{M_p}^2+\varepsilon
+    }
+  \right].
+  \label{eq:app_t2c_loss}
+\end{equation}
+Optimization and checkpoint-selection details are reported in
+Appendix~\ref{app:implementation}.
+
+\paragraph{Numerical convention in the centered-square evaluator.}
+The archived implementation normalizes the selected E2 probabilities, clips the first probability to $[10^{-6},1-10^{-6}]$, and then forms its logit. Its squared relative field loss uses $\max(\|q_{\rm true}\|_M^2,10^{-12})$ as denominator rather than an additive regularizer. Feature standard deviations below $10^{-8}$ are replaced by one before standardization. These are implementation-specific safeguards; the generic additive-$\varepsilon$ notation above should not be read as a claim that all numerical constants or normalization rules are shared across benchmarks.

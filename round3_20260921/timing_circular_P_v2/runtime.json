@@ -1,0 +1,25 @@
+{
+  "seconds": [
+    2.1821090513840318,
+    2.1916487934067845,
+    2.1881797928363085,
+    2.195502587594092,
+    2.189552583731711,
+    2.186767604202032,
+    2.1834779689088464,
+    2.1854870272800326,
+    2.1803382551297545,
+    2.1898207357153296
+  ],
+  "median_seconds": 2.1874736985191703,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "peak_allocated_bytes": 204238336,
+  "peak_reserved_bytes": 218103808,
+  "warmups": 3,
+  "repeats": 10,
+  "batch": 1,
+  "horizon": 48,
+  "includes": "full-size physical history POD encoding, history Galerkin RHS, native rollout, features, transfers, algebraic pressure, all 48 physical velocity/pressure decodes and pressure gauge",
+  "excludes": "checkpoint and input disk I/O, cold start, original history generation, E2 selection and T2-C fusion (specialist-only), output disk I/O, error computation",
+  "caveat": "Galerkin native NumPy path runs on CPU; this is native implementation timing, not GPU-kernel parity"
+}

@@ -1,0 +1,102 @@
+{
+  "dense": {
+    "seconds": [
+      0.5776855265721679,
+      0.5777057949453592,
+      0.5768503742292523,
+      0.5750086652114987,
+      0.576612988486886,
+      0.57592214923352,
+      0.5750663103535771,
+      0.5759540582075715,
+      0.5753024099394679,
+      0.576285757124424
+    ],
+    "median_seconds": 0.5761199076659977,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "peak_allocated_bytes": 204262912,
+    "peak_reserved_bytes": 213909504,
+    "warmups": 3,
+    "repeats": 10,
+    "batch": 1,
+    "horizon": 48,
+    "includes": "native modal rollout, feature building, host/device transfers, pressure reconstruction in modal coordinates",
+    "excludes": "checkpoint/data loading, physical-field decoding, error computation",
+    "caveat": "Galerkin native NumPy path runs on CPU; this is native implementation timing, not GPU-kernel parity"
+  },
+  "full": {
+    "seconds": [
+      2.126090543344617,
+      2.1242087250575423,
+      2.1268060049042106,
+      2.1235978584736586,
+      2.1217634985223413,
+      2.1280233869329095,
+      2.127964995801449,
+      2.1244492419064045,
+      2.127561313100159,
+      2.1319250585511327
+    ],
+    "median_seconds": 2.1264482741244137,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "peak_allocated_bytes": 204238336,
+    "peak_reserved_bytes": 218103808,
+    "warmups": 3,
+    "repeats": 10,
+    "batch": 1,
+    "horizon": 48,
+    "includes": "native modal rollout, feature building, host/device transfers, pressure reconstruction in modal coordinates",
+    "excludes": "checkpoint/data loading, physical-field decoding, error computation",
+    "caveat": "Galerkin native NumPy path runs on CPU; this is native implementation timing, not GPU-kernel parity"
+  },
+  "global": {
+    "seconds": [
+      4.333689209073782,
+      4.315841036848724,
+      4.342764890752733,
+      4.327073791064322,
+      4.318560758605599,
+      4.323623522184789,
+      4.320910288952291,
+      4.331953153014183,
+      4.342717355117202,
+      4.350654325447977
+    ],
+    "median_seconds": 4.3295134720392525,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "peak_allocated_bytes": 204238336,
+    "peak_reserved_bytes": 218103808,
+    "warmups": 3,
+    "repeats": 10,
+    "batch": 1,
+    "horizon": 48,
+    "includes": "native modal rollout, feature building, host/device transfers, pressure reconstruction in modal coordinates",
+    "excludes": "checkpoint/data loading, physical-field decoding, error computation",
+    "caveat": "Galerkin native NumPy path runs on CPU; this is native implementation timing, not GPU-kernel parity"
+  },
+  "galerkin": {
+    "seconds": [
+      0.37685997504740953,
+      0.37473354022949934,
+      0.3749302737414837,
+      0.3735492052510381,
+      0.37371225096285343,
+      0.37542635202407837,
+      0.3744835704565048,
+      0.37342210952192545,
+      0.37453621719032526,
+      0.3736648131161928
+    ],
+    "median_seconds": 0.37450989382341504,
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "peak_allocated_bytes": 0,
+    "peak_reserved_bytes": 0,
+    "warmups": 3,
+    "repeats": 10,
+    "batch": 1,
+    "horizon": 48,
+    "includes": "native modal rollout, feature building, host/device transfers, pressure reconstruction in modal coordinates",
+    "excludes": "checkpoint/data loading, physical-field decoding, error computation",
+    "caveat": "Galerkin native NumPy path runs on CPU; this is native implementation timing, not GPU-kernel parity"
+  }
+}

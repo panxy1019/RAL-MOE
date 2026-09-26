@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "checks_passed": 54,
+  "manuscript_unchanged": true,
+  "variants": {
+    "A_flow": {
+      "font_at_paper_width": 8.500578703703704,
+      "ordinary_english_words": 28,
+      "pdf_sha256": "4a775c2b41aaf02e47a103d0cbb20f11f66504cad6b4dd510b227f7020fbfa2a",
+      "page_size_pt": [
+        864.0,
+        374.4
+      ]
+    },
+    "B_hierarchy": {
+      "font_at_paper_width": 8.500578703703704,
+      "ordinary_english_words": 27,
+      "pdf_sha256": "ce0e59d8882662ccf95261461434990fbb9ba587c587e1e49aa1c1cbb791b9a1",
+      "page_size_pt": [
+        864.0,
+        374.4
+      ]
+    },
+    "C_assembly": {
+      "font_at_paper_width": 8.500578703703704,
+      "ordinary_english_words": 24,
+      "pdf_sha256": "ac1cf6da4cba8fd33a3c72797eed59ea196a02d9f9e44b23da85027399ece07a",
+      "page_size_pt": [
+        864.0,
+        380.16
+      ]
+    }
+  },
+  "checks": [
+    "A_flow: one PDF page",
+    "A_flow: no raster image objects",
+    "A_flow: 12-inch vector source",
+    "A_flow: editable vector SVG",
+    "A_flow: no text/text bounding-box overlap",
+    "A_flow: all text inside canvas",
+    "A_flow: minimum 8.5 pt at paper width",
+    "B_hierarchy: one PDF page",
+    "B_hierarchy: no raster image objects",
+    "B_hierarchy: 12-inch vector source",
+    "B_hierarchy: editable vector SVG",
+    "B_hierarchy: no text/text bounding-box overlap",
+    "B_hierarchy: all text inside canvas",
+    "B_hierarchy: minimum 8.5 pt at paper width",
+    "C_assembly: one PDF page",
+    "C_assembly: no raster image objects",
+    "C_assembly: 12-inch vector source",
+    "C_assembly: editable vector SVG",
+    "C_assembly: no text/text bounding-box overlap",
+    "C_assembly: all text inside canvas",
+    "C_assembly: minimum 8.5 pt at paper width",
+    "Current manuscript preserved: appendix/circular_cylinder.tex",
+    "Current manuscript preserved: appendix/fluidic_pinball.tex",
+    "Current manuscript preserved: appendix/implementation.tex",
+    "Current manuscript preserved: appendix/internal_routing.tex",
+    "Current manuscript preserved: appendix/parameter_counts.tex",
+    "Current manuscript preserved: appendix/rom_derivation.tex",
+    "Current manuscript preserved: appendix/routing_details.tex",
+    "Current manuscript preserved: appendix/specialist_details.tex",
+    "Current manuscript preserved: appendix/square_cylinder.tex",
+    "Current manuscript preserved: fancyhdr.sty",
+    "Current manuscript preserved: figures/original/HP_2.png",
+    "Current manuscript preserved: figures/original/HP_2_1.png",
+    "Current manuscript preserved: figures/original/SH_2.png",
+    "Current manuscript preserved: figures/original/SH_2_1.png",
+    "Current manuscript preserved: figures/periodic_internal_routing.pdf",
+    "Current manuscript preserved: figures/periodic_rollout_step_routing.pdf",
+    "Current manuscript preserved: figures/ral_moe_rom_overview.pdf",
+    "Current manuscript preserved: figures/square_overlap_compact.png",
+    "Current manuscript preserved: iclr2027_conference.bst",
+    "Current manuscript preserved: iclr2027_conference.sty",
+    "Current manuscript preserved: legacy_references.bib",
+    "Current manuscript preserved: main.tex",
+    "Current manuscript preserved: math_commands.tex",
+    "Current manuscript preserved: natbib.sty",
+    "Current manuscript preserved: references.bib",
+    "Current manuscript preserved: sections/conclusion.tex",
+    "Current manuscript preserved: sections/experiments.tex",
+    "Current manuscript preserved: sections/introduction.tex",
+    "Current manuscript preserved: sections/limitations.tex",
+    "Current manuscript preserved: sections/method.tex",
+    "Current manuscript preserved: sections/related_work.tex",
+    "Previous deliverable preserved: build/pdf/main_diagram_redesign_20260907.pdf",
+    "Previous deliverable preserved: build/overleaf_upload_diagram_redesign_20260907.zip"
+  ]
+}

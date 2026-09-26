@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "velocity_rank": 28,
+  "pressure_rank": 24,
+  "probe_states": 1617,
+  "mass_gram_max_abs": 2.1218014012447384e-09,
+  "diffusion_axis_nonlinearity_max_norm": 1.9883380774392148e-08,
+  "tensor_norms": {
+    "c_conv": 0.06870936945716229,
+    "c_diff": 6.602712507809102,
+    "c_pressure": 0.042598741941657366,
+    "A_conv": 10.16780802200262,
+    "A_diff": 110.04606543124882,
+    "H_conv": 8.504918193136659,
+    "P": 0.17284715334732517
+  },
+  "sha256": {
+    "tensor": "d5e849b393a5b2649c19cb1431af738260a97bc593dd1f378647dd3659265b6b",
+    "probe_manifest": "19e1eafee9ce3d09244892e8c9213e829bbad8738b43fd711041a448b5d06b5e"
+  },
+  "validation_loaded": false,
+  "heldout_loaded": false
+}

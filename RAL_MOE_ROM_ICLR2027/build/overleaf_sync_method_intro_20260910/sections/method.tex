@@ -1,0 +1,112 @@
+\section{RAL-MoE-ROM}
+\label{sec:method}
+
+RAL-MoE-ROM combines three operations within a two-level routing hierarchy.
+Overlapping regime-local charts provide independent reduced representations.
+Each chart carries a complete autonomous physics--data specialist whose projected
+dynamics are corrected by a structured sparse MoE. The outer hierarchy selects one
+specialist or an admissible adjacent pair and assembles only their reconstructed
+physical fields. Figure~\ref{fig:ral_overview} summarizes the algorithm; full
+derivations remain in Appendices~\ref{app:problem_pod}--\ref{app:routing}.
+
+\subsection{Overlapping regime-local reduced charts}
+
+Let $r\in\{S,H,P\}$ index steady, Hopf-onset, and periodic regimes, and let
+$\mathcal M_r$ denote overlapping parameter regions. A physical velocity field is
+encoded and reconstructed as
+\begin{equation}
+  \bm a^{(r)}={\Phi_u^{(r)}}^{\top}M_u(\bm u-\bar{\bm u}^{(r)}),\qquad
+  \widehat{\bm u}^{(r)}=\bar{\bm u}^{(r)}+\Phi_u^{(r)}\bm a^{(r)},
+  \label{eq:main_chart}
+\end{equation}
+where $M_u$ is the finite-volume quadrature matrix, with an analogous map for
+gauge-fixed pressure coefficients $\bm b^{(r)}$. A complete chart contains its
+parameter region, affine means, velocity and pressure bases, local normalization
+statistics, and projected operators. These quantities are constructed independently
+for each regime: equal reduced dimensions do not imply corresponding coordinates.
+This is the reason cross-regime fusion is deferred to physical space.
+
+\subsection{Physics--data specialists with structured sparse experts}
+
+Projection supplies a regime-local dynamical backbone,
+\begin{equation}
+  \dot{\bm a}^{(r)}=
+  \underbrace{\bm c_r+\bm A_r\bm a^{(r)}+
+  \bm H_r:\bigl(\bm a^{(r)}\otimes\bm a^{(r)}\bigr)+
+  \bm C^p_r\bm b^{(r)}}_{\mathcal F_r^{G}(\bm a^{(r)},\bm b^{(r)};\mu)}
+  +\bm\rho^u_{\theta_r}(\bm\xi^{(r)}).
+  \label{eq:main_specialist}
+\end{equation}
+The feature vector $\bm\xi^{(r)}$ contains standardized local coordinates, the projected right-hand side, the parameter, and a short state history. Channel-wise sparse MoEs parameterize the velocity closure $\bm\rho^u_{\theta_r}$ and learned pressure candidate $\bm\rho^p_{\theta_r}$,
+\begin{equation}
+  \begin{aligned}
+  \mathcal M^c_{\theta_r}(\bm\xi)&=
+  \omega^c_0 E^c_{0,g^\star}(\bm\xi)+
+  \sum_{e\in\mathcal T_2^c}\omega^c_e E^c_{e,g^\star}(\bm\xi),\\
+  E(\bm\xi)&=N(\bm\xi)+W_{\rm lin}\bm\xi+
+  \kappa W_o\bigl[(U^\top\bm\xi)\odot(V^\top\bm\xi)\bigr].
+  \end{aligned}
+  \label{eq:main_inner_moe}
+\end{equation}
+The group router selects a chart-local expert family $g^\star$; velocity and pressure channels
+$c\in\{u,p\}$ then use separate Top-2 subsets $\mathcal T_2^c$ together with the
+always-active shared expert. The weights $\omega_e^c$ are nonnegative and sum to one
+over these active experts. In the expert map, $N$ is the nonlinear branch, $\kappa$
+scales the bilinear branch, and $\odot$ denotes componentwise multiplication.
+The nonlinear, affine, and low-rank bilinear branches
+provide complementary corrections without removing the projected backbone.
+After each velocity macro-step, pressure is reconstructed algebraically as
+\begin{equation}
+  \bm b_{n+1}^{(r)}
+  =\bm\gamma_n^{(r)}\odot\mathcal Q_r^{PP}(\bm a_{n+1}^{(r)};\mu)
+  +\bigl(\bm 1-\bm\gamma_n^{(r)}\bigr)
+   \odot\bm\rho^p_{\theta_r}(\bm\xi_n^{(r)}).
+  \label{eq:main_pressure_closure}
+\end{equation}
+Here $\mathcal Q_r^{PP}$ is the chart-local pressure--Poisson map,
+$\bm\rho^p_{\theta_r}$ supplies the learned pressure candidate, and
+$\bm\gamma_n^{(r)}=\operatorname{sigmoid}(\bm\eta^p_{\theta_r}(\bm\xi_n^{(r)}))$
+is a componentwise gate. Velocity is evolved differentially; pressure is recovered
+by this semi-explicit algebraic closure, not a separate recurrent ODE.
+
+\subsection{Closed-loop autonomous training}
+
+Starting from encoded physical history, each specialist recursively consumes its own
+predictions. For a window of length $K$, it minimizes the normalized coefficient loss
+\begin{equation}
+  \mathcal L_r=\frac{1}{K}\sum_{k=1}^{K}\left[
+  \frac{\left\|(\widehat{\bm a}_{n+k}^{(r)}-\bm a_{n+k}^{(r)})
+  \oslash\bm\sigma_a^{(r)}\right\|_2^2}{d_u}
+  +\frac{\left\|(\widehat{\bm b}_{n+k}^{(r)}-\bm b_{n+k}^{(r)})
+  \oslash\bm\sigma_b^{(r)}\right\|_2^2}{d_p}\right].
+  \label{eq:main_rollout_loss}
+\end{equation}
+Here $d_u,d_p$ are the local coordinate dimensions and $\bm\sigma_a^{(r)},
+\bm\sigma_b^{(r)}$ are training-population scaling vectors; $\oslash$ denotes
+componentwise division. No reference state within the prediction window is injected
+after initialization. The integrator and horizon curriculum are given in
+Appendix~\ref{app:specialists}; held-out trajectory partitions are in
+Table~\ref{tab:chart_splits}.
+
+\subsection{Regime routing and physical-space T2-C fusion}
+
+The outer E2 router depends only on the standardized physical parameter $\widetilde\mu$ and produces a trajectory-level regime preference $\bm\pi(\mu)=\operatorname{softmax}(\mathcal R_{E2}(\widetilde\mu))$. Its probabilities are evaluated once and remain fixed during the rollout. Chart-independent descriptors extracted from the initial physical history $\mathcal H_n$ are used only by the T2-C correction gate in an admissible overlap; they are not E2 inputs.
+A binary mask $m_r(\mathcal H_n,\mu,K)$ excludes specialists whose
+parameter--history pair or rollout horizon is outside the validation-supported
+region. It constrains the candidate set, not the
+E2 probability model. Hard Top-1 advances the largest-probability admissible specialist.
+When an adjacent pair is admissible ($S$--$H$ or $H$--$P$), both specialists encode the same physical history in their native coordinates and then evolve independently. For reconstructed fields $\widehat{\bm q}^{(r)}$ and $\widehat{\bm q}^{(s)}$, T2-C predicts a window-conditioned convex weight and forms
+\begin{equation}
+  \widehat{\bm q}_{\rm T2C}(t)
+  =\alpha\,\widehat{\bm q}^{(r)}(t)+(1-\alpha)\,\widehat{\bm q}^{(s)}(t),
+  \qquad \alpha=\sigma\!\left(\operatorname{logit}(\bar\pi_r)+\Delta_\psi\right).
+  \label{eq:main_t2c}
+\end{equation}
+Here $\bm q$ collects velocity and gauge-fixed pressure on the common mesh, and
+$\sigma$ is the sigmoid. One scalar $\alpha$ is fixed throughout the window and
+shared by both fields. The pair-normalized E2 probability is $\bar\pi_r$, and
+$\Delta_\psi=c_\psi([\widetilde\mu;\bm d_n])$ is a learned correction based on the
+standardized parameter and chart-independent physical-history descriptor $\bm d_n$.
+Fusion occurs after reconstruction and is not fed back into either local rollout.
+No prediction is asserted if all masks are zero. Admissibility is selected from
+validation support and should not be interpreted as a formal stability certificate.

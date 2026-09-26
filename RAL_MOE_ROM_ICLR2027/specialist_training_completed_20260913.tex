@@ -1,0 +1,52 @@
+% Requires \usepackage{booktabs}. Nine-row recovered-record table.
+% IMPORTANT: see provenance note before claiming correspondence to all paper results.
+\begin{table}[t]
+\centering
+\caption{Optimization settings of the recovered specialist training runs.
+``Selected'' denotes the validation-selected checkpoint.
+The curriculum and budget describe the configured training schedule,
+not necessarily the stages reached by the selected checkpoint.}
+\label{tab:specialist_training}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Specialist & Initial lr & Weight decay & Rollout curriculum & Budget & Selected \\
+\midrule
+Circular $S$ (S4)$^{\dagger}$
+& $1.55{\times}10^{-5}$ & $1.0{\times}10^{-4}$ & 4,8,16 & 3600 steps & 1200 \\
+Circular $H$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$ & 1,2,4,8 & 8000 steps & 7200 \\
+Circular $P$
+& $5.5{\times}10^{-4}$ & $1.5{\times}10^{-4}$ & 4,8,12,16 & 240 epochs & 85 \\
+\midrule
+Square $S$
+& $1.55{\times}10^{-5}$ & $1.0{\times}10^{-4}$ & 1,4,8,16 & 4000 steps & 3200 \\
+Square $H$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$ & 1,2,4,8 & 8000 steps & 7200 \\
+Square $P$
+& $5.5{\times}10^{-4}$ & $1.5{\times}10^{-4}$ & 4,8,12,16 & 720 epochs & 490 \\
+\midrule
+Pinball $S$ (B1)$^{\ddagger}$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$ & 4,8,16 & 8000 steps & 400 \\
+Pinball $H$ (B1)$^{\ddagger}$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$ & 4,8,16,32,56 & 8000 steps & 8000 \\
+Pinball $P$ (B1)$^{\ddagger}$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$ & 4,8,16,24,32 & 8000 steps & 8000 \\
+\bottomrule
+\end{tabular}
+\par\smallskip
+\begin{minipage}{\linewidth}
+\footnotesize
+$^{\dagger}$The S4 row describes the final fine-tuning stage, initialized from
+S3-B; its actual run stopped at step 3480. The S3-B conservative fallback
+uses the same listed learning rate, weight decay, curriculum and budget,
+but selects step 600. For both, the shared trunk/router starts at one tenth
+of the listed pressure-head learning rate. Correspondence to the paper's
+Circular steady results remains unresolved.
+\par
+$^{\ddagger}$The recovered Pinball checkpoints are B1 Deep-FNN-H3 models,
+not verified sparse-MoE checkpoints. The Hopf record is validation-only;
+its correspondence to the paper's final-test results remains unresolved.
+\end{minipage}
+\end{table}

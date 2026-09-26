@@ -1,0 +1,175 @@
+project:
+  name: bottom_obstacle_attractor_rom
+  root: /home/ray/bottom_obstacle_attractor_rom
+  template: templates/bottom_square_obstacle
+
+geometry:
+  x_min: -10.0
+  x_obstacle_front: 0.0
+  x_obstacle_back: 1.0
+  x_max: 30.0
+  y_min: 0.0
+  y_obstacle_top: 1.0
+  y_max: 8.0
+  z_min: 0.0
+  z_max: 0.1
+  d: 1.0
+  U_inf: 1.0
+  rho: 1.0
+
+mesh:
+  nx_upstream: 160
+  nx_obstacle: 60
+  nx_downstream: 360
+  ny_lower: 60
+  ny_upper: 220
+  nz: 1
+  simple_grading: [1, 1, 1]
+
+physics:
+  flow_type: laminar_incompressible
+  reynolds_definition: Re = U_inf * d / nu
+
+parallel:
+  enabled: true
+  total_cores: auto
+  nProcs_per_case: 8
+  concurrent_cases: 2
+  decomposition_method: scotch
+  fallback_decomposition_method: simple
+
+disk:
+  min_free_gb: 5
+
+vtk:
+  delete_after_npz: true
+
+parallel_pilot_fast:
+  nProcs_per_case: 4
+  concurrent_cases: 4
+
+parallel_pilot_viz:
+  nProcs_per_case: 4
+  concurrent_cases: 2
+
+parallel_scan_long_viz:
+  nProcs_per_case: 4
+  concurrent_cases: 2
+
+pilot_fast:
+  re_list: [20, 50, 60, 70, 80, 90, 100, 150]
+  simpleFoam_endTime: 80
+  pimpleFoam_endTime: 5
+  force_probe_writeInterval: 0.05
+  field_writeInterval: 1000000
+  purgeWrite: 1
+  deltaT: 0.02
+  maxCo: 4.0
+  maxDeltaT: 0.05
+
+probe_long:
+  re_list: [60, 80, 100, 150]
+  simpleFoam_endTime: 80
+  pimpleFoam_endTime: 30
+  force_probe_writeInterval: 0.05
+  field_writeInterval: 1000000
+  purgeWrite: 1
+  deltaT: 0.02
+  maxCo: 4.0
+  maxDeltaT: 0.05
+  make_npz: false
+  make_vtk: false
+
+pilot_viz:
+  re_list: [20, 80, 150]
+  simpleFoam_endTime: 80
+  pimpleFoam_endTime: 5
+  field_writeInterval: 1.0
+  force_probe_writeInterval: 0.05
+  purgeWrite: 0
+  deltaT: 0.02
+  maxCo: 4.0
+  maxDeltaT: 0.05
+  make_vtk: true
+  keep_vtk: true
+  make_npz: false
+
+scan_long_viz:
+  re_list: [20, 50, 80, 100, 120, 150]
+  simpleFoam_endTime: 80
+  pimpleFoam_endTime: 30
+  field_writeInterval: 2.0
+  force_probe_writeInterval: 0.05
+  purgeWrite: 0
+  deltaT: 0.02
+  maxCo: 4.0
+  maxDeltaT: 0.05
+  make_vtk: true
+  keep_vtk: true
+  copy_vtk_preview: true
+  convert_vtk_to_vtu: true
+  make_npz: false
+  make_pod: false
+  tail_fraction: 0.5
+  baseline_Re: 20
+
+function_objects:
+  probes:
+    - [2.0, 1.0, 0.05]
+    - [4.0, 1.0, 0.05]
+    - [6.0, 1.0, 0.05]
+    - [10.0, 1.0, 0.05]
+    - [2.0, 1.5, 0.05]
+    - [4.0, 1.5, 0.05]
+    - [6.0, 1.5, 0.05]
+
+modes:
+  test:
+    reynolds: [20, 80, 150]
+    simple_iterations: 30
+    endTime_spinup: 10.0
+    endTime_retain: 5.0
+    deltaT: 0.01
+    maxCo: 0.8
+    maxDeltaT: 0.02
+    writeInterval: 0.1
+  pilot:
+    reynolds: [20, 50, 60, 70, 80, 90, 100, 150]
+    simple_iterations: 100
+    endTime_spinup: 20.0
+    endTime_retain: 10.0
+    deltaT: 0.005
+    maxCo: 0.8
+    maxDeltaT: 0.01
+    writeInterval: 0.1
+  full:
+    reynolds:
+      - 20
+      - 30
+      - 40
+      - 50
+      - 60
+      - 65
+      - 70
+      - 75
+      - 80
+      - 85
+      - 90
+      - 95
+      - 100
+      - 110
+      - 120
+      - 130
+      - 140
+      - 150
+      - 160
+      - 175
+      - 190
+      - 200
+    simple_iterations: 300
+    endTime_spinup: 150.0
+    endTime_retain: 80.0
+    deltaT: 0.0025
+    maxCo: 0.8
+    maxDeltaT: 0.005
+    writeInterval: 0.05

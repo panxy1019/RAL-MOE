@@ -1,0 +1,36 @@
+\section{Circular-cylinder results}
+\label{app:circular}
+
+Table~\ref{tab:circular_full} reports the min--max range over held-out long-horizon trajectories. ``N/E'' denotes not evaluable under the prescribed rollout criterion.
+
+\begin{table}[h]
+\centering
+\caption{Circular-cylinder long-horizon error ranges (\%). The Vanilla-FNN-MoE
+Hopf model does not meet the validation-stage stability requirement and is
+therefore not evaluated on held-out trajectories (N/E).}
+\label{tab:circular_full}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llcc}
+\toprule
+Regime & Model & $E_u$ & $E_p$ \\
+\midrule
+Steady & RAL-MoE-ROM & 0.0330--0.1723 & 0.2500--1.3249 \\
+ & Vanilla-FNN-MoE & 0.0384--0.2995 & 2.2163--18.5603 \\
+ & DataOnly-MoE & 0.1637--0.5122 & 4751.1025--27275.4645 \\
+ & Global MoE & 0.0845--0.3404 & 1.5226--7.4363 \\
+\midrule
+Hopf & RAL-MoE-ROM & 0.0032--0.0288 & 0.0355--0.4321 \\
+ & Vanilla-FNN-MoE & N/E & N/E \\
+ & DataOnly-MoE & 0.1260--0.3880 & 1280.2811--1524.5949 \\
+ & Global MoE & 0.0110--0.0268 & 0.0560--0.2882 \\
+\midrule
+Periodic & RAL-MoE-ROM & 0.3809--1.3473 & 1.6825--5.9601 \\
+ & Vanilla-FNN-MoE & 1.0393--3.0836 & 3.9659--13.3257 \\
+ & DataOnly-MoE & 0.7854--1.8677 & 2.2511--10.8189 \\
+ & Global MoE & 0.5873--1.1726 & 2.1896--6.3566 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the $S$--$H$ overlap, E2 Top-1 gives $E_u=0.0357$--$0.0410\%$ and $E_p=1.6746$--$1.9028\%$. T2-C reduces these ranges to $0.0148$--$0.0355\%$ and $0.7387$--$1.7212\%$, with mean steady weight spanning $0.0861$--$0.9987$. The global model yields $E_u=0.0851$--$0.0953\%$ and $E_p=1.9517$--$2.3106\%$ on the same overlap evaluation.

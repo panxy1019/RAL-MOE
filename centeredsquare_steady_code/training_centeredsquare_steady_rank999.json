@@ -1,0 +1,77 @@
+{
+  "schema_version": 4,
+  "experiment": "CenteredSquare-Steady-S2B-rank999",
+  "vendor_trainer": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/train_v16_4_v2_r32_compat.py",
+  "artifact_dir": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady",
+  "checkpoint_root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/runs/s2b_rank999/checkpoints",
+  "seed": 202607281,
+  "r_u": 5,
+  "r_p": 4,
+  "pressure_gauge": "subtract_volume_mean_per_snapshot",
+  "expected_split_re_counts": {
+    "train": 60,
+    "validation": 5,
+    "heldout": 4
+  },
+  "expected_train_snapshots": 7560,
+  "model": {
+    "history_len": 3,
+    "phase_harmonics": 4,
+    "hidden_dim": 224,
+    "num_blocks": 3,
+    "num_regime_groups": 3,
+    "experts_per_group": 6,
+    "shared_experts_per_group": 1,
+    "top_k": 2,
+    "group_top_k": 1,
+    "expert_hidden": 768,
+    "expert_blocks": 3,
+    "quadratic_rank": 4,
+    "quadratic_scale": 0.05,
+    "dropout": 0.04,
+    "temperature": 0.95,
+    "gate_floor": 0.0,
+    "group_temperature": 0.9,
+    "group_gate_floor": 0.0,
+    "shared_scale": 1.0,
+    "routed_scale": 0.85
+  },
+  "training": {
+    "learning_rate": 0.000015516372391099407,
+    "steady_shared_lr_factor": 0.1,
+    "weight_decay": 0.0001,
+    "grad_clip": 1.0,
+    "rollout_pressure_weight": 2.0,
+    "rollout_gradient_ratio": 0.1,
+    "anchor_gradient_ratio": 0.05,
+    "ramp_steps": 200,
+    "validation_every": 200,
+    "validation_batch": 128,
+    "log_every": 20,
+    "latest_every": 200,
+    "patience_validations": 4,
+    "relative_improvement_threshold": 0.01,
+    "base_budget_end": 3600,
+    "max_steps": 4000,
+    "early_stop_start": 3200,
+    "curriculum": [
+      {"name": "ONE", "start": 1, "end": 400, "k": 1, "use_rollout": false},
+      {"name": "K4", "start": 401, "end": 1200, "k": 4, "use_rollout": true},
+      {"name": "K8", "start": 1201, "end": 2400, "k": 8, "use_rollout": true},
+      {"name": "K16", "start": 2401, "end": 4000, "k": 16, "use_rollout": true}
+    ],
+    "benchmark_candidates": [
+      {"micro_batch": 16, "grad_accum": 4},
+      {"micro_batch": 8, "grad_accum": 8},
+      {"micro_batch": 4, "grad_accum": 16}
+    ],
+    "benchmark_warmup_steps": 2,
+    "benchmark_timed_steps": 5,
+    "gpu_test_seconds": 20
+  },
+  "swanlab": {
+    "project": "V17indepentMOEV2",
+    "group": "CenteredSquare-Steady-transfer",
+    "experiment": "CenteredSquare-Steady-S2B-rank999-4090"
+  }
+}

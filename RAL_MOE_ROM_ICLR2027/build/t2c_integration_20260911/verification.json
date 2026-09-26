@@ -1,0 +1,574 @@
+{
+  "status": "PASS",
+  "count": 139,
+  "checks": [
+    {
+      "check": "Unchanged source/asset: appendix/circular_cylinder.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: appendix/fluidic_pinball.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: appendix/internal_routing.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: appendix/parameter_counts.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: appendix/rom_derivation.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: appendix/specialist_details.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: fancyhdr.sty",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: figures/original/HP_2.png",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: figures/original/HP_2_1.png",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: figures/original/SH_2.png",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: figures/original/SH_2_1.png",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: figures/periodic_internal_routing.pdf",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: figures/periodic_rollout_step_routing.pdf",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: figures/ral_moe_rom_overview_user_20260908.png",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: figures/square_overlap_compact.png",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: iclr2027_conference.bst",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: iclr2027_conference.sty",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: legacy_references.bib",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: math_commands.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: natbib.sty",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: references.bib",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: sections/conclusion.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: sections/introduction.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: sections/method.tex",
+      "passed": true
+    },
+    {
+      "check": "Unchanged source/asset: sections/related_work.tex",
+      "passed": true
+    },
+    {
+      "check": "Only six intended manuscript files changed",
+      "passed": true
+    },
+    {
+      "check": "Table4 byte-equivalent text preserved",
+      "passed": true
+    },
+    {
+      "check": "Table2 unchanged",
+      "passed": true
+    },
+    {
+      "check": "Table3 has seven method columns",
+      "passed": true
+    },
+    {
+      "check": "All original Table3 values unchanged",
+      "passed": true
+    },
+    {
+      "check": "Table3 mu-only values correct",
+      "passed": true
+    },
+    {
+      "check": "Figures 2/3 source blocks unchanged",
+      "passed": true
+    },
+    {
+      "check": "Abstract unchanged",
+      "passed": true
+    },
+    {
+      "check": "Appendix D original descriptor and equations unchanged; oracle paragraph only appended",
+      "passed": true
+    },
+    {
+      "check": "All 42 original Appendix G components unchanged",
+      "passed": true
+    },
+    {
+      "check": "Appendix mu-only components correct",
+      "passed": true
+    },
+    {
+      "check": "Original parameter-wise table unchanged",
+      "passed": true
+    },
+    {
+      "check": "All 24 seed mean/SD numbers match unrounded data at five decimals",
+      "passed": true
+    },
+    {
+      "check": "All twelve seed-wise values match raw results",
+      "passed": true
+    },
+    {
+      "check": "Protocol stated: terminal-step ($k=24$)",
+      "passed": true
+    },
+    {
+      "check": "Protocol stated: 16 held-out windows",
+      "passed": true
+    },
+    {
+      "check": "Protocol stated: eight windows",
+      "passed": true
+    },
+    {
+      "check": "Protocol stated: denominator $N-1$",
+      "passed": true
+    },
+    {
+      "check": "Protocol stated: not across-$Re$",
+      "passed": true
+    },
+    {
+      "check": "Protocol stated: Only the lightweight gate",
+      "passed": true
+    },
+    {
+      "check": "Protocol stated: without test-based selection",
+      "passed": true
+    },
+    {
+      "check": "Anonymous mode retained",
+      "passed": true
+    },
+    {
+      "check": "No significance claim",
+      "passed": true
+    },
+    {
+      "check": "Stale no-seed Appendix E statement removed",
+      "passed": true
+    },
+    {
+      "check": "No duplicate labels",
+      "passed": true
+    },
+    {
+      "check": "All concrete cross-references resolve",
+      "passed": true
+    },
+    {
+      "check": "Compile log excludes: Overfull",
+      "passed": true
+    },
+    {
+      "check": "Compile log excludes: Missing character",
+      "passed": true
+    },
+    {
+      "check": "Compile log excludes: undefined references",
+      "passed": true
+    },
+    {
+      "check": "Compile log excludes: undefined citations",
+      "passed": true
+    },
+    {
+      "check": "Compile log excludes: LaTeX Error",
+      "passed": true
+    },
+    {
+      "check": "ZIP has exactly recursively referenced source/assets",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: appendix/circular_cylinder.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: appendix/fluidic_pinball.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: appendix/implementation.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: appendix/internal_routing.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: appendix/parameter_counts.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: appendix/rom_derivation.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: appendix/routing_details.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: appendix/specialist_details.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: appendix/square_cylinder.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: fancyhdr.sty",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: figures/original/HP_2.png",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: figures/original/HP_2_1.png",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: figures/original/SH_2.png",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: figures/original/SH_2_1.png",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: figures/periodic_internal_routing.pdf",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: figures/periodic_rollout_step_routing.pdf",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: figures/ral_moe_rom_overview_user_20260908.png",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: figures/square_overlap_compact.png",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: iclr2027_conference.bst",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: iclr2027_conference.sty",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: legacy_references.bib",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: main.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: math_commands.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: natbib.sty",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: references.bib",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: sections/conclusion.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: sections/experiments.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: sections/introduction.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: sections/limitations.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: sections/method.tex",
+      "passed": true
+    },
+    {
+      "check": "Packaged bytes match: sections/related_work.tex",
+      "passed": true
+    },
+    {
+      "check": "ZIP excludes internal files and has root main.tex",
+      "passed": true
+    },
+    {
+      "check": "Independent package compile page count matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 1 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 1 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 2 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 2 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 3 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 3 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 4 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 4 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 5 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 5 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 6 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 6 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 7 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 7 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 8 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 8 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 9 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 9 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 10 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 10 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 11 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 11 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 12 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 12 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 13 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 13 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 14 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 14 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 15 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 15 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 16 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 16 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 17 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 17 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 18 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 18 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 19 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 19 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 20 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 20 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 21 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 21 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 22 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 22 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 23 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 23 content matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 24 text matches",
+      "passed": true
+    },
+    {
+      "check": "Independent package PDF page 24 content matches",
+      "passed": true
+    },
+    {
+      "check": "Final PDF contains new seed table",
+      "passed": true
+    }
+  ],
+  "modified_files": [
+    "appendix/implementation.tex",
+    "appendix/routing_details.tex",
+    "appendix/square_cylinder.tex",
+    "main.tex",
+    "sections/experiments.tex",
+    "sections/limitations.tex"
+  ],
+  "pages": 24,
+  "underfull_messages": 22,
+  "package": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\output\\overleaf_T2C_integrated_20260912.zip",
+  "package_sha256": "1bf61a9d38a1341235bae6706d4477ebc9f4d6874eb01139d66eb2188a307c1e"
+}

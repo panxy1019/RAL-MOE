@@ -1,0 +1,46 @@
+{
+  "Re_by_split": {
+    "train": [
+      94.0,
+      95.0,
+      95.05,
+      95.15,
+      95.2,
+      95.35,
+      95.4
+    ],
+    "validation": [
+      94.5,
+      95.25
+    ]
+  },
+  "boundary": "SH",
+  "cache_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_V1/cache_sh/sh_development_cache.npz",
+  "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+  "candidate_1_divergent_windows": 0,
+  "candidate_1_finite_fraction": 1.0,
+  "candidate_1_max_norm_ratio": 1.0649042252197463,
+  "candidate_2_divergent_windows": 0,
+  "candidate_2_finite_fraction": 1.0,
+  "candidate_2_max_norm_ratio": 1.0423181158978088,
+  "common_grid_area_match": true,
+  "common_physical_timestamps": true,
+  "elapsed_seconds": 21.872075080871582,
+  "fusion_feedback": false,
+  "heldout_loaded": false,
+  "history_length": 3,
+  "horizon": 24,
+  "native_source": "Steady",
+  "samples": 72,
+  "schema_version": 1,
+  "source_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/checkpoint/frozen_centeredsquare_steady_step3200.pt",
+  "source_checkpoint_sha256": "23c7b18fb44316fca28bef0aeac4458235c100b99b2b0c4503d7ae5770cc6fe9",
+  "split_counts": {
+    "train": 56,
+    "validation": 16
+  },
+  "status": "PASS",
+  "target_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/selected_validation_step7200.pt",
+  "target_checkpoint_sha256": "07af06ec5506e5b6a12d9d00f557a4e48fa722be3c2a183df752f0883ad40beb",
+  "windows_per_Re": 8
+}

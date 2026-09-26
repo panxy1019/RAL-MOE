@@ -1,0 +1,47 @@
+\section{Related Work}
+
+\paragraph{Projection, learned dynamics, and autonomous rollout.}
+POD--Galerkin methods project governing equations onto a data-adapted basis and retain an
+interpretable reduced vector field \citep{sirovich1987,berkooz1993,benner2015}. Their
+long-horizon accuracy can be limited by truncated scales, imperfect closure, and reduced
+model stabilization \citep{amsallem2012}. Non-intrusive models instead learn reduced or
+latent dynamics \citep{hesthaven2018,lee2020,champion2019,park2024}, and autoregressive
+forecasters demonstrate the expressivity of learned evolution laws for complex temporal
+systems \citep{pathak2018,vlachas2018}. Neural operators learn maps between function
+spaces \citep{lu2021,kovachki2023}, whereas hybrid ROMs retain physical or projection
+structure while learning unresolved components
+\citep{duraisamy2019,brunton2020,dar2023,fresca2022,geelen2023}. RAL-MoE-ROM follows the
+hybrid view, but replaces a single residual map with a conditionally sparse correction
+trained under closed-loop rollout. This distinction is important because low one-step
+error alone does not establish reliable recursive prediction.
+
+\paragraph{Localized representations and conditional dynamics.}
+Local reduced bases, operator localization, clustering, and nonlinear local manifolds
+reduce the representational burden imposed on a single global chart
+\citep{amsallem2008,peherstorfer2014,kaiser2014,li2021cluster,diaz2024}. These approaches
+motivate parameter-local representations, but localization also makes the dynamics
+chart dependent: independently constructed models generally differ in their means,
+bases, scaling, and operators. RAL-MoE-ROM treats each chart as a complete autonomous
+specialist and does not assume that two local coefficient vectors are commensurate. Its
+cross-regime problem is therefore not merely basis selection; it is conditional assembly
+of independently evolved dynamical systems.
+
+\paragraph{Mixture-of-experts and the cross-chart gap.}
+Classical hierarchical mixtures learn conditional expert assignments
+\citep{jacobs1991,jordan1994}, and sparse MoE architectures scale conditional computation
+by activating only a subset of experts \citep{shazeer2017,fedus2022}. Many MoE formulations
+route predictors or operator blocks within a shared representation or common output space.
+Recent work extends this specialization to decomposed hard physical constraints
+\citep{ICLR2024_9aeda582}, local implicit representations
+\citep{NEURIPS2024_b83fae17}, shared and routed experts for neural-operator pretraining
+(MoE-POT; \citealt{NEURIPS2025_2d23a999}), and operator experts with parameter-conditioned
+fusion for invariant PDE forecasting (iMOOE; \citealt{ICLR2026_754612bd}). These methods
+specialize constraints, representations, or operator computations.
+RAL-MoE-ROM instead places routing at two dynamical levels. Inside a local chart, group and channel routers activate
+structured closure experts that share the same reduced coordinates. Outside the chart,
+the E2 router selects complete autonomous projected ROM specialists whose reduced
+coordinates are independently constructed.
+An admissible adjacent pair is never averaged in coefficient space: both models roll out
+independently and T2-C fuses only their reconstructed physical fields. This separation of
+within-chart conditional closure from cross-chart dynamical assembly is the central gap
+addressed here.

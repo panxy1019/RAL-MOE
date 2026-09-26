@@ -1,0 +1,404 @@
+\section{Regime-Local Reduced-Order Representation}
+\label{sec:regime_local_representation}
+
+RAL-MoE-ROM represents a parametrized flow by a collection of overlapping
+regime-local reduced charts.  Each chart contains a local affine POD
+representation together with the projected operators required to define the
+physics-based part of the reduced dynamics.  This section introduces the
+parametrized full-order problem, fixes the pressure gauge used throughout the
+paper, constructs the local POD representations, and derives the corresponding
+Galerkin and Pressure--Poisson operators.  The learned specialist dynamics are
+introduced separately in Section~\ref{sec:regime_local_specialists}.
+
+\subsection{Parametrized full-order model and regime cover}
+\label{subsec:parametric_regime_decomposition}
+
+Let $\Omega\subset\mathbb{R}^{2}$ denote the spatial domain and let
+$\mu\in\mathcal{M}$ be a physical parameter.  After spatial discretization of
+the incompressible Navier--Stokes equations, the velocity field
+$\boldsymbol{u}(t;\mu)\in\mathbb{R}^{N_u}$ and pressure field
+$p(t;\mu)\in\mathbb{R}^{N_p}$ satisfy the semi-discrete system
+\begin{equation}
+  \dot{\boldsymbol{u}}
+  =
+  \boldsymbol{f}_{h}(\mu)
+  +\mathcal{L}_{h}(\mu)\boldsymbol{u}
+  -\mathcal{N}_{h}
+   \bigl(\boldsymbol{u},\boldsymbol{u};\mu\bigr)
+  -\nabla_{h}(\mu)p,
+  \qquad
+  \operatorname{div}_{h}(\mu)\boldsymbol{u}=0,
+  \label{eq:semidiscrete_incompressible_system}
+\end{equation}
+where $\mathcal{L}_{h}$ denotes the discrete linear momentum operator,
+$\mathcal{N}_{h}$ the bilinear convective operator, and
+$\nabla_h$ and $\operatorname{div}_h$ the discrete gradient and divergence.
+The term $\boldsymbol{f}_{h}$ contains forcing and contributions associated
+with boundary conditions or lifting functions.  The dependence on $\mu$ is
+kept explicit to allow the governing operators and boundary data to vary over
+the parameter domain.
+
+For incompressible flow, pressure is determined only up to an additive
+constant.  Let $\boldsymbol{w}=(w_1,\ldots,w_{N_p})^{\mathsf T}$ denote the
+positive finite-volume quadrature weights.  We use the weighted zero-mean
+gauge
+\begin{equation}
+  \Gamma_p(q)
+  =
+  q-
+  \frac{\boldsymbol{w}^{\mathsf T}q}
+       {\boldsymbol{w}^{\mathsf T}\boldsymbol{1}}
+  \boldsymbol{1},
+  \qquad
+  p^{\circ}:=\Gamma_p(p),
+  \label{eq:pressure_gauge}
+\end{equation}
+so that
+\begin{equation}
+  p^{\circ}\in\mathcal{Q}_{0,h}
+  :=
+  \left\{
+    q\in\mathbb{R}^{N_p}:\boldsymbol{w}^{\mathsf T}q=0
+  \right\}.
+  \label{eq:discrete_zero_mean_pressure_space}
+\end{equation}
+Because the momentum equation depends only on the pressure gradient,
+$p$ in~\eqref{eq:semidiscrete_incompressible_system} can henceforth be
+replaced by its gauge-fixed representative $p^{\circ}$.  The full-order state
+is therefore written as
+\begin{equation}
+  \boldsymbol{x}(t;\mu)
+  =
+  \bigl(\boldsymbol{u}(t;\mu),p^{\circ}(t;\mu)\bigr).
+  \label{eq:full_state_definition}
+\end{equation}
+
+The parameter domain is represented by an overlapping cover
+\begin{equation}
+  \mathcal{M}
+  \subseteq
+  \bigcup_{r\in\mathcal{R}}\mathcal{M}_r,
+  \qquad
+  \mathcal{R}=\{S,H,P\},
+  \label{eq:regime_cover}
+\end{equation}
+where $S$, $H$, and $P$ denote the steady, Hopf-onset, and periodic regimes,
+respectively.  The adjacent overlap regions are
+\begin{equation}
+  \mathcal{O}_{SH}=\mathcal{M}_{S}\cap\mathcal{M}_{H},
+  \qquad
+  \mathcal{O}_{HP}=\mathcal{M}_{H}\cap\mathcal{M}_{P}.
+  \label{eq:adjacent_overlaps}
+\end{equation}
+The cover is not required to be disjoint: near a regime transition, two
+neighboring reduced descriptions may both provide useful local
+approximations.  The corresponding selection and coupling of local models is
+deferred to Section~\ref{sec:hierarchical_ral_moe}.
+
+\subsection{Regime-local weighted POD representation}
+\label{subsec:local_pod_and_gauge}
+
+The finite-volume quadrature induces the discrete inner products
+\begin{equation}
+  \langle \boldsymbol{v},\boldsymbol{z}\rangle_{M_u}
+  =\boldsymbol{v}^{\mathsf T}M_u\boldsymbol{z},
+  \qquad
+  \langle q,s\rangle_{M_p}
+  =q^{\mathsf T}M_p s,
+  \label{eq:weighted_inner_products}
+\end{equation}
+with associated norms $\|\cdot\|_{M_u}$ and $\|\cdot\|_{M_p}$.  For the
+collocated two-dimensional finite-volume discretization considered here,
+\begin{equation}
+  M_p=\operatorname{diag}(w_1,\ldots,w_{N_p}),
+  \qquad
+  M_u=\operatorname{diag}(M_p,M_p).
+  \label{eq:velocity_pressure_mass_matrices}
+\end{equation}
+
+For each regime $r\in\mathcal{R}$, let
+\begin{equation}
+  \mathcal{S}_r
+  =
+  \left\{
+    \bigl(\boldsymbol{u}^{(r)}_s,p^{(r),\circ}_s\bigr)
+  \right\}_{s=1}^{N_r},
+  \qquad
+  p^{(r),\circ}_s=\Gamma_p\bigl(p^{(r)}_s\bigr),
+  \label{eq:regime_snapshot_ensemble}
+\end{equation}
+be the snapshot ensemble used to construct the local representation.  The precise trajectory partition employed in the numerical experiments is
+stated with the common evaluation protocol; it is not part of the definition
+of a local chart.
+
+The regime-local means are
+\begin{equation}
+  \overline{\boldsymbol{u}}^{(r)}
+  =\frac{1}{N_r}\sum_{s=1}^{N_r}\boldsymbol{u}^{(r)}_s,
+  \qquad
+  \overline{p}^{(r),\circ}
+  =\frac{1}{N_r}\sum_{s=1}^{N_r}p^{(r),\circ}_s,
+  \label{eq:local_training_means}
+\end{equation}
+and the centered snapshot matrices are
+\begin{align}
+  X_u^{(r)}
+  &=
+  \left[
+    \boldsymbol{u}^{(r)}_1-\overline{\boldsymbol{u}}^{(r)}
+    \ \cdots\
+    \boldsymbol{u}^{(r)}_{N_r}-\overline{\boldsymbol{u}}^{(r)}
+  \right],
+  \label{eq:centered_velocity_snapshots}\\
+  X_p^{(r)}
+  &=
+  \left[
+    p^{(r),\circ}_1-\overline{p}^{(r),\circ}
+    \ \cdots\
+    p^{(r),\circ}_{N_r}-\overline{p}^{(r),\circ}
+  \right].
+  \label{eq:centered_pressure_snapshots}
+\end{align}
+
+The local velocity and pressure POD bases are the weighted orthonormal
+minimizers
+\begin{align}
+  \Phi_u^{(r)}
+  &\in
+  \underset{\Psi^{\mathsf T}M_u\Psi=I_{d_u}}
+  {\operatorname{arg\,min}}
+  \left\|
+    X_u^{(r)}-\Psi\Psi^{\mathsf T}M_uX_u^{(r)}
+  \right\|_{M_u,F}^{2},
+  \label{eq:velocity_pod_minimization}\\
+  \Phi_p^{(r)}
+  &\in
+  \underset{\Psi^{\mathsf T}M_p\Psi=I_{d_p}}
+  {\operatorname{arg\,min}}
+  \left\|
+    X_p^{(r)}-\Psi\Psi^{\mathsf T}M_pX_p^{(r)}
+  \right\|_{M_p,F}^{2},
+  \label{eq:pressure_pod_minimization}
+\end{align}
+where $\|Y\|_{M,F}^{2}=\operatorname{tr}(Y^{\mathsf T}MY)$.  Equivalently,
+if
+\begin{align}
+  M_u^{1/2}X_u^{(r)}
+  &=U_u^{(r)}\Sigma_u^{(r)}{V_u^{(r)}}^{\mathsf T},\\
+  M_p^{1/2}X_p^{(r)}
+  &=U_p^{(r)}\Sigma_p^{(r)}{V_p^{(r)}}^{\mathsf T},
+\end{align}
+then
+\begin{equation}
+  \Phi_u^{(r)}
+  =M_u^{-1/2}U_u^{(r)}(:,1\!:\!d_u),
+  \qquad
+  \Phi_p^{(r)}
+  =M_p^{-1/2}U_p^{(r)}(:,1\!:\!d_p),
+  \label{eq:weighted_pod_bases}
+\end{equation}
+with
+\begin{equation}
+  {\Phi_u^{(r)}}^{\mathsf T}M_u\Phi_u^{(r)}=I_{d_u},
+  \qquad
+  {\Phi_p^{(r)}}^{\mathsf T}M_p\Phi_p^{(r)}=I_{d_p}.
+  \label{eq:weighted_pod_orthogonality}
+\end{equation}
+Since the pressure snapshots and their mean belong to
+$\mathcal{Q}_{0,h}$, the pressure modes satisfy
+$\boldsymbol{w}^{\mathsf T}\Phi_p^{(r)}=\boldsymbol{0}^{\mathsf T}$.
+
+The local reduced coordinates are obtained by weighted orthogonal projection,
+\begin{align}
+  \boldsymbol{a}^{(r)}
+  &=
+  {\Phi_u^{(r)}}^{\mathsf T}M_u
+  \bigl(\boldsymbol{u}-\overline{\boldsymbol{u}}^{(r)}\bigr),
+  \label{eq:velocity_encode}\\
+  \boldsymbol{b}^{(r)}
+  &=
+  {\Phi_p^{(r)}}^{\mathsf T}M_p
+  \bigl(\Gamma_p(p)-\overline{p}^{(r),\circ}\bigr),
+  \label{eq:pressure_encode}
+\end{align}
+and the corresponding affine reconstructions are
+\begin{align}
+  \mathcal{D}^{u}_{r}\bigl(\boldsymbol{a}^{(r)}\bigr)
+  &=
+  \overline{\boldsymbol{u}}^{(r)}
+  +\Phi_u^{(r)}\boldsymbol{a}^{(r)},
+  \label{eq:velocity_decode}\\
+  \mathcal{D}^{p}_{r}\bigl(\boldsymbol{b}^{(r)}\bigr)
+  &=
+  \overline{p}^{(r),\circ}
+  +\Phi_p^{(r)}\boldsymbol{b}^{(r)}.
+  \label{eq:pressure_decode}
+\end{align}
+For the learned components introduced later, the modal coordinates are
+standardized locally,
+\begin{equation}
+  \widetilde{\boldsymbol{a}}^{(r)}
+  =
+  \bigl(\boldsymbol{a}^{(r)}-\boldsymbol{\mu}_{a}^{(r)}\bigr)
+  \oslash\boldsymbol{\sigma}_{a}^{(r)},
+  \qquad
+  \widetilde{\boldsymbol{b}}^{(r)}
+  =
+  \bigl(\boldsymbol{b}^{(r)}-\boldsymbol{\mu}_{b}^{(r)}\bigr)
+  \oslash\boldsymbol{\sigma}_{b}^{(r)},
+  \label{eq:local_scalers}
+\end{equation}
+where $\oslash$ denotes componentwise division.  These scalings are local to
+each chart and are not used in the projected physical operators.
+
+\subsection{Chart-local POD--Galerkin and Pressure--Poisson operators}
+\label{subsec:local_galerkin_pressure_poisson}
+
+Substituting the affine POD reconstructions into
+\eqref{eq:semidiscrete_incompressible_system} and projecting the momentum
+equation onto the local velocity space gives
+\begin{equation}
+  \dot{\boldsymbol{a}}^{(r)}
+  =
+  \boldsymbol{c}_r(\mu)
+  +A_r(\mu)\boldsymbol{a}^{(r)}
+  +H_r(\mu):
+   \bigl(\boldsymbol{a}^{(r)}\otimes\boldsymbol{a}^{(r)}\bigr)
+  +C_r^p(\mu)\boldsymbol{b}^{(r)}.
+  \label{eq:projected_local_momentum_general_mass}
+\end{equation}
+The reduced operators are defined by
+\begin{align}
+  [\boldsymbol{c}_r(\mu)]_i
+  &=
+  \left\langle
+    \boldsymbol{\phi}^{u,(r)}_i,
+    \boldsymbol{f}_h
+    +\mathcal{L}_h\overline{\boldsymbol{u}}^{(r)}
+    -\mathcal{N}_h
+      (\overline{\boldsymbol{u}}^{(r)},\overline{\boldsymbol{u}}^{(r)};\mu)
+    -\nabla_h\overline{p}^{(r),\circ}
+  \right\rangle_{M_u},
+  \label{eq:galerkin_constant_definition}\\
+  [A_r(\mu)]_{ij}
+  &=
+  \left\langle
+    \boldsymbol{\phi}^{u,(r)}_i,
+    \mathcal{L}_h\boldsymbol{\phi}^{u,(r)}_j
+    -\mathcal{N}_h
+      (\overline{\boldsymbol{u}}^{(r)},\boldsymbol{\phi}^{u,(r)}_j;\mu)
+    -\mathcal{N}_h
+      (\boldsymbol{\phi}^{u,(r)}_j,\overline{\boldsymbol{u}}^{(r)};\mu)
+  \right\rangle_{M_u},
+  \label{eq:galerkin_linear_definition}\\
+  [H_r(\mu)]_{ijk}
+  &=
+  -\left\langle
+    \boldsymbol{\phi}^{u,(r)}_i,
+    \mathcal{N}_h
+      (\boldsymbol{\phi}^{u,(r)}_j,\boldsymbol{\phi}^{u,(r)}_k;\mu)
+  \right\rangle_{M_u},
+  \label{eq:galerkin_quadratic_definition}\\
+  [C_r^p(\mu)]_{i\ell}
+  &=
+  -\left\langle
+    \boldsymbol{\phi}^{u,(r)}_i,
+    \nabla_h(\mu)\phi^{p,(r)}_\ell
+  \right\rangle_{M_u}.
+  \label{eq:galerkin_pressure_coupling_definition}
+\end{align}
+Parameter dependence has been suppressed inside some operator arguments for
+readability.  The resulting local Galerkin vector field is
+\begin{equation}
+  \mathscr{F}^{\mathrm{G}}_r
+  (\boldsymbol{a},\boldsymbol{b};\mu)
+  :=
+  \boldsymbol{c}_r(\mu)
+  +A_r(\mu)\boldsymbol{a}
+  +H_r(\mu):(\boldsymbol{a}\otimes\boldsymbol{a})
+  +C_r^p(\mu)\boldsymbol{b}.
+  \label{eq:chart_local_galerkin_rhs_definition}
+\end{equation}
+
+Pressure is reconstructed algebraically from the incompressibility constraint
+and momentum balance.  At the continuous level, the gauge-fixed pressure
+satisfies a Pressure--Poisson problem of the form
+\begin{equation}
+  -\Delta p^{\circ}
+  =
+  \nabla\!\cdot
+  \left[(\boldsymbol{u}\!\cdot\!\nabla)\boldsymbol{u}
+        -\boldsymbol{f}\right],
+  \qquad
+  \int_{\Omega}p^{\circ}\,\mathrm{d}\Omega=0,
+  \label{eq:pressure_poisson_strong_form}
+\end{equation}
+with boundary conditions inherited from the momentum equation.  Projecting
+the corresponding discrete Pressure--Poisson equation onto the local pressure
+space gives
+\begin{equation}
+  K_r^p(\mu)\boldsymbol{b}^{PP,(r)}
+  =
+  \boldsymbol{d}_r(\mu)
+  +B_r(\mu)\boldsymbol{a}^{(r)}
+  +Q_r(\mu):
+   \bigl(\boldsymbol{a}^{(r)}\otimes\boldsymbol{a}^{(r)}\bigr).
+  \label{eq:reduced_pressure_poisson_system}
+\end{equation}
+Here $K_r^p$, $\boldsymbol{d}_r$, $B_r$, and $Q_r$ are obtained by testing
+the discrete Pressure--Poisson operator and its constant, linear, and
+quadratic velocity contributions against the local pressure modes.  The
+pressure gauge removes the constant nullspace, so that the reduced algebraic
+map is well defined under the standard coercivity assumptions:
+\begin{equation}
+  \mathscr{Q}^{PP}_r(\boldsymbol{a};\mu)
+  =
+  [K_r^p(\mu)]^{-1}
+  \left[
+    \boldsymbol{d}_r(\mu)
+    +B_r(\mu)\boldsymbol{a}
+    +Q_r(\mu):(\boldsymbol{a}\otimes\boldsymbol{a})
+  \right].
+  \label{eq:chart_local_pressure_poisson_map}
+\end{equation}
+The map $\mathscr{Q}^{PP}_r$ supplies the physics-based pressure relation used
+by the regime-local specialist in Section~\ref{sec:regime_local_specialists}.
+
+\subsection{Complete regime-local chart and coordinate independence}
+\label{subsec:complete_regime_local_rom_chart}
+
+The regime-local reduced representation is collected as
+\begin{equation}
+  \mathcal{C}^{\mathrm{ROM}}_r
+  =
+  \left(
+    \mathcal{M}_r,
+    \Gamma_p,
+    \overline{\boldsymbol{u}}^{(r)},
+    \Phi_u^{(r)},
+    \overline{p}^{(r),\circ},
+    \Phi_p^{(r)},
+    \boldsymbol{\mu}_a^{(r)},
+    \boldsymbol{\sigma}_a^{(r)},
+    \boldsymbol{\mu}_b^{(r)},
+    \boldsymbol{\sigma}_b^{(r)},
+    \mathscr{F}^{\mathrm{G}}_r,
+    \mathscr{Q}^{PP}_r
+  \right).
+  \label{eq:local_chart_contract}
+\end{equation}
+Thus, a chart consists of a parameter region, a gauge-consistent affine POD
+representation, local coefficient scalings, and the projected operators used
+to define its physics-based reduced dynamics.
+
+Crucially, different charts are independent coordinate systems.  Even when
+two charts use the same dimensions $d_u$ and $d_p$, their affine means and POD
+bases are obtained from different portions of the solution manifold.  Hence
+there is, in general, no canonical componentwise identification between
+$\boldsymbol{a}^{(r)}$ and $\boldsymbol{a}^{(k)}$, or between
+$\boldsymbol{b}^{(r)}$ and $\boldsymbol{b}^{(k)}$.  A physical state in an
+overlap can instead be encoded independently by each local projection
+\eqref{eq:velocity_encode}--\eqref{eq:pressure_encode}.  This observation is
+central to the hierarchical construction developed later: neighboring
+specialists evolve in their own reduced coordinates, while any soft coupling
+is performed only after reconstruction in the common physical space.

@@ -1,0 +1,41 @@
+\section{Fluidic-pinball results}
+\label{app:pinball}
+
+The POD--DeepONet baseline provides a complementary comparison between
+one-step prediction and autonomous rollout. It attains $E_u=1.5921\%$ and $E_p=23.3447\%$ on 4,228 held-out input--output pairs, but only 1 of 28 held-out trajectories completes the prescribed autonomous rollout evaluation. This difference illustrates that one-step accuracy does not by itself imply reliable autonomous prediction. Because the POD--DeepONet evaluation uses a different temporal cadence from
+the Periodic specialist, it is used only for this comparison of one-step prediction and autonomous rollout and not as a cadence-matched long-horizon accuracy baseline.
+
+\paragraph{Periodic model identity and evaluation protocol.}
+The two Periodic learned-model rows in Table~\ref{tab:pinball_autonomous} come from the dense Deep-FNN-H3 specialist (B1), with a 263-dimensional three-state-history input, six 512-wide dense layers, and velocity, pressure, and pressure-gate heads (1,792,959 trainable parameters). It has no sparse expert router. The corrected evaluation manifest and the frozen step-8000 checkpoint have the same recorded SHA-256; strict loading into the source Deep-FNN-H3 class confirms the architecture. This identity is established for these two local-specialist rows and is not automatically transferred to the other Pinball rows or overlap evaluations.
+
+The $K=32$ evaluation uses final-test $Re=22.25,24,27.5,31,34.5,38,43,50,57$; the longer $K=56$ Periodic-core evaluation uses $Re=27.5,31,34.5,38,43,50,57$. The full-order snapshots are stored every $0.25$ physical time units; temporal stride four with all four offsets gives an effective interval $\Delta t=1$, matching the specialist's native history cadence. The corrected protocol keeps the checkpoint fixed and records no hyperparameter updates or model selection after test unsealing. The earlier adjacent-frame evaluation is invalid for this comparison because it used a mismatched history cadence.
+
+For these two rows, each physical-field relative error is averaged over the $K$ predicted time steps and sampled windows within each Reynolds number, then equally across the evaluated Reynolds numbers, and multiplied by 100. The joint error is the sum of the velocity and pressure means. These are window-mean errors, not the endpoint statistic defined elsewhere: the separately archived joint endpoint errors are $1.4387\%$ and $3.0777\%$ at $K=32$ and $K=56$, respectively. The POD--Galerkin rows have not yet been fully reconciled to this checkpoint, cadence, and aggregation provenance.
+
+\par
+\begin{table}[H]
+\centering
+\caption{
+Fluidic-pinball overlap joint errors (\%). For $S$--$H$, Candidate~1 is the Steady specialist and Candidate~2 is Hopf; for $H$--$P$, Candidate~1 is the Periodic specialist and Candidate~2 is Hopf.
+The convex oracle selects its weight a posteriori for each evaluation window and is unavailable during prediction.
+}
+\label{tab:pinball_overlap}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrccccc}
+\toprule
+Overlap & $K$ & Cand.~1 & Cand.~2 & E2-probability blend & T2-C & Convex oracle \\
+\midrule
+$S$--$H$ & 24 & 0.6014 & 3.1925 & 1.7511 & 0.5897 & \textbf{0.5889} \\
+$S$--$H$ & 56 & 0.6927 & 3.1193 & 1.7714 & 0.6767 & \textbf{0.6763} \\
+$H$--$P$ & 24 & 0.0990 & 0.5146 & 0.2972 & 0.0945 & \textbf{0.0928} \\
+$H$--$P$ & 56 & 0.1028 & 0.5346 & 0.3085 & 0.0978 & \textbf{0.0955} \\
+\bottomrule
+\end{tabular}
+\end{table}
+\par
+
+T2-C improves upon Candidate~1 in all four overlap evaluations.
+The relative reductions in joint error are approximately $1.9\%$ and
+$2.3\%$ for $S$--$H$ at $K=24$ and $K=56$, and $4.5\%$ and $4.9\%$
+for $H$--$P$, respectively. Although these gains are more modest than those observed for the centered-square benchmark, they persist at both rollout horizons. T2-C also remains close to the corresponding window-wise convex oracle, indicating that the learned fusion captures most of the available benefit from convex physical-space assembly in these overlap evaluations.

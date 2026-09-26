@@ -1,0 +1,368 @@
+% Third numerical example: fluidic pinball and comparison with alternative ROMs.
+% Recommended packages in the main manuscript:
+% \usepackage{amsmath,amssymb,booktabs,graphicx,threeparttable}
+% The image paths below are relative to the Pinball project root.
+% In a single-column manuscript, table* and figure* may be replaced by
+% table and figure, respectively.
+
+```latex
+\subsection{Fluidic pinball}
+\label{subsec:fluidic_pinball}
+
+The fluidic pinball is considered as a third numerical test of RAL-MoE-ROM
+over a parameter range spanning steady, Hopf-onset, and periodic wake
+dynamics. In addition to evaluating the regime-local specialists and their
+overlap coupling, this example compares the proposed reduced dynamics with a
+classical POD--Galerkin/Pressure--Poisson ROM\cite{holmes1996turbulence} and with a global
+POD-DeepONet model\cite{lu2021learning}. 
+
+The high-fidelity model solves the two-dimensional incompressible
+Navier--Stokes equations around three fixed circular cylinders. The cylinder
+diameter and free-stream velocity are $D=U_\infty=1$, giving
+\[
+Re=\frac{U_\infty D}{\nu}=\frac{1}{\nu}.
+\]
+The cylinders have radius $0.5$ and form an equilateral triangle of side
+length $1.5$, with centres
+$(-1.2990381,0)$, $(0,0.75)$, and $(0,-0.75)$ in the computational domain
+$[-6,20]\times[-6,6]$. A uniform velocity $(1,0)$ is prescribed at the
+inlet, slip conditions are imposed on the upper and lower boundaries, and
+no-slip conditions are imposed on the cylinder surfaces. The outlet
+pressure is fixed.
+
+The full-order simulations are performed with OpenFOAM~13 on a
+finite-volume mesh containing 70,194 cells. The CFD time step is
+$\delta t_{\mathrm{CFD}}=0.005$, and snapshots are stored every $0.25$
+physical time units. The database contains 131 complete Reynolds-number trajectories over
+$10\le Re\le60$, partitioned into 94 training, 19 validation, and 18
+held-out test trajectories. The same Reynolds-number trajectory retains the
+same split role when it belongs to two overlapping regime-local datasets.
+Table~\ref{tab:pinball_data_contracts} summarizes the three specialist
+domains, their trajectory-level partitions, and the corresponding POD
+dimensions. 
+
+\begin{table*}[htbp]
+\centering
+\caption{Data partitions and local POD dimensions for the fluidic-pinball
+case.}
+\label{tab:pinball_data_contracts}
+
+\small
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{8pt}
+
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+Regime
+& Reynolds-number range
+& Train/validation/test
+& $r_u$
+& $r_p$ \\
+\midrule
+
+Steady
+& $10.0\le Re\le19.0$
+& $37/8/7$
+& 4
+& 3 \\
+
+Hopf
+& $16.6\le Re\le25.0$
+& $39/8/7$
+& 5
+& 5 \\
+
+Periodic
+& $21.25\le Re\le60.0$
+& $47/9/9$
+& 17
+& 16 \\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The corresponding overlap regions are
+$16.6\le Re\le19.0$ for $S$--$H$ and
+$21.25\le Re\le25.0$ for $H$--$P$. The proposed specialists follow the
+common regime-local formulation introduced in Section~3, and the outer
+routing and T2-C combination follow Section~4. The field-error measures are
+those introduced in the common numerical evaluation protocol.
+
+We first compare the proposed regime-local dynamics with the
+POD--Galerkin ROM under matched local representations and
+prediction horizons. For these comparisons, both models use the same
+train-only local POD spaces and are evaluated from identical initial
+histories. The Periodic comparison uses the cadence aligned with the
+specialist history, corresponding to $\Delta t=1$.
+
+\begin{table*}[htbp]
+\centering
+\caption{Matched long-horizon comparison between the classical
+POD--Galerkin ROM and the proposed regime-local
+specialists. Errors are percentages.}
+\label{tab:pinball_galerkin_matched}
+
+\small
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{5pt}
+
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+Regime and horizon
+& Model
+& $E_u$
+& $E_p$
+& $E_{\mathrm{joint}}$
+& Divergent windows \\
+\midrule
+
+Steady, $K=56$
+& POD-Galerkin
+& --
+& --
+& --
+& $448/448$ \\
+
+& Proposed specialist
+& 0.2247
+& 0.7593
+& 0.9840
+& 0 \\
+
+\midrule
+
+Hopf matched subset, $K=56$
+& POD-Galerkin
+& 0.4378
+& 48.50
+& 48.94
+& $141/320$ \\
+
+& Proposed specialist
+& 0.0995
+& 1.986
+& 2.085
+& 0 \\
+
+\midrule
+
+Periodic, $K=32$
+& POD-Galerkin
+& 1.641
+& 41.56
+& 43.20
+& 0 \\
+
+& Proposed specialist
+& 0.2897
+& 0.5518
+& 0.8415
+& 0 \\
+
+\midrule
+
+Periodic core, $K=56$
+& POD-Galerkin
+& 2.555
+& 39.36
+& 41.91
+& 0 \\
+
+& Proposed specialist
+& 0.6222
+& 1.050
+& 1.672
+& 0 \\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+Table~\ref{tab:pinball_galerkin_matched} shows clear differences between
+the classical POD-Galerkin reduced dynamics and the
+proposed regime-local specialists under autonomous rollout. In the Steady
+regime, the POD-Galerkin ROM trajectories become non-finite or exceed the
+prescribed divergence criterion before a complete $K=56$ score can be formed,
+whereas the proposed specialist remains finite and achieves a joint error
+below $1\%$. The Hopf comparison reveals a similar limitation of the classical reduced
+dynamics. Although finite field values are obtained for the matched windows,
+a substantial fraction crosses the divergence threshold, and the resulting
+error is dominated by the pressure component. For the available matched
+finite windows, the POD-Galerkin model gives a joint error of $48.94\%$,
+whereas the proposed specialist achieves $2.085\%$ without divergence. The Periodic regime enables a direct quantitative comparison because both
+models remain finite over the prescribed rollout horizons. At $K=32$, the
+proposed specialist reduces the joint error from $43.20\%$ to $0.8415\%$;
+over the longer $K=56$ Periodic-core rollout, the error decreases from
+$41.91\%$ to $1.672\%$. The dominant difference originates from the pressure
+prediction, for which th ePOD-Galerkin model exhibits errors of approximately
+$40\%$, whereas the proposed specialist remains close to $1\%$. These results
+indicate that the projected reduced dynamics with the standard
+Pressure--Poisson closure are insufficient for accurate long-horizon
+autonomous prediction in this problem, even when the underlying POD
+representation is fixed.
+
+
+
+A complementary comparison is provided by the global POD-DeepONet. On
+4,228 held-out one-step pairs, the global model gives
+$E_u=1.5921\%$ and $E_p=23.3447\%$. The finite one-step predictions do not
+persist under recursive application: only one of the 28 unique held-out
+trajectories remains finite over autonomous rollout, whereas the remaining
+trajectories develop non-finite states. The one-step and autonomous results
+therefore describe fundamentally different properties of the learned
+operator. In particular, finite one-step approximation error does not imply
+that repeated application defines a stable reduced dynamical evolution.
+
+
+
+We next examine the output-level combination of adjacent regime-local
+specialists. Table~\ref{tab:pinball_boundary_comparison} reports the two
+individual specialist predictions, direct blending based on the E2
+probabilities, T2-C, and the corresponding window-wise convex oracle. The
+$S$--$H$ comparison uses the Steady and Hopf specialists, whereas the
+$H$--$P$ comparison uses the Periodic and Hopf specialists.
+
+\begin{table*}[htbp]
+\centering
+\caption{Prediction errors for the adjacent-specialist combinations in the
+fluidic-pinball overlap regions. All entries are
+$E_{\mathrm{joint}}$ (\%).}
+\label{tab:pinball_boundary_comparison}
+
+\small
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{6pt}
+
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+Overlap
+& Horizon
+& Primary specialist
+& Hopf specialist
+& E2-probability blend
+& T2-C
+& Convex oracle \\
+\midrule
+
+$S$--$H$
+& $K=24$
+& 0.6014
+& 3.1925
+& 1.7511
+& 0.5897
+& 0.5889 \\
+
+$S$--$H$
+& $K=56$
+& 0.6927
+& 3.1193
+& 1.7714
+& 0.6767
+& 0.6763 \\
+
+\midrule
+
+$H$--$P$
+& $K=24$
+& 0.0990
+& 0.5146
+& 0.2972
+& 0.0945
+& 0.0928 \\
+
+$H$--$P$
+& $K=56$
+& 0.1028
+& 0.5346
+& 0.3085
+& 0.0978
+& 0.0955 \\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+
+
+
+For the two overlap regions, T2-C consistently improves upon the dominant
+individual specialist or hard fusion strategy. In the $S$--$H$ overlap, the
+Steady specialist provides the more accurate individual prediction, while
+direct use of the E2 probabilities as fusion weights degrades the result.
+T2-C reduces the $K=56$ joint error from $0.6927\%$ to $0.6767\%$, approaching
+the convex-oracle value of $0.6763\%$. The improvement is modest in magnitude, but its
+consistency indicates that the adjacent Hopf prediction contains a useful
+corrective component that can be exploited without replacing the dominant
+Steady contribution. A similar
+trend is observed in the $H$--$P$ overlap, where T2-C reduces the joint error
+from $0.1028\%$ to $0.0978\%$ at $K=56$. 
+
+
+
+The field reconstructions provide spatial context for the long-horizon
+errors. Figure~\ref{fig:pinball_hopf_velocity_errors} shows a representative
+Hopf validation trajectory, whereas
+Fig.~\ref{fig:pinball_periodic_velocity_errors} shows a held-out Periodic
+trajectory. In each case, the physical velocity field and its pointwise
+absolute error are shown at an intermediate and terminal prediction time.
+
+\begin{figure*}[htbp]
+\centering
+
+\includegraphics[width=0.90\textwidth]
+{DDPDCNN/4/RAL_MOE_ROM_METHODS_OVERLEAF_READY_20260726/drafts/cylinder_wake_20260726/figures/SH_3.png}
+
+\vspace{0.5em}
+
+\includegraphics[width=0.90\textwidth]
+{DDPDCNN/4/RAL_MOE_ROM_METHODS_OVERLEAF_READY_20260726/drafts/cylinder_wake_20260726/figures/SH_3_2.png}
+
+\caption{Representative Hopf-specialist prediction at $Re=19.9$ on a
+validation trajectory. The upper panel compares the CFD reference and the
+proposed prediction at $K=28$ and $K=56$, while the lower panel shows the
+corresponding pointwise absolute velocity errors.}
+\label{fig:pinball_hopf_velocity_errors}
+\end{figure*}
+
+\begin{figure*}[htbp]
+\centering
+
+\includegraphics[width=0.90\textwidth]
+{DDPDCNN/4/RAL_MOE_ROM_METHODS_OVERLEAF_READY_20260726/drafts/cylinder_wake_20260726/figures/PH_3.png}
+
+\vspace{0.5em}
+
+\includegraphics[width=0.90\textwidth]
+{DDPDCNN/4/RAL_MOE_ROM_METHODS_OVERLEAF_READY_20260726/drafts/cylinder_wake_20260726/figures/PH_3_2.png}
+
+\caption{Representative held-out Periodic-specialist prediction at $Re=43$.
+The upper panel compares the CFD reference and the proposed prediction at
+$K=28$ and $K=56$, while the lower panel shows the corresponding pointwise
+absolute velocity errors.}
+\label{fig:pinball_periodic_velocity_errors}
+\end{figure*}
+
+In the Hopf example, the velocity discrepancy remains localized primarily
+around the separated shear layers and the near-wake region. The error does
+not exhibit substantial downstream amplification over the considered rollout
+horizon. In the Periodic example, the spatial error extends along the vortex
+street as the prediction horizon increases, while the alternating wake
+structure remains preserved. This error pattern is consistent with the
+accumulation of phase displacement in coherent structures rather than a
+transition toward an incorrect dynamical regime. 
+
+Overall, the fluidic-pinball example highlights three aspects of the proposed
+framework. The matched comparison with the POD--Galerkin ROM indicates that
+the classical projected reduced dynamics with Pressure--Poisson closure do
+not provide sufficient long-horizon autonomous accuracy for this problem,
+particularly in the pressure prediction, whereas the proposed regime-local
+specialists maintain substantially lower errors. The global POD-DeepONet
+comparison further shows that accurate one-step operator approximation does
+not necessarily translate into stable recursive reduced dynamics. Finally,
+the overlap results indicate that adjacent regime-local specialists contain
+complementary predictive information that can be exploited through
+output-level adaptive fusion. The available $H$--$P$ evaluation provides
+additional evidence of such complementarity under the adopted evaluation
+setting.
+

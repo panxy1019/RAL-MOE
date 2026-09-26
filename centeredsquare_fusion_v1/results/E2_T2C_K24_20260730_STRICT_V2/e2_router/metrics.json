@@ -1,0 +1,25 @@
+{
+  "validation": {
+    "accuracy": 0.7647058823529411,
+    "balanced_accuracy": 0.7555555555555555,
+    "confusion_matrix": [
+      [
+        3,
+        2,
+        0
+      ],
+      [
+        0,
+        6,
+        0
+      ],
+      [
+        0,
+        2,
+        4
+      ]
+    ],
+    "illegal_S_P_top2_count": 0,
+    "macro_f1": 0.7666666666666666
+  }
+}

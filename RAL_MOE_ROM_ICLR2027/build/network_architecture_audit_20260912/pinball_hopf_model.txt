@@ -1,0 +1,41 @@
+DeepFNNH3(
+  (trunk): DeepTrunk(
+    (net): Sequential(
+      (0): LayerNorm((88,), eps=1e-05, elementwise_affine=True, bias=True)
+      (1): Linear(in_features=88, out_features=512, bias=True)
+      (2): SiLU()
+      (3): Linear(in_features=512, out_features=512, bias=True)
+      (4): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)
+      (5): SiLU()
+      (6): Linear(in_features=512, out_features=512, bias=True)
+      (7): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)
+      (8): SiLU()
+      (9): Linear(in_features=512, out_features=512, bias=True)
+      (10): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)
+      (11): SiLU()
+      (12): Linear(in_features=512, out_features=512, bias=True)
+      (13): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)
+      (14): SiLU()
+      (15): Linear(in_features=512, out_features=512, bias=True)
+      (16): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)
+      (17): SiLU()
+    )
+  )
+  (heads): ClosureHeads(
+    (velocity): Sequential(
+      (0): Linear(in_features=512, out_features=256, bias=True)
+      (1): SiLU()
+      (2): Linear(in_features=256, out_features=5, bias=True)
+    )
+    (pressure): Sequential(
+      (0): Linear(in_features=512, out_features=256, bias=True)
+      (1): SiLU()
+      (2): Linear(in_features=256, out_features=5, bias=True)
+    )
+    (pressure_gate): Sequential(
+      (0): Linear(in_features=512, out_features=128, bias=True)
+      (1): SiLU()
+      (2): Linear(in_features=128, out_features=5, bias=True)
+    )
+  )
+)

@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{iclr2027_conference,times}
+\input{math_commands.tex}
+
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,array,multirow,threeparttable,adjustbox}
+\usepackage{placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\hypersetup{hidelinks}
+
+\title{RAL-MoE-ROM: Hierarchical\\
+Mixture-of-Experts for Regime-Adaptive\\
+Reduced Dynamics}
+
+% Anonymous submission. Restore the author block only for the camera-ready version.
+\author{Anonymous Authors}
+
+% Keep disabled for the anonymous submission.
+% \iclrfinalcopy
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+Reduced-order modeling becomes challenging over broad parameter ranges when parameter variation changes the qualitative dynamics of the system. A single global reduced space and a single reduced dynamical model must then accommodate regimes with different spatial structures and temporal behavior, which can compromise long-horizon autonomous prediction. To address these challenges, we introduce RAL-MoE-ROM, a two-level hierarchical mixture-of-experts ROM that adapts both the reduced representation and the reduced dynamics. The parameter domain is covered by overlapping regime-local parameter regions, each equipped with an independently constructed reduced chart. Within each chart, a physics--data specialist combines a projected ROM backbone with a structured sparse-MoE correction for unresolved reduced dynamics. At the second level, a parameter-only router selects either one complete local specialist or an applicable adjacent pair of specialists. Since the local reduced coordinates are independent and not componentwise comparable, specialists are advanced
+separately rather than blended in coefficient space. When two specialists are selected, their reconstructed fields are combined only in the common physical space by a learned, history-conditioned convex correction (T2-C). Across three parameterized incompressible-flow benchmarks spanning steady, Hopf-onset, and periodic regimes, the proposed specialists achieve accurate autonomous rollouts, and the hierarchical fusion improves prediction in the evaluated transition regions. Ablations support the roles of the projected
+backbone, structured expert correction, regime localization, and
+history-conditioned fusion. These results demonstrate a practical route to reduced modeling across changing dynamical regimes without forcing all
+local models into a shared reduced coordinate system.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/experiments}
+\FloatBarrier
+\input{sections/conclusion}
+
+\subsubsection*{Reproducibility statement}
+The main text reports the benchmark roles, evaluation horizons, baselines, and metrics. Appendices~A--E document the local-coordinate construction, projected operators, specialist architecture, routing and fusion procedure, and implementation details. Appendices~F--H provide benchmark-specific results.
+Appendix~\ref{app:internal_routing} reports post-hoc internal-routing statistics
+from fixed validation-selected Hopf and Periodic specialists on held-out
+rollout windows; these diagnostics are not used for model selection.
+Appendix~\ref{app:square} additionally reports an architecture-matched descriptor
+ablation and three-seed variability of the centered-square T2-C gate, with the
+underlying specialists and E2 router held fixed.
+
+\subsection*{AI use statement}
+% Authors must confirm this disclosure against the final submission workflow.
+Generative AI tools, including ChatGPT and Codex, were used solely to assist with language polishing and LaTeX formatting. The authors take full responsibility for reviewing and verifying all scientific
+content, mathematical formulations, experimental configurations, numerical
+results, and conclusions, and for the final manuscript and all reported results.
+
+\bibliography{references,legacy_references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\input{appendix/rom_derivation}
+\input{appendix/specialist_details}
+\input{appendix/routing_details}
+\input{appendix/implementation}
+\input{appendix/circular_cylinder}
+\FloatBarrier
+\input{appendix/square_cylinder}
+\FloatBarrier
+\input{appendix/fluidic_pinball}
+\FloatBarrier
+\input{appendix/internal_routing}
+\clearpage
+\input{appendix/parameter_counts}
+
+\end{document}

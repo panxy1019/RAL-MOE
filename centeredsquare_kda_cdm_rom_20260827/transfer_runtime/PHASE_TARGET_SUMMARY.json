@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "selection_scope": "periodic_train_only",
+  "phase_mode_p": 1,
+  "phase_mode_q": 2,
+  "train_case_count": 27,
+  "delta_omega_rms": 0.17399835902787847,
+  "delta_rho_dot_rms": 0.02974816843368272,
+  "acf_one_over_e_time": 8.0,
+  "gamma_candidates": [
+    0.0625,
+    0.125,
+    0.25
+  ],
+  "eta_candidates": [
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "ridge_candidates": [
+    1e-06,
+    1e-05,
+    0.0001,
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "normalization": {
+    "rho": {
+      "mean": 0.2583445815137197,
+      "scale": 0.14272358154476136
+    },
+    "omega_fvm": {
+      "mean": 1.1326231151148853,
+      "scale": 0.12113246352034159
+    },
+    "rho_dot_fvm": {
+      "mean": 0.0005249720037615454,
+      "scale": 0.002509202902824468
+    },
+    "Re": {
+      "mean": 120.58876117496803,
+      "scale": 15.591580623853021
+    }
+  },
+  "validation_loaded": false,
+  "heldout_loaded": false
+}

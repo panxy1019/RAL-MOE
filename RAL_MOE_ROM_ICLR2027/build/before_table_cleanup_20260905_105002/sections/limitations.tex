@@ -1,0 +1,22 @@
+\section{Limitations}
+
+The regime cover and admissible adjacency graph are selected using validation support;
+the method does not discover arbitrary bifurcation structure or certify unseen
+transitions. T2-C is evaluated only between adjacent specialists, and convex
+physical-space fusion may be insufficient when more than two regimes interact or when
+conserved quantities require a constrained assembly rule. The evidence concerns
+two-dimensional incompressible flows and empirical finite-horizon behavior; it does not
+establish provable stability, conservation, or accuracy outside the sampled parameter
+ranges. A separate hierarchy is trained for each benchmark, so cross-geometry transfer
+of one hierarchy is not evaluated. Multiple local bases, operators, and specialists also
+increase training and model-management cost relative to one global ROM.
+
+The retained experiment package does not include the final training checkpoints and
+complete architecture configurations. We therefore do not report post-hoc internal
+expert-utilization or non-collapse statistics, nor a total-versus-active parameter table;
+the structured-expert comparison should not be interpreted as a parameter-matched
+capacity test. The retained results are from fixed training runs, and multi-seed
+uncertainty has not been quantified. Finally, the source records define rollout
+divergence to include non-finite states and violations of a predefined threshold, but do
+not retain that threshold's numerical value. These configuration, seed, and threshold
+records must be recovered for the final reproducibility package rather than inferred.

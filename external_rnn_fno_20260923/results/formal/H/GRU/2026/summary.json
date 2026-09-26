@@ -1,0 +1,57 @@
+{
+  "regime": "H",
+  "cell": "GRU",
+  "seed": 2026,
+  "phase": "formal",
+  "steps": 4000,
+  "config": {
+    "id": 11,
+    "width": 128,
+    "layers": 2,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 0.0001
+  },
+  "code_sha256": "69f73c3a3dcf597d080a9ce1ec1ef3b6005acc3a5ab4ba8bc3bf362dbec2f357",
+  "manifest_sha256": "c6e4c795f1920e586c59e2936efce1b1ed24882c04c8c50d9568612931b75c20",
+  "protocol_sha256": "dc84462a2fed599c9fda4e4b9d417ed0538b415e7cee6f7641b867116e9d0a6b",
+  "parameter_count": 182592,
+  "accepted": true,
+  "best_step": 2800,
+  "validation_worst": 0.2122434610385904,
+  "validation_macro": 0.20728056635786787,
+  "training_seconds": 45.56511812470853,
+  "peak_gpu_allocated_bytes": 57255424,
+  "failure": "",
+  "last_step": 4000,
+  "heldout_evaluated": true,
+  "horizons": {
+    "24": {
+      "regime": "H",
+      "model": "GRU",
+      "seed": 2026,
+      "K": 24,
+      "complete": 42,
+      "total": 42,
+      "divergent": 0,
+      "parameter_count": 182592,
+      "Eu": 0.009866493208976427,
+      "Ep": 0.046369685203128376,
+      "joint": 0.0562361784121048
+    },
+    "48": {
+      "regime": "H",
+      "model": "GRU",
+      "seed": 2026,
+      "K": 48,
+      "complete": 42,
+      "total": 42,
+      "divergent": 0,
+      "parameter_count": 182592,
+      "Eu": 0.06121921102071631,
+      "Ep": 0.29082689303391357,
+      "joint": 0.3520461040546299
+    }
+  },
+  "checkpoint_sha256": "59c0020a438dd372dff57905b4143be42855ebc2675f477afd2975433f9d4411"
+}

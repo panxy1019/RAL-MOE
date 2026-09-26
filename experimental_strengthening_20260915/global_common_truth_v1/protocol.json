@@ -1,0 +1,6 @@
+{
+  "reference": "local Periodic POD-reconstructed physical truth, identical to aligned local/dense/Galerkin evaluation",
+  "comparison": "cross-chart Gram matrix includes differences in bases and mean fields; physical mesh and weights asserted equal; pressure area-weighted mean removed from both fields",
+  "limitation": "not full-order snapshot error; original global model uses supplied per-Re mean fields",
+  "windows": 12
+}

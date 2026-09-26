@@ -1,0 +1,1064 @@
+
+
+\section{Regime-Local Reduced-Order Models}
+\label{sec:regime_local_representation}
+
+The Regime-Adaptive Localized Mixture-of-Experts Reduced-Order Model
+(RAL-MoE-ROM) represents a parametrized flow by a collection of local
+reduced dynamical systems rather than by a single global coordinate system.
+The construction is motivated by the fact that the steady, Hopf-onset, and
+periodic regimes occupy geometrically and dynamically distinct parts of the
+solution manifold.  We first define the regime cover and leakage-free data
+partition, then construct the pressure-gauged local POD spaces, their
+encoders, decoders, and scalers, and finally project the physical operators.
+Only after all constituent objects have been introduced do we collect them
+into a complete local chart.  History features, phase conventions, learned
+updates, and native time integrators belong to the specialist dynamics and
+are therefore defined in Section~\ref{sec:hprs_moe_specialists}, rather than
+being treated as part of the POD representation itself.
+
+
+\subsection{Parameterized flow dynamics and regime decomposition}
+\label{subsec:parametric_regime_decomposition}
+
+Let $\Omega\subset\mathbb{R}^{2}$ denote the spatial domain and let
+$\mu\in\mathcal{M}$ be the parameter.  The
+high-fidelity state at time $t$ is written as
+\begin{equation}
+  \boldsymbol{x}(t;\mu)
+  =
+  \bigl(\boldsymbol{u}(t;\mu),p^{\circ}(t;\mu)\bigr),
+  \label{eq:full_state_definition}
+\end{equation}
+where $\boldsymbol{u}$ is the velocity field and $p^{\circ}$ is a
+gauge-corrected pressure field.  The parameter domain is covered by three
+regime-local sets,
+\begin{equation}
+  \mathcal{M}
+  \subseteq
+  \mathcal{M}_{S}\cup\mathcal{M}_{H}\cup\mathcal{M}_{P},
+  \qquad
+  r\in\mathcal{R}:=\{S,H,P\},
+  \label{eq:regime_cover}
+\end{equation}
+associated with steady, hopf-onset, and periodic dynamics.  The cover is not
+required to be disjoint.  Its adjacent overlaps are precisely the locations
+at which more than one local model may be considered:
+\begin{equation}
+  \mathcal{O}_{SH}=\mathcal{M}_{S}\cap\mathcal{M}_{H},
+  \qquad
+  \mathcal{O}_{HP}=\mathcal{M}_{H}\cap\mathcal{M}_{P}.
+  \label{eq:adjacent_overlaps}
+\end{equation}
+The certified topology does not contain a direct $S$--$P$ edge.  Hence,
+physical proximity of two parameters alone does not authorize a cross-chart
+prediction; adjacency and dynamical admissibility are both required.
+
+
+For regime $r$, let
+\begin{equation}
+  \mathfrak{D}_{r}^{q}
+  =
+  \left\{
+    \left(
+      \mu_i,\,
+      \{t_{i,n},\boldsymbol{u}_{i,n},p_{i,n}\}_{n=0}^{N_i-1}
+    \right)
+  \right\}_{i\in\mathcal{I}_{r}^{q}},
+  \qquad
+  q\in\{\mathrm{tra},\mathrm{va},\mathrm{te}\},
+  \label{eq:trajectory_populations}
+\end{equation}
+denote its training, validation, and test sets.  The associated
+parameter sets obey
+\begin{equation}
+  \mathcal{M}_{r}^{\mathrm{tr}}
+  \cap\mathcal{M}_{r}^{\mathrm{va}}
+  =
+  \mathcal{M}_{r}^{\mathrm{tr}}
+  \cap\mathcal{M}_{r}^{\mathrm{te}}
+  =
+  \mathcal{M}_{r}^{\mathrm{va}}
+  \cap\mathcal{M}_{r}^{\mathrm{te}}
+  =\varnothing .
+  \label{eq:complete_re_isolation}
+\end{equation}
+All snapshots  belonging to one parameter trajectory
+remain in the same set.  Every local mean, POD basis, and coefficient
+scaler introduced below is estimated exclusively from
+$\mathfrak{D}_{r}^{\mathrm{tr}}$. This complete-parameter,
+complete-trajectory partition prevents a future segment of an initialization
+trajectory from leaking into another set.
+
+
+
+\subsection{Area-weighted local POD construction}
+\label{subsec:local_pod_and_gauge}
+
+Let $N_u$ and $N_p$ denote the numbers of velocity and pressure degrees of
+freedom, respectively, on the common finite-volume mesh.  Let
+$\boldsymbol{w}=(w_1,\ldots,w_{N_p})^{\mathsf T}$ collect the cell areas,
+with $w_j>0$.  Since the pressure associated with an incompressible flow is
+determined only up to an additive spatial constant, a pressure gauge must be
+fixed before computing the pressure mean and constructing the corresponding
+POD space.  We select the weighted zero-mean representative through the
+linear map
+\begin{equation}
+\Gamma_p(q) = q-\frac{\boldsymbol{w}^{\mathsf T}q}
+{\boldsymbol{w}^{\mathsf T}\boldsymbol{1}}\boldsymbol{1},
+\qquad
+p^\circ:=\Gamma_p(p).
+\label{eq:pressure_gauge}
+\end{equation}
+The gauge-fixed pressure belongs to the discrete zero-mean space
+\begin{equation}
+\mathcal{Q}_{0,h} = \left\{
+q\in\mathbb{R}^{N_p}:
+\boldsymbol{w}^{\mathsf T}q=0
+\right\},
+\label{eq:discrete_zero_mean_pressure_space}
+\end{equation}
+and therefore satisfies
+$\boldsymbol{w}^{\mathsf T}p^\circ=0$.  The operator $\Gamma_p$ removes the
+constant-pressure nullspace and is an idempotent projection onto
+$\mathcal{Q}_{0,h}$.
+
+The finite-volume quadrature induces the discrete physical inner products
+\begin{equation}
+\langle \boldsymbol{v},\boldsymbol{z}\rangle_{M_u} = \boldsymbol{v}^{\mathsf T}M_u\boldsymbol{z},
+\qquad
+\langle q,s\rangle_{M_p} = q^{\mathsf T}M_p s,
+\label{eq:weighted_inner_products}
+\end{equation}
+with the associated norms
+\begin{equation}
+\|\boldsymbol{v}\|_{M_u} = \left( \boldsymbol{v}^{\mathsf T}M_u\boldsymbol{v} \right)^{1/2},
+\qquad
+\|q\|_{M_p} = \left( q^{\mathsf T}M_pq \right)^{1/2}.
+\label{eq:weighted_discrete_norms}
+\end{equation}
+Here $M_u$ and $M_p$ are the velocity and pressure quadrature matrices,
+respectively.  For the two-dimensional collocated finite-volume
+discretization and component-block ordering adopted in this work, they are
+given by
+\begin{equation}
+M_p = \operatorname{diag}(w_1,\ldots,w_{N_p}),
+\qquad
+M_u = \operatorname{diag}(M_p,M_p),
+\label{eq:velocity_pressure_mass_matrices}
+\end{equation}
+so that the same cell-area quadrature is applied independently to the two
+velocity components.
+
+For each regime $r\in\mathcal{R}$, the local POD spaces are constructed
+exclusively from the snapshots contained in the regime-specific training
+population $\mathfrak{D}_{r}^{\mathrm{tr}}$.  Let
+\begin{equation}
+N_r^{\mathrm{tr}} = \sum_{i\in\mathcal{I}_{r}^{\mathrm{tr}}}N_i
+\label{eq:number_regime_training_snapshots}
+\end{equation}
+denote the total number of training snapshots in regime $r$.  After
+enumerating the snapshots from all training trajectories by a single index,
+the corresponding ensemble is written as
+\begin{equation}
+\left\{
+\left(
+\boldsymbol{u}^{(r)}_s,
+p^{(r),\circ}_s
+\right)
+\right\}_{s=1}^{N_r^{\mathrm{tr}}},
+\qquad
+p^{(r),\circ}_s = \Gamma_p\left(p^{(r)}_s\right).
+\label{eq:regime_training_snapshot_ensemble}
+\end{equation}
+The regime-local velocity and pressure means are
+\begin{equation}
+\overline{\boldsymbol{u}}^{(r)} = \frac{1}{N_r^{\mathrm{tr}}}
+\sum_{s=1}^{N_r^{\mathrm{tr}}}
+\boldsymbol{u}^{(r)}_s,
+\qquad
+\overline{p}^{(r),\circ} = \frac{1}{N_r^{\mathrm{tr}}}
+\sum_{s=1}^{N_r^{\mathrm{tr}}}
+p^{(r),\circ}_s.
+\label{eq:local_training_means}
+\end{equation}
+Since $\Gamma_p$ is linear and every gauge-fixed pressure snapshot belongs
+to $\mathcal{Q}_{0,h}$, the local pressure mean also satisfies
+\begin{equation}
+\boldsymbol{w}^{\mathsf T} \overline{p}^{(r),\circ} = 0.
+\label{eq:local_pressure_mean_gauge}
+\end{equation}
+
+The centered velocity and pressure snapshot matrices are defined as
+\begin{align}
+X_u^{(r)}
+&=
+\left[
+\boldsymbol{u}^{(r)}_1-\overline{\boldsymbol{u}}^{(r)}
+\ \cdots
+\boldsymbol{u}^{(r)}_{N_r^{\mathrm{tr}}}
+-\overline{\boldsymbol{u}}^{(r)}
+\right],
+\label{eq:centered_velocity_snapshots} \\
+X_p^{(r)}
+&=
+\left[
+p^{(r),\circ}_1-\overline{p}^{(r),\circ}
+\ \cdots
+p^{(r),\circ}_{N_r^{\mathrm{tr}}}
+-\overline{p}^{(r),\circ}
+\right].
+\label{eq:centered_pressure_snapshots}
+\end{align}
+
+The regime-local velocity POD basis is defined as an
+$M_u$-orthonormal basis that minimizes the total projection error of the
+centered velocity snapshots:
+\begin{equation}
+\Phi_u^{(r)}
+\in
+\underset{
+\substack{
+\Psi\in\mathbb{R}^{N_u\times d_u}\\
+\Psi^{\mathsf T}M_u\Psi=I_{d_u}
+}
+}{\operatorname{arg\,min}}
+\bigl\|
+X_u^{(r)}
+-
+\Psi\Psi^{\mathsf T}M_uX_u^{(r)}
+\bigr\|_{M_u,F}^{2}.
+\label{eq:velocity_pod_minimization}
+\end{equation}
+Similarly, the regime-local pressure POD basis solves
+\begin{equation}
+\Phi_p^{(r)}
+\in
+\underset{
+\substack{
+\Psi\in\mathbb{R}^{N_p\times d_p}\\
+\Psi^{\mathsf T}M_p\Psi=I_{d_p}
+}
+}{\operatorname{arg\,min}}
+\bigl\|
+X_p^{(r)}
+-
+\Psi\Psi^{\mathsf T}M_pX_p^{(r)}
+\bigr\|_{M_p,F}^{2},
+\label{eq:pressure_pod_minimization}
+\end{equation}
+where the weighted Frobenius norm is defined by
+\begin{equation}
+\|Y\|_{M,F}^{2} = \operatorname{tr}\left(Y^{\mathsf T}MY\right).
+\label{eq:weighted_frobenius_norm}
+\end{equation}
+Consequently, the local POD spaces are optimal, in the corresponding
+finite-volume approximations of the physical $L^2$ norms, among all linear
+subspaces of dimensions $d_u$ and $d_p$.
+
+The above minimization problems are solved through singular-value
+decompositions of the quadrature-weighted snapshot matrices:
+\begin{align}
+M_u^{1/2}X_u^{(r)}
+&=
+U_u^{(r)}\Sigma_u^{(r)}{V_u^{(r)}}^{\mathsf T},
+&
+\Phi_u^{(r)}
+&=
+M_u^{-1/2}U_u^{(r)}(:,1{:}d_u),
+\label{eq:weighted_velocity_svd} \\
+M_p^{1/2}X_p^{(r)}
+&=
+U_p^{(r)}\Sigma_p^{(r)}{V_p^{(r)}}^{\mathsf T},
+&
+\Phi_p^{(r)}
+&=
+M_p^{-1/2}U_p^{(r)}(:,1{:}d_p).
+\label{eq:weighted_pressure_svd}
+\end{align}
+The resulting local POD bases satisfy
+\begin{equation}
+\Phi_u^{(r)}
+\in
+\mathbb{R}^{N_u\times d_u},
+\qquad
+\Phi_p^{(r)}
+\in
+\mathbb{R}^{N_p\times d_p},
+\label{eq:local_pod_bases}
+\end{equation}
+and are orthonormal with respect to the discrete physical inner products:
+\begin{equation}
+{\Phi_u^{(r)}}^{\mathsf T}M_u\Phi_u^{(r)} = I_{d_u},
+\qquad
+{\Phi_p^{(r)}}^{\mathsf T}M_p\Phi_p^{(r)} = I_{d_p}.
+\label{eq:weighted_orthonormality}
+\end{equation}
+Moreover, because every centered pressure snapshot belongs to the
+zero-mean space $\mathcal{Q}_{0,h}$, the retained pressure modes satisfy
+\begin{equation}
+\boldsymbol{w}^{\mathsf T}\Phi_p^{(r)} = \boldsymbol{0}^{\mathsf T}.
+\label{eq:pressure_modes_gauge_consistency}
+\end{equation}
+
+Let $\sigma_{u,j}^{(r)}$ and $\sigma_{p,j}^{(r)}$ denote the singular values
+of the weighted velocity and pressure snapshot matrices, respectively.  Their
+squares measure the contributions of the corresponding POD modes to the
+total weighted fluctuation energy.  The cumulative energy fractions retained
+by the local reduced spaces are
+\begin{equation}
+\eta_u^{(r)}(d_u) = 
+\frac{
+\displaystyle
+\sum_{j=1}^{d_u}
+\bigl(\sigma_{u,j}^{(r)}\bigr)^2
+}{
+\displaystyle
+\sum_{j=1}^{\rho_u^{(r)}}
+\bigl(\sigma_{u,j}^{(r)}\bigr)^2
+},
+\qquad
+\eta_p^{(r)}(d_p) = 
+\frac{
+\displaystyle
+\sum_{j=1}^{d_p}
+\bigl(\sigma_{p,j}^{(r)}\bigr)^2
+}{
+\displaystyle
+\sum_{j=1}^{\rho_p^{(r)}}
+\bigl(\sigma_{p,j}^{(r)}\bigr)^2
+},
+\label{eq:local_pod_energy_fractions}
+\end{equation}
+where $\rho_u^{(r)}$ and $\rho_p^{(r)}$ are the respective ranks of the
+weighted snapshot matrices.  The corresponding minimum squared projection
+errors are
+\begin{equation}
+\bigl\|
+X_u^{(r)}
+-
+\Phi_u^{(r)}{\Phi_u^{(r)}}^{\mathsf T}
+M_uX_u^{(r)}
+\bigr\|_{M_u,F}^{2}
+= \sum_{j=d_u+1}^{\rho_u^{(r)}}
+\bigl(\sigma_{u,j}^{(r)}\bigr)^2,
+\label{eq:velocity_pod_truncation_error}
+\end{equation}
+and
+\begin{equation}
+\bigl\|
+X_p^{(r)}
+-
+\Phi_p^{(r)}{\Phi_p^{(r)}}^{\mathsf T}
+M_pX_p^{(r)}
+\bigr\|_{M_p,F}^{2}
+= \sum_{j=d_p+1}^{\rho_p^{(r)}}
+\bigl(\sigma_{p,j}^{(r)}\bigr)^2.
+\label{eq:pressure_pod_truncation_error}
+\end{equation}
+Thus, the singular values provide both an energy-based interpretation of the
+retained modes and an exact characterization of the training-set POD
+truncation error.  The local means, POD bases, and mode dimensions are
+determined exclusively from the training population; validation and test
+snapshots do not enter any stage of the POD construction.
+
+For an arbitrary velocity field $\boldsymbol{u}$, its regime-local POD
+coefficient vector is obtained by the $M_u$-orthogonal projection
+\begin{equation}
+\boldsymbol{a}^{(r)} = {\Phi_u^{(r)}}^{\mathsf T}M_u
+\bigl( \boldsymbol{u} - \overline{\boldsymbol{u}}^{(r)} \bigr).
+\label{eq:velocity_encode}
+\end{equation}
+For an arbitrary pressure field $p$, the pressure gauge is first fixed and
+the local pressure coefficients are then defined by
+\begin{equation}
+\boldsymbol{b}^{(r)} = {\Phi_p^{(r)}}^{\mathsf T}M_p
+\bigl( \Gamma_p(p) - \overline{p}^{(r),\circ} \bigr).
+\label{eq:pressure_encode}
+\end{equation}
+The associated affine POD reconstruction maps are
+\begin{align}
+\mathcal{D}^{u}_{r}(\boldsymbol{a}^{(r)})
+&= \overline{\boldsymbol{u}}^{(r)} + \Phi_u^{(r)}\boldsymbol{a}^{(r)},
+\label{eq:velocity_decode} \\
+\mathcal{D}^{p}_{r}(\boldsymbol{b}^{(r)})
+&= \overline{p}^{(r),\circ} + \Phi_p^{(r)}\boldsymbol{b}^{(r)}.
+\label{eq:pressure_decode}
+\end{align}
+The compositions of the coordinate and reconstruction maps define the
+orthogonal projections onto the corresponding affine reduced spaces.  In
+particular,
+\begin{equation}
+\mathcal{P}^{u}_{r}(\boldsymbol{u}) = \overline{\boldsymbol{u}}^{(r)}
++ \Phi_u^{(r)}{\Phi_u^{(r)}}^{\mathsf T}M_u
+\bigl( \boldsymbol{u} - \overline{\boldsymbol{u}}^{(r)} \bigr),
+\label{eq:velocity_affine_pod_projection}
+\end{equation}
+while the gauge-consistent pressure projection is
+\begin{equation}
+\mathcal{P}^{p}_{r}(p) = \overline{p}^{(r),\circ}
++ \Phi_p^{(r)}{\Phi_p^{(r)}}^{\mathsf T}M_p
+\bigl( \Gamma_p(p) - \overline{p}^{(r),\circ} \bigr).
+\label{eq:pressure_affine_pod_projection}
+\end{equation}
+These maps are referred to below as the regime-local POD coordinate and
+reconstruction maps.  The terms encoder and decoder are used only when
+describing their role in the implementation of the learned specialist
+models.
+
+As a numerical preprocessing step for the subsequent learned models, the
+POD coefficients are standardized separately within each regime:
+\begin{equation}
+\widetilde{\boldsymbol{a}}^{(r)} = 
+\bigl( \boldsymbol{a}^{(r)} - \boldsymbol{\mu}_{a}^{(r)} \bigr)
+\oslash
+\boldsymbol{\sigma}_{a}^{(r)},
+\qquad
+\widetilde{\boldsymbol{b}}^{(r)} = 
+\bigl( \boldsymbol{b}^{(r)} - \boldsymbol{\mu}_{b}^{(r)} \bigr)
+\oslash
+\boldsymbol{\sigma}_{b}^{(r)},
+\label{eq:local_scalers}
+\end{equation}
+where $\oslash$ denotes componentwise division, and
+$\boldsymbol{\mu}_{a}^{(r)}$, $\boldsymbol{\sigma}_{a}^{(r)}$,
+$\boldsymbol{\mu}_{b}^{(r)}$, and
+$\boldsymbol{\sigma}_{b}^{(r)}$ are computed exclusively from the POD
+coefficients of $\mathfrak{D}_{r}^{\mathrm{tr}}$.  Because the snapshots are
+centered before projection, the coefficient means vanish in exact
+arithmetic; they are retained in \eqref{eq:local_scalers} to describe the
+implemented preprocessing uniformly.
+
+The standardized coefficients are used only within the learned
+regime-specific models.  The Galerkin and Pressure--Poisson operators,
+inter-chart coordinate transformations, and physical-field reconstructions
+are formulated in terms of the unstandardized POD coefficients
+$\boldsymbol{a}^{(r)}$ and $\boldsymbol{b}^{(r)}$.
+
+
+
+
+
+
+
+
+
+
+\subsection{Chart-local POD--Galerkin and Pressure--Poisson operators}
+\label{subsec:local_galerkin_pressure_poisson}
+
+The regime-local reduced operators are obtained by projecting the
+semi-discrete incompressible flow equations onto the local POD spaces
+introduced in Section~\ref{subsec:local_pod_and_gauge}.  After elimination of
+prescribed boundary degrees of freedom and incorporation of the lifting
+associated with the parameter-dependent boundary data, the full-order
+velocity equation is written in mass-inverted form as
+\begin{equation}
+  \dot{\boldsymbol{u}}
+  =
+  \boldsymbol{f}_{h}(\mu)
+  +\mathcal{L}_{h}(\mu)\boldsymbol{u}
+  -\mathcal{N}_{h}
+   \bigl(\boldsymbol{u},\boldsymbol{u};\mu\bigr)
+  -\nabla_{h}(\mu)p^{\circ},
+  \qquad
+  \operatorname{div}_{h}(\mu)\boldsymbol{u}=0.
+  \label{eq:semidiscrete_incompressible_system}
+\end{equation}
+Here $\mathcal{L}_{h}(\mu)$ denotes the discrete linear momentum operator,
+including the viscous contribution, and
+$\mathcal{N}_{h}(\boldsymbol{v},\boldsymbol{z};\mu)$ denotes the bilinear
+discrete convection operator associated with
+$(\boldsymbol{v}\cdot\nabla)\boldsymbol{z}$.  The operators
+$\nabla_h(\mu)$ and $\operatorname{div}_h(\mu)$ are the discrete gradient
+and divergence, respectively, while $\boldsymbol{f}_{h}(\mu)$ collects the
+body-force, boundary, and lifting contributions that are independent of the
+instantaneous reduced coordinates.  The explicit dependence on $\mu$
+allows for parameter-dependent boundary elimination, lifting functions, or
+offline interpolation of full-order operators.  Equation
+\eqref{eq:semidiscrete_incompressible_system} also fixes the sign convention
+used throughout this subsection.
+
+Using the affine POD reconstructions
+\eqref{eq:velocity_decode}--\eqref{eq:pressure_decode}, the local
+approximations in regime $r$ are written componentwise as
+\begin{equation}
+  \boldsymbol{u}^{(r)}_{\mathrm{ROM}}
+  =
+  \overline{\boldsymbol{u}}^{(r)}
+  +\sum_{j=1}^{d_u}
+   a_j^{(r)}\boldsymbol{\phi}^{u,(r)}_j,
+  \qquad
+  p^{\circ,(r)}_{\mathrm{ROM}}
+  =
+  \overline{p}^{(r),\circ}
+  +\sum_{\ell=1}^{d_p}
+   b_\ell^{(r)}\phi^{p,(r)}_\ell.
+  \label{eq:local_pod_expansions_componentwise}
+\end{equation}
+Substitution of \eqref{eq:local_pod_expansions_componentwise} into the
+momentum equation in \eqref{eq:semidiscrete_incompressible_system}, followed
+by Galerkin projection with respect to the $M_u$ inner product, yields
+\begin{equation}
+  M^{u,(r)}\dot{\boldsymbol{a}}^{(r)}
+  =
+  \boldsymbol{c}_r(\mu)
+  +A_r(\mu)\boldsymbol{a}^{(r)}
+  +H_r(\mu):
+   \bigl(
+     \boldsymbol{a}^{(r)}
+     \otimes
+     \boldsymbol{a}^{(r)}
+   \bigr)
+  +C_r^p(\mu)\boldsymbol{b}^{(r)}.
+  \label{eq:projected_local_momentum_general_mass}
+\end{equation}
+The reduced velocity mass matrix is
+\begin{equation}
+  \bigl[M^{u,(r)}\bigr]_{ij}
+  =
+  \left\langle
+    \boldsymbol{\phi}^{u,(r)}_i,\,
+    \boldsymbol{\phi}^{u,(r)}_j
+  \right\rangle_{M_u}.
+  \label{eq:local_reduced_velocity_mass}
+\end{equation}
+Because the local velocity POD basis is $M_u$-orthonormal,
+$M^{u,(r)}=I_{d_u}$.  The remaining reduced operators are defined by
+\begin{align}
+  [\boldsymbol{c}_r(\mu)]_i
+  &=
+  \left\langle
+    \boldsymbol{\phi}^{u,(r)}_i,\,
+    \boldsymbol{f}_{h}(\mu)
+    +\mathcal{L}_{h}(\mu)\overline{\boldsymbol{u}}^{(r)}
+    -\mathcal{N}_{h}
+     \bigl(
+       \overline{\boldsymbol{u}}^{(r)},
+       \overline{\boldsymbol{u}}^{(r)};\mu
+     \bigr)
+    -\nabla_{h}(\mu)\overline{p}^{(r),\circ}
+  \right\rangle_{M_u},
+  \label{eq:galerkin_constant_definition}\\
+  [A_r(\mu)]_{ij}
+  &=
+  \left\langle
+    \boldsymbol{\phi}^{u,(r)}_i,\,
+    \mathcal{L}_{h}(\mu)\boldsymbol{\phi}^{u,(r)}_j
+    -\mathcal{N}_{h}
+     \bigl(
+       \overline{\boldsymbol{u}}^{(r)},
+       \boldsymbol{\phi}^{u,(r)}_j;\mu
+     \bigr)
+    -\mathcal{N}_{h}
+     \bigl(
+       \boldsymbol{\phi}^{u,(r)}_j,
+       \overline{\boldsymbol{u}}^{(r)};\mu
+     \bigr)
+  \right\rangle_{M_u},
+  \label{eq:galerkin_linear_definition}\\
+  [H_r(\mu)]_{ijk}
+  &=
+  -\left\langle
+    \boldsymbol{\phi}^{u,(r)}_i,\,
+    \mathcal{N}_{h}
+     \bigl(
+       \boldsymbol{\phi}^{u,(r)}_j,
+       \boldsymbol{\phi}^{u,(r)}_k;\mu
+     \bigr)
+  \right\rangle_{M_u},
+  \label{eq:galerkin_quadratic_definition}\\
+  [C_r^p(\mu)]_{i\ell}
+  &=
+  -\left\langle
+    \boldsymbol{\phi}^{u,(r)}_i,\,
+    \nabla_{h}(\mu)\phi^{p,(r)}_\ell
+  \right\rangle_{M_u}.
+  \label{eq:galerkin_pressure_coupling_definition}
+\end{align}
+For a third-order tensor $H_r(\mu)$, the double contraction is defined as
+\begin{equation}
+  \left[
+    H_r(\mu):
+    (\boldsymbol{a}\otimes\boldsymbol{a})
+  \right]_i
+  =
+  \sum_{j=1}^{d_u}
+  \sum_{k=1}^{d_u}
+  [H_r(\mu)]_{ijk}a_j a_k.
+  \label{eq:galerkin_tensor_contraction}
+\end{equation}
+Accordingly, the regime-local Galerkin contribution to the reduced velocity
+dynamics is
+\begin{equation}
+  \mathscr{F}^{\mathrm{G}}_r
+  (\boldsymbol{a},\boldsymbol{b};\mu)
+  :=
+  \boldsymbol{c}_r(\mu)
+  +A_r(\mu)\boldsymbol{a}
+  +H_r(\mu):
+   (\boldsymbol{a}\otimes\boldsymbol{a})
+  +C_r^p(\mu)\boldsymbol{b}.
+  \label{eq:chart_local_galerkin_rhs_definition}
+\end{equation}
+The pressure-coupling term is retained because the finite-volume velocity
+POD basis is not assumed to be discretely divergence-free.  All quadrature
+rules, boundary contributions, and degree-of-freedom orderings entering the
+reduced operators are inherited consistently from the full-order
+finite-volume discretization.  When a particular full-order operator is
+independent of $\mu$, the corresponding parameter argument in the reduced
+operator may be omitted.
+
+The pressure is not advanced through an independent evolution equation.
+Instead, a pressure approximation is obtained from the incompressibility
+constraint and the momentum balance.  For reference, in the
+constant-viscosity continuous setting, for which
+$\nabla\cdot\Delta\boldsymbol{u}=0$, the pressure satisfies
+\begin{equation}
+  -\Delta p^{\circ}
+  =
+  \nabla\cdot
+  \left[
+    (\boldsymbol{u}\cdot\nabla)\boldsymbol{u}
+    -\boldsymbol{f}
+  \right],
+  \qquad
+  \int_{\Omega}p^{\circ}\,\mathrm{d}\Omega=0,
+  \label{eq:pressure_poisson_strong_form}
+\end{equation}
+together with the pressure-flux boundary condition induced by the momentum
+equation.  At the discrete level, the Pressure--Poisson equation is assembled
+using the same finite-volume gradient, divergence, quadrature, and boundary
+fluxes as the full-order pressure-correction scheme.  We denote its
+gauge-fixed bilinear form by
+\begin{equation}
+  \mathscr{A}^{PP}_h(q,s;\mu)
+  :=
+  \left\langle
+    \nabla_h(\mu)q,\,
+    \nabla_h(\mu)s
+  \right\rangle_{\Omega,h},
+  \label{eq:pressure_poisson_bilinear_form}
+\end{equation}
+where $\langle\cdot,\cdot\rangle_{\Omega,h}$ denotes the finite-volume
+quadrature associated with the discrete pressure equation.
+
+Let
+$\mathscr{R}^{PP}_h(q;\boldsymbol{u},\mu)$ denote the complete discrete
+Pressure--Poisson right-hand-side functional, including all boundary-flux
+and lifting contributions.  Its standard volume contribution may be written
+as
+\begin{equation}
+  \mathscr{R}^{PP}_{h,\Omega}
+  (q;\boldsymbol{u},\mu)
+  =
+  -\left\langle
+    \nabla_h(\mu)q,\,
+    \mathcal{N}_{h}
+     (\boldsymbol{u},\boldsymbol{u};\mu)
+    -\boldsymbol{f}_{h}(\mu)
+    -\mathcal{L}_{h}(\mu)\boldsymbol{u}
+  \right\rangle_{\Omega,h}.
+  \label{eq:pressure_poisson_weak_rhs}
+\end{equation}
+Terms whose discrete divergence vanishes identically may, of course, be
+removed during assembly.  Retaining the functional notation
+$\mathscr{R}^{PP}_h$ avoids imposing such cancellations before the boundary
+conditions and discrete operators have been specified.
+
+Testing the discrete Pressure--Poisson equation with
+$q=\phi^{p,(r)}_\ell$ and inserting the local velocity and pressure
+expansions from \eqref{eq:local_pod_expansions_componentwise} gives
+\begin{equation}
+  K_r^p(\mu)\boldsymbol{b}^{PP,(r)}
+  =
+  \boldsymbol{d}_r(\mu)
+  +B_r(\mu)\boldsymbol{a}^{(r)}
+  +Q_r(\mu):
+   \bigl(
+     \boldsymbol{a}^{(r)}
+     \otimes
+     \boldsymbol{a}^{(r)}
+   \bigr).
+  \label{eq:reduced_pressure_poisson_system}
+\end{equation}
+Here $\boldsymbol{b}^{PP,(r)}$ denotes the pressure coefficients supplied by
+the reduced Pressure--Poisson model, which are distinguished from the
+projected pressure coefficients $\boldsymbol{b}^{(r)}$ obtained directly
+from a full-order snapshot.  The reduced pressure matrix is
+\begin{equation}
+  [K_r^p(\mu)]_{\ell m}
+  =
+  \mathscr{A}^{PP}_h
+  \bigl(
+    \phi^{p,(r)}_\ell,
+    \phi^{p,(r)}_m;\mu
+  \bigr).
+  \label{eq:pressure_poisson_stiffness}
+\end{equation}
+To define the polynomial right-hand side, we use the exact decomposition
+\begin{align}
+  &\mathscr{R}^{PP}_h
+  \left(
+    q;\,
+    \overline{\boldsymbol{u}}^{(r)}
+    +\sum_{j=1}^{d_u}
+     a_j\boldsymbol{\phi}^{u,(r)}_j,\,
+    \mu
+  \right)
+  \nonumber\\
+  &\qquad
+  =
+  \mathscr{R}^{PP}_h
+  \left(
+    q;\overline{\boldsymbol{u}}^{(r)},\mu
+  \right)
+  +\sum_{j=1}^{d_u}
+   a_j
+   \mathscr{R}^{PP}_{h,\mathrm{lin}}
+   \left(
+     q;\overline{\boldsymbol{u}}^{(r)},
+     \boldsymbol{\phi}^{u,(r)}_j,\mu
+   \right)
+  \nonumber\\
+  &\qquad\quad
+  +\sum_{j=1}^{d_u}
+   \sum_{k=1}^{d_u}
+   a_j a_k
+   \mathscr{R}^{PP}_{h,\mathrm{quad}}
+   \left(
+     q;
+     \boldsymbol{\phi}^{u,(r)}_j,
+     \boldsymbol{\phi}^{u,(r)}_k,\mu
+   \right).
+  \label{eq:pressure_poisson_rhs_decomposition}
+\end{align}
+The constant, linear, and quadratic reduced coefficients are therefore
+defined by
+\begin{align}
+  [\boldsymbol{d}_r(\mu)]_\ell
+  &=
+  \mathscr{R}^{PP}_h
+  \bigl(
+    \phi^{p,(r)}_\ell;
+    \overline{\boldsymbol{u}}^{(r)},\mu
+  \bigr)
+  -
+  \mathscr{A}^{PP}_h
+  \bigl(
+    \phi^{p,(r)}_\ell,
+    \overline{p}^{(r),\circ};\mu
+  \bigr),
+  \label{eq:pressure_poisson_constant}\\
+  [B_r(\mu)]_{\ell j}
+  &=
+  \mathscr{R}^{PP}_{h,\mathrm{lin}}
+  \bigl(
+    \phi^{p,(r)}_\ell;
+    \overline{\boldsymbol{u}}^{(r)},
+    \boldsymbol{\phi}^{u,(r)}_j,\mu
+  \bigr),
+  \label{eq:pressure_poisson_linear}\\
+  [Q_r(\mu)]_{\ell jk}
+  &=
+  \mathscr{R}^{PP}_{h,\mathrm{quad}}
+  \bigl(
+    \phi^{p,(r)}_\ell;
+    \boldsymbol{\phi}^{u,(r)}_j,
+    \boldsymbol{\phi}^{u,(r)}_k,\mu
+  \bigr).
+  \label{eq:pressure_poisson_quadratic}
+\end{align}
+The linear functional contains the contributions that are linear in the
+velocity fluctuation, including the two mean--fluctuation convection terms
+and any linear momentum contribution retained by the discrete
+Pressure--Poisson equation.  The quadratic functional contains the
+mode--mode convection contribution.  Both functionals include the boundary
+terms generated by the full-order discretization.  This formulation avoids
+discarding terms that vanish only under additional assumptions, such as an
+exactly solenoidal velocity basis or homogeneous idealized boundary
+conditions.
+
+Because the pressure mean and all pressure POD modes belong to the
+gauge-fixed space $\mathcal{Q}_{0,h}$, the constant-pressure nullspace has
+already been removed.  On a connected domain, the reduced matrix
+$K_r^p(\mu)$ is therefore positive definite under the standard coercivity
+assumptions for the discrete Pressure--Poisson operator.  The regime-local
+Pressure--Poisson map is consequently defined by
+\begin{equation}
+  \mathscr{Q}^{PP}_r(\boldsymbol{a};\mu)
+  =
+  [K_r^p(\mu)]^{-1}
+  \left[
+    \boldsymbol{d}_r(\mu)
+    +B_r(\mu)\boldsymbol{a}
+    +Q_r(\mu):
+     (\boldsymbol{a}\otimes\boldsymbol{a})
+  \right].
+  \label{eq:chart_local_pressure_poisson_map}
+\end{equation}
+In implementation, \eqref{eq:chart_local_pressure_poisson_map} is evaluated
+by solving the reduced linear system rather than by forming the matrix
+inverse explicitly.  The map is assembled offline and remains fixed during
+the training of the regime-specific learned model.  Any learned pressure
+correction introduced later is defined relative to this algebraic baseline
+and does not alter the underlying reduced Pressure--Poisson operator.
+
+\subsection{Complete regime-local ROM chart}
+\label{subsec:complete_regime_local_rom_chart}
+
+The objects introduced above define the reduced representation associated
+with regime $r$.  We collect them in the regime-local ROM chart
+\begin{equation}
+  \mathcal{C}^{\mathrm{ROM}}_r
+  =
+  \left(
+    \mathcal{M}_r,\,
+    \Gamma_p,\,
+    \overline{\boldsymbol{u}}^{(r)},\,
+    \Phi_u^{(r)},\,
+    \overline{p}^{(r),\circ},\,
+    \Phi_p^{(r)},\,
+    \boldsymbol{\mu}_a^{(r)},\,
+    \boldsymbol{\sigma}_a^{(r)},\,
+    \boldsymbol{\mu}_b^{(r)},\,
+    \boldsymbol{\sigma}_b^{(r)},\,
+    \mathscr{F}^{\mathrm{G}}_r,\,
+    \mathscr{Q}^{PP}_r
+  \right).
+  \label{eq:local_chart_contract}
+\end{equation}
+Thus, $\mathcal{C}^{\mathrm{ROM}}_r$ specifies the parameter region represented
+by the chart, the pressure gauge, the regime-local affine velocity and
+pressure spaces, the coefficient standardization, and the projected
+momentum and Pressure--Poisson operators.  The chart contains only the
+reduced spatial representation and the associated physics-based operators.
+History-dependent features, phase variables, learned closure maps,
+regime-specific time-stepping rules, and routing variables are introduced
+separately when the local dynamical specialists are defined in
+Section~\ref{sec:hprs_moe_specialists}.
+
+Although the local charts may use the same reduced dimensions $d_u$ and
+$d_p$, their means and POD bases are constructed from different
+regime-specific training populations.  Equality of the coefficient-vector
+dimensions therefore does not imply a common reduced coordinate system, and
+modal coefficients from different charts cannot be identified or combined
+componentwise without an explicit change of coordinates.
+
+\subsection{Coordinate transformations between adjacent local POD spaces}
+\label{subsec:adjacent_chart_interfaces}
+
+Coordinate transformations are introduced only between dynamically adjacent
+regimes.  The set of directed adjacent pairs is
+\begin{equation}
+  \mathcal{E}_{\mathrm{adj}}
+  =
+  \{
+    S\!\to\!H,\,
+    H\!\to\!S,\,
+    H\!\to\!P,\,
+    P\!\to\!H
+  \}.
+  \label{eq:adjacent_directed_edges}
+\end{equation}
+No direct transformation between the steady and periodic charts is used.
+
+Let $(r,k)\in\mathcal{E}_{\mathrm{adj}}$.  A state represented by
+$\boldsymbol{a}^{(r)}$ is first reconstructed in the physical velocity space
+and then orthogonally projected onto the affine POD space of chart $k$.  The
+resulting target-chart coefficient vector is
+\begin{equation}
+  \boldsymbol{a}^{(k\leftarrow r)}
+  =
+  T^{u}_{k\leftarrow r}\boldsymbol{a}^{(r)}
+  +\boldsymbol{c}^{u}_{k\leftarrow r},
+  \label{eq:velocity_affine_map}
+\end{equation}
+where
+\begin{equation}
+  T^{u}_{k\leftarrow r}
+  =
+  {\Phi_u^{(k)}}^{\mathsf T}
+  M_u
+  \Phi_u^{(r)},
+  \qquad
+  \boldsymbol{c}^{u}_{k\leftarrow r}
+  =
+  {\Phi_u^{(k)}}^{\mathsf T}
+  M_u
+  \left(
+    \overline{\boldsymbol{u}}^{(r)}
+    -\overline{\boldsymbol{u}}^{(k)}
+  \right).
+  \label{eq:velocity_map_components}
+\end{equation}
+The notation $\boldsymbol{a}^{(k\leftarrow r)}$ emphasizes that the mapped
+coefficient vector is the best $M_u$-orthogonal representation, in chart
+$k$, of the field reconstructed from chart $r$.  The transformation is exact
+only when that reconstructed field belongs to the target affine POD space.
+
+The corresponding pressure transformation is
+\begin{equation}
+  \boldsymbol{b}^{(k\leftarrow r)}
+  =
+  T^{p}_{k\leftarrow r}\boldsymbol{b}^{(r)}
+  +\boldsymbol{c}^{p}_{k\leftarrow r},
+  \label{eq:pressure_affine_map}
+\end{equation}
+with
+\begin{equation}
+  T^{p}_{k\leftarrow r}
+  =
+  {\Phi_p^{(k)}}^{\mathsf T}
+  M_p
+  \Phi_p^{(r)},
+  \qquad
+  \boldsymbol{c}^{p}_{k\leftarrow r}
+  =
+  {\Phi_p^{(k)}}^{\mathsf T}
+  M_p
+  \left(
+    \overline{p}^{(r),\circ}
+    -\overline{p}^{(k),\circ}
+  \right).
+  \label{eq:pressure_map_components}
+\end{equation}
+Since both local pressure means and all pressure POD modes satisfy the same
+gauge condition, the mapped pressure field remains in
+$\mathcal{Q}_{0,h}$.
+
+The affine offsets in
+\eqref{eq:velocity_map_components} and
+\eqref{eq:pressure_map_components} account exclusively for differences
+between the local means.  Consequently, fluctuations, increments, and time
+derivatives are transferred by the linear parts $T^u_{k\leftarrow r}$ and
+$T^p_{k\leftarrow r}$, without the affine offsets.  These transformations
+are assembled offline from the local means, POD bases, and quadrature
+matrices; no matrix inversion or trainable mapping is introduced.
+
+The compatibility of two adjacent local spaces is assessed using both
+basis-level and state-dependent diagnostics.  Because the two POD bases are
+orthonormal with respect to the same physical inner product, the singular
+values of $T^u_{k\leftarrow r}$ are the cosines of the principal angles
+between the two velocity POD subspaces:
+\begin{equation}
+  \cos\theta_i^u(r,k)
+  =
+  \sigma_i
+  \left(
+    T^u_{k\leftarrow r}
+  \right),
+  \qquad
+  i=1,\ldots,d_u.
+  \label{eq:velocity_principal_angles}
+\end{equation}
+An analogous relation holds for the pressure transformation.  Singular
+values close to one indicate directions that are well represented in both
+subspaces, whereas small singular values identify directions that are
+poorly shared across the overlap.
+
+For a velocity field $\boldsymbol{u}$, the irreducible relative projection
+error associated with representation in chart $k$ is
+\begin{equation}
+  e_{\mathrm{proj}}^u(\boldsymbol{u};k)
+  =
+  \frac{
+    \left\|
+      \left(
+        I
+        -\Phi_u^{(k)}
+         {\Phi_u^{(k)}}^{\mathsf T}
+         M_u
+      \right)
+      \left(
+        \boldsymbol{u}
+        -\overline{\boldsymbol{u}}^{(k)}
+      \right)
+    \right\|_{M_u}
+  }{
+    \left\|
+      \boldsymbol{u}
+      -\overline{\boldsymbol{u}}^{(k)}
+    \right\|_{M_u}
+    +\varepsilon
+  }.
+  \label{eq:target_projection_floor}
+\end{equation}
+This quantity is a representation error of the target affine POD space and
+therefore provides a lower bound for any prediction restricted to that
+space.  The corresponding pressure projection error is defined analogously
+after applying the gauge map $\Gamma_p$.
+
+Because the transformations are projections between generally distinct
+subspaces, their composition is not expected to be the identity.  For
+example, the velocity coefficients obtained after a round trip
+$r\to k\to r$ are
+\begin{equation}
+  \boldsymbol{a}^{(r\leftarrow k\leftarrow r)}
+  =
+  T^u_{r\leftarrow k}
+  \left(
+    T^u_{k\leftarrow r}\boldsymbol{a}^{(r)}
+    +\boldsymbol{c}^u_{k\leftarrow r}
+  \right)
+  +\boldsymbol{c}^u_{r\leftarrow k}.
+  \label{eq:velocity_round_trip_map}
+\end{equation}
+A field-level round-trip error may then be defined by
+\begin{equation}
+  e_{\mathrm{rt}}^u
+  \left(
+    \boldsymbol{a}^{(r)};r,k
+  \right)
+  =
+  \frac{
+    \left\|
+      \mathcal{D}_r^u
+      \left(
+        \boldsymbol{a}^{(r\leftarrow k\leftarrow r)}
+      \right)
+      -
+      \mathcal{D}_r^u
+      \left(
+        \boldsymbol{a}^{(r)}
+      \right)
+    \right\|_{M_u}
+  }{
+    \left\|
+      \mathcal{D}_r^u
+      \left(
+        \boldsymbol{a}^{(r)}
+      \right)
+      -
+      \overline{\boldsymbol{u}}^{(r)}
+    \right\|_{M_u}
+    +\varepsilon
+  }.
+  \label{eq:velocity_round_trip_error}
+\end{equation}
+Projection errors, round-trip errors, principal angles, and the singular
+spectra of the cross-Gram matrices are used to assess representational
+compatibility between adjacent charts.  They are diagnostic quantities and
+are not included as trainable penalties once the local POD spaces and
+specialists have been fixed.
+
+When a regime-specific dynamical model uses a sequence of past states, the
+coordinate transformation is applied independently to each unstandardized
+POD coefficient vector, while the associated physical timestamps are
+retained unchanged.  The mapped sequence is then standardized using the
+statistics of the target chart, and all target-specific temporal features,
+including finite differences, phase variables, and closure histories, are
+reconstructed according to the definition of the target specialist.  A
+standardized feature vector from the source chart is therefore never
+transferred directly.
+
+The adjacent transformations provide consistent initialization and
+compatibility diagnostics for the local models; they do not define a global
+POD space or a common reduced vector field.  In particular, modal
+coefficients from distinct charts are not combined componentwise.  Any
+admissible soft combination introduced in
+Section~\ref{sec:hierarchical_ral_moe} is performed only after the local
+predictions have been reconstructed in the common physical velocity and
+pressure spaces.
+
+

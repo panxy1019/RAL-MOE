@@ -1,0 +1,205 @@
+\section{Reproducibility and implementation details}
+\label{app:implementation}
+
+\paragraph{Physical-field error metrics.}
+We evaluate reconstructed velocity and gauge-corrected pressure using the relative weighted field errors
+\begin{equation}
+E_u(n)
+=
+100\frac{
+\|\widehat{\bm u}_n-\bm u_n\|_{M_u}
+}{
+\|\bm u_n\|_{M_u}
+},
+\qquad
+E_p(n)
+=
+100\frac{
+\|\widehat p_n^\circ-p_n^\circ\|_{M_p}
+}{
+\|p_n^\circ\|_{M_p}
+}.
+\label{eq:field_errors}
+\end{equation}
+Here $\|\bm v\|_M=(\bm v^\top M\bm v)^{1/2}$ uses the finite-volume
+quadrature introduced in Appendix~\ref{app:problem_pod}; the velocity norm includes both components, and $p^\circ$ denotes pressure in the common zero-mean gauge. Unless stated otherwise, benchmark-specific temporal and trajectory aggregation is reported with the corresponding experiment. Whenever a joint score is reported,
+$E_{\mathrm{joint}}=E_u+E_p$. Independently rounded component values may therefore differ slightly from the displayed joint score.
+
+
+\paragraph{Trajectory-level partitioning.}
+Table~\ref{tab:chart_splits} summarizes the resulting chart-wise parameter coverage, reduced dimensions, trajectory splits, and evaluation horizons. All splits are defined at the level of complete parameter trajectories rather than individual snapshots or rollout windows. Local bases, normalization statistics, and model parameters are constructed from training trajectories only; validation trajectories are used for model and checkpoint selection, and test trajectories are reserved for the reported evaluations. 
+
+\par
+\begin{table}[H]
+\centering
+\caption{
+Chart-wise parameter coverage, reduced dimensions, trajectory splits, and evaluation horizons. Counts refer to complete parameter trajectories, and $K$ denotes the number of autonomous rollout steps used for the corresponding local evaluation.
+}
+\label{tab:chart_splits}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}llrrrrrr@{}}
+\toprule
+Benchmark & Chart & $Re$ range & $(r_u,r_p)$ & Train & Val. & Test & $K$ \\
+\midrule
+Circular cylinder
+& $S$ & 20.0--46.4 & $(32,32)$ & 14 & 2 & 4 & 56 \\
+& $H$ & 45.5--59.2 & $(32,32)$ & 29 & 2 & 3 & 56 \\
+& $P$ & 57.3--200 & $(32,32)$ & 53 & 6 & 4 & 48 \\
+\addlinespace
+Centered square
+& $S$ & 50--95.4 & $(5,4)$ & 60 & 5 & 4 & 16 \\
+& $H$ & 94--102 & $(11,11)$ & 23 & 6 & 5 & 48 \\
+& $P$ & 98.5--150 & $(28,26)$ & 27 & 6 & 4 & 24 \\
+\addlinespace
+Fluidic pinball
+& $S$ & 10--19 & $(4,3)$ & 37 & 8 & 7 & 56 \\
+& $H$ & 16.6--25 & $(5,5)$ & 39 & 8 & 7 & 56 \\
+& $P$ & 21.25--60 & $(17,16)$ & 47 & 9 & 9 & 32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\par
+
+
+\paragraph{Centered-square T2-C gate optimization.}
+Both full T2-C and the architecture-matched $\mu$-only gate use AdamW
+(learning rate $3\times10^{-4}$, weight decay $10^{-4}$), 8,000 steps,
+and gradient-norm clipping at 1. Minibatches sample training windows with
+replacement. Validation is evaluated at step 1 and every 100 steps;
+checkpoint selection minimizes the largest Reynolds-number-wise full-window mean joint
+error, breaking ties by the pooled mean, without test-based selection.
+The paired-seed evaluation is reported in Appendix~\ref{app:square}.
+
+
+
+\paragraph{Autonomous rollout protocol.}
+All reported specialist evaluations are autonomous after initialization from the prescribed physical history: no reference state from inside the prediction window is injected during rollout.
+Each specialist is advanced using its chart-specific time-advancement rule described in Section~\ref{sec:rollout_training}. For continuous-time instances, Runge--Kutta stage evaluations share the same frozen pressure/history context within one reduced velocity time step, but each trial velocity recomputes the Galerkin right-hand side, current features, encoder output, internal routing decisions, weights, and expert responses. Intermediate pressure outputs are not used to update pressure at the velocity stages. The deployed Square P configuration uses eight internal substeps, with maximum integrator step 0.5; Square H uses the data-only overlap path described below. After each reduced time step, the pressure reconstruction and local history are updated before the next autonomous prediction.
+
+
+\paragraph{Benchmark discretization and sampling.}
+The centered-square dataset contains 120 complete trajectories over
+$Re\in[50,150]$ on a 9,400-cell finite-volume mesh. The CFD time step is $\delta t_{\rm CFD}=0.02$, and snapshots are stored every 200 CFD steps, giving $\Delta t_{\rm snap}=4$. The fluidic-pinball dataset contains 131 complete trajectories over $Re\in[10,60]$ on a 70,194-cell mesh, with $\delta t_{\rm CFD}=0.005$ and a snapshot interval of $0.25$ physical time units. The circular-cylinder dataset contains 100 Reynolds-parameterized trajectories spanning
+$Re\in[20,200]$ on a common finite-volume mesh represented by 97,368 spatial points. Trajectories contain different numbers of snapshots, yielding 14,167 snapshots in total. The unsteady simulations employ adaptive CFD time stepping subject to $Co_{\max}=0.8$ and $\delta t_{\max}=0.2$, while the snapshot interval is adjusted according to the estimated vortex-shedding period, with eight snapshots retained per shedding cycle. The chart-wise parameter ranges, reduced dimensions, splits, and evaluation horizons are summarized in Table~\ref{tab:chart_splits}.
+
+
+\paragraph{Specialist optimization.}
+Table~\ref{tab:specialist_training} summarizes the reported training configurations, which use AdamW with chart-specific learning rates, weight decay, and rollout curricula.
+Additional batching, scheduler, and precision settings are provided in the supplementary implementation.
+
+\par
+\begin{table}[H]
+\centering
+\caption{
+Reported specialist training configurations. ``Selected'' denotes the validation-selected checkpoint. The curriculum and budget describe the configured schedule, which may extend beyond the selected checkpoint.
+}
+\label{tab:specialist_training}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Specialist & Initial lr & Weight decay & Rollout curriculum & Budget & Selected \\
+\midrule
+Circular $S$
+& $1.55{\times}10^{-5}$ & $1.0{\times}10^{-4}$
+& 4,8,16 & 3600 steps & 1200 steps \\
+Circular $H$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$
+& 1,2,4,8 & 8000 steps & 7200 steps \\
+Circular $P$
+& $5.5{\times}10^{-4}$ & $1.5{\times}10^{-4}$
+& 4,8,12,16 & 240 epochs & 85 epochs \\
+\addlinespace
+Square $S$
+& $1.55{\times}10^{-5}$ & $1.0{\times}10^{-4}$
+& 1,4,8,16 & 4000 steps & 3200 steps \\
+Square $H$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$
+& 1,2,4,8 & 8000 steps & 7200 steps \\
+Square $P$
+& $5.5{\times}10^{-4}$ & $1.5{\times}10^{-4}$
+& 4,8,12,16 & 720 epochs & 490 epochs \\
+\addlinespace
+Pinball $S$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$
+& 4,8,16 & 8000 steps & 400 steps \\
+Pinball $H$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$
+& 4,8,16,32,56 & 8000 steps & 8000 steps \\
+Pinball $P$
+& $1.0{\times}10^{-3}$ & $1.0{\times}10^{-4}$
+& 4,8,16,24,32 & 8000 steps & 8000 steps \\
+\bottomrule
+\end{tabular}
+\end{table}
+\par
+
+\paragraph{Distinct gate objectives.}
+Gate fitting minimizes the full-window squared relative field loss in Eq.~(\plaineqref{eq:app_t2c_loss}). Validation selection instead uses the worst-parameter full-window mean of $E_u+E_p$, with the pooled mean as a tie-breaker. The centered-square main comparison reports terminal-step errors; Table~\ref{tab:t2c_window_seeds} additionally reports full-window means. These objectives differ in temporal aggregation, squaring, and parameter weighting. An oracle optimized for a full-window objective is an a posteriori diagnostic, not a guaranteed lower bound for terminal-step error. Three gate-training seeds quantify conditional gate variability, not full-pipeline uncertainty or a confidence interval over independent trajectories.
+
+\paragraph{Verified centered-square E2 configuration.}
+The parameter-only router is an MLP $1\to24\to3$ with a Tanh hidden activation and 123 trainable parameters. The scalar Reynolds number is standardized using training-row mean and population standard deviation; a standard deviation below $10^{-7}$ is replaced by one. Within each chart and split, each unique Reynolds number supplies one row with that chart label. A parameter occurring in more than one chart can therefore produce multiple labeled rows, rather than an assumed unique bifurcation label. The loss is class-weighted cross entropy plus $0.05\,\operatorname{mean}(\pi_S\pi_P)$, with class weight $N/(3N_c)$. Training uses AdamW (learning rate $3\times10^{-4}$, weight decay $10^{-4}$), a cosine schedule over 8,000 steps ending at $1.5\times10^{-5}$, sampling with replacement in batches of $\min(256,N)$, and gradient-norm clipping at one. Selection maximizes validation balanced accuracy plus macro-F1 minus $10^{-3}$ times the current training-batch loss, rather than validation cross entropy alone. For the archived centered-square run, seed 20260730 selects step 3300. These settings describe that verified router, not an assumed common configuration for all benchmarks.
+
+\paragraph{E2 data and checkpoint identity.}
+The Square E2 training rows have class counts $(60,23,27)$:
+110 rows and 98 globally unique Reynolds numbers.
+Validation has counts $(5,6,6)$: 17 rows and 13 unique parameters.
+The global training and validation parameter sets are disjoint,
+although overlap parameters can occur with different chart labels
+within a split. Class weights and input statistics use rows,
+including these cross-chart repetitions, rather than globally
+deduplicated parameters. The saved input mean and population
+standard deviation are approximately $92.247917$ and $21.898788$.
+No held-out rows, fields, or metrics are used to fit or select E2.
+Both Square overlap pairs reuse the same selected router; the
+T2-C checkpoint records its SHA-256 identity, which the evaluator
+uses to bind the router file.
+The selected validation accuracy, balanced accuracy, and macro-F1
+are $0.764706$, $0.755556$, and $0.766667$, respectively.
+
+\paragraph{Benchmark-specific outer-routing evidence.}
+Circular uses an independent $1$--$24$--$3$ E2 checkpoint with
+seed 31002 and selected step 6300, supported by a frozen
+trajectory-level Top-1 evaluation. This does not establish the
+Square pair-cache protocol or temporal regime-transition behavior
+for Circular. The archived Pinball outer run has an independent
+E2 checkpoint and development training/validation evidence, but its
+held-out outer comparison and mapping to final paper results remain
+unresolved. Square normalization, support points, seed, and selected
+step must not be attributed to either of these runs.
+
+\paragraph{Auxiliary internal-routing objectives.}
+The rollout coefficient loss in Section~\ref{sec:rollout_training}
+is the prediction term. Learned internal group-routing configurations
+also include group-balance, entropy, and Reynolds-partition supervision
+terms in their training implementation. Their activation and weights
+are configuration-specific; a single universal auxiliary-loss formula
+or coefficient set is not established by the present audit.
+These terms are distinct from the outer E2 cross-entropy objective.
+The reported source audit confirms the straight-through computation
+path but is not a separate dynamic measurement of nonzero router
+gradients.
+
+\paragraph{Scope of the hybrid formulation.}
+The archived centered-square overlap evaluator loads a Hopf checkpoint through a data-only advancement path: the Galerkin right-hand side enters its features, but is not added to the learned velocity output, and pressure is a learned algebraic output. Consequently, the overlap study tests assembly of frozen local predictors and should not be interpreted as verifying the additive hybrid formulation for every candidate. This implementation distinction does not change the reported overlap numbers or the output-only fusion protocol.
+
+\paragraph{Audited circular-cylinder architectures.}
+For the two specialists used in the internal-routing analysis, the Hopf model has input width 493, encoder width 256, one fixed group, and four expert residual blocks with expansion width 1024; the Periodic model has input width 501, encoder width 224, three groups, and three expert residual blocks with expansion width 768. Each group has six routed experts and one shared expert per channel. The encoder has three linear layers with LayerNorm and SiLU, followed by two refinement residual blocks; dropout is 0.04. These configurations identify the analyzed models and are not a substitute for a verified nine-specialist and baseline configuration manifest.
+
+\paragraph{Reference fields and reporting scope.}
+The new circular-cylinder control study and centered-square cache-based
+reevaluation use POD-reconstructed reference fields. Their errors measure
+prediction error in physical space relative to these reconstructions and
+do not include the POD projection remainder relative to the original CFD
+fields. The original CFD total error and the POD projection error require
+a separate aligned-field evaluation. The nominal chart-wise splits above
+do not by themselves establish a global cross-chart data-role audit.
+
+\paragraph{Training and evaluation lengths.}
+The configured maximum rollout lengths in Table~\ref{tab:specialist_training}
+are $16,8,16$ for both Circular and Square $S,H,P$, and $16,56,32$ for
+Pinball $S,H,P$. These are training budgets, not the local evaluation
+horizons in Table~\ref{tab:chart_splits}. The new Circular H/P comparison
+uses $K=24,48$, while Square overlaps use $K=24$. The selected checkpoint
+may precede the end of its configured curriculum.

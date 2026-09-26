@@ -1,0 +1,478 @@
+{
+  "checks": [
+    {
+      "check": "Original unchanged: cache_hp/hp_development_cache.npz",
+      "passed": true
+    },
+    {
+      "check": "Original unchanged: cache_sh/sh_development_cache.npz",
+      "passed": true
+    },
+    {
+      "check": "Original unchanged: e2_router/best.pt",
+      "passed": true
+    },
+    {
+      "check": "Original unchanged: gate_hp/best.pt",
+      "passed": true
+    },
+    {
+      "check": "Original unchanged: gate_sh/best.pt",
+      "passed": true
+    },
+    {
+      "check": "Training code unchanged: common.py",
+      "passed": true
+    },
+    {
+      "check": "Training code unchanged: evaluate_heldout_rollout.py",
+      "passed": true
+    },
+    {
+      "check": "Training code unchanged: run_study.py",
+      "passed": true
+    },
+    {
+      "check": "Training code unchanged: train_t2c_gate.py",
+      "passed": true
+    },
+    {
+      "check": "12 completed runs",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42001: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42001: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42001: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42001: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42001: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42001: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42001: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42001: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: invariant to arbitrary history perturbation",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42001: equal alpha for same Re",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42002: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42002: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42002: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42002: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42002: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42002: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42002: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42002: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: invariant to arbitrary history perturbation",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42002: equal alpha for same Re",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42003: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42003: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42003: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42003: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42003: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42003: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42003: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "SH/full/42003: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: invariant to arbitrary history perturbation",
+      "passed": true
+    },
+    {
+      "check": "SH/mu_only/42003: equal alpha for same Re",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42001: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42001: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42001: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42001: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42001: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42001: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42001: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42001: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: invariant to arbitrary history perturbation",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42001: equal alpha for same Re",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42002: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42002: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42002: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42002: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42002: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42002: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42002: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42002: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: invariant to arbitrary history perturbation",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42002: equal alpha for same Re",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42003: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42003: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42003: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42003: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42003: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42003: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42003: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "HP/full/42003: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: validation-only argmin",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: finite logged training",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: fixed steps and validation schedule",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: matched 4865 parameters",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: evaluated checkpoint identity",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: fixed development cache",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: fresh checkpoint inference",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: K24 metrics reproduced",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: invariant to arbitrary history perturbation",
+      "passed": true
+    },
+    {
+      "check": "HP/mu_only/42003: equal alpha for same Re",
+      "passed": true
+    }
+  ],
+  "count": 118,
+  "status": "PASS"
+}

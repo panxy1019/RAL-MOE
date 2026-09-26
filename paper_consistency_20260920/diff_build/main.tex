@@ -1,0 +1,78 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{iclr2027_conference,times}
+\input{math_commands.tex}
+
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,array,multirow,threeparttable,adjustbox}
+\usepackage{placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\hypersetup{hidelinks}
+
+\title{RAL-MoE-ROM: Hierarchical Mixture-of-Experts for Regime-Adaptive Reduced-Order Modeling}
+
+% Anonymous submission. Restore the author block only for the camera-ready version.
+\author{Anonymous Authors}
+
+% Keep disabled for the anonymous submission.
+% \iclrfinalcopy
+
+\begin{document}
+\raggedbottom
+
+\maketitle
+
+\begin{abstract}
+Reduced-order models (ROMs) approximate high-dimensional dynamical systems using a small number of state variables, but their accuracy can deteriorate when parameter changes induce qualitatively different regimes. We introduce RAL-MoE-ROM, a hierarchical mixture-of-experts framework that separates regime-local dynamics from cross-regime output assembly. Prescribed, overlapping local charts support autonomous specialists trained under closed-loop multi-step rollouts. The hybrid specialist formulation augments projected dynamics with shared and Top-2 routed experts combining nonlinear, linear, and low-rank quadratic responses; pressure is reconstructed algebraically. For a fixed-parameter prediction window, a parameter-only outer router assigns preferences over applicable specialists. An initial-history-conditioned gate combines the reconstructed fields of an adjacent pair using a window-constant convex weight, without feeding the fused output back into either specialist. Across three two-dimensional flow benchmarks spanning steady, Hopf-onset, and periodic regimes, the reported local models provide accurate autonomous predictions and physical-space fusion improves prediction in the evaluated overlaps. The framework targets adaptation across prescribed parameter regions, rather than online chart switching, and output fusion is not a guarantee of nonlinear physical consistency.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/experiments}
+\FloatBarrier
+\input{sections/conclusion}
+
+\subsubsection*{Reproducibility statement}
+The main text reports the benchmark roles, evaluation horizons, baselines, and metrics. Appendices~\ref{app:problem_pod}--\ref{app:implementation} document the local-coordinate construction, projected operators, specialist architecture, routing and fusion procedure, and implementation details. Appendices~\ref{app:square} and~\ref{app:pinball} provide additional benchmark-specific results; the circular-cylinder architecture comparison is reported in the main text.
+Appendix~\ref{app:internal_routing} reports post-hoc internal-routing statistics
+from fixed validation-selected Hopf and Periodic specialists on held-out
+rollout windows; these diagnostics are not used for model selection.
+Appendix~\ref{app:square} additionally reports an architecture-matched descriptor
+ablation and three-seed variability of the centered-square T2-C gate, with the
+underlying specialists and E2 router held fixed.
+
+\subsection*{AI use statement}
+% Authors must confirm this disclosure against the final submission workflow.
+Generative AI tools, including ChatGPT and Codex, assisted with language polishing, LaTeX editing, consistency checks, and the examination of mathematical explanations and reviewer feedback. The authors take full responsibility for reviewing and verifying all scientific
+content, mathematical formulations, experimental configurations, numerical
+results, and conclusions, and for the final manuscript and all reported results.
+
+\bibliography{references,legacy_references,verified_references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\input{appendix/rom_derivation}
+\input{appendix/specialist_details}
+\input{appendix/routing_details}
+\input{appendix/implementation}
+% The former circular-cylinder range table and overlap paragraph are retained
+% in appendix/circular_cylinder.tex for provenance, but omitted from this draft.
+\FloatBarrier
+\input{appendix/square_cylinder}
+\FloatBarrier
+\input{appendix/fluidic_pinball}
+\FloatBarrier
+\input{appendix/internal_routing}
+\clearpage
+\input{appendix/parameter_counts}
+\clearpage
+\input{appendix/fusion_consistency}
+
+\end{document}

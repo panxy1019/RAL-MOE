@@ -1,0 +1,77 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{iclr2027_conference,times}
+\input{math_commands.tex}
+
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,array,multirow,threeparttable,adjustbox}
+\usepackage{placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\hypersetup{hidelinks}
+
+\title{RAL-MoE-ROM: Hierarchical\\
+Mixture-of-Experts for Regime-Adaptive\\
+Reduced Dynamics}
+
+% Anonymous submission. Restore the author block only for the camera-ready version.
+\author{Anonymous Authors}
+
+% Keep disabled for the anonymous submission.
+% \iclrfinalcopy
+
+\begin{document}
+\raggedbottom
+
+\maketitle
+
+\begin{abstract}
+Reduced-order models (ROMs) approximate high-dimensional physical dynamics using a small number of state variables. Their predictive accuracy can deteriorate when parameter changes lead to different dynamical regimes, such as a transition from steady flow to sustained oscillations. This challenge affects both the reduced representation and the model that advances it in time. In this paper, We introduce RAL-MoE-ROM, a hierarchical mixture-of-experts framework that separates local dynamical modeling from the assembly of local predictions. Overlapping parameter regions are assigned independent reduced coordinate systems. Within each region, a projected dynamical model is augmented by a structured sparse mixture-of-experts correction and trained through autonomous multi-step rollouts. A parameter-conditioned outer router guides model selection within a validation-supported candidate set. Selected models evolve independently in their own coordinates, and their reconstructed physical fields are combined using a convex weight inferred from the parameter and initial physical history. This weight remains fixed over the prediction window, and the combined output is not fed back into the local models. Experiments on three two-dimensional incompressible-flow benchmarks cover steady, instability-onset, and periodic behavior. On the two regime overlaps of the centered-square benchmark, learned fusion reduces terminal joint velocity–pressure error by 30.9% and 54.2% relative to hard model selection. These results support regime-local modeling and output-level assembly without requiring a shared reduced coordinate system.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/experiments}
+\FloatBarrier
+\input{sections/conclusion}
+
+\subsubsection*{Reproducibility statement}
+The main text reports the benchmark roles, evaluation horizons, baselines, and metrics. Appendices~A--E document the local-coordinate construction, projected operators, specialist architecture, routing and fusion procedure, and implementation details. Appendices~F--H provide benchmark-specific results.
+Appendix~\ref{app:internal_routing} reports post-hoc internal-routing statistics
+from fixed validation-selected Hopf and Periodic specialists on held-out
+rollout windows; these diagnostics are not used for model selection.
+Appendix~\ref{app:square} additionally reports an architecture-matched descriptor
+ablation and three-seed variability of the centered-square T2-C gate, with the
+underlying specialists and E2 router held fixed.
+
+\subsection*{AI use statement}
+% Authors must confirm this disclosure against the final submission workflow.
+Generative AI tools, including ChatGPT and Codex, were used solely to assist with language polishing and LaTeX formatting. The authors take full responsibility for reviewing and verifying all scientific
+content, mathematical formulations, experimental configurations, numerical
+results, and conclusions, and for the final manuscript and all reported results.
+
+\bibliography{references,legacy_references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\input{appendix/rom_derivation}
+\input{appendix/specialist_details}
+\input{appendix/routing_details}
+\input{appendix/implementation}
+\input{appendix/circular_cylinder}
+\FloatBarrier
+\input{appendix/square_cylinder}
+\FloatBarrier
+\input{appendix/fluidic_pinball}
+\FloatBarrier
+\input{appendix/internal_routing}
+\clearpage
+\input{appendix/parameter_counts}
+
+\end{document}

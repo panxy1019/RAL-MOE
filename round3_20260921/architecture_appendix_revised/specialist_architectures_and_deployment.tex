@@ -1,0 +1,152 @@
+\paragraph{Specialist architectures and deployment configurations.}
+The verified configurations comprise five structured sparse-MoE
+models (Circular $H/P$ and Square $S/H/P$) and three Deep-FNN-H3
+Pinball predictors bound to the formal outer final-test candidates.
+The Pinball outer-candidate identification does not automatically
+resolve every earlier standalone result. Circular $S$ remains
+unresolved and is not represented by a substitute diagnostic model.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Local network dimensions and deployed output paths. All
+listed models use the current state and two preceding states.
+$D$ is feature width and $h$ is encoder/trunk width. G+correction
+denotes additive Galerkin velocity dynamics. Gated PPE means a
+componentwise gate times the PPE candidate plus an additive residual.}
+\label{tab:local_architecture_overview}
+\begin{tabular}{@{}llrrrrll@{}}
+\toprule
+Instance & Family & $d_u$ & $d_p$ & $D$ & $h$ & Velocity & Pressure\\
+\midrule
+Circular $H$ & MoE & 32 & 32 & 493 & 256 & G+correction & Gated PPE\\
+Circular $P$ & MoE & 32 & 32 & 501 & 224 & G+correction & Gated PPE\\
+Square $S$ & MoE & 5 & 4 & 91 & 224 & G+correction & PPE+residual\\
+Square $H$ & MoE & 11 & 11 & 178 & 256 & Learned RHS & Learned output\\
+Square $P$ & MoE & 28 & 26 & 431 & 224 & G+correction & Gated PPE\\
+Pinball $S$ & Deep-FNN & 4 & 3 & 68 & 512 & Learned RHS & Gated PPE\\
+Pinball $H$ & Deep-FNN & 5 & 5 & 88 & 512 & Learned RHS & Gated PPE\\
+Pinball $P$ & Deep-FNN & 17 & 16 & 263 & 512 & Learned RHS & Gated PPE\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For sparse MoE, $D=13+2n_{\rm harm}+5(2d_u+d_p)$, where
+$n_{\rm harm}$ counts configured phase harmonics. Features include
+parameter terms, current coefficients and Galerkin RHS, 11 derived
+norm/energy/ratio quantities, and two historical blocks containing
+states, right-hand sides, and differences from the current values.
+The time step is an integrator input, not a network feature.
+Each encoder has three linear layers of width $h$ with LayerNorm
+and SiLU; the first two include dropout 0.04. Two refinement residual
+blocks follow. Velocity and pressure share this encoder, but not
+their router or expert parameters.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Sparse-MoE configurations. $B$ and $w$ denote expert residual
+block count and expansion width. Temperatures are stored group/channel
+settings; group temperature does not govern single/fixed-group deployment.
+Fixed index 1 is zero-based.}
+\label{tab:sparse_architecture_settings}
+\begin{tabular}{@{}lrlrrcl@{}}
+\toprule
+Instance & $G$ & Group policy & $B$ & $w$ & $T_g/T_c$ & Shared:routed\\
+\midrule
+Circular $H$ & 1 & Single & 4 & 1024 & $1.0/0.8$ & $1:0.75$\\
+Circular $P$ & 3 & Learned & 3 & 768 & $0.9/0.8$ & $1:0.75$\\
+Square $S$ & 3 & Learned & 3 & 768 & $0.9/0.95$ & $1:0.85$\\
+Square $H$ & 1 & Single & 4 & 1024 & $1.0/0.8$ & $1:0.75$\\
+Square $P$ & 3 & Fixed index 1 & 3 & 768 & $0.9/0.8$ & $1:0.75$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Each group contains six routed experts and one shared expert per
+channel, with separate velocity/pressure Top-2 supports. Routers
+receive $[\bm z;\bm\xi]$ and use LayerNorm, a width-$h$ SiLU hidden
+layer, dropout 0.04, and a linear logit head. Each expert projects
+$[\bm z;\bm s^c]$ to width $h$, applies $B$ expanded residual
+feed-forward blocks with GELU, and maps to the channel output.
+Residual scales are learned scalars initialized to 0.1.
+The explicit linear branch has no bias; the two quadratic factors
+each have shape $d_c\times4\times\dim(\bm s^c)$, with
+$\kappa=0.05$ and no additional output projection. The branches are
+added within each expert before sparse mixture weighting. Outputs
+are converted from standardized target coordinates before combination
+with physical-model terms.
+
+The Pinball Deep-FNN-H3 feature width is $D=13+5(2d_u+d_p)$.
+H3 denotes three-state history, not network depth. The shared trunk
+starts with input LayerNorm and contains six width-512 linear layers:
+one $D\to512$ projection and five $512\to512$ layers. Each uses SiLU;
+the latter five also use LayerNorm. There are no trunk residual
+connections or dropout. Three independent heads share the trunk.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Pinball Deep-FNN-H3 head widths. The pressure gate has a
+sigmoid output. These models contain no MoE router, expert bank,
+attention module, or structured quadratic expert branch.}
+\label{tab:pinball_head_widths}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Instance & Velocity head & Pressure residual head & Gate head\\
+\midrule
+$S$ & $512\!\to\!256\!\to\!4$ & $512\!\to\!256\!\to\!3$ & $512\!\to\!128\!\to\!3$\\
+$H$ & $512\!\to\!256\!\to\!5$ & $512\!\to\!256\!\to\!5$ & $512\!\to\!128\!\to\!5$\\
+$P$ & $512\!\to\!256\!\to\!17$ & $512\!\to\!256\!\to\!16$ & $512\!\to\!128\!\to\!16$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Pinball velocity is advanced by RK4 using the learned derivative;
+Galerkin information is a feature, not an additive output backbone.
+Pressure is reconstructed as gated PPE plus a residual.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Neural parameter counts. Trainable counts follow the recorded
+training freeze settings. POD bases, scalers, and fixed physical
+operators are excluded. These are not active-parameter or timing measures.}
+\label{tab:verified_local_parameters}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Instance & Total & Trainable & Frozen\\
+\midrule
+Circular $H$ & 32,004,147 & 31,810,392 & 193,755\\
+Circular $P$ & 48,617,547 & 48,617,547 & 0\\
+Square $S$ & 46,655,195 & 23,746,370 & 22,908,825\\
+Square $H$ & 31,318,329 & 31,205,844 & 112,485\\
+Square $P$ & 48,209,967 & 48,209,967 & 0\\
+Pinball $S$ & 1,684,370 & 1,684,370 & 0\\
+Pinball $H$ & 1,695,679 & 1,695,679 & 0\\
+Pinball $P$ & 1,792,959 & 1,792,959 & 0\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Deployment must be distinguished from stored architecture.
+Square $S$ freezes velocity experts in its final training configuration
+and bypasses the stored confidence head in baseline pressure closure.
+Other modules follow the training entry point's freeze settings.
+Square $H$ directly uses learned velocity and pressure outputs in
+overlap evaluation, without additive Galerkin/PPE contributions.
+Square $P$ fixes group index 1 and uses eight internal substeps,
+with maximum integrator step 0.5. A complete physical-rollout active
+parameter trace has not been established for the Square models;
+total and trainable counts cannot substitute for active counts.
+
+In the original Circular $H/P$ checkpoints, both quadratic factors
+remain zero after joint zero initialization. The stored rank-four
+branch therefore contributes no response. The repaired initialization
+retains one random factor and zeros only the other, allowing learning
+from zero initial output. Activation does not establish a robust
+accuracy gain: the repaired Periodic mean did not improve, and only
+two of three repaired Hopf seeds were accepted. Original and repaired
+configurations remain separate experimental families.

@@ -1,0 +1,23 @@
+{
+  "grid": [
+    1536,
+    1024
+  ],
+  "width": 32,
+  "modes": 12,
+  "layer_count": 4,
+  "batch": 1,
+  "dtype": "FP32/complex64",
+  "TBPTT": 1,
+  "records": [
+    {
+      "checkpointed": false,
+      "status": "finite",
+      "loss": 0.006412195973098278,
+      "seconds": 3.8258246136829257,
+      "peak_gpu_bytes": 4296420352,
+      "within_22GiB": true
+    }
+  ],
+  "scope": "Single training step on a validation field for resource validation only; parameters discarded, not a fitted or evaluated baseline"
+}

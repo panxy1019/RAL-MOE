@@ -1,0 +1,34 @@
+[
+  {
+    "method": "POD-Galerkin",
+    "step": 48,
+    "windows": 12,
+    "Eu_percent": 9.121723778488134,
+    "Ep_percent": 36.24733516781378,
+    "Ejoint_percent": 45.36905894630191
+  },
+  {
+    "method": "Dense correction",
+    "step": 48,
+    "windows": 12,
+    "Eu_percent": 5.45902227274112,
+    "Ep_percent": 20.115290618846064,
+    "Ejoint_percent": 25.574312891587184
+  },
+  {
+    "method": "Global MoE",
+    "step": 48,
+    "windows": 12,
+    "Eu_percent": 1.60722166055268,
+    "Ep_percent": 5.864641757783702,
+    "Ejoint_percent": 7.471863418336383
+  },
+  {
+    "method": "RAL local specialist",
+    "step": 48,
+    "windows": 12,
+    "Eu_percent": 1.9351683396277555,
+    "Ep_percent": 7.42751624724691,
+    "Ejoint_percent": 9.362684586874664
+  }
+]

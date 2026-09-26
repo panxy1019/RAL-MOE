@@ -1,0 +1,238 @@
+\section{Routing and fusion: protocols and supplementary results}
+\label{app:assembly_results}
+\input{figures/field_panel_labels.tex}
+
+\subsection{Square: full-window fusion protocol}
+\label{app:square}
+
+The primary assembly study fixes the local predictors and E2 router.
+The S--H test set uses $Re=95.1,95.3$, and the H--P set uses
+$Re=100.5,102.0$, with eight windows per parameter and $K=24$.
+Only the prescribed adjacent pair is compared at each interface.
+The main text reports full-window joint errors; the following
+subsections supply component errors, control fitting, and secondary
+terminal-step measurements, rather than additional independent trials.
+
+\paragraph{Scalar controls and component errors.}
+Table~\ref{tab:t2c_full_window_controls} uses all $K=24$ steps, first
+averaging windows within each Reynolds number and then weighting the
+two held-out Reynolds numbers equally. It also reports the dimensionless
+squared relative objective, $L_{\mathrm{sq}}=\operatorname{mean}
+[(E_u/100)^2+(E_p/100)^2]$. This is different from the displayed
+percentage joint error. The constant-$\alpha$ control minimizes the
+training-window squared objective analytically over $[0,1]$; its weights
+are $0.357850555$ in $S$--$H$ and $0.928683495$ in $H$--$P$.
+The constant-logit control fits a single training-only offset in
+$[-20,20]$, giving $0.490963974$ and $3.480802826$, respectively.
+The validation-fixed candidate is selected on validation squared error,
+rather than chosen a posteriori on held-out data. Both candidates are
+finite and no held-out windows are excluded in this reevaluation.
+These are deterministic scalar controls for the archived candidates.
+
+\begin{table}[H]
+\centering
+\caption{Centered-square full-window $K=24$ reevaluation using the
+archived physical-field quadratic cache. Errors are percentages against
+the cached POD reference; the last column is $10^4 L_{\mathrm{sq}}$.
+This table uses a single frozen gate checkpoint, not the three-seed mean.
+Joint errors appear only in Table~\ref{tab:routing_fusion}.}
+\label{tab:t2c_full_window_controls}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Overlap & Method & $E_u$ & $E_p$ & $10^4L_{\mathrm{sq}}$\\
+\midrule
+$S$--$H$ & E2 Top-1 & 0.5355 & 1.0432 & 5.6364 \\
+ & E2 probability & 0.6624 & 1.1521 & 4.3056 \\
+ & Equal blend & 1.0133 & 1.3717 & 4.3665 \\
+ & Train-fixed $\alpha$ & 0.8128 & 1.2462 & 4.1324 \\
+ & Train-fixed logit offset & 0.7857 & 1.2292 & 4.1398 \\
+ & Validation-fixed candidate & 0.5355 & 1.0432 & 5.6364 \\
+ & T2-C & 0.3831 & 0.7123 & 2.3199 \\
+\midrule
+$H$--$P$ & E2 Top-1 & 0.7263 & 0.9161 & 4.8921 \\
+ & E2 probability & 0.6108 & 0.8381 & 2.9087 \\
+ & Equal blend & 0.5920 & 0.8010 & 2.5103 \\
+ & Train-fixed $\alpha$ & 0.5016 & 0.4752 & 0.5818 \\
+ & Train-fixed logit offset & 0.5134 & 0.4687 & 0.5941 \\
+ & Validation-fixed candidate & 0.5310 & 0.4758 & 0.6323 \\
+ & T2-C & 0.4263 & 0.3860 & 0.4072 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Gate-only repeated training.}
+Seeds 42001, 42002, and 42003 retrain only the T2-C gate.
+The specialists, E2, candidate trajectories, data splits, and
+normalization remain fixed. Full T2-C and the architecture-matched
+$\mu$-only control use the same optimization and selection protocol
+(Appendix~\ref{app:implementation}); the latter zeros standardized
+history channels. Full-window joint means and sample standard deviations
+are reported in Section~\ref{sec:exp_fusion} and
+Figure~\ref{fig:square_overlap}, and are not tabulated again here.
+A training-fitted logit offset can change the weight through the
+parameter-dependent E2 preference but cannot distinguish histories
+at the same parameter. T2-C also uses one constant weight per window;
+it is not updated from the predicted trajectory.
+
+\subsection{Square: terminal-step and field supplements}
+\label{app:square_terminal}
+
+\paragraph{Secondary metric.}
+The following tables measure the terminal step $k=24$, averaged over
+the same 16 windows per interface. They must not be numerically compared
+with the full-window averages as if they were the same metric.
+The convex oracle chooses its window-wise weight using a full-window
+objective and is evaluated here at the terminal step; it is neither
+deployable nor necessarily optimal for this terminal metric.
+
+\begin{table}[H]
+\centering
+\caption{
+Centered-square terminal-step errors at $k=K=24$ (\%). The convex oracle is an a posteriori reference unavailable during prediction.
+T2-C $\mu$-only uses the same gate architecture as T2-C but removes the standardized history descriptor. Bold indicates the best deployable method within each overlap.
+}
+\label{tab:square_fusion_full}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Overlap & Predictor & $E_u$ & $E_p$ & $E_{\mathrm{joint}}$ \\
+\midrule
+$S$--$H$ & Steady specialist & 2.5976 & 2.2450 & 4.8426 \\
+ & Hopf specialist & 0.4942 & 1.2356 & 1.7298 \\
+ & E2 Top-1 & 0.4942 & 1.2356 & 1.7298 \\
+ & Equal blend & 1.3644 & 1.6677 & 3.0321 \\
+ & E2-probability blend & 0.7898 & 1.3949 & 2.1847 \\
+ & T2-C $\mu$-only & 0.7898 & 1.3948 & 2.1846 \\
+ & T2-C & \textbf{0.4615} & \textbf{0.7343} & \textbf{1.1958} \\
+ & Convex oracle & 0.4659 & 0.7183 & 1.1842 \\
+\midrule
+$H$--$P$ & Periodic specialist & 0.6420 & 0.5659 & 1.2079 \\
+ & Hopf specialist & 1.0034 & 1.8684 & 2.8718 \\
+ & E2 Top-1 & 0.7422 & 1.1052 & 1.8473 \\
+ & Equal blend & 0.6077 & 1.0069 & 1.6146 \\
+ & E2-probability blend & 0.6154 & 1.0464 & 1.6618 \\
+ & T2-C $\mu$-only & 0.5875 & 0.5629 & 1.1504 \\
+ & T2-C & \textbf{0.4509} & \textbf{0.3956} & \textbf{0.8465} \\
+ & Convex oracle & 0.4479 & 0.3905 & 0.8384 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{
+Parameter-wise centered-square routing and T2-C terminal-step results at $k=K=24$.
+Joint errors and relative reductions are reported in percent.
+The mean weight is the Steady-specialist weight for $S$--$H$
+and the Periodic-specialist weight for $H$--$P$.
+}
+\label{tab:square_parameter}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrlrrrr}
+\toprule
+Overlap & $Re$ & E2 choice & $\bar\alpha$ & E2 $E_{\mathrm{joint}}$ & T2-C $E_{\mathrm{joint}}$ & Reduction \\
+\midrule
+$S$--$H$ & 95.1 & Hopf & 0.0967 & 1.7140 & 1.1827 & 31.00\% \\
+$S$--$H$ & 95.3 & Hopf & 0.0971 & 1.7456 & 1.2090 & 30.74\% \\
+$H$--$P$ & 100.5 & Hopf & 0.5870 & 2.6485 & 0.8571 & 67.64\% \\
+$H$--$P$ & 102.0 & Periodic & 0.7094 & 1.0462 & 0.8360 & 20.09\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Terminal-step gate variability.}
+Table~\ref{tab:t2c_seed_variability} supplies velocity and pressure
+components and sample standard deviations across the three gate seeds.
+These are a secondary view of the same repeated gate fits, not another
+three-seed campaign.
+
+\begin{table}[H]
+\centering
+\caption{
+Three-seed variability of the centered-square T2-C gate at the $K=24$
+terminal step. Values are reported as mean $\pm$ sample standard deviation across gate-training seeds.
+}
+\label{tab:t2c_seed_variability}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}llccc@{}}
+\toprule
+Overlap & Gate & $E_u$ & $E_p$ & $E_{\mathrm{joint}}$ \\
+\midrule
+$S$--$H$ & T2-C $\mu$-only & $0.79006\pm0.00026$ & $1.39498\pm0.00012$ & $2.18504\pm0.00038$ \\
+ & Full T2-C & $\mathbf{0.46156\pm0.00004}$ & $\mathbf{0.73416\pm0.00014}$ & $\mathbf{1.19572\pm0.00010}$ \\
+\midrule
+$H$--$P$ & T2-C $\mu$-only & $0.59067\pm0.00461$ & $0.56050\pm0.00435$ & $1.15116\pm0.00070$ \\
+ & Full T2-C & $\mathbf{0.45211\pm0.00138}$ & $\mathbf{0.39793\pm0.00215}$ & $\mathbf{0.85004\pm0.00347}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Reconstructed fields.}
+Figures~\ref{fig:app_square_sh_full} and \ref{fig:app_square_hp_full}
+show the individual candidates, T2-C, and the common reference with
+pointwise errors. They illustrate the field comparison underlying
+the tabulated measurements; no separate accuracy estimate is inferred
+from visual agreement.
+
+\begin{figure}[p]
+\centering
+\FieldPanel{figures/original/SH_2.png}{Steady}
+
+\vspace{0.35em}
+\ErrorPanel{figures/original/SH_2_1.png}{Steady}
+\caption{Representative held-out prediction in the centered-square
+$S$--$H$ overlap at $Re=95.1$. The upper panel compares the archived reference reconstruction,
+Steady specialist, Hopf specialist, and T2-C prediction for velocity
+magnitude and gauge-corrected pressure. The lower panel gives the
+corresponding pointwise absolute errors. Panel identifiers run (a)--(h) for fields and (i)--(n) for errors. The displayed snapshots and color scales are retained from the archived figures; row labels and identifiers are typeset separately.}
+\label{fig:app_square_sh_full}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\FieldPanel{figures/original/HP_2.png}{Periodic}
+
+\vspace{0.35em}
+\ErrorPanel{figures/original/HP_2_1.png}{Periodic}
+\caption{Representative held-out prediction in the centered-square
+$H$--$P$ overlap at $Re=100.5$. The upper panel compares the archived reference reconstruction, Periodic specialist, Hopf specialist, and T2-C prediction for velocity magnitude and gauge-corrected pressure. The lower panel gives the
+corresponding pointwise absolute errors. Panel identifiers run (a)--(h) for fields and (i)--(n) for errors. The displayed snapshots and color scales are retained from the archived figures; row labels and identifiers are typeset separately.}
+\label{fig:app_square_hp_full}
+\end{figure}
+
+\FloatBarrier
+\subsection{Pinball: additional assembly results}
+\label{app:pinball_overlap_results}
+This archived study compares S--H and H--P assembly at $K=24,56$.
+The formal outer candidates are Deep-FNN-H3 local predictors, not
+sparse-MoE specialists. Table~\ref{tab:pinball_overlap} retains the
+archived joint-error summaries; it is not pooled with the Square
+full-window ablation or interpreted as a replication of its scalar
+controls and three gate seeds. Candidate identities and the oracle
+convention are specified in the caption.
+
+\begin{table}[H]
+\centering
+\caption{
+Fluidic-pinball overlap joint errors (\%). For $S$--$H$, Candidate~1 is the Steady specialist and Candidate~2 is Hopf; for $H$--$P$, Candidate~1 is the Periodic specialist and Candidate~2 is Hopf.
+The convex oracle selects its weight a posteriori for each evaluation window and is unavailable during prediction.
+}
+\label{tab:pinball_overlap}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrccccc}
+\toprule
+Overlap & $K$ & Cand.~1 & Cand.~2 & E2-probability blend & T2-C & Convex oracle \\
+\midrule
+$S$--$H$ & 24 & 0.6014 & 3.1925 & 1.7511 & 0.5897 & 0.5889 \\
+$S$--$H$ & 56 & 0.6927 & 3.1193 & 1.7714 & 0.6767 & 0.6763 \\
+$H$--$P$ & 24 & 0.0990 & 0.5146 & 0.2972 & 0.0945 & 0.0928 \\
+$H$--$P$ & 56 & 0.1028 & 0.5346 & 0.3085 & 0.0978 & 0.0955 \\
+\bottomrule
+\end{tabular}
+\end{table}

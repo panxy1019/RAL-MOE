@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "method": "OpenFOAM-discrete FVM-Galerkin r28 with calibrated linear pressure closure",
+  "max_step": 0.05,
+  "warmup_intervals": 2,
+  "cases": [
+    {
+      "Re": 100.5,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 0.7840834970247754,
+      "pressure_rollout_relative_l2": 0.4117117155133469,
+      "one_step_velocity_relative_l2": 0.057590766766827624,
+      "coarse_derivative_relative_l2": 4.573264266549783,
+      "truth_final_norm": 0.23734679494170235,
+      "predicted_final_norm": 0.24514342434096065
+    },
+    {
+      "Re": 102.0,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 0.8297498778613998,
+      "pressure_rollout_relative_l2": 0.478932135457268,
+      "one_step_velocity_relative_l2": 0.060097104001228446,
+      "coarse_derivative_relative_l2": 4.924956640425582,
+      "truth_final_norm": 0.24507087836018213,
+      "predicted_final_norm": 0.2535040299055485
+    },
+    {
+      "Re": 120.689655172414,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 1.4731917830345116,
+      "pressure_rollout_relative_l2": 1.4535416346302732,
+      "one_step_velocity_relative_l2": 0.06116577851957394,
+      "coarse_derivative_relative_l2": 5.9228512235425725,
+      "truth_final_norm": 0.3669562200925103,
+      "predicted_final_norm": 0.3734836495137297
+    },
+    {
+      "Re": 144.827586206897,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 1.4161822203777432,
+      "pressure_rollout_relative_l2": 1.2473867002171777,
+      "one_step_velocity_relative_l2": 0.06571350889353078,
+      "coarse_derivative_relative_l2": 6.112324758779035,
+      "truth_final_norm": 0.4961542439530094,
+      "predicted_final_norm": 0.5173929812030942
+    }
+  ],
+  "aggregate": {
+    "velocity_rollout_relative_l2": 1.1258018445746076,
+    "pressure_rollout_relative_l2": 0.8978930464545164,
+    "one_step_velocity_relative_l2": 0.0611417895452902,
+    "coarse_derivative_relative_l2": 5.383349222324243
+  },
+  "role": "heldout",
+  "validation_loaded": false,
+  "heldout_loaded": true
+}

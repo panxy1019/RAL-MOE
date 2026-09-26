@@ -1,0 +1,195 @@
+{
+  "schema": "plotting_file_inventory/v1",
+  "generated_on": "2026-09-20",
+  "root": ".",
+  "authority": "local_frozen_copy",
+  "notes": [
+    "Training-server frozen plotting inputs were reverified on 2026-09-20 using SSH key access; hostname 7b9b20463be9. New render manifests are stored separately under paper_consistency_20260920/SH and HP.",
+    "The historical virtual-machine VTK source path was absent on 2026-09-20; use the local frozen VTK copy.",
+    "No credentials are stored in this inventory."
+  ],
+  "files": [
+    {
+      "role": "active_plotter",
+      "path": "plot_boundary_fusion_fields.py",
+      "size": 36223,
+      "sha256": "19557564a6d85a2f8363d31cc6bfd648930a922e999bd67f205d1051626c346f"
+    },
+    {
+      "role": "weight_exporter",
+      "path": "export_boundary_figure_weights.py",
+      "size": 4475,
+      "sha256": "aa4ba2ec67b4ab4d6c903ef6aee1e412b49e1c4b940c4c8c3a5011cea801aa78"
+    },
+    {
+      "role": "active_sh_config",
+      "path": "config_sh_boundary_figure.json",
+      "size": 2685,
+      "sha256": "d662b9bde1f9530d8cba28a8ec55a2e3e86743a03dfc88cfc90b1cea12c62d10"
+    },
+    {
+      "role": "active_hp_config",
+      "path": "config_hp_boundary_figure.json",
+      "size": 2593,
+      "sha256": "1c527b9cb0fcd85f681fbd5fe98ce173fcec5054b71601345b7583b798f2bbaf"
+    },
+    {
+      "role": "reference_plotter_read_only",
+      "path": "reference_plotting/plot_field_figures.py",
+      "size": 33124,
+      "sha256": "3d1931b4c8eb16c4975f7b97bfb5607c1a3e1edd7ff79c3738cd214be04f15dd"
+    },
+    {
+      "role": "reference_batch_runner_read_only",
+      "path": "reference_plotting/run_all_figures.py",
+      "size": 3906,
+      "sha256": "efffa4f78b7a8628d83249b7d3761ad49e78ca30633ef9c0c514e150d2f3df21"
+    },
+    {
+      "role": "reference_config_read_only",
+      "path": "reference_plotting/config_sh_fusion.json",
+      "size": 1975,
+      "sha256": "3c4a491c7a3537b585355ac5862571cbe255c8ff0a3c9faab1b60bba9ba23895"
+    },
+    {
+      "role": "reference_physical_figure",
+      "path": "reference_plotting/SH_reference_physical.png",
+      "size": 1983146,
+      "sha256": "de673a529db70357523dae5fa595439f9ead62a121aa91e9f1bc456cf95acaff"
+    },
+    {
+      "role": "reference_error_figure",
+      "path": "reference_plotting/SH_reference_errors.png",
+      "size": 1737083,
+      "sha256": "5cf940f8df844ea28fa90176a4ebd3b5eac21e8af733c4fe1f9b806e93984e9f"
+    },
+    {
+      "role": "reference_figure_manifest",
+      "path": "reference_plotting/SH_reference_manifest.json",
+      "size": 4262,
+      "sha256": "8c7e059bdcd2b62b938212035294ac228615761d3b8826971d64841ce3a60539"
+    },
+    {
+      "role": "canonical_local_reference_vtk",
+      "path": "reference_plotting/centeredSquare_CN09_graded_Re100_internal_final_reference.vtk",
+      "size": 1104845,
+      "sha256": "57423d8ebcca3f1aaf8d18311366c7f05a0df6b9f10f5973ed75e3334c7d5175"
+    },
+    {
+      "role": "sh_heldout_cache",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_sh/sh_heldout_cache.npz",
+      "size": 77874,
+      "sha256": "5d27b47202ef9d296f0c384dd7e367b2547410634c81c4af9b2bc7adb0443a88"
+    },
+    {
+      "role": "hp_heldout_cache",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_hp/hp_heldout_cache.npz",
+      "size": 188537,
+      "sha256": "bb2a70a3aae3988b1031b3791def1607177ef7b622c455733cf70c7a8491d0d8"
+    },
+    {
+      "role": "run_archived_reference_vtk",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/centeredSquare_CN09_graded_Re100_internal_final_reference.vtk",
+      "size": 1104845,
+      "sha256": "57423d8ebcca3f1aaf8d18311366c7f05a0df6b9f10f5973ed75e3334c7d5175"
+    },
+    {
+      "role": "sh_frozen_weights",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/SH_T2C_weights.csv",
+      "size": 770,
+      "sha256": "b0f19665c59ea55fb2452dc6f4c67f3c1579420a3ad579be6e90857b72084739"
+    },
+    {
+      "role": "sh_weight_manifest",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/SH_T2C_weights.manifest.json",
+      "size": 1354,
+      "sha256": "b62d1fe09bce9b09c4205e37bdff109a941e1d29bbae71d4c32440109a9f679c"
+    },
+    {
+      "role": "hp_frozen_weights",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/HP_T2C_weights.csv",
+      "size": 810,
+      "sha256": "14a9cf549a033f38b36ad76602e42d61536ab03d556cd7650a81283cb29e6fe8"
+    },
+    {
+      "role": "hp_weight_manifest",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/HP_T2C_weights.manifest.json",
+      "size": 1354,
+      "sha256": "ba27a2d5fab1acb5506ea4f8dc83dd95e6a6f4ee9e4c490a8e6d16bdaa3437fa"
+    },
+    {
+      "role": "sh_physical_figure_local_alias",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/SH/SH_2.png",
+      "size": 301635,
+      "sha256": "10b2e635e3d0e2b53e0083f2855cc55c36c46b00a092c0230c50f46f01817a48"
+    },
+    {
+      "role": "sh_error_figure_local_alias",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/SH/SH_2_1.png",
+      "size": 347541,
+      "sha256": "41cebcf854d0b3f91d4af34af47bec16218afe1fd09f69e22476d1aed2a2f942"
+    },
+    {
+      "role": "sh_figure_manifest",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/SH/FIELD_FIGURE_MANIFEST.json",
+      "size": 4429,
+      "sha256": "d5ee0e4fea01ed5a5b1c02142b98d6a2d662a1510b1812a04ea4cd4c2a4903e6"
+    },
+    {
+      "role": "sh_candidate_scan",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/SH/candidate_scan.json",
+      "size": 323358,
+      "sha256": "0cde75e71d231244b9fded619cbb5206dda028373755ffb6277108d0fb7274b2"
+    },
+    {
+      "role": "hp_physical_figure_local_alias",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/HP/HP_2.png",
+      "size": 320728,
+      "sha256": "28ad9d68e93b35728f74533081bd77edc40b238227f5600386f1baded17ced00"
+    },
+    {
+      "role": "hp_error_figure_local_alias",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/HP/HP_2_1.png",
+      "size": 359612,
+      "sha256": "963f84d716ca44a4d1bd14e51b4eb32c3b5ea2dd561fb6a0d97e1080b2a1eb07"
+    },
+    {
+      "role": "hp_figure_manifest",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/HP/FIELD_FIGURE_MANIFEST.json",
+      "size": 4333,
+      "sha256": "af5358767952b6818d0df219d8dc52e709c6be593d2f8e5384da9b28046139f2"
+    },
+    {
+      "role": "hp_candidate_scan",
+      "path": "results/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/HP/candidate_scan.json",
+      "size": 71473,
+      "sha256": "6743b16492e1f2c76422397c7aee784b3d0668e965cc5f6e5872847ca554764b"
+    }
+  ],
+  "renamed_outputs": {
+    "SH": [
+      {
+        "local_name": "SH_2.png",
+        "original_name": "CenteredSquare_SH_boundary_T2C_physical_fields_ultra_compact_wide.png",
+        "content_matches_original_manifest": true
+      },
+      {
+        "local_name": "SH_2_1.png",
+        "original_name": "CenteredSquare_SH_boundary_T2C_pointwise_errors_ultra_compact_wide.png",
+        "content_matches_original_manifest": true
+      }
+    ],
+    "HP": [
+      {
+        "local_name": "HP_2.png",
+        "original_name": "CenteredSquare_HP_boundary_T2C_physical_fields_ultra_compact_wide.png",
+        "content_matches_original_manifest": true
+      },
+      {
+        "local_name": "HP_2_1.png",
+        "original_name": "CenteredSquare_HP_boundary_T2C_pointwise_errors_ultra_compact_wide.png",
+        "content_matches_original_manifest": true
+      }
+    ]
+  }
+}

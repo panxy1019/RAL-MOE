@@ -1,0 +1,440 @@
+--- original/appendix\circular_cylinder.tex
++++ revised/appendix\circular_cylinder.tex
+@@ -1,12 +1,12 @@
+ \section{Circular-cylinder results}
+ \label{app:circular}
+ 
+-Table~\ref{tab:circular_full} reports the min--max physical-field error across held-out parameter trajectories under autonomous rollout. In the Hopf regime, the Vanilla-FNN-MoE model does not satisfy the predefined validation-stage rollout criterion; no held-out result is therefore reported.
++Tables~\ref{tab:circular_full_reorg} and~\ref{tab:circular_full} use the same min--max physical-field errors across held-out parameter trajectories under autonomous rollout. These ranges describe between-trajectory variation and are not confidence intervals or pooled means. In the Hopf regime, the Vanilla-FNN-MoE model does not satisfy the predefined validation-stage rollout criterion; no held-out result is therefore reported.
+ 
+ \par
+ \begin{table}[H]
+ \centering
+-\caption{Circular-cylinder autonomous-rollout error ranges (\%). }
++\caption{Circular-cylinder autonomous-rollout error ranges (\%). V/F denotes validation-stage exclusion; N/R denotes an unreported pressure error.}
+ \label{tab:circular_full}
+ \small
+ \setlength{\tabcolsep}{4pt}
+@@ -16,12 +16,12 @@
+ \midrule
+ Steady & RAL-MoE-ROM & 0.0330--0.1723 & 0.2500--1.3249 \\
+  & Vanilla-FNN-MoE & 0.0384--0.2995 & 2.2163--18.5603 \\
+- & DataOnly-MoE & 0.1637--0.5122 & - \\
++ & DataOnly-MoE & 0.1637--0.5122 & N/R \\
+  & Global MoE & 0.0845--0.3404 & 1.5226--7.4363 \\
+ \midrule
+ Hopf & RAL-MoE-ROM & 0.0032--0.0288 & 0.0355--0.4321 \\
+- & Vanilla-FNN-MoE & - & -  \\
+- & DataOnly-MoE & 0.1260--0.3880 & - \\
++ & Vanilla-FNN-MoE & V/F & V/F  \\
++ & DataOnly-MoE & 0.1260--0.3880 & N/R \\
+  & Global MoE & 0.0110--0.0268 & 0.0560--0.2882 \\
+ \midrule
+ Periodic & RAL-MoE-ROM & 0.3809--1.3473 & 1.6825--5.9601 \\
+--- original/appendix\fluidic_pinball.tex
++++ revised/appendix\fluidic_pinball.tex
+@@ -23,10 +23,10 @@
+ \toprule
+ Overlap & $K$ & Cand.~1 & Cand.~2 & E2-probability blend & T2-C & Convex oracle \\
+ \midrule
+-$S$--$H$ & 24 & 0.6014 & 3.1925 & 1.7511 & 0.5897 & \textbf{0.5889} \\
+-$S$--$H$ & 56 & 0.6927 & 3.1193 & 1.7714 & 0.6767 & \textbf{0.6763} \\
+-$H$--$P$ & 24 & 0.0990 & 0.5146 & 0.2972 & 0.0945 & \textbf{0.0928} \\
+-$H$--$P$ & 56 & 0.1028 & 0.5346 & 0.3085 & 0.0978 & \textbf{0.0955} \\
++$S$--$H$ & 24 & 0.6014 & 3.1925 & 1.7511 & 0.5897 & 0.5889 \\
++$S$--$H$ & 56 & 0.6927 & 3.1193 & 1.7714 & 0.6767 & 0.6763 \\
++$H$--$P$ & 24 & 0.0990 & 0.5146 & 0.2972 & 0.0945 & 0.0928 \\
++$H$--$P$ & 56 & 0.1028 & 0.5346 & 0.3085 & 0.0978 & 0.0955 \\
+ \bottomrule
+ \end{tabular}
+ \end{table}
+@@ -35,4 +35,4 @@
+ T2-C improves upon Candidate~1 in all four overlap evaluations.
+ The relative reductions in joint error are approximately $1.9\%$ and
+ $2.3\%$ for $S$--$H$ at $K=24$ and $K=56$, and $4.5\%$ and $4.9\%$
+-for $H$--$P$, respectively. Although these gains are more modest than those observed for the centered-square benchmark, they persist at both rollout horizons. T2-C also remains close to the corresponding window-wise convex oracle, indicating that the learned fusion captures most of the available benefit from convex physical-space assembly in these overlap evaluations.
++for $H$--$P$, respectively. Although these gains are more modest than those observed for the centered-square benchmark, they persist at both rollout horizons. The diagnostic oracle uses future reference fields to choose a window-wise convex weight and is unavailable during prediction. These values do not establish that the learned weight is optimal for the reported metric.
+--- original/appendix\routing_details.tex
++++ revised/appendix\routing_details.tex
+@@ -49,6 +49,7 @@
+ Top-2 fusion is considered only for an applicable pair belonging to
+ $\mathcal E_{\rm adj}$.
+ If no specialist is applicable, the hierarchy abstains from prediction.
++The applicability mask is a separate empirical eligibility rule, not an output of the E2 probability model. Parameter coverage alone is insufficient: eligibility also depends on the prescribed initialization and prediction horizon. The reported overlap results are conditional on the candidate pairs specified for those experiments; they do not establish an automatic applicability detector for unseen parameters or horizons.
+ 
+ For an ordered selected pair $(r_1,r_2)$, the pair-normalized E2
+ preference is
+@@ -74,8 +75,7 @@
+ \paragraph{Chart-independent physical-history descriptor.}
+ E2 is intentionally parameter only.
+ T2-C augments this trajectory-level preference with a chart-independent
+-descriptor computed from the current physical state and the two preceding
+-states.
++descriptor computed from the physical state at initialization and the two preceding states. The descriptor is evaluated once per prediction window, not updated from subsequent predicted states.
+ The descriptor summarizes field magnitude, first-order temporal variation,
+ velocity growth, and second-order velocity variation.
+ 
+--- original/appendix\square_cylinder.tex
++++ revised/appendix\square_cylinder.tex
+@@ -10,13 +10,13 @@
+ 
+ 
+ \paragraph{Overlap evaluation and descriptor ablation.}
+-For both overlaps, $E_u$, $E_p$, and $E_{\mathrm{joint}}=E_u+E_p$ are reported at the terminal rollout step ($k=24$) and averaged over 16 held-out windows.  This terminal metric differs from the full-window objective used by the diagnostic convex oracle. To assess the role of history information in the second routing level, we also include T2-C $\mu$-only, which uses the same correction-gate architecture and training protocol as T2-C but removes the standardized history descriptor by setting its channels to zero. Table~\ref{tab:square_fusion_full} reports the validation-selected comparison, and the corresponding three-seed gate variability is summarized separately below.
++For both overlaps, $E_u$, $E_p$, and $E_{\mathrm{joint}}=E_u+E_p$ are reported at the terminal rollout step ($k=24$) and averaged over 16 held-out windows.  The diagnostic convex oracle chooses one weight per window by minimizing a full-window objective using the future reference fields. The table then evaluates that weight at the terminal step. It therefore does not report the minimum attainable terminal error over convex weights. Proximity to this reference cannot be interpreted as terminal optimality. To assess the role of history information in the second routing level, we also include T2-C $\mu$-only, which uses the same correction-gate architecture and training protocol as T2-C but removes the standardized history descriptor by setting its channels to zero. Table~\ref{tab:square_fusion_full} reports the validation-selected comparison, and the corresponding three-seed gate variability is summarized separately below.
+ 
+ \par
+ \begin{table}[H]
+ \centering
+ \caption{
+-Centered-square routing and fusion errors at $K=24$. The convex oracle is an a posteriori reference unavailable during prediction.
++Centered-square routing and fusion errors at $K=24$. The diagnostic oracle fits a full-window objective using future reference fields; its reported terminal error is not a terminal-optimal lower bound.
+ T2-C $\mu$-only uses the same gate architecture as T2-C but removes the standardized history descriptor. Bold indicates the best deployable method within each overlap.
+ }
+ \label{tab:square_fusion_full}
+@@ -33,7 +33,7 @@
+  & E2-probability blend & 0.7898 & 1.3949 & 2.1847 \\
+  & T2-C $\mu$-only & 0.7898 & 1.3948 & 2.1846 \\
+  & T2-C & \textbf{0.4615} & \textbf{0.7343} & \textbf{1.1958} \\
+- & Convex oracle & 0.4659 & 0.7183 & 1.1842 \\
++ & Diagnostic oracle & 0.4659 & 0.7183 & 1.1842 \\
+ \midrule
+ $H$--$P$ & Periodic specialist & 0.6420 & 0.5659 & 1.2079 \\
+  & Hopf specialist & 1.0034 & 1.8684 & 2.8718 \\
+@@ -42,7 +42,7 @@
+  & E2-probability blend & 0.6154 & 1.0464 & 1.6618 \\
+  & T2-C $\mu$-only & 0.5875 & 0.5629 & 1.1504 \\
+  & T2-C & \textbf{0.4509} & \textbf{0.3956} & \textbf{0.8465} \\
+- & Convex oracle & 0.4479 & 0.3905 & 0.8384 \\
++ & Diagnostic oracle & 0.4479 & 0.3905 & 0.8384 \\
+ \bottomrule
+ \end{tabular}
+ \end{table}
+--- original/main.tex
++++ revised/main.tex
+@@ -31,7 +31,7 @@
+ \maketitle
+ 
+ \begin{abstract}
+-Reduced-order models (ROMs) approximate high-dimensional physical dynamics using a small number of state variables. Their predictive accuracy can deteriorate when parameter changes lead to different dynamical regimes, such as a transition from steady flow to sustained oscillations. This challenge affects both the reduced representation and the model that advances it in time. In this paper, We introduce RAL-MoE-ROM, a hierarchical mixture-of-experts framework that separates local dynamical modeling from the assembly of local predictions. Overlapping parameter regions are assigned independent reduced coordinate systems. Within each region, a projected dynamical model is augmented by a structured sparse mixture-of-experts correction and trained through autonomous multi-step rollouts. A parameter-conditioned outer router guides model selection within a validation-supported candidate set. Selected models evolve independently in their own coordinates, and their reconstructed physical fields are combined using a convex weight inferred from the parameter and initial physical history. This weight remains fixed over the prediction window, and the combined output is not fed back into the local models. Experiments on three two-dimensional incompressible-flow benchmarks cover steady, instability-onset, and periodic behavior. On the two regime overlaps of the centered-square benchmark, learned fusion reduces terminal joint velocity–pressure error by 30.9% and 54.2% relative to hard model selection. These results support regime-local modeling and output-level assembly without requiring a shared reduced coordinate system.
++Reduced-order models (ROMs) approximate high-dimensional physical dynamics using a small number of state variables. Their predictive accuracy can deteriorate when parameter changes lead to different dynamical regimes, such as a transition from steady flow to sustained oscillations. This challenge affects both the reduced representation and the model that advances it in time. We introduce RAL-MoE-ROM, a hierarchical mixture-of-experts framework that separates local dynamical modeling from the assembly of local predictions. Overlapping parameter regions are assigned independent reduced coordinate systems. Within each region, a projected dynamical model is augmented by a structured sparse mixture-of-experts correction and trained through autonomous multi-step rollouts. A parameter-conditioned outer router guides model selection within a validation-supported candidate set. Selected models evolve independently in their own coordinates, and their reconstructed physical fields are combined using a convex weight inferred from the parameter and initial physical history. This weight remains fixed over the prediction window, and the combined output is not fed back into the local models. Experiments on three two-dimensional incompressible-flow benchmarks cover steady, instability-onset, and periodic behavior. On the two regime overlaps of the centered-square benchmark, learned fusion reduces terminal joint velocity--pressure error ($E_u+E_p$) by 30.9% and 54.2% relative to hard model selection. These results support regime-local modeling and output-level assembly without requiring a shared reduced coordinate system.
+ \end{abstract}
+ 
+ \input{sections/introduction}
+@@ -42,7 +42,7 @@
+ \input{sections/conclusion}
+ 
+ \subsubsection*{Reproducibility statement}
+-The main text reports the benchmark roles, evaluation horizons, baselines, and metrics. Appendices~A--E document the local-coordinate construction, projected operators, specialist architecture, routing and fusion procedure, and implementation details. Appendices~F--H provide benchmark-specific results.
++The main text reports the benchmark roles, evaluation horizons, baselines, and metrics. Appendices~\ref{app:problem_pod}--\ref{app:implementation} document the local-coordinate construction, projected operators, specialist architecture, routing and fusion procedure, and implementation details. Appendices~\ref{app:circular}--\ref{app:pinball} provide benchmark-specific results.
+ Appendix~\ref{app:internal_routing} reports post-hoc internal-routing statistics
+ from fixed validation-selected Hopf and Periodic specialists on held-out
+ rollout windows; these diagnostics are not used for model selection.
+@@ -52,7 +52,7 @@
+ 
+ \subsection*{AI use statement}
+ % Authors must confirm this disclosure against the final submission workflow.
+-Generative AI tools, including ChatGPT and Codex, were used solely to assist with language polishing and LaTeX formatting. The authors take full responsibility for reviewing and verifying all scientific
++Generative AI tools, including ChatGPT and Codex, were used to assist with language editing, manuscript organization, literature lookup, consistency checks of reported claims, and LaTeX formatting. No new experimental results were generated in this manuscript-revision workflow. The authors take full responsibility for reviewing and verifying all scientific
+ content, mathematical formulations, experimental configurations, numerical
+ results, and conclusions, and for the final manuscript and all reported results.
+ 
+--- original/references.bib
++++ revised/references.bib
+@@ -562,3 +562,37 @@
+  volume = {2026},
+  year = {2026}
+ }
++
++@article{vlachas2018,
++  author = {Vlachas, Pantelis R. and Byeon, Wonmin and Wan, Zhong Y. and Sapsis, Themistoklis P. and Koumoutsakos, Petros},
++  title = {Data-driven forecasting of high-dimensional chaotic systems with long short-term memory networks},
++  journal = {Proceedings of the Royal Society A},
++  volume = {474}, pages = {20170844}, year = {2018}, doi = {10.1098/rspa.2017.0844}
++}
++@article{kramer2024,
++  author = {Kramer, Boris and Peherstorfer, Benjamin and Willcox, Karen E.},
++  title = {Learning Nonlinear Reduced Models from Data with Operator Inference},
++  journal = {Annual Review of Fluid Mechanics}, volume = {56}, pages = {521--548}, year = {2024},
++  doi = {10.1146/annurev-fluid-121021-025220}
++}
++@article{bhat2025,
++  author = {Bhat, Sourabh P. and Barral, Nicolas and Ricchiuto, Mario},
++  title = {Error-based efficient parameter space partitioning for mesh adaptation and local reduced order models},
++  journal = {Computer Methods in Applied Mechanics and Engineering}, volume = {435}, pages = {117649}, year = {2025},
++  doi = {10.1016/j.cma.2024.117649}
++}
++@misc{manti2025,
++  author = {Manti, Simone and Tsai, Ping-Hsuan and Lucantonio, Alessandro and Iliescu, Traian},
++  title = {Symbolic Regression of Data-Driven Reduced Order Model Closures for Under-Resolved, Convection-Dominated Flows},
++  year = {2025}, howpublished = {arXiv preprint arXiv:2502.04703}, url = {https://arxiv.org/abs/2502.04703}
++}
++@misc{colanera2025,
++  author = {Colanera, Antonio and Magri, Luca},
++  title = {Quantized local reduced-order modeling in time ({ql-ROM})},
++  year = {2025}, howpublished = {arXiv preprint arXiv:2506.13738}, url = {https://arxiv.org/abs/2506.13738}
++}
++@misc{colanera2026fuzzy,
++  author = {Colanera, Antonio and Magri, Luca},
++  title = {Fuzzy local reduced order models ({fl-ROMs})},
++  year = {2026}, howpublished = {arXiv preprint arXiv:2609.00031v2}, url = {https://arxiv.org/abs/2609.00031v2}
++}
+--- original/sections\conclusion.tex
++++ revised/sections\conclusion.tex
+@@ -1,4 +1,4 @@
+ \section{Conclusion}
+ 
+ We introduced RAL-MoE-ROM, a hierarchical reduced-order modeling framework that separates within-regime dynamical specialization from cross-regime assembly. Regime-local ROMs retain independent reduced coordinates and augment projected dynamics with structured sparse corrections, while
+-cross-regime coupling is performed only after reconstruction in physical space. Across three parameterized incompressible-flow benchmarks, the local specialists support accurate autonomous rollouts, and history-conditioned T2-C improves prediction in the evaluated regime overlaps. The present study assumes a validation-supported regime coverage and evaluates pairwise fusion only for adjacent specialists on two-dimensional incompressible flows. Future work will investigate learned regime discovery, constraint-preserving physical-space assembly, and higher-dimensional dynamical systems.
++output-level fusion is performed only after reconstruction in physical space, with no feedback into the local trajectories. Across three parameterized incompressible-flow benchmarks, the local specialists support accurate autonomous rollouts, and history-conditioned T2-C improves prediction in the evaluated regime overlaps. The evidence is limited to held-out trajectories within the covered Reynolds-number ranges, with fixed parameters and separately trained models for each geometry. The study assumes validation-supported coverage and evaluates adjacent-pair fusion; it does not establish cross-geometry transfer, online switching under time-varying parameters, or a computational speedup. Convex output fusion alone does not ensure satisfaction of the full nonlinear governing equations. Future work will investigate learned regime discovery, constraint-preserving physical-space assembly, and higher-dimensional dynamical systems.
+--- original/sections\experiments.tex
++++ revised/sections\experiments.tex
+@@ -3,10 +3,9 @@
+ 
+ We organize the experiments around three questions: whether the regime-local specialists support autonomous prediction, whether
+ physical-space fusion improves prediction near regime transitions, and how the main local architectural choices affect prediction.
+-The three incompressible-flow benchmarks play complementary roles in answering these questions. All are two-dimensional systems in which varying the Reynolds number traverses steady, Hopf-onset, and periodic regimes. The circular-cylinder benchmark provides the local architecture ablation, the centered-square benchmark evaluates cross-regime routing and fusion in the $S$--$H$ and $H$--$P$ overlaps, and the fluidic-pinball benchmark provides the autonomous comparison with a classical POD--Galerkin ROM. Table~\ref{tab:benchmark_summary} summarizes the benchmark scope and roles. All splits are made at the level of complete parameter trajectories rather than individual snapshots or rollout windows; chart-wise parameter ranges and split counts are reported in Appendix~\ref{app:implementation}.
+-
+-We report relative physical-field errors $E_u$ and $E_p$ in percent; their weighted definitions and benchmark-specific aggregation rules are given in Appendix~\ref{app:implementation}. For routing and fusion comparisons, $E_{\mathrm{joint}}=E_u+E_p$. The sum of displayed component errors can differ slightly from the reported joint error because values are rounded independently. A rollout window is labeled ``Divergent'' if it violates the predefined rollout-divergence criterion, either through a non-finite state or a
+-threshold violation. N/E denotes a setting that is not evaluable under this criterion; table-specific notes identify the cause.
++The three incompressible-flow benchmarks play complementary roles in answering these questions. All are two-dimensional systems covering steady, Hopf-onset, and periodic regimes across Reynolds numbers. The parameter is fixed within each trajectory, and models are trained separately for each geometry. The circular-cylinder benchmark provides the local architecture ablation, the centered-square benchmark evaluates cross-regime routing and fusion in the $S$--$H$ and $H$--$P$ overlaps, and the fluidic-pinball benchmark provides the autonomous comparison with a classical POD--Galerkin ROM. Table~\ref{tab:benchmark_summary} summarizes the benchmark scope and roles. All splits are made at the level of complete parameter trajectories rather than individual snapshots or rollout windows; chart-wise parameter ranges and split counts are reported in Appendix~\ref{app:implementation}.
++
++We report relative physical-field errors $E_u$ and $E_p$ in percent; their weighted definitions and benchmark-specific aggregation rules are given in Appendix~\ref{app:implementation}. For routing and fusion comparisons, $E_{\mathrm{joint}}=E_u+E_p$. The sum of displayed component errors can differ slightly from the reported joint error because values are rounded independently. We distinguish validation-stage exclusion (V/F), test-rollout failure, and an unreported result (N/R); an unreported value alone is not evidence of divergence.
+ 
+ \par
+ \begin{table}[H]
+@@ -64,7 +63,7 @@
+ \begin{table}[H]
+ \centering
+ \caption{
+-Autonomous local-specialist prediction on the fluidic-pinball benchmark. Errors are physical-field percentages; lower is better. Periodic-core denotes the longer-horizon periodic evaluation; complete protocol details are given in Appendix~\ref{app:pinball}. A dash indicates that no baseline error is reported.
++Autonomous local-specialist prediction on the fluidic-pinball benchmark. Errors are physical-field percentages; lower is better. Periodic-core denotes the longer-horizon periodic evaluation; complete protocol details are given in Appendix~\ref{app:pinball}. N/R denotes an unreported baseline error.
+ }
+ \label{tab:pinball_autonomous}
+ \small
+@@ -75,7 +74,7 @@
+ \midrule
+ Steady ($K=56$)
+ & POD--Galerkin
+-& -- & -- & -- \\
++& N/R & N/R & N/R \\
+ & RAL-MoE-ROM
+ & 0.2247 & 0.7593 & 0.9840 \\
+ \addlinespace
+@@ -115,7 +114,7 @@
+ To evaluate the second routing level while holding the local specialists fixed, we compare the centered-square $S$--$H$ and $H$--$P$ overlaps at $K=24$ (Table~\ref{tab:routing_fusion}). We compare hard E2 Top-1 routing with two simple fusion rules, the Equal blend and the E2-probability blend, together with the learned T2-C gate; a diagnostic convex oracle provides an a posteriori reference. To test whether T2-C benefits specifically from physical-history information, we additionally include an architecture-matched T2-C $\mu$-only ablation. The same gate architecture and optimization protocol are retained, but the standardized history-descriptor channels are set to zero. This preserves the gate parameterization and trainable parameter count while removing history information.
+ 
+ 
+-The $\mu$-only ablation reveals that parameter conditioning alone has overlap-dependent value. For $S$--$H$, its joint error is essentially unchanged relative to the E2-probability blend ($2.1846\%$ versus $2.1847\%$), whereas for $H$--$P$ it improves the same baseline from $1.6618\%$ to $1.1504\%$. Adding the physical-history descriptor improves both overlaps further, reducing $E_{\mathrm{joint}}$ to $1.1958\%$ and $0.8465\%$, respectively. Relative to the a posteriori best fixed-specialist reference, full T2-C reduces joint error by $30.9\%$ on $S$--$H$ and $29.9\%$ on $H$--$P$. Relative to the deployable E2 Top-1 router, the corresponding reductions are $30.9\%$ and $54.2\%$. The validation-selected T2-C errors are also close to the diagnostic convex oracle in both overlaps. Representative reconstructed fields and velocity-error maps are shown in Figure~\ref{fig:square_overlap}.
++The $\mu$-only ablation reveals that parameter conditioning alone has overlap-dependent value. For $S$--$H$, its joint error is essentially unchanged relative to the E2-probability blend ($2.1846\%$ versus $2.1847\%$), whereas for $H$--$P$ it improves the same baseline from $1.6618\%$ to $1.1504\%$. Adding the physical-history descriptor improves both overlaps further, reducing $E_{\mathrm{joint}}$ to $1.1958\%$ and $0.8465\%$, respectively. Relative to the a posteriori best fixed-specialist reference, full T2-C reduces joint error by $30.9\%$ on $S$--$H$ and $29.9\%$ on $H$--$P$. Relative to the deployable E2 Top-1 router, the corresponding reductions are $30.9\%$ and $54.2\%$. The oracle selects its weight using a full-window objective, whereas this table reports terminal-step error. Its displayed values are diagnostic references, not lower bounds on terminal error; numerical proximity does not establish terminal-optimal fusion. Representative reconstructed fields and velocity-error maps are shown in Figure~\ref{fig:square_overlap}.
+ 
+ Across three paired gate-training seeds, full T2-C outperforms the architecture-matched $\mu$-only gate in every run for both overlaps.
+ Across the three paired runs, the mean reduction relative to $\mu$-only is $45.3\%$ for $S$--$H$ and $26.2\%$ for $H$--$P$. Full T2-C yields
+@@ -127,7 +126,7 @@
+ \begin{table}[H]
+ \centering
+ \caption{
+-Validation-selected cross-regime routing and fusion on the centered-square benchmark at $K=24$. Entries are terminal-step $E_{\mathrm{joint}}$ (\%); lower is better. T2-C $\mu$-only uses the same gate architecture with all standardized history-descriptor channels set to zero. The oracle is an a posteriori convex reference and is not available at inference. Three-seed gate-training variability is reported separately in
++Test errors for centered-square routing and fusion models selected on validation trajectories ($K=24$). Entries are terminal-step $E_{\mathrm{joint}}$ (\%); lower is better. T2-C $\mu$-only uses the same gate architecture with all standardized history-descriptor channels set to zero. The oracle fits a full-window objective using future reference fields; its terminal error is not a terminal-optimal lower bound and it is unavailable at inference. Three-seed gate-training variability is reported separately in
+ Appendix~\ref{app:square}. Bold marks the best deployable method in this validation-selected comparison.
+ }
+ \label{tab:routing_fusion}
+@@ -136,7 +135,7 @@
+ \begin{threeparttable}
+ \begin{tabular}{@{}lrrrrrrr@{}}
+ \toprule
+-Overlap & Best fixed$^\ast$ & E2 Top-1 & \shortstack{Equal\\blend} & \shortstack{E2-probability\\blend} & \shortstack{T2-C\\$\mu$-only} & T2-C & \shortstack{Convex\\oracle}\\
++Overlap & Best fixed$^\ast$ & E2 Top-1 & \shortstack{Equal\\blend} & \shortstack{E2-probability\\blend} & \shortstack{T2-C\\$\mu$-only} & T2-C & \shortstack{Diagnostic\\oracle}\\
+ \midrule
+ $S$--$H$ & 1.7298 & 1.7298 & 3.0321 & 2.1847 & 2.1846 & \textbf{1.1958} & 1.1842 \\
+ $H$--$P$ & 1.2079 & 1.8473 & 1.6146 & 1.6618 & 1.1504 & \textbf{0.8465} & 0.8384 \\
+@@ -168,7 +167,7 @@
+ 
+ \begin{table}[H]
+ \centering
+-\caption{Circular-cylinder autonomous-rollout errors (\%). A dash indicates that the rollout diverged.}
++\caption{Circular-cylinder autonomous-rollout error ranges across held-out parameter trajectories (\%). Entries are minima and maxima, not aggregate means. V/F denotes exclusion at validation, with no held-out evaluation; N/R denotes an unreported pressure error. Neither label is interpreted as test-rollout divergence.}
+ \label{tab:circular_full_reorg}
+ \small
+ \setlength{\tabcolsep}{4pt}
+@@ -176,43 +175,40 @@
+ \toprule
+ Regime & Model & $E_u$ & $E_p$ \\
+ \midrule
+-Steady ($K=56$)
+-& RAL-MoE-ROM & 0.1027 & 0.7875 \\
+-& Vanilla-FNN-MoE & 0.1690 & 10.3883 \\
+-& DataOnly-MoE & 0.3380 & - \\
+-& Global MoE & 0.2125 & 4.4795 \\
+-\midrule
+-Hopf ($K=56$)
+-& RAL-MoE-ROM & 0.0160 & 0.1338 \\
+-& Vanilla-FNN-MoE & - & - \\
+-& DataOnly-MoE & 0.2570 & - \\
+-& Global MoE & 0.0189 & 0.1721 \\
+-\midrule
+-Periodic ($K=48$)
+-& RAL-MoE-ROM & 0.7412 & 3.8213 \\
+-& Vanilla-FNN-MoE & 2.0615 & 8.6458 \\
+-& DataOnly-MoE & 1.3266 & 6.5350 \\
+-& Global MoE & 0.8800 & 4.2731 \\
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-Replacing the structured expert map with conventional feed-forward experts increases both velocity and pressure errors in the Steady and Periodic regimes; the Vanilla-FNN-MoE Hopf model is not evaluable under the prescribed rollout criterion. Removing the projected ROM backbone produces the largest degradation, with particularly large pressure errors for DataOnly-MoE in the Steady and Hopf regimes. Among the ablations, Global MoE provides the closest overall comparison and is particularly close to the full model in the Hopf regime. Nevertheless, the regime-local specialists retain lower reported physical-field errors in all three regimes. Together, these comparisons support the roles of structured expert corrections, the projected ROM backbone, and regime-local representations under the tested architectures. They are not parameter-matched capacity controls. Cross-regime assembly is evaluated separately in Table~\ref{tab:routing_fusion}. Additional post-hoc internal-routing diagnostics are reported in
++Steady ($K=56$) & RAL-MoE-ROM & 0.0330--0.1723 & 0.2500--1.3249 \\
++ & Vanilla-FNN-MoE & 0.0384--0.2995 & 2.2163--18.5603 \\
++ & DataOnly-MoE & 0.1637--0.5122 & N/R \\
++ & Global MoE & 0.0845--0.3404 & 1.5226--7.4363 \\
++\midrule
++Hopf ($K=56$) & RAL-MoE-ROM & 0.0032--0.0288 & 0.0355--0.4321 \\
++ & Vanilla-FNN-MoE & V/F & V/F  \\
++ & DataOnly-MoE & 0.1260--0.3880 & N/R \\
++ & Global MoE & 0.0110--0.0268 & 0.0560--0.2882 \\
++\midrule
++Periodic ($K=48$) & RAL-MoE-ROM & 0.3809--1.3473 & 1.6825--5.9601 \\
++ & Vanilla-FNN-MoE & 1.0393--3.0836 & 3.9659--13.3257 \\
++ & DataOnly-MoE & 0.7854--1.8677 & 2.2511--10.8189 \\
++ & Global MoE & 0.5873--1.1726 & 2.1896--6.3566 \\
++\bottomrule
++\end{tabular}
++\end{table}
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++
++Replacing the structured expert map with conventional feed-forward experts shifts both velocity and pressure error ranges upward in the Steady and Periodic regimes; the Vanilla-FNN-MoE Hopf model is excluded at validation and has no reported test error. DataOnly-MoE also has higher velocity-error range endpoints in all regimes and higher Periodic pressure-error range endpoints; its Steady and Hopf pressure errors are not reported. Among the ablations, Global MoE provides the closest overall comparison and is particularly close to the full model in the Hopf regime. The error ranges overlap, so these summaries do not establish a uniform advantage on every trajectory. They indicate architecture-dependent differences under the tested configurations; paired trajectory-level comparisons are needed to isolate their contributions. They are not parameter-matched capacity controls. Cross-regime assembly is evaluated separately in Table~\ref{tab:routing_fusion}. Additional post-hoc internal-routing diagnostics are reported in
+ Appendix~\ref{app:internal_routing}.
+ 
+ 
+--- original/sections\introduction.tex
++++ revised/sections\introduction.tex
+@@ -4,15 +4,11 @@
+ 
+ This setting presents two related but distinct challenges. The first concerns representation: spatial structures that are important in one regime may differ from those required in another, making a single low-dimensional basis less effective across the full parameter range. The second concerns dynamics: the reduced evolution law must describe relaxation, instability growth, and nonlinear oscillation. Increasing model capacity does not directly resolve a mismatch in the reduced representation, while improving the representation alone does not ensure accurate recursive prediction. These observations motivate adapting the local representation and the local dynamics separately, while providing a consistent way to assemble their predictions.
+ 
+-Projection-based ROMs provide an explicit reduced representation and reduced dynamics, commonly through proper orthogonal decomposition (POD) and
+-Galerkin projection \citep{sirovich1987,berkooz1993,benner2015}. Truncation, however, removes interactions that can still influence the retained coordinates, producing closure errors that degrade long-horizon prediction \citep{amsallem2012}. Data-driven reduced models offer greater flexibility in approximating nonlinear dynamics, but low one-step error does not guarantee accurate autonomous rollout \citep{vlachas2018,duraisamy2019,brunton2020}. Hybrid ROMs combine physics-based reduced models with learned corrections or learned reduced representations, retaining physical structure while increasing approximation flexibility
+-\citep{dar2023,lee2020,fresca2022,geelen2023}. A complementary strategy localizes the reduced representation, using multiple subspaces, clusters, or manifolds for different portions of the solution set \citep{kaiser2014,li2021cluster,diaz2024}. These directions address complementary aspects of the broad-parameter problem: hybrid modeling improves the fidelity of the reduced dynamics, whereas localization adapts the reduced representation to regime-dependent structure.
++Projection-based ROMs use proper orthogonal decomposition (POD) and Galerkin projection to construct reduced dynamics \citep{sirovich1987,berkooz1993,benner2015}, but truncation introduces closure errors \citep{amsallem2012}. Learned corrections improve dynamical flexibility, while local bases adapt the representation to regime-dependent structures \citep{dar2023,geelen2023,kaiser2014,li2021cluster,diaz2024}. These choices address different limitations. Moreover, accurate one-step predictions need not yield accurate recursive forecasts, motivating explicit evaluation under autonomous rollout \citep{vlachas2018}.
+ 
+-Localization, however, creates a new assembly problem. Independently constructed local ROMs generally have different mean fields, bases, scalings, and reduced operators, so their coefficient vectors are not componentwise comparable. Direct interpolation or averaging in reduced-coordinate space therefore has no natural cross-chart interpretation. Mixture-of-experts (MoE) architectures provide a natural framework for conditional specialization \citep{jacobs1991,jordan1994,shazeer2017,fedus2022}, but many standard MoE formulations route specialized predictors within a shared representation or common feature space. The resulting problem is therefore hierarchical: one must adapt the reduced dynamics within each local representation and, separately, select or combine complete local ROMs across representations that do not share coordinates. This raises a distinct question that standard within-representation MoE routing does not address: how can independently constructed local dynamical models be assembled without forcing them into a common latent coordinate system?
++Local ROMs reduce the burden on a single representation, but their coefficients refer to different physical modes and cannot be averaged directly as shared features. Change-of-basis maps and combinations of reconstructed outputs can connect such models. Our question is how to select or combine local predictions during autonomous forecasting without imposing shared coordinates or repeatedly transferring the evolving state between models. Mixture-of-experts (MoE) architectures provide a framework for conditional specialization \citep{jacobs1991,jordan1994,shazeer2017,fedus2022}; here we separate correction within a local ROM from the assembly of complete local predictions.
+ 
+-
+-To address this gap, we introduce the Regime-Adaptive Localized Mixture-of-Experts Reduced-Order Model (RAL-MoE-ROM), a two-level hierarchy that separates within-regime dynamical specialization from cross-regime model selection and assembly. The parameter domain is covered by overlapping regime-local parameter regions, each equipped with an independent reduced chart and a complete autonomous specialist. Within each specialist, the projected ROM backbone is augmented by a structured sparse MoE correction for unresolved reduced dynamics. Each specialist undergoes closed-loop rollout training, so that its learned correction is optimized under the recursive inputs encountered at inference. At the second level, an outer parameter-only regime router (E2) assigns a trajectory-level preference over local specialists. When two adjacent specialists are both applicable, a learned Top-2 convex fusion (T2-C) uses recent physical history to refine their relative weight. The selected specialists encode the same physical history in their own coordinates and evolve independently. Their predictions are combined only after reconstruction in the common physical space, and the fused output is not fed back into either local trajectory.
+-
++We introduce the Regime-Adaptive Localized Mixture-of-Experts Reduced-Order Model (RAL-MoE-ROM). Overlapping regions of parameter space have independently constructed local reduced coordinate systems, referred to as charts. Each local specialist augments a projected ROM with structured sparse corrections trained through autonomous multi-step rollouts. An outer parameter-conditioned router provides model preferences within an applicability-constrained candidate set. For an applicable adjacent pair, a convex weight inferred from the parameter and initial physical history remains fixed throughout the prediction window. Both specialists evolve independently in their own coordinates; only their reconstructed outputs are combined, with no feedback into either trajectory.
+ 
+ Our contributions are threefold:
+ \begin{itemize}
+@@ -32,7 +28,7 @@
+     \item \textbf{Physical-space assembly across independent local ROMs.}
+     Adjacent specialists retain independent coordinates and autonomous
+     trajectories. T2-C combines only their reconstructed physical fields
+-    through a history-conditioned convex weight, avoiding direct
++    through a convex weight conditioned on the initial history and fixed over the prediction window, avoiding direct
+     interpolation of reduced states or operators.
+ \end{itemize}
+ 
+@@ -42,7 +38,7 @@
+     \includegraphics[width=\linewidth]{figures/ral_moe_rom_overview_user_20260908.png}
+     \caption{
+     Overview of RAL-MoE-ROM.
+-    (a) A parameter-only outer router selects one regime-local specialist or an adjacent pair. Selected specialists encode the same physical history in their native coordinates, evolve independently, and are combined only after reconstruction; recent physical history conditions the Top-2 fusion but not the outer router. (b) Each specialist augments the projected Galerkin backbone with a structured sparse MoE correction, while pressure is reconstructed algebraically. Flow thumbnails are schematic.
++    (a) The parameter-conditioned outer router supplies preferences; applicability rules restrict selection to one local specialist or an adjacent pair. Selected specialists encode the initial physical history in their own coordinates, evolve independently, and reconstruct their fields before fusion. The fusion weight uses the initial history and remains fixed over the window; the fused output is not fed back. (b) Each specialist augments projected Galerkin dynamics with a structured sparse correction and an algebraic pressure update.
+ }
+     \label{fig:ral_overview}
+ \end{figure}
+--- original/sections\method.tex
++++ revised/sections\method.tex
+@@ -2,7 +2,7 @@
+ \label{sec:method}
+ 
+ RAL-MoE-ROM separates reduced modeling into three complementary components: regime-local representations, autonomous local specialists, and
+-cross-regime physical-space assembly. These components are organized by a two-level routing hierarchy. Overlapping regime-local parameter regions are equipped with independent reduced charts. Each chart supports a complete autonomous regime-local specialist that combines a projected ROM backbone with a structured sparse correction. The outer routing level then selects one specialist or an applicable adjacent pair and assembles only their reconstructed physical fields. Figure~\ref{fig:ral_overview} summarizes the overall construction; detailed
++cross-regime physical-space assembly. The two functional levels are correction within a local ROM and selection or fusion between complete local ROMs. Overlapping regions of parameter space are equipped with independent reduced charts. Each chart supports a complete autonomous regime-local specialist that combines a projected ROM backbone with a structured sparse correction. The outer routing level then selects one specialist or an applicable adjacent pair and assembles only their reconstructed physical fields. Figure~\ref{fig:ral_overview} summarizes the overall construction; detailed
+ derivations are provided in Appendices~\ref{app:problem_pod}--\ref{app:routing}.
+ 
+ \subsection{Overlapping regime-local reduced charts}
+@@ -39,7 +39,7 @@
+   \sum_{e\in\mathcal T_2^c}\omega^c_e E^c_{e,m^\star}(\bm\xi).
+   \label{eq:main_inner_moe}
+ \end{equation}
+-Routing is hierarchical within each specialist. An expert group $m^\star$ is selected by a chart-local router or predetermined for a single-group or fixed-group specialist. Within that group, the velocity and pressure channels $c\in\{u,p\}$ independently select their two highest-scoring routed experts, while a shared expert remains active. The nonnegative weights $\omega_e^c$ are normalized over the active experts. Each active expert combines a nonlinear feature-conditioned branch with explicit linear and low-rank quadratic responses of the local reduced state; the exact parameterization is given in Appendix~\ref{app:specialists}.
++Each specialist uses group-and-expert routing. An expert group $m^\star$ is selected by a chart-local router or predetermined for a single-group or fixed-group specialist. Within that group, the velocity and pressure channels $c\in\{u,p\}$ independently select their two highest-scoring routed experts, while a shared expert remains active. The nonnegative weights $\omega_e^c$ are normalized over the active experts. Each active expert combines a nonlinear feature-conditioned branch with explicit linear and low-rank quadratic responses of the local reduced state; the exact parameterization is given in Appendix~\ref{app:specialists}.
+ 
+ After advancing velocity over one reduced time step, pressure is reconstructed algebraically as
+ \begin{equation}
+@@ -48,7 +48,7 @@
+   +\bm\rho^p_{\theta_r}(\bm\xi_n^{(r)}).
+   \label{eq:main_pressure_closure}
+ \end{equation}
+-Here $\mathcal Q_r^{PP}$ denotes the chart-local reduced Pressure--Poisson map, $\bm\rho^p_{\theta_r}$ provides the learned pressure correction, and $\bm\gamma_n^{(r)} =\operatorname{sigmoid}(\bm\eta^p_{\theta_r}(\bm\xi_n^{(r)}))$ modulates the Pressure--Poisson contribution componentwise; $\odot$ denotes componentwise multiplication. Thus velocity is advanced dynamically, whereas pressure is reconstructed algebraically rather than evolved as a separate recurrent state.
++Here $\mathcal Q_r^{PP}$ denotes the chart-local reduced Pressure--Poisson map, $\bm\rho^p_{\theta_r}$ provides the learned pressure correction, and $\bm\gamma_n^{(r)} =\operatorname{sigmoid}(\bm\eta^p_{\theta_r}(\bm\xi_n^{(r)}))$ modulates the Pressure--Poisson contribution componentwise; $\odot$ denotes componentwise multiplication. Pressure is updated algebraically rather than through a separate differential equation. The updated pressure enters the state and history used for the next velocity step.
+ 
+ 
+ \subsection{Closed-loop rollout training}
+@@ -79,13 +79,13 @@
+ \mathcal R_{E2}(\widetilde\mu)
+ \right).
+ \]
+-The probabilities are evaluated once and remain fixed throughout the rollout. The outer router does not use physical history. Chart-independent descriptors extracted from the initial history $\mathcal H_n$ enter only the T2-C gate described below.
++The probabilities are evaluated once and remain fixed throughout the rollout. The outer router does not use physical history. The T2-C gate uses chart-independent descriptors extracted from the initial history $\mathcal H_n$; the applicability mask separately checks the initialization and horizon.
+ 
+ A validation-supported applicability mask $m_r(\mathcal H_n,\mu,K)\in\{0,1\}$ marks whether specialist $r$ is applicable for the current parameter, initial history, and rollout horizon. The mask restricts the candidate set but does not modify the E2 probability
+ model itself. Under hard Top-1 routing, only the applicable specialist with the largest E2 probability is advanced.
+ 
+ When an adjacent pair is applicable ($S$--$H$ or $H$--$P$), both specialists are initialized from the same physical history, encoded in
+-their own coordinates, and advanced independently. Let $\bar\pi_r$ denote the E2 probability normalized over the selected pair. For reconstructed fields $\widehat{\bm q}^{(r)}$ and $\widehat{\bm q}^{(s)}$, T2-C predicts a history-conditioned logit correction to this pairwise preference and forms
++their own coordinates, and advanced independently. Let $\bar\pi_r$ denote the E2 probability normalized over the selected pair. For reconstructed fields $\widehat{\bm q}^{(r)}$ and $\widehat{\bm q}^{(s)}$, T2-C predicts an initial-history-conditioned logit correction to this pairwise preference and forms
+ \begin{equation}
+   \widehat{\bm q}_{\rm T2C}(t)
+   =\alpha\,\widehat{\bm q}^{(r)}(t)
+--- original/sections\related_work.tex
++++ revised/sections\related_work.tex
+@@ -10,8 +10,7 @@
+ 
+ \paragraph{Localized representations and conditional dynamics.}
+ Local reduced bases, clustering strategies, localized operators, nonlinear manifolds, and parameter-space partitioning have been used to reduce the representational burden placed on a single global ROM \citep{amsallem2008,peherstorfer2014,kaiser2014,li2021cluster,diaz2024,bhat2025}. Recent work has further emphasized explicitly local reduced dynamics. In particular, ql-ROM partitions the solution manifold into clusters, constructs an intrusive ROM within each cluster, and connects the local models through assignment and change-of-basis operations
+-\citep{colanera2025}. These approaches motivate local reduced representations over restricted regions of parameter or state space, but they also introduce a coordination problem because independently constructed local models generally differ in
+-their mean fields, bases, scalings, and reduced operators. RAL-MoE-ROM addresses this issue differently: each reduced chart is paired with a complete autonomous specialist, the specialists retain independent coordinates during rollout, and cross-regime coupling is performed only after reconstruction in the common physical space. The resulting problem is therefore not merely one of selecting a local basis or switching between local coordinates, but of assembling independently evolved local dynamical systems.
++\citep{colanera2025}. The recent fl-ROM formulation advances local models in parallel, blends reconstructed states using fuzzy memberships, and projects the blended state back into local coordinates for the next step \citep{colanera2026fuzzy}. RAL-MoE-ROM instead keeps the selected trajectories independent over the entire forecast window, with a weight conditioned on the initial history and no feedback from fusion. Its distinguishing design is this forecast organization together with learned local dynamical corrections, rather than physical-space blending alone.
+ 
+ 
+ 
+@@ -19,5 +18,5 @@
+ 
+ 
+ \paragraph{Mixture-of-experts and cross-chart assembly.}
+-Classical hierarchical mixtures learn conditional expert assignments \citep{jacobs1991,jordan1994}, while sparse MoE architectures activate only a subset of experts for each input \citep{shazeer2017,fedus2022}. Many widely used MoE formulations specialize predictors or operator blocks that operate within a shared latent representation or a common output space. Recent work extends conditional specialization to physics-informed constraints, local implicit representations, neural-operator pretraining, and PDE forecasting \citep{ICLR2024_9aeda582,NEURIPS2024_b83fae17,NEURIPS2025_2d23a999,ICLR2026_754612bd}. These approaches demonstrate the value of conditional specialization, but they do not address the same cross-chart assembly problem considered here. RAL-MoE-ROM places conditional computation at two distinct levels: sparse experts operate within a single local coordinate system, while the outer routing level acts on complete local ROMs whose coordinates are constructed independently. When two local models are combined, they are evolved independently and
++Classical hierarchical mixtures learn conditional expert assignments \citep{jacobs1991,jordan1994}, while sparse MoE architectures activate only a subset of experts for each input \citep{shazeer2017,fedus2022}. Many widely used MoE formulations specialize predictors or operator blocks that operate within a shared latent representation or a common output space. Recent work extends conditional specialization to physics-informed constraints, local implicit representations, neural-operator pretraining, and PDE forecasting \citep{ICLR2024_9aeda582,NEURIPS2024_b83fae17,NEURIPS2025_2d23a999,ICLR2026_754612bd}. These approaches motivate conditional specialization. Here the focus is the organization of autonomous local ROMs with independent coordinate systems. RAL-MoE-ROM places conditional computation at two distinct levels: sparse experts operate within a single local coordinate system, while the outer routing level acts on complete local ROMs whose coordinates are constructed independently. When two local models are combined, they are evolved independently and
+ combined only after reconstruction in physical space, rather than by interpolating their reduced coefficients or operators. This distinction separates the present setting from standard within-representation MoE routing.

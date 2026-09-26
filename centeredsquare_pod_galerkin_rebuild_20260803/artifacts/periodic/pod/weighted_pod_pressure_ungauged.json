@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "train_cases": 27,
+  "train_snapshots": 3402,
+  "stored_modes": 32,
+  "analysis_rank": 128,
+  "rank_99": 10,
+  "rank_999": 24,
+  "captured_energy": 0.999686870277905,
+  "gram_max_abs": 3.3306690738754696e-15,
+  "heldout_loaded": false
+}

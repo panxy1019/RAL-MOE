@@ -1,0 +1,28 @@
+boundary:
+  desc: ''
+  sort: 1
+  value: HP
+cache_sha256:
+  desc: ''
+  sort: 4
+  value: 178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663
+fusion_feedback:
+  desc: ''
+  sort: 6
+  value: false
+method:
+  desc: ''
+  sort: 0
+  value: T2-C_LearnedConvexCorrection_FieldBlend
+seed:
+  desc: ''
+  sort: 3
+  value: 42001
+specialists_frozen:
+  desc: ''
+  sort: 5
+  value: true
+steps:
+  desc: ''
+  sort: 2
+  value: 8000

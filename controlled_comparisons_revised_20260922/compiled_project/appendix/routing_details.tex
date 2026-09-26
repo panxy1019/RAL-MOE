@@ -1,0 +1,78 @@
+\section{Outer routing and T2-C details}
+\label{app:routing}
+
+
+\paragraph{Chart-independent physical-history descriptor.}
+The implementation  in Section \ref{sec:outer_routing} uses eight descriptor channels and one parameter input. These features are computed from the initial three physical states at $t_{n-2}<t_{n-1}<t_n$, with pressure mapped to the common zero-mean gauge. They are independent of the specialists' POD coordinates. All quantities below use the nondimensional data conventions of the experiment, and $\epsilon=10^{-12}$ is the numerical floor.
+
+Define $A_\Omega=\sum_i w_i$, $U_j=\|\bm u_j\|_{M_u}^2$, $P_j=\|p_j^\circ\|_{M_p}^2$, and
+\begin{align}
+ h_j&=\max(t_j-t_{j-1},\epsilon),&
+ s_j^u&=\sqrt{\max(U_j,\epsilon)},&
+ s_j^p&=\sqrt{\max(P_j,\epsilon)},\\
+ v_j&=(\bm u_j-\bm u_{j-1})/h_j,&
+ g_j&=\frac{\log\max(U_j,\epsilon)-\log\max(U_{j-1},\epsilon)}{h_j}.
+\end{align}
+The ordered raw descriptor is
+\begin{equation}
+\bm s_n=\operatorname{col}\left(
+\begin{array}{l}
+ \tfrac12\log\max(U_n/A_\Omega,\epsilon),\\
+ \tfrac12\log\max(P_n/A_\Omega,\epsilon),\\
+ \log(1+\|v_n\|_{M_u}/(s_n^u+\epsilon)),\\
+ \log(1+\|v_{n-1}\|_{M_u}/(s_{n-1}^u+\epsilon)),\\
+ \tanh(g_n),\\
+ \tanh(g_n-g_{n-1}),\\
+ \log(1+\|p_n^\circ-p_{n-1}^\circ\|_{M_p}/[h_n(s_n^p+\epsilon)]),\\
+ \log(1+\|v_n-v_{n-1}\|_{M_u}/(s_n^u+\epsilon))
+\end{array}\right).
+\label{eq:app_t2c_descriptor}
+\end{equation}
+The last channel measures a difference of velocity rates: it is not divided again by a time interval and is not the second-derivative descriptor in an acceleration discretization. The log and hyperbolic-tangent transformations above are part of the actual feature construction. For the gate, the nine raw features $[\mu;\bm s_n]$ are standardized using the means and population standard deviations of training windows only. Any feature standard deviation below $10^{-8}$ is replaced by one. We denote the resulting vector by $[\widetilde\mu_G;\bm d_n]$; its parameter normalization is fitted for the gate and is distinct from the E2 training-row normalization $\widetilde\mu_R$. The architecture-matched $\mu$-only control sets all eight descriptor channels to zero after standardization. 
+
+
+\paragraph{Physical-space T2-C fusion.}
+The logit-correction network receives
+$[\widetilde\mu_G;\bm d_n]\in\mathbb R^9$ and uses two hidden layers of width 64 with SiLU
+activations followed by a scalar linear output (9--64--64--1; 4,865 trainable parameters).
+The final layer is initialized at zero, so the initial correction vanishes
+and the fusion weight reduces to the E2 pair preference.
+Specifically,
+\begin{equation}
+  \Delta_\psi
+  =
+  c_\psi
+  \left(
+    [\widetilde\mu_G;\bm d_n]
+  \right),
+  \qquad
+  \alpha
+  =
+  \operatorname{sigmoid}
+  \left(
+    \ell^{E2}+\Delta_\psi
+  \right).
+  \label{eq:app_t2c_gate}
+\end{equation}
+
+The two selected specialists encode the same physical history in their
+respective local charts and then evolve independently.
+The scalar $\alpha$ is fixed throughout the prediction window and is shared
+by velocity and pressure.
+After reconstruction on the common physical mesh, T2-C forms
+\begin{equation}
+  \widehat{\bm q}_{\alpha}^{\,c}(t)
+  =
+  \alpha\,
+  \widehat{\bm q}_{1}^{\,c}(t)
+  +
+  (1-\alpha)\,
+  \widehat{\bm q}_{2}^{\,c}(t),
+  \qquad
+  c\in\{u,p\},
+  \label{eq:app_t2c_field_fusion}
+\end{equation}
+where the pressure field is gauge corrected.
+The fused field is an output only and is never projected back into either
+specialist.
+

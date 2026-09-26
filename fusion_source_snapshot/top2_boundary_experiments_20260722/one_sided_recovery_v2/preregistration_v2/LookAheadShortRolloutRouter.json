@@ -1,0 +1,99 @@
+{
+  "H_P_pressure_diagnostic": "full convex pressure blend is diagnostic only",
+  "H_P_pressure_primary": "pressure from frozen-E2 dominant anchor specialist",
+  "allowed_pairs": [
+    "Steady-Hopf",
+    "Hopf-Periodic"
+  ],
+  "batch_size": 256,
+  "boundary_threshold_grid": {
+    "selection": "shared threshold selected once using train group-CV then validation; frozen for all methods",
+    "top1_confidence_max": [
+      0.55,
+      0.65,
+      0.75,
+      0.85,
+      0.95
+    ],
+    "top1_top2_margin_max": [
+      0.1,
+      0.25,
+      0.5,
+      0.75
+    ]
+  },
+  "decision": "capability score selects Top-1 or Top-2; blend gate controls physical aggregation only",
+  "development_data_access": [
+    "train",
+    "validation"
+  ],
+  "domains": {
+    "H_P_boundary": "P database-native trajectories only; P indexed phase plus phase-free H",
+    "Hopf_middle": "H only; no S/P candidate",
+    "Periodic_core": "P only",
+    "S_H_boundary": "S database-native trajectories only; S indexed phase plus phase-free H",
+    "Steady_core": "S only"
+  },
+  "evaluation_every_steps": 100,
+  "feedback": "fused state is never fed back into a specialist",
+  "forbidden_routes": [
+    "Steady-Periodic",
+    "Top-3"
+  ],
+  "fusion": "trajectory-constant convex output-level physical-field aggregation at exactly aligned query times",
+  "gate_independence": "G_SH_native and G_HP_native authorize training independently",
+  "history_length": 3,
+  "learning_rate": 0.0003,
+  "lookahead_horizon_grid": [
+    4,
+    8
+  ],
+  "lookahead_inputs": [
+    "finite",
+    "drift",
+    "energy",
+    "growth",
+    "fixed-point",
+    "amplitude",
+    "frequency",
+    "phase",
+    "orbit diagnostics when applicable"
+  ],
+  "lookahead_model": "pair-specific 64x64 capability scorer plus independent convex blend gate",
+  "loss_scaling": "each physical/attractor component standardized by train-only median and MAD, then equal weighted",
+  "method": "E2 selects a legal pair; both frozen candidates run the same future-truth-free short query interval before scoring",
+  "metrics": [
+    "area-weighted velocity and pressure field error at K1/K4/K8/K16/K56",
+    "per-Re mean and worst, finite fraction, divergent windows",
+    "fixed-point, growth, amplitude, frequency, phase and orbit preservation as applicable",
+    "calibration, Top-2 usage, inference time/memory, oracle gap",
+    "full H-P pressure blend diagnostic"
+  ],
+  "optimizer_steps": 8000,
+  "phase_contract": "S/P may read only their own existing indexed database phase; H remains phase-free; no synthetic/zero/horizon-normalized phase",
+  "protocol_version": "ONE_SIDED_NATIVE_SUPPORTED_V2",
+  "seed": 42001,
+  "selection_rule": [
+    "finite_fraction must equal 1 and divergent_windows must equal 0",
+    "illegal S-P and Top-3 activations must equal 0",
+    "minimize validation worst-Re joint physical-field error",
+    "then minimize validation mean joint physical-field error",
+    "then maximize attractor preservation",
+    "then prefer lower inference cost; complexity is never a positive tie-break"
+  ],
+  "source_trajectory_contract": {
+    "Hopf-Periodic": "Periodic train/validation trajectories only during development",
+    "Steady-Hopf": "Steady train/validation trajectories only during development"
+  },
+  "specialists": "frozen; native POD/scaler/history/integrator/pressure closure unchanged",
+  "split": "existing complete-Re and complete-trajectory train/validation/test isolation",
+  "test_access": "forbidden until all three validation-selected checkpoints and configs are frozen",
+  "test_contract": "test physical/modal states and metrics remain sealed until all started routes and thresholds are validation-frozen",
+  "trainable_modules": [
+    "lookahead capability scorer",
+    "independent convex blend gate"
+  ],
+  "truth_contract": "lookahead features use predictions and query clock only; no future true state or label",
+  "weight_decay": 0.0001,
+  "windows_per_Re": 32
+}

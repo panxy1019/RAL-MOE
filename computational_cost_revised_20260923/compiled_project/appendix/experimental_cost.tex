@@ -1,0 +1,129 @@
+% Replace appendix/experimental_cost.tex. Existing labels are retained.
+\section{Computational cost and timing boundaries}
+\label{app:parameter_counts}
+
+We separate three questions: how many trainable parameters are used
+per routing decision, how long the implemented local prediction paths
+take, and how a warm specialist compares with a historical CFD run over
+the same physical interval. Parameter accounting covers Circular H/P;
+both timing studies cover Circular Periodic only. No Square or Pinball
+runtime or complete hierarchical-pipeline speedup is inferred.
+
+\subsection{Circular H/P: parameter utilization}
+
+Total parameters count unique trainable parameters in each analyzed
+specialist. Active parameters count unique trainable parameters used
+by one batch-size-one prediction-path routing decision, not their union
+across a batch, trajectory, or all Runge--Kutta stages. Included modules
+are the encoder and refinement blocks, executed routers, the selected
+group's shared experts, channel-specific Top-2 velocity and pressure
+experts, and the learned pressure correction. Fixed POD bases, projected
+operators, normalization statistics, and non-trainable buffers are excluded.
+
+\begin{table}[tbp]
+\centering
+\caption{Circular trainable and per-decision active parameter counts.
+Counts refer to unique trainable parameters, not FLOPs or memory usage.}
+\label{tab:parameter_counts}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Specialist & Total trainable & Active prediction & Active fraction\\
+\midrule
+Hopf & 31,810,392 & 14,165,816 & 44.53\%\\
+Periodic & 48,617,547 & 8,308,959 & 17.09\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:parameter_counts} quantifies sparse use of the available
+trainable capacity. It does not imply proportional reductions in storage,
+operation count, or latency. The Dense control matches the active neural
+parameter budget, not total model capacity or computational cost; it is
+not identified with the older Vanilla-FNN-MoE, DataOnly-MoE, or Global MoE
+configurations.
+
+\subsection{Circular Periodic: local prediction latency}
+\label{app:cost_local_latency}
+
+\paragraph{Protocol and timing boundary.}
+The native local-model comparison uses Circular Periodic seed 1248,
+batch size one, $K=48$, three warm-up runs, and ten timed repetitions.
+It includes modal rollout, feature generation, data transfers,
+algebraic pressure reconstruction, all-step physical decoding, and
+pressure gauge correction. It excludes physical-history encoding, E2
+selection, descriptor construction, T2-C fusion, model/data loading,
+and error computation. Thus it measures a local prediction path,
+not a single neural forward pass or the complete hierarchy.
+
+\begin{table}[tbp]
+\centering\small
+\caption{Native Circular Periodic local prediction cost at $K=48$.
+Times are medians over ten repetitions after three warm-ups.
+GPU memory denotes peak allocated bytes, not total device or host memory.}
+\label{tab:local_latency}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Model & Median time (s) & GPU peak (bytes) & Time / Dense\\
+\midrule
+Proposed & 2.1848 & 204,238,336 & 3.32\\
+Dense & 0.6579 & 43,111,936 & 1.00\\
+Structured & 0.8652 & 43,316,736 & 1.32\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Interpretation.}
+The proposed implementation is slower than both controls and has higher
+peak allocated GPU memory in this measurement
+(Table~\ref{tab:local_latency}). The native Galerkin NumPy path executes
+on the CPU, but these aggregate timings do not isolate the contribution
+of individual modules or establish the cause of the latency difference.
+Sparse parameter activation therefore provides no measured runtime
+advantage over Dense under this implementation and timing boundary.
+
+\subsection{Circular Periodic: physical-input timing and historical FOM reference}
+\label{app:cost_fom_reference}
+
+\paragraph{Matched physical interval.}
+A separate measurement of the original Periodic specialist (seed 1248)
+adds full-size physical-history encoding and history right-hand-side
+construction. At $\mathrm{Re}=70.314635$, the frozen first legal
+$K=48$ window spans $t=1384.49597$ to $1983.19690$, a duration of
+$598.70093$ physical time units. Its input consists of three
+POD-reconstructed history frames on 97,368 points. All 48 predicted
+velocity and pressure fields are decoded, with pressure gauge correction.
+The model and input fields are resident before timing; acquiring the
+history is not timed. This boundary differs from the local-model
+comparison in Appendix~\ref{app:cost_local_latency}.
+
+\paragraph{ROM measurement.}
+On an RTX 4090 with a Xeon Platinum 8358P host, using one CPU numerical
+thread, batch size one, three warm-ups, ten repetitions, and CUDA
+synchronization, the median is $2.18747$ s. The mean is $2.18729$ s,
+the sample standard deviation is $0.00462$ s, and the range is
+$2.18034$--$2.19550$ s. Loading the model and inputs, writing predictions
+to disk, E2 selection, descriptor construction, and T2-C fusion are
+outside this measurement. Offline model construction and training are
+also outside the online prediction timing.
+
+\paragraph{Historical FOM measurement.}
+The corresponding production OpenFOAM log contains 4,692 solver steps
+and a ClockTime difference of 1,996 s. The largest discrepancy between
+the ROM and FOM interval endpoints is $2.3\times10^{-5}$ physical time
+units, attributable to stored timestamp precision. The production
+solver used one process on a Core i5-14600K VMware host with 16 vCPUs
+and at most five concurrent cases. This hardware information comes
+from a subsequent source audit, not a contemporaneous controlled
+benchmark. There is one FOM timing realization. The recorded interval
+includes native solver field writes but excludes meshing, initialization,
+periodic detection, and subsequent VTK/NPZ conversion.
+
+\paragraph{Scope of the wall-time ratio.}
+The ratio $1996/2.18747\simeq912.5$ compares a historical production
+FOM interval with a warm, physical-input/physical-output local specialist.
+It provides a case-specific online cost reference, not a controlled
+end-to-end speedup: hardware, concurrency, repetition counts, and I/O
+boundaries differ. In particular, the ROM measurement excludes outer
+selection and fusion and cannot represent the cost of advancing and
+assembling two specialists. A fully paired Top-2 end-to-end timing
+under matched compute and I/O conditions remains unmeasured.

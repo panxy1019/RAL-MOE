@@ -1,0 +1,305 @@
+\section{Admissibility-Constrained Hierarchical Assembly}
+\label{sec:hierarchical_ral_moe}
+
+The regime-local specialists define independent reduced dynamical models and
+therefore require an outer mechanism to determine which local descriptions
+are relevant at a given parameter value and how neighboring predictions
+should be combined.  RAL-MoE-ROM separates this task into three elements:
+regime preference, adjacency of the local models, and dynamical
+admissibility.  In regime interiors a single specialist is used, whereas in
+an overlap two adjacent specialists may be advanced independently and
+combined after reconstruction in the common physical space.
+
+\subsection{Regime routing and adjacency constraints}
+\label{subsec:trajectory_router_topology}
+
+For the scalar parameter considered here, the outer E2 router receives the
+standardized input
+\begin{equation}
+  \widetilde{\mu}
+  =
+  \frac{\mu-\mu_{R}}{\sigma_{R}},
+  \qquad
+  \boldsymbol{\pi}(\mu)
+  =
+  \operatorname{softmax}
+  \bigl(\mathcal{R}_{E2}(\widetilde{\mu})\bigr)
+  =
+  [\pi_S,\pi_H,\pi_P]^{\mathsf T}.
+  \label{eq:e2_outer_router}
+\end{equation}
+For a fixed-$\mu$ trajectory, the routing probabilities are evaluated once
+and remain unchanged during the subsequent rollout.  The router therefore
+provides a parameter-dependent preference among regime-local models rather
+than a time-dependent switching law.
+
+The admissible adjacency of the three regimes is represented by
+\begin{equation}
+  A_{\mathrm{adj}}
+  =
+  \begin{bmatrix}
+    1&1&0\\
+    1&1&1\\
+    0&1&1
+  \end{bmatrix},
+  \label{eq:adjacency_matrix}
+\end{equation}
+with class ordering $(S,H,P)$.  If $k$ is the regime preferred by the router,
+the topologically admissible candidate set is
+\begin{equation}
+  \mathcal{C}_{\mathrm{top}}(k)
+  =
+  \{j\in\mathcal{R}:A_{\mathrm{adj},kj}=1\}.
+  \label{eq:topological_candidate_set}
+\end{equation}
+Thus only the $S$--$H$ and $H$--$P$ neighboring pairs can participate in a
+soft combination; no direct $S$--$P$ coupling is introduced.
+
+\subsection{Dynamical admissibility of local specialists}
+\label{subsec:admissibility_certification}
+
+Routing preference alone is insufficient to determine whether a local model
+should contribute to a prediction.  For specialist $j$, initial physical
+history $\mathcal{H}$, parameter $\mu$, and rollout horizon $K$, let
+\begin{equation}
+  m_j(\mathcal{H},\mu,K)\in\{0,1\}
+  \label{eq:admissibility_indicator}
+\end{equation}
+denote a dynamical admissibility indicator.  We set $m_j=1$ when the
+specialist is applicable to the parameter--history pair and its autonomous
+trajectory over the prescribed horizon remains within the validation-supported
+bounded region of its local reduced dynamics.  The concrete boundedness and
+finite-state criteria used in the numerical studies are stated with the
+evaluation protocol; they are not part of the learned routing score.
+
+Combining adjacency and dynamical admissibility gives the normalized weights
+\begin{equation}
+  \widetilde{\pi}_j
+  =
+  \frac{
+    \mathbf{1}_{\{j\in\mathcal{C}_{\mathrm{top}}\}}m_j\pi_j
+  }{
+    \displaystyle
+    \sum_{k\in\mathcal{R}}
+    \mathbf{1}_{\{k\in\mathcal{C}_{\mathrm{top}}\}}m_k\pi_k
+    +\varepsilon
+  }.
+  \label{eq:masked_router_weights}
+\end{equation}
+If only one candidate is admissible, the hierarchy reduces to that
+specialist.  If two adjacent candidates are admissible, their independently
+evolved predictions are passed to the T2-C mechanism introduced below.  The
+hierarchical predictor is defined on the union of parameter--history pairs
+for which at least one local specialist is admissible; outside this domain no
+ROM prediction is asserted.
+
+\subsection{Top-2 physical-field correction in overlap regions}
+\label{subsec:boundary_specific_assembly}
+
+In a regime core, the prediction is obtained directly from the corresponding
+specialist,
+\begin{equation}
+  \widehat{\boldsymbol{x}}
+  =
+  \begin{cases}
+    \widehat{\boldsymbol{x}}_{S},&\text{steady core},\\
+    \widehat{\boldsymbol{x}}_{H},&\text{Hopf core},\\
+    \widehat{\boldsymbol{x}}_{P},&\text{periodic core}.
+  \end{cases}
+  \label{eq:core_top1_prediction}
+\end{equation}
+
+For an adjacent admissible pair, the E2 probabilities are first normalized on
+the pair,
+\begin{equation}
+  \overline{\pi}_1
+  =\frac{\pi_1}{\pi_1+\pi_2},
+  \qquad
+  \overline{\pi}_2=1-\overline{\pi}_1,
+  \qquad
+  \ell^{\mathrm{E2}}
+  =
+  \log\frac{\overline{\pi}_1+\varepsilon}
+            {\overline{\pi}_2+\varepsilon}.
+  \label{eq:t2c_pair_logit}
+\end{equation}
+For the $S$--$H$ pair, candidates $1$ and $2$ are the Steady and Hopf
+specialists, respectively; for the $H$--$P$ pair they are the Periodic and
+Hopf specialists.
+
+The correction gate is conditioned on chart-independent information derived
+from the recent physical history.  Let
+$\{(\boldsymbol{u}_{n-j},p^{\circ}_{n-j},t_{n-j})\}_{j=0}^{2}$ denote the
+current state and two preceding states.  With reference scales
+$U_{\mathrm{ref}}$, $P_{\mathrm{ref}}$, and $T_{\mathrm{ref}}$, define
+\begin{align}
+  \widehat E_n^u
+  &=\frac{\|\boldsymbol{u}_n\|_{M_u}^2}
+          {|\Omega|U_{\mathrm{ref}}^2},
+  &
+  \widehat E_n^p
+  &=\frac{\|p_n^{\circ}\|_{M_p}^2}
+          {|\Omega|P_{\mathrm{ref}}^2},
+  \label{eq:dimensionless_physical_energies}\\
+  \widehat D_n^u
+  &=\frac{T_{\mathrm{ref}}}
+          {\Delta t_n\sqrt{|\Omega|}U_{\mathrm{ref}}}
+    \|\boldsymbol{u}_n-\boldsymbol{u}_{n-1}\|_{M_u},
+  &
+  \widehat D_n^p
+  &=\frac{T_{\mathrm{ref}}}
+          {\Delta t_n\sqrt{|\Omega|}P_{\mathrm{ref}}}
+    \|p_n^{\circ}-p_{n-1}^{\circ}\|_{M_p},
+  \label{eq:dimensionless_physical_change_rates}
+\end{align}
+where $|\Omega|=\boldsymbol{w}^{\mathsf T}\boldsymbol{1}$ and
+$\Delta t_n=t_n-t_{n-1}$.  We further use the logarithmic energy-growth rate
+\begin{equation}
+  \widehat g_n
+  =
+  \frac{T_{\mathrm{ref}}}{\Delta t_n}
+  \log\left(
+    \frac{\widehat E_n^u+\varepsilon_E}
+         {\widehat E_{n-1}^u+\varepsilon_E}
+  \right),
+  \label{eq:dimensionless_log_energy_growth}
+\end{equation}
+and the second-order velocity indicator
+\begin{align}
+  \boldsymbol{A}^{u}_n
+  &=
+  \frac{2}{\Delta t_n+\Delta t_{n-1}}
+  \left[
+    \frac{\boldsymbol{u}_n-\boldsymbol{u}_{n-1}}{\Delta t_n}
+    -
+    \frac{\boldsymbol{u}_{n-1}-\boldsymbol{u}_{n-2}}{\Delta t_{n-1}}
+  \right],
+  \label{eq:discrete_velocity_acceleration}\\
+  \widehat\kappa_n^u
+  &=
+  \frac{T_{\mathrm{ref}}^2}
+       {\sqrt{|\Omega|}U_{\mathrm{ref}}}
+  \|\boldsymbol{A}^{u}_n\|_{M_u}.
+  \label{eq:dimensionless_velocity_curvature}
+\end{align}
+These quantities form the chart-independent descriptor
+\begin{equation}
+  \boldsymbol{s}_n
+  =
+  [
+    \widehat E_n^u,
+    \widehat E_n^p,
+    \widehat D_n^u,
+    \widehat D_n^p,
+    \widehat g_n,
+    \widehat\kappa_n^u
+  ]^{\mathsf T},
+  \label{eq:dimensionless_physical_statistics}
+\end{equation}
+which is standardized componentwise,
+\begin{equation}
+  \boldsymbol{d}_n
+  =
+  (\boldsymbol{s}_n-\boldsymbol{\mu}_s)
+  \oslash
+  (\boldsymbol{\sigma}_s+\varepsilon_s\boldsymbol{1}).
+  \label{eq:standardized_physical_descriptors}
+\end{equation}
+Because $\boldsymbol{d}_n$ is computed directly from physical fields, it is
+independent of the POD coordinates of either candidate.
+
+A correction map $c_{\vartheta}$ modifies the pairwise E2 logit according to
+\begin{equation}
+  \delta
+  =
+  c_{\vartheta}
+  \bigl([\widetilde\mu;\boldsymbol{d}_n]\bigr),
+  \qquad
+  \alpha
+  =
+  \operatorname{sigmoid}(\ell^{\mathrm{E2}}+\delta),
+  \qquad
+  \alpha\in(0,1).
+  \label{eq:t2c_convex_gate}
+\end{equation}
+The scalar $\alpha$ is held fixed over the prediction window.  Both
+specialists are initialized by applying their own local encoders to the same
+physical history and then evolve independently in their native coordinates;
+no coefficient-to-coefficient transformation is required.  At each query
+time, only the reconstructed physical fields are combined,
+\begin{align}
+  \widehat{\boldsymbol{u}}(t_q)
+  &=
+  \alpha\widehat{\boldsymbol{u}}_1(t_q)
+  +(1-\alpha)\widehat{\boldsymbol{u}}_2(t_q),
+  \label{eq:field_fusion}\\
+  \widehat p^{\circ}(t_q)
+  &=
+  \alpha\widehat p^{\circ}_1(t_q)
+  +(1-\alpha)\widehat p^{\circ}_2(t_q).
+  \label{eq:pressure_field_fusion}
+\end{align}
+The fused field is not used to update either local specialist.
+
+The correction map is learned from overlap trajectories by minimizing the
+relative field error of the convex combination.  If
+$\boldsymbol{e}_1^c$ and $\boldsymbol{e}_2^c$ denote the candidate errors for
+$c\in\{u,p\}$, then
+\begin{equation}
+  Q^c(\alpha)
+  =
+  \alpha^2\|\boldsymbol{e}_1^c\|_{M_c}^{2}
+  +(1-\alpha)^2\|\boldsymbol{e}_2^c\|_{M_c}^{2}
+  +2\alpha(1-\alpha)
+   \langle\boldsymbol{e}_1^c,\boldsymbol{e}_2^c\rangle_{M_c},
+  \label{eq:t2c_quadratic_error}
+\end{equation}
+and the T2-C objective is
+\begin{equation}
+  \mathcal{L}_{\mathrm{T2C}}
+  =
+  \operatorname{mean}_{w,k}
+  \left[
+    \frac{Q^u(\alpha^{(w)})}
+         {\|\boldsymbol{u}_{\mathrm{true}}\|_{M_u}^{2}+\varepsilon}
+    +
+    \frac{Q^p(\alpha^{(w)})}
+         {\|p^{\circ}_{\mathrm{true}}\|_{M_p}^{2}+\varepsilon}
+  \right].
+  \label{eq:t2c_training_loss}
+\end{equation}
+This formulation learns only the relative contribution of two independently
+evolved local predictions and does not alter either specialist.
+
+\subsection{Complete hierarchical predictor}
+\label{subsec:complete_hierarchical_predictor}
+
+Let $\mathcal{F}_r$ denote the autonomous evolution operator of specialist
+$r$ and $\mathcal{D}_r$ its physical reconstruction.  The complete predictor
+can be written schematically as
+\begin{equation}
+  \widehat{\boldsymbol{x}}^{\,\mathrm{phys}}
+  =
+  \begin{cases}
+    \mathcal{D}_{S}\!\circ\mathcal{F}_{S},
+    & (\mathcal{H},\mu)\in\Omega_S,\\[1mm]
+    \alpha_{SH}\,\mathcal{D}_{S}\!\circ\mathcal{F}_{S}
+    +(1-\alpha_{SH})\,\mathcal{D}_{H}\!\circ\mathcal{F}_{H},
+    & (\mathcal{H},\mu)\in\Omega_{SH},\\[1mm]
+    \mathcal{D}_{H}\!\circ\mathcal{F}_{H},
+    & (\mathcal{H},\mu)\in\Omega_H,\\[1mm]
+    \alpha_{HP}\,\mathcal{D}_{P}\!\circ\mathcal{F}_{P}
+    +(1-\alpha_{HP})\,\mathcal{D}_{H}\!\circ\mathcal{F}_{H},
+    & (\mathcal{H},\mu)\in\Omega_{HP},\\[1mm]
+    \mathcal{D}_{P}\!\circ\mathcal{F}_{P},
+    & (\mathcal{H},\mu)\in\Omega_P.
+  \end{cases}
+  \label{eq:complete_ral_moe_predictor}
+\end{equation}
+The overlap weights $\alpha_{SH}$ and $\alpha_{HP}$ are produced by the
+corresponding T2-C gates.  When only one member of an adjacent pair is
+dynamically admissible, the overlap branch reduces to that specialist through
+\eqref{eq:masked_router_weights}.  Equation~\eqref{eq:complete_ral_moe_predictor}
+therefore assembles the local ROMs without introducing a global reduced state:
+regime adaptation is performed by selecting or combining complete local
+predictions, whereas the internal reduced dynamics remain chart-specific.

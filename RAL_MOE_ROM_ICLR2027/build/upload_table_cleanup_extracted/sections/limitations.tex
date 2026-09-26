@@ -1,0 +1,15 @@
+\section{Limitations}
+
+The regime cover and admissible adjacency graph are selected using validation support;
+the method does not discover arbitrary bifurcation structure or certify unseen
+transitions. T2-C is evaluated only between adjacent specialists, and convex
+physical-space fusion may be insufficient when more than two regimes interact or when
+conserved quantities require a constrained assembly rule. The evidence concerns
+two-dimensional incompressible flows and empirical finite-horizon behavior; it does not
+establish provable stability, conservation, or accuracy outside the sampled parameter
+ranges. A separate hierarchy is trained for each benchmark, so cross-geometry transfer
+of one hierarchy is not evaluated. Multiple local bases, operators, and specialists also
+increase training and model-management cost relative to one global ROM.
+
+The current evaluation is based on fixed validation-selected training runs; repeated-seed
+uncertainty and parameter-matched capacity comparisons are left for future evaluation.

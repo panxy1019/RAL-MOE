@@ -1,0 +1,74 @@
+{
+  "cells": 9400,
+  "heldout_loaded": false,
+  "pressure": {
+    "analysis_rank": 256,
+    "captured_energy": 0.9999999789554528,
+    "field": "pressure",
+    "gram_max_abs": 3.885780586188048e-15,
+    "path": "/home/ray/Desktop/centeredSquare/cdm_grom_hopf_r64_v1/pod/weighted_pod_pressure.npz",
+    "rank_99": 5,
+    "rank_999": 11,
+    "sha256": "8321b4173ca543cb7f2e3241ac63cbb235f690e9e018e443358e7da96a7d9b04",
+    "stored_modes": 64
+  },
+  "pressure_mean_volume_gauge": -2.642088516681523e-11,
+  "r11_subspace_reproduction": {
+    "pressure": {
+      "maximum_principal_angle_deg": 0.0036957260690278393,
+      "minimum_principal_cosine": 0.9999999979197081
+    },
+    "velocity": {
+      "maximum_principal_angle_deg": 0.004886571060437551,
+      "minimum_principal_cosine": 0.9999999963630848
+    }
+  },
+  "schema_version": 1,
+  "scope": "CenteredSquare Hopf train-only extended POD",
+  "snapshots": 2898,
+  "source_sha256": {
+    "mesh": "62ddf886b2d0a0e3240d1a4be00e3534c2db3661e84ff7d1a0f10656f5b70b79",
+    "reference_vtk": "57423d8ebcca3f1aaf8d18311366c7f05a0df6b9f10f5973ed75e3334c7d5175",
+    "split_manifest": "ef0dc1c38006bf52f747d85433b4cb476ceb41ae559f71cbeb9a5ca9a2184142"
+  },
+  "source_split_count": 23,
+  "source_subset": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf",
+  "status": "PASS",
+  "train_re": [
+    94.0,
+    95.0,
+    95.05,
+    95.15,
+    95.2,
+    95.35,
+    95.4,
+    95.45,
+    95.55,
+    95.6,
+    95.75,
+    96.0,
+    96.25,
+    96.75,
+    97.0,
+    97.25,
+    97.75,
+    98.0,
+    98.5,
+    99.5,
+    100.0,
+    101.0,
+    101.724137931034
+  ],
+  "validation_loaded": false,
+  "velocity": {
+    "analysis_rank": 256,
+    "captured_energy": 0.9999999904418111,
+    "field": "velocity",
+    "gram_max_abs": 3.219646771412954e-15,
+    "path": "/home/ray/Desktop/centeredSquare/cdm_grom_hopf_r64_v1/pod/weighted_pod_velocity.npz",
+    "rank_99": 5,
+    "rank_999": 11,
+    "sha256": "43fe7d5f72a35785111b8e8b98a50fd1b7dedc4db77717d7fb1b743149a83f88",
+    "stored_modes": 64
+  }
+}

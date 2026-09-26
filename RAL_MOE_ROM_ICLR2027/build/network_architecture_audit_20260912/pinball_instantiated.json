@@ -1,0 +1,103 @@
+{
+  "pinball_steady": {
+    "source": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\build\\network_architecture_audit_20260912\\sources\\pinball_steady\\train_b1_steady.py",
+    "shape_check": "PASS",
+    "input_dim": 68,
+    "r_u": 4,
+    "r_p": 3,
+    "total_trainable": 1684370,
+    "publication_identity": "CANDIDATE; see numerical provenance discussion",
+    "model_repr": "DeepFNNH3(\n  (trunk): DeepTrunk(\n    (net): Sequential(\n      (0): LayerNorm((68,), eps=1e-05, elementwise_affine=True, bias=True)\n      (1): Linear(in_features=68, out_features=512, bias=True)\n      (2): SiLU()\n      (3): Linear(in_features=512, out_features=512, bias=True)\n      (4): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (5): SiLU()\n      (6): Linear(in_features=512, out_features=512, bias=True)\n      (7): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (8): SiLU()\n      (9): Linear(in_features=512, out_features=512, bias=True)\n      (10): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (11): SiLU()\n      (12): Linear(in_features=512, out_features=512, bias=True)\n      (13): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (14): SiLU()\n      (15): Linear(in_features=512, out_features=512, bias=True)\n      (16): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (17): SiLU()\n    )\n  )\n  (heads): ClosureHeads(\n    (velocity): Sequential(\n      (0): Linear(in_features=512, out_features=256, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=256, out_features=4, bias=True)\n    )\n    (pressure): Sequential(\n      (0): Linear(in_features=512, out_features=256, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=256, out_features=3, bias=True)\n    )\n    (pressure_gate): Sequential(\n      (0): Linear(in_features=512, out_features=128, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=128, out_features=3, bias=True)\n    )\n  )\n)",
+    "curriculum_in_source": [
+      [
+        0,
+        1600,
+        4
+      ],
+      [
+        1600,
+        4000,
+        8
+      ],
+      [
+        4000,
+        8000,
+        16
+      ]
+    ]
+  },
+  "pinball_hopf": {
+    "source": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\build\\network_architecture_audit_20260912\\sources\\pinball_hopf\\train_kda_pr_fnn_rom.py",
+    "shape_check": "PASS",
+    "input_dim": 88,
+    "r_u": 5,
+    "r_p": 5,
+    "total_trainable": 1695679,
+    "publication_identity": "CANDIDATE; see numerical provenance discussion",
+    "model_repr": "DeepFNNH3(\n  (trunk): DeepTrunk(\n    (net): Sequential(\n      (0): LayerNorm((88,), eps=1e-05, elementwise_affine=True, bias=True)\n      (1): Linear(in_features=88, out_features=512, bias=True)\n      (2): SiLU()\n      (3): Linear(in_features=512, out_features=512, bias=True)\n      (4): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (5): SiLU()\n      (6): Linear(in_features=512, out_features=512, bias=True)\n      (7): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (8): SiLU()\n      (9): Linear(in_features=512, out_features=512, bias=True)\n      (10): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (11): SiLU()\n      (12): Linear(in_features=512, out_features=512, bias=True)\n      (13): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (14): SiLU()\n      (15): Linear(in_features=512, out_features=512, bias=True)\n      (16): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (17): SiLU()\n    )\n  )\n  (heads): ClosureHeads(\n    (velocity): Sequential(\n      (0): Linear(in_features=512, out_features=256, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=256, out_features=5, bias=True)\n    )\n    (pressure): Sequential(\n      (0): Linear(in_features=512, out_features=256, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=256, out_features=5, bias=True)\n    )\n    (pressure_gate): Sequential(\n      (0): Linear(in_features=512, out_features=128, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=128, out_features=5, bias=True)\n    )\n  )\n)",
+    "curriculum_in_source": [
+      [
+        0,
+        1600,
+        4
+      ],
+      [
+        1600,
+        3200,
+        8
+      ],
+      [
+        3200,
+        5200,
+        16
+      ],
+      [
+        5200,
+        6800,
+        32
+      ],
+      [
+        6800,
+        8000,
+        56
+      ]
+    ]
+  },
+  "pinball_periodic": {
+    "source": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\build\\network_architecture_audit_20260912\\sources\\pinball_periodic\\train_b1_fluidic_pinball.py",
+    "shape_check": "PASS",
+    "input_dim": 263,
+    "r_u": 17,
+    "r_p": 16,
+    "total_trainable": 1792959,
+    "publication_identity": "CANDIDATE; see numerical provenance discussion",
+    "model_repr": "DeepFNNH3(\n  (trunk): DeepTrunk(\n    (net): Sequential(\n      (0): LayerNorm((263,), eps=1e-05, elementwise_affine=True, bias=True)\n      (1): Linear(in_features=263, out_features=512, bias=True)\n      (2): SiLU()\n      (3): Linear(in_features=512, out_features=512, bias=True)\n      (4): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (5): SiLU()\n      (6): Linear(in_features=512, out_features=512, bias=True)\n      (7): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (8): SiLU()\n      (9): Linear(in_features=512, out_features=512, bias=True)\n      (10): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (11): SiLU()\n      (12): Linear(in_features=512, out_features=512, bias=True)\n      (13): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (14): SiLU()\n      (15): Linear(in_features=512, out_features=512, bias=True)\n      (16): LayerNorm((512,), eps=1e-05, elementwise_affine=True, bias=True)\n      (17): SiLU()\n    )\n  )\n  (heads): ClosureHeads(\n    (velocity): Sequential(\n      (0): Linear(in_features=512, out_features=256, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=256, out_features=17, bias=True)\n    )\n    (pressure): Sequential(\n      (0): Linear(in_features=512, out_features=256, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=256, out_features=16, bias=True)\n    )\n    (pressure_gate): Sequential(\n      (0): Linear(in_features=512, out_features=128, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=128, out_features=16, bias=True)\n    )\n  )\n)",
+    "curriculum_in_source": [
+      [
+        0,
+        1600,
+        4
+      ],
+      [
+        1600,
+        3200,
+        8
+      ],
+      [
+        3200,
+        5200,
+        16
+      ],
+      [
+        5200,
+        6800,
+        24
+      ],
+      [
+        6800,
+        8000,
+        32
+      ]
+    ]
+  }
+}

@@ -1,0 +1,388 @@
+z
+
+
+
+
+
+\section{Full problem setup and weighted POD construction}
+\label{app:problem_pod}
+
+\subsection{Parameterized full-order model, gauge, and regime coverage}
+
+Finite-volume spatial discretization of the Navier--Stokes equations in Eq.~(\plaineqref{eq:main_ns})  yields a semi-discrete system,as  in Eq.~(\plaineqref{eq:main_semidiscrete}),   governing the velocity
+$\bm u(t;\mu)\in\mathbb R^{N_u}$ and pressure
+$p(t;\mu)\in\mathbb R^{N_p}$:
+\begin{equation}
+    \dot{\bm u}
+    =
+    \bm f_h(\mu)
+    +\mathcal L_h(\mu)\bm u
+    -\mathcal N_h(\bm u,\bm u;\mu)
+    -\nabla_h(\mu)p,
+    \qquad
+    \operatorname{div}_h(\mu)\bm u=0.
+    \label{eq:app_fom}
+\end{equation}
+Here $\mathcal L_h$ and $\mathcal N_h$ denote the spatially discretized viscous and convective operators, while $\nabla_h$ and $\operatorname{div}_h$ denote the pressure gradient and velocity divergence operators. The dot denotes a continuous-time derivative; time advancement of the reduced model is specified in Section~\ref{sec:hybrid_specialists}.
+Pressure is defined only up to an additive constant. With positive finite-volume weights $\bm w$, each pressure snapshot is mapped to the weighted zero-mean gauge
+\begin{equation}
+    \Gamma_p(q)
+    =
+    q-\frac{\bm w^\top q}{\bm w^\top\bm 1}\bm 1,
+    \qquad
+    p^\circ=\Gamma_p(p),
+    \qquad
+    \bm w^\top p^\circ=0.
+    \label{eq:app_pressure_gauge}
+\end{equation}
+
+The parameter domain is covered by overlapping regime-local parameter regions,
+\begin{equation}
+    \mathcal M
+    \subseteq
+    \bigcup_{r\in\{S,H,P\}}\mathcal M_r,
+    \qquad
+    \mathcal O_{SH}
+    =
+    \mathcal M_S\cap\mathcal M_H,
+    \qquad
+    \mathcal O_{HP}
+    =
+    \mathcal M_H\cap\mathcal M_P,
+    \label{eq:app_regime_cover}
+\end{equation}
+where $S$, $H$, and $P$ denote the steady, Hopf-onset, and periodic regimes, respectively. Only adjacent overlaps are used; no direct $S$--$P$ overlap is considered.
+
+
+\subsection{Area-weighted local POD}
+
+The finite-volume quadrature induces the weighted inner products
+\begin{equation}
+    \langle\bm v,\bm z\rangle_{M_u}
+    =
+    \bm v^\top M_u\bm z,
+    \qquad
+    \langle q,s\rangle_{M_p}
+    =
+    q^\top M_p s,
+    \qquad
+    M_p=\operatorname{diag}(\bm w),
+    \qquad
+    M_u=\operatorname{diag}(M_p,M_p).
+    \label{eq:app_weighted_inner_products}
+\end{equation}
+
+For chart $r$, let $d_u^{(r)}$ and $d_p^{(r)}$ denote the retained velocity and pressure dimensions. Let $X_u^{(r)}$ and $X_p^{(r)}$ collect the centered velocity and gauge-corrected pressure snapshots from the training trajectories assigned to that chart. The corresponding chart-specific means are denoted by
+$\bar{\bm u}^{(r)}$ and $\bar p^{(r),\circ}$.
+The local POD bases solve
+\begin{align}
+    \Phi_u^{(r)}
+    &\in
+    \underset{\Psi^\top M_u\Psi=I_{d_u^{(r)}}}
+    {\operatorname{arg\,min}}
+    \left\|
+        X_u^{(r)}
+        -\Psi\Psi^\top M_uX_u^{(r)}
+    \right\|_{M_u,F}^2,
+    \\
+    \Phi_p^{(r)}
+    &\in
+    \underset{\Psi^\top M_p\Psi=I_{d_p^{(r)}}}
+    {\operatorname{arg\,min}}
+    \left\|
+        X_p^{(r)}
+        -\Psi\Psi^\top M_pX_p^{(r)}
+    \right\|_{M_p,F}^2,
+    \label{eq:app_pod_optimization}
+\end{align}
+where
+\begin{equation}
+    \|Y\|_{M,F}^2=\operatorname{tr}(Y^\top MY).
+\end{equation}
+
+Equivalently, consider the weighted singular value decompositions
+\begin{equation}
+    M_u^{1/2}X_u^{(r)}
+    =
+    U_u^{(r)}\Sigma_u^{(r)}{V_u^{(r)}}^\top,
+    \qquad
+    M_p^{1/2}X_p^{(r)}
+    =
+    U_p^{(r)}\Sigma_p^{(r)}{V_p^{(r)}}^\top.
+\end{equation}
+The retained bases are
+\begin{equation}
+    \Phi_u^{(r)}
+    =
+    M_u^{-1/2}
+    U_u^{(r)}(:,1{:}d_u^{(r)}),
+    \qquad
+    \Phi_p^{(r)}
+    =
+    M_p^{-1/2}
+    U_p^{(r)}(:,1{:}d_p^{(r)}),
+    \label{eq:app_weighted_svd_bases}
+\end{equation}
+and satisfy
+\begin{equation}
+    {\Phi_u^{(r)}}^\top M_u\Phi_u^{(r)}=I,
+    \qquad
+    {\Phi_p^{(r)}}^\top M_p\Phi_p^{(r)}=I.
+\end{equation}
+Because the pressure snapshots and their chart mean satisfy the same weighted gauge condition, the pressure basis also satisfies
+\begin{equation}
+    \bm w^\top\Phi_p^{(r)}=\bm 0^\top .
+\end{equation}
+
+Encoding and decoding are performed independently within each chart:
+\begin{align}
+    \bm a^{(r)}
+    &=
+    {\Phi_u^{(r)}}^\top
+    M_u
+    \bigl(\bm u-\bar{\bm u}^{(r)}\bigr),
+    &
+    \mathcal D_r^u(\bm a^{(r)})
+    &=
+    \bar{\bm u}^{(r)}
+    +\Phi_u^{(r)}\bm a^{(r)},
+    \\
+    \bm b^{(r)}
+    &=
+    {\Phi_p^{(r)}}^\top
+    M_p
+    \bigl(\Gamma_p(p)-\bar p^{(r),\circ}\bigr),
+    &
+    \mathcal D_r^p(\bm b^{(r)})
+    &=
+    \bar p^{(r),\circ}
+    +\Phi_p^{(r)}\bm b^{(r)}.
+    \label{eq:app_encode_decode}
+\end{align}
+
+The reduced coefficients are standardized using chart-local statistics estimated from the corresponding training trajectories:
+\begin{equation}
+    \widetilde{\bm a}^{(r)}
+    =
+    \bigl(
+        \bm a^{(r)}-\bm\mu_a^{(r)}
+    \bigr)
+    \oslash
+    \bm\sigma_a^{(r)},
+    \qquad
+    \widetilde{\bm b}^{(r)}
+    =
+    \bigl(
+        \bm b^{(r)}-\bm\mu_b^{(r)}
+    \bigr)
+    \oslash
+    \bm\sigma_b^{(r)}.
+    \label{eq:app_local_scalers}
+\end{equation}
+Additional specialist features and their normalization are specified in Section~\ref{sec:hybrid_specialists}.
+
+
+
+
+
+
+
+
+\section{Projected Galerkin and pressure operators}
+\label{app:rom}
+
+\subsection{Chart-local Galerkin momentum dynamics}
+
+For each chart $r\in\{S,H,P\}$, substituting the chart-local affine reconstructions from Appendix~\ref{app:problem_pod} into the semi-discrete momentum equation~(\plaineqref{eq:app_fom}) and testing against the local
+velocity basis in the $M_u$ inner product yields
+\begin{equation}
+    \dot{\bm a}^{(r)}
+    =
+    \bm c_r(\mu)
+    +
+    A_r(\mu)\bm a^{(r)}
+    +
+    H_r(\mu):
+    \bigl(
+        \bm a^{(r)}\otimes\bm a^{(r)}
+    \bigr)
+    +
+    C_r^p(\mu)\bm b^{(r)}.
+    \label{eq:app_projected_momentum}
+\end{equation}
+Here ``$:$'' denotes the double contraction.
+For velocity modes
+$\bm\phi_i^{u,(r)}$,
+$i=1,\ldots,d_u^{(r)}$,
+and pressure modes
+$\phi_\ell^{p,(r)}$,
+$\ell=1,\ldots,d_p^{(r)}$,
+the projected operators are
+\begin{align}
+    [\bm c_r(\mu)]_i
+    &=
+    \Bigl\langle
+        \bm\phi_i^{u,(r)},
+        \bm f_h(\mu)
+        +
+        \mathcal L_h(\mu)\bar{\bm u}^{(r)}
+        -
+        \mathcal N_h
+        \bigl(
+            \bar{\bm u}^{(r)},
+            \bar{\bm u}^{(r)};
+            \mu
+        \bigr)
+        -
+        \nabla_h(\mu)\bar p^{(r),\circ}
+    \Bigr\rangle_{M_u},
+    \\
+    [A_r(\mu)]_{ij}
+    &=
+    \Bigl\langle
+        \bm\phi_i^{u,(r)},
+        \mathcal L_h(\mu)\bm\phi_j^{u,(r)}
+        -
+        \mathcal N_h
+        \bigl(
+            \bar{\bm u}^{(r)},
+            \bm\phi_j^{u,(r)};
+            \mu
+        \bigr)
+        -
+        \mathcal N_h
+        \bigl(
+            \bm\phi_j^{u,(r)},
+            \bar{\bm u}^{(r)};
+            \mu
+        \bigr)
+    \Bigr\rangle_{M_u},
+    \\
+    [H_r(\mu)]_{ijk}
+    &=
+    -
+    \Bigl\langle
+        \bm\phi_i^{u,(r)},
+        \mathcal N_h
+        \bigl(
+            \bm\phi_j^{u,(r)},
+            \bm\phi_k^{u,(r)};
+            \mu
+        \bigr)
+    \Bigr\rangle_{M_u},
+    \\
+    [C_r^p(\mu)]_{i\ell}
+    &=
+    -
+    \Bigl\langle
+        \bm\phi_i^{u,(r)},
+        \nabla_h(\mu)\phi_\ell^{p,(r)}
+    \Bigr\rangle_{M_u}.
+    \label{eq:app_projected_operators}
+\end{align}
+
+We denote the resulting chart-local projected momentum vector field by
+\begin{equation}
+    \mathcal F_r^G
+    \bigl(
+        \bm a^{(r)},
+        \bm b^{(r)};
+        \mu
+    \bigr)
+    =
+    \bm c_r(\mu)
+    +
+    A_r(\mu)\bm a^{(r)}
+    +
+    H_r(\mu):
+    \bigl(
+        \bm a^{(r)}\otimes\bm a^{(r)}
+    \bigr)
+    +
+    C_r^p(\mu)\bm b^{(r)}.
+    \label{eq:app_galerkin_backbone}
+\end{equation}
+This is the projected Galerkin equation summarized in
+Eq.~(\plaineqref{eq:main_galerkin_backbone}); the additive hybrid specialist augments it with the learned closure in Eq.~(\plaineqref{eq:main_specialist}).
+
+
+\subsection{Reduced pressure--Poisson equation}
+\label{app:reduced_ppe}
+
+Taking the divergence of the incompressible momentum equation with spatially constant viscosity gives
+\begin{equation}
+    -\Delta p^\circ
+    =
+    \nabla\cdot\bigl[(\bm u\cdot\nabla)\bm u-\bm f\bigr],
+    \qquad
+    \int_\Omega p^\circ\,\mathrm d\Omega=0,
+    \label{eq:app_ppe}
+\end{equation}
+where $p^\circ$ denotes gauge-corrected pressure. Substituting \eqref{eq:app_encode_decode} into \eqref{eq:app_ppe}, and applying local pressure-mode testing, integration by parts, and Appendix~A quadrature for the volume integrals, yields a reduced pressure system.
+
+\begin{equation}
+    K_r^p(\mu)\bm b^{PP,(r)}
+    =
+    \bm d_r(\mu)
+    +B_r(\mu)\bm a^{(r)}
+    +Q_r(\mu):
+    \bigl(\bm a^{(r)}\otimes\bm a^{(r)}\bigr),
+    \label{eq:app_pressure_poisson_system}
+\end{equation}
+where
+\begin{align}
+    [K_r^p]_{\ell m}
+    &=
+    -\bigl\langle
+        \nabla_h\phi_\ell^{p,(r)},
+        \nabla_h\phi_m^{p,(r)}
+    \bigr\rangle_{M_u},
+    \label{eq:app_ppe_K_definition}
+    \\
+    [\bm d_r]_\ell
+    &=
+    \bigl\langle
+        \nabla_h\phi_\ell^{p,(r)},
+        \mathcal N_h(\bar{\bm u}^{(r)},\bar{\bm u}^{(r)};\mu)
+        -\bm f_h(\mu)
+        +\nabla_h\bar p^{(r),\circ}
+    \bigr\rangle_{M_u},
+    \label{eq:app_ppe_d_definition}
+    \\
+    [B_r]_{\ell j}
+    &=
+    \bigl\langle
+        \nabla_h\phi_\ell^{p,(r)},
+        \mathcal N_h(\bar{\bm u}^{(r)},\phi_j^{u,(r)};\mu)
+        +\mathcal N_h(\phi_j^{u,(r)},\bar{\bm u}^{(r)};\mu)
+    \bigr\rangle_{M_u},
+    \label{eq:app_ppe_B_definition}
+    \\
+    [Q_r]_{\ell jk}
+    &=
+    \bigl\langle
+        \nabla_h\phi_\ell^{p,(r)},
+        \mathcal N_h(\phi_j^{u,(r)},\phi_k^{u,(r)};\mu)
+    \bigr\rangle_{M_u}.
+    \label{eq:app_ppe_Q_definition}
+\end{align}
+
+
+The resulting algebraic pressure map is
+\begin{equation}
+    \mathcal Q_r^{PP}(\bm a^{(r)};\mu)
+    =
+    \bigl(K_r^p(\mu)\bigr)^\dagger
+    \left[
+        \bm d_r(\mu)
+        +B_r(\mu)\bm a^{(r)}
+        +Q_r(\mu):
+        \bigl(\bm a^{(r)}\otimes\bm a^{(r)}\bigr)
+    \right],
+    \label{eq:app_pressure_poisson_map}
+\end{equation}
+where ${}^\dagger$ denotes the Moore--Penrose pseudoinverse and  coincides with the inverse when $K_r^p$ is nonsingular.
+The pressure field is then reconstructed as
+$\mathcal Q_r^{PP}(\bm a^{(r)};\mu)$.
+Thus, pressure is recovered algebraically from the local velocity state rather than advanced as an independent dynamical variable.
+

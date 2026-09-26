@@ -1,0 +1,11 @@
+\section{Outer routing and T2-C details}
+\label{app:routing}
+
+The E2 router produces chart probabilities from the parameter and initial physical history. Validation support defines the admissible set and the adjacency graph $S$--$H$--$P$. Top-1 advances one complete specialist. For an admissible pair $(r,s)$, pair probabilities are normalized as
+\begin{equation}
+ \bar\pi_r=\frac{\pi_r}{\pi_r+\pi_s},\qquad
+ \bar\pi_s=1-\bar\pi_r.
+\end{equation}
+T2-C initializes both specialists from the same physical observations, encodes them separately, and performs two independent autonomous rollouts. A correction network predicts a bounded logit offset, producing $\alpha=\sigma(\operatorname{logit}\bar\pi_r+\Delta_\psi)$. Velocity and gauge-corrected pressure fields are reconstructed in the common mesh before the convex combination is applied. The fused field is used for output only and never projected back into either rollout.
+
+The equal blend fixes $\alpha=1/2$; the probability blend sets $\alpha=\bar\pi_r$; and the convex oracle selects the best weight a posteriori for each evaluation window. The oracle is a reference, not a deployable method. Close agreement between T2-C and the oracle therefore quantifies how much of the pair's available complementarity the learned correction captures.

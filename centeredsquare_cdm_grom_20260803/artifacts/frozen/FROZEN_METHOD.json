@@ -1,0 +1,34 @@
+{
+  "config_sha256": "2952c538b292ce0e3c5f1cb4d4a76b1bdfda6c48aba396e3e8c59274d0e520cb",
+  "evaluator_sha256": "2ded5516f8287e76f006c2d0b19edaf14f2176351ede45676107bafcc78cfcc9",
+  "freeze_basis": "all choices fixed after validation and before held-out field access",
+  "heldout_loaded_at_freeze": false,
+  "immutable_choices": {
+    "max_internal_step": 0.1,
+    "parameter_interpolation": "piecewise linear with two-node linear extrapolation",
+    "pressure": "algebraic pressure-Poisson map from predicted velocity coordinates",
+    "resolved_rank": 11,
+    "stability": "node and interpolated A_uu uniform spectral-abscissa shift to margin",
+    "unresolved_rank": 53,
+    "warmup_intervals": 2
+  },
+  "method": "CenteredSquare Hopf operator-based CDM-GROM r11+u53",
+  "operator_builder_sha256": "f916edde354b6e0513d7ac3ca41abe39bc1f6d7be896efbf1240a44991b24d73",
+  "operator_sha256": "3a0b0607d1672b1e983b53663357f9df9edc36fd8280ed7839e294d01ceac170",
+  "schema_version": 1,
+  "status": "FROZEN",
+  "validation_aggregate": {
+    "baseline_full_horizon_case_count": 6,
+    "baseline_pressure_coeff_relative_l2": 39.30585381721321,
+    "baseline_resolved_relative_l2": 34.26817575926835,
+    "baseline_velocity_coeff_relative_l2": 33.91410532560023,
+    "cdm_better_velocity_case_count": 6,
+    "cdm_full_horizon_case_count": 6,
+    "cdm_pressure_coeff_relative_l2": 36.655474023097675,
+    "cdm_resolved_relative_l2": 26.607116490500303,
+    "cdm_velocity_coeff_relative_l2": 26.37132652059525,
+    "maximum_rk4_step_consistency_relative_l2": 3.6940429219040453e-06
+  },
+  "validation_metrics_sha256": "0a48d88ae156240c7f585e7244c19ee1d3869770a99325f1ad379cf5212f8d6d",
+  "validation_status": "PASS"
+}

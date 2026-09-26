@@ -1,0 +1,317 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We organize the evidence into four questions: the accuracy and
+finite-horizon reliability of local prediction, the benefit of
+cross-regime routing and fusion, the behavior of internal routing
+and physical-field diagnostics, and the computational cost.
+The three benchmarks provide complementary rather than identical
+tests: Circular H/P supplies controlled local comparisons, Square
+supplies the principal history-conditioned fusion study, and Pinball
+provides an archived POD--Galerkin comparison and additional overlap
+results. Their configurations and horizons are summarized in
+Table~\ref{tab:benchmark_summary}.
+
+Relative weighted velocity and gauge-corrected pressure errors
+$E_u,E_p$ are percentages, with $E_{\rm joint}=E_u+E_p$.
+The new Circular controls and Square reevaluation use
+POD-reconstructed reference fields; their errors exclude the
+projection remainder relative to raw CFD.
+Unless otherwise stated for these reevaluations, errors are averaged
+over prediction steps, then windows within each Reynolds number,
+then equally over Reynolds numbers.
+We distinguish training failures, validation rejection, and
+non-finite test predictions. Error statistics over accepted runs
+alone are not complete multi-seed robustness estimates.
+Appendix~\ref{app:implementation} specifies metrics and data splits.
+
+\begin{table}[H]
+\centering
+\caption{
+Experimental scope and benchmark roles.
+Local rank pairs $(r_u,r_p)$ are ordered $S,H,P$.
+Horizons are ordered $S,H,P$ except for the new Circular H/P controls.
+Additional overlap and periodic-core settings are specified in their
+respective comparisons.
+}
+\label{tab:benchmark_summary}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.15cm}
+>{\raggedright\arraybackslash}p{1.30cm}
+>{\raggedright\arraybackslash}p{4.05cm}
+>{\raggedright\arraybackslash}p{1.80cm}
+>{\raggedright\arraybackslash}p{2.50cm}@{}}
+\toprule
+Benchmark & $Re$ range & Local ranks ($S,H,P$) & Rollout horizons & Primary role \\
+\midrule
+Circular cylinder
+& 20--200
+& $(32,32),\ (32,32),\ (32,32)$
+& H/P: $24,48$
+& Matched local controls \\
+\addlinespace
+Centered square
+& 50--150
+& $(5,4),\ (11,11),\ (28,26)$
+& $16/48/24$
+& Cross-regime routing/fusion \\
+\addlinespace
+Fluidic pinball
+& 10--60
+& $(4,3),\ (5,5),\ (17,16)$
+& $56/56/32$
+& Autonomous ROM baseline \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Local prediction accuracy and finite-horizon reliability}
+\label{sec:exp_local}
+
+\paragraph{Comparison with POD--Galerkin.}
+A local predictor should remain accurate after reference-state
+injection stops. Table~\ref{tab:pinball_autonomous} retains the
+archived Pinball comparison with classical POD--Galerkin over
+$K=32$--$56$ steps. The Periodic joint errors are $0.8415\%$
+at $K=32$ and $1.672\%$ in the $K=56$ periodic-core evaluation,
+compared with $43.20\%$ and $41.91\%$ for POD--Galerkin.
+The periodic-core cadence is $\Delta t=1$, giving 56 physical
+time units of prediction.
+
+These values demonstrate lower reported errors over the evaluated
+windows, not arbitrary-time stability. Moreover, the Periodic
+result chain identifies Deep-FNN-H3: its learned velocity derivative
+uses Galerkin information as a feature rather than adding a
+sparse-MoE correction to the Galerkin output.
+Standalone Steady/Hopf result identities remain unresolved.
+We therefore do not interpret this archived table as an isolated
+test of adding sparse MoE to POD--Galerkin.
+A matched bare-Galerkin/additive-MoE comparison with the same chart,
+initialization, time stepping, pressure treatment, and test windows
+is not established by the current evidence.
+
+\begin{table}[H]
+\centering
+\caption{
+Archived autonomous local-predictor comparison on fluidic pinball. The Periodic values are associated with Deep-FNN-H3, not an additive sparse-MoE correction; standalone Steady/Hopf identities remain unresolved. Errors are physical-field percentages; lower is better. Periodic-core denotes the longer-horizon periodic evaluation; complete protocol details are given in Appendix~\ref{app:pinball}. A dash indicates that no baseline error is reported.
+}
+\label{tab:pinball_autonomous}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Evaluation setting & Model & $E_u$ & $E_p$ & $E_{\mathrm{joint}}$ \\
+\midrule
+Steady ($K=56$)
+& POD--Galerkin
+& -- & -- & -- \\
+& Reported local predictor
+& 0.2247 & 0.7593 & 0.9840 \\
+\addlinespace
+
+Hopf ($K=56$)
+& POD--Galerkin
+& 0.4378 & 48.50 & 48.94 \\
+& Reported local predictor
+& 0.0995 & 1.986 & 2.085 \\
+\addlinespace
+
+Periodic ($K=32$)
+& POD--Galerkin
+& 1.641 & 41.56 & 43.20 \\
+& Reported local predictor
+& 0.2897 & 0.5518 & 0.8415 \\
+\addlinespace
+
+Periodic-core ($K=56$)
+& POD--Galerkin
+& 2.555 & 39.36 & 41.91 \\
+& Reported local predictor
+& 0.6222 & 1.050 & 1.672 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Controlled local comparisons.}
+Circular H/P is reevaluated on common held-out windows with seeds
+1248, 1600, and 2026. Dense matches the active neural parameter
+budget; Structured retains explicit response branches but removes
+input-dependent expert routing. These controls answer a different
+question from the bare POD--Galerkin comparison.
+Table~\ref{tab:circular_full_reorg} reports Periodic $K=24$ results;
+$K=48$, Hopf results, the OpInf adaptation, and acceptance counts
+are provided in Appendix~\ref{app:circular}.
+
+\begin{table}[H]
+\centering
+\caption{Circular Periodic controls: full-window mean physical-field
+errors (\%) at $K=24$, against POD-reconstructed truth. Entries are mean
+$\pm$ sample standard deviation over seeds 1248, 1600, and 2026; all
+listed neural configurations have 3/3 accepted seeds. Repaired denotes
+the changed quadratic-branch initialization.}
+\label{tab:circular_full_reorg}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & $E_u$ & $E_p$ & $E_u+E_p$\\
+\midrule
+Proposed, original & $0.5731\pm0.3638$ & $2.3060\pm1.3681$ & $2.8791\pm1.7269$\\
+Proposed, repaired & $0.5814\pm0.3949$ & $2.4854\pm1.4427$ & $3.0667\pm1.8373$\\
+Dense, active-matched & $\mathbf{0.2446\pm0.0323}$ & $\mathbf{1.0805\pm0.1946}$ & $\mathbf{1.3251\pm0.2268}$\\
+Structured, original & $0.5178\pm0.2667$ & $2.3489\pm1.1688$ & $2.8666\pm1.4342$\\
+Structured, repaired & $0.5429\pm0.2783$ & $2.3168\pm1.0315$ & $2.8598\pm1.3081$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Dense is more accurate than the proposed configurations at both
+horizons, while Structured is close to the original proposed model.
+Thus these results do not identify sparse routing as a Periodic
+accuracy advantage under the matched active-parameter budget.
+The original quadratic factors remained zero after joint zero
+initialization. Repairing the initialization activates the branch
+but does not consistently improve accuracy.
+Only two of three repaired FP32 Hopf runs per architecture are
+accepted; their conditional errors do not establish complete
+three-seed robustness.
+The task-specific OpInf fit is competitive on Hopf
+($0.03870\%$ joint error at $K=24$), but poor on Periodic
+($114.0941\%$); its boundary-selected regularization limits a
+general conclusion about that method family.
+
+\subsection{Cross-regime routing and physical-space fusion}
+\label{sec:exp_fusion}
+
+We hold the Square local predictors and E2 router fixed and compare
+assembly rules on the prescribed S--H and H--P support at $K=24$.
+Each interface contains 16 held-out windows.
+E2 Top-1 selects within the supplied pair; T2-C learns a correction
+to its pair preference using initial-history descriptors.
+Neither the candidate set nor an automatic applicability mask is
+learned in this experiment.
+
+Table~\ref{tab:routing_fusion} uses a common full-window metric.
+Train-fixed $\alpha$ and train-fixed logit offset are fitted only
+on training windows, and the fixed candidate is selected on
+validation error. These controls test whether the improvement
+can be explained by a constant mixture or calibration offset.
+
+\begin{table}[H]
+\centering
+\small
+\caption{Square full-window joint error (\%) at $K=24$ against the
+cached POD reference. Entries use the frozen-checkpoint reevaluation,
+not a three-seed average. Scalar controls use training data;
+the fixed candidate uses validation data.}
+\label{tab:routing_fusion}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Assembly rule & S--H & H--P\\
+\midrule
+E2 Top-1 & 1.5786 & 1.6424\\
+E2-probability blend & 1.8145 & 1.4489\\
+Equal blend & 2.3849 & 1.3930\\
+Train-fixed $\alpha$ & 2.0591 & 0.9767\\
+Train-fixed logit offset & 2.0149 & 0.9821\\
+Validation-fixed candidate & 1.5786 & 1.0068\\
+T2-C & \textbf{1.0954} & \textbf{0.8123}\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+T2-C improves on all listed controls for these fixed candidate
+sets. A separate architecture-matched $\mu$-only control zeros the
+standardized history channels while retaining the gate architecture.
+Across three paired gate seeds, full-window joint errors are
+$1.095351\pm0.000015\%$ versus $1.814699\pm0.000242\%$
+in S--H and $0.812343\pm0.000177\%$ versus
+$0.976939\pm0.000179\%$ in H--P.
+The reductions are $39.64\%$ and $16.85\%$.
+These quantify gate-training variability, not uncertainty from
+retraining the complete hierarchy.
+
+\begin{figure}[H]
+\centering
+\input{figures/t2c_window_comparison.tex}
+\caption{Full-window Square comparison over three paired gate seeds.
+All local candidates and E2 are fixed; bars show mean and sample
+standard deviation.}
+\label{fig:square_overlap}
+\end{figure}
+
+The evidence supports history-conditioned fusion for these windows,
+but does not prove that history dependence is necessary for every
+flow or gate. The weight is fixed within each prediction window;
+history can change it between windows.
+Appendix~\ref{app:square} retains component errors, terminal-step
+results, scalar objectives, and complete field visualizations.
+Additional Pinball overlap results appear in
+Appendix~\ref{app:pinball_overlap_results}; their local candidates
+are Deep-FNN-H3, so they test the assembly interface rather than
+the sparse-MoE architecture.
+A posteriori convex oracles are diagnostics, not deployable methods.
+
+\subsection{Internal routing and physical-field diagnostics}
+\label{sec:exp_diagnostics}
+
+\paragraph{Expert utilization.}
+Post-hoc diagnostics use frozen Circular H/P specialists and are
+not used for checkpoint selection.
+Periodic distributes decisions across group--pair combinations;
+Hopf has a prescribed single group and fixed sparse support, but
+nonuniform, parameter-dependent mixture weights.
+Its single group is not evidence of collapse of a learned
+multi-group router. The detailed frequency, weight-mass, and entropy
+statistics in Appendix~\ref{app:internal_routing} count the first
+integration stage per output step, not all RK evaluations.
+Utilization alone does not establish an accuracy benefit.
+
+\paragraph{Fusion consistency.}
+Appendix~\ref{app:fusion_consistency} separates conditional algebraic
+identities from measured reconstructed-field diagnostics.
+On both Square interfaces, the measured T2-C pressure residual is
+lower than either candidate for both tested spatial stencils.
+However, Hopf has a smaller H--P momentum residual and a smaller
+S--H energy error. Fusion is therefore not a general residual or
+energy-error minimizer.
+
+The measurements use offline least-squares spatial derivatives
+and coarse-time differences, not the original OpenFOAM
+finite-volume residuals. Nonzero reference residuals include POD
+truncation and differentiation error.
+Identity discrepancies near machine precision verify the algebra,
+not conservation or physical accuracy.
+The phase screen resolves none of the 16 S--H windows and 15 of
+16 H--P windows; even resolved short-window traces do not establish
+absence of aliasing or long-time phase stability.
+The complete energy, residual, probe, and phase curves are retained
+in Appendix~\ref{app:fusion_measured}.
+
+\subsection{Computational cost and timing boundaries}
+\label{sec:exp_cost}
+
+Sparse activation is a parameter-use property, not a runtime claim.
+Circular H/P activate $44.53\%$ and $17.09\%$ of their trainable
+parameters per analyzed prediction decision.
+For native Circular Periodic prediction at batch size one and
+$K=48$, median times are 2.1848 s (proposed), 0.6579 s (Dense),
+and 0.8652 s (Structured).
+The proposed implementation is therefore slower than Dense in this
+measurement despite sparse activation; the native Galerkin path
+also executes on the CPU.
+
+A separate warm physical-input/physical-output measurement includes
+history encoding, local advancement, and all-step field decoding.
+It takes 2.18747 s on an RTX 4090 with a Xeon host for a Circular
+Periodic window spanning 598.70093 physical time units.
+A matched historical production FOM interval takes 1996 s.
+The resulting ratio of approximately 912.5 is not a full-hierarchy
+or hardware-independent speedup: hardware and I/O boundaries differ,
+the FOM timing has one realization, and ROM loading, output writes,
+E2, descriptors, and T2-C are excluded.
+Appendix~\ref{app:parameter_counts} lists warm-ups, repetitions,
+synchronization, memory, hardware, and all included/excluded work.
+A fully paired Top-2 end-to-end timing remains unmeasured.
+

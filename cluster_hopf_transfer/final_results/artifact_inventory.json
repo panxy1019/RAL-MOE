@@ -1,0 +1,70 @@
+{
+  "files": [
+    {
+      "bytes": 375735043,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/selected_validation_step7200.pt",
+      "sha256": "07af06ec5506e5b6a12d9d00f557a4e48fa722be3c2a183df752f0883ad40beb"
+    },
+    {
+      "bytes": 28984,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/heldout_metrics.json",
+      "sha256": "125e99c430b97d01d8510802b2312c48d885abad82edae5e1c69a474e6497f87"
+    },
+    {
+      "bytes": 2133,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/checkpoint_selection_manifest.json",
+      "sha256": "e2e595dadb86b7539a6b51aea27a6af26364306db58792ce2176fcf26daea1b8"
+    },
+    {
+      "bytes": 10562,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/FINAL_CENTEREDSQUARE_HOPF_H4_SUMMARY.json",
+      "sha256": "f651c0a3bcc41dc8438441bd7249853996066be05905eb10747b322af71b5195"
+    },
+    {
+      "bytes": 6911,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/FINAL_CENTEREDSQUARE_HOPF_H4_REPORT.md",
+      "sha256": "56bbb7b6b4166dbe673110a4b11c0394b784879ce8eee638307d5c14c4b38a90"
+    },
+    {
+      "bytes": 5044,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/runs_mb46_dataonly/CenteredSquareHopf34_H4_NormalFormRadial_r11/config.json",
+      "sha256": "51c157bdd03f7c593f9b3a2831f97e140af1d3208c6a2a485d8c1dbfa9dbadd1"
+    },
+    {
+      "bytes": 637253,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/runs_mb46_dataonly/CenteredSquareHopf34_H4_NormalFormRadial_r11/validation_history.json",
+      "sha256": "ef2c6ef72f532dc0873c5a2d9556da8447f7c9189d5d32e06fd015c5a9862955"
+    },
+    {
+      "bytes": 82,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/runs_mb46_dataonly/CenteredSquareHopf34_H4_NormalFormRadial_r11/throughput.json",
+      "sha256": "e4f3e0caffb4c9f9be1ac195872f52a050a82335b3cf0661aa9c139d9baefd04"
+    },
+    {
+      "bytes": 1756,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/TRAINING_ASSET_MANIFEST.json",
+      "sha256": "378fdb0e8bdd40e391fa14a5120c9c445e9b07090d4bfbe5cf6854348566df9e"
+    },
+    {
+      "bytes": 9983,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/trainonly_contract_mb46/TRAINONLY_H3H4_CONTRACT.json",
+      "sha256": "d178a24b80046ecb11fec3089ea5f76654d5f6109a41b43b9c1cb570b67b3592"
+    },
+    {
+      "bytes": 49415,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/code/train_centeredsquare_hopf_base.py",
+      "sha256": "9dfcae35793252891faea430fca53cf15268bd1c3645a5b6f01af8aa4651693a"
+    },
+    {
+      "bytes": 33134,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/code/train_centeredsquare_h4.py",
+      "sha256": "cf038f75a21635673d58ecdd7d9360faacf0af9536a35924e2049d00f844e967"
+    },
+    {
+      "bytes": 12761,
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/code/evaluate_centeredsquare_h4.py",
+      "sha256": "bcc73982e2b4937ed8a145aa399b7f53c0880b5c37cb98ef6632346abee93613"
+    }
+  ],
+  "schema_version": 1
+}

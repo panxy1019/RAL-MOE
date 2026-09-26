@@ -1,0 +1,107 @@
+% Replace the existing Section 3.2 with this subsection.
+% This file is a manuscript fragment, not a standalone compilable document.
+\subsection{Regime-local hybrid specialists}
+\label{sec:hybrid_specialists}
+
+Each regime-local specialist combines the projected dynamics from
+Section~\ref{sec:local_roms} with learned corrections in its own reduced
+coordinates. Velocity is advanced dynamically according to
+\begin{equation}
+  \dot{\bm a}^{(r)}
+  =\mathcal F_r^G(\bm a^{(r)},\bm b^{(r)};\mu)
+  +\bm\rho^u_{\theta_r}(\bm\xi^{(r)}),
+  \label{eq:main_specialist}
+\end{equation}
+whereas pressure is reconstructed algebraically after each velocity step.
+This additive formulation describes the hybrid specialists; the
+centered-square overlap evaluator instead uses a data-only advancement
+path for its Hopf candidate, as specified in
+Appendix~\ref{app:implementation}.
+
+\paragraph{Local features.}
+Let $\bm g_n^{(r)}=\mathcal F_r^G(\bm a_n^{(r)},\bm b_n^{(r)};\mu)$.
+The feature vector and its learned embedding are
+\begin{equation}
+  \bm\xi_n^{(r)}
+  =\operatorname{Feat}_r\!\left(
+    (\bm a_{n-\ell}^{(r)},\bm b_{n-\ell}^{(r)},
+     \bm g_{n-\ell}^{(r)})_{\ell=0}^{2},\mu\right),
+  \qquad
+  \bm z_n^{(r)}=\operatorname{Enc}_r(\bm\xi_n^{(r)}).
+  \label{eq:main_specialist_features}
+\end{equation}
+The feature map standardizes local states, projected right-hand sides,
+and parameter features using statistics from the corresponding
+chart-specific training set. The embedding $\operatorname{Enc}_r$ acts
+on these features and is distinct from the physical-field POD encoding.
+
+\paragraph{Hierarchical sparse corrections.}
+An internal router selects an expert group
+$m^\star=\operatorname*{arg\,max}_{m\in\mathcal G_r}
+\pi_{r,m}^{\mathrm{grp}}(\bm z,\bm\xi)$,
+where $\mathcal G_r$ is the set of groups in specialist $r$;
+$m^\star$ is predetermined for single-group or fixed-group instances.
+Within that group, separate velocity and pressure routers select the
+two highest-scoring routed experts, denoted by $\mathcal T_2^c$ for
+$c\in\{u,p\}$, alongside an always-active shared expert:
+\begin{equation}
+  \bm\rho^c_{\theta_r}(\bm\xi)
+  =\omega_0^c E_{0,m^\star}^c(\bm z,\bm s^c)
+   +\sum_{e\in\mathcal T_2^c}
+       \omega_e^c E_{e,m^\star}^c(\bm z,\bm s^c),
+  \qquad
+  \omega_e^c\geq0,\quad
+  \omega_0^c+\sum_{e\in\mathcal T_2^c}\omega_e^c=1.
+  \label{eq:main_inner_moe}
+  \label{eq:app_channel_sparse_moe}
+\end{equation}
+This internal routing selects correction experts within a local chart,
+not regime-local specialists. The channel-specific state inputs are
+$\bm s^u=\widetilde{\bm a}^{(r)}$ and
+$\bm s^p=\operatorname{col}(\widetilde{\bm a}^{(r)},
+\widetilde{\bm b}^{(r)})$, where tildes denote standardized coordinates.
+For output component $j$, the structured expert is
+\begin{equation}
+  [E_{e,m}^c(\bm z,\bm s^c)]_j
+  =[N_{e,m}^c(\bm z,\bm s^c)]_j
+   +[W_{e,m}^{c,\mathrm{lin}}\bm s^c]_j
+   +\kappa\sum_{\ell=1}^{q_b}
+     \bigl({\bm v_{e,m,j\ell}^{c,(1)}}^\top\bm s^c\bigr)
+     \bigl({\bm v_{e,m,j\ell}^{c,(2)}}^\top\bm s^c\bigr).
+  \label{eq:main_structured_expert}
+\end{equation}
+Here $N_{e,m}^c$ is a nonlinear feature-conditioned network; the
+remaining terms provide explicit linear and low-rank quadratic
+responses, with $q_b=4$ and $\kappa=0.05$ in the specified
+parameterization. In the audited Circular H/P instances, the shared
+weight is $4/7$ and the remaining $3/7$ is distributed proportionally
+to the selected routed-expert scores. This split is not assumed for
+all benchmark configurations.
+
+The quadratic branch was inactive in the original Circular checkpoints
+because both multiplicative factors were initialized at zero. The
+repaired configuration randomizes one factor while initializing the
+other at zero, allowing learning from an initially zero output.
+Neither the original results nor the initialization repair alone
+establishes an accuracy benefit from this branch; comparative results
+are reported in Appendix~\ref{app:circular}.
+
+\paragraph{Algebraic pressure reconstruction.}
+After advancing velocity, the pressure coefficients are obtained from
+\begin{equation}
+  \bm b_{n+1}^{(r)}
+  =\bm\gamma_n^{(r)}\odot
+     \mathcal Q_r^{PP}(\bm a_{n+1}^{(r)};\mu)
+   +\bm\rho^p_{\theta_r}(\bm\xi_n^{(r)}),
+  \qquad
+  \bm\gamma_n^{(r)}
+  =\operatorname{sigmoid}\!\left(
+     \bm\eta^p_{\theta_r}(\bm\xi_n^{(r)})\right).
+  \label{eq:main_pressure_closure}
+\end{equation}
+The map $\mathcal Q_r^{PP}$ is derived in Appendix~\ref{app:rom},
+$\bm\gamma_n^{(r)}\in(0,1)^{d_p^{(r)}}$ modulates its contribution,
+and $\odot$ denotes componentwise multiplication. Thus pressure is
+not integrated as an independent dynamical variable, although its
+reconstructed coefficients enter subsequent velocity updates and
+the local history.

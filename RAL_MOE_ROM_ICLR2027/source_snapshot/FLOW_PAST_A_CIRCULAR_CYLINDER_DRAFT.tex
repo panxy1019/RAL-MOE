@@ -1,0 +1,575 @@
+\subsection{Numerical evaluation and comparison protocol}
+\label{subsec:numerical_evaluation_protocol}
+
+The numerical assessment is conducted on three parametrized incompressible-flow
+problems exhibiting steady, Hopf-onset, and periodic dynamics: flow past a
+circular cylinder, flow past a centered square cylinder, and the fluidic
+pinball. These examples involve different geometries, discretizations, and
+regime-transition ranges, and are used collectively to assess the predictive
+performance and robustness of the proposed RAL-MoE-ROM framework.
+
+The numerical experiments are organized to examine two main components of the
+method. First, the regime-local specialists are evaluated in their respective
+parameter domains to assess the accuracy and stability of the local reduced
+dynamics over autonomous multi-step rollouts. Where compatible baselines are
+available, the proposed specialists are compared with alternative neural
+architectures, data-driven reduced models, classical POD-Galerkin models and
+global reduced representations. These comparisons and ablation studies are
+used to assess the contributions of regime localization, the projected
+Galerkin dynamics, and the learned closure. Second, the hierarchical assembly
+is evaluated in the overlapping parameter regions. Individual adjacent
+specialists and hard routing are compared with fixed convex combinations,
+router-probability blending, the proposed T2-C correction, and, where
+available, a per-window convex oracle. These experiments quantify whether
+adjacent local models provide complementary predictions and whether the
+proposed fusion mechanism can exploit this complementarity without modifying
+the underlying specialist dynamics.
+
+The three benchmark problems play complementary roles in this assessment. The
+flow pass cylinder example examines the regime-local specialists and their
+long-horizon dynamical behaviour across the steady-Hopf-periodic transition.
+The flow pass a centered square example evaluates the multi-chart construction
+for a different geometry and investigates the steady-hopf and hopf-periodic fusion mechanisms.
+The fluidic-pinball example further compares the proposed local learned
+dynamics with a classical POD-Galerkin/Pressure-Poisson ROM and a global
+data-driven reduced model POD-Deeponet. The baseline sets are therefore not required to be
+identical across the three examples; rather, each comparison is used only for
+the methodological component for which a consistent numerical evaluation is
+available.
+
+All training, validation, and held-out test sets are partitioned by complete
+parameter trajectories. Model selection and all router and fusion-model
+selection are performed using training and validation data only. Unless stated
+otherwise, $K$ denotes the number of successive prediction steps in the
+corresponding snapshot sequence. Since the snapshot interval may differ among
+the numerical examples, the associated physical-time horizon is reported
+separately when required.
+
+We use a common set of weighted relative errors to evaluate the reconstructed
+physical fields. Let $\boldsymbol{u}_n$ and $p_n^\circ=\Gamma_p(p_n)$ denote
+the reference velocity and gauge-corrected pressure at an evaluation time, and
+let $\widehat{\boldsymbol{u}}_n$ and $\widehat{p}_n^\circ$ denote the
+corresponding predictions. Using the discrete physical inner products defined
+by the quadrature matrices $M_u$ and $M_p$, the relative velocity and pressure
+errors are
+\begin{align}
+E_u
+&=
+100\times
+\frac{
+\left\|
+\widehat{\boldsymbol{u}}_n-\boldsymbol{u}_n
+\right\|_{M_u}
+}{
+\left\|
+\boldsymbol{u}_n
+\right\|_{M_u}+\varepsilon
+},
+&
+E_p
+&=
+100\times
+\frac{
+\left\|
+\widehat{p}_n^\circ-p_n^\circ
+\right\|_{M_p}
+}{
+\left\|
+p_n^\circ
+\right\|_{M_p}+\varepsilon
+}.
+\label{eq:common_field_errors}
+\end{align}
+
+The velocity and pressure errors are always retained separately in addition to
+$E_{\mathrm{joint}}$.
+
+For predictions evaluated within the same regime-local POD chart
+$r\in\{S,H,P\}$, we additionally measure errors in the reduced coordinates,
+\begin{align}
+E_a^{(r)}
+&=
+100\,
+\frac{
+\left\|
+\widehat{\boldsymbol{a}}^{(r)}
+-\boldsymbol{a}^{(r)}
+\right\|_2
+}{
+\left\|
+\boldsymbol{a}^{(r)}
+\right\|_2+\varepsilon
+},
+&
+E_b^{(r)}
+&=
+100\,
+\frac{
+\left\|
+\widehat{\boldsymbol{b}}^{(r)}
+-\boldsymbol{b}^{(r)}
+\right\|_2
+}{
+\left\|
+\boldsymbol{b}^{(r)}
+\right\|_2+\varepsilon
+}.
+\label{eq:common_coordinate_errors}
+\end{align}
+These quantities characterize errors in the local fluctuation dynamics and are
+used only within a fixed POD coordinate system; reduced-coordinate errors from
+different local charts are not compared directly. Since the physical-field
+errors include the regime-local mean whereas the POD coefficients describe
+mean-subtracted fluctuations, a small value of $E_u$ or $E_p$ does not
+necessarily imply a comparably small value of $E_a^{(r)}$ or $E_b^{(r)}$.
+
+In addition to these finite-horizon errors, regime-dependent dynamical
+diagnostics are used where appropriate to assess autonomous stability and
+long-time behaviour, including boundedness, fixed-point behaviour, oscillation
+amplitude and frequency, phase accuracy, and orbit geometry. These diagnostics
+complement the field and reduced-coordinate errors, since accurate one-step or
+finite-horizon prediction alone does not guarantee faithful autonomous
+long-time dynamics.
+
+
+
+
+\subsection{Flow past a circular cylinder}
+\label{subsec:flow_past_circular_cylinder}
+
+The flow past a circular cylinder is used to evaluate RAL-MoE-ROM across
+steady, Hopf-onset, and periodic flow regimes.  The numerical study examines
+both the long-horizon predictive accuracy of the regime-local reduced models and the effectiveness of the hierarchical routing and fusion mechanism in the overlapping parameter regions.
+
+The high-fidelity model solves the two-dimensional incompressible
+Navier--Stokes equations for a cylinder of diameter $D=1$ with kinematic
+viscosity $\nu=10^{-3}$.  The inflow speed is
+$U_\infty=Re\,\nu/D$.  The computational domain is
+$[-10,20]\times[-10,10]$, with the cylinder centred at the origin and having
+radius $0.5$; a single cell layer over
+$z\in[-0.05,0.05]$ realizes the two-dimensional calculation.  A prescribed
+velocity is imposed at the inlet, a zero-normal-gradient condition at the
+outlet, no slip on the cylinder, and slip on the upper and lower boundaries.
+Pressure is fixed to zero at the outlet and uses zero-normal-gradient
+conditions elsewhere.  All three reduced databases share the same ordered
+grid of 97,368 points and the same lumped point-area weights.  Pressure is
+placed in a common gauge by subtracting its area-weighted spatial mean from
+each snapshot before projection, reconstruction and evaluation.
+\begin{table*}[htbp]
+\centering
+\caption{Data partitions and rollout horizons.
+The numbers of training, validation, and held-out test samples refer to
+complete Reynolds-number trajectories. The physical-time horizon is reported
+as the range associated with the corresponding $K$-step rollouts.}
+\label{tab:cylinder_data_contracts}
+
+\scriptsize
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}p{0.11\textwidth}p{0.17\textwidth}c
+                p{0.16\textwidth}p{0.14\textwidth}p{0.18\textwidth}@{}}
+\toprule
+Regime
+& Reynolds-number range
+& Train/validation/test trajectories
+& Training snapshots
+& Rollout horizon
+& Physical-time horizon \\
+\midrule
+
+Steady
+& $20.0 \le Re \le 46.4$
+& $14/2/4$
+& 894
+& $K=56$
+& $234.604$--$431.274$ \\
+
+Hopf
+& $45.5 \le Re \le 59.2$
+& $29/2/3$
+& 1935
+& $K=56$
+& $1179.953$--$1309.781$ \\
+
+Periodic
+& $57.3 \le Re \le 200$
+& $53/6/4$
+& 8839
+& $K=48$
+& $177.959$--$598.701$ \\
+
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table*}
+The Steady, Hopf, and Periodic datasets cover
+$20.0\le Re\le46.4$, $45.5\le Re\le59.2$, and
+$57.3\le Re\le200$, respectively.
+Table~\ref{tab:cylinder_data_contracts} summarizes the corresponding
+training, validation, and held-out test partitions, all defined at the level
+of complete parameter trajectories. For each regime, the local velocity and pressure POD spaces are constructed
+with $r_u=r_p=32$. The reported rollout length $K$ denotes the number of successive steps in the
+corresponding native snapshot sequence. Because the sampling intervals differ
+among the three regime-specific databases, equal values of $K$ do not in
+general correspond to equal physical-time horizons; the associated time spans
+are therefore reported separately in
+Table~\ref{tab:cylinder_data_contracts}.
+
+
+The proposed regime-local specialists are compared with three ablation
+models targeting different components of RAL-MoE-ROM. Vanilla-FNN-MoE
+replaces the structured nonlinear-affine bilinear expert parameterization
+with standard feed-forward networks while retaining the remaining
+regime-local modeling components. DataOnly-MoE removes the explicit
+POD-Galerkin velocity dynamics and Pressure-Poisson pressure reconstruction
+and instead learns the reduced-state update directly from the temporal
+history. These two ablations assess, respectively, the contributions of the
+structured expert architecture and the physics-based reduced dynamics. Global MoE is used to assess the effect of regime localization. It replaces
+the three regime-specific POD spaces and specialists by a single global POD
+representation and a single MoE model constructed from the pooled training
+trajectories across the complete parameter range. 
+
+
+
+The common field and reduced-coordinate errors are those in
+Eqs.~\eqref{eq:common_field_errors}--\eqref{eq:common_coordinate_errors}.
+The cylinder case additionally evaluates pressure fixed-point error,
+pressure drift and paired-perturbation gain in the Steady regime, and
+amplitude, frequency, phase, normalized orbit distance, velocity and pressure
+energy drift, finite fraction, divergent windows and false growth in the
+Hopf and Periodic regimes.  The complete threshold definitions are given in
+the supplementary material.  These diagnostics test asymptotic behaviour
+separately from finite-horizon field and coordinate accuracy.
+
+% Suggested placement: immediately after the setup, baseline and metric
+% paragraphs.  The file defines Tables 1--4 proposed for this subsection.
+\input{drafts/cylinder_wake_20260726/tables_cylinder_wake}
+\begin{table*}[htbp]
+\centering
+\caption{Held-out long-horizon prediction errors for the circular-cylinder
+case. Each interval reports the minimum--maximum value over the held-out
+Reynolds-number trajectories of the corresponding regime. N/E indicates that
+held-out evaluation was not performed because the validation-stage stability
+requirement was not satisfied.}
+\label{tab:cylinder_specialist_long}
+
+\scriptsize
+\setlength{\tabcolsep}{5.0pt}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}llcccc@{}}
+\toprule
+Regime
+& Model
+& $E_u$ (\%)
+& $E_p$ (\%)
+& $E_a$ (\%)
+& $E_b$ (\%) \\
+\midrule
+
+Steady
+& Proposed specialist
+& 0.0330--0.1723
+& 0.2500--1.3249
+& 0.2480--0.3858
+& 6.0857--9.4108 \\
+
+& Vanilla-FNN-MoE
+& 0.0384--0.2995
+& 2.2163--18.5603
+& 0.2562--0.5373
+& 6.0504--22.6792 \\
+
+& DataOnly-MoE
+& 0.1637--0.5122
+& 4751.1025--27275.4645
+& 0.8749--3.6893
+& 15945.6192--58856.7261 \\
+
+& Global MoE
+& 0.0845--0.3404
+& 1.5226--7.4363
+& 20.7911--44.2564
+& 25.2651--101.0296 \\
+
+\midrule
+
+Hopf
+& Proposed specialist
+& 0.0032--0.0288
+& 0.0355--0.4321
+& 0.0418--0.8479
+& 0.2164--5.7742 \\
+
+& Vanilla-FNN-MoE
+& N/E
+& N/E
+& N/E
+& N/E \\
+
+& DataOnly-MoE
+& 0.1260--0.3880
+& 1280.2811--1524.5949
+& 1.6428--18.0141
+& 8810.2142--40976.6418 \\
+
+& Global MoE
+& 0.0110--0.0268
+& 0.0560--0.2882
+& 24.1395--94.7850
+& 29.9005--78.2764 \\
+
+\midrule
+
+Periodic
+& Proposed specialist
+& 0.3809--1.3473
+& 1.6825--5.9601
+& 1.6843--2.9151
+& 2.3345--6.7689 \\
+
+& Vanilla-FNN-MoE
+& 1.0393--3.0836
+& 3.9659--13.3257
+& 4.4136--9.4908
+& 5.3593--19.0759 \\
+
+& DataOnly-MoE
+& 0.7854--1.8677
+& 2.2511--10.8189
+& 2.2001--4.1827
+& 3.4416--5.3181 \\
+
+& Global MoE
+& 0.5873--1.1726
+& 2.1896--6.3566
+& 5.3269--16.9732
+& 6.6735--21.9848 \\
+
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table*}
+Table~\ref{tab:cylinder_specialist_long} compares the held-out
+long-horizon prediction errors of the proposed regime-local specialists and
+the three ablation models. The results reveal a marked dependence of the
+ablation effects on the underlying flow regime. For Global MoE,
+$E_a$ and $E_b$ are evaluated in its own global POD coordinates and are
+therefore used only as diagnostics of its reduced-state prediction; they are
+not directly compared with the coefficient errors associated with the
+regime-local POD spaces.
+
+In the Steady regime, the proposed specialist gives the lowest
+physical-field error range among the considered models. Its velocity error is
+$0.0330$--$0.1723\%$, compared with $0.0384$--$0.2995\%$ for
+Vanilla-FNN-MoE and $0.0845$--$0.3404\%$ for Global MoE. A more pronounced
+difference is observed in pressure, where the proposed specialist yields
+$E_p=0.2500$--$1.3249\%$, whereas the upper bounds increase to
+$18.5603\%$ for Vanilla-FNN-MoE and $7.4363\%$ for Global MoE.
+Within the common regime-local representation, the proposed specialist also
+maintains small velocity-coordinate errors and substantially reduces the
+upper bound of the pressure-coordinate error relative to Vanilla-FNN-MoE.
+By contrast, DataOnly-MoE produces pressure errors of
+$4.75\times10^{3}$--$2.73\times10^{4}\%$, accompanied by extremely large
+pressure-coordinate errors. These results indicate that the explicit
+physics-based reduced dynamics are particularly important for pressure
+prediction in the Steady regime. 
+
+
+The differences are more pronounced in the Hopf regime. The proposed
+specialist achieves velocity and pressure errors of
+$0.0032$--$0.0288\%$ and $0.0355$--$0.4321\%$, respectively.
+Vanilla-FNN-MoE is not reported on the held-out trajectories because its
+selected model did not satisfy the validation-stage stability requirement.
+Removing the physics-based reduced dynamics leads to a substantial loss of
+accuracy: DataOnly-MoE increases the pressure error to
+$1.28\times10^{3}$--$1.52\times10^{3}\%$ and the pressure-coordinate error
+to approximately $8.8\times10^{3}$--$4.1\times10^{4}\%$. Global MoE, in contrast, retains small physical-field errors over the Hopf
+test range, with $E_u=0.0110$--$0.0268\%$ and
+$E_p=0.0560$--$0.2882\%$. Thus, the regime-local formulation does not
+uniformly outperform the global model in the mean-containing physical-field
+metrics for this regime. Nevertheless, the proposed specialist achieves
+highly accurate prediction within its regime-specific reduced coordinates,
+whereas the Global MoE coefficients belong to a different global POD space
+and cannot be compared directly. The Hopf results therefore primarily
+demonstrate the benefit of the hybrid Galerkin-closure formulation relative
+to the architecture and data-only ablations, while showing that a global
+train-only representation can remain competitive in physical-field accuracy
+over this parameter range.
+
+
+
+In the Periodic regime, the proposed specialist consistently improves upon
+Vanilla-FNN-MoE in both the physical fields and the local reduced
+coordinates. The velocity-error range decreases from
+$1.0393$--$3.0836\%$ to $0.3809$--$1.3473\%$, while the pressure-error
+range decreases from $3.9659$--$13.3257\%$ to
+$1.6825$--$5.9601\%$. DataOnly-MoE is substantially more competitive here
+than in the Steady and Hopf regimes: its velocity and pressure errors remain
+within $0.7854$--$1.8677\%$ and $2.2511$--$10.8189\%$, respectively.
+The proposed specialist nevertheless retains the lower overall physical-field
+error ranges. Global MoE also provides competitive Periodic predictions. Its maximum
+velocity error is slightly lower than that of the proposed specialist,
+whereas the proposed specialist yields the lower pressure-error range.
+Consequently, the advantage of regime localization is not uniform in the
+finite-horizon field metrics. In contrast, the comparison with
+Vanilla-FNN-MoE shows a clear benefit from the structured specialist
+formulation, while the substantially improved DataOnly-MoE performance
+relative to the other two regimes indicates that the importance of the
+explicit physics-based closure is itself regime dependent.
+
+Overall, the ablation study shows that the contributions of the individual
+modeling components are regime dependent. The proposed specialist provides
+a consistent improvement over the Vanilla-FNN-MoE architecture, with
+particularly pronounced reductions in pressure error. Removing the explicit
+Galerkin and Pressure-Poisson contributions severely degrades the Steady
+and Hopf predictions, whereas the purely data-driven formulation remains
+considerably more competitive in the Periodic regime. The Global MoE
+comparison further shows that regime localization should not be interpreted
+as providing uniform pointwise superiority over a global reduced
+representation; rather, its benefit must be assessed together with the
+regime-specific dynamical modeling and the subsequent hierarchical
+combination examined below.
+
+
+
+\begin{table}[htbp]
+\centering
+\caption{Held-out prediction errors in the $S$--$H$ overlap at $K=56$.
+Each interval reports the minimum--maximum value over the three held-out
+overlap trajectories.}
+\label{tab:cylinder_sh_boundary}
+
+\scriptsize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model
+& $E_u$ (\%)
+& $E_p$ (\%)
+& $\alpha_S$ \\
+\midrule
+
+E2 Top-1
+& 0.0357--0.0410
+& 1.6746--1.9028
+& 1.0000 \\
+
+T2-C
+& 0.0148--0.0355
+& 0.7387--1.7212
+& 0.0861--0.9987 \\
+
+Global MoE
+& 0.0851--0.0953
+& 1.9517--2.3106
+& -- \\
+
+\bottomrule
+\end{tabular}
+\end{table}
+Table~\ref{tab:cylinder_sh_boundary} summarizes the held-out
+$S$--$H$ overlap results at $K=56$. Relative to the hard E2 routing,
+T2-C reduces the velocity-error range from
+$0.0357$--$0.0410\%$ to $0.0148$--$0.0355\%$ and the
+pressure-error range from $1.6746$--$1.9028\%$ to
+$0.7387$--$1.7212\%$. Both errors are reduced at each of the three
+held-out Reynolds numbers, indicating that the output-level combination
+exploits complementary predictions of the adjacent Steady and Hopf
+specialists over the tested overlap. The learned fusion does not collapse uniformly to either specialist.
+The Steady weight varies from $\alpha_S=0.0861$ to $0.9987$ across the
+held-out cases, ranging from an almost purely Steady prediction to a
+predominantly Hopf contribution. Since the two specialists are advanced
+independently in their own reduced coordinates and are combined only after
+physical-field reconstruction, this improvement is obtained without
+introducing a common latent state or feeding the fused solution back into
+either local dynamical system. Global MoE is included as the train-only ablation of the regime-local
+decomposition. Over the same held-out overlap parameters, its velocity and
+pressure errors lie in the ranges $0.0851$--$0.0953\%$ and
+$1.9517$--$2.3106\%$, respectively. The comparison therefore indicates
+that, for this $S$--$H$ overlap, the regime-local construction combined
+with T2-C provides lower physical-field errors than the single global
+reduced model.
+
+% Suggested placement: after the specialist and boundary quantitative
+% discussion.  If space is limited, Fig. 2 can be moved to the supplement,
+% while Figs. 1, 3 and 4 should remain in the main paper.
+
+
+\begin{figure*}[htbp]
+\centering
+
+\includegraphics[width=0.85\textwidth]
+{drafts/cylinder_wake_20260726/figures/periodic1.png}
+
+\vspace{0.5em}
+
+\includegraphics[width=0.85\textwidth]
+{drafts/cylinder_wake_20260726/figures/periodic1_1.png}
+
+\caption{Representative held-out Periodic prediction at
+$Re=70.314636$ and $K=48$. The upper panel compares the CFD reference with
+Vanilla-FNN-MoE, DataOnly-MoE, and the proposed Periodic specialist in
+velocity magnitude and gauge-corrected pressure. The lower panel shows the
+corresponding pointwise absolute errors
+$\lvert\Delta\boldsymbol{u}\rvert$ and $\lvert\Delta p^\circ\rvert$.}
+\label{fig:cylinder_periodic_fields_errors}
+\end{figure*}
+
+
+
+
+\begin{figure*}[htbp]
+\centering
+
+\includegraphics[width=0.85\textwidth]
+{drafts/cylinder_wake_20260726/figures/SH_1.png}
+
+\vspace{0.5em}
+
+\includegraphics[width=0.85\textwidth]
+{drafts/cylinder_wake_20260726/figures/SH_1_1.png}
+
+\caption{Representative held-out prediction in the $S$--$H$ overlap at
+$Re=43.9$ and $K=56$. The upper panel compares the CFD
+reference, the two local specialists, and the fused prediction; the lower
+panel shows the corresponding pointwise velocity and gauge-corrected pressure
+errors. For this trajectory, T2-C assigns
+$\alpha_S=0.1891$ and $\alpha_H=0.8109$, illustrating a nontrivial
+combination of the two adjacent specialists.}
+\label{fig:cylinder_sh_fields_errors}
+\end{figure*}
+
+
+
+The field visualizations in
+Figs.~\ref{fig:cylinder_periodic_fields_errors} and
+\ref{fig:cylinder_sh_fields_errors} complement the integral error measures
+by resolving their spatial distribution. The Periodic example illustrates
+the local-specialist comparison, whereas the $S$--$H$ example visualizes the
+output-level combination of two independently evolved local reduced models.
+These figures are used for spatial interpretation; the quantitative
+comparisons remain those reported in
+Tables~\ref{tab:cylinder_specialist_long} and
+\ref{tab:cylinder_sh_boundary}.In the Periodic case, the proposed specialist retains the alternating
+vortex-shedding pattern of the reference solution. The pointwise errors are
+concentrated primarily in the near wake and around the transported coherent
+structures, whereas the Vanilla-FNN-MoE discrepancy extends more strongly
+along the vortex street.The $S$--$H$ visualization further shows how the two local predictions remain
+independent before reconstruction and output-level fusion. The resulting
+field remains spatially smooth across the overlap, with the local error
+structure reflecting the relative contribution selected by the T2-C gate.
+
+
+
+
+
+
+
+Overall, the circular-cylinder case validates both levels of the proposed
+framework. The regime-local specialists provide accurate long-horizon
+predictions, while the ablation study reveals regime-dependent contributions
+from the structured expert architecture, the physics-based reduced dynamics,
+and regime localization. In the $S$--$H$ overlap, T2-C further improves the
+hard E2 routing through output-level combination of independently evolved
+local models. The results therefore support the regime-local hierarchical
+construction without implying uniform superiority of every modeling component
+across all flow regimes.

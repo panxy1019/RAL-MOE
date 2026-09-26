@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "cases": 200,
+  "max_absolute_difference": 0.0,
+  "tests": [
+    "zero fields",
+    "irregular positive time intervals",
+    "pressure gauge shift"
+  ],
+  "scope": "equations vs archived source; cached feature provenance checked separately"
+}

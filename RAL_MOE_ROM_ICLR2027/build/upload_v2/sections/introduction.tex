@@ -1,0 +1,123 @@
+\section{Introduction}
+
+Learning compact dynamical models is central to scientific machine learning when
+high-fidelity simulations are too expensive to evaluate repeatedly.
+The challenge becomes substantially harder when a physical parameter changes not only the
+magnitude of the response, but also the qualitative character of the dynamics.
+Parameterized incompressible flows provide a representative example: different portions of
+the parameter domain may exhibit relaxation toward a steady state, weak oscillatory growth
+near instability onset, or sustained nonlinear periodic motion.
+A reduced model intended for many-query prediction must therefore remain accurate under
+autonomous rollout while the underlying dynamics vary across qualitatively different
+regimes.
+
+This setting exposes two coupled difficulties.
+First, the state representation itself can be strongly regime dependent.
+A low-dimensional basis that efficiently describes nearly steady states need not provide an
+equally compact description of developed periodic dynamics.
+Second, even when a suitable reduced representation is available, the corresponding
+dynamical model must reproduce different temporal mechanisms, including decay, growth,
+phase evolution, and nonlinear saturation.
+A single global reduced model must solve both problems simultaneously: it must encode
+states drawn from distinct local geometries and learn a dynamical law that remains accurate
+over all of them.
+This requirement is particularly demanding for autonomous prediction, where small local
+errors are recursively propagated over long horizons.
+
+Projection-based reduced-order models provide an explicit low-dimensional dynamical
+structure through methods such as proper orthogonal decomposition (POD) and Galerkin
+projection \citep{sirovich1987,berkooz1993,benner2015}.
+Their predictive accuracy, however, can deteriorate when truncated modes contribute to
+dissipation, nonlinear interactions, or other unresolved effects \citep{amsallem2012}.
+Data-driven reduced models instead learn the dynamics from trajectories and can represent
+richer nonlinear mappings \citep{hesthaven2018,pathak2018,vlachas2018,lu2021,kovachki2023}.
+Yet accurate one-step prediction does not in general imply a stable recursive dynamical
+model, because prediction errors modify the inputs supplied to subsequent steps
+\citep{duraisamy2019,brunton2020}.
+Hybrid approaches combine projected physical structure with learned corrections and provide
+a natural way to retain known dynamics while modeling unresolved components
+\citep{dar2023,lee2020,fresca2022,geelen2023}.
+
+A complementary strategy is to localize the reduced representation.
+Local subspaces, clustered reduced models, and nonlinear local manifolds can specialize to
+different portions of a parameterized solution set \citep{kaiser2014,li2021cluster,diaz2024}.
+Localization, however, introduces a difficulty that is less visible in a global model.
+Two independently constructed local reduced models generally have different affine means,
+bases, scalings, and reduced operators.
+Their reduced coordinates therefore do not possess a canonical componentwise
+correspondence.
+Consequently, switching or averaging local coefficient vectors can mix incompatible
+representations.
+This raises a broader learning problem: how should multiple local dynamical models be
+selected and combined when each model evolves in its own reduced coordinate system?
+
+Mixture-of-experts (MoE) models offer a natural language for conditional specialization.
+Classical and modern MoE architectures route inputs to subsets of specialized predictors,
+enabling conditional computation and expert specialization
+\citep{jacobs1991,jordan1994,shazeer2017,fedus2022}.
+For regime-dependent dynamical systems, however, two different forms of specialization are
+needed.
+Within a fixed regime, unresolved dynamics may benefit from multiple conditional closure
+experts.
+Across regimes, complete reduced dynamical models must themselves be selected or combined.
+The latter problem differs from a conventional MoE layer because the candidate specialists
+need not share a common reduced state representation.
+
+We introduce the \emph{Regime-Adaptive Localized Mixture-of-Experts Reduced-Order Model}
+(RAL-MoE-ROM), a two-level hierarchical MoE architecture for this setting.
+At the representation level, the parameterized solution set is covered by overlapping
+regime-local reduced charts.
+Each chart supports a complete autonomous physics--data specialist whose projected reduced
+dynamics are augmented by a structured sparse MoE closure.
+The internal MoE uses hierarchical sparse routing to select among experts with nonlinear,
+affine, and low-rank bilinear branches, allowing the learned correction to adapt within a
+local dynamical regime while preserving the projected model as an explicit inductive bias.
+
+A second routing level operates across the regime-local specialists.
+The outer router determines whether a single specialist or an adjacent specialist pair
+should contribute to the prediction.
+Crucially, the selected specialists are not mapped into a common latent coordinate system.
+They are initialized from the same physical history, encoded independently in their native
+charts, and advanced independently under their own autonomous reduced dynamics.
+When two adjacent specialists are used, the proposed Top-2 convex correction (T2-C)
+combines their reconstructed physical fields rather than their modal states or reduced
+right-hand sides.
+This separation between within-specialist expert routing and between-specialist model
+routing is illustrated in Fig.~\ref{fig:ral_overview}.
+
+Our contributions are threefold:
+\begin{itemize}
+    \item \textbf{Two-level hierarchical expert specialization.}
+    We formulate regime-adaptive reduced dynamics as a hierarchy in which sparse expert
+    routing models unresolved dynamics within each local specialist, while a second router
+    selects or combines complete specialists across dynamical regimes.
+
+    \item \textbf{Structured sparse MoE closures for autonomous reduced dynamics.}
+    Each specialist augments projected dynamics with conditionally activated expert maps
+    containing nonlinear, affine, and low-rank bilinear components.
+    The resulting model preserves an explicit physics-based backbone while adapting the
+    learned closure to the local reduced trajectory.
+
+    \item \textbf{Physical-space assembly of noncommensurate local models.}
+    Adjacent specialists retain independent reduced coordinates and autonomous rollouts.
+    Cross-regime coupling is performed only after physical reconstruction through T2-C,
+    avoiding direct interpolation of incompatible modal states or reduced operators.
+\end{itemize}
+
+\begin{figure}[t]
+    \centering
+    \resizebox{\linewidth}{!}{\input{figures/ral_moe_rom_framework_overview}}
+    \caption{Overview of RAL-MoE-ROM. The method uses sparse expert routing within each regime-local specialist and regime-level routing across complete local dynamical models. Adjacent specialists evolve independently in their native reduced coordinates and are combined only after reconstruction in the common physical space.}
+    \label{fig:ral_overview}
+\end{figure}
+
+We evaluate RAL-MoE-ROM on three parametrized incompressible-flow systems spanning steady,
+Hopf-onset, and periodic dynamics.
+The experiments are designed to separate the roles of structured expert architecture,
+projected physical dynamics, regime localization, and cross-regime routing.
+Across the evaluated long-horizon rollouts, the local specialists remain accurate and
+stable, while T2-C consistently improves the corresponding hard or single-specialist
+prediction in the tested overlap regions.
+The results also show that localization is not uniformly superior to a global model at every
+parameter value; rather, its value emerges from combining local representation,
+regime-specific dynamics, and adaptive cross-regime assembly.

@@ -1,0 +1,488 @@
+% Second numerical example: flow past a centered square cylinder.
+% Recommended packages in the main manuscript:
+% \usepackage{amsmath,amssymb,booktabs,graphicx,threeparttable}
+% In a single-column manuscript, table* and figure* may be replaced by
+% table and figure, respectively.
+
+\subsection{Flow past a centered square cylinder}
+\label{subsec:flow_past_centered_square_cylinder}
+
+The flow past a centered square cylinder provides a second test of the
+multi-chart construction under a geometry and discretization that differ
+from those of the circular-cylinder example.  The parameterized flow is
+represented by three overlapping Steady, Hopf and Periodic databases, each
+with its own train-only mean, POD basis, pressure closure and native time
+advance.  The example therefore tests two distinct questions.  At the local
+level, it asks whether the three frozen specialists remain accurate and
+finite over their native long-horizon contracts.  At the outer level, it asks
+whether the frozen Re-only E2 router and the pair-specific T2-C gates can
+exploit complementary predictions in the $S$--$H$ and $H$--$P$ overlaps.
+These questions are assessed separately.  Results obtained in different
+local POD spaces or at different native horizons are not interpreted as
+equal-time, representation-matched rankings.
+
+The high-fidelity model solves the two-dimensional incompressible
+Navier--Stokes equations in the channel
+$\Omega=[0,31D]\times[0,4D]$.  A square cylinder of side length $D=1$
+occupies $[5D,6D]\times[1.5D,2.5D]$, giving a blockage ratio of $0.25$.
+The inlet velocity is parabolic,
+\begin{equation}
+  u_x(y)=4U_m\frac{y(4D-y)}{(4D)^2},
+  \qquad u_y=0,
+  \qquad U_m=1,
+  \label{eq:centered_square_inlet}
+\end{equation}
+the outlet velocity has zero normal gradient, and no slip is imposed on the
+upper and lower channel walls and on the square cylinder.  Pressure is fixed
+to zero at the outlet and has zero normal gradient on the remaining
+boundaries.  The Reynolds number is $Re=U_mD/\nu$, so that $\nu=1/Re$.
+
+The full-order calculations use OpenFOAM~13 \texttt{icoFoam} with
+Crank--Nicolson~0.9 time integration.  The graded finite-volume mesh contains
+9,400 cells and is refined around the obstacle and in the near wake.  The CFD
+time step is $\delta t_{\mathrm{CFD}}=0.02$, the simulated interval is
+$t\in[0,500]$, and one snapshot is retained every 200 CFD steps.  Consecutive
+learning snapshots are therefore separated by
+\begin{equation}
+  \Delta t_{\mathrm{snap}}=4 .
+  \label{eq:centered_square_snapshot_dt}
+\end{equation}
+The combined parameter library contains 120 distinct Reynolds-number cases
+over $50\le Re\le150$, with additional sampling in the transition region.
+
+Table~\ref{tab:centered_square_data_contracts} records the three overlapping
+specialist domains, their complete-trajectory partitions and their retained
+POD dimensions.  Every Reynolds number corresponds to one complete
+trajectory.  No trajectory or temporal window is split across training,
+validation and held-out roles, and a Reynolds number appearing in two
+overlapping specialist domains retains the same split role in both.  The
+means, normalization statistics and POD bases are fitted only on the
+corresponding training cases.  Velocity and pressure use separate
+volume-weighted $L_2$ PODs at the $99.9\%$ cumulative-energy threshold.
+Pressure is placed in a common gauge by subtracting its volume-weighted
+spatial mean from every snapshot before projection, reconstruction and
+evaluation:
+\begin{equation}
+  p^\circ(\boldsymbol{x},t)
+  =
+  p(\boldsymbol{x},t)
+  -
+  \frac{\int_\Omega p(\boldsymbol{x},t)\,\mathrm{d}\Omega}
+       {\int_\Omega \mathrm{d}\Omega}.
+  \label{eq:centered_square_pressure_gauge}
+\end{equation}
+
+\begin{table*}[!htbp]
+  \centering
+  \caption{Centered-square data and local POD contracts.  Training,
+  validation and held-out sets are isolated by complete Reynolds-number
+  trajectory.}
+  \label{tab:centered_square_data_contracts}
+  \begin{threeparttable}
+  \begin{tabular}{lcccccc}
+    \toprule
+    Specialist & Parameter domain & Train & Validation & Held-out
+    & $r_u$ & $r_p$ \\
+    \midrule
+    Steady   & $50\le Re\le95.40$  & 60 & 5 & 4 & 5  & 4  \\
+    Hopf     & $94\le Re\le102$    & 23 & 6 & 5 & 11 & 11 \\
+    Periodic & $98.5\le Re\le150$  & 27 & 6 & 4 & 28 & 26 \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}\footnotesize
+    \item Steady validation:
+    $Re=\{55,75,90,94.5,95.25\}$; held-out:
+    $\{60,85,95.1,95.3\}$.
+    \item Hopf validation:
+    $Re=\{94.5,95.25,95.5,97.5,99,101.5\}$; held-out:
+    $\{95.1,95.3,96.5,100.5,102\}$.
+    \item Periodic validation:
+    $Re=\{99,101.5,110.344828,125.862069,141.379310,150\}$;
+    held-out:
+    $\{100.5,102,120.689651,144.827591\}$.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table*}
+
+All three specialists query the native database at intervals of four physical
+time units, but their state-update mechanisms remain local.  The Steady
+specialist uses a learned correction in a one-snapshot discrete update, the
+Hopf specialist learns snapshot-to-snapshot finite-difference dynamics, and
+the Periodic specialist advances its continuous-time model with RK4 using a
+maximum internal step of $0.5$ within each database interval.  The native
+horizons $K16$, $K24$ and $K48$ therefore span 64, 96 and 192 physical time
+units, respectively.  Equal values of $K$ are compared only when the
+specialists are run from the same native-source history and evaluated at the
+same physical query times.
+
+Checkpoint selection was fixed before held-out field access.  The Steady,
+Hopf and Periodic specialists use step~3200, step~7200 and epoch~490,
+respectively.  The Re-only E2 router uses step~3300, while the $S$--$H$ and
+$H$--$P$ T2-C gates use steps~5500 and 3500.  The split definitions,
+pressure gauge, admissible expert pairs, checkpoint-selection rules, error
+metrics and final ranking rules were frozen before the sealed evaluation.
+No model was retrained or tuned after the held-out fields were loaded.
+
+Prediction quality is evaluated in both physical and reduced coordinates.
+The velocity and pressure full-field errors are
+\begin{align}
+  E_u &=
+  \frac{\lVert\widehat{\boldsymbol{u}}-\boldsymbol{u}\rVert_{M_u}}
+       {\lVert\boldsymbol{u}\rVert_{M_u}+\varepsilon}\times100\%,
+  \label{eq:centered_square_eu}\\
+  E_p &=
+  \frac{\lVert\widehat{p}^{\,\circ}-p^\circ\rVert_{M_p}}
+       {\lVert p^\circ\rVert_{M_p}+\varepsilon}\times100\%,
+  \label{eq:centered_square_ep}
+\end{align}
+and the errors in the local mean-subtracted POD coefficients are
+\begin{equation}
+  E_a=
+  \frac{\lVert\widehat{\boldsymbol{a}}-\boldsymbol{a}\rVert_2}
+       {\lVert\boldsymbol{a}\rVert_2+\varepsilon}\times100\%,
+  \qquad
+  E_b=
+  \frac{\lVert\widehat{\boldsymbol{b}}-\boldsymbol{b}\rVert_2}
+       {\lVert\boldsymbol{b}\rVert_2+\varepsilon}\times100\%.
+  \label{eq:centered_square_modal_errors}
+\end{equation}
+The coefficient errors diagnose fluctuation prediction within one local POD
+contract; they are not compared directly across specialists with different
+means, bases and ranks.  The outer evaluator additionally reports
+\begin{equation}
+  E_{\mathrm{joint}}=E_u+E_p,
+  \label{eq:centered_square_joint}
+\end{equation}
+but retains $E_u$ and $E_p$ separately so that a pressure-dominated joint
+metric cannot conceal the velocity behaviour.  A non-finite rollout, a
+registered divergence or a checkpoint/evaluator contract violation is
+treated as a fail-closed result: the unsupported test value is not repaired
+or replaced by post-test selection.
+
+The native-horizon results in
+Table~\ref{tab:centered_square_specialist_aggregate} first establish the
+capability and error structure of the three frozen specialists.  Every
+reported held-out window remained finite and no divergent window was
+observed.  These rows nevertheless use different local horizons and POD
+representations and should not be read as an unrestricted ranking across
+regimes.
+
+\begin{table*}[!htbp]
+  \centering
+  \caption{Native held-out long-horizon results for the three local
+  specialists.  All errors are percentages.}
+  \label{tab:centered_square_specialist_aggregate}
+  \begin{threeparttable}
+  \begin{tabular}{lrrrrrrrr}
+    \toprule
+    Specialist & $K$ & Physical time & $E_u$ & $E_p$ & $E_a$ & $E_b$
+    & Finite & Divergent \\
+    \midrule
+    Steady   & 16 & 64  & 1.5311 & 1.4583 & 49.7494 & 9.8928 & 100\% & 0 \\
+    Hopf     & 48 & 192 & 0.4387 & 0.4844 & 17.7588 & 57.0333 & 100\% & 0 \\
+    Periodic & 24 & 96  & 0.9395 & 1.0921 & 5.7603  & 5.7639 & 100\% & 0 \\
+    \bottomrule
+  \end{tabular}
+  \begin{tablenotes}\footnotesize
+    \item The Steady full-field errors are measured directly against the
+    original CFD snapshots and therefore include POD truncation.  The Hopf
+    and Periodic values retain the definitions of their frozen native
+    evaluators.
+  \end{tablenotes}
+  \end{threeparttable}
+\end{table*}
+
+The Steady specialist completed every held-out $K16$ rollout with finite
+fraction one.  Its velocity and pressure errors remained below $1.78\%$ at
+all four Reynolds numbers in
+Table~\ref{tab:centered_square_specialist_per_re}.  The pressure error was
+smallest at $Re=85$, whereas the two cases in the $S$--$H$ overlap,
+$Re=95.1$ and 95.3, produced velocity and pressure errors of approximately
+$1.7\%$.  The corresponding velocity-coefficient errors were much larger,
+ranging from $43.3977\%$ to $56.9322\%$.  This discrepancy indicates that a
+mean-containing full field can remain accurate while the lower-energy
+fluctuation coordinates are less accurately advanced.  The checkpoint
+provides a reproducible finite clean-rollout baseline, but it did not satisfy
+all of its preregistered validation deployment conditions and is therefore
+not presented as an unconditionally qualified deployment model.
+
+The Hopf specialist was tested over the longer $K48$ horizon.  All 320
+held-out windows were finite and none diverged, and the velocity and pressure
+field errors stayed below $1\%$ at every test Reynolds number.  The smallest
+field errors occurred at $Re=95.3$; the most difficult case was $Re=102$,
+with velocity and pressure errors of $0.9669\%$ and $0.8777\%$,
+respectively.  Small full-field errors did not imply equally small local
+coefficient errors.  In particular, the pressure-coefficient error ranged
+from $21.9995\%$ to $91.0229\%$.  The result supports stable and accurate
+field reconstruction over the tested horizon while also exposing a
+mean-field-dominated error mode that would be hidden by reporting physical
+fields alone.
+
+The Periodic specialist completed all held-out $K24$ rollouts without a
+non-finite value.  At $Re=100.5$, 102 and 120.689651, the velocity error was
+at most $0.6780\%$.  The highest test value, $Re=144.827591$, was the clear
+worst case, with velocity and pressure errors of $1.4672\%$ and $1.8023\%$.
+Relative to its earlier 240-epoch checkpoint, the long-curriculum model
+reduced the $K24$ velocity and pressure errors by $92.79\%$ and $92.95\%$,
+respectively.  This comparison attributes the improvement to adequate
+multi-step curriculum training rather than to a test-time model choice.
+
+\begin{table*}[!htbp]
+  \centering
+  \caption{Per-parameter native long-horizon results for the local
+  specialists.  All errors are percentages.}
+  \label{tab:centered_square_specialist_per_re}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llrrrrrrrrr}
+    \toprule
+    Specialist & $Re$ & $K$ & Physical time & $E_u$ & $E_p$ & $E_a$ & $E_b$
+    & Finite & Divergent & Windows \\
+    \midrule
+    Steady & 60    & 16 & 64 & 1.4510 & 1.4876 & 43.3977 & 9.5123  & 1.0 & 0 & 108 \\
+    Steady & 85    & 16 & 64 & 1.0176 & 0.5641 & 56.9322 & 6.8050  & 1.0 & 0 & 108 \\
+    Steady & 95.1  & 16 & 64 & 1.7555 & 1.7285 & 51.6747 & 10.4642 & 1.0 & 0 & 108 \\
+    Steady & 95.3  & 16 & 64 & 1.7743 & 1.7637 & 51.5108 & 10.5486 & 1.0 & 0 & 108 \\
+    \midrule
+    Hopf & 95.1  & 48 & 192 & 0.1446 & 0.3452 & 22.3082 & 71.4581 & 1.0 & 0 & 64 \\
+    Hopf & 95.3  & 48 & 192 & 0.0912 & 0.2282 & 20.1887 & 75.6332 & 1.0 & 0 & 64 \\
+    Hopf & 96.5  & 48 & 192 & 0.2586 & 0.2962 & 20.3002 & 91.0229 & 1.0 & 0 & 64 \\
+    Hopf & 100.5 & 48 & 192 & 0.7324 & 0.6749 & 12.7346 & 25.0529 & 1.0 & 0 & 64 \\
+    Hopf & 102   & 48 & 192 & 0.9669 & 0.8777 & 13.2623 & 21.9995 & 1.0 & 0 & 64 \\
+    \midrule
+    Periodic & 100.5      & 24 & 96 & 0.6479 & 0.5756 & 6.3652 & 5.5314 & 1.0 & 0 & 4 \\
+    Periodic & 102        & 24 & 96 & 0.6780 & 0.6127 & 5.6370 & 4.7920 & 1.0 & 0 & 4 \\
+    Periodic & 120.689651 & 24 & 96 & 0.6698 & 0.9762 & 3.8556 & 5.4963 & 1.0 & 0 & 4 \\
+    Periodic & 144.827591 & 24 & 96 & 1.4672 & 1.8023 & 7.1834 & 7.2360 & 1.0 & 0 & 4 \\
+    \bottomrule
+  \end{tabular}}
+\end{table*}
+
+The outer hierarchy is evaluated only under a common native-source contract.
+The frozen E2 model first gives a trajectory/query-level Top-1 decision from
+$Re$.  A T2-C gate is enabled only when both adjacent specialists have passed
+the same native-source preflight.  For each window, the gate reads $Re$ and
+descriptors of the initial three-frame history and produces one convex weight,
+\begin{equation}
+  \widehat{\boldsymbol{q}}_{\mathrm{T2C}}
+  =
+  \alpha_1\widehat{\boldsymbol{q}}_1
+  +(1-\alpha_1)\widehat{\boldsymbol{q}}_2,
+  \qquad 0\le\alpha_1\le1 .
+  \label{eq:centered_square_t2c}
+\end{equation}
+The weight is fixed throughout the $K24$ window.  Both specialists advance
+independently from the same three-frame physical history, the combination is
+formed only on their aligned physical outputs, and no fused state is fed back
+to either rollout.  The $S$--$H$ and $H$--$P$ development preflights contained
+72 and 48 windows, respectively; both candidates were finite on every window
+and neither pair produced a divergence.  The selected validation joint means
+were $1.0639\%$ for $S$--$H$ and $0.7906\%$ for $H$--$P$.
+
+Table~\ref{tab:centered_square_fusion_aggregate} compares the two individual
+candidates, E2 Top-1, two fixed router-derived blends, T2-C and the
+per-window convex oracle under the sealed held-out $K24$ evaluator.  Every
+method in one boundary block uses the same initial histories, query times,
+grid, area weights and pressure gauge.  These values can therefore be
+compared directly.
+
+At the $S$--$H$ boundary, E2 Top-1 selected the Hopf candidate and obtained a
+joint error of $1.7298\%$.  T2-C reduced this value to $1.1958\%$, a relative
+decrease of $30.87\%$, and reduced the worst-window joint error from
+$9.1233\%$ to $4.8304\%$.  At the $H$--$P$ boundary, Periodic was the best
+single candidate with a joint error of $1.2079\%$, whereas the hard E2
+decisions produced $1.8473\%$ after aggregation over the two test parameters.
+T2-C reduced the joint error to $0.8465\%$, corresponding to decreases of
+$29.92\%$ relative to the best single candidate and $54.18\%$ relative to E2
+Top-1.  Its worst-window joint error was $1.1205\%$.  In both overlaps, the
+T2-C mean lay close to the per-window convex oracle, indicating that the
+lightweight gate recovered most of the output-level complementarity available
+under the frozen candidate pair.
+
+\begin{table*}[!htbp]
+  \centering
+  \caption{Fusion and non-fusion results under the common held-out $K24$
+  contract.  Errors are percentages.  Candidates 1/2 are Steady/Hopf for
+  $S$--$H$ and Periodic/Hopf for $H$--$P$.}
+  \label{tab:centered_square_fusion_aggregate}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{llrrrrrr}
+    \toprule
+    Boundary & Method & $E_u$ & $E_p$ & $E_{\mathrm{joint}}$
+    & Worst joint & Finite & Divergent \\
+    \midrule
+    $S$--$H$ & Candidate 1 only         & 2.5976 & 2.2450 & 4.8426 & 4.9827  & 1.0 & 0 \\
+    $S$--$H$ & Candidate 2 only         & 0.4942 & 1.2356 & 1.7298 & 9.1233  & 1.0 & 0 \\
+    $S$--$H$ & E2 Top-1                 & 0.4942 & 1.2356 & 1.7298 & 9.1233  & 1.0 & 0 \\
+    $S$--$H$ & Fixed $0.5/0.5$          & 1.3644 & 1.6677 & 3.0321 & --      & 1.0 & 0 \\
+    $S$--$H$ & E2 probability blend     & 0.7898 & 1.3949 & 2.1847 & --      & 1.0 & 0 \\
+    $S$--$H$ & \textbf{T2-C}            & \textbf{0.4615} & \textbf{0.7343}
+      & \textbf{1.1958} & \textbf{4.8304} & \textbf{1.0} & \textbf{0} \\
+    $S$--$H$ & Per-window convex oracle & 0.4659 & 0.7183 & 1.1842 & 4.7343  & 1.0 & 0 \\
+    \midrule
+    $H$--$P$ & Candidate 1 only         & 0.6420 & 0.5659 & 1.2079 & 2.6373  & 1.0 & 0 \\
+    $H$--$P$ & Candidate 2 only         & 1.0034 & 1.8684 & 2.8718 & 13.2363 & 1.0 & 0 \\
+    $H$--$P$ & E2 Top-1                 & 0.7422 & 1.1052 & 1.8473 & 12.8776 & 1.0 & 0 \\
+    $H$--$P$ & Fixed $0.5/0.5$          & 0.6077 & 1.0069 & 1.6146 & --      & 1.0 & 0 \\
+    $H$--$P$ & E2 probability blend     & 0.6154 & 1.0464 & 1.6618 & --      & 1.0 & 0 \\
+    $H$--$P$ & \textbf{T2-C}            & \textbf{0.4509} & \textbf{0.3956}
+      & \textbf{0.8465} & \textbf{1.1205} & \textbf{1.0} & \textbf{0} \\
+    $H$--$P$ & Per-window convex oracle & 0.4479 & 0.3905 & 0.8384 & 1.1744  & 1.0 & 0 \\
+    \bottomrule
+  \end{tabular}}
+\end{table*}
+
+The per-parameter results in
+Table~\ref{tab:centered_square_fusion_per_re} clarify where the aggregate
+improvements arose.  At both $S$--$H$ test values, the mean Steady weight was
+approximately $0.097$, so the combined prediction remained Hopf-dominated.
+The window-wise Steady weight nevertheless ranged from nearly zero to about
+$0.77$.  T2-C reduced the joint error by $31.00\%$ at $Re=95.1$ and by
+$30.74\%$ at $Re=95.3$.  The $S$--$H$ improvement was therefore present at
+both held-out parameters rather than being produced by one favourable case.
+
+The $H$--$P$ gate made a stronger correction to the hard router.  At
+$Re=100.5$, E2 selected Hopf, whereas T2-C assigned a mean weight of $0.587$
+to Periodic and reduced the joint error from $2.6485\%$ to $0.8571\%$, a
+$67.64\%$ decrease.  At $Re=102$, E2 selected Periodic, while T2-C retained a
+mean Hopf contribution of $0.291$ and reduced the joint error by a further
+$20.09\%$.  The $H$--$P$ result consequently did not arise from mechanical
+collapse to one candidate.  The weights varied with the parameter and the
+initial history, and the combination improved both test parameters without
+introducing a non-finite or divergent window.
+
+\begin{table*}[!htbp]
+  \centering
+  \caption{Per-parameter $K24$ fusion diagnostics.  For $S$--$H$,
+  $\alpha_1=\alpha_S$; for $H$--$P$, $\alpha_1=\alpha_P$; and
+  $\alpha_2=1-\alpha_1$.  Errors are percentages.}
+  \label{tab:centered_square_fusion_per_re}
+  \resizebox{\textwidth}{!}{%
+  \begin{tabular}{lrlrrrrrrrr}
+    \toprule
+    Boundary & $Re$ & Top-1 expert
+    & $\overline{\alpha}_1$ & $\overline{\alpha}_2$
+    & Top-1 $E_u$ & Top-1 $E_p$
+    & T2-C $E_u$ & T2-C $E_p$
+    & Joint improvement & Finite \\
+    \midrule
+    $S$--$H$ & 95.1  & Hopf     & 0.0967 & 0.9033 & 0.4897 & 1.2243 & 0.4559 & 0.7268 & 31.00\% & 1.0 \\
+    $S$--$H$ & 95.3  & Hopf     & 0.0971 & 0.9029 & 0.4987 & 1.2469 & 0.4671 & 0.7419 & 30.74\% & 1.0 \\
+    $H$--$P$ & 100.5 & Hopf     & 0.5870 & 0.4130 & 0.9175 & 1.7310 & 0.4563 & 0.4008 & 67.64\% & 1.0 \\
+    $H$--$P$ & 102   & Periodic & 0.7094 & 0.2906 & 0.5668 & 0.4794 & 0.4455 & 0.3905 & 20.09\% & 1.0 \\
+    \bottomrule
+  \end{tabular}}
+\end{table*}
+
+The flow-field panels provide spatial context for these tabulated errors.
+Within each panel, all methods share the colour scale determined from the
+truth; pressure uses the same volume-weighted gauge as the evaluator, and the
+error maps show pointwise absolute differences.  The available panels were
+selected by a frozen candidate scan as best-case qualitative snapshots.
+They are therefore used to localize error, not as representative,
+time-averaged or worst-case evidence.  The quantitative conclusions remain
+those of Tables~\ref{tab:centered_square_fusion_aggregate} and
+\ref{tab:centered_square_fusion_per_re}.
+
+\begin{figure*}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth]
+  {paper_boundary_figures_20260730_V1/SH/CenteredSquare_SH_boundary_T2C_physical_fields_ultra_compact_wide.png}
+  \caption{Velocity magnitude and pressure fields at the $S$--$H$ boundary.
+  The selected held-out snapshot is $Re=95.1$, window~0, at physical time
+  $t=16$.  All predictions use the same query time and truth-determined colour
+  scale.  T2-C retains the main recirculation structure while reducing local
+  discrepancies in the pressure-recovery region.  The panel is qualitative;
+  aggregate evidence is reported in
+  Table~\ref{tab:centered_square_fusion_aggregate}.}
+  \label{fig:centered_square_sh_fields}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth]
+  {paper_boundary_figures_20260730_V1/SH/CenteredSquare_SH_boundary_T2C_pointwise_errors_ultra_compact_wide.png}
+  \caption{Pointwise absolute errors corresponding to
+  Fig.~\ref{fig:centered_square_sh_fields}.  The largest discrepancies are
+  concentrated near the square-cylinder corners, the near-wake shear layers
+  and the pressure-recovery region.  T2-C reduces these localized errors,
+  consistently with the lower pressure error in the sealed evaluation.}
+  \label{fig:centered_square_sh_errors}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth]
+  {paper_boundary_figures_20260730_V1/HP/CenteredSquare_HP_boundary_T2C_physical_fields_ultra_compact_wide.png}
+  \caption{Velocity magnitude and pressure fields at the $H$--$P$ boundary.
+  The selected held-out snapshot is the terminal $K24$ frame of
+  $Re=100.5$, window~5, at physical time $t=384$.  The combined prediction
+  preserves the large-scale field while correcting local differences between
+  the Periodic and Hopf candidates.  The panel is used only for spatial
+  interpretation.}
+  \label{fig:centered_square_hp_fields}
+\end{figure*}
+
+\begin{figure*}[!htbp]
+  \centering
+  \includegraphics[width=\textwidth]
+  {paper_boundary_figures_20260730_V1/HP/CenteredSquare_HP_boundary_T2C_pointwise_errors_ultra_compact_wide.png}
+  \caption{Pointwise absolute errors corresponding to
+  Fig.~\ref{fig:centered_square_hp_fields}.  The single-specialist errors are
+  concentrated around the upper and lower obstacle corners and in the
+  high-gradient near wake.  T2-C reduces these local peaks, while the
+  worst-window statistics remain those of
+  Table~\ref{tab:centered_square_fusion_aggregate}.}
+  \label{fig:centered_square_hp_errors}
+\end{figure*}
+
+The results support several deliberately limited conclusions.  First, all
+three specialists produced finite, non-divergent held-out rollouts under
+their own native contracts, but low full-field errors did not guarantee low
+fluctuation-coordinate errors.  This distinction was most visible in the
+Steady velocity coefficients and the Hopf pressure coefficients.  Second,
+the outer improvement came from output-level complementarity between
+independently advanced adjacent specialists; it did not require a common
+latent state or feed a blended state back into either local model.  Third,
+T2-C improved E2 Top-1 at all four held-out boundary parameters and reduced
+the aggregate worst-window error without sacrificing finite execution.
+
+The frozen assets do not contain Vanilla-FNN-MoE, DataOnly-MoE and Global MoE
+results under the same CenteredSquare split, pressure gauge, native horizon
+and sealed evaluator.  Numbers from a different contract are not inserted to
+create an apparent ablation table.  The local attribution in this example is
+therefore restricted to the three frozen specialist reports and to the
+Periodic long-curriculum comparison with its own 240-epoch predecessor.  The
+outer attribution is restricted to the matched candidates, E2 Top-1, fixed
+and probability blends, T2-C and the oracle listed in
+Table~\ref{tab:centered_square_fusion_aggregate}.
+
+Soft combination requires both candidate rollouts and therefore costs
+approximately two native specialist advances plus a negligible gate
+evaluation, whereas E2 Top-1 advances only one specialist.  The reported
+single-GPU training times were 3.351~h for the Hopf specialist and 12.83~h
+for the Periodic specialist; the Steady report did not provide a comparable
+wall-clock value.  Once the frozen dual-rollout caches had been constructed,
+optimization of E2, the $S$--$H$ gate and the $H$--$P$ gate took approximately
+14.6, 17.7 and 18.5~s, respectively.  These values indicate scale only:
+the specialist budgets, batches and time-advance implementations were not
+matched for an efficiency ranking.
+
+Taken together, the centered-square results support independent local
+representations and native dynamical contracts for the three overlapping
+flow regimes.  The Steady checkpoint supplied a finite clean-rollout baseline
+but retained large velocity-coefficient errors and did not satisfy every
+frozen deployment condition.  The Hopf specialist maintained sub-$1\%$
+velocity and pressure field errors over $K48$, while its pressure-coordinate
+errors showed why reduced and physical metrics must be reported together.
+The Periodic specialist benefited substantially from the longer curriculum,
+although its highest Reynolds number remained the local worst case.  At the
+outer level, T2-C reduced the $S$--$H$ and $H$--$P$ joint field errors by
+$30.87\%$ and $29.92\%$ relative to the best single candidates, and by
+$30.87\%$ and $54.18\%$ relative to E2 Top-1.  The improvement covered all
+four held-out boundary parameters, the weights varied with both parameter
+and initial history, and every evaluated window remained finite and
+non-divergent.  The evidence therefore supports a contract-aware local
+combination at the two certified overlaps; it does not establish a
+representation-matched ranking against unavailable global or architecture
+ablations, nor does it justify feeding the fused output back as a universal
+reduced state.

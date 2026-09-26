@@ -1,0 +1,14 @@
+\section{Reproducibility and implementation details}
+\label{app:implementation}
+
+\paragraph{Evaluation protocol.}
+All headline results use trajectories held out by Reynolds number. Each local specialist is fitted only on its stated training split, model selection uses the validation split, and the test split is retained for the reported autonomous rollouts. The reduced model is initialized from the same available physical history used by the original experiments and is then advanced recursively with fourth-order Runge--Kutta integration. No reference state from inside a prediction window is injected after initialization.
+
+\paragraph{Local dimensions.}
+For the circular cylinder, all three charts use $r_u=r_p=32$. For the centered square, $(r_u,r_p)$ equals $(5,4)$, $(11,11)$, and $(28,26)$ for the steady, Hopf, and periodic charts. For fluidic pinball the corresponding dimensions are $(4,3)$, $(5,5)$, and $(17,16)$. The full-order datasets contain 120 centered-square trajectories over $Re\in[50,150]$ and 131 fluidic-pinball trajectories over $Re\in[10,60]$; the centered-square finite-volume mesh contains 9,400 cells and uses snapshot spacing $\Delta t=4$.
+
+\paragraph{Model selection and reporting.}
+The outer regime graph permits only adjacent $S$--$H$ and $H$--$P$ pairs. Hyperparameters, rollout windows, and routing choices are selected on validation data. Reported percentages are copied from the original experiment tables without recomputation. For anonymity, repository locations, author names, institutions, and machine-specific paths are excluded from the submission artifact.
+
+\paragraph{Artifact checklist.}
+The final anonymous supplement should contain preprocessing code, train/validation/test parameter lists, local means and basis construction, projected operators, trained configurations, random seeds, rollout evaluation, and table-generation scripts. The present conversion directory preserves an untouched PDF and source snapshot for author-side verification, but those identity-bearing files must not be uploaded with the anonymous submission.

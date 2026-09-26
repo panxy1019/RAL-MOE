@@ -1,0 +1,33 @@
+{
+  "threshold": {
+    "H": {
+      "Eu": 0.0012601983753636851,
+      "Ep": 0.02418862613320301,
+      "reference_model": "structured",
+      "source_sha256": "429249ea5030b9ee7e20498e2470d17c85acc2f090f3742c70abb5faa12ef40b"
+    }
+  },
+  "frames_per_validation_trajectory": 17,
+  "seed": null,
+  "grids": [
+    [
+      192,
+      128
+    ],
+    [
+      384,
+      256
+    ],
+    [
+      768,
+      512
+    ],
+    [
+      1536,
+      1024
+    ]
+  ],
+  "geometry": "Delaunay barycentric FV->grid; masked bilinear grid->FV; nearest geometric fallback only when no valid stencil. Cylinder radius0.5 centered0,0; 2D duplicate coordinates averaged.",
+  "rule": "Every validation Re mean Eu and Ep must pass; no test frames used; largest registered grid is cap, not proof no other method can pass",
+  "training": "No training or new test evaluation until geometry gate passes. Memory smoke and visual QA additionally required for passing grid."
+}

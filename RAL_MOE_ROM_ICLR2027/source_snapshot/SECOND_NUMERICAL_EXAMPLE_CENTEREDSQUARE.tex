@@ -1,0 +1,456 @@
+% Second numerical example: flow past a centered square cylinder.
+% Recommended packages in the main manuscript:
+% \usepackage{amsmath,amssymb,booktabs,graphicx,threeparttable}
+% In a single-column manuscript, table* and figure* may be replaced by
+% table and figure, respectively.
+
+\subsection{Flow past a centered square cylinder}
+\label{subsec:flow_past_centered_square_cylinder}
+
+The flow past a centered square cylinder is used to assess RAL-MoE-ROM for a
+different geometry and spatial discretization. The numerical study examines
+the long-horizon accuracy of the regime-local specialists and the T2-C fusion
+in both the $S$--$H$ and $H$--$P$ overlap regions.
+
+The high-fidelity model solves the two-dimensional incompressible
+Navier--Stokes equations in the channel domain
+$\Omega=[0,31D]\times[0,4D]$. A square cylinder of side length $D=1$
+occupies $[5D,6D]\times[1.5D,2.5D]$, corresponding to a blockage ratio of
+$0.25$. The inlet velocity profile is
+\begin{equation}
+u_x(y)
+=
+4U_m\frac{y(4D-y)}{(4D)^2},
+\qquad
+u_y=0,
+\qquad
+U_m=1,
+\label{eq:centered_square_inlet}
+\end{equation}
+with zero-normal-gradient velocity at the outlet and no-slip conditions on
+the channel walls and square cylinder. Pressure is fixed at the outlet and
+satisfies zero-normal-gradient conditions on the remaining boundaries. The
+Reynolds number is
+\[
+Re=\frac{U_mD}{\nu}.
+\]
+
+
+The full-order simulations are performed with OpenFOAM~13 using
+\texttt{icoFoam} and Crank--Nicolson time integration. The graded
+finite-volume mesh contains 9,400 cells, with refinement around the obstacle
+and in the near wake. The CFD time step is
+$\delta t_{\mathrm{CFD}}=0.02$, and snapshots are stored every 200 CFD
+steps, giving
+\begin{equation}
+\Delta t_{\mathrm{snap}}=4.
+\label{eq:centered_square_snapshot_dt}
+\end{equation}
+The parameterized dataset contains 120 Reynolds-number trajectories over
+$50\le Re\le150$, with additional sampling in the transition region.
+
+
+Table~\ref{tab:centered_square_data_contracts} summarizes the three
+overlapping regime-local datasets, their complete-trajectory partitions,
+local POD dimensions, and rollout horizons. All regime-local means, POD
+bases, and normalization statistics are constructed exclusively from the
+corresponding training trajectories. The velocity and pressure reduced
+dimensions are selected to retain $99.9\%$ of the cumulative POD energy.
+All three specialists follow the common formulation introduced in
+Section~3.
+
+\begin{table*}[htbp]
+\centering
+\caption{Data partitions, local POD dimensions, and rollout horizons for flow past a centered square cylinder.}
+\label{tab:centered_square_data_contracts}
+
+\scriptsize
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+Regime
+& Reynolds-number range
+& Train/validation/test
+& $r_u$
+& $r_p$
+& Rollout horizon
+& Physical-time horizon \\
+\midrule
+
+Steady
+& $50\le Re\le95.40$
+& $60/5/4$
+& 5
+& 4
+& $K=16$
+& 64 \\
+
+Hopf
+& $94\le Re\le102$
+& $23/6/5$
+& 11
+& 11
+& $K=48$
+& 192 \\
+
+Periodic
+& $98.5\le Re\le150$
+& $27/6/4$
+& 28
+& 26
+& $K=24$
+& 96 \\
+
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table*}
+
+All model and fusion parameters used in the following held-out evaluations
+are selected using training and validation data only and are fixed before
+access to the corresponding test trajectories. Since
+$\Delta t_{\mathrm{snap}}=4$ for all three datasets, the $K=16$, $K=48$,
+and $K=24$ rollouts span 64, 192, and 96 physical time units,
+respectively.
+
+Table~\ref{tab:centered_square_specialist_aggregate} reports the
+held-out long-horizon physical-field errors of the three proposed
+regime-local specialists. These values are evaluated under their respective
+POD representations and rollout horizons and are therefore used to assess
+the performance of each specialist within its own regime rather than to form
+a direct ranking across regimes.
+
+\begin{table}[htbp]
+\centering
+\caption{Held-out long-horizon prediction errors of the regime-local
+specialists for the centered-square-cylinder case.}
+\vspace{0.3 cm}
+\label{tab:centered_square_specialist_aggregate}
+
+\small
+\renewcommand{\arraystretch}{1.15}
+\setlength{\tabcolsep}{12pt}
+
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Regime
+& Rollout horizon
+& $E_u$ (\%)
+& $E_p$ (\%) \\
+\midrule
+Steady
+& $K=16$
+& 1.5311
+& 1.4583 \\
+
+Hopf
+& $K=48$
+& 0.4387
+& 0.4844 \\
+
+Periodic
+& $K=24$
+& 0.9395
+& 1.0921 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The three specialists maintain low physical-field errors over their
+respective held-out long-horizon evaluations. The Steady specialist yields
+velocity and pressure errors of $1.5311\%$ and $1.4583\%$ over $K=16$,
+whereas the Hopf specialist achieves $0.4387\%$ and $0.4844\%$ over the
+substantially longer $K=48$ horizon. For the Periodic specialist, the
+corresponding $K=24$ errors are $0.9395\%$ and $1.0921\%$. These results
+show that the regime-local construction remains accurate under the
+square-cylinder geometry despite the markedly different POD dimensions and
+dynamical regimes.
+
+
+Having established the predictive accuracy of the three regime-local
+specialists, we next examine the hierarchical coupling in the two parameter
+regions where adjacent local models overlap. Both the $S$--$H$ and $H$--$P$
+comparisons are performed over a common $K=24$ prediction horizon. To assess the contribution of the T2-C correction, the two overlap regions
+are evaluated against three non-learned routing or fusion strategies and an
+a posteriori convex reference, in addition to the individual regime-local
+specialists. For an admissible adjacent pair, E2 Top-1 selects the specialist
+with the larger pairwise E2 probability and uses its reconstructed field
+without fusion. The equal-weight blend combines the two reconstructed fields
+with fixed weights $1/2$ and $1/2$, whereas the E2-probability blend uses
+the renormalized pair probabilities $\bar{\pi}_1$ and $\bar{\pi}_2$ from
+Eq.~\eqref{eq:t2c_pair_logit} directly as the convex weights. T2-C employs
+the learned window-conditioned correction defined in
+Eq.~\eqref{eq:t2c_convex_gate}. A window-wise convex oracle is additionally
+reported as an a posteriori reference by selecting, for each evaluation
+window, the convex weight that minimizes the prescribed field-error
+functional over $\alpha\in[0,1]$. Since the oracle uses the reference
+solution, it is used only to quantify the attainable accuracy of convex
+output combination and is not available during prediction.
+
+\begin{table*}[htbp]
+\centering
+\caption{Prediction errors for the routing and fusion.xi}
+\label{tab:centered_square_fusion_aggregate}
+
+\small
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{8pt}
+
+\begin{tabular}{@{}llccc@{}}
+\toprule
+Overlap
+& Model
+& $E_u$ (\%)
+& $E_p$ (\%)
+& $E_{\mathrm{joint}}$ (\%) \\
+\midrule
+
+$S$--$H$
+& Steady specialist
+& 2.5976
+& 2.2450
+& 4.8426 \\
+
+& Hopf specialist
+& 0.4942
+& 1.2356
+& 1.7298 \\
+
+& E2 Top-1
+& 0.4942
+& 1.2356
+& 1.7298 \\
+
+& Equal-weight blend
+& 1.3644
+& 1.6677
+& 3.0321 \\
+
+& E2-probability blend
+& 0.7898
+& 1.3949
+& 2.1847 \\
+
+& T2-C
+& 0.4615
+& 0.7343
+& 1.1958 \\
+
+& Window-wise convex oracle
+& 0.4659
+& 0.7183
+& 1.1842 \\
+
+\midrule
+
+$H$--$P$
+& Periodic specialist
+& 0.6420
+& 0.5659
+& 1.2079 \\
+
+& Hopf specialist
+& 1.0034
+& 1.8684
+& 2.8718 \\
+
+& E2 Top-1
+& 0.7422
+& 1.1052
+& 1.8473 \\
+
+& Equal-weight blend
+& 0.6077
+& 1.0069
+& 1.6146 \\
+
+& E2-probability blend
+& 0.6154
+& 1.0464
+& 1.6618 \\
+
+& T2-C
+& 0.4509
+& 0.3956
+& 0.8465 \\
+
+& Window-wise convex oracle
+& 0.4479
+& 0.3905
+& 0.8384 \\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The two overlap regions exhibit distinct patterns of predictive
+complementarity between adjacent regime-local specialists. In the
+$S$--$H$ overlap, E2 selects the Hopf specialist for both held-out
+Reynolds-number trajectories, so that the aggregate E2 Top-1 errors coincide
+with those of the Hopf specialist. The corresponding joint error is
+$1.7298\%$. Neither the equal-weight blend nor the direct use of the
+renormalized E2 probabilities as convex weights improves upon this result;
+their joint errors increase to $3.0321\%$ and $2.1847\%$, respectively.
+T2-C instead reduces $E_u$ from $0.4942\%$ to $0.4615\%$ and $E_p$ from
+$1.2356\%$ to $0.7343\%$, yielding
+$E_{\mathrm{joint}}=1.1958\%$. This corresponds to a $30.87\%$ reduction
+relative to E2 Top-1 and is close to the window-wise convex oracle value of
+$1.1842\%$. The improvement therefore arises from the window-conditioned
+correction of the pairwise E2 weighting rather than from convex averaging
+alone.
+
+The routing behaviour is different in the $H$--$P$ overlap, where E2 selects
+different specialists across the held-out Reynolds-number trajectories.
+Consequently, the aggregate E2 Top-1 errors do not coincide with those of
+either fixed individual specialist. Among the two single-specialist
+predictions, the Periodic specialist gives the lower aggregate joint error,
+$E_{\mathrm{joint}}=1.2079\%$, whereas E2 Top-1 yields
+$E_{\mathrm{joint}}=1.8473\%$. The equal-weight and E2-probability blends
+improve upon the hard-routing result, but remain less accurate than the
+Periodic specialist alone. T2-C further reduces the velocity and pressure
+errors to $0.4509\%$ and $0.3956\%$, respectively, giving
+$E_{\mathrm{joint}}=0.8465\%$. This corresponds to reductions of $29.92\%$
+relative to the best single-specialist baseline and $54.18\%$ relative to
+E2 Top-1. The result is again close to the window-wise convex oracle
+($0.8384\%$), indicating that the learned correction recovers most of the
+attainable improvement within the considered class of output-level convex
+combinations.
+
+To examine whether these aggregate improvements are also observed across
+the individual held-out Reynolds-number trajectories,
+Table~\ref{tab:centered_square_fusion_parameter} reports the trajectory-level
+E2 selections, the mean T2-C weights, and the corresponding joint errors.
+The reported weight is $\bar{\alpha}_S$ for the $S$--$H$ overlap and
+$\bar{\alpha}_P$ for the $H$--$P$ overlap.
+
+\begin{table*}[htbp]
+\centering
+\caption{Parameter-wise routing and T2-C fusion results at $K=24$.
+$\bar{\alpha}$ denotes the mean Steady weight in the $S$--$H$ overlap and
+the mean Periodic weight in the $H$--$P$ overlap.}
+\label{tab:centered_square_fusion_parameter}
+
+\small
+\renewcommand{\arraystretch}{1.10}
+\setlength{\tabcolsep}{7pt}
+
+\begin{tabular}{@{}lr l c ccc@{}}
+\toprule
+Overlap
+& $Re$
+& E2-selected specialist
+& $\bar{\alpha}$
+& $E_{\mathrm{joint}}^{\mathrm{E2}}$ (\%)
+& $E_{\mathrm{joint}}^{\mathrm{T2-C}}$ (\%)
+& Reduction (\%) \\
+\midrule
+
+$S$--$H$
+& 95.1
+& Hopf
+& 0.0967
+& 1.7140
+& 1.1827
+& 31.00 \\
+
+$S$--$H$
+& 95.3
+& Hopf
+& 0.0971
+& 1.7456
+& 1.2090
+& 30.74 \\
+
+$H$--$P$
+& 100.5
+& Hopf
+& 0.5870
+& 2.6485
+& 0.8571
+& 67.64 \\
+
+$H$--$P$
+& 102
+& Periodic
+& 0.7094
+& 1.0462
+& 0.8360
+& 20.09 \\
+
+\bottomrule
+\end{tabular}
+\end{table*}
+
+For the $S$--$H$ overlap, the trajectory-level routing and fusion behaviour
+is consistent across the two held-out Reynolds-number trajectories. E2
+selects the Hopf specialist in both cases, while T2-C assigns only a small
+mean weight to the Steady specialist,
+$\bar{\alpha}_S\approx0.097$. Despite this predominantly Hopf-based
+combination, T2-C reduces the joint error by approximately $31\%$ for both
+trajectories. The improvement is therefore consistently observed across the
+held-out $S$--$H$ overlap rather than being dominated by a single parameter
+value.
+
+The $H$--$P$ overlap exhibits a more pronounced variation in both the
+trajectory-level E2 decisions and the T2-C weights. E2 selects different
+specialists across the held-out trajectories, whereas the mean Periodic
+weight produced by T2-C varies from $0.5870$ to $0.7094$. The corresponding
+joint-error reductions range from $20.09\%$ to $67.64\%$, with improvements
+obtained for both trajectories. These results indicate that the T2-C
+correction does not reduce to a fixed preference for either adjacent
+specialist; instead, the relative contribution of the two regime-local
+predictions varies across the overlap.
+
+Taken together, the two overlap studies separate the role of regime
+selection from that of local-model combination. E2 provides a discrete
+trajectory-level choice among admissible specialists, whereas T2-C exploits
+the remaining predictive complementarity between adjacent local ROMs after
+their independent evolution. The equal-weight and E2-probability baselines
+show that this improvement is not reproduced by an arbitrary convex
+combination, while the close agreement with the window-wise convex oracle
+indicates that the learned correction approaches the best performance
+available within the considered output-level convex fusion class.
+The spatial distributions of the overlap predictions are shown in
+Figs.~\ref{fig:centered_square_sh_fields_errors} and
+\ref{fig:centered_square_hp_fields_errors}. These visualizations complement
+the integral error measures by identifying the regions in which the adjacent
+regime-local predictions differ and where the T2-C combination modifies the
+reconstructed physical fields. 
+\begin{figure*}[htbp]
+\centering
+
+\includegraphics[width=0.90\textwidth]
+{DDPDCNN/4/RAL_MOE_ROM_METHODS_OVERLEAF_READY_20260726/drafts/cylinder_wake_20260726/figures/SH_2.png}
+
+\vspace{0.5em}
+
+\includegraphics[width=0.90\textwidth]
+{DDPDCNN/4/RAL_MOE_ROM_METHODS_OVERLEAF_READY_20260726/drafts/cylinder_wake_20260726/figures/SH_2_1.png}
+
+\caption{Representative held-out prediction in the $S$--$H$ overlap at
+$Re=95.1$. The upper panel compares the CFD reference, the Steady
+specialist, the Hopf specialist, and the T2-C prediction in terms of
+velocity magnitude and gauge-corrected pressure. The lower panel shows the
+corresponding pointwise absolute errors in velocity and pressure.}
+\label{fig:centered_square_sh_fields_errors}
+\end{figure*}
+
+\begin{figure*}[htbp]
+\centering
+
+\includegraphics[width=0.90\textwidth]
+{DDPDCNN/4/RAL_MOE_ROM_METHODS_OVERLEAF_READY_20260726/drafts/cylinder_wake_20260726/figures/HP_2.png}
+
+\vspace{0.5em}
+
+\includegraphics[width=0.90\textwidth]
+{DDPDCNN/4/RAL_MOE_ROM_METHODS_OVERLEAF_READY_20260726/drafts/cylinder_wake_20260726/figures/HP_2_1.png}
+
+\caption{Representative held-out prediction in the $H$--$P$ overlap at
+$Re=100.5$. The upper panel compares the CFD reference, the Periodic
+specialist, the Hopf specialist, and the T2-C prediction in terms of
+velocity magnitude and gauge-corrected pressure. The lower panel shows the
+corresponding pointwise absolute errors in velocity and pressure.}
+\label{fig:centered_square_hp_fields_errors}
+\end{figure*}
+

@@ -1,0 +1,61 @@
+{
+  "steady": {
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/training_s2b_portable.json": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/training_s2b_portable.json",
+      "bytes": 2195,
+      "sha256": "c5f44462e1a68ad6470461479615a72d21a9c025b1d21fef784b49c903f67455"
+    },
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/pressure_pod_steady.npz",
+      "bytes": 62378838,
+      "sha256": "5056f7470f2439bccc2cfb68448e9a4dd61d89145aa7108ab8672ba6dd2be997"
+    },
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/velocity_pod_steady.npz",
+      "bytes": 122136506,
+      "sha256": "abaab63d11e172a5b40e86b48715f247311eaf324a06094757f2f98870f40948"
+    },
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/mesh_l2_point_area_weights.npz": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/mesh_l2_point_area_weights.npz",
+      "bytes": 266303,
+      "sha256": "d9e7169b622ee02362e7364c41137a5652fc9924f824ccaf78fb89f353a3e1ef"
+    },
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/pod_area_weighted_l2_metadata.json": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/pod_area_weighted_l2_metadata.json",
+      "bytes": 383,
+      "sha256": "4674956542882e33c710bde5e19efd0ce74c72d6c68d3118ee2e6103fc94d4e8"
+    },
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+      "bytes": 96790,
+      "sha256": "b1584b874576161757e827d090702791c0ce4e14c8dc0d02df5ec15f09ad98d5"
+    }
+  },
+  "periodic": {
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+      "bytes": 36189358,
+      "sha256": "f6e0a23432581c78e9f649d60bb0fceb9087a6a1d0631778bde444338c16239f"
+    },
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+      "bytes": 69610538,
+      "sha256": "a2c12dc3ea25772e7bd4216b37683df9dbcce804063f9900bdaebac3e25dc7a2"
+    },
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/mesh_l2_point_area_weights.npz": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/mesh_l2_point_area_weights.npz",
+      "bytes": 266303,
+      "sha256": "d9e7169b622ee02362e7364c41137a5652fc9924f824ccaf78fb89f353a3e1ef"
+    },
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/pod_area_weighted_l2_metadata.json": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/pod_area_weighted_l2_metadata.json",
+      "bytes": 384,
+      "sha256": "2ddaf5f4533225f3717b7e805bfee52ec000c23d6183ea404323a3efc59f06f0"
+    },
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv": {
+      "resolved_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+      "bytes": 952324,
+      "sha256": "94525b6d5b4318aa1c6f11762ef2b1021b14d6da3e12f882a48e97c6cc0dd358"
+    }
+  }
+}

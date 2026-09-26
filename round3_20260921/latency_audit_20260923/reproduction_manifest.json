@@ -1,0 +1,14 @@
+{
+  "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/benchmark_periodic_idle.py",
+  "source_sha256": "e687516988f8d207a96dc456886307944f726dfbda8a2462ca7c16bb31ed8c2e",
+  "executed_sha256": "b33105374fe6b715888ad5140ccb548cb3f98491f4e74f665a5448da2a2093b2",
+  "only_change": [
+    "out=R/'P_isolated_runtime'/a.kind",
+    "out=R/'P_latency_audit_20260923'/a.kind"
+  ],
+  "environment": {
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2"
+  }
+}

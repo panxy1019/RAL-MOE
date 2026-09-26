@@ -1,0 +1,27 @@
+{
+  "schema_version": 2,
+  "method": "CenteredSquare-CDM-GROM",
+  "dataset": "CenteredSquare CN09 graded mesh Hopf specialist",
+  "source_contract": "centeredSquare_three_regime_train_only_pod_v1",
+  "resolved_velocity_rank": 11,
+  "extended_velocity_rank": 64,
+  "extended_pressure_rank": 64,
+  "analysis_rank": 256,
+  "unresolved_rank": 53,
+  "pressure_gauge": "subtract_volume_mean_per_snapshot",
+  "reference_policy": "last_32_train_snapshots_temporal_mean_with_affine_residual_retained",
+  "unresolved_stability_policy": "exact_if_spectral_abscissa_below_minus_margin_else_uniform_spectral_shift",
+  "stability_margin": 0.02,
+  "native_snapshot_dt": 4.0,
+  "internal_rk4_max_step": 0.1,
+  "warmup_intervals": 2,
+  "train_re": [
+    94.0, 95.0, 95.05, 95.15, 95.2, 95.35, 95.4, 95.45,
+    95.55, 95.6, 95.75, 96.0, 96.25, 96.75, 97.0, 97.25,
+    97.75, 98.0, 98.5, 99.5, 100.0, 101.0, 101.724137931034
+  ],
+  "validation_re": [94.5, 95.25, 95.5, 97.5, 99.0, 101.5],
+  "heldout_re_sealed": [95.1, 95.3, 96.5, 100.5, 102.0],
+  "vm_source_root": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf",
+  "vm_output_root": "/home/ray/Desktop/centeredSquare/cdm_grom_hopf_r64_v1"
+}

@@ -1,0 +1,41 @@
+{
+  "boundaries": [
+    "SH",
+    "HP"
+  ],
+  "code_sha256": {
+    "common.py": "9d59f83b9bfa800c12bbf0fa62ee970bba35bff1c14794808b0b104c650dfd02",
+    "evaluate_heldout_rollout.py": "3f62919ba6cbf17f1d78bc5a92b098cc0565e12d6a2b19374e7fa3e81eccdd45",
+    "run_study.py": "e6de6a06c15d76a0beafd1ceaa5e12a924b8a9475a0bb37541e92c11e4eebb48",
+    "train_t2c_gate.py": "e7c3efc62207b339f761fa657d007a1db87ffda530d7aaa59d5363c6d454a4d7"
+  },
+  "created_unix": 1789133414.9925473,
+  "cuda_version": "12.6",
+  "eval_every": 100,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "modes": [
+    "full",
+    "mu_only"
+  ],
+  "numpy_version": "2.4.4",
+  "original_asset_hashes": {
+    "cache_hp/hp_development_cache.npz": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+    "cache_sh/sh_development_cache.npz": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+    "e2_router/best.pt": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+    "gate_hp/best.pt": "fb154d2d3decb68c59b242a17c95c062e24f4443f5034692ec0abfaa55e9c887",
+    "gate_sh/best.pt": "732059a2cf19acf6b4681590fa2a8a43ad4babdc2c5814638ed438c1dc5cafb0"
+  },
+  "seeds": [
+    42001,
+    42002,
+    42003
+  ],
+  "selection": "validation only",
+  "status": "PREREGISTERED",
+  "steps": 8000,
+  "torch_version": "2.11.0+cu126",
+  "user_authorized_deferrals": [
+    "Table4 provenance",
+    "paper descriptor dimension"
+  ]
+}

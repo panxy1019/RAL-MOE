@@ -1,0 +1,68 @@
+{"kind":"deck","id":"pr/ce5b9c","name":"Deck"}
+{"kind":"layout","layoutId":"8b3b0050-77fe-484a-bba5-a7153695f280","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"3281310d-e063-4ac3-852e-860ad963e96d","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/mqndo6","slide":1,"title":"(a)  Routing and physical-space fusion","textShapes":35}
+{"kind":"shape","id":"sh/10bah0zu","slide":1,"name":"level2","bbox":[12,12,1797,445]}
+{"kind":"shape","id":"sh/exkr6l0j","slide":1,"name":"level1","bbox":[12,477,1797,445]}
+{"kind":"textbox","id":"sh/fytsfqho","slide":1,"name":"titlea","text":"(a)  Routing and physical-space fusion","textPreview":"(a)  Routing and physical-space fusion","textChars":38,"textLines":1,"bbox":[30,24,720,44]}
+{"kind":"textbox","id":"sh/sv294bid","slide":1,"name":"subtitlea","text":"Level 2: selection among regime-local specialists","textPreview":"Level 2: selection among regime-local specialists","textChars":49,"textLines":1,"bbox":[60,71,660,30]}
+{"kind":"textbox","id":"sh/twbadgzy","slide":1,"name":"parameter","text":"Parameter\nμ","textPreview":"Parameter | μ","textChars":11,"textLines":2,"bbox":[40,167,140,82]}
+{"kind":"textbox","id":"sh/6t0r2l07","slide":1,"name":"outer-router","text":"E2 router\nParameter only","textPreview":"E2 router | Parameter only","textChars":24,"textLines":2,"bbox":[230,155,170,106]}
+{"kind":"textbox","id":"sh/rutsb6hs","slide":1,"name":"selection","text":"Masked selection\nTop-1 / adjacent Top-2\nS–H / H–P","textPreview":"Masked selection | Top-1 / adjacent Top-2 | S–H / H–P","textChars":49,"textLines":3,"bbox":[465,145,235,126]}
+{"kind":"textbox","id":"sh/4ri90bi1","slide":1,"name":"selected-rollouts","text":"Selected specialist(s)\nIndependent rollouts","textPreview":"Selected specialist(s) | Independent rollouts","textChars":43,"textLines":2,"bbox":[765,153,240,110]}
+{"kind":"textbox","id":"sh/5sra9gzm","slide":1,"name":"candidates","text":"Candidates: Steady S / Hopf H / Periodic P","textPreview":"Candidates: Steady S / Hopf H / Periodic P","textChars":42,"textLines":1,"bbox":[740,112,290,34]}
+{"kind":"textbox","id":"sh/94butw32","slide":1,"name":"reconstruction","text":"Physical\nreconstruction","textPreview":"Physical | reconstruction","textChars":23,"textLines":2,"bbox":[1065,161,200,94]}
+{"kind":"textbox","id":"sh/832t0rmh","slide":1,"name":"assembly","text":"Physical-space assembly\nTop-1: identity\nTop-2: T2-C fusion","textPreview":"Physical-space assembly | Top-1: identity | Top-2: T2-C fusion","textChars":58,"textLines":3,"bbox":[1325,145,245,126]}
+{"kind":"textbox","id":"sh/729srmlc","slide":1,"name":"fields","text":"Predicted fields\nû, p̂","textPreview":"Predicted fields | û, p̂","textChars":22,"textLines":2,"bbox":[1630,168,145,80]}
+{"kind":"shape","id":"sh/m10by14r","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/l0rapw36","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/kzitwrml","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/zy9snml0","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/yd0buh4f","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/xcralc3u","slide":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/cbits7mp","slide":1,"name":"preferences","text":"π(μ)","textPreview":"π(μ)","textChars":4,"textLines":1,"bbox":[400,174,64,30]}
+{"kind":"textbox","id":"sh/ormlobyh","slide":1,"name":"history-a","text":"Physical history Hₙ","textPreview":"Physical history Hₙ","textChars":19,"textLines":1,"bbox":[70,346,270,66]}
+{"kind":"shape","id":"sh/psv2xgf2","slide":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/2p4jm1gr","slide":1,"name":"init-label","text":"Initialization","textPreview":"Initialization","textChars":14,"textLines":1,"bbox":[515,303,190,30]}
+{"kind":"textbox","id":"sh/nqdkv6xw","slide":1,"name":"descriptor","text":"History descriptor dₙ","textPreview":"History descriptor dₙ","textChars":21,"textLines":1,"bbox":[785,385,270,49]}
+{"kind":"shape","id":"sh/03m1kryl","slide":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/1ov2twf6","slide":1,"name":"gate-context","text":"Parameter μ + pair preference π̄","textPreview":"Parameter μ + pair preference π̄","textChars":32,"textLines":1,"bbox":[1020,302,310,44]}
+{"kind":"textbox","id":"sh/e1kji1gf","slide":1,"name":"T2C-gate","text":"T2-C gate\nα","textPreview":"T2-C gate | α","textChars":11,"textLines":2,"bbox":[1380,336,180,88]}
+{"kind":"shape","id":"sh/f2dkr6x0","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/kz6lwvyp","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/lkf250fa","slide":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/ve1ovuhc","slide":1,"name":"titleb","text":"(b)  Regime-local specialist","textPreview":"(b)  Regime-local specialist","textChars":28,"textLines":1,"bbox":[30,491,555,44]}
+{"kind":"textbox","id":"sh/utsnmp0r","slide":1,"name":"subtitleb","text":"Level 1: sparse correction within a local chart","textPreview":"Level 1: sparse correction within a local chart","textChars":47,"textLines":1,"bbox":[65,536,550,30]}
+{"kind":"textbox","id":"sh/hgj6x4zi","slide":1,"name":"history-b","text":"Physical history\nHₙ","textPreview":"Physical history | Hₙ","textChars":19,"textLines":2,"bbox":[40,679,150,91]}
+{"kind":"textbox","id":"sh/gfa5ozix","slide":1,"name":"POD-encoder","text":"Local POD\nencoding","textPreview":"Local POD | encoding","textChars":18,"textLines":2,"bbox":[235,679,145,91]}
+{"kind":"textbox","id":"sh/3i1ozeho","slide":1,"name":"local-state","text":"Local reduced\nstate + history\n(aₙ, bₙ)","textPreview":"Local reduced | state + history | (aₙ, bₙ)","textChars":38,"textLines":3,"bbox":[425,669,170,110]}
+{"kind":"shape","id":"sh/ihsnq903","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/5k3614ze","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/4ja5szi9","slide":1,"name":"moe-boundary","bbox":[645,643,520,254]}
+{"kind":"textbox","id":"sh/zmh4nah4","slide":1,"name":"moe-title","text":"Velocity sparse MoE correction","textPreview":"Velocity sparse MoE correction","textChars":30,"textLines":1,"bbox":[655,651,490,33]}
+{"kind":"textbox","id":"sh/yl8ne50z","slide":1,"name":"galerkin","text":"Projected Galerkin ROM","textPreview":"Projected Galerkin ROM","textChars":22,"textLines":1,"bbox":[700,577,420,54]}
+{"kind":"textbox","id":"sh/q5sna58f","slide":1,"name":"internal-routing","text":"Internal routing\nGroup Top-1\nChannel Top-2","textPreview":"Internal routing | Group Top-1 | Channel Top-2","textChars":42,"textLines":3,"bbox":[670,772,165,99]}
+{"kind":"textbox","id":"sh/b6lo3ap0","slide":1,"name":"shared","text":"Shared expert E₀\nAlways active","textPreview":"Shared expert E₀ | Always active","textChars":30,"textLines":2,"bbox":[875,690,165,72]}
+{"kind":"textbox","id":"sh/c7u5cfql","slide":1,"name":"routed","text":"Top-2 experts\nEₑ₁, Eₑ₂","textPreview":"Top-2 experts | Eₑ₁, Eₑ₂","textChars":22,"textLines":2,"bbox":[875,795,165,65]}
+{"kind":"textbox","id":"sh/d8365k76","slide":1,"name":"expert-sum","text":"Weighted\nsum","textPreview":"Weighted | sum","textChars":12,"textLines":2,"bbox":[1056,739,100,76]}
+{"kind":"textbox","id":"sh/ytcnep8r","slide":1,"name":"hybrid-sum","text":"+","textPreview":"+","textChars":1,"textLines":1,"bbox":[1202,585,46,46]}
+{"kind":"textbox","id":"sh/zulo7upc","slide":1,"name":"integrator","text":"Time integration","textPreview":"Time integration","textChars":16,"textLines":1,"bbox":[1290,682,195,85]}
+{"kind":"textbox","id":"sh/0vu5gzqx","slide":1,"name":"pressure-reconstruction","text":"Algebraic pressure\nreconstruction\nPPE + learned correction","textPreview":"Algebraic pressure | reconstruction | PPE + learned correction","textChars":58,"textLines":3,"bbox":[1550,672,235,110]}
+{"kind":"shape","id":"sh/lw369k72","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/mxcnip8n","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/7y5obup8","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/hs7q1ora","slide":1,"name":"feature-branch","bbox":[848,724,2,2]}
+{"kind":"shape","id":"sh/wry983a5","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/vqp8zy9k","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/upw76tsz","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/5w7q58rm","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/4vy9c3a1","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/jup83y9g","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/itgratsv","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/tkrq98ri","slide":1,"bbox":[0,0,0,0]}
+{"kind":"textbox","id":"sh/sji9gnax","slide":1,"name":"a-next","text":"aₙ₊₁","textPreview":"aₙ₊₁","textChars":4,"textLines":1,"bbox":[1485,680,65,28]}
+{"kind":"textbox","id":"sh/cfa1sbml","slide":1,"name":"b-next","text":"Output: bₙ₊₁","textPreview":"Output: bₙ₊₁","textChars":12,"textLines":1,"bbox":[1560,798,215,30]}
+{"kind":"textbox","id":"sh/dgj21g36","slide":1,"name":"vel-label","text":"Velocity update","textPreview":"Velocity update","textChars":15,"textLines":1,"bbox":[1290,788,195,30]}
+{"kind":"textbox","id":"sh/qd8jql4f","slide":1,"name":"branch-types","text":"nonlinear + affine + low-rank bilinear","textPreview":"nonlinear + affine + low-rank bilinear","textChars":38,"textLines":1,"bbox":[670,872,465,24]}
+{"kind":"textbox","id":"sh/be1kz6l0","slide":1,"name":"control-key","text":"Dashed arrow: expert selection and weights","textPreview":"Dashed arrow: expert selection and weights","textChars":42,"textLines":1,"bbox":[1235,865,520,26]}
+{"kind":"notes","id":"nt/mqndo6","slide":1,"text":"Revised from flowchart_refined_v4_final.pptx. E2 consumes parameter only. Physical history initializes selected specialists and supplies the T2-C descriptor. Gate inputs include parameter and selected-pair preference; weighted fusion is after physical reconstruction. Lower panel depicts velocity correction and algebraic pressure reconstruction. Expert response formulas and pressure-specific routing follow the manuscript. All diagram elements are editable native PowerPoint objects."}

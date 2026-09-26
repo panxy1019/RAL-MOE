@@ -1,0 +1,72 @@
+\begin{tikzpicture}[
+  x=1cm,y=1cm,
+  font=\scriptsize,
+  block/.style={draw,rounded corners=1.2pt,align=center,minimum height=6.5mm,inner sep=2.5pt,fill=blue!4},
+  route/.style={draw,rounded corners=1.2pt,align=center,minimum height=6.5mm,inner sep=2.5pt,fill=orange!13},
+  expert/.style={draw,rounded corners=1.2pt,align=center,minimum height=8mm,inner sep=2.5pt,fill=violet!8},
+  outputblock/.style={draw,rounded corners=1.2pt,align=center,minimum height=6.5mm,inner sep=2.5pt,fill=green!10},
+  sum/.style={circle,draw,inner sep=0.8pt,minimum size=4.5mm,fill=white},
+  arrow/.style={-{Latex[length=1.6mm]},thick},
+  signal/.style={-{Latex[length=1.4mm]},thin,dashed},
+  title/.style={font=\scriptsize\bfseries,align=center}
+]
+
+% Multi-chart representation.
+\node[title] at (1.45,1.55) {(A) Overlapping local charts};
+\node[block] (historyA) at (0.25,0) {physical history\\$\mathcal H_n$};
+\node[block,minimum width=13mm] (chartS) at (2.05,0.72) {$S$ encoder\\$\bm a^{(S)},\bm b^{(S)}$};
+\node[block,minimum width=13mm] (chartH) at (2.05,0) {$H$ encoder\\$\bm a^{(H)},\bm b^{(H)}$};
+\node[block,minimum width=13mm] (chartP) at (2.05,-0.72) {$P$ encoder\\$\bm a^{(P)},\bm b^{(P)}$};
+\draw[arrow] (historyA.east) -- (chartS.west);
+\draw[arrow] (historyA.east) -- (chartH.west);
+\draw[arrow] (historyA.east) -- (chartP.west);
+\node[align=center,font=\tiny] at (1.3,-1.32) {independent means, bases, and coordinates};
+
+\draw[gray!55,dashed] (3.05,-1.55) -- (3.05,1.62);
+
+% Level-1 routing inside one specialist.
+\node[title] at (6.35,1.55) {(B) Level 1: one physics--data specialist};
+\node[block] (features) at (3.62,0) {local features\\$\bm\xi^{(r)}$};
+\node[block] (backbone) at (5.12,0.62) {projected backbone\\$\mathcal F_r^G$};
+\node[route] (group) at (5.12,-0.62) {group Top-1\\channel Top-2 routers};
+\node[expert,minimum width=26mm] (experts) at (6.95,-0.62) {shared $+$ routed experts\\nonlinear $\mid$ affine $\mid$ low-rank bilinear};
+\node[sum] (plus) at (8.38,0.10) {$+$};
+\node[outputblock] (localroll) at (9.18,0.10) {autonomous\\rollout $\rightarrow$ decode};
+\draw[arrow] (features.east) -- (backbone.west);
+\draw[arrow] (features.east) -- (group.west);
+\draw[arrow] (group.east) -- (experts.west);
+\draw[arrow] (backbone.east) -- (plus.north west);
+\draw[arrow] (experts.east) -- (plus.south west);
+\draw[arrow] (plus) -- (localroll);
+
+\draw[gray!55,dashed] (10.02,-1.55) -- (10.02,1.62);
+
+% Level-2 parameter routing and overlap correction.
+\node[title] at (14.05,1.55) {(C) Level 2: complete-specialist assembly};
+\node[block] (mu) at (10.48,0.98) {parameter\\$\widetilde\mu$};
+\node[route] (e2) at (11.72,0.98) {E2 regime\\router};
+\node[block] (pi) at (12.88,0.98) {trajectory\\preference $\bm\pi$};
+\draw[arrow] (mu) -- (e2);
+\draw[arrow] (e2) -- (pi);
+
+\node[block] (historyB) at (10.48,-0.30) {physical history\\$\mathcal H_n$};
+\node[block] (native) at (11.86,-0.30) {two native\\encoders};
+\node[block] (independent) at (13.18,-0.30) {independent\\rollouts};
+\node[block] (reconstruct) at (14.48,-0.30) {physical\\reconstruction};
+\node[outputblock] (fusion) at (16.02,-0.30) {Top-1 output or\\T2-C physical fusion};
+\node[outputblock] (prediction) at (17.42,-0.30) {predicted\\fields};
+\draw[arrow] (historyB) -- (native);
+\draw[arrow] (native) -- (independent);
+\draw[arrow] (independent) -- (reconstruct);
+\draw[arrow] (reconstruct) -- (fusion);
+\draw[arrow] (fusion) -- (prediction);
+\draw[signal] (pi.south) -- node[right,font=\tiny,align=left] {Top-1 or\\admissible pair} (independent.north);
+
+\node[block] (descriptor) at (11.85,-1.23) {chart-independent\\descriptor $\bm d_n$};
+\node[route,minimum width=25mm] (gate) at (14.55,-1.23) {T2-C correction\\$c_\vartheta([\widetilde\mu;\bm d_n])\rightarrow\alpha$};
+\draw[signal] (historyB.south) |- (descriptor.west);
+\draw[arrow] (descriptor) -- (gate);
+\draw[signal] (pi.east) -| (gate.north);
+\draw[arrow] (gate.east) -| (fusion.south);
+
+\end{tikzpicture}

@@ -1,0 +1,158 @@
+% Main-text tables proposed for Subsection 5.1.
+% All relative errors are multiplied by 100%. Min--max ranges are mechanical
+% extrema over the explicitly listed Reynolds numbers; no mean is reported.
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+% \begin{table}[t]
+% \centering
+% \caption{Held-out prediction errors in the $S$--$H$ overlap at $K=56$.
+% Each interval reports the minimum--maximum value over the three held-out
+% overlap trajectories.}
+% \label{tab:cylinder_sh_boundary}
+
+% \scriptsize
+% \setlength{\tabcolsep}{6pt}
+% \begin{tabular}{@{}lccc@{}}
+% \toprule
+% Model
+% & $E_u$ (\%)
+% & $E_p$ (\%)
+% & $\alpha_S$ \\
+% \midrule
+
+% E2 Top-1
+% & 0.0357--0.0410
+% & 1.6746--1.9028
+% & 1.0000 \\
+
+% T2-C
+% & 0.0148--0.0355
+% & 0.7387--1.7212
+% & 0.0861--0.9987 \\
+
+% Global MoE
+% & 0.0851--0.0953
+% & 1.9517--2.3106
+% & -- \\
+
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+
+
+
+
+% \begin{table*}[t]
+% \centering
+% \caption{Attractor-preservation evidence and its interpretation boundary.
+% Strict coverage is reported only where the frozen regime-specific evaluator
+% was available.  A finite rollout is necessary but is not sufficient for a
+% strict pass.}
+% \label{tab:cylinder_attractor_evidence}
+% \scriptsize
+% \begin{adjustbox}{max width=\textwidth}
+% \begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.12\textwidth}
+%                 >{\raggedright\arraybackslash}p{0.19\textwidth}
+%                 >{\raggedright\arraybackslash}p{0.16\textwidth}
+%                 >{\raggedright\arraybackslash}p{0.12\textwidth}
+%                 >{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+% \toprule
+% Regime/\linebreak evidence set & Model & Strict result &
+% Key quantitative\linebreak evidence &
+% Permitted interpretation \\
+% \midrule
+% Steady held-out
+% & HPRS-MoE-ROM
+% & 0/4
+% & Worst paired gain 585.262
+% & Reduced worst-case perturbation amplification, but neither strict
+% contraction nor universal steady-attractor preservation. \\
+% Steady held-out
+% & Vanilla-FNN-MoE
+% & 0/4
+% & Worst paired gain 107702.891
+% & Reference for the reduction in perturbation amplification. \\
+% \midrule
+% Hopf held-out
+% & HPRS-MoE-ROM
+% & 0/3
+% & 3/3 finite, zero divergent windows; field errors remained low
+% & Long-horizon field and pressure stability, not held-out attractor
+% generalization. \\
+% Hopf mechanism cases
+% & HPRS-MoE-ROM
+% & 3/3 at $Re=49.3,49.6,50.0$
+% & All frozen field, phase, frequency, orbit, energy and stability gates passed
+% & Train-split mechanism-preservation evidence only. \\
+% Hopf mechanism cases
+% & DataOnly-MoE
+% & 0/3
+% & Pressure error 1118.1745--1627.9665\%; five divergent windows per $Re$
+% & Evidence that the Hopf pressure structure was not recovered by this
+% data-only ablation. \\
+% \midrule
+% Periodic held-out
+% & HPRS-MoE-ROM
+% & 3/4
+% & $Re=70.314635$ failed because $E_p=5.9601\%$
+% & More complete held-out coverage than Vanilla, but not universal passage. \\
+% Periodic held-out
+% & Vanilla-FNN-MoE
+% & 1/4
+% & Only $Re=100.352251$ passed
+% & Structured experts improved robustness relative to this ablation. \\
+% Periodic held-out
+% & DataOnly-MoE
+% & 3/3 assessed
+% & $Re=100.352249$,\linebreak $149.059235$, and\linebreak $189.862274$ passed
+% & Physics--data structure is not the sole mechanism capable of preserving
+% the tested periodic cycles. \\
+% \bottomrule
+% \end{tabular}
+% \end{adjustbox}
+% \end{table*}

@@ -1,0 +1,79 @@
+schema_version: 1
+experiment_root: CTDM_GALERKIN_ROM_R32_20260730
+dataset: HopfExpanded34_train_only_POD_ROM
+execution_environment:
+  python: /root/miniconda3/envs/pt_env/bin/python
+  requirement: pt_env_with_swanlab
+immutable:
+  train_re_count: 29
+  validation_re: [46.7, 56.543246]
+  sealed_evaluation_re: [47.081355, 49.022357, 51.786450]
+  ru: 32
+  rp: 32
+  current_base_dim: 109
+  history_block_dim: 192
+  history_blocks: 2
+  hopf_augmentation_dim: 67
+  hopf_augmentation_runtime_role: loss_only_not_model_input
+  intended_h4_input_dim_if_augmentation_were_connected: 560
+  frozen_checkpoint_input_dim: 493
+  current_only_dim: 109
+models:
+  B0: frozen_Hopf_HPRS_MoE_ROM
+  B1: Deep_FNN_H3
+  B2: Deep_FNN_current
+  B3: Discrete_KDA_FNN
+  B4: CTDM_Galerkin_ROM
+memory:
+  token_dim: 128
+  num_heads: 4
+  d_k: 16
+  d_v: 16
+  runtime_state: 1024
+  gamma_parameterization: gamma_min_plus_softplus
+  eta_parameterization: eta_max_times_sigmoid
+  value_parameterization: v_max_times_tanh
+  arithmetic: float32
+  initialization:
+    gamma: 0.02
+    eta: 0.02
+training:
+  optimizer: AdamW
+  optimizer_steps: 8000
+  effective_batch_per_optimizer_step: 16
+  micro_batch_selection:
+    benchmark_model: B4
+    benchmark_horizon: 56
+    candidates: [4, 8, 16]
+    peak_torch_allocation_ceiling_gb: 9.0
+    rule: largest_successful_candidate_below_ceiling
+  single_seed: 1248
+  confirmatory_seeds: [1248, 2248, 3248]
+  confirmatory_selection:
+    screening_seed: 1248
+    rule: finite_fraction_1_and_zero_divergent_windows
+    only_screening_candidates_receive_two_additional_seeds: true
+  gradient_clip: 1.0
+  trajectory_windows: true
+  curriculum:
+    - [0, 1200, 4]
+    - [1200, 2800, 8]
+    - [2800, 4800, 16]
+    - [4800, 6400, 32]
+    - [6400, 8000, 56]
+  loss:
+    Ea: 1.0
+    Eb: 0.55
+    Eu_modal: 0.38
+    Ep_modal: 0.095
+    memory_norm: 1.0e-6
+  forbidden:
+    - MoE
+    - route_loss
+    - normal_form_or_radial_loss
+    - attractor_loss
+    - frequency_or_phase_supervision
+    - energy_projection
+    - attention
+    - oscillatory_rotation
+heldout_policy: hard_disabled_until_validation_decision_is_frozen

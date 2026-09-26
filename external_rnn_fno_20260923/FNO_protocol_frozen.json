@@ -1,0 +1,84 @@
+{
+  "created": "2026-09-23T16:23:41+0800",
+  "regime": "P",
+  "grid": [
+    1536,
+    1024
+  ],
+  "history": 3,
+  "layers": 4,
+  "seeds": [
+    1248,
+    1600,
+    2026
+  ],
+  "candidates": [
+    {
+      "id": 0,
+      "width": 32,
+      "modes": 12,
+      "increment": true,
+      "lr": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "id": 1,
+      "width": 32,
+      "modes": 12,
+      "increment": false,
+      "lr": 0.001,
+      "weight_decay": 1e-05
+    },
+    {
+      "id": 2,
+      "width": 32,
+      "modes": 16,
+      "increment": true,
+      "lr": 0.0003,
+      "weight_decay": 0.0001
+    },
+    {
+      "id": 3,
+      "width": 48,
+      "modes": 12,
+      "increment": true,
+      "lr": 0.001,
+      "weight_decay": 0.0001
+    },
+    {
+      "id": 4,
+      "width": 64,
+      "modes": 12,
+      "increment": true,
+      "lr": 0.0003,
+      "weight_decay": 1e-05
+    },
+    {
+      "id": 5,
+      "width": 32,
+      "modes": 24,
+      "increment": true,
+      "lr": 0.001,
+      "weight_decay": 0.0001
+    }
+  ],
+  "screen_seed": 1248,
+  "screen_steps": 400,
+  "screen_eval_every": 200,
+  "formal_steps": 4000,
+  "formal_eval_every": 1000,
+  "batch": 1,
+  "curriculum": "equal quarters:1,4,8,16 output steps per sampled window",
+  "TBPTT": 1,
+  "optimizer": "AdamW; average detached-step gradients over one closed-loop window; clip1; cosine LR to10%; FP32",
+  "loss": "equal normalized u_x/u_y/p masked MSE; normalization is training-only physical area weighted channel mean/std",
+  "selector": "all 48 validation windows finite at fullK48; minimize worst-Re common-FV joint, then macro-Re joint; no test use",
+  "scope": "full raw physical fields on selected uniform grid, no POD reconstruction inputs or learned specialist components",
+  "acceptance": "finite training + at least one full validation checkpoint; no numerical clipping or true-frame refresh",
+  "pressure": "zero fluid-grid mean during autonomous advance; independent area-mean gauge after mapping back for common-FV metrics",
+  "padding": "8 cells on high x/y side each block stack, crop before projection",
+  "source_sha256": "a8851746642f531af0f00de5268623390b2ff0986e6a0a6798b6089ae6763052",
+  "manifest_sha256": "c6e4c795f1920e586c59e2936efce1b1ed24882c04c8c50d9568612931b75c20",
+  "source_method": "https://arxiv.org/abs/2010.08895",
+  "visual_gate": "roundtrip_visual_P.png inspected: wake retained; local interpolation error quantified separately"
+}

@@ -1,0 +1,25 @@
+﻿model,regime,metric,paper,candidate,n_numeric,count_ok,horizon_ok,matches
+RAL-MoE-ROM,Steady,Velocity_field,0.0330--0.1723,0.0384--0.2995,4,True,True,False
+RAL-MoE-ROM,Steady,Pressure_field,0.2500--1.3249,1.5226--18.5603,4,True,True,False
+RAL-MoE-ROM,Hopf,Velocity_field,0.0032--0.0288,0.0032--0.0288,3,True,True,True
+RAL-MoE-ROM,Hopf,Pressure_field,0.0355--0.4321,0.0355--0.4321,3,True,True,True
+RAL-MoE-ROM,Periodic,Velocity_field,0.3809--1.3473,0.3809--1.3473,4,True,True,True
+RAL-MoE-ROM,Periodic,Pressure_field,1.6825--5.9601,1.6825--5.9601,4,True,True,True
+Vanilla-FNN-MoE,Steady,Velocity_field,0.0384--0.2995,0.0330--0.1723,4,True,True,False
+Vanilla-FNN-MoE,Steady,Pressure_field,2.2163--18.5603,2.2163--7.4363,4,True,True,False
+Vanilla-FNN-MoE,Hopf,Velocity_field,N/E,N/E,0,True,True,True
+Vanilla-FNN-MoE,Hopf,Pressure_field,N/E,N/E,0,True,True,True
+Vanilla-FNN-MoE,Periodic,Velocity_field,1.0393--3.0836,1.0393--3.0836,4,True,True,True
+Vanilla-FNN-MoE,Periodic,Pressure_field,3.9659--13.3257,3.9659--13.3257,4,True,True,True
+DataOnly-MoE,Steady,Velocity_field,0.1637--0.5122,0.0795--0.5122,3,False,True,False
+DataOnly-MoE,Steady,Pressure_field,4751.1025--27275.4645,5465.6783--27275.4654,3,False,True,False
+DataOnly-MoE,Hopf,Velocity_field,0.1260--0.3880,0.1097--0.3895,3,True,True,False
+DataOnly-MoE,Hopf,Pressure_field,1280.2811--1524.5949,1164.2404--1583.5883,3,True,True,False
+DataOnly-MoE,Periodic,Velocity_field,0.7854--1.8677,0.6416--1.8104,4,True,True,False
+DataOnly-MoE,Periodic,Pressure_field,2.2511--10.8189,1.3018--10.6074,4,True,True,False
+Global MoE,Steady,Velocity_field,0.0845--0.3404,0.0845--0.3404,4,True,True,True
+Global MoE,Steady,Pressure_field,1.5226--7.4363,0.2500--1.3249,4,True,True,False
+Global MoE,Hopf,Velocity_field,0.0110--0.0268,0.0110--0.0268,3,True,True,True
+Global MoE,Hopf,Pressure_field,0.0560--0.2882,0.0560--0.2882,3,True,True,True
+Global MoE,Periodic,Velocity_field,0.5873--1.1726,0.7461--1.5601,4,True,False,False
+Global MoE,Periodic,Pressure_field,2.1896--6.3566,2.7039--8.0550,4,True,False,False

@@ -1,0 +1,111 @@
+\section{Outer routing and T2-C details}
+\label{app:routing}
+
+\paragraph{Parameter-only routing and admissibility.}
+The E2 router receives only the standardized scalar parameter,
+\begin{equation}
+ \widetilde\mu=\frac{\mu-\mu_R}{\sigma_R},\qquad
+ \bm\pi(\mu)=\operatorname{softmax}(\mathcal R_{E2}(\widetilde\mu))
+ =[\pi_S,\pi_H,\pi_P]^\top.
+ \label{eq:app_e2_parameter_only}
+\end{equation}
+The trajectory-level probabilities are evaluated once and remain unchanged
+during rollout. Adjacency is fixed by
+\begin{equation}
+ A_{\rm adj}=\begin{bmatrix}1&1&0\\1&1&1\\0&1&1\end{bmatrix},
+ \qquad
+ \mathcal C_{\rm top}(k)=\{j:A_{{\rm adj},kj}=1\},
+ \label{eq:app_adjacency}
+\end{equation}
+with ordering $(S,H,P)$, so direct $S$--$P$ fusion is excluded. If
+$m_j(\mathcal H_n,\mu,K)\in\{0,1\}$ denotes validation-supported dynamical
+admissibility, the masked preference is
+\begin{equation}
+ \widetilde\pi_j=
+ \frac{\mathbf 1_{\{j\in\mathcal C_{\rm top}\}}m_j\pi_j}
+ {\sum_{k\in\{S,H,P\}}\mathbf 1_{\{k\in\mathcal C_{\rm top}\}}m_k\pi_k+\varepsilon}.
+ \label{eq:app_masked_e2}
+\end{equation}
+One admissible candidate gives a Top-1 prediction; an admissible adjacent pair
+is passed to T2-C. No ROM prediction is asserted when every mask is zero.
+For a pair $(1,2)$, define
+\begin{equation}
+ \bar\pi_1=\frac{\pi_1}{\pi_1+\pi_2},\qquad
+ \bar\pi_2=1-\bar\pi_1,\qquad
+ \ell^{E2}=\log\frac{\bar\pi_1+\varepsilon}{\bar\pi_2+\varepsilon}.
+ \label{eq:app_pair_logit}
+\end{equation}
+
+\paragraph{Chart-independent physical-history descriptor.}
+T2-C, unlike E2, uses the current physical state and two preceding states.
+Let $|\Omega|=\bm 1^\top\bm w$, $\Delta t_n=t_n-t_{n-1}$, and let
+$U_{\rm ref}$, $P_{\rm ref}$, and $T_{\rm ref}$ be fixed reference scales.
+With gauge-corrected pressure $p_n^\circ$, define
+\begin{align}
+ \widehat E_n^u&=\frac{\|\bm u_n\|_{M_u}^2}{|\Omega|U_{\rm ref}^2},
+ &\widehat E_n^p&=\frac{\|p_n^\circ\|_{M_p}^2}{|\Omega|P_{\rm ref}^2},\label{eq:app_t2c_energy}\\
+ \widehat D_n^u&=\frac{T_{\rm ref}\|\bm u_n-\bm u_{n-1}\|_{M_u}}
+ {\Delta t_n\sqrt{|\Omega|}U_{\rm ref}},
+ &\widehat D_n^p&=\frac{T_{\rm ref}\|p_n^\circ-p_{n-1}^\circ\|_{M_p}}
+ {\Delta t_n\sqrt{|\Omega|}P_{\rm ref}},\label{eq:app_t2c_rate}\\
+ \widehat g_n&=\frac{T_{\rm ref}}{\Delta t_n}
+ \log\frac{\widehat E_n^u+\varepsilon_E}{\widehat E_{n-1}^u+\varepsilon_E}.
+ \label{eq:app_t2c_growth}
+\end{align}
+The second-order velocity indicator is
+\begin{align}
+ \bm A_n^u&=\frac{2}{\Delta t_n+\Delta t_{n-1}}
+ \left(\frac{\bm u_n-\bm u_{n-1}}{\Delta t_n}
+ -\frac{\bm u_{n-1}-\bm u_{n-2}}{\Delta t_{n-1}}\right),\\
+ \widehat\kappa_n^u&=
+ \frac{T_{\rm ref}^2\|\bm A_n^u\|_{M_u}}
+ {\sqrt{|\Omega|}U_{\rm ref}}.
+ \label{eq:app_t2c_curvature}
+\end{align}
+The six statistics
+$\bm s_n=[\widehat E_n^u,\widehat E_n^p,\widehat D_n^u,
+\widehat D_n^p,\widehat g_n,\widehat\kappa_n^u]^\top$ are standardized as
+\begin{equation}
+ \bm d_n=(\bm s_n-\bm\mu_s)\oslash
+ (\bm\sigma_s+\varepsilon_s\bm 1)\in\mathbb R^6.
+ \label{eq:app_t2c_descriptor}
+\end{equation}
+Because these quantities are computed from physical fields, they do not
+depend on either candidate's POD coordinates.
+
+\paragraph{Correction gate and objective.}
+The gate input $[\widetilde\mu;\bm d_n]\in\mathbb R^7$ is processed by two
+hidden layers of width 64 with SiLU activations and a scalar linear output.
+The output layer is zero-initialized, so training begins from the E2 pair
+probability. The gate predicts
+\begin{equation}
+ \Delta_\psi=c_\psi([\widetilde\mu;\bm d_n]),\qquad
+ \alpha=\operatorname{sigmoid}(\ell^{E2}+\Delta_\psi).
+ \label{eq:app_t2c_gate}
+\end{equation}
+Both specialists start from the same three-state physical history, encode it
+in their native charts, and perform independent autonomous rollouts. The
+scalar $\alpha$ is fixed over the prediction window. Velocity and
+gauge-corrected pressure are reconstructed on the common mesh and combined
+convexly; the fused output is never projected back into either rollout.
+
+For candidate field errors $\bm e_1^c$ and $\bm e_2^c$,
+$c\in\{u,p\}$, define
+\begin{equation}
+ Q^c(\alpha)=\alpha^2\|\bm e_1^c\|_{M_c}^2
+ +(1-\alpha)^2\|\bm e_2^c\|_{M_c}^2
+ +2\alpha(1-\alpha)\langle\bm e_1^c,\bm e_2^c\rangle_{M_c}.
+\end{equation}
+The correction map minimizes
+\begin{equation}
+ \mathcal L_{\rm T2C}=\operatorname{mean}_{w,k}\left[
+ \frac{Q^u(\alpha^{(w)})}{\|\bm u_{\rm true}\|_{M_u}^2+\varepsilon}
+ +\frac{Q^p(\alpha^{(w)})}{\|p^\circ_{\rm true}\|_{M_p}^2+\varepsilon}
+ \right].
+ \label{eq:app_t2c_loss}
+\end{equation}
+Gate checkpoints are selected on validation data by lexicographically
+minimizing the worst Reynolds-number mean error and then the global mean
+error. The equal blend fixes $\alpha=1/2$; the probability blend sets
+$\alpha=\bar\pi_1$; and the convex oracle chooses its weight a posteriori for
+each evaluation window. The oracle is a reference, not a deployable method.

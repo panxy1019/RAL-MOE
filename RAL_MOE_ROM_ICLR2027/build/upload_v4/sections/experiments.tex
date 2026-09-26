@@ -1,0 +1,136 @@
+\section{Experiments}
+\label{sec:experiments}
+
+We study three two-dimensional incompressible-flow systems with Reynolds number as the parameter: flow past a circular cylinder, flow past a centered square cylinder, and the fluidic pinball. Each dataset spans steady, Hopf-onset, and periodic behavior. Errors $E_u$ and $E_p$ are relative field errors in percent, averaged using the protocol of each benchmark; $E_{\rm joint}=E_u+E_p$ where reported. ``Divergent'' denotes an evaluation window that violates the predefined rollout-divergence criterion used in the original experiment; this includes non-finite states and threshold violations. We preserve the numerical values and held-out partitions of the journal experiments.
+
+\begin{table}[t]
+\centering
+\caption{Benchmark and held-out autonomous-rollout protocol. Entries list train/validation/test trajectories by local chart.}
+\label{tab:benchmark_summary}
+\small
+\setlength{\tabcolsep}{3.2pt}
+\begin{tabular}{lccc}
+\toprule
+Benchmark & $S$ chart & $H$ chart & $P$ chart \\
+\midrule
+Circular cylinder
+ & 20.0--46.4; 14/2/4; $K{=}56$
+ & 45.5--59.2; 29/2/3; $K{=}56$
+ & 57.3--200; 53/6/4; $K{=}48$ \\
+Centered square
+ & 50--95.4; 60/5/4; $K{=}16$
+ & 94--102; 23/6/5; $K{=}48$
+ & 98.5--150; 27/6/4; $K{=}24$ \\
+Fluidic pinball
+ & 10--19; 37/8/7; $K{=}56$
+ & 16.6--25; 39/8/7; $K{=}56$
+ & 21.25--60; 47/9/9; $K{=}32$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Do local specialists support long autonomous rollouts?}
+
+On the circular cylinder, the proposed specialists remain finite across every evaluated regime. In the steady regime, their velocity-error range is $0.0330$--$0.1723\%$, compared with $0.0384$--$0.2995\%$ for a vanilla learned specialist and $0.0845$--$0.3404\%$ for the global model. In the Hopf regime the vanilla model is not evaluable, while RAL-MoE-ROM gives $E_u=0.0032$--$0.0288\%$ and $E_p=0.0355$--$0.4321\%$. In the periodic regime it improves the velocity-error range over vanilla from $1.0393$--$3.0836\%$ to $0.3809$--$1.3473\%$. Full pressure ranges and the data-only ablation are in Appendix~\ref{app:circular}.
+
+The centered-square specialists transfer the construction to a different geometry and mesh. Aggregate held-out errors are $(E_u,E_p)=(1.5311,1.4583)\%$ for the steady chart, $(0.4387,0.4844)\%$ for Hopf, and $(0.9395,1.0921)\%$ for periodic flow. On fluidic pinball, the comparison in Table~\ref{tab:pinball_autonomous} shows that the learned specialist removes the divergent rollouts of the projected baseline in the steady and Hopf settings and substantially reduces joint error across all four evaluations. This is empirical long-horizon evidence under the tested distributions, not a guarantee of stability outside them.
+
+\begin{table}[t]
+\centering
+\caption{Fluidic-pinball autonomous prediction. Errors are percentages; ``div.'' counts divergent evaluation windows.}
+\label{tab:pinball_autonomous}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{llrrrr}
+\toprule
+Regime ($K$) & Model & $E_u$ & $E_p$ & $E_{\rm joint}$ & div. \\
+\midrule
+Steady (56) & POD--Galerkin & -- & -- & -- & 448/448 \\
+            & RAL-MoE-ROM & 0.2247 & 0.7593 & 0.9840 & 0 \\
+Hopf (56)   & POD--Galerkin & 0.4378 & 48.50 & 48.94 & 141/320 \\
+            & RAL-MoE-ROM & 0.0995 & 1.986 & 2.085 & 0 \\
+Periodic (32) & POD--Galerkin & 1.641 & 41.56 & 43.20 & 0 \\
+            & RAL-MoE-ROM & 0.2897 & 0.5518 & 0.8415 & 0 \\
+Periodic core (56) & POD--Galerkin & 2.555 & 39.36 & 41.91 & 0 \\
+            & RAL-MoE-ROM & 0.6222 & 1.050 & 1.672 & 0 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Does learned physical-space fusion improve overlap prediction?}
+
+Table~\ref{tab:routing_fusion} separates hard routing from field-space combination on the centered-square benchmark. T2-C improves E2 Top-1 in both overlaps and is close to the a posteriori window-wise convex oracle. Equal weights and direct E2-probability weights do not reproduce the gain, indicating that the improvement is not a generic consequence of averaging. At $Re=95.1$, T2-C reduces joint error from $1.7140\%$ to $1.1827\%$; at $Re=100.5$, it reduces $2.6485\%$ to $0.8571\%$. Figure~\ref{fig:square_overlap} shows the corresponding physical fields and velocity-error maps. The complete parameter-wise table and fluidic-pinball overlap study appear in Appendices~\ref{app:square} and \ref{app:pinball}.
+
+\begin{table}[t]
+\centering
+\caption{Centered-square routing and fusion at $K=24$. Lower is better.}
+\label{tab:routing_fusion}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrr}
+\toprule
+Overlap & Predictor & $E_u$ & $E_p$ & $E_{\rm joint}$ \\
+\midrule
+$S$--$H$ & E2 Top-1 & 0.4942 & 1.2356 & 1.7298 \\
+          & Equal blend & 1.3644 & 1.6677 & 3.0321 \\
+          & E2-probability blend & 0.7898 & 1.3949 & 2.1847 \\
+          & T2-C & \textbf{0.4615} & 0.7343 & \textbf{1.1958} \\
+          & Convex oracle & 0.4659 & \textbf{0.7183} & 1.1842 \\
+\midrule
+$H$--$P$ & E2 Top-1 & 0.7422 & 1.1052 & 1.8473 \\
+          & Equal blend & 0.6077 & 1.0069 & 1.6146 \\
+          & E2-probability blend & 0.6154 & 1.0464 & 1.6618 \\
+          & T2-C & 0.4509 & 0.3956 & 0.8465 \\
+          & Convex oracle & \textbf{0.4479} & \textbf{0.3905} & \textbf{0.8384} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{figures/square_overlap_compact.png}
+\caption{Representative cross-regime predictions on the centered-square benchmark. The left and right panels correspond to the $S$--$H$ and $H$--$P$ overlaps, respectively. T2-C combines independently evolved specialists after physical reconstruction and reduces the velocity-field discrepancy relative to the corresponding single-specialist prediction. Complete velocity and pressure fields are reported in Appendix~\ref{app:square}.}
+\label{fig:square_overlap}
+\end{figure}
+
+\subsection{What contributes to the result?}
+
+\begin{table}[t]
+\centering
+\caption{Compact ablation summary using existing headline metrics. Regime columns report circular-cylinder $E_u/E_p$ ranges; the overlap column reports centered-square $S$--$H$/$H$--$P$ joint errors at $K=24$. A dash indicates that the comparison does not modify that component.}
+\label{tab:compact_ablation}
+\scriptsize
+\setlength{\tabcolsep}{2.2pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{lcccc}
+\toprule
+Variant & Steady $E_u/E_p$ & Hopf $E_u/E_p$ & Periodic $E_u/E_p$ & Overlap $E_{\rm joint}$ \\
+\midrule
+Full RAL-MoE-ROM
+& .0330--.1723 / .2500--1.3249
+& .0032--.0288 / .0355--.4321
+& .3809--1.3473 / 1.6825--5.9601
+& 1.1958 / .8465 \\
+FNN experts
+& .0384--.2995 / 2.2163--18.5603
+& N/E
+& 1.0393--3.0836 / 3.9659--13.3257
+& -- \\
+Data only
+& .1637--.5122 / 4751.1--27275.5
+& .1260--.3880 / 1280.3--1524.6
+& .7854--1.8677 / 2.2511--10.8189
+& -- \\
+Global chart
+& .0845--.3404 / 1.5226--7.4363
+& .0110--.0268 / .0560--.2882
+& .5873--1.1726 / 2.1896--6.3566
+& -- \\
+E2 Top-1 only & -- & -- & -- & 1.7298 / 1.8473 \\
+E2-probability blend & -- & -- & -- & 2.1847 / 1.6618 \\
+\bottomrule
+\end{tabular}%
+}
+\end{table}
+
+The original ablations isolate four effects. Removing the projected backbone produces the data-only degradation visible on circular-cylinder rollouts. Replacing the local charts with a global representation changes the regime-wise error profile and removes regime-specific coordinates, but does not uniformly degrade physical-field accuracy. This comparison indicates that localization is most useful when combined with regime-specific dynamics and cross-regime assembly rather than as a universally superior representation. Replacing structured sparse experts with the vanilla learned correction widens long-horizon errors and fails in the evaluated Hopf case; replacing T2-C with Top-1, equal, or raw-probability fusion worsens overlap prediction. Together these results support the architectural decomposition rather than a claim that any single component is uniformly dominant.

@@ -1,0 +1,19 @@
+{
+  "regime": "P",
+  "cell": "GRU",
+  "seed": 2026,
+  "phase": "formal",
+  "steps": 4000,
+  "config": {
+    "id": 8,
+    "width": 128,
+    "layers": 1,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 1e-05
+  },
+  "code_sha256": "69f73c3a3dcf597d080a9ce1ec1ef3b6005acc3a5ab4ba8bc3bf362dbec2f357",
+  "manifest_sha256": "c6e4c795f1920e586c59e2936efce1b1ed24882c04c8c50d9568612931b75c20",
+  "protocol_sha256": "dc84462a2fed599c9fda4e4b9d417ed0538b415e7cee6f7641b867116e9d0a6b",
+  "parameter_count": 83520
+}

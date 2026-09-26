@@ -1,0 +1,33 @@
+{
+  "method": "qlrom",
+  "seed": 1248,
+  "start": 976,
+  "seconds": [
+    0.09812832158058882,
+    0.09899368602782488,
+    0.09904447756707668,
+    0.0986990099772811,
+    0.0982166612520814,
+    0.09927502647042274,
+    0.09845920372754335,
+    0.0987809868529439,
+    0.09801971539855003,
+    0.09850648511201143
+  ],
+  "median": 0.09860274754464626,
+  "iqr": 0.0006632143631577492,
+  "warmups": 3,
+  "repeats": 10,
+  "batch": 1,
+  "K": 48,
+  "dtype": "FP64",
+  "cpu": "x86_64",
+  "gpu": "not used",
+  "cpu_threads": 2,
+  "peak_process_rss_bytes": 1077813248,
+  "peak_rss_scope": "whole process high-water mark including loaded reference assets",
+  "max_modal_difference_from_cached": 2.4841240175987878e-14,
+  "scope": "in-memory common POD-reconstructed physical history -> all decoded gauge-fixed fields; uses current velocity only, history available but unused; operator construction/model loading/disk IO excluded",
+  "synchronization": "CPU synchronous",
+  "code_sha256": "788b86e6c53a084bd3313eb6a30c55589ab61ee52f8ce6d00fdcedebcb52ff6e"
+}

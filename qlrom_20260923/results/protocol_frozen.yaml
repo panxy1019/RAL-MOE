@@ -1,0 +1,56 @@
+{
+  "frozen_at": "2026-09-23T15:00:30+0800",
+  "method": "ql-ROM-style within a fixed POD space",
+  "scope": "Circular Periodic only; independent paper-based restricted implementation",
+  "seeds": [
+    1248,
+    1600,
+    2026
+  ],
+  "J": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "rank": [
+    16,
+    32
+  ],
+  "excluded_rank64": "verified parent basis and physical operators have dimension 32",
+  "substeps": [
+    1,
+    2,
+    4,
+    8
+  ],
+  "kmeans": {
+    "package": "scikit-learn 1.7.2",
+    "init": "k-means++",
+    "n_init": 10,
+    "max_iter": 300,
+    "tol": 0.0001,
+    "algorithm": "lloyd",
+    "empty_cluster": "sklearn relocation; rank-deficient candidate rejected"
+  },
+  "precision": "CPU float64; parent artifacts stored float32/float64",
+  "fit": "8539 training snapshots from 53 Re only",
+  "selection": "all 48 validation windows complete in all 3 seeds, minimum mean Eu48+Ep48; relative ties 1e-8 choose r,J,substeps lexicographically",
+  "pressure": "inherited algebraic PPE composed into momentum at every RK4 stage; no learned pressure correction",
+  "switch": "after each full internal RK4 step, nearest predicted state; no intra-stage switching",
+  "failure": "nonfinite outputs retained; finite large errors retained; incomplete full-window metric undefined",
+  "aggregate": "time mean -> window mean within Re -> equal Re mean -> seed mean and sample sd",
+  "gauge": "area mean removed separately from prediction and reference; no epsilon",
+  "validation_extension": "if no finite candidate or best upper-bound 8-step candidate changes joint metric >1% versus same configuration at 4, expand all configurations once to 16 before testing",
+  "timing": "3 warmups,10 repeats; physical in-memory history -> all decoded fields; exclude loading/I/O; CPU threads2; FP64 ql-ROM vs FP32 neural",
+  "reference": "same r32 train-only POD-reconstructed reference for all methods",
+  "files": {
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz": "a2c12dc3ea25772e7bd4216b37683df9dbcce804063f9900bdaebac3e25dc7a2",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz": "f6e0a23432581c78e9f649d60bb0fceb9087a6a1d0631778bde444338c16239f",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/velocity_rom_periodic.npz": "8af11eaaab376d7c146fa45884f5d56d8bc4a6e48780cbc57cd8cb3f8f4ce87b",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/pressure_poisson_surrogate_periodic.npz": "bf64858428733e90bda185b504ab98ef7fc96f5e0f3bb3d6d788d758e2b15a09",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/provenance/projection_snapshots_velocity_periodic.csv": "3d5b5274f9a70e6d997e065e898062d55a8e4c4c4b0be6362d24fada7af9e7ed"
+  },
+  "windows_sha256": "a007c374e5388bd6b5753047d7e4cb595912f96ae3b561a2410d26f977f7f170",
+  "script_sha256": "cc25ad69c954361eb60d4b4544ee81933a0f9c9a5434b8c0d41e59aa1740d8d4"
+}

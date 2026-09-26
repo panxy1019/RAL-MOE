@@ -1,0 +1,19 @@
+{
+  "manifest": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\external_rnn_fno_20260923\\results\\split_manifest.json",
+  "manifest_sha256": "c6e4c795f1920e586c59e2936efce1b1ed24882c04c8c50d9568612931b75c20",
+  "history": {
+    "H": 3,
+    "P": 3
+  },
+  "horizon": {
+    "H": 48,
+    "P": 48
+  },
+  "windows": {
+    "Hopf": 42,
+    "Periodic": 32
+  },
+  "step_rows": 3552,
+  "expected_step_rows": 3552,
+  "passed": true
+}

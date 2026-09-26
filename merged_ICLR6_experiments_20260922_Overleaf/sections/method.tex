@@ -1,0 +1,268 @@
+\section{RAL-MoE-ROM}
+\label{sec:method}
+
+RAL-MoE-ROM separates reduced modeling into three complementary components: regime-local ROMs, autonomous local specialists, and cross-regime router and fusion. These components are organized by a two-level routing hierarchy.  The hierarchy separates internal sparse expert routing within each local specialist from outer parameter-only regime routing (E2). For a prescribed adjacent candidate pair, history-conditioned Top-2 fusion (T2-C) combines independently predicted trajectories after reconstruction in physical space.
+\subsection{Regime-local ROMs}
+\label{sec:local_roms}
+
+We consider parameterized incompressible flows governed by the
+Navier--Stokes equations,
+\begin{equation}
+  \partial_t\bm u+(\bm u\cdot\nabla)\bm u
+  =-\nabla p+\nu(\mu)\Delta\bm u+\bm f(\mu),
+  \qquad \nabla\cdot\bm u=0,
+  \label{eq:main_ns}
+\end{equation}
+with the initial and boundary conditions of each benchmark. Here $\bm u$ and $p$ denote velocity and pressure, $\mu$ is the physical parameter, $\nu$ is the viscosity, and $\bm f$ denotes a prescribed forcing term. In our nondimensional benchmarks, $\mu=Re$ and $\nu(\mu)=Re^{-1}$.
+
+Finite-volume spatial discretization gives the semi-discrete momentum equation and incompressibility constraint,
+\begin{equation}
+  \dot{\bm u}
+  =\bm f_h(\mu)+\mathcal L_h(\mu)\bm u
+  -\mathcal N_h(\bm u,\bm u;\mu)-\nabla_h(\mu)p,
+  \qquad \operatorname{div}_h(\mu)\bm u=0.
+  \label{eq:main_semidiscrete}
+\end{equation}
+Here time remains continuous, while $\bm u\in\mathbb R^{N_u}$ and $p\in\mathbb R^{N_p}$ denote the discrete field vectors, using the same symbols as their continuous counterparts. The subscript $h$ denote spatial discretization: $\mathcal L_h$ and $\mathcal N_h$ represent th viscous and convective terms, $\nabla_h$ and $\operatorname{div}_h$ the gradient and divergence, and $\bm f_h$ the discrete forcing.
+
+As $\mu$ varies, the flow can exhibit different dynamical regimes. Let $r\in\{S,H,P\}$ index steady, Hopf-onset, and periodic regimes, with corresponding overlapping parameter regions $\mathcal M_r$. For each region, we construct separate velocity and pressure bases by area-weighted proper orthogonal decomposition (POD) of  high-fidelity snapshots. The velocity basis
+$\Phi_u^{(r)}$ satisfies ${\Phi_u^{(r)}}^\top M_u\Phi_u^{(r)}=I$,
+where $M_u$ is the quadrature matrix. It defines the local encoding
+and reconstruction
+\begin{equation}
+  \bm a^{(r)}={\Phi_u^{(r)}}^{\top}M_u(\bm u-\bar{\bm u}^{(r)}),\qquad
+  \widehat{\bm u}^{(r)}=\bar{\bm u}^{(r)}+\Phi_u^{(r)}\bm a^{(r)},
+  \label{eq:main_chart}
+\end{equation}
+where \(\bar{\bm u}^{(r)}\) is the local training mean and \(\bm a^{(r)} \in \mathbb{R}^{d_u^{(r)}}\) denotes the local reduced velocity coordinates for regime \(r\), with \(d_u^{(r)}\) the number of retained velocity POD modes. Pressure is first mapped to a common weighted zero-mean gauge and then encoded analogously using $\Phi_p^{(r)}$, yielding coefficients $\bm b^{(r)}$. Appendix~\ref{app:problem_pod} specifies the pressure gauge, quadrature, and weighted POD construction for this semi-discrete system.
+
+Substituting the local velocity and pressure reconstructions into Eq.~(\plaineqref{eq:main_semidiscrete}) and projecting its momentum equation onto $\Phi_u^{(r)}$ in the $M_u$ inner product gives the Galerkin equation:
+\begin{equation}
+  \mathcal F_r^{G}(\bm a^{(r)},\bm b^{(r)};\mu)
+  =\bm c_r(\mu)+\bm A_r(\mu)\bm a^{(r)}
+  +\bm H_r(\mu):\bigl(\bm a^{(r)}\otimes\bm a^{(r)}\bigr)
+  +\bm C_r^p(\mu)\bm b^{(r)},
+  \label{eq:main_galerkin_backbone}
+\end{equation}
+where the terms collect the constant, linear, quadratic, and pressure
+contributions.  Appendix~\ref{app:rom} defines these projected operators and the reduced Pressure--Poisson equation.
+
+
+\subsection{Regime-local hybrid specialists}
+\label{sec:hybrid_specialists}
+
+A hybrid specialist augments the chart-local projected Galerkin equation with a learned velocity correction,
+\begin{equation}
+  \dot{\bm a}^{(r)}
+  =\mathcal F_r^G(\bm a^{(r)},\bm b^{(r)};\mu)
+   +\bm\rho^u_{\theta_r},
+  \label{eq:main_specialist}
+\end{equation}
+and reconstructs pressure algebraically after the velocity update. 
+
+\paragraph{Local features and two computation paths.}
+Let $\bm g_n^{(r)}=
+\mathcal F_r^G(\bm a_n^{(r)},\bm b_n^{(r)};\mu)$.
+The chart-specific feature map constructs a standardized vector
+\begin{equation}
+  \bm\xi_n^{(r)}
+  =\operatorname{Feat}_r\!\left(
+    (\bm a_{n-\ell}^{(r)},\bm b_{n-\ell}^{(r)},
+     \bm g_{n-\ell}^{(r)})_{\ell=0}^{2},\mu\right),
+  \qquad
+  \bm z_n^{(r)}=\operatorname{Enc}_r(\bm\xi_n^{(r)}).
+  \label{eq:main_specialist_features}
+\end{equation}
+Features include current states, projected Galerkin equation, 
+and parameter features. Standardization uses only the local
+training set. 
+
+The encoded features feed two paths: expert responses use
+$[\bm z;\bm s^c]$, whereas routing uses
+$\bm\chi=[\bm z;\bm\xi]$.  $c\in\{u,p\}$ denotes the velocity or pressure output channel, and
+\begin{equation}
+  \bm s^u=\widetilde{\bm a}^{(r)},
+  \qquad
+  \bm s^p=[\widetilde{\bm a}^{(r)};
+            \widetilde{\bm b}^{(r)}]
+  \label{eq:main_expert_state_inputs}
+\end{equation}
+are the current-state slices of the standardized feature vector. Time and chart indices are suppressed below for readability.
+
+\paragraph{Expert-response path.}
+For expert $e$ in group $m$, a nonlinear residual feed-forward
+network $N_{e,m}^c$ first projects $[\bm z;\bm s^c]$ to its hidden representation, applies expanded residual blocks with GELU activations, and maps the result to $d_c$ outputs, with
+$d_c=d_u^{(r)}$ or $d_p^{(r)}$.
+This response is augmented by explicit linear and low-rank quadratic functions of the current state:
+\begin{equation}
+  [E_{e,m}^c(\bm z,\bm s^c)]_j
+  =[N_{e,m}^c([\bm z;\bm s^c])]_j
+   +[L_{e,m}^c\bm s^c]_j
+   +\kappa\sum_{\ell=1}^{q_b}
+    \bigl({\bm v_{e,m,j\ell}^{c,(1)}}^\top\bm s^c\bigr)
+    \bigl({\bm v_{e,m,j\ell}^{c,(2)}}^\top\bm s^c\bigr).
+  \label{eq:main_structured_expert}
+\end{equation}
+The linear map has no bias, and the two quadratic factors are
+independent for each output component $j$. The verified configurations use $q_b=4$ and $\kappa=0.05$. Shared and routed experts have the same architecture but separate parameters. Thus the nonlinear branch uses history-conditioned features, while the explicit polynomial
+branches act directly on local state coordinates.
+
+\paragraph{Routing-and-weighting path.}
+The group router receives $\bm\chi=[\bm z;\bm\xi]$ and computes
+\begin{equation}
+  \bm\ell^{\mathrm{grp}}=R_r^{\mathrm{grp}}(\bm\chi),
+  \qquad
+  \bm p^{\mathrm{grp}}
+   =\operatorname{softmax}(\bm\ell^{\mathrm{grp}}/T_g),
+  \qquad
+  m^\star=\operatorname*{arg\,max}_m p_m^{\mathrm{grp}},
+  \label{eq:main_group_selection}
+\end{equation}
+where $T_g>0$ is the group temperature. The router is a
+layer-normalized MLP with a SiLU hidden activation and dropout. Selection is hard Top-1 for each sample. During training, a straight-through gate
+$\widetilde{\bm q}=\operatorname{onehot}(m^\star)
+-\operatorname{stopgrad}(\bm p^{\mathrm{grp}})
++\bm p^{\mathrm{grp}}$
+retains hard selection in the forward pass while providing a
+softmax gradient path.  Within the selected group, independent velocity and pressure routers with the same MLP form score six routed experts:
+\begin{equation}
+  \bm\ell^c=R_{r,m^\star}^c(\bm\chi),
+  \qquad
+  \bm p^c=\operatorname{softmax}(\bm\ell^c/T_c),
+  \qquad
+  \mathcal T_2^c=\operatorname{Top2}(\bm p^c).
+  \label{eq:main_channel_selection}
+\end{equation}
+Here $\operatorname{Top2}$ returns the indices of the two largest scores and $T_c>0$ is the channel temperature. The shared expert $e=0$ is excluded from this competition and remains active in the selected group. Given configured shared and routed scales
+$\lambda_0,\lambda_{\rm rt}>0$, the weights are
+\begin{equation}
+  \omega_0^c=\frac{\lambda_0}{\lambda_0+\lambda_{\rm rt}},
+  \qquad
+  \omega_e^c=
+  \frac{\lambda_{\rm rt}}{\lambda_0+\lambda_{\rm rt}}
+  \frac{p_e^c}{\sum_{j\in\mathcal T_2^c}p_j^c},
+  \quad e\in\mathcal T_2^c.
+  \label{eq:main_routing_weights}
+\end{equation}
+The implementation includes numerical safeguards in the denominators; the expression above gives the normalized mathematical rule. The two paths meet in the sparse mixture
+\begin{equation}
+  \mathcal M_{\theta_r}^c
+  =\omega_0^c E_{0,m^\star}^c(\bm z,\bm s^c)
+   +\sum_{e\in\mathcal T_2^c}
+     \omega_e^c E_{e,m^\star}^c(\bm z,\bm s^c).
+  \label{eq:main_inner_moe}
+\end{equation}
+Expert outputs are combined in standardized target coordinates and then converted using the chart-specific output scalers to the
+velocity and pressure corrections $\bm\rho^u_{\theta_r}$ and
+$\bm\rho^p_{\theta_r}$ in the additive instances.
+
+
+
+\paragraph{Algebraic pressure reconstruction.}
+In adaptive-gate instances, pressure is
+reconstructed after the velocity update as
+\begin{equation}
+  \bm b_{n+1}^{(r)}
+  =\bm\gamma_n^{(r)}\odot
+     \mathcal Q_r^{PP}(\bm a_{n+1}^{(r)};\mu)
+   +\bm\rho_n^{p,(r)},
+  \qquad
+  \bm\gamma_n^{(r)}
+  =\operatorname{sigmoid}(\bm\eta_r^p(\bm z_n^{(r)})).
+  \label{eq:main_pressure_closure}
+\end{equation}
+The independent confidence head $\bm\eta_r^p$ maps the shared
+embedding through a 64-unit GELU hidden layer to $d_p^{(r)}$ outputs. It scales only the PPE candidate defined in Appendix~\ref{app:rom}; the learned correction is additive, not multiplied by $1-\bm\gamma_n^{(r)}$. Both terms are combined in the same unstandardized local pressure coordinates. The correction $\bm\rho_n^{p,(r)}$ uses the current encoded context; where configured, its expert state input is overridden using the updated velocity and
+PPE pressure, without re-encoding the routing context.
+Pressure is therefore reconstructed rather than independently
+time-integrated; its output enters the subsequent local history.
+
+
+\subsection{Closed-loop rollout training}
+\label{sec:rollout_training}
+
+Each specialist is initialized by encoding a physical history into its own local coordinates. It then advances autonomously, using its predicted velocity and reconstructed pressure to update the history. No reference state inside the prediction window is injected after initialization.
+
+\paragraph{Frozen-context advancement.}
+During one reduced velocity step, the pressure $\bm b_n^{(r)}$,
+preceding-state history, and parameter define a fixed context
+$\mathcal C_n^{(r)}$. For a trial velocity state $\bm a$, the hybrid
+right-hand side and numerical update are
+\begin{align}
+  F_r(\bm a;\mathcal C_n^{(r)})
+  &=\mathcal F_r^G(\bm a,\bm b_n^{(r)};\mu)
+    +\bm\rho^u_{\theta_r}\!\left(
+      \bm\xi^{(r)}(\bm a;\mathcal C_n^{(r)})\right),
+    \label{eq:main_frozen_context_rhs}
+    \\
+  \bm a_{n+1}^{(r)}
+  &=\operatorname{Step}_r\!\left(
+     \bm a_n^{(r)};
+     F_r(\cdot;\mathcal C_n^{(r)}),\Delta t_r\right).
+    \label{eq:main_specialist_step}
+\end{align}
+Here $\Delta t_r$ is the reduced time step and
+$\operatorname{Step}_r$ denotes the chart-specific advancement rule. For continuous-time instances, Runge--Kutta stages evaluate the velocity-dependent right-hand side with the same frozen context; each trial velocity triggers recomputation of the Galerkin right-hand side, current features, embedding, internal group selection, channel
+Top-2 weights, and expert responses. Intermediate pressure outputs that may be computed by the full network forward pass are not used to advance pressure at the Runge--Kutta stages. The updated velocity is then supplied to Eq.~\eqref{eq:main_pressure_closure}, and the local history is shifted before the next step.  Benchmark-specific stepping rules are given in Appendix~\ref{app:implementation}.
+
+\paragraph{Rollout prediction objective.}
+Training unrolls the complete specialist update for $K$ steps with the following normalized coefficient prediction loss
+\begin{equation}
+  \mathcal L_r=\frac{1}{K}\sum_{k=1}^{K}\left[
+  \frac{\left\|(\widehat{\bm a}_{n+k}^{(r)}-\bm a_{n+k}^{(r)})
+  \oslash\bm\sigma_a^{(r)}\right\|_2^2}{d_u^{(r)}}
+  +\frac{\left\|(\widehat{\bm b}_{n+k}^{(r)}-\bm b_{n+k}^{(r)})
+  \oslash\bm\sigma_b^{(r)}\right\|_2^2}{d_p^{(r)}}\right].
+  \label{eq:main_rollout_loss}
+\end{equation}
+Hats denote recursively predicted coefficients, while unhatted coefficients are reference targets. The dimensions $d_u^{(r)}$ and $d_p^{(r)}$ are chart-specific; the scaling vectors $\bm\sigma_a^{(r)}$ and $\bm\sigma_b^{(r)}$ are estimated from the corresponding training set, and $\oslash$ denotes componentwise division.  Progressively longer
+rollout horizons expose the learned corrections to their own
+accumulated prediction errors. The curricula and optimization
+settings are reported in Appendix~\ref{app:implementation}, and held-out trajectory splits are listed in Table~\ref{tab:chart_splits}.
+
+This expression defines the rollout prediction term, not every term in every training configuration. Learned group-routing configurations also employ auxiliary group-balance, entropy, and Reynolds-partition supervision terms; their activation and coefficients are configuration-dependent. 
+
+\subsection{Cross-regime routing and fusion}
+\label{sec:outer_routing}
+Unlike the internal routing in Section~\ref{sec:hybrid_specialists}, the outer parameter-only regime router, denoted E2 in the experiments, produces a
+preference over the regime-local specialists: 
+\begin{equation}
+  \widetilde\mu_R=(\mu-\mu_R)/\sigma_R,\qquad
+  \bm\pi(\mu)=\operatorname{softmax}
+  \bigl(\mathcal R_{E2}(\widetilde\mu_R)\bigr).
+  \label{eq:main_e2_preference}
+\end{equation}
+\(R_{E2}\) is a simple three-layer MLP---a \(1\)--\(24\)--\(3\) MLP with 123 parameters. It is trained on chart-assigned parameter labels, so \(\bm\pi\) is a  parameter-conditioned preference. The deterministic parameter-only output is identical for windows with the same \(\mu\) and remains fixed during each rollout. The E2 normalization and training protocol are specified in Appendix~\ref{app:implementation}.
+
+\paragraph{Prespecified adjacent candidates.}
+The evaluation protocol supplies an ordered candidate pair $(r,s)=(S,H)$ or $(P,H)$ on prespecified common chart support
+For the supplied pair, define
+\begin{equation}
+  \bar\pi_r=\frac{\pi_r}{\pi_r+\pi_s},\qquad
+  \bar\pi_s=1-\bar\pi_r.
+  \label{eq:main_pair_preference}
+\end{equation}
+E2 Top-1 selects $r$ when $\bar\pi_r\geq1/2$ and $s$ otherwise. The pair order means that the first-candidate weight always refers to Steady in the S--H study and Periodic in the H--P study.
+
+\paragraph{History-conditioned output fusion.}
+
+Both candidates encode the same physical initialization history
+in their own charts and advance independently. We refer to their history-conditioned physical-space fusion as T2-C (history-conditioned Top-2 fusion).
+Here, Top-2 denotes the two candidates in the prescribed adjacent
+pair, rather than the internally routed correction experts. T2-C adjusts the parameter-only pair preference using a chart-independent descriptor of the initial physical history:
+
+\begin{equation}
+  \widehat{\bm q}_{\rm T2C}(t)
+  =\alpha\,\widehat{\bm q}^{(r)}(t)
+   +(1-\alpha)\widehat{\bm q}^{(s)}(t),\qquad
+  \alpha=\operatorname{sigmoid}
+  \left(\operatorname{logit}(\bar\pi_r^{\rm clip})
+       +c_\psi([\widetilde\mu_G;\bm d_n])\right).
+  \label{eq:main_t2c}
+\end{equation}
+Here $\bar\pi_r^{\rm clip}$ is $\bar\pi_r$ clipped to
+$[10^{-6},1-10^{-6}]$, and $\bm q$ collects reconstructed velocity and gauge-corrected pressure on the common physical mesh. The eight descriptor channels $\bm d_n$ are computed from the initial three physical states, without future reference states. The gate input $[\widetilde\mu_G;\bm d_n]$ uses training-window normalization, distinct from the trajectory-label normalization $\widetilde\mu_R$ used by E2. The correction network is a $9$--$64$--$64$--$1$ MLP with SiLU hidden activations and a zero-initialized final layer. Its construction and physical-field training loss are given in Appendix~\ref{app:routing}.
+
+The scalar $\alpha$ is computed for each prediction window and is shared by velocity and pressure throughout that window.
+Unlike E2, it may differ between histories at the same parameter. Fusion acts only on reconstructed outputs and is never fed back into either candidate. This interface does not require identical internal architectures for the two local predictors.
+

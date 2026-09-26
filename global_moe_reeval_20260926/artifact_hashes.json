@@ -1,0 +1,12 @@
+{
+  "checkpoint_sha256": "9d7e2b861d8c501eff87a940b93f7fe64ca72fd976afc0c6fc1621ff8f0b284f",
+  "source_evaluator_sha256": "eb157fde33fd6d7236444a482cef67c5a42e60526b797336bc1677929b941a0f",
+  "target_manifest_sha256": "c6e4c795f1920e586c59e2936efce1b1ed24882c04c8c50d9568612931b75c20",
+  "evaluate_global_single.py": "9703dc305a7015e6e0f04f4946dd4098c2caa2225c45872370f45e981410cb98",
+  "aggregate_global_results.py": "c855f2d14423151094c15603f1441e55a0b7ca5313e212a3597641a80425e373",
+  "independent_verify.py": "5be670710539f8775944e25548a50f1d06e67c7f61bd94ca0c5caf6d137bc025",
+  "target_window_steps.csv": "2e0ff54b1d35844fd210876fdc64629efdea9eb251d4850d96fc5b296951ded2",
+  "single_checkpoint_eval/per_step_errors.csv": "7682ba39e798f5aef6cdafa498846a21e3b4e1464b733f90a0be35b22ca512ce",
+  "final_aggregate/final_summary.csv": "51ae887276bdb8cdb9e8accdd7cae4106a06939dee5c50a9504ba9a8542688f0",
+  "independent_verification.json": "6b0b151d6d5129134e3d4c99ae63106125385fdc37f8b4a128e7441c6a6c939f"
+}

@@ -1,0 +1,207 @@
+{
+  "chart": "steady",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s4_validation_step_1200.pt",
+  "checkpoint_sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+  "checkpoint_unchanged": true,
+  "model_state_unchanged": true,
+  "hook_on_off_predictions_bitwise_equal_all_windows": true,
+  "strict_load_missing_unexpected_keys": [
+    [],
+    []
+  ],
+  "routing_config": {
+    "num_regime_groups": 3,
+    "experts_per_group": 6,
+    "shared_per_group": 1,
+    "top_k": 2,
+    "group_top_k": 1,
+    "temperature": 0.95,
+    "group_temperature": 0.9,
+    "gate_floor": 0.0,
+    "group_gate_floor": 0.0,
+    "shared_scale": 1.0,
+    "routed_scale": 0.85
+  },
+  "rows": [
+    {
+      "Re": 24.630435943603516,
+      "label": "Re_24p630436",
+      "windows": 6,
+      "starts": [
+        130,
+        131,
+        132,
+        133,
+        134,
+        135
+      ],
+      "Eu_percent": 0.30919079689245577,
+      "Ep_percent": 18.655330074510996,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0
+    },
+    {
+      "Re": 32.74006652832031,
+      "label": "Re_32p740068",
+      "windows": 6,
+      "starts": [
+        386,
+        387,
+        388,
+        389,
+        390,
+        391
+      ],
+      "Eu_percent": 0.08850684430497636,
+      "Ep_percent": 5.452246753165955,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0
+    },
+    {
+      "Re": 39.68547821044922,
+      "label": "Re_39p685479",
+      "windows": 6,
+      "starts": [
+        641,
+        642,
+        643,
+        644,
+        645,
+        646
+      ],
+      "Eu_percent": 0.038527719259100895,
+      "Ep_percent": 1.593066470996884,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0
+    },
+    {
+      "Re": 45.142704010009766,
+      "label": "Re_45p142703",
+      "windows": 6,
+      "starts": [
+        1087,
+        1088,
+        1089,
+        1090,
+        1091,
+        1092
+      ],
+      "Eu_percent": 0.061620989859907875,
+      "Ep_percent": 2.4440022723522214,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0
+    }
+  ],
+  "raw_routing_rows": 2688,
+  "tf32_matmul": true,
+  "tf32_cudnn": true,
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch": "2.11.0+cu126",
+  "numpy": "2.4.4",
+  "elapsed_seconds": 17.201778893359005,
+  "integrator": "Euler; native additive algebraic pressure closure",
+  "precision": "torch.bfloat16",
+  "state_sha256": "31c9da2ef2ae20162f20cf2fd5f42044247fbbe2fb8fcdc747a0547e66314961",
+  "full_native_metrics": {
+    "available": true,
+    "k": 56,
+    "by_re": {
+      "Re_24p630436": {
+        "window_count": 6,
+        "coefficient_space": {
+          "velocity_relative_l2": 0.00453338960389467,
+          "pressure_relative_l2": 0.15188598525579258
+        },
+        "physical_reconstruction_area_weighted": {
+          "velocity_relative_l2": 0.0030919079689245574,
+          "pressure_relative_l2": 0.18655330074510995
+        },
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "first_divergent_step": null,
+        "state_norm_max_multiple": 54.599422454833984,
+        "pressure_drift": 0.36582663655281067,
+        "fixed_point_residual": 0.36354154348373413
+      },
+      "Re_32p740068": {
+        "window_count": 6,
+        "coefficient_space": {
+          "velocity_relative_l2": 0.0058838818033166655,
+          "pressure_relative_l2": 0.17671695500345386
+        },
+        "physical_reconstruction_area_weighted": {
+          "velocity_relative_l2": 0.0008850684430497637,
+          "pressure_relative_l2": 0.054522467531659555
+        },
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "first_divergent_step": null,
+        "state_norm_max_multiple": 33.11245346069336,
+        "pressure_drift": 0.24839088320732117,
+        "fixed_point_residual": 0.29414117336273193
+      },
+      "Re_39p685479": {
+        "window_count": 6,
+        "coefficient_space": {
+          "velocity_relative_l2": 0.004121967410738907,
+          "pressure_relative_l2": 0.1630465304105084
+        },
+        "physical_reconstruction_area_weighted": {
+          "velocity_relative_l2": 0.00038527719259100895,
+          "pressure_relative_l2": 0.01593066470996884
+        },
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "first_divergent_step": null,
+        "state_norm_max_multiple": 28.509815216064453,
+        "pressure_drift": 0.6822032332420349,
+        "fixed_point_residual": 0.6028967499732971
+      },
+      "Re_45p142703": {
+        "window_count": 6,
+        "coefficient_space": {
+          "velocity_relative_l2": 0.002552477485256068,
+          "pressure_relative_l2": 0.08198404320750473
+        },
+        "physical_reconstruction_area_weighted": {
+          "velocity_relative_l2": 0.0006162098985990788,
+          "pressure_relative_l2": 0.024440022723522213
+        },
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "first_divergent_step": null,
+        "state_norm_max_multiple": 67.48371124267578,
+        "pressure_drift": 0.2738880515098572,
+        "fixed_point_residual": 0.3943597674369812
+      }
+    },
+    "overall_worst": {
+      "coefficient_space": {
+        "velocity_relative_l2": 0.0058838818033166655,
+        "pressure_relative_l2": 0.17671695500345386
+      },
+      "physical_reconstruction_area_weighted": {
+        "velocity_relative_l2": 0.0030919079689245574,
+        "pressure_relative_l2": 0.18655330074510995
+      },
+      "finite_fraction": 1.0,
+      "divergent_windows": 0,
+      "first_divergent_step": null,
+      "state_norm_max_multiple": 67.48371124267578,
+      "pressure_drift": 0.6822032332420349,
+      "fixed_point_residual": 0.6028967499732971
+    }
+  },
+  "window_policy": "All legal heldout K56 windows; six per Re; native batching",
+  "paper_identity": "Independent specified S4 diagnostic, not the current paper Steady baseline",
+  "source_sha256": {
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_s2b_3090.py": "b7f1ffaf8a341501a504f08663035f4e8863a8f28eca1946b57bb871961a08e2",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/finalize_s2b_3090.py": "05ab315e359817c0a03aa66c3f1b79e573e4efcb21fa7a24a2dccd6cf1cec2ce",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_v16_4_v2_r32_compat.py": "11099078fe195c1f571acc2ea35e30338ae46c0cc8c9911e9d9b1a5ce65ddb2c",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/velocity_pod_steady.npz": "abaab63d11e172a5b40e86b48715f247311eaf324a06094757f2f98870f40948",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/pressure_pod_steady.npz": "5056f7470f2439bccc2cfb68448e9a4dd61d89145aa7108ab8672ba6dd2be997",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/normalization_steady.npz": "87a5a2326d70adb3e57901168f0ac1b555f23c742ae64a09132031452b51f6bb",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/velocity_rom_steady.npz": "780eb5be79311290a2f36837651ae2a97a107c48e1df4cf683b2d344805b325c",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/pressure_poisson_surrogate_steady.npz": "8e6c5b689b96acf8f651fc64d8d0f82526e6a5bf5098722e5e1ce51469cc2b1c"
+  }
+}

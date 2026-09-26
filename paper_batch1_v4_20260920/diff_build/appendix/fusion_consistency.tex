@@ -1,0 +1,34 @@
+\section{Conditional consistency of output-space fusion}
+\label{app:fusion_consistency}
+Let $\bm u_\alpha=\alpha\bm u_1+\beta\bm u_2$ and $p_\alpha=\alpha p_1+\beta p_2$, where $\beta=1-\alpha$, $\alpha\in[0,1]$ is constant in space and time over the window, and both candidates share a mesh, parameter, time grid, and pressure gauge. For a common linear operator $D_h$, $D_h\bm u_\alpha=\alpha D_h\bm u_1+\beta D_h\bm u_2$. Thus zero discrete divergence, a zero-mean pressure gauge, and identical affine boundary constraints are preserved only to the extent that both candidates satisfy them.
+
+\paragraph{Nonlinear residuals.}
+For a fixed bilinear discretization $N_h$, set $\delta\bm u=\bm u_1-\bm u_2$. Bilinearity gives
+\begin{equation}
+N_h(\bm u_\alpha,\bm u_\alpha)
+=\alpha N_h(\bm u_1,\bm u_1)+\beta N_h(\bm u_2,\bm u_2)
+-\alpha\beta N_h(\delta\bm u,\delta\bm u).
+\end{equation}
+With the sign convention
+$R_u(\bm u,p)=\partial_t\bm u-\bm f_h-L_h\bm u+N_h(\bm u,\bm u)+G_hp$, one obtains
+\begin{equation}
+R_u(\bm u_\alpha,p_\alpha)
+=\alpha R_u(\bm u_1,p_1)+\beta R_u(\bm u_2,p_2)
+-\alpha\beta N_h(\delta\bm u,\delta\bm u).
+\end{equation}
+For the pressure residual
+$R_p(\bm u,p)=A_hp-[\bm s_0+S_1\bm u+B_p(\bm u,\bm u)]$, with fixed bilinear $B_p$, similarly
+\begin{equation}
+R_p(\bm u_\alpha,p_\alpha)
+=\alpha R_p(\bm u_1,p_1)+\beta R_p(\bm u_2,p_2)
++\alpha\beta B_p(\delta\bm u,\delta\bm u).
+\end{equation}
+These identities distinguish the candidates' existing residuals from the additional fusion defect. They are conditional algebraic identities, not measurements of the CFD residual: state-dependent limiters or other non-bilinear discretizations require their actual discrete operators.
+
+\paragraph{Energy and phase cancellation.}
+For $E(\bm u)=\tfrac12\|\bm u\|_M^2$ with a common positive quadrature matrix,
+\begin{equation}
+E(\bm u_\alpha)=\alpha E(\bm u_1)+\beta E(\bm u_2)
+-\frac{\alpha\beta}{2}\|\bm u_1-\bm u_2\|_M^2.
+\end{equation}
+Candidate disagreement can therefore reduce the blend's energy relative to the weighted candidate energies, including through phase cancellation. This does not imply that its energy is below the reference solution or below both candidates. Since the blend is not fed back into either specialist, this term is not a recurrent dissipative modification of their reduced dynamics. Empirical residual and phase-sensitive evaluations remain separate from these identities.

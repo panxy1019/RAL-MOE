@@ -1,0 +1,107 @@
+{
+  "cases": [
+    {
+      "Re": 94.5,
+      "derivative_relative_residual": {
+        "minus_pressure": 2.658693100147708,
+        "no_pressure": 2.365514467596262,
+        "plus_pressure": 2.30747910270909
+      },
+      "pressure_algebraic_relative_l2": 4.484954774683901,
+      "projected_derivative_rms": 0.0036345257183167897,
+      "resolved_derivative_relative_residual": {
+        "minus_pressure": 1.5070702978662078,
+        "no_pressure": 1.07971531388598,
+        "plus_pressure": 1.112761085532312
+      },
+      "rhs_plus_pressure_rms": 0.007661727553550077
+    },
+    {
+      "Re": 95.25,
+      "derivative_relative_residual": {
+        "minus_pressure": 2.6745886639268046,
+        "no_pressure": 2.37988898213497,
+        "plus_pressure": 2.32118966993847
+      },
+      "pressure_algebraic_relative_l2": 4.501195420593581,
+      "projected_derivative_rms": 0.0036413101315645098,
+      "resolved_derivative_relative_residual": {
+        "minus_pressure": 1.5465247351971816,
+        "no_pressure": 1.1264801746823792,
+        "plus_pressure": 1.1558362414822196
+      },
+      "rhs_plus_pressure_rms": 0.007705086900956829
+    },
+    {
+      "Re": 95.5,
+      "derivative_relative_residual": {
+        "minus_pressure": 2.6853906182348273,
+        "no_pressure": 2.3912841474233653,
+        "plus_pressure": 2.332609964993274
+      },
+      "pressure_algebraic_relative_l2": 4.50333351517116,
+      "projected_derivative_rms": 0.003645895791797704,
+      "resolved_derivative_relative_residual": {
+        "minus_pressure": 1.5707849278329702,
+        "no_pressure": 1.157723973810512,
+        "plus_pressure": 1.185507787909383
+      },
+      "rhs_plus_pressure_rms": 0.007742002817931652
+    },
+    {
+      "Re": 97.5,
+      "derivative_relative_residual": {
+        "minus_pressure": 3.2565234905123925,
+        "no_pressure": 3.045677077256695,
+        "plus_pressure": 3.0040063505045356
+      },
+      "pressure_algebraic_relative_l2": 4.4229532405986625,
+      "projected_derivative_rms": 0.0039389119193022895,
+      "resolved_derivative_relative_residual": {
+        "minus_pressure": 2.563254992928366,
+        "no_pressure": 2.357077330825535,
+        "plus_pressure": 2.3660233816272886
+      },
+      "rhs_plus_pressure_rms": 0.010278339036572619
+    },
+    {
+      "Re": 99.0,
+      "derivative_relative_residual": {
+        "minus_pressure": 4.232794125678453,
+        "no_pressure": 4.124017947482697,
+        "plus_pressure": 4.102367288905685
+      },
+      "pressure_algebraic_relative_l2": 4.1709578374364344,
+      "projected_derivative_rms": 0.004826046442397432,
+      "resolved_derivative_relative_residual": {
+        "minus_pressure": 3.9004856772230276,
+        "no_pressure": 3.809893144853203,
+        "plus_pressure": 3.8123542143087623
+      },
+      "rhs_plus_pressure_rms": 0.016812731751295253
+    },
+    {
+      "Re": 101.5,
+      "derivative_relative_residual": {
+        "minus_pressure": 4.929926377615908,
+        "no_pressure": 4.8704783052623455,
+        "plus_pressure": 4.8582273175827915
+      },
+      "pressure_algebraic_relative_l2": 3.727089585553303,
+      "projected_derivative_rms": 0.006140385545606481,
+      "resolved_derivative_relative_residual": {
+        "minus_pressure": 4.737126521079118,
+        "no_pressure": 4.689356480425581,
+        "plus_pressure": 4.689903330520259
+      },
+      "rhs_plus_pressure_rms": 0.025422811856647905
+    }
+  ],
+  "heldout_loaded": false,
+  "mean": {
+    "minus_pressure": 3.4063193960193487,
+    "no_pressure": 3.196143487859389,
+    "plus_pressure": 3.154313282438974
+  },
+  "role": "validation_dynamics_audit"
+}

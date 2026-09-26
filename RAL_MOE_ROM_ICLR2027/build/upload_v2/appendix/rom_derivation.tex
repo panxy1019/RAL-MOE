@@ -1,0 +1,19 @@
+\section{Regime-local projection details}
+\label{app:rom}
+
+For each regime $r$, snapshots are centered with a chart-specific affine mean. Velocity POD uses the discrete kinetic-energy inner product $\langle\bm x,\bm y\rangle_{W_u}=\bm x^\top W_u\bm y$; pressure uses the corresponding cell-area weighting. The bases satisfy $\Phi_{u,r}^\top W_u\Phi_{u,r}=I$ and $\Phi_{p,r}^\top W_p\Phi_{p,r}=I$. Pressure snapshots are gauge corrected before basis construction, so additive pressure constants do not enter either training or evaluation.
+
+Writing
+\begin{equation}
+  \bm u\approx\bar{\bm u}_r+\Phi_{u,r}\bm a^{(r)},\qquad
+  \bm p\approx\bar{\bm p}_r+\Phi_{p,r}\bm b^{(r)},
+\end{equation}
+and projecting the semi-discrete incompressible momentum equation gives
+\begin{equation}
+  \dot a_i^{(r)}=c_{r,i}+\sum_j A_{r,ij}a_j^{(r)}
+  +\sum_{j,k}H_{r,ijk}a_j^{(r)}a_k^{(r)}
+  +\sum_j C^p_{r,ij}b_j^{(r)}.
+\end{equation}
+The constant, linear, quadratic, and pressure-coupling tensors are computed separately in every chart. Pressure coefficients are obtained by projecting the pressure--Poisson relation and combining that physical estimate with a learned algebraic correction. This construction preserves the projected vector field as the explicit backbone in Eq.~\eqref{eq:main_specialist}; the MoE models the discrepancy rather than replacing the entire reduced dynamics.
+
+The affine offsets, bases, coordinates, and tensors are chart dependent. Even if two charts use the same reduced dimension, their coefficient vectors are therefore not interchangeable. This noncommensurability is structural and motivates the physical-space assembly in Appendix~\ref{app:routing}.

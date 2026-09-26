@@ -1,0 +1,28 @@
+{
+  "regime": "H",
+  "cell": "GRU",
+  "seed": 1248,
+  "phase": "screen",
+  "steps": 800,
+  "config": {
+    "id": 1,
+    "width": 64,
+    "layers": 1,
+    "dropout": 0.0,
+    "lr": 0.0003,
+    "weight_decay": 1e-05
+  },
+  "code_sha256": "69f73c3a3dcf597d080a9ce1ec1ef3b6005acc3a5ab4ba8bc3bf362dbec2f357",
+  "manifest_sha256": "c6e4c795f1920e586c59e2936efce1b1ed24882c04c8c50d9568612931b75c20",
+  "protocol_sha256": "dc84462a2fed599c9fda4e4b9d417ed0538b415e7cee6f7641b867116e9d0a6b",
+  "parameter_count": 29504,
+  "accepted": true,
+  "best_step": 800,
+  "validation_worst": 1.0416656841115997,
+  "validation_macro": 0.6663398944019056,
+  "training_seconds": 7.332278533838689,
+  "peak_gpu_allocated_bytes": 42102784,
+  "failure": "",
+  "last_step": 800,
+  "heldout_evaluated": false
+}

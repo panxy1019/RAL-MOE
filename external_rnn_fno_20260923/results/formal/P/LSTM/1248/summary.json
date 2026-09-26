@@ -1,0 +1,57 @@
+{
+  "regime": "P",
+  "cell": "LSTM",
+  "seed": 1248,
+  "phase": "formal",
+  "steps": 4000,
+  "config": {
+    "id": 8,
+    "width": 128,
+    "layers": 1,
+    "dropout": 0.1,
+    "lr": 0.001,
+    "weight_decay": 1e-05
+  },
+  "code_sha256": "69f73c3a3dcf597d080a9ce1ec1ef3b6005acc3a5ab4ba8bc3bf362dbec2f357",
+  "manifest_sha256": "c6e4c795f1920e586c59e2936efce1b1ed24882c04c8c50d9568612931b75c20",
+  "protocol_sha256": "dc84462a2fed599c9fda4e4b9d417ed0538b415e7cee6f7641b867116e9d0a6b",
+  "parameter_count": 108608,
+  "accepted": true,
+  "best_step": 3600,
+  "validation_worst": 25.828234817856526,
+  "validation_macro": 7.163946355639468,
+  "training_seconds": 40.37879658769816,
+  "peak_gpu_allocated_bytes": 52327424,
+  "failure": "",
+  "last_step": 4000,
+  "heldout_evaluated": true,
+  "horizons": {
+    "24": {
+      "regime": "P",
+      "model": "LSTM",
+      "seed": 1248,
+      "K": 24,
+      "complete": 32,
+      "total": 32,
+      "divergent": 0,
+      "parameter_count": 108608,
+      "Eu": 0.5034352806561196,
+      "Ep": 2.227795607965753,
+      "joint": 2.731230888621872
+    },
+    "48": {
+      "regime": "P",
+      "model": "LSTM",
+      "seed": 1248,
+      "K": 48,
+      "complete": 32,
+      "total": 32,
+      "divergent": 0,
+      "parameter_count": 108608,
+      "Eu": 0.6856481950285594,
+      "Ep": 2.868431807978256,
+      "joint": 3.554080003006815
+    }
+  },
+  "checkpoint_sha256": "176392b7cc28aeb10528d9b5b14bfc72c4ab14be6221b7d73491e057bfbeea73"
+}

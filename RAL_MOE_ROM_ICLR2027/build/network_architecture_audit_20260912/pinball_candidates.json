@@ -1,0 +1,3811 @@
+{
+  "pinball_steady": {
+    "status": "CANDIDATE: publication mapping requires result comparison",
+    "root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806",
+    "checkpoints": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/runs/formal/FluidicPinballV2_Steady_rank999_B1_seed1248/best_validation.pt",
+        "sha256": "2ab91013c335645ec5424d2cd3d6396ddcf8ce9f9e08b77a347e1b13d0aaf3cf",
+        "metadata": {
+          "best_score": 0.21813440951518714,
+          "best_step": 400,
+          "norm_stats": {
+            "x_mean": {
+              "shape": [
+                68
+              ],
+              "dtype": "float32"
+            },
+            "x_scale": {
+              "shape": [
+                68
+              ],
+              "dtype": "float32"
+            },
+            "rhs_mean": {
+              "shape": [
+                4
+              ],
+              "dtype": "float32"
+            },
+            "rhs_scale": {
+              "shape": [
+                4
+              ],
+              "dtype": "float32"
+            },
+            "pressure_mean": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32"
+            },
+            "pressure_scale": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32"
+            },
+            "a_scale": {
+              "shape": [
+                4
+              ],
+              "dtype": "float32"
+            },
+            "b_state_scale": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32"
+            },
+            "a_rel_floor": 0.00033310320577584207,
+            "b_rel_floor": 1.534058690071106
+          },
+          "args": {
+            "variant": "b1",
+            "baseline_trainer": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/code/pinball_steady_base.py",
+            "coefficient_view": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/assets/steady_rank999_trainval.npz",
+            "galerkin_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/rom_assets_v2/steady/rom/rank999_ru4_rp3/velocity_galerkin_tensors.npz",
+            "pressure_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/rom_assets_v2/steady/rom/rank999_ru4_rp3/pressure_poisson_tensors.npz",
+            "asset_manifest": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/assets/TRAINING_ASSET_MANIFEST.json",
+            "split_manifest": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/config/experts/steady_re_manifest.csv",
+            "fluctuation_contract": null,
+            "output_root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/runs/formal",
+            "experiment_name": "FluidicPinballV2_Steady_rank999_B1_seed1248",
+            "seed": 1248,
+            "history_len": 3,
+            "micro_batch": 256,
+            "grad_accum": 1,
+            "max_steps": 8000,
+            "lr": 0.001,
+            "weight_decay": 0.0001,
+            "grad_clip": 1.0,
+            "lambda_memory": 1e-06,
+            "lambda_radial": 1.0,
+            "tbptt_steps": 16,
+            "token_dim": 128,
+            "num_heads": 4,
+            "d_k": 16,
+            "d_v": 16,
+            "beta_max": 0.5,
+            "eval_every": 400,
+            "long_eval_every": 800,
+            "validation_windows_per_re": 24,
+            "amp": true,
+            "amp_dtype": "bfloat16",
+            "allow_tf32": true,
+            "fused_adamw": true,
+            "gpu_memory_fraction": 0.2,
+            "device": "cuda",
+            "swanlab_mode": "online",
+            "swanlab_project": "FluidicPinballV2",
+            "swanlab_group": "steady_rank999_B1",
+            "swanlab_log_every": 20,
+            "smoke_only": false,
+            "benchmark_steps": 0,
+            "benchmark_horizon": 16,
+            "resume": null,
+            "_shape_contract": {
+              "ru": 4,
+              "rp": 3,
+              "current_dim": 24,
+              "history_block_dim": 22,
+              "h3_dim": 68,
+              "history_len": 3
+            },
+            "_asset_hashes": {
+              "coefficient_view": "e79bc1c013c6cfb000875c7b93b1cdafef3d22cfc0e5f791d25359d7f7358440",
+              "galerkin": "1a7eb43ddc8cc5643c26ef2806b214d1afd1923ad27c52a0daea7672db9773f9",
+              "pressure": "4d971fa8957c11c0bc793c36c4e4169e0768930b45b6302ddc54b355184d29a4"
+            },
+            "_median_dt": 0.75,
+            "_initial_pressure_gate": {
+              "shape": [
+                3
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        "state_dicts": {
+          "model_state": {
+            "elements": 1684370,
+            "tensors": {
+              "trunk.net.0.weight": {
+                "shape": [
+                  68
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.0.bias": {
+                "shape": [
+                  68
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.1.weight": {
+                "shape": [
+                  512,
+                  68
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.1.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.3.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.3.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.4.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.4.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.6.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.6.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.7.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.7.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.9.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.9.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.10.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.10.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.12.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.12.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.13.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.13.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.15.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.15.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.16.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.16.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.0.weight": {
+                "shape": [
+                  256,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.0.bias": {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.2.weight": {
+                "shape": [
+                  4,
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.2.bias": {
+                "shape": [
+                  4
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.0.weight": {
+                "shape": [
+                  256,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.0.bias": {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.2.weight": {
+                "shape": [
+                  3,
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.2.bias": {
+                "shape": [
+                  3
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.0.weight": {
+                "shape": [
+                  128,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.0.bias": {
+                "shape": [
+                  128
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.2.weight": {
+                "shape": [
+                  3,
+                  128
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.2.bias": {
+                "shape": [
+                  3
+                ],
+                "dtype": "torch.float32"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "sources": {
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/code/build_steady_trainval_view.py": {
+        "sha256": "afda0316ba5e26c8443d589bd8804a4162c63d2a2a2448a556b485d583a85146"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/code/pinball_steady_base.py": {
+        "sha256": "c4817e3af63e73fda2f6d1796326f623e46bd15c6acfe277ad6e26d8e3b0b71a"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/code/train_b1_steady.py": {
+        "sha256": "168ca67b573499eb7594861a756b60d4e09ca96d3b3a49dc55b2ccc17613e092"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/code/evaluate_b1_rollout.py": {
+        "sha256": "3f321bfaae33c9273080aa2ab0c6501411af9191a84ab65711d1720ea99bfdd5"
+      }
+    },
+    "records": {}
+  },
+  "pinball_hopf": {
+    "status": "CANDIDATE: publication mapping requires result comparison",
+    "root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806",
+    "checkpoints": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/runs/formal/FluidicPinballV2_Hopf_rank999_B1_seed1248/best_validation.pt",
+        "sha256": "8be7a5552105116c72fa892b01e3670453de04bd753036ff4080faa75942b3d4",
+        "metadata": {
+          "best_score": 0.013751237641918124,
+          "best_step": 8000,
+          "norm_stats": {
+            "x_mean": {
+              "shape": [
+                88
+              ],
+              "dtype": "float32"
+            },
+            "x_scale": {
+              "shape": [
+                88
+              ],
+              "dtype": "float32"
+            },
+            "rhs_mean": {
+              "shape": [
+                5
+              ],
+              "dtype": "float32"
+            },
+            "rhs_scale": {
+              "shape": [
+                5
+              ],
+              "dtype": "float32"
+            },
+            "pressure_mean": {
+              "shape": [
+                5
+              ],
+              "dtype": "float32"
+            },
+            "pressure_scale": {
+              "shape": [
+                5
+              ],
+              "dtype": "float32"
+            },
+            "a_scale": {
+              "shape": [
+                5
+              ],
+              "dtype": "float32"
+            },
+            "b_state_scale": {
+              "shape": [
+                5
+              ],
+              "dtype": "float32"
+            },
+            "a_rel_floor": 1.9126342522213235e-05,
+            "b_rel_floor": 1.688619931883295e-06
+          },
+          "args": {
+            "variant": "b1",
+            "baseline_trainer": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/code/pinball_hopf_base.py",
+            "coefficient_view": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/assets/hopf_rank999_trainval.npz",
+            "galerkin_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/rom_assets_v2/hopf/rom/rank999_ru5_rp5/velocity_galerkin_tensors.npz",
+            "pressure_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/rom_assets_v2/hopf/rom/rank999_ru5_rp5/pressure_poisson_tensors.npz",
+            "asset_manifest": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/assets/TRAINING_ASSET_MANIFEST.json",
+            "split_manifest": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/config/experts/hopf_re_manifest.csv",
+            "fluctuation_contract": null,
+            "output_root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/runs/formal",
+            "experiment_name": "FluidicPinballV2_Hopf_rank999_B1_seed1248",
+            "seed": 1248,
+            "history_len": 3,
+            "micro_batch": 2048,
+            "grad_accum": 1,
+            "max_steps": 8000,
+            "lr": 0.001,
+            "weight_decay": 0.0001,
+            "grad_clip": 1.0,
+            "lambda_memory": 1e-06,
+            "lambda_radial": 1.0,
+            "tbptt_steps": 16,
+            "token_dim": 128,
+            "num_heads": 4,
+            "d_k": 16,
+            "d_v": 16,
+            "beta_max": 0.5,
+            "eval_every": 400,
+            "long_eval_every": 800,
+            "validation_windows_per_re": 24,
+            "amp": true,
+            "amp_dtype": "bfloat16",
+            "allow_tf32": true,
+            "fused_adamw": true,
+            "gpu_memory_fraction": 0.94,
+            "device": "cuda",
+            "swanlab_mode": "online",
+            "swanlab_project": "FluidicPinball_V2_ROM",
+            "swanlab_group": "Hopf_rank999_B1_resume_20260806",
+            "swanlab_log_every": 20,
+            "smoke_only": false,
+            "benchmark_steps": 0,
+            "benchmark_horizon": 56,
+            "resume": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/runs/formal/FluidicPinballV2_Hopf_rank999_B1_seed1248/latest.pt",
+            "_shape_contract": {
+              "ru": 5,
+              "rp": 5,
+              "current_dim": 28,
+              "history_block_dim": 30,
+              "h3_dim": 88,
+              "history_len": 3
+            },
+            "_asset_hashes": {
+              "coefficient_view": "44915c5143ceceae37a3568e72c6bf51a35504d6e7add60249bd4fa7842c7d5e",
+              "galerkin": "e835458721e75d2e39c2ef942997286650ecbca9b37d58569ad85161eb3a984d",
+              "pressure": "e887f829ee1c673c5d7243e985b0275e0a102984409a0b3b4a5c1a2c8f260238"
+            },
+            "_median_dt": 1.0,
+            "_initial_pressure_gate": {
+              "shape": [
+                5
+              ],
+              "dtype": "float32"
+            }
+          }
+        },
+        "state_dicts": {
+          "model_state": {
+            "elements": 1695679,
+            "tensors": {
+              "trunk.net.0.weight": {
+                "shape": [
+                  88
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.0.bias": {
+                "shape": [
+                  88
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.1.weight": {
+                "shape": [
+                  512,
+                  88
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.1.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.3.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.3.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.4.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.4.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.6.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.6.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.7.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.7.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.9.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.9.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.10.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.10.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.12.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.12.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.13.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.13.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.15.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.15.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.16.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.16.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.0.weight": {
+                "shape": [
+                  256,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.0.bias": {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.2.weight": {
+                "shape": [
+                  5,
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.2.bias": {
+                "shape": [
+                  5
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.0.weight": {
+                "shape": [
+                  256,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.0.bias": {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.2.weight": {
+                "shape": [
+                  5,
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.2.bias": {
+                "shape": [
+                  5
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.0.weight": {
+                "shape": [
+                  128,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.0.bias": {
+                "shape": [
+                  128
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.2.weight": {
+                "shape": [
+                  5,
+                  128
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.2.bias": {
+                "shape": [
+                  5
+                ],
+                "dtype": "torch.float32"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "sources": {
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/code/build_hopf_trainval_view.py": {
+        "sha256": "57672f0aa818c762c2d9bc913029ad381b860a9c400423cec4f046447ab5e3ad"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/code/pinball_hopf_base.py": {
+        "sha256": "e54d16b1a17011fffa0caf6e285280082f5c72c7b778b5b67d53724d03db3bb9"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/code/train_kda_pr_fnn_rom.py": {
+        "sha256": "71810404c206f2a2b3ebea82d5874cff3230a043c12b75b04ab45ce8706c38d8"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/code/evaluate_hopf_validation_rollout.py": {
+        "sha256": "b642bb18889a7bc33fe9f70e69c2efd0bde28980edc039b36a0fb2cfeed84372"
+      }
+    },
+    "records": {
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/rollout_evaluation_validation/ROLLOUT_SUMMARY.json": {
+        "asset_hashes": {
+          "coefficient_view": "44915c5143ceceae37a3568e72c6bf51a35504d6e7add60249bd4fa7842c7d5e",
+          "galerkin": "e835458721e75d2e39c2ef942997286650ecbca9b37d58569ad85161eb3a984d",
+          "pressure": "e887f829ee1c673c5d7243e985b0275e0a102984409a0b3b4a5c1a2c8f260238"
+        },
+        "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/runs/formal/FluidicPinballV2_Hopf_rank999_B1_seed1248/best_validation.pt",
+        "checkpoint_best_step": 8000,
+        "checkpoint_sha256": "8be7a5552105116c72fa892b01e3670453de04bd753036ff4080faa75942b3d4",
+        "checkpoint_step": 8000,
+        "heldout_loaded": false,
+        "horizons": {
+          "1": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "joint_mean": 0.003752517881366657,
+            "pressure_drift": 0.13207593467086554,
+            "pressure_mean": 0.003742705424883752,
+            "terminal_joint": 0.003752517881366657,
+            "velocity_mean": 9.812453015456413e-06,
+            "windows": 512,
+            "worst_window": 0.0514102503657341
+          },
+          "16": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "joint_mean": 0.00356573498720536,
+            "pressure_drift": 0.15311787684913725,
+            "pressure_mean": 0.003532851796990144,
+            "terminal_joint": 0.00340928108926164,
+            "velocity_mean": 3.2883104040593025e-05,
+            "windows": 512,
+            "worst_window": 0.0534851998090744
+          },
+          "2": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "joint_mean": 0.003646753222710686,
+            "pressure_drift": 0.19409723597345874,
+            "pressure_mean": 0.003634112390500377,
+            "terminal_joint": 0.0036422871417016722,
+            "velocity_mean": 1.2641101591270854e-05,
+            "windows": 512,
+            "worst_window": 0.0514102503657341
+          },
+          "32": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "joint_mean": 0.0036669063156296033,
+            "pressure_drift": 0.14662954781670123,
+            "pressure_mean": 0.0036205200231052004,
+            "terminal_joint": 0.004164963003859157,
+            "velocity_mean": 4.63864204220954e-05,
+            "windows": 512,
+            "worst_window": 0.053104300051927567
+          },
+          "4": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "joint_mean": 0.0035636808861454483,
+            "pressure_drift": 0.1760028734570369,
+            "pressure_mean": 0.0035463357708067633,
+            "terminal_joint": 0.003787889079831075,
+            "velocity_mean": 1.734498272298879e-05,
+            "windows": 512,
+            "worst_window": 0.053104300051927567
+          },
+          "56": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "joint_mean": 0.0038278237170743523,
+            "pressure_drift": 0.14578940538922325,
+            "pressure_mean": 0.0037639852744177915,
+            "terminal_joint": 0.004330674664743128,
+            "velocity_mean": 6.38382509805524e-05,
+            "windows": 512,
+            "worst_window": 0.052487269043922424
+          },
+          "8": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "joint_mean": 0.0035822892332362244,
+            "pressure_drift": 0.15757007722277194,
+            "pressure_mean": 0.003558162588888081,
+            "terminal_joint": 0.0036032071511726826,
+            "velocity_mean": 2.4126604216689884e-05,
+            "windows": 512,
+            "worst_window": 0.0534851998090744
+          }
+        },
+        "performance": {
+          "elapsed_seconds": 9.367300710640848,
+          "peak_gpu_memory_gb": 0.15433359146118164,
+          "window_steps": 60928,
+          "window_steps_per_second": 6504.328395349627
+        },
+        "schema_version": 1,
+        "scope": "validation_only",
+        "shape_contract": {
+          "current_dim": 28,
+          "h3_dim": 88,
+          "history_block_dim": 30,
+          "history_len": 3,
+          "rp": 5,
+          "ru": 5
+        },
+        "status": "PASS",
+        "validation_re": [
+          16.7,
+          17.4,
+          18.1,
+          18.8,
+          19.2,
+          19.9,
+          21.5,
+          23.25
+        ]
+      }
+    }
+  },
+  "pinball_periodic": {
+    "status": "CANDIDATE: publication mapping requires result comparison",
+    "root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1",
+    "checkpoints": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+        "sha256": "c89a0cbf6cc0920664875f00234afaac49bc19b1c5c5f985cbba0b09e2dbdbda",
+        "metadata": {
+          "best_score": 0.8151533350529563,
+          "best_step": 8000,
+          "norm_stats": {
+            "x_mean": {
+              "shape": [
+                263
+              ],
+              "dtype": "float32"
+            },
+            "x_scale": {
+              "shape": [
+                263
+              ],
+              "dtype": "float32"
+            },
+            "rhs_mean": {
+              "shape": [
+                17
+              ],
+              "dtype": "float32"
+            },
+            "rhs_scale": {
+              "shape": [
+                17
+              ],
+              "dtype": "float32"
+            },
+            "pressure_mean": {
+              "shape": [
+                16
+              ],
+              "dtype": "float32"
+            },
+            "pressure_scale": {
+              "shape": [
+                16
+              ],
+              "dtype": "float32"
+            },
+            "a_scale": {
+              "shape": [
+                17
+              ],
+              "dtype": "float32"
+            },
+            "b_state_scale": {
+              "shape": [
+                16
+              ],
+              "dtype": "float32"
+            },
+            "a_rel_floor": 0.295153945684433,
+            "b_rel_floor": 0.05834892764687538
+          },
+          "args": {
+            "variant": "b1",
+            "baseline_trainer": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/code/b1_data_contract.py",
+            "coefficient_view": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/assets/fluidic_pinball_periodic_trainval_rank999.npz",
+            "galerkin_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/assets/fluidic_pinball_periodic_trainonly_galerkin_rank999.npz",
+            "pressure_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/assets/fluidic_pinball_periodic_trainonly_pressure_rank999.npz",
+            "asset_manifest": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/assets/TRAINING_ASSET_MANIFEST.json",
+            "fluctuation_contract": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/assets/trainonly_fluctuation_contract.npz",
+            "output_root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs",
+            "experiment_name": "FluidicPinballV2_B1_Deep_FNN_H3_seed1248",
+            "seed": 1248,
+            "micro_batch": 32,
+            "grad_accum": 1,
+            "max_steps": 8000,
+            "lr": 0.001,
+            "weight_decay": 0.0001,
+            "grad_clip": 1.0,
+            "lambda_memory": 1e-06,
+            "lambda_radial": 1.0,
+            "tbptt_steps": 16,
+            "token_dim": 128,
+            "num_heads": 4,
+            "d_k": 16,
+            "d_v": 16,
+            "beta_max": 0.5,
+            "eval_every": 400,
+            "long_eval_every": 800,
+            "validation_windows_per_re": 24,
+            "amp": true,
+            "amp_dtype": "bfloat16",
+            "allow_tf32": true,
+            "fused_adamw": true,
+            "gpu_memory_fraction": 0.2,
+            "device": "cuda",
+            "swanlab_mode": "online",
+            "swanlab_project": "FluidicPinballV2_B1_DeepFNN",
+            "swanlab_group": "periodic-rank999-seed1248",
+            "swanlab_log_every": 20,
+            "smoke_only": false,
+            "benchmark_steps": 0,
+            "benchmark_horizon": 32,
+            "resume": null,
+            "_median_dt": 1.0
+          }
+        },
+        "state_dicts": {
+          "model_state": {
+            "elements": 1792959,
+            "tensors": {
+              "trunk.net.0.weight": {
+                "shape": [
+                  263
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.0.bias": {
+                "shape": [
+                  263
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.1.weight": {
+                "shape": [
+                  512,
+                  263
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.1.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.3.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.3.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.4.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.4.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.6.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.6.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.7.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.7.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.9.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.9.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.10.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.10.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.12.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.12.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.13.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.13.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.15.weight": {
+                "shape": [
+                  512,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.15.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.16.weight": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "trunk.net.16.bias": {
+                "shape": [
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.0.weight": {
+                "shape": [
+                  256,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.0.bias": {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.2.weight": {
+                "shape": [
+                  17,
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.velocity.2.bias": {
+                "shape": [
+                  17
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.0.weight": {
+                "shape": [
+                  256,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.0.bias": {
+                "shape": [
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.2.weight": {
+                "shape": [
+                  16,
+                  256
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure.2.bias": {
+                "shape": [
+                  16
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.0.weight": {
+                "shape": [
+                  128,
+                  512
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.0.bias": {
+                "shape": [
+                  128
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.2.weight": {
+                "shape": [
+                  16,
+                  128
+                ],
+                "dtype": "torch.float32"
+              },
+              "heads.pressure_gate.2.bias": {
+                "shape": [
+                  16
+                ],
+                "dtype": "torch.float32"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "sources": {
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/code/prepare_b1_assets.py": {
+        "sha256": "f225c19b3ca83b8c6ca420328d2f3e98a8d95b78849ec11373851aee89880076"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/code/b1_data_contract.py": {
+        "sha256": "4739709a1eb4d6c2d40709bd22ba00dc54fa0647167438e6be153c1cea64c2e7"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/code/train_b1_fluidic_pinball.py": {
+        "sha256": "222029bd1f3aa701dbbebfb52bd73c0acc0b7acb22a8b75dad8694bdbbe3ead5"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/code/evaluate_b1_validation.py": {
+        "sha256": "dca7efc86dc3db19022cdc226a2f0c7eb7f44006ad113ab84e5cc372f14f891c"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/code/prepare_b1_final_test_view.py": {
+        "sha256": "d03656e76cb882496a11734264ac084c9bcb81a391a1b23e0864376da560d708"
+      }
+    },
+    "records": {
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/evaluation_validation/ROLLOUT_SUMMARY.json": {
+        "aggregate": {
+          "1": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.055544235510751605,
+            "joint_terminal": 0.055544235510751605,
+            "joint_worst_window": 0.16311170160770416,
+            "pressure_field_mean": 0.045165194301969476,
+            "velocity_field_mean": 0.01037904273127626
+          },
+          "16": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.23039101783393157,
+            "joint_terminal": 0.3716299234268566,
+            "joint_worst_window": 0.9278194904327393,
+            "pressure_field_mean": 0.16106910275347117,
+            "velocity_field_mean": 0.06932192004387616
+          },
+          "2": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.06728841127672543,
+            "joint_terminal": 0.07904910026506211,
+            "joint_worst_window": 0.2278558909893036,
+            "pressure_field_mean": 0.05248175296259837,
+            "velocity_field_mean": 0.014806655941962768
+          },
+          "24": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.2846301385046293,
+            "joint_terminal": 0.39915925830913085,
+            "joint_worst_window": 0.9540817737579346,
+            "pressure_field_mean": 0.19254634351495448,
+            "velocity_field_mean": 0.09208380347182457
+          },
+          "32": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.3120926596327788,
+            "joint_terminal": 0.39538409672160113,
+            "joint_worst_window": 1.0821136236190796,
+            "pressure_field_mean": 0.2085779308108613,
+            "velocity_field_mean": 0.103514732098928
+          },
+          "4": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.0896534182312381,
+            "joint_terminal": 0.12313415859049807,
+            "joint_worst_window": 0.40582334995269775,
+            "pressure_field_mean": 0.06729072229548667,
+            "velocity_field_mean": 0.022362695427242823
+          },
+          "56": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.3474401209839723,
+            "joint_terminal": 0.3730629834915615,
+            "joint_worst_window": 1.0191526412963867,
+            "pressure_field_mean": 0.2313955168032812,
+            "velocity_field_mean": 0.11604461745284628
+          },
+          "8": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.13987871740634242,
+            "joint_terminal": 0.23085856528228355,
+            "joint_worst_window": 0.6519688367843628,
+            "pressure_field_mean": 0.10217225093704958,
+            "velocity_field_mean": 0.03770647133791903
+          }
+        },
+        "asset_audit": {
+          "manifest": {
+            "curriculum": [
+              [
+                0,
+                1600,
+                4
+              ],
+              [
+                1600,
+                3200,
+                8
+              ],
+              [
+                3200,
+                5200,
+                16
+              ],
+              [
+                5200,
+                6800,
+                24
+              ],
+              [
+                6800,
+                8000,
+                32
+              ]
+            ],
+            "dataset": "FluidicPinball_V2_Periodic",
+            "fit_reynolds": [
+              21.25,
+              21.75,
+              22.0,
+              22.5,
+              22.75,
+              23.0,
+              23.5,
+              23.75,
+              24.25,
+              24.5,
+              25.0,
+              25.5,
+              26.5,
+              27.0,
+              28.0,
+              28.5,
+              29.0,
+              30.0,
+              30.5,
+              31.5,
+              32.0,
+              32.5,
+              33.5,
+              34.0,
+              35.0,
+              35.5,
+              36.0,
+              37.0,
+              37.5,
+              38.5,
+              39.0,
+              39.5,
+              41.0,
+              42.0,
+              44.0,
+              45.0,
+              46.0,
+              48.0,
+              49.0,
+              51.0,
+              52.0,
+              53.0,
+              55.0,
+              56.0,
+              58.0,
+              59.0,
+              60.0
+            ],
+            "heldout_reynolds": [
+              22.25,
+              24.0,
+              27.5,
+              31.0,
+              34.5,
+              38.0,
+              43.0,
+              50.0,
+              57.0
+            ],
+            "pressure_gauge_verified": true,
+            "projection_error_verified": true,
+            "projection_errors": {
+              "pressure_energy_tail": 0.0008477996510218855,
+              "velocity_energy_tail": 0.0009024094598510946
+            },
+            "r_p": 16,
+            "r_u": 17,
+            "rom_tensor_verified": true,
+            "schema_version": 2,
+            "scope": "periodic_train_only_with_train_validation_view",
+            "sha256": {
+              "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+              "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+              "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+              "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+            },
+            "split_contract_verified": true,
+            "validation_horizons": [
+              4,
+              8,
+              16,
+              24,
+              32,
+              56
+            ],
+            "validation_reynolds": [
+              21.5,
+              23.25,
+              26.0,
+              29.5,
+              33.0,
+              36.5,
+              40.0,
+              47.0,
+              54.0
+            ]
+          },
+          "observed_sha256": {
+            "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+            "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+            "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+          },
+          "passed": true
+        },
+        "best_step": 8000,
+        "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+        "heldout_hard_disabled": [
+          22.25,
+          24.0,
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ],
+        "horizons": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          24,
+          32,
+          56
+        ],
+        "optimizer_step": 8000,
+        "scope": "validation_only_no_heldout_loaded",
+        "validation_re": [
+          21.5,
+          23.25,
+          26.0,
+          29.5,
+          33.0,
+          36.5,
+          40.0,
+          47.0,
+          54.0
+        ]
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/evaluation_final_test/ROLLOUT_SUMMARY.json": {
+        "aggregate": {
+          "1": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.06503552342635682,
+            "joint_terminal": 0.06503552342635682,
+            "joint_worst_window": 0.1643560528755188,
+            "pressure_field_mean": 0.05277928449342855,
+            "velocity_field_mean": 0.012256239664263072
+          },
+          "16": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.27378006250364706,
+            "joint_terminal": 0.4419381478542669,
+            "joint_worst_window": 0.9322925806045532,
+            "pressure_field_mean": 0.19122400015799534,
+            "velocity_field_mean": 0.08255605404014608
+          },
+          "2": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.0795161707016329,
+            "joint_terminal": 0.09398494481704095,
+            "joint_worst_window": 0.22607146203517914,
+            "pressure_field_mean": 0.061966327432956964,
+            "velocity_field_mean": 0.01754984600059591
+          },
+          "24": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.33859177694345516,
+            "joint_terminal": 0.4737377950611214,
+            "joint_worst_window": 0.976055383682251,
+            "pressure_field_mean": 0.22878621984919947,
+            "velocity_field_mean": 0.10980556862179786
+          },
+          "32": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.3710083211513443,
+            "joint_terminal": 0.46930082630003905,
+            "joint_worst_window": 0.9916892647743225,
+            "pressure_field_mean": 0.24817453020821428,
+            "velocity_field_mean": 0.12283379754242357
+          },
+          "4": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.1066964519624081,
+            "joint_terminal": 0.14726484766126507,
+            "joint_worst_window": 0.39371904730796814,
+            "pressure_field_mean": 0.08006822178140283,
+            "velocity_field_mean": 0.026628228531990317
+          },
+          "56": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.41200896153329974,
+            "joint_terminal": 0.44421498937946224,
+            "joint_worst_window": 1.0143768787384033,
+            "pressure_field_mean": 0.2745325984950695,
+            "velocity_field_mean": 0.13747636478931075
+          },
+          "8": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.1670453302665717,
+            "joint_terminal": 0.2753051680305766,
+            "joint_worst_window": 0.6716501116752625,
+            "pressure_field_mean": 0.12207648768607113,
+            "velocity_field_mean": 0.04496885002724108
+          }
+        },
+        "asset_audit": {
+          "manifest": {
+            "curriculum": [
+              [
+                0,
+                1600,
+                4
+              ],
+              [
+                1600,
+                3200,
+                8
+              ],
+              [
+                3200,
+                5200,
+                16
+              ],
+              [
+                5200,
+                6800,
+                24
+              ],
+              [
+                6800,
+                8000,
+                32
+              ]
+            ],
+            "dataset": "FluidicPinball_V2_Periodic",
+            "fit_reynolds": [
+              21.25,
+              21.75,
+              22.0,
+              22.5,
+              22.75,
+              23.0,
+              23.5,
+              23.75,
+              24.25,
+              24.5,
+              25.0,
+              25.5,
+              26.5,
+              27.0,
+              28.0,
+              28.5,
+              29.0,
+              30.0,
+              30.5,
+              31.5,
+              32.0,
+              32.5,
+              33.5,
+              34.0,
+              35.0,
+              35.5,
+              36.0,
+              37.0,
+              37.5,
+              38.5,
+              39.0,
+              39.5,
+              41.0,
+              42.0,
+              44.0,
+              45.0,
+              46.0,
+              48.0,
+              49.0,
+              51.0,
+              52.0,
+              53.0,
+              55.0,
+              56.0,
+              58.0,
+              59.0,
+              60.0
+            ],
+            "heldout_reynolds": [
+              22.25,
+              24.0,
+              27.5,
+              31.0,
+              34.5,
+              38.0,
+              43.0,
+              50.0,
+              57.0
+            ],
+            "pressure_gauge_verified": true,
+            "projection_error_verified": true,
+            "projection_errors": {
+              "pressure_energy_tail": 0.0008477996510218855,
+              "velocity_energy_tail": 0.0009024094598510946
+            },
+            "r_p": 16,
+            "r_u": 17,
+            "rom_tensor_verified": true,
+            "schema_version": 2,
+            "scope": "periodic_train_only_with_train_validation_view",
+            "sha256": {
+              "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+              "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+              "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+              "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+            },
+            "split_contract_verified": true,
+            "validation_horizons": [
+              4,
+              8,
+              16,
+              24,
+              32,
+              56
+            ],
+            "validation_reynolds": [
+              21.5,
+              23.25,
+              26.0,
+              29.5,
+              33.0,
+              36.5,
+              40.0,
+              47.0,
+              54.0
+            ]
+          },
+          "observed_sha256": {
+            "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+            "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+            "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+          },
+          "passed": true
+        },
+        "best_step": 8000,
+        "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+        "heldout_hard_disabled": [
+          22.25,
+          24.0,
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ],
+        "horizons": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          24,
+          32,
+          56
+        ],
+        "optimizer_step": 8000,
+        "scope": "one_time_frozen_final_test",
+        "validation_re": [
+          22.25,
+          24.0,
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ]
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/evaluation_train_high_re/ROLLOUT_SUMMARY.json": {
+        "aggregate": {
+          "1": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.005461805189649264,
+            "joint_terminal": 0.005461805189649264,
+            "joint_worst_window": 0.023880302906036377,
+            "pressure_field_mean": 0.004209648786733548,
+            "velocity_field_mean": 0.001252156391274184
+          },
+          "16": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.006700334014991919,
+            "joint_terminal": 0.006936277945836385,
+            "joint_worst_window": 0.03441089019179344,
+            "pressure_field_mean": 0.0047778858027110495,
+            "velocity_field_mean": 0.0019224482122808695
+          },
+          "2": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.00572879525522391,
+            "joint_terminal": 0.005980122027297815,
+            "joint_worst_window": 0.024145999923348427,
+            "pressure_field_mean": 0.004350249112273256,
+            "velocity_field_mean": 0.0013785460731014609
+          },
+          "24": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.006624642635385195,
+            "joint_terminal": 0.007044627238065005,
+            "joint_worst_window": 0.03141070529818535,
+            "pressure_field_mean": 0.004735455879320701,
+            "velocity_field_mean": 0.0018891867638255158
+          },
+          "32": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.006659495054433743,
+            "joint_terminal": 0.007728172124673923,
+            "joint_worst_window": 0.026762638241052628,
+            "pressure_field_mean": 0.004771488066762686,
+            "velocity_field_mean": 0.0018880068945387998
+          },
+          "4": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 0.9999999403953552,
+            "joint_field_mean": 0.0062699755653738976,
+            "joint_terminal": 0.006936123656729857,
+            "joint_worst_window": 0.027894534170627594,
+            "pressure_field_mean": 0.004664196679368615,
+            "velocity_field_mean": 0.0016057789015273252
+          },
+          "8": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.006664578927059969,
+            "joint_terminal": 0.007045508300264677,
+            "joint_worst_window": 0.03269162029027939,
+            "pressure_field_mean": 0.004830246651545167,
+            "velocity_field_mean": 0.0018343323841691016
+          }
+        },
+        "asset_audit": {
+          "manifest": {
+            "curriculum": [
+              [
+                0,
+                1600,
+                4
+              ],
+              [
+                1600,
+                3200,
+                8
+              ],
+              [
+                3200,
+                5200,
+                16
+              ],
+              [
+                5200,
+                6800,
+                24
+              ],
+              [
+                6800,
+                8000,
+                32
+              ]
+            ],
+            "dataset": "FluidicPinball_V2_Periodic",
+            "fit_reynolds": [
+              21.25,
+              21.75,
+              22.0,
+              22.5,
+              22.75,
+              23.0,
+              23.5,
+              23.75,
+              24.25,
+              24.5,
+              25.0,
+              25.5,
+              26.5,
+              27.0,
+              28.0,
+              28.5,
+              29.0,
+              30.0,
+              30.5,
+              31.5,
+              32.0,
+              32.5,
+              33.5,
+              34.0,
+              35.0,
+              35.5,
+              36.0,
+              37.0,
+              37.5,
+              38.5,
+              39.0,
+              39.5,
+              41.0,
+              42.0,
+              44.0,
+              45.0,
+              46.0,
+              48.0,
+              49.0,
+              51.0,
+              52.0,
+              53.0,
+              55.0,
+              56.0,
+              58.0,
+              59.0,
+              60.0
+            ],
+            "heldout_reynolds": [
+              22.25,
+              24.0,
+              27.5,
+              31.0,
+              34.5,
+              38.0,
+              43.0,
+              50.0,
+              57.0
+            ],
+            "pressure_gauge_verified": true,
+            "projection_error_verified": true,
+            "projection_errors": {
+              "pressure_energy_tail": 0.0008477996510218855,
+              "velocity_energy_tail": 0.0009024094598510946
+            },
+            "r_p": 16,
+            "r_u": 17,
+            "rom_tensor_verified": true,
+            "schema_version": 2,
+            "scope": "periodic_train_only_with_train_validation_view",
+            "sha256": {
+              "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+              "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+              "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+              "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+            },
+            "split_contract_verified": true,
+            "validation_horizons": [
+              4,
+              8,
+              16,
+              24,
+              32,
+              56
+            ],
+            "validation_reynolds": [
+              21.5,
+              23.25,
+              26.0,
+              29.5,
+              33.0,
+              36.5,
+              40.0,
+              47.0,
+              54.0
+            ]
+          },
+          "observed_sha256": {
+            "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+            "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+            "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+          },
+          "passed": true
+        },
+        "best_step": 8000,
+        "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+        "evaluation_re": [
+          41.0,
+          42.0,
+          44.0,
+          45.0,
+          46.0,
+          48.0,
+          49.0,
+          51.0,
+          52.0,
+          53.0,
+          55.0,
+          56.0,
+          58.0,
+          59.0,
+          60.0
+        ],
+        "heldout_hard_disabled": [
+          22.25,
+          24.0,
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ],
+        "horizons": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          24,
+          32
+        ],
+        "optimizer_step": 8000,
+        "scope": "frozen_checkpoint_train_diagnostic_no_heldout_loaded",
+        "split": "train"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/evaluation_train_re29plus/ROLLOUT_SUMMARY.json": {
+        "aggregate": {
+          "1": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.0050210892635908335,
+            "joint_terminal": 0.0050210892635908335,
+            "joint_worst_window": 0.031524658203125,
+            "pressure_field_mean": 0.003878867009564513,
+            "velocity_field_mean": 0.0011422222634146532
+          },
+          "16": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.0060672488611852446,
+            "joint_terminal": 0.006406206329683623,
+            "joint_worst_window": 0.03441089019179344,
+            "pressure_field_mean": 0.004305204951144274,
+            "velocity_field_mean": 0.0017620439091021376
+          },
+          "2": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.005279231354624273,
+            "joint_terminal": 0.0055378592956150255,
+            "joint_worst_window": 0.03087170049548149,
+            "pressure_field_mean": 0.0040083179595850164,
+            "velocity_field_mean": 0.0012709133917533403
+          },
+          "24": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.005968266662450567,
+            "joint_terminal": 0.006740513047383678,
+            "joint_worst_window": 0.03820781037211418,
+            "pressure_field_mean": 0.0042529142454206465,
+            "velocity_field_mean": 0.0017153524658492496
+          },
+          "32": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.006014092502394511,
+            "joint_terminal": 0.0076140102915345665,
+            "joint_worst_window": 0.03339783847332001,
+            "pressure_field_mean": 0.0042904433005699705,
+            "velocity_field_mean": 0.0017236490985528836
+          },
+          "4": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 0.9999999403953552,
+            "joint_field_mean": 0.005771266777188548,
+            "joint_terminal": 0.00642708744177775,
+            "joint_worst_window": 0.030136357992887497,
+            "pressure_field_mean": 0.004282463893985316,
+            "velocity_field_mean": 0.0014888028738148991
+          },
+          "8": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.00614845068869932,
+            "joint_terminal": 0.006642654846091905,
+            "joint_worst_window": 0.03269162029027939,
+            "pressure_field_mean": 0.00443925739701597,
+            "velocity_field_mean": 0.001709193331114347
+          }
+        },
+        "asset_audit": {
+          "manifest": {
+            "curriculum": [
+              [
+                0,
+                1600,
+                4
+              ],
+              [
+                1600,
+                3200,
+                8
+              ],
+              [
+                3200,
+                5200,
+                16
+              ],
+              [
+                5200,
+                6800,
+                24
+              ],
+              [
+                6800,
+                8000,
+                32
+              ]
+            ],
+            "dataset": "FluidicPinball_V2_Periodic",
+            "fit_reynolds": [
+              21.25,
+              21.75,
+              22.0,
+              22.5,
+              22.75,
+              23.0,
+              23.5,
+              23.75,
+              24.25,
+              24.5,
+              25.0,
+              25.5,
+              26.5,
+              27.0,
+              28.0,
+              28.5,
+              29.0,
+              30.0,
+              30.5,
+              31.5,
+              32.0,
+              32.5,
+              33.5,
+              34.0,
+              35.0,
+              35.5,
+              36.0,
+              37.0,
+              37.5,
+              38.5,
+              39.0,
+              39.5,
+              41.0,
+              42.0,
+              44.0,
+              45.0,
+              46.0,
+              48.0,
+              49.0,
+              51.0,
+              52.0,
+              53.0,
+              55.0,
+              56.0,
+              58.0,
+              59.0,
+              60.0
+            ],
+            "heldout_reynolds": [
+              22.25,
+              24.0,
+              27.5,
+              31.0,
+              34.5,
+              38.0,
+              43.0,
+              50.0,
+              57.0
+            ],
+            "pressure_gauge_verified": true,
+            "projection_error_verified": true,
+            "projection_errors": {
+              "pressure_energy_tail": 0.0008477996510218855,
+              "velocity_energy_tail": 0.0009024094598510946
+            },
+            "r_p": 16,
+            "r_u": 17,
+            "rom_tensor_verified": true,
+            "schema_version": 2,
+            "scope": "periodic_train_only_with_train_validation_view",
+            "sha256": {
+              "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+              "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+              "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+              "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+            },
+            "split_contract_verified": true,
+            "validation_horizons": [
+              4,
+              8,
+              16,
+              24,
+              32,
+              56
+            ],
+            "validation_reynolds": [
+              21.5,
+              23.25,
+              26.0,
+              29.5,
+              33.0,
+              36.5,
+              40.0,
+              47.0,
+              54.0
+            ]
+          },
+          "observed_sha256": {
+            "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+            "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+            "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+          },
+          "passed": true
+        },
+        "best_step": 8000,
+        "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+        "evaluation_re": [
+          29.0,
+          30.0,
+          30.5,
+          31.5,
+          32.0,
+          32.5,
+          33.5,
+          34.0,
+          35.0,
+          35.5,
+          36.0,
+          37.0,
+          37.5,
+          38.5,
+          39.0,
+          39.5,
+          41.0,
+          42.0,
+          44.0,
+          45.0,
+          46.0,
+          48.0,
+          49.0,
+          51.0,
+          52.0,
+          53.0,
+          55.0,
+          56.0,
+          58.0,
+          59.0,
+          60.0
+        ],
+        "heldout_hard_disabled": [
+          22.25,
+          24.0,
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ],
+        "horizons": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          24,
+          32
+        ],
+        "optimizer_step": 8000,
+        "scope": "frozen_checkpoint_train_diagnostic_no_heldout_loaded",
+        "split": "train"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/evaluation_validation_high_re_stride4_diagnostic/ROLLOUT_SUMMARY.json": {
+        "aggregate": {
+          "1": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.004331517033278942,
+            "joint_terminal": 0.004331517033278942,
+            "joint_worst_window": 0.016274046152830124,
+            "pressure_field_mean": 0.003335411287844181,
+            "velocity_field_mean": 0.0009961056872271
+          },
+          "16": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.006753719132393599,
+            "joint_terminal": 0.009227332007139922,
+            "joint_worst_window": 0.02051694318652153,
+            "pressure_field_mean": 0.00461214343085885,
+            "velocity_field_mean": 0.002141575375571847
+          },
+          "2": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.004549608612433076,
+            "joint_terminal": 0.004771802574396133,
+            "joint_worst_window": 0.016274046152830124,
+            "pressure_field_mean": 0.0034426800906658173,
+            "velocity_field_mean": 0.0011069286148995161
+          },
+          "24": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.008290963806211948,
+            "joint_terminal": 0.012350223306566478,
+            "joint_worst_window": 0.023739058524370193,
+            "pressure_field_mean": 0.005477695073932409,
+            "velocity_field_mean": 0.002813268592581153
+          },
+          "32": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.009913424029946327,
+            "joint_terminal": 0.015585231781005859,
+            "joint_worst_window": 0.027505943551659584,
+            "pressure_field_mean": 0.0064070715568959715,
+            "velocity_field_mean": 0.0035063530784100296
+          },
+          "4": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.004928846098482609,
+            "joint_terminal": 0.005457569379359484,
+            "joint_worst_window": 0.01645459048449993,
+            "pressure_field_mean": 0.003654134413227439,
+            "velocity_field_mean": 0.0012747118948027492
+          },
+          "56": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.014969102013856173,
+            "joint_terminal": 0.026551640685647727,
+            "joint_worst_window": 0.04192643612623215,
+            "pressure_field_mean": 0.009343596268445253,
+            "velocity_field_mean": 0.005625505582429469
+          },
+          "8": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.005466963071376086,
+            "joint_terminal": 0.006237326189875603,
+            "joint_worst_window": 0.016493896022439003,
+            "pressure_field_mean": 0.003922457015141845,
+            "velocity_field_mean": 0.001544506149366498
+          }
+        },
+        "asset_audit": {
+          "manifest": {
+            "curriculum": [
+              [
+                0,
+                1600,
+                4
+              ],
+              [
+                1600,
+                3200,
+                8
+              ],
+              [
+                3200,
+                5200,
+                16
+              ],
+              [
+                5200,
+                6800,
+                24
+              ],
+              [
+                6800,
+                8000,
+                32
+              ]
+            ],
+            "dataset": "FluidicPinball_V2_Periodic",
+            "fit_reynolds": [
+              21.25,
+              21.75,
+              22.0,
+              22.5,
+              22.75,
+              23.0,
+              23.5,
+              23.75,
+              24.25,
+              24.5,
+              25.0,
+              25.5,
+              26.5,
+              27.0,
+              28.0,
+              28.5,
+              29.0,
+              30.0,
+              30.5,
+              31.5,
+              32.0,
+              32.5,
+              33.5,
+              34.0,
+              35.0,
+              35.5,
+              36.0,
+              37.0,
+              37.5,
+              38.5,
+              39.0,
+              39.5,
+              41.0,
+              42.0,
+              44.0,
+              45.0,
+              46.0,
+              48.0,
+              49.0,
+              51.0,
+              52.0,
+              53.0,
+              55.0,
+              56.0,
+              58.0,
+              59.0,
+              60.0
+            ],
+            "heldout_reynolds": [
+              22.25,
+              24.0,
+              27.5,
+              31.0,
+              34.5,
+              38.0,
+              43.0,
+              50.0,
+              57.0
+            ],
+            "pressure_gauge_verified": true,
+            "projection_error_verified": true,
+            "projection_errors": {
+              "pressure_energy_tail": 0.0008477996510218855,
+              "velocity_energy_tail": 0.0009024094598510946
+            },
+            "r_p": 16,
+            "r_u": 17,
+            "rom_tensor_verified": true,
+            "schema_version": 2,
+            "scope": "periodic_train_only_with_train_validation_view",
+            "sha256": {
+              "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+              "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+              "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+              "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+            },
+            "split_contract_verified": true,
+            "validation_horizons": [
+              4,
+              8,
+              16,
+              24,
+              32,
+              56
+            ],
+            "validation_reynolds": [
+              21.5,
+              23.25,
+              26.0,
+              29.5,
+              33.0,
+              36.5,
+              40.0,
+              47.0,
+              54.0
+            ]
+          },
+          "observed_sha256": {
+            "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+            "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+            "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+          },
+          "passed": true
+        },
+        "best_step": 8000,
+        "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+        "evaluation_re": [
+          33.0,
+          36.5,
+          40.0,
+          47.0,
+          54.0
+        ],
+        "heldout_hard_disabled": [
+          22.25,
+          24.0,
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ],
+        "horizons": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          24,
+          32,
+          56
+        ],
+        "optimizer_step": 8000,
+        "scope": "validation_only_no_heldout_loaded",
+        "split": "validation",
+        "temporal_stride": 4
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/evaluation_final_test_corrected_dt1_all_offsets_k1_k32/ROLLOUT_SUMMARY.json": {
+        "aggregate": {
+          "1": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.003583471872843802,
+            "joint_terminal": 0.003583471872843802,
+            "joint_worst_window": 0.017628008499741554,
+            "pressure_field_mean": 0.0028276420327731306,
+            "velocity_field_mean": 0.0007558298113710609
+          },
+          "16": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.005537757132616308,
+            "joint_terminal": 0.007993228164398007,
+            "joint_worst_window": 0.029708586633205414,
+            "pressure_field_mean": 0.0038372350585026047,
+            "velocity_field_mean": 0.001700522222058175
+          },
+          "2": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.0036915657110512257,
+            "joint_terminal": 0.0037508674948993656,
+            "joint_worst_window": 0.017628008499741554,
+            "pressure_field_mean": 0.0028576321460099686,
+            "velocity_field_mean": 0.0008339335124926745
+          },
+          "24": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.0069319614623155855,
+            "joint_terminal": 0.0110382288435681,
+            "joint_worst_window": 0.03912635147571564,
+            "pressure_field_mean": 0.004647987745960968,
+            "velocity_field_mean": 0.0022839735781114237
+          },
+          "32": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.008414953235640295,
+            "joint_terminal": 0.014387025342633327,
+            "joint_worst_window": 0.045058250427246094,
+            "pressure_field_mean": 0.005518001349021991,
+            "velocity_field_mean": 0.002896951825176883
+          },
+          "4": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.003939950295413534,
+            "joint_terminal": 0.004306637177554269,
+            "joint_worst_window": 0.019241420552134514,
+            "pressure_field_mean": 0.0029701306549314824,
+            "velocity_field_mean": 0.0009698195863165893
+          },
+          "8": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.004390413122665551,
+            "joint_terminal": 0.005150664028608137,
+            "joint_worst_window": 0.01944325678050518,
+            "pressure_field_mean": 0.003193780721630901,
+            "velocity_field_mean": 0.0011966322943206048
+          }
+        },
+        "all_temporal_offsets": true,
+        "asset_audit": {
+          "manifest": {
+            "curriculum": [
+              [
+                0,
+                1600,
+                4
+              ],
+              [
+                1600,
+                3200,
+                8
+              ],
+              [
+                3200,
+                5200,
+                16
+              ],
+              [
+                5200,
+                6800,
+                24
+              ],
+              [
+                6800,
+                8000,
+                32
+              ]
+            ],
+            "dataset": "FluidicPinball_V2_Periodic",
+            "fit_reynolds": [
+              21.25,
+              21.75,
+              22.0,
+              22.5,
+              22.75,
+              23.0,
+              23.5,
+              23.75,
+              24.25,
+              24.5,
+              25.0,
+              25.5,
+              26.5,
+              27.0,
+              28.0,
+              28.5,
+              29.0,
+              30.0,
+              30.5,
+              31.5,
+              32.0,
+              32.5,
+              33.5,
+              34.0,
+              35.0,
+              35.5,
+              36.0,
+              37.0,
+              37.5,
+              38.5,
+              39.0,
+              39.5,
+              41.0,
+              42.0,
+              44.0,
+              45.0,
+              46.0,
+              48.0,
+              49.0,
+              51.0,
+              52.0,
+              53.0,
+              55.0,
+              56.0,
+              58.0,
+              59.0,
+              60.0
+            ],
+            "heldout_reynolds": [
+              22.25,
+              24.0,
+              27.5,
+              31.0,
+              34.5,
+              38.0,
+              43.0,
+              50.0,
+              57.0
+            ],
+            "pressure_gauge_verified": true,
+            "projection_error_verified": true,
+            "projection_errors": {
+              "pressure_energy_tail": 0.0008477996510218855,
+              "velocity_energy_tail": 0.0009024094598510946
+            },
+            "r_p": 16,
+            "r_u": 17,
+            "rom_tensor_verified": true,
+            "schema_version": 2,
+            "scope": "periodic_train_only_with_train_validation_view",
+            "sha256": {
+              "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+              "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+              "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+              "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+            },
+            "split_contract_verified": true,
+            "validation_horizons": [
+              4,
+              8,
+              16,
+              24,
+              32,
+              56
+            ],
+            "validation_reynolds": [
+              21.5,
+              23.25,
+              26.0,
+              29.5,
+              33.0,
+              36.5,
+              40.0,
+              47.0,
+              54.0
+            ]
+          },
+          "observed_sha256": {
+            "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+            "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+            "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+          },
+          "passed": true
+        },
+        "best_step": 8000,
+        "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+        "evaluation_re": [
+          22.25,
+          24.0,
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ],
+        "heldout_hard_disabled": [
+          22.25,
+          24.0,
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ],
+        "horizons": [
+          1,
+          2,
+          4,
+          8,
+          16,
+          24,
+          32
+        ],
+        "optimizer_step": 8000,
+        "scope": "one_time_frozen_final_test",
+        "split": "final_test",
+        "temporal_stride": 4
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/evaluation_final_test_corrected_dt1_all_offsets_k56_core/ROLLOUT_SUMMARY.json": {
+        "aggregate": {
+          "56": {
+            "divergent_windows": 0,
+            "finite_fraction_min": 1.0,
+            "joint_field_mean": 0.016718024254909584,
+            "joint_terminal": 0.03077718655445746,
+            "joint_worst_window": 0.06470029801130295,
+            "pressure_field_mean": 0.010496483450489385,
+            "velocity_field_mean": 0.006221541295027626
+          }
+        },
+        "all_temporal_offsets": true,
+        "asset_audit": {
+          "manifest": {
+            "curriculum": [
+              [
+                0,
+                1600,
+                4
+              ],
+              [
+                1600,
+                3200,
+                8
+              ],
+              [
+                3200,
+                5200,
+                16
+              ],
+              [
+                5200,
+                6800,
+                24
+              ],
+              [
+                6800,
+                8000,
+                32
+              ]
+            ],
+            "dataset": "FluidicPinball_V2_Periodic",
+            "fit_reynolds": [
+              21.25,
+              21.75,
+              22.0,
+              22.5,
+              22.75,
+              23.0,
+              23.5,
+              23.75,
+              24.25,
+              24.5,
+              25.0,
+              25.5,
+              26.5,
+              27.0,
+              28.0,
+              28.5,
+              29.0,
+              30.0,
+              30.5,
+              31.5,
+              32.0,
+              32.5,
+              33.5,
+              34.0,
+              35.0,
+              35.5,
+              36.0,
+              37.0,
+              37.5,
+              38.5,
+              39.0,
+              39.5,
+              41.0,
+              42.0,
+              44.0,
+              45.0,
+              46.0,
+              48.0,
+              49.0,
+              51.0,
+              52.0,
+              53.0,
+              55.0,
+              56.0,
+              58.0,
+              59.0,
+              60.0
+            ],
+            "heldout_reynolds": [
+              22.25,
+              24.0,
+              27.5,
+              31.0,
+              34.5,
+              38.0,
+              43.0,
+              50.0,
+              57.0
+            ],
+            "pressure_gauge_verified": true,
+            "projection_error_verified": true,
+            "projection_errors": {
+              "pressure_energy_tail": 0.0008477996510218855,
+              "velocity_energy_tail": 0.0009024094598510946
+            },
+            "r_p": 16,
+            "r_u": 17,
+            "rom_tensor_verified": true,
+            "schema_version": 2,
+            "scope": "periodic_train_only_with_train_validation_view",
+            "sha256": {
+              "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+              "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+              "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+              "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+            },
+            "split_contract_verified": true,
+            "validation_horizons": [
+              4,
+              8,
+              16,
+              24,
+              32,
+              56
+            ],
+            "validation_reynolds": [
+              21.5,
+              23.25,
+              26.0,
+              29.5,
+              33.0,
+              36.5,
+              40.0,
+              47.0,
+              54.0
+            ]
+          },
+          "observed_sha256": {
+            "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+            "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+            "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+          },
+          "passed": true
+        },
+        "best_step": 8000,
+        "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+        "evaluation_re": [
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ],
+        "heldout_hard_disabled": [
+          22.25,
+          24.0,
+          27.5,
+          31.0,
+          34.5,
+          38.0,
+          43.0,
+          50.0,
+          57.0
+        ],
+        "horizons": [
+          56
+        ],
+        "optimizer_step": 8000,
+        "scope": "one_time_frozen_final_test",
+        "split": "final_test",
+        "temporal_stride": 4
+      }
+    }
+  },
+  "pinball_outer": {
+    "status": "CANDIDATE: publication mapping requires result comparison",
+    "root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1",
+    "checkpoints": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/e2_router/best.pt",
+        "sha256": "62ade4d7d2b9dae66ed08691dc477f53f59d97efba6cb71cb555a48ab5f5ee07",
+        "metadata": {
+          "feature_mean": {
+            "shape": [
+              1,
+              1
+            ],
+            "dtype": "float32"
+          },
+          "feature_std": {
+            "shape": [
+              1,
+              1
+            ],
+            "dtype": "float32"
+          },
+          "best_step": 8000,
+          "seed": 20260730
+        },
+        "state_dicts": {
+          "model_state": {
+            "elements": 123,
+            "tensors": {
+              "net.0.weight": {
+                "shape": [
+                  24,
+                  1
+                ],
+                "dtype": "torch.float32"
+              },
+              "net.0.bias": {
+                "shape": [
+                  24
+                ],
+                "dtype": "torch.float32"
+              },
+              "net.2.weight": {
+                "shape": [
+                  3,
+                  24
+                ],
+                "dtype": "torch.float32"
+              },
+              "net.2.bias": {
+                "shape": [
+                  3
+                ],
+                "dtype": "torch.float32"
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/gate_sh/best.pt",
+        "sha256": "6d62030656f5cb5722e017867cddca2d4bea8c54cf57e80576eb9d54d38f289a",
+        "metadata": {
+          "feature_mean": {
+            "shape": [
+              9
+            ],
+            "dtype": "float32"
+          },
+          "feature_std": {
+            "shape": [
+              9
+            ],
+            "dtype": "float32"
+          },
+          "best_step": 6200,
+          "router_checkpoint_sha256": "62ade4d7d2b9dae66ed08691dc477f53f59d97efba6cb71cb555a48ab5f5ee07",
+          "cache_sha256": "8db8303a0c5105ae1c6b4dc60e89e9eb46a3820a4a30cf3864da24a07150e8a5",
+          "pair_indices": {
+            "shape": [
+              2
+            ],
+            "dtype": "int64"
+          },
+          "seed": 42001
+        },
+        "state_dicts": {
+          "gate_state": {
+            "elements": 4865,
+            "tensors": {
+              "correction.net.0.weight": {
+                "shape": [
+                  64,
+                  9
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.0.bias": {
+                "shape": [
+                  64
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.2.weight": {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.2.bias": {
+                "shape": [
+                  64
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.4.weight": {
+                "shape": [
+                  1,
+                  64
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.4.bias": {
+                "shape": [
+                  1
+                ],
+                "dtype": "torch.float32"
+              }
+            }
+          }
+        }
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/gate_hp/best.pt",
+        "sha256": "ef3ab2a6404bc60e4ab85754fe962dcc4e65bb0ee69e37e1851ebc90bef216d9",
+        "metadata": {
+          "feature_mean": {
+            "shape": [
+              9
+            ],
+            "dtype": "float32"
+          },
+          "feature_std": {
+            "shape": [
+              9
+            ],
+            "dtype": "float32"
+          },
+          "best_step": 7300,
+          "router_checkpoint_sha256": "62ade4d7d2b9dae66ed08691dc477f53f59d97efba6cb71cb555a48ab5f5ee07",
+          "cache_sha256": "328dae30dc1e8304aa8429395cd4208135fa2c2640f70e063d3acf734d641494",
+          "pair_indices": {
+            "shape": [
+              2
+            ],
+            "dtype": "int64"
+          },
+          "seed": 42001
+        },
+        "state_dicts": {
+          "gate_state": {
+            "elements": 4865,
+            "tensors": {
+              "correction.net.0.weight": {
+                "shape": [
+                  64,
+                  9
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.0.bias": {
+                "shape": [
+                  64
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.2.weight": {
+                "shape": [
+                  64,
+                  64
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.2.bias": {
+                "shape": [
+                  64
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.4.weight": {
+                "shape": [
+                  1,
+                  64
+                ],
+                "dtype": "torch.float32"
+              },
+              "correction.net.4.bias": {
+                "shape": [
+                  1
+                ],
+                "dtype": "torch.float32"
+              }
+            }
+          }
+        }
+      }
+    ],
+    "sources": {
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/audit_remote_assets.py": {
+        "sha256": "ab0689095bb93b2d797c70c54d78ff7f7ca577917e447fc5e782d4729fd89873"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/build_boundary_cache.py": {
+        "sha256": "67dc059ca7fa26c23c048414ebff8c44688e1cd8befceda0c6203ab42a14965a"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/common.py": {
+        "sha256": "9d59f83b9bfa800c12bbf0fa62ee970bba35bff1c14794808b0b104c650dfd02"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/evaluate_heldout_rollout.py": {
+        "sha256": "3f62919ba6cbf17f1d78bc5a92b098cc0565e12d6a2b19374e7fa3e81eccdd45"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/finalize_run.py": {
+        "sha256": "6538d84e44a432d1b82a7ab1496309e705f932949244c0332a428adf206fd6d8"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/train_e2_router.py": {
+        "sha256": "37bb2ba0566e4c5721182a0d3a2544ba4a35c252cac91803d97d31e6e032ed4f"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/train_t2c_gate.py": {
+        "sha256": "d6885d2d52e09ca3e29a626cebe167cb5c757147c2e1c6029e5c06b321f1e9ee"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/inspect_cache.py": {
+        "sha256": "2c0f8ae26109b25a3538ae06d6889a27e48e811389f9aa9f05ab015f8268f624"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/inspect_eval_npz.py": {
+        "sha256": "25b652184be6f2e7092508c555532615ca047a16c21c3bf5c093a23637be9863"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/evaluate_full_rollout.py": {
+        "sha256": "6290332206413eaee2230fe052614afc89a2a986f87735b920fffd76287de960"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/finalize_full_rollout_results.py": {
+        "sha256": "0e772e39ee5f0f10cc90bb08d0307f10f82f69559cbf6c00194251804406e122"
+      },
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/code/write_full_rollout_report.py": {
+        "sha256": "67819241d9873d18c91fa7838b64cbf68dd3db8860954f31b3aef2890abedbc1"
+      }
+    },
+    "records": {
+      "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/FINAL_FUSION_SUMMARY.json": {
+        "artifact_inventory": {
+          "cache_hp/hp_development_cache.npz": {
+            "bytes": 635719,
+            "sha256": "328dae30dc1e8304aa8429395cd4208135fa2c2640f70e063d3acf734d641494"
+          },
+          "cache_sh/sh_development_cache.npz": {
+            "bytes": 521024,
+            "sha256": "8db8303a0c5105ae1c6b4dc60e89e9eb46a3820a4a30cf3864da24a07150e8a5"
+          },
+          "e2_router/best.pt": {
+            "bytes": 4799,
+            "sha256": "62ade4d7d2b9dae66ed08691dc477f53f59d97efba6cb71cb555a48ab5f5ee07"
+          },
+          "gate_hp/best.pt": {
+            "bytes": 23345,
+            "sha256": "ef3ab2a6404bc60e4ab85754fe962dcc4e65bb0ee69e37e1851ebc90bef216d9"
+          },
+          "gate_sh/best.pt": {
+            "bytes": 23537,
+            "sha256": "6d62030656f5cb5722e017867cddca2d4bea8c54cf57e80576eb9d54d38f289a"
+          }
+        },
+        "e2": {
+          "best_step": 8000,
+          "elapsed_seconds": 12.689786672592163,
+          "status": "complete"
+        },
+        "fusion_feedback": false,
+        "gates": {
+          "HP": {
+            "alpha_max": 0.9881612062454224,
+            "alpha_mean": 0.898301362991333,
+            "alpha_min": 0.780622661113739,
+            "best_step": 7300,
+            "boundary": "HP",
+            "elapsed_seconds": 18.093427419662476,
+            "joint_mean": 0.0010918819136103161,
+            "joint_worst": 0.0015048614288928701,
+            "per_Re": {
+              "21.5": {
+                "alpha_max": 0.9881612062454224,
+                "alpha_mean": 0.9860033392906189,
+                "alpha_min": 0.983318567276001,
+                "joint_mean": 0.001039338888353608,
+                "joint_worst": 0.0011122444358074254
+              },
+              "23.25": {
+                "alpha_max": 0.8512890934944153,
+                "alpha_mean": 0.8105993866920471,
+                "alpha_min": 0.780622661113739,
+                "joint_mean": 0.0011444249388670245,
+                "joint_worst": 0.0015048614288928701
+              }
+            },
+            "pressure_mean": 0.0008957843315124801,
+            "status": "complete",
+            "velocity_mean": 0.0001960975820978361,
+            "worst_Re_mean": 0.0011444249388670245
+          },
+          "SH": {
+            "alpha_max": 0.9951299428939819,
+            "alpha_mean": 0.9534053802490234,
+            "alpha_min": 0.8960645794868469,
+            "best_step": 6200,
+            "boundary": "SH",
+            "elapsed_seconds": 18.922672510147095,
+            "joint_mean": 0.0059332083032202524,
+            "joint_worst": 0.0064022044917052155,
+            "per_Re": {
+              "16.700000762939453": {
+                "alpha_max": 0.9111661314964294,
+                "alpha_mean": 0.9038127660751343,
+                "alpha_min": 0.8960645794868469,
+                "joint_mean": 0.005763859952356655,
+                "joint_worst": 0.006237991234282449
+              },
+              "17.399999618530273": {
+                "alpha_max": 0.950842559337616,
+                "alpha_mean": 0.942141592502594,
+                "alpha_min": 0.9378992319107056,
+                "joint_mean": 0.005772342930336773,
+                "joint_worst": 0.006111839876870556
+              },
+              "18.100000381469727": {
+                "alpha_max": 0.9830031991004944,
+                "alpha_mean": 0.9762979745864868,
+                "alpha_min": 0.9732967019081116,
+                "joint_mean": 0.006024743042368069,
+                "joint_worst": 0.006232913327897468
+              },
+              "18.799999237060547": {
+                "alpha_max": 0.9951299428939819,
+                "alpha_mean": 0.9913691282272339,
+                "alpha_min": 0.989517867565155,
+                "joint_mean": 0.006171887287819515,
+                "joint_worst": 0.0064022044917052155
+              }
+            },
+            "pressure_mean": 0.004979340777643187,
+            "status": "complete",
+            "velocity_mean": 0.0009538675255770654,
+            "worst_Re_mean": 0.006171887287819515
+          }
+        },
+        "heldout_fields_or_metrics_access": false,
+        "horizon": 24,
+        "known_limitation": "Steady validation includes a known low-Re local failure and Hopf includes a known Re=19.9 pressure failure; this fusion run reports boundary performance without hiding those limits.",
+        "known_prior_disclosure": "Heldout Re and prior specialist metrics were already disclosed in the user-provided reports. This strict run itself did not load heldout physical fields or compute heldout metrics.",
+        "method": "E2_ReOnly_TrajectoryTop1 + pair-specific T2-C",
+        "preflight": {
+          "HP": {
+            "Re_by_split": {
+              "train": [
+                21.25,
+                21.75,
+                22.0,
+                22.5,
+                22.75,
+                23.0,
+                23.5,
+                23.75,
+                24.25,
+                24.5,
+                25.0
+              ],
+              "validation": [
+                21.5,
+                23.25
+              ]
+            },
+            "boundary": "HP",
+            "cache_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/cache_hp/hp_development_cache.npz",
+            "cache_sha256": "328dae30dc1e8304aa8429395cd4208135fa2c2640f70e063d3acf734d641494",
+            "candidate_1_divergent_windows": 0,
+            "candidate_1_finite_fraction": 1.0,
+            "candidate_1_max_norm_ratio": 1.0004418395600592,
+            "candidate_2_divergent_windows": 0,
+            "candidate_2_finite_fraction": 1.0,
+            "candidate_2_max_norm_ratio": 1.0009686376300528,
+            "candidate_order": [
+              "Periodic",
+              "Hopf"
+            ],
+            "common_grid_area_match": true,
+            "common_physical_timestamps": true,
+            "elapsed_seconds": 72.52923774719238,
+            "fusion_feedback": false,
+            "heldout_loaded": false,
+            "history_length": 3,
+            "history_order_for_features": "chronological_t-2_t-1_t",
+            "horizon": 24,
+            "samples": 104,
+            "schema_version": 1,
+            "source_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+            "source_checkpoint_sha256": "c89a0cbf6cc0920664875f00234afaac49bc19b1c5c5f985cbba0b09e2dbdbda",
+            "split_counts": {
+              "train": 88,
+              "validation": 16
+            },
+            "status": "PASS",
+            "target_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/runs/formal/FluidicPinballV2_Hopf_rank999_B1_seed1248/best_validation.pt",
+            "target_checkpoint_sha256": "8be7a5552105116c72fa892b01e3670453de04bd753036ff4080faa75942b3d4",
+            "windows_per_Re": 8
+          },
+          "SH": {
+            "Re_by_split": {
+              "train": [
+                16.600000381469727,
+                16.799999237060547,
+                16.899999618530273,
+                17.100000381469727,
+                17.200000762939453,
+                17.299999237060547,
+                17.5,
+                17.600000381469727,
+                17.799999237060547,
+                17.899999618530273,
+                18.0,
+                18.200000762939453,
+                18.299999237060547,
+                18.5,
+                18.600000381469727,
+                18.700000762939453,
+                18.899999618530273,
+                19.0
+              ],
+              "validation": [
+                16.700000762939453,
+                17.399999618530273,
+                18.100000381469727,
+                18.799999237060547
+              ]
+            },
+            "boundary": "SH",
+            "cache_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/cache_sh/sh_development_cache.npz",
+            "cache_sha256": "8db8303a0c5105ae1c6b4dc60e89e9eb46a3820a4a30cf3864da24a07150e8a5",
+            "candidate_1_divergent_windows": 0,
+            "candidate_1_finite_fraction": 1.0,
+            "candidate_1_max_norm_ratio": 1.0000970640570772,
+            "candidate_2_divergent_windows": 0,
+            "candidate_2_finite_fraction": 1.0,
+            "candidate_2_max_norm_ratio": 1.0004003667234818,
+            "candidate_order": [
+              "Steady",
+              "Hopf"
+            ],
+            "common_grid_area_match": true,
+            "common_physical_timestamps": true,
+            "elapsed_seconds": 72.87869668006897,
+            "fusion_feedback": false,
+            "heldout_loaded": false,
+            "history_length": 3,
+            "history_order_for_features": "chronological_t-2_t-1_t",
+            "horizon": 24,
+            "samples": 176,
+            "schema_version": 1,
+            "source_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/runs/formal/FluidicPinballV2_Steady_rank999_B1_seed1248/best_validation.pt",
+            "source_checkpoint_sha256": "2ab91013c335645ec5424d2cd3d6396ddcf8ce9f9e08b77a347e1b13d0aaf3cf",
+            "split_counts": {
+              "train": 144,
+              "validation": 32
+            },
+            "status": "PASS",
+            "target_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/runs/formal/FluidicPinballV2_Hopf_rank999_B1_seed1248/best_validation.pt",
+            "target_checkpoint_sha256": "8be7a5552105116c72fa892b01e3670453de04bd753036ff4080faa75942b3d4",
+            "windows_per_Re": 8
+          }
+        },
+        "schema_version": 1,
+        "specialists_frozen": true,
+        "status": "DEVELOPMENT_TRAINING_COMPLETE",
+        "swanlab_runs": [
+          "https://swanlab.cn/@panxy1019/FluidicPinball_Fusion_E2_T2C/runs/km3vcntr",
+          "https://swanlab.cn/@panxy1019/FluidicPinball_Fusion_E2_T2C/runs/upf8ll4a",
+          "https://swanlab.cn/@panxy1019/FluidicPinball_Fusion_E2_T2C/runs/z72vcoq7"
+        ],
+        "validation_comparison": {
+          "HP": {
+            "boundary": "HP",
+            "cache_sha256": "328dae30dc1e8304aa8429395cd4208135fa2c2640f70e063d3acf734d641494",
+            "checkpoint_sha256": "ef3ab2a6404bc60e4ab85754fe962dcc4e65bb0ee69e37e1851ebc90bef216d9",
+            "heldout_fields_or_metrics_access": false,
+            "methods": {
+              "E2_pair_probability_blend": {
+                "alpha_max": 0.45267024636268616,
+                "alpha_mean": 0.31712663173675537,
+                "alpha_min": 0.18158301711082458,
+                "joint_mean": 0.004654430078474946,
+                "joint_worst": 0.007675469064686146,
+                "per_Re": {
+                  "21.5": {
+                    "alpha_max": 0.18158301711082458,
+                    "alpha_mean": 0.18158301711082458,
+                    "alpha_min": 0.18158301711082458,
+                    "joint_mean": 0.00704399414509025,
+                    "joint_worst": 0.007675469064686146
+                  },
+                  "23.25": {
+                    "alpha_max": 0.45267024636268616,
+                    "alpha_mean": 0.45267024636268616,
+                    "alpha_min": 0.45267024636268616,
+                    "joint_mean": 0.0022648660118596425,
+                    "joint_worst": 0.0028224975167752994
+                  }
+                },
+                "pressure_mean": 0.002814733774344269,
+                "velocity_mean": 0.0018396963041306773,
+                "worst_Re_mean": 0.00704399414509025
+              },
+              "T2-C": {
+                "alpha_max": 0.9881612062454224,
+                "alpha_mean": 0.898301362991333,
+                "alpha_min": 0.7806226015090942,
+                "joint_mean": 0.0010918819225619314,
+                "joint_worst": 0.0015048616264159865,
+                "per_Re": {
+                  "21.5": {
+                    "alpha_max": 0.9881612062454224,
+                    "alpha_mean": 0.9860033392906189,
+                    "alpha_min": 0.983318567276001,
+                    "joint_mean": 0.001039338888353608,
+                    "joint_worst": 0.0011122444358074254
+                  },
+                  "23.25": {
+                    "alpha_max": 0.8512890934944153,
+                    "alpha_mean": 0.8105993866920471,
+                    "alpha_min": 0.7806226015090942,
+                    "joint_mean": 0.0011444249567702546,
+                    "joint_worst": 0.0015048616264159865
+                  }
+                },
+                "pressure_mean": 0.0008957843346456292,
+                "velocity_mean": 0.00019609758791630212,
+                "worst_Re_mean": 0.0011444249567702546
+              },
+              "candidate_1_only": {
+                "alpha_max": 1.0,
+                "alpha_mean": 1.0,
+                "alpha_min": 1.0,
+                "joint_mean": 0.0010282886522996015,
+                "joint_worst": 0.0011059870518420657,
+                "per_Re": {
+                  "21.5": {
+                    "alpha_max": 1.0,
+                    "alpha_mean": 1.0,
+                    "alpha_min": 1.0,
+                    "joint_mean": 0.0010385823247266344,
+                    "joint_worst": 0.0011059870518420657
+                  },
+                  "23.25": {
+                    "alpha_max": 1.0,
+                    "alpha_mean": 1.0,
+                    "alpha_min": 1.0,
+                    "joint_mean": 0.0010179949798725686,
+                    "joint_worst": 0.0011002503865774134
+                  }
+                },
+                "pressure_mean": 0.0009694829144393594,
+                "velocity_mean": 5.8805737860242155e-05,
+                "worst_Re_mean": 0.0010385823247266344
+              },
+              "candidate_2_only": {
+                "alpha_max": 0.0,
+                "alpha_mean": 0.0,
+                "alpha_min": 0.0,
+                "joint_mean": 0.006399206504102063,
+                "joint_worst": 0.009361193927067277,
+                "per_Re": {
+                  "21.5": {
+                    "alpha_max": 0.0,
+                    "alpha_mean": 0.0,
+                    "alpha_min": 0.0,
+                    "joint_mean": 0.008619040218468217,
+                    "joint_worst": 0.009361193927067277
+                  },
+                  "23.25": {
+                    "alpha_max": 0.0,
+                    "alpha_mean": 0.0,
+                    "alpha_min": 0.0,
+                    "joint_mean": 0.00417937278973591,
+                    "joint_worst": 0.0051057153330865395
+                  }
+                },
+                "pressure_mean": 0.0038889170261432768,
+                "velocity_mean": 0.0025102894779587864,
+                "worst_Re_mean": 0.008619040218468217
+              },
+              "fixed_0.5": {
+                "alpha_max": 0.5,
+                "alpha_mean": 0.5,
+                "alpha_min": 0.5,
+                "joint_mean": 0.0031990213986090427,
+                "joint_worst": 0.004752419748260006,
+                "per_Re": {
+                  "21.5": {
+                    "alpha_max": 0.5,
+                    "alpha_mean": 0.5,
+                    "alpha_min": 0.5,
+                    "joint_mean": 0.0043174198442265605,
+                    "joint_worst": 0.004752419748260006
+                  },
+                  "23.25": {
+                    "alpha_max": 0.5,
+                    "alpha_mean": 0.5,
+                    "alpha_min": 0.5,
+                    "joint_mean": 0.0020806229529915254,
+                    "joint_worst": 0.002619495368454186
+                  }
+                },
+                "pressure_mean": 0.0019428822303212041,
+                "velocity_mean": 0.0012561391682878386,
+                "worst_Re_mean": 0.0043174198442265605
+              },
+              "per_window_convex_oracle": {
+                "alpha_max": 0.9941999912261963,
+                "alpha_mean": 0.9786624908447266,
+                "alpha_min": 0.95660001039505,
+                "joint_mean": 0.0010158331527558796,
+                "joint_worst": 0.0011040114992790125,
+                "per_Re": {
+                  "21.5": {
+                    "alpha_max": 0.9941999912261963,
+                    "alpha_mean": 0.9937499761581421,
+                    "alpha_min": 0.9923999905586243,
+                    "joint_mean": 0.0010347235647867178,
+                    "joint_worst": 0.0011040114992790125
+                  },
+                  "23.25": {
+                    "alpha_max": 0.9768999814987183,
+                    "alpha_mean": 0.963575005531311,
+                    "alpha_min": 0.95660001039505,
+                    "joint_mean": 0.0009969427407250416,
+                    "joint_worst": 0.0010791257400890987
+                  }
+                },
+                "pressure_mean": 0.0009406752190429845,
+                "velocity_mean": 7.515793371289518e-05,
+                "worst_Re_mean": 0.0010347235647867178
+              }
+            },
+            "selection_data": "validation_only"
+          },
+          "SH": {
+            "boundary": "SH",
+            "cache_sha256": "8db8303a0c5105ae1c6b4dc60e89e9eb46a3820a4a30cf3864da24a07150e8a5",
+            "checkpoint_sha256": "6d62030656f5cb5722e017867cddca2d4bea8c54cf57e80576eb9d54d38f289a",
+            "heldout_fields_or_metrics_access": false,
+            "methods": {
+              "E2_pair_probability_blend": {
+                "alpha_max": 0.7384224534034729,
+                "alpha_mean": 0.5157155990600586,
+                "alpha_min": 0.288849413394928,
+                "joint_mean": 0.01970893224480785,
+                "joint_worst": 0.041397558518085055,
+                "per_Re": {
+                  "16.700000762939453": {
+                    "alpha_max": 0.7384224534034729,
+                    "alpha_mean": 0.7384224534034729,
+                    "alpha_min": 0.7384224534034729,
+                    "joint_mean": 0.007126731142882768,
+                    "joint_worst": 0.00785137464249175
+                  },
+                  "17.399999618530273": {
+                    "alpha_max": 0.5979653000831604,
+                    "alpha_mean": 0.5979653000831604,
+                    "alpha_min": 0.5979653000831604,
+                    "joint_mean": 0.009586850683223277,
+                    "joint_worst": 0.012072503045011423
+                  },
+                  "18.100000381469727": {
+                    "alpha_max": 0.4376251697540283,
+                    "alpha_mean": 0.4376251697540283,
+                    "alpha_min": 0.4376251697540283,
+                    "joint_mean": 0.023014555536988012,
+                    "joint_worst": 0.027825711328689207
+                  },
+                  "18.799999237060547": {
+                    "alpha_max": 0.288849413394928,
+                    "alpha_mean": 0.288849413394928,
+                    "alpha_min": 0.288849413394928,
+                    "joint_mean": 0.03910759161613733,
+                    "joint_worst": 0.041397558518085055
+                  }
+                },
+                "pressure_mean": 0.0190843466355392,
+                "velocity_mean": 0.0006245856092686486,
+                "worst_Re_mean": 0.03910759161613733
+              },
+              "T2-C": {
+                "alpha_max": 0.9951299428939819,
+                "alpha_mean": 0.9534053802490234,
+                "alpha_min": 0.8960645794868469,
+                "joint_mean": 0.005933208299362354,
+                "joint_worst": 0.0064022044917052155,
+                "per_Re": {
+                  "16.700000762939453": {
+                    "alpha_max": 0.9111661314964294,
+                    "alpha_mean": 0.9038127064704895,
+                    "alpha_min": 0.8960645794868469,
+                    "joint_mean": 0.005763859929908781,
+                    "joint_worst": 0.006237991234282449
+                  },
+                  "17.399999618530273": {
+                    "alpha_max": 0.9508424401283264,
+                    "alpha_mean": 0.9421416521072388,
+                    "alpha_min": 0.9378992319107056,
+                    "joint_mean": 0.005772342937353057,
+                    "joint_worst": 0.006111839876870556
+                  },
+                  "18.100000381469727": {
+                    "alpha_max": 0.9830031991004944,
+                    "alpha_mean": 0.9762979745864868,
+                    "alpha_min": 0.9732967019081116,
+                    "joint_mean": 0.006024743042368069,
+                    "joint_worst": 0.006232913327897468
+                  },
+                  "18.799999237060547": {
+                    "alpha_max": 0.9951299428939819,
+                    "alpha_mean": 0.9913691282272339,
+                    "alpha_min": 0.989517867565155,
+                    "joint_mean": 0.006171887287819515,
+                    "joint_worst": 0.0064022044917052155
+                  }
+                },
+                "pressure_mean": 0.00497934077377037,
+                "velocity_mean": 0.0009538675255919842,
+                "worst_Re_mean": 0.006171887287819515
+              },
+              "candidate_1_only": {
+                "alpha_max": 1.0,
+                "alpha_mean": 1.0,
+                "alpha_min": 1.0,
+                "joint_mean": 0.0060381129735760436,
+                "joint_worst": 0.006515629875508784,
+                "per_Re": {
+                  "16.700000762939453": {
+                    "alpha_max": 1.0,
+                    "alpha_mean": 1.0,
+                    "alpha_min": 1.0,
+                    "joint_mean": 0.0059211883546128235,
+                    "joint_worst": 0.006515629875508784
+                  },
+                  "17.399999618530273": {
+                    "alpha_max": 1.0,
+                    "alpha_mean": 1.0,
+                    "alpha_min": 1.0,
+                    "joint_mean": 0.005957479526743664,
+                    "joint_worst": 0.0062426690353624015
+                  },
+                  "18.100000381469727": {
+                    "alpha_max": 1.0,
+                    "alpha_mean": 1.0,
+                    "alpha_min": 1.0,
+                    "joint_mean": 0.00607195561705362,
+                    "joint_worst": 0.006259907952832123
+                  },
+                  "18.799999237060547": {
+                    "alpha_max": 1.0,
+                    "alpha_mean": 1.0,
+                    "alpha_min": 1.0,
+                    "joint_mean": 0.0062018283958940644,
+                    "joint_worst": 0.0064319246615415744
+                  }
+                },
+                "pressure_mean": 0.005038163213282074,
+                "velocity_mean": 0.000999949760293969,
+                "worst_Re_mean": 0.0062018283958940644
+              },
+              "candidate_2_only": {
+                "alpha_max": 0.0,
+                "alpha_mean": 0.0,
+                "alpha_min": 0.0,
+                "joint_mean": 0.034093337602757935,
+                "joint_worst": 0.05813852313595412,
+                "per_Re": {
+                  "16.700000762939453": {
+                    "alpha_max": 0.0,
+                    "alpha_mean": 0.0,
+                    "alpha_min": 0.0,
+                    "joint_mean": 0.02018165462215688,
+                    "joint_worst": 0.02431065842209461
+                  },
+                  "17.399999618530273": {
+                    "alpha_max": 0.0,
+                    "alpha_mean": 0.0,
+                    "alpha_min": 0.0,
+                    "joint_mean": 0.021188756084216897,
+                    "joint_worst": 0.028581549770984555
+                  },
+                  "18.100000381469727": {
+                    "alpha_max": 0.0,
+                    "alpha_mean": 0.0,
+                    "alpha_min": 0.0,
+                    "joint_mean": 0.0401590850035651,
+                    "joint_worst": 0.049219570712997644
+                  },
+                  "18.799999237060547": {
+                    "alpha_max": 0.0,
+                    "alpha_mean": 0.0,
+                    "alpha_min": 0.0,
+                    "joint_mean": 0.05484385470109287,
+                    "joint_worst": 0.05813852313595412
+                  }
+                },
+                "pressure_mean": 0.0337201494297743,
+                "velocity_mean": 0.0003731881729836404,
+                "worst_Re_mean": 0.05484385470109287
+              },
+              "fixed_0.5": {
+                "alpha_max": 0.5,
+                "alpha_mean": 0.5,
+                "alpha_min": 0.5,
+                "joint_mean": 0.017644615703329963,
+                "joint_worst": 0.029279847711263497,
+                "per_Re": {
+                  "16.700000762939453": {
+                    "alpha_max": 0.5,
+                    "alpha_mean": 0.5,
+                    "alpha_min": 0.5,
+                    "joint_mean": 0.010808960475607365,
+                    "joint_worst": 0.012565975946211191
+                  },
+                  "17.399999618530273": {
+                    "alpha_max": 0.5,
+                    "alpha_mean": 0.5,
+                    "alpha_min": 0.5,
+                    "joint_mean": 0.011338771900159509,
+                    "joint_worst": 0.014628349516152203
+                  },
+                  "18.100000381469727": {
+                    "alpha_max": 0.5,
+                    "alpha_mean": 0.5,
+                    "alpha_min": 0.5,
+                    "joint_mean": 0.02063254010199343,
+                    "joint_worst": 0.024819447868855354
+                  },
+                  "18.799999237060547": {
+                    "alpha_max": 0.5,
+                    "alpha_mean": 0.5,
+                    "alpha_min": 0.5,
+                    "joint_mean": 0.027798190335559553,
+                    "joint_worst": 0.029279847711263497
+                  }
+                },
+                "pressure_mean": 0.017087839411058414,
+                "velocity_mean": 0.0005567762922715496,
+                "worst_Re_mean": 0.027798190335559553
+              },
+              "per_window_convex_oracle": {
+                "alpha_max": 0.9894999861717224,
+                "alpha_mean": 0.9604969024658203,
+                "alpha_min": 0.9300000071525574,
+                "joint_mean": 0.005920537158897572,
+                "joint_worst": 0.006402477263388497,
+                "per_Re": {
+                  "16.700000762939453": {
+                    "alpha_max": 0.9343000054359436,
+                    "alpha_mean": 0.9331874847412109,
+                    "alpha_min": 0.9300000071525574,
+                    "joint_mean": 0.005725846060543246,
+                    "joint_worst": 0.00623890498726437
+                  },
+                  "17.399999618530273": {
+                    "alpha_max": 0.9398999810218811,
+                    "alpha_mean": 0.9378874897956848,
+                    "alpha_min": 0.9348000288009644,
+                    "joint_mean": 0.005770187641604252,
+                    "joint_worst": 0.006112155503801714
+                  },
+                  "18.100000381469727": {
+                    "alpha_max": 0.9829999804496765,
+                    "alpha_mean": 0.9814624786376953,
+                    "alpha_min": 0.9761999845504761,
+                    "joint_mean": 0.00601637961110466,
+                    "joint_worst": 0.006213924920434315
+                  },
+                  "18.799999237060547": {
+                    "alpha_max": 0.9894999861717224,
+                    "alpha_mean": 0.9894499778747559,
+                    "alpha_min": 0.9894000291824341,
+                    "joint_mean": 0.006169735322338128,
+                    "joint_worst": 0.006402477263388497
+                  }
+                },
+                "pressure_mean": 0.004959713597293031,
+                "velocity_mean": 0.0009608235616045418,
+                "worst_Re_mean": 0.006169735322338128
+              }
+            },
+            "selection_data": "validation_only"
+          }
+        }
+      }
+    }
+  }
+}

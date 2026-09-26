@@ -1,0 +1,31 @@
+{
+  "sections/introduction.tex_unchanged": true,
+  "sections/related_work.tex_unchanged": true,
+  "abstract_unchanged": true,
+  "A05_exact_replay": true,
+  "field_rows": 6144,
+  "all_windows": 32,
+  "identity_max_errors": {
+    "energy_identity_max_abs": 1.1075837977609168e-15,
+    "momentum_identity_max_abs": 7.300797768397001e-15,
+    "ppe_identity_max_abs": 6.081845639084593e-14
+  },
+  "resolved_phase": {
+    "sh": 0,
+    "hp": 15
+  },
+  "H_FP32": {
+    "proposed": {
+      "completed": 2,
+      "failed": 1
+    },
+    "structured": {
+      "completed": 2,
+      "failed": 1
+    }
+  },
+  "Q17_scope": "paired warm specialist only; complete Top-2 and equivalent I/O NOT completed",
+  "compile_no_overfull_or_undefined": true,
+  "paper_pages": 34,
+  "source_archive_verified": true
+}

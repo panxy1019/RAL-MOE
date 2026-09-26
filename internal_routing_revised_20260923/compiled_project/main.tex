@@ -1,0 +1,75 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{iclr2027_conference,times}
+\input{math_commands.tex}
+
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,array,multirow,threeparttable,adjustbox}
+\usepackage{placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\hypersetup{hidelinks}
+
+\title{RAL-MoE-ROM: Hierarchical Mixture-of-Experts for Regime-Adaptive Reduced-Order Model }
+
+% Anonymous submission. Restore the author block only for the camera-ready version.
+\author{Anonymous Authors}
+
+% Keep disabled for the anonymous submission.
+% \iclrfinalcopy
+
+\begin{document}
+\raggedbottom
+
+\maketitle
+
+\begin{abstract}
+Reduced-order models (ROMs) approximate high-dimensional dynamical systems using a small number of state variables. However, their predictive accuracy can deteriorate when parameter changes lead to different dynamical regimes. Different regimes may require different reduced representations and dynamics, making it difficult for a single model to remain accurate across the full parameter range. We introduce RAL-MoE-ROM, a hierarchical mixture-of-experts framework with two levels: regime-local specialists and cross-regime routing with fusion.. At the first level, each local model, called a specialist, uses a structured sparse mixture of experts to improve its reduced dynamics and is trained through multi-step autonomous rollouts. At the second level, an outer router selects a specialist or a pair of neighboring specialists. When two specialists are selected, a learned gate uses the initial physical history to combine their reconstructed fields. Across three flow benchmarks spanning steady, Hopf-onset, and periodic regimes, the local specialists provide accurate autonomous predictions, while cross-regime routing further improve prediction in the evaluated regime overlaps.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/experiments}
+\FloatBarrier
+\input{sections/conclusion}
+
+\subsubsection*{Reproducibility statement}
+The main text reports the benchmark roles, evaluation horizons, baselines, and metrics. Appendices~\ref{app:problem_pod}--\ref{app:implementation} document the problem, projected operators, specialist architecture, routing, and implementation. Experimental appendices follow the main-text order: local prediction (Appendix~\ref{app:local_evidence}), fusion and physical-field diagnostics (Appendix~\ref{app:assembly_results}), internal expert routing (Appendix~\ref{app:routing_physics}), and cost (Appendix~\ref{app:parameter_counts}).
+Appendix~\ref{app:internal_routing} reports post-hoc internal-routing statistics
+from fixed validation-selected Hopf and Periodic specialists on held-out
+rollout windows; these diagnostics are not used for model selection.
+Appendix~\ref{app:circular} reports the new Circular control study, initialization audit, and accepted/failed seed counts; Appendix~\ref{app:parameter_counts} separates parameter counts from measured local latency.
+Appendix~\ref{app:square} additionally reports an architecture-matched descriptor
+ablation and three-seed variability of the centered-square T2-C gate, with the
+underlying specialists and E2 router held fixed.
+
+\subsection*{AI use statement}
+% Authors must confirm this disclosure against the final submission workflow.
+Generative AI tools, including ChatGPT and Codex, assisted with language polishing, LaTeX formatting, consistency checks, experiment-code development, and analysis of experimental records. The authors take full responsibility for reviewing and verifying all scientific
+content, mathematical formulations, experimental configurations, numerical
+results, and conclusions, and for the final manuscript and all reported results.
+
+\bibliography{references,legacy_references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\input{appendix/rom_derivation}
+\input{appendix/specialist_details}
+\input{appendix/routing_details}
+\input{appendix/implementation}
+\input{appendix/experimental_local}
+\FloatBarrier
+\input{appendix/experimental_fusion}
+\input{appendix/fusion_physical_diagnostics}
+\FloatBarrier
+\input{appendix/experimental_diagnostics}
+\FloatBarrier
+\input{appendix/experimental_cost}
+
+\end{document}

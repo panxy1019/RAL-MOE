@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "selection_split": "validation_only",
+  "validation_frozen": true,
+  "seed1248_screening_candidates": [
+    "b1",
+    "b2",
+    "b3",
+    "b4"
+  ],
+  "three_seed_complete": false,
+  "confirmatory_attempts_complete": true,
+  "attempted_seeds": {
+    "b1": [
+      1248,
+      2248,
+      3248
+    ],
+    "b2": [
+      1248,
+      2248,
+      3248
+    ],
+    "b3": [
+      1248,
+      2248,
+      3248
+    ],
+    "b4": [
+      1248,
+      2248,
+      3248
+    ]
+  },
+  "training_failures": [
+    {
+      "schema_version": 1,
+      "status": "training_failed",
+      "variant": "b4",
+      "seed": 2248,
+      "exit_code": 1,
+      "last_finite_step": 1540,
+      "last_horizon": 8,
+      "error": "FloatingPointError: nonfinite gradient at step 1541",
+      "run_dir": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B4_CTDM_Galerkin_ROM_seed2248",
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/logs/remaining_seeds_pipeline_resume.log",
+      "log_sha256": "9c0825fa7aa70b6fb992feebbb20771c7da0ec230d8f589665f42e6f74fa19b5",
+      "final_training_checkpoint_present": false,
+      "heldout_evaluation_performed": false
+    },
+    {
+      "schema_version": 1,
+      "status": "training_failed",
+      "variant": "b4",
+      "seed": 3248,
+      "exit_code": 1,
+      "last_finite_step": 3940,
+      "last_horizon": 16,
+      "error": "FloatingPointError: nonfinite gradient at step 3958",
+      "run_dir": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B4_CTDM_Galerkin_ROM_seed3248",
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/logs/B4_CTDM_Galerkin_ROM_seed3248.log",
+      "log_sha256": "f22bba4325c5ba098ea07a6f3315e207402d2a046df61708136c58f0ee7697ce",
+      "final_training_checkpoint_present": false,
+      "heldout_evaluation_performed": false
+    }
+  ],
+  "finite_zero_divergence_candidates": [
+    "b1",
+    "b2",
+    "b3",
+    "b4"
+  ],
+  "summary": {
+    "b1": {
+      "seeds": 3,
+      "all_finite_zero_divergence": true,
+      "Eu_mean": 0.00023585815506521612,
+      "Ep_mean": 0.0007490091472088048,
+      "joint_mean": 0.000984867302274021,
+      "joint_std": 0.00011215953400690316,
+      "worst_window_mean": 0.0017065851716324687,
+      "consistency_mean": 0.0007722408857565218
+    },
+    "b2": {
+      "seeds": 3,
+      "all_finite_zero_divergence": true,
+      "Eu_mean": 0.0006207843640974412,
+      "Ep_mean": 0.0012439040777583916,
+      "joint_mean": 0.001864688441855833,
+      "joint_std": 6.652213677576915e-05,
+      "worst_window_mean": 0.0032670057844370604,
+      "consistency_mean": 0.0005402307732538247
+    },
+    "b3": {
+      "seeds": 3,
+      "all_finite_zero_divergence": true,
+      "Eu_mean": 0.0008395812571203957,
+      "Ep_mean": 0.005035514943301678,
+      "joint_mean": 0.005875096200422074,
+      "joint_std": 0.0005464742137824582,
+      "worst_window_mean": 0.008573156160612902,
+      "consistency_mean": 0.012080997203914498
+    },
+    "b4": {
+      "seeds": 1,
+      "all_finite_zero_divergence": true,
+      "Eu_mean": 0.0009201936336467043,
+      "Ep_mean": 0.004584756447002292,
+      "joint_mean": 0.005504950080648996,
+      "joint_std": 0.0,
+      "worst_window_mean": 0.011234364472329617,
+      "consistency_mean": 0.003464048265110857
+    }
+  },
+  "preregistered_gates": {
+    "B4_vs_B3_prediction_gate": false,
+    "B4_timestep_consistency_better_than_B3": true,
+    "B4_memory_nondegenerate": true
+  },
+  "test_access_authorized": false,
+  "authorized_checkpoint_sha256s": [],
+  "frozen_checkpoints": [
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/final_evaluation/20260722_h4_expanded_final/HopfExpanded34_H4_NormalFormRadial_r32/final.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/HopfExpanded34_H4_NormalFormRadial_r32_final.pt",
+      "sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+      "bytes": 383345403
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B2_Deep_FNN_current_seed3248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B2_Deep_FNN_current_seed3248_best_validation.pt",
+      "sha256": "1fa73caa0e1c7358581f96d35ab908a2c7c5551ced014c0b789c08b622f839b2",
+      "bytes": 23903171
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/single_seed/B1_Deep_FNN_H3_seed1248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B1_Deep_FNN_H3_seed1248_best_validation.pt",
+      "sha256": "2d370c90b50cd76bc4fc222e9fd4e4cca8dac11272928bba66054af8ea09c649",
+      "bytes": 28640259
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B1_Deep_FNN_H3_seed3248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B1_Deep_FNN_H3_seed3248_best_validation.pt",
+      "sha256": "3c3355f1dddca772949897796a021627254c34531ff80d76cf601adc59291c77",
+      "bytes": 28637763
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B3_Discrete_KDA_FNN_seed2248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B3_Discrete_KDA_FNN_seed2248_best_validation.pt",
+      "sha256": "4500560c496633c8e0d2669ef27a4f0ed84fbdcad7eebc1cc22719cbcf0b9758",
+      "bytes": 26985043
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/single_seed/B2_Deep_FNN_current_seed1248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B2_Deep_FNN_current_seed1248_best_validation.pt",
+      "sha256": "797a96bce4774d881c3f4890f3bf37c64fc01a4e3576f44150c7d99823abf3d5",
+      "bytes": 23903171
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B2_Deep_FNN_current_seed2248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B2_Deep_FNN_current_seed2248_best_validation.pt",
+      "sha256": "9a0c4c40dbd56e12d9516ecd718f26408fa9aa2ebc2529a9b779f2e6d3d85408",
+      "bytes": 23903235
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B3_Discrete_KDA_FNN_seed3248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B3_Discrete_KDA_FNN_seed3248_best_validation.pt",
+      "sha256": "9a92182294e371ef1c9d8a1d486e66a3e627026ece5133e90b1b39e8482a4e63",
+      "bytes": 26983763
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/single_seed/B4_CTDM_Galerkin_ROM_seed1248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B4_CTDM_Galerkin_ROM_seed1248_best_validation.pt",
+      "sha256": "bb64bd0939def0caecbcc2db56dd4b7f00f748967aa1545a5170a11bfd6b35ec",
+      "bytes": 26986259
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/single_seed/B3_Discrete_KDA_FNN_seed1248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B3_Discrete_KDA_FNN_seed1248_best_validation.pt",
+      "sha256": "d6bc653e192380da0b4c0889f81b7ebc2df1b80cd7b7b70cc7429d588344334e",
+      "bytes": 26986259
+    },
+    {
+      "source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B1_Deep_FNN_H3_seed2248/best_validation.pt",
+      "frozen": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/validation_freeze/B1_Deep_FNN_H3_seed2248_best_validation.pt",
+      "sha256": "fd2df63278e99f47d81ac6c380d0451caf17f43f2a2fb5320b9fc23d4ec2214f",
+      "bytes": 28638595
+    }
+  ]
+}

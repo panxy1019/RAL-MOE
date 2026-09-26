@@ -1,0 +1,75 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{iclr2027_conference,times}
+\input{math_commands.tex}
+
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{booktabs,array,multirow,threeparttable,adjustbox}
+\usepackage{placeins}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,calc}
+\hypersetup{hidelinks}
+
+\title{RAL-MoE-ROM: Hierarchical Mixture-of-Experts for Regime-Adaptive  Reduced-Order Model }
+
+% Anonymous submission. Restore the author block only for the camera-ready version.
+\author{Anonymous Authors}
+
+% Keep disabled for the anonymous submission.
+% \iclrfinalcopy
+
+\begin{document}
+\raggedbottom
+
+\maketitle
+
+\begin{abstract}
+Reduced-order models (ROMs)  approximate the high-dimensional dynamic systems using a small number of state variables.  Their predictive accuracy can deteriorate when parameter changes lead to different dynamical regimes, such as a transition from steady flow to sustained oscillations. This challenge affects the reduced dynamics, motivating a separation of regime-local reduced model from cross-regime assembly.  We introduce RAL-MoE-ROM, a hierarchical mixture-of-experts framework for regime-adaptive  localized reduced order model. Within each regime, a local reduced model, which we refer to as a specialist, retains a projected Galerkin backbone and is augmented with a structured sparse MoE closure. Its shared and Top-2 routed experts combine nonlinear, linear, and low-rank quadratic responses, and the specialist is trained under closed-loop multi-step rollouts.  The outer router and the fusion gate are learned during training, while the applicability mask is fixed from validation support. At inference, they jointly determine whether the model advances a single specialist or an adjacent pair of specialists; when two adjacent specialists are applicable, the learned gate fuses only their reconstructed physical fields using a history-conditioned convex weight. Across three flow  benchmarks spanning steady, Hopf-onset, and periodic regimes, the proposed specialists maintain accurate autonomous rollouts across distinct dynamical regimes while cross-regime routing and physical-space fusion further improve prediction in regime overlaps.
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related_work}
+\input{sections/method}
+\input{sections/experiments}
+\FloatBarrier
+\input{sections/conclusion}
+
+\subsubsection*{Reproducibility statement}
+The main text reports the benchmark roles, evaluation horizons, baselines, and metrics. Appendices~A--E document the local-coordinate construction, projected operators, specialist architecture, routing and fusion procedure, and implementation details. Appendices~F--H provide benchmark-specific results.
+Appendix~\ref{app:internal_routing} reports post-hoc internal-routing statistics
+from fixed validation-selected Hopf and Periodic specialists on held-out
+rollout windows; these diagnostics are not used for model selection.
+Appendix~\ref{app:square} additionally reports an architecture-matched descriptor
+ablation and three-seed variability of the centered-square T2-C gate, with the
+underlying specialists and E2 router held fixed.
+
+\subsection*{AI use statement}
+% Authors must confirm this disclosure against the final submission workflow.
+Generative AI tools, including ChatGPT and Codex, were used solely to assist with language polishing and LaTeX formatting. The authors take full responsibility for reviewing and verifying all scientific
+content, mathematical formulations, experimental configurations, numerical
+results, and conclusions, and for the final manuscript and all reported results.
+
+\bibliography{references,legacy_references}
+\bibliographystyle{iclr2027_conference}
+
+\appendix
+\input{appendix/rom_derivation}
+\input{appendix/specialist_details}
+\input{appendix/routing_details}
+\input{appendix/implementation}
+\input{appendix/circular_cylinder}
+\FloatBarrier
+\input{appendix/square_cylinder}
+\FloatBarrier
+\input{appendix/fluidic_pinball}
+\FloatBarrier
+\input{appendix/internal_routing}
+\clearpage
+\input{appendix/parameter_counts}
+
+\end{document}

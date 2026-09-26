@@ -1,0 +1,40 @@
+schema_version: 1
+experiment_root: KDA_PR_FNN_ROM_20260730
+dataset: CenteredSquare_CN09_Hopf_r11
+immutable:
+  train_cases: 23
+  validation_cases: 6
+  heldout_cases: 5
+  ru: 11
+  rp: 11
+models:
+  B1: Deep-FNN-H3
+  B2: KDA-PR-FNN-ROM-radial-off
+  B3: KDA-PR-FNN-ROM-radial-on
+fnn:
+  width: 512
+  linear_layers: 6
+  dropout: 0
+kda:
+  current_dim: 46
+  token_dim: 128
+  heads: 4
+  d_k: 16
+  d_v: 16
+  runtime_memory_state: 1024
+  beta_max: 0.5
+  tbptt_steps: 16
+training:
+  optimizer: AdamW
+  optimizer_steps: 8000
+  gradient_clip: 1.0
+  amp: true
+  amp_dtype: bfloat16
+  tf32: true
+  curriculum:
+    - [0, 1600, 4]
+    - [1600, 3200, 8]
+    - [3200, 5200, 16]
+    - [5200, 6800, 32]
+    - [6800, 8000, 56]
+heldout_policy: hard_disabled_until_validation_gate

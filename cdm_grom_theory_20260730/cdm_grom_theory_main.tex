@@ -1,0 +1,75 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[a4paper,margin=28mm]{geometry}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Pset}{\mathcal{P}}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\fnorm}[1]{\left\lVert #1\right\rVert_F}
+\newcommand{\ipF}[2]{\left\langle #1,#2\right\rangle_F}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{Diag}}
+\newcommand{\spec}{\operatorname{\sigma}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\mem}{\mathrm{mem}}
+
+\theoremstyle{plain}
+\newtheorem*{lemmaone}{Lemma 1 (First-order physical-time expansions)}
+\newtheorem*{theoremone}{Theorem 1 (Local consistency of the discrete recurrence)}
+\newtheorem*{theoremtwo}{Theorem 2 (Local well-posedness of CDM-GROM)}
+\newtheorem*{theoremthree}{Theorem 3 (Boundedness of the memory state)}
+\newtheorem*{theoremfour}{Theorem 4 (Finite-state/Volterra equivalence)}
+\newtheorem*{theoremfive}{Theorem 5 (Linear resolved--unresolved elimination)}
+\newtheorem*{theoremsix}{Theorem 6 (Reciprocal energy identity and absorbing bound)}
+\newtheorem*{theoremseven}{Theorem 7 (Propagation of kernel-approximation error)}
+\newtheorem*{propositionone}{Proposition 1 (Regularized reconstruction gradient flow)}
+\newtheorem*{propositiontwo}{Proposition 2 (Memory dissipation inequality)}
+\newtheorem*{propositionthree}{Proposition 3 (Fixed-key minimal realization)}
+\newtheorem*{corollaryone}{Corollary 1 (Finite-time first-order convergence)}
+\newtheorem*{corollarytwo}{Corollary 2 (Unique fixed-input equilibrium)}
+\newtheorem*{corollarythree}{Corollary 3 (Exact and reduced linear realizations)}
+
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\title{Continuous Delta-Memory Galerkin Reduced-Order Models\\
+       A Deterministic Finite-State Closure Theory}
+\author{Independent theory manuscript}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Galerkin truncation generally makes the dynamics of retained modal
+coefficients non-Markovian. We introduce the Continuous Delta-Memory Galerkin
+Reduced-Order Model (CDM-GROM), a deterministic closure that contains no
+neural network, attention mechanism, learned router, external phase, or
+explicit delay-window concatenation. A channel-wise delta recurrence is
+scaled by the physical time step and shown to be a first-order discretization
+of a matrix memory ordinary differential equation. The resulting augmented
+velocity--memory system is Markovian, whereas elimination of the memory state
+produces a history-dependent equation for the resolved variables. We connect
+fixed-address delta memory to minimal auxiliary states, finite exponential
+Volterra kernels, and exact elimination of a linear resolved--unresolved
+Galerkin splitting. We establish local well-posedness, an explicit bound for
+the memory subsystem, a reciprocal energy-stable subclass, and an explicit
+finite-time error bound for memory-kernel approximation. Pressure remains an
+algebraic Pressure--Poisson variable. The linear correspondence is not
+claimed to be exact for nonlinear Navier--Stokes dynamics, and bounded memory
+alone is not claimed to imply global stability of the coupled ROM.
+\end{abstract}
+
+\setcounter{section}{1}
+\input{sections/continuous_delta_memory_rom}
+
+\appendix
+\input{appendices/continuous_delta_memory_proofs}
+
+\end{document}
+

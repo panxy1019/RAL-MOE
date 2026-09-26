@@ -1,0 +1,55 @@
+{
+  "protected_unchanged": {
+    "sections/introduction.tex": true,
+    "sections/related_work.tex": true,
+    "abstract": true
+  },
+  "numeric_checks": 96,
+  "changed_tex": [
+    "main.tex",
+    "appendix\\circular_cylinder.tex",
+    "appendix\\fusion_consistency.tex",
+    "appendix\\implementation.tex",
+    "appendix\\parameter_counts.tex",
+    "appendix\\rom_derivation.tex",
+    "appendix\\routing_details.tex",
+    "appendix\\specialist_details.tex",
+    "appendix\\square_cylinder.tex",
+    "figures\\field_panel_labels.tex",
+    "figures\\t2c_window_comparison.tex",
+    "sections\\conclusion.tex",
+    "sections\\experiments.tex",
+    "sections\\method.tex"
+  ],
+  "pages": 31,
+  "missing_refs": [],
+  "duplicate_labels": [],
+  "selected_pages": {
+    "8": [
+      "Full-window joint errors",
+      "Circular Periodic controls"
+    ],
+    "14": [
+      "weak-form construction"
+    ],
+    "17": [
+      "ordered raw descriptor"
+    ],
+    "21": [
+      "Hopf accepted-only"
+    ],
+    "24": [
+      "Train-"
+    ],
+    "25": [
+      "Representative held-out prediction"
+    ],
+    "26": [
+      "Representative held-out prediction"
+    ],
+    "30": [
+      "Local native Circular"
+    ]
+  },
+  "compile": "passed; no undefined references or overfull boxes"
+}

@@ -1,0 +1,267 @@
+\section{Outer routing and T2-C details}
+\label{app:routing}
+
+\paragraph{Parameter-only regime routing.}
+The E2 router receives only the standardized scalar parameter,
+\begin{equation}
+  \widetilde\mu
+  =
+  \frac{\mu-\mu_R}{\sigma_R},
+  \qquad
+  \bm\pi(\mu)
+  =
+  \operatorname{softmax}
+  \left(
+    \mathcal R_{E2}(\widetilde\mu)
+  \right)
+  =
+  [\pi_S,\pi_H,\pi_P]^\top .
+  \label{eq:app_e2_parameter_only}
+\end{equation}
+The trajectory-level preference is evaluated once and remains fixed
+throughout the subsequent rollout.The regime graph contains only adjacent transitions,
+\begin{equation}
+  \mathcal E_{\rm adj}
+  =
+  \bigl\{
+    \{S,H\},
+    \{H,P\}
+  \bigr\},
+  \label{eq:app_adjacency}
+\end{equation}
+so direct $S$--$P$ fusion is excluded.
+Let
+$m_j(\mathcal H_n,\mu,K)\in\{0,1\}$
+denote the validation-supported applicability of specialist $j$ for the
+given initialization and rollout horizon.
+The E2 preference restricted to applicable specialists is
+\begin{equation}
+  \widetilde\pi_j
+  =
+  \frac{
+    m_j\pi_j
+  }{
+    \sum_{k\in\{S,H,P\}}m_k\pi_k+\varepsilon
+  }.
+  \label{eq:app_masked_e2}
+\end{equation}
+A single applicable specialist yields the Top-1 prediction.
+Top-2 fusion is considered only for an applicable pair belonging to
+$\mathcal E_{\rm adj}$.
+If no specialist is applicable, the hierarchy abstains from prediction.
+
+For an ordered selected pair $(r_1,r_2)$, the pair-normalized E2
+preference is
+\begin{equation}
+  \bar\pi_1
+  =
+  \frac{\pi_{r_1}}
+       {\pi_{r_1}+\pi_{r_2}},
+  \qquad
+  \bar\pi_2
+  =
+  1-\bar\pi_1,
+  \qquad
+  \ell^{E2}
+  =
+  \log
+  \frac{\bar\pi_1+\varepsilon}
+       {\bar\pi_2+\varepsilon}.
+  \label{eq:app_pair_logit}
+\end{equation}
+
+
+\paragraph{Chart-independent physical-history descriptor.}
+E2 is intentionally parameter only.
+T2-C augments this trajectory-level preference with a chart-independent
+descriptor computed from the current physical state and the two preceding
+states.
+The descriptor summarizes field magnitude, first-order temporal variation,
+velocity growth, and second-order velocity variation.
+
+Let
+$|\Omega|=\bm 1^\top\bm w$,
+$\Delta t_n=t_n-t_{n-1}$,
+and let $U_{\rm ref}$, $P_{\rm ref}$, and $T_{\rm ref}$ denote fixed
+reference scales.
+For gauge-corrected pressure $p_n^\circ$, define the normalized field
+magnitudes
+\begin{equation}
+  \widehat M_n^u
+  =
+  \frac{
+    \|\bm u_n\|_{M_u}^2
+  }{
+    |\Omega|U_{\rm ref}^2
+  },
+  \qquad
+  \widehat M_n^p
+  =
+  \frac{
+    \|p_n^\circ\|_{M_p}^2
+  }{
+    |\Omega|P_{\rm ref}^2
+  },
+  \label{eq:app_t2c_magnitude}
+\end{equation}
+and the corresponding first-difference rates
+\begin{equation}
+  \widehat R_n^u
+  =
+  \frac{
+    T_{\rm ref}
+    \|\bm u_n-\bm u_{n-1}\|_{M_u}
+  }{
+    \Delta t_n\sqrt{|\Omega|}U_{\rm ref}
+  },
+  \qquad
+  \widehat R_n^p
+  =
+  \frac{
+    T_{\rm ref}
+    \|p_n^\circ-p_{n-1}^\circ\|_{M_p}
+  }{
+    \Delta t_n\sqrt{|\Omega|}P_{\rm ref}
+  }.
+  \label{eq:app_t2c_rate}
+\end{equation}
+A velocity-growth indicator is
+\begin{equation}
+  \widehat G_n
+  =
+  \frac{T_{\rm ref}}{\Delta t_n}
+  \log
+  \frac{
+    \widehat M_n^u+\varepsilon_E
+  }{
+    \widehat M_{n-1}^u+\varepsilon_E
+  }.
+  \label{eq:app_t2c_growth}
+\end{equation}
+To capture changes in the local temporal trend, define
+\begin{align}
+  \bm A_n^u
+  &=
+  \frac{2}{\Delta t_n+\Delta t_{n-1}}
+  \left[
+    \frac{\bm u_n-\bm u_{n-1}}{\Delta t_n}
+    -
+    \frac{\bm u_{n-1}-\bm u_{n-2}}{\Delta t_{n-1}}
+  \right],
+  \nonumber\\
+  \widehat C_n^u
+  &=
+  \frac{
+    T_{\rm ref}^2
+    \|\bm A_n^u\|_{M_u}
+  }{
+    \sqrt{|\Omega|}U_{\rm ref}
+  }.
+  \label{eq:app_t2c_curvature}
+\end{align}
+
+The resulting descriptor is
+\begin{equation}
+  \bm s_n
+  =
+  \operatorname{col}
+  \left(
+    \widehat M_n^u,
+    \widehat M_n^p,
+    \widehat R_n^u,
+    \widehat R_n^p,
+    \widehat G_n,
+    \widehat C_n^u
+  \right),
+  \qquad
+  \bm d_n
+  =
+  (\bm s_n-\bm\mu_s)
+  \oslash
+  (\bm\sigma_s+\varepsilon_s\bm 1).
+  \label{eq:app_t2c_descriptor}
+\end{equation}
+Because $\bm d_n$ is computed entirely from reconstructed physical fields,
+it is independent of either specialist's native POD coordinates.
+
+
+\paragraph{Physical-space T2-C correction.}
+The correction network receives
+$[\widetilde\mu;\bm d_n]$ and uses two hidden layers of width 64 with SiLU
+activations followed by a scalar linear output.
+The final layer is initialized at zero, so the initial correction vanishes
+and the fusion weight reduces to the E2 pair preference.
+Specifically,
+\begin{equation}
+  \Delta_\psi
+  =
+  c_\psi
+  \left(
+    [\widetilde\mu;\bm d_n]
+  \right),
+  \qquad
+  \alpha
+  =
+  \operatorname{sigmoid}
+  \left(
+    \ell^{E2}+\Delta_\psi
+  \right).
+  \label{eq:app_t2c_gate}
+\end{equation}
+
+The two selected specialists encode the same physical history in their
+respective local charts and then evolve independently.
+The scalar $\alpha$ is fixed throughout the prediction window and is shared
+by velocity and pressure.
+After reconstruction on the common physical mesh, T2-C forms
+\begin{equation}
+  \widehat{\bm q}_{\alpha}^{\,c}(t)
+  =
+  \alpha\,
+  \widehat{\bm q}_{1}^{\,c}(t)
+  +
+  (1-\alpha)\,
+  \widehat{\bm q}_{2}^{\,c}(t),
+  \qquad
+  c\in\{u,p\},
+  \label{eq:app_t2c_field_fusion}
+\end{equation}
+where the pressure field is gauge corrected.
+The fused field is an output only and is never projected back into either
+specialist.
+
+The correction network is trained directly on the reconstructed physical
+fields. For rollout windows $w$ and prediction steps $k$,
+\begin{equation}
+  \mathcal L_{\rm T2C}
+  =
+  \operatorname{mean}_{w,k}
+  \left[
+    \frac{
+      \left\|
+        \widehat{\bm u}_{\alpha}^{(w,k)}
+        -
+        \bm u_{\rm true}^{(w,k)}
+      \right\|_{M_u}^2
+    }{
+      \left\|
+        \bm u_{\rm true}^{(w,k)}
+      \right\|_{M_u}^2+\varepsilon
+    }
+    +
+    \frac{
+      \left\|
+        \widehat p_{\alpha}^{\circ,(w,k)}
+        -
+        p_{\rm true}^{\circ,(w,k)}
+      \right\|_{M_p}^2
+    }{
+      \left\|
+        p_{\rm true}^{\circ,(w,k)}
+      \right\|_{M_p}^2+\varepsilon
+    }
+  \right].
+  \label{eq:app_t2c_loss}
+\end{equation}
+Optimization and checkpoint-selection details are reported in
+Appendix~\ref{app:implementation}.

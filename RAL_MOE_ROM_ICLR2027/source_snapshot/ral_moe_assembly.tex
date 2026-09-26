@@ -1,0 +1,604 @@
+\section{Admissibility-Constrained Hierarchical RAL-MoE-ROM}
+\label{sec:hierarchical_ral_moe}
+
+The frozen specialists are assembled by an outer sparse mechanism that
+separates three decisions: regime preference, topological legality, and
+dynamical feasibility.  Router probabilities alone do not authorize a
+specialist to participate in a prediction.  The resulting hierarchy uses
+Top-1 routing in regime cores, permits an output-level Top-2 mechanism only
+on a certified adjacent overlap, and fails closed when no candidate satisfies
+its native contract.
+
+
+
+\subsection{Trajectory-level routing and adjacency topology}
+\label{subsec:trajectory_router_topology}
+
+The outer E2 router receives only the standardized Reynolds number,
+\begin{equation}
+  \widetilde{\mu}
+  =
+  \frac{\mu-\mu_{\mathrm{R}}}{\sigma_{\mathrm{R}}},
+  \qquad
+  \boldsymbol{\pi}(\mu)
+  =
+  \operatorname{softmax}
+  \bigl(\mathcal{R}_{E2}(\widetilde{\mu})\bigr)
+  =
+  [\pi_S,\pi_H,\pi_P]^{\mathsf T}.
+  \label{eq:e2_outer_router}
+\end{equation}
+One routing decision is made for a complete fixed-$\mu$ trajectory.  The
+outer router is therefore a trajectory-level, temporal-consistent regime
+router, rather than a per-step switching policy.  Because the available
+training data do not constitute certified continuous startup or
+parameter-ramp transitions, the router is not interpreted as a learned
+physical $S\!\to\!H\!\to\!P$ transition model.
+
+The only legal regime adjacency is
+\begin{equation}
+  A_{\mathrm{adj}}
+  =
+  \begin{bmatrix}
+    1&1&0\\
+    1&1&1\\
+    0&1&1
+  \end{bmatrix},
+  \label{eq:adjacency_matrix}
+\end{equation}
+using the class order $(S,H,P)$.  For an anchor regime $k$, the topological
+candidate set is
+\begin{equation}
+  \mathcal{C}_{\mathrm{top}}(k)
+  =
+  \{j\in\mathcal{R}:A_{\mathrm{adj},kj}=1\}.
+  \label{eq:topological_candidate_set}
+\end{equation}
+This removes a direct $S$--$P$ pair and excludes Top-3 activation before any
+field prediction is evaluated.
+
+\subsection{Dynamical admissibility certification}
+\label{subsec:admissibility_certification}
+
+For specialist $j$, initial physical history $\mathcal{H}$, Reynolds number
+$\mu$, and registered rollout horizon $K$, define the binary admissibility
+indicator
+\begin{equation}
+  m_j(\mathcal{H},\mu,K)\in\{0,1\}.
+  \label{eq:admissibility_indicator}
+\end{equation}
+The value $m_j=1$ requires all of the following:
+\begin{enumerate}
+  \item every predicted modal state and reconstructed field is finite;
+  \item the registered horizon contains no numerically divergent window;
+  \item the local POD, scaler, history, integrator, Pressure--Poisson,
+        and pressure-gauge contracts are satisfied;
+  \item independent validation trajectories support stable native rollout
+        over the same development domain and horizon; and
+  \item inference uses neither test truth, a future endpoint, a future state,
+        nor an uncertified cross-chart input.
+\end{enumerate}
+Given router weights $\pi_j$, topology and admissibility produce
+\begin{equation}
+  \widetilde{\pi}_j
+  =
+  \frac{
+    \mathbf{1}_{\{j\in\mathcal{C}_{\mathrm{top}}\}}\,
+    m_j\,\pi_j
+  }{
+    \sum_{k\in\mathcal{R}}
+    \mathbf{1}_{\{k\in\mathcal{C}_{\mathrm{top}}\}}\,
+    m_k\,\pi_k+\varepsilon
+  }.
+  \label{eq:masked_router_weights}
+\end{equation}
+If two adjacent candidates are admissible, a legal Top-2 comparison is
+formed and the subsequent T2-C gate is applied.  If only one is admissible,
+the hierarchy degenerates deterministically to that Top-1 specialist.  If
+none is admissible, the system returns a fail-closed status instead of
+forcing a numerical prediction.  Admissibility is thus a prerequisite for
+capability comparison, not a loss term that can be compensated by router
+confidence.
+
+
+
+\subsection{Boundary-specific hierarchical assembly}
+\label{subsec:boundary_specific_assembly}
+
+\paragraph{Regime-core prediction}
+In a certified core domain, only its native specialist is executed:
+\begin{equation}
+  \widehat{\boldsymbol{x}}
+  =
+  \begin{cases}
+    \widehat{\boldsymbol{x}}_{S},& \text{steady core},\\
+    \widehat{\boldsymbol{x}}_{H},& \text{Hopf core},\\
+    \widehat{\boldsymbol{x}}_{P},& \text{periodic core}.
+  \end{cases}
+  \label{eq:core_top1_prediction}
+\end{equation}
+Each prediction is generated in its local chart and reconstructed with its
+own decoder.
+
+\paragraph{Top-2 convex correction gate (T2-C)}
+For any adjacent regime pair, a lightweight gate is trained to blend the
+outputs of the two frozen specialists.  The gate is evaluated once per query
+window of $K$ steps and produces a convex weight that remains constant
+throughout the window.
+
+The candidate ordering is fixed per boundary: for the $S$--$H$ pair,
+Candidate~1 is the Steady specialist and Candidate~2 is the Hopf specialist;
+for the $H$--$P$ pair, Candidate~1 is the Periodic specialist and
+Candidate~2 is the Hopf specialist.  The E2 probabilities are first
+renormalized on the legal pair,
+\begin{equation}
+  \overline{\pi}_1
+  =
+  \frac{\pi_1}{\pi_1+\pi_2},
+  \qquad
+  \overline{\pi}_2=1-\overline{\pi}_1,
+  \qquad
+  \ell^{\mathrm{E2}}
+  =
+  \log\frac{\overline{\pi}_1+\varepsilon}
+  {\overline{\pi}_2+\varepsilon},
+  \label{eq:t2c_pair_logit}
+\end{equation}
+where $(\pi_1,\pi_2)=(\pi_S,\pi_H)$ for the $S$--$H$ boundary and
+$(\pi_1,\pi_2)=(\pi_P,\pi_H)$ for the $H$--$P$ boundary.
+
+
+
+
+\paragraph{Chart-independent physical-history descriptors.}
+
+To provide the overlap-fusion model with information that is independent of
+the regime-local POD coordinates, we construct a compact descriptor vector
+directly from the three most recent physical states.  Let
+\[
+  \left\{
+    \bigl(
+      \boldsymbol{u}_{n-j},
+      p_{n-j}^{\circ},
+      t_{n-j}
+    \bigr)
+  \right\}_{j=0}^{2}
+\]
+denote the current state and the two preceding states, all represented on the
+common finite-volume mesh and using the pressure gauge defined in
+\eqref{eq:pressure_gauge}.  The two most recent time increments are
+\begin{equation}
+  \Delta t_n
+  =
+  t_n-t_{n-1},
+  \qquad
+  \Delta t_{n-1}
+  =
+  t_{n-1}-t_{n-2}.
+  \label{eq:descriptor_time_increments}
+\end{equation}
+
+Let $U_{\mathrm{ref}}$, $P_{\mathrm{ref}}$, and $T_{\mathrm{ref}}$ denote
+fixed velocity, pressure, and time scales, respectively, and let
+$|\Omega|=\boldsymbol{w}^{\mathsf T}\boldsymbol{1}$ denote the discrete
+domain area.  These reference scales are common to all regime-local charts.
+If the full-order equations and snapshots have already been
+nondimensionalized, the corresponding reference scales are equal to one.
+
+The dimensionless velocity and pressure energy measures at time $t_i$ are
+defined by
+\begin{equation}
+  \widehat{E}^{u}_i
+  =
+  \frac{
+    \|\boldsymbol{u}_i\|_{M_u}^{2}
+  }{
+    |\Omega|U_{\mathrm{ref}}^{2}
+  },
+  \qquad
+  \widehat{E}^{p}_i
+  =
+  \frac{
+    \|p_i^{\circ}\|_{M_p}^{2}
+  }{
+    |\Omega|P_{\mathrm{ref}}^{2}
+  }.
+  \label{eq:dimensionless_physical_energies}
+\end{equation}
+Here $\widehat{E}^{u}_i$ is the mean squared velocity magnitude and
+$\widehat{E}^{p}_i$ is the corresponding mean squared magnitude of the
+gauge-fixed pressure field.  These quantities measure the instantaneous
+amplitudes of the two physical fields without reference to any local POD
+basis.
+
+The dimensionless first-order rates of change over the most recent time
+interval are
+\begin{equation}
+  \widehat{D}^{u}_n
+  =
+  \frac{
+    T_{\mathrm{ref}}
+  }{
+    \Delta t_n\sqrt{|\Omega|}U_{\mathrm{ref}}
+  }
+  \left\|
+    \boldsymbol{u}_n-\boldsymbol{u}_{n-1}
+  \right\|_{M_u},
+  \qquad
+  \widehat{D}^{p}_n
+  =
+  \frac{
+    T_{\mathrm{ref}}
+  }{
+    \Delta t_n\sqrt{|\Omega|}P_{\mathrm{ref}}
+  }
+  \left\|
+    p_n^{\circ}-p_{n-1}^{\circ}
+  \right\|_{M_p}.
+  \label{eq:dimensionless_physical_change_rates}
+\end{equation}
+They quantify the temporal variation of the velocity and pressure fields
+relative to the prescribed physical scales.
+
+To distinguish growth, decay, and saturation of the velocity amplitude, we
+also introduce the dimensionless logarithmic energy-growth rate
+\begin{equation}
+  \widehat{g}_n
+  =
+  \frac{
+    T_{\mathrm{ref}}
+  }{
+    \Delta t_n
+  }
+  \log
+  \left(
+    \frac{
+      \widehat{E}^{u}_n+\varepsilon_E
+    }{
+      \widehat{E}^{u}_{n-1}+\varepsilon_E
+    }
+  \right),
+  \label{eq:dimensionless_log_energy_growth}
+\end{equation}
+where $\varepsilon_E>0$ prevents numerical singularities when the measured
+energy is close to zero.  In contrast to the absolute change rate
+$\widehat{D}^{u}_n$, the quantity $\widehat{g}_n$ measures the relative
+change of the velocity energy.
+
+The three-state history is used to construct a dimensionless second-order
+temporal-change indicator.  For nonuniform time increments, the discrete
+velocity acceleration is approximated by
+\begin{equation}
+  \boldsymbol{A}^{u}_n
+  =
+  \frac{2}{
+    \Delta t_n+\Delta t_{n-1}
+  }
+  \left[
+    \frac{
+      \boldsymbol{u}_n-\boldsymbol{u}_{n-1}
+    }{
+      \Delta t_n
+    }
+    -
+    \frac{
+      \boldsymbol{u}_{n-1}-\boldsymbol{u}_{n-2}
+    }{
+      \Delta t_{n-1}
+    }
+  \right].
+  \label{eq:discrete_velocity_acceleration}
+\end{equation}
+The associated dimensionless temporal-curvature indicator is
+\begin{equation}
+  \widehat{\kappa}^{u}_n
+  =
+  \frac{
+    T_{\mathrm{ref}}^{2}
+  }{
+    \sqrt{|\Omega|}U_{\mathrm{ref}}
+  }
+  \left\|
+    \boldsymbol{A}^{u}_n
+  \right\|_{M_u}.
+  \label{eq:dimensionless_velocity_curvature}
+\end{equation}
+This quantity measures changes in the direction or magnitude of the recent
+velocity increment and therefore complements the first-order rate
+$\widehat{D}^{u}_n$.
+
+The resulting dimensionless physical-statistics vector is
+\begin{equation}
+  \boldsymbol{s}_n
+  =
+  \left[
+    \widehat{E}^{u}_n,\,
+    \widehat{E}^{p}_n,\,
+    \widehat{D}^{u}_n,\,
+    \widehat{D}^{p}_n,\,
+    \widehat{g}_n,\,
+    \widehat{\kappa}^{u}_n
+  \right]^{\mathsf T}
+  \in\mathbb{R}^{6}.
+  \label{eq:dimensionless_physical_statistics}
+\end{equation}
+Before being supplied to the overlap-fusion model, these quantities are
+standardized componentwise using statistics computed exclusively from the
+corresponding training population:
+\begin{equation}
+  \boldsymbol{d}_n
+  =
+  \left(
+    \boldsymbol{s}_n-\boldsymbol{\mu}_{s}
+  \right)
+  \oslash
+  \left(
+    \boldsymbol{\sigma}_{s}
+    +\varepsilon_s\boldsymbol{1}
+  \right),
+  \qquad
+  \boldsymbol{d}_n\in\mathbb{R}^{6},
+  \label{eq:standardized_physical_descriptors}
+\end{equation}
+where $\boldsymbol{\mu}_{s}$ and $\boldsymbol{\sigma}_{s}$ are the
+componentwise training-set mean and standard deviation, respectively,
+$\oslash$ denotes componentwise division, and $\varepsilon_s>0$ prevents
+division by a vanishing standard deviation.  Validation and test
+trajectories do not contribute to these normalization statistics.
+
+The descriptor set in
+\eqref{eq:dimensionless_physical_statistics} is intentionally restricted to
+a small number of nonredundant quantities.  The two energy measures describe
+the current field amplitudes, the two first-order rates characterize the
+instantaneous temporal variation, the logarithmic growth rate distinguishes
+relative growth from decay, and the second-order indicator captures changes
+in the recent velocity evolution.  Previous-step rates and additional
+nonlinear transformations are not included because they are strongly
+correlated with these quantities and do not introduce a distinct category of
+physical information.  The subsequent standardization places all six
+components on comparable numerical scales and allows the fusion model to
+determine their relative importance from the training data.
+
+Since all components are computed from physical fields on the common mesh,
+using the same quadrature matrices, pressure gauge, and reference scales,
+$\boldsymbol{d}_n$ is independent of the regime-local POD basis used to
+represent or advance the state.  It can therefore be evaluated consistently
+for predictions initialized from either adjacent chart.
+
+
+
+Let $\widehat{\boldsymbol{q}} = [\widetilde{\mu}; \boldsymbol{d}_n] \in \mathbb{R}^{7}$ 
+denote the concatenation of the standardized Reynolds number 
+$\widetilde{\mu}$ defined in \eqref{eq:e2_outer_router} and the 
+standardized physical descriptors $\boldsymbol{d}_n \in \mathbb{R}^{6}$ 
+defined in \eqref{eq:standardized_physical_descriptors}.
+A lightweight correction network
+$c_{\vartheta}$ (two hidden layers of width 64 with SiLU activations,
+final linear layer zero-initialized) produces a scalar adjustment
+$\delta = c_{\vartheta}(\widehat{\boldsymbol{q}})$.  The fusion weight is
+then
+\begin{equation}
+  \alpha
+  =
+  \operatorname{sigmoid}
+  \left(
+  \ell^{\mathrm{E2}} + \delta
+  \right),
+  \qquad
+  \alpha\in(0,1).
+  \label{eq:t2c_convex_gate}
+\end{equation}
+Zero initialization guarantees that at the start of gate training
+$\delta=0$ and the blend exactly reproduces the frozen E2 pair probability.
+The complementary weight is $1-\alpha$, so the combination is strictly
+convex.
+
+The two specialists advance independently for $K$ steps from the same
+three-state initial history.  Both use the unified frozen-context RK4
+velocity update~\eqref{eq:unified_rk4} and the gated pressure
+closure~\eqref{eq:adaptive_pressure_closure}; they differ only in their
+regime-specific parameter sets $\theta_r$.  The velocity and
+gauge-corrected pressure fields are decoded and then fused at each query
+time $t_q$:
+\begin{align}
+  \widehat{\boldsymbol{u}}(t_q)
+  &=
+  \alpha\,\widehat{\boldsymbol{u}}_{1}(t_q)
+  + (1-\alpha)\,\widehat{\boldsymbol{u}}_{2}(t_q),
+  \label{eq:field_fusion}\\
+  \widehat{p}^{\circ}(t_q)
+  &=
+  \alpha\,\widehat{p}^{\circ}_{1}(t_q)
+  + (1-\alpha)\,\widehat{p}^{\circ}_{2}(t_q),
+  \label{eq:pressure_field_fusion}
+\end{align}
+where the subscripts $1$ and $2$ refer to the candidate ordering of the
+respective boundary.
+
+The gate is trained on the training population and selected on validation
+data using a sealed cache that stores the per-specialist prediction errors
+and the corresponding quadratic statistics.  For a single field channel
+$c\in\{u,p\}$, let $\boldsymbol{e}_1^c$ and $\boldsymbol{e}_2^c$ be the
+errors of the two specialists with respect to the true field.  The squared
+norm of the fused error is
+\begin{equation}
+  Q^c(\alpha)
+  =
+  \alpha^2\|\boldsymbol{e}_1^c\|_{M_c}^{2}
+  +(1-\alpha)^2\|\boldsymbol{e}_2^c\|_{M_c}^{2}
+  +2\alpha(1-\alpha)
+  \langle\boldsymbol{e}_1^c,\boldsymbol{e}_2^c\rangle_{M_c}.
+  \label{eq:t2c_quadratic_error}
+\end{equation}
+The training objective minimizes the average relative squared error over
+all $K$ prediction steps and over the training windows:
+\begin{equation}
+  \mathcal{L}_{\mathrm{T2C}}
+  =
+  \operatorname{mean}_{w,k}
+  \left[
+  \frac{Q^u(\alpha^{(w)})}
+       {\|\boldsymbol{u}_{\rm true}\|_{M_u}^{2}+\varepsilon}
+  +
+  \frac{Q^p(\alpha^{(w)})}
+       {\|p_{\rm true}^{\circ}\|_{M_p}^{2}+\varepsilon}
+  \right].
+  \label{eq:t2c_training_loss}
+\end{equation}
+The gate checkpoint is selected by lexicographically minimizing
+$(\max_{\mu}\ \mathrm{mean\ error},\ \mathrm{global\ mean\ error})$ on the
+validation set, which prioritizes worst-case Reynolds-number robustness.
+The fused output is never fed back into either specialist.
+
+\paragraph{Application to the $S$--$H$ and $H$--$P$ boundaries}
+For the $S$--$H$ boundary, the gate is trained on windows from the
+steady-native development domain; Candidate~1 is the Steady specialist and
+Candidate~2 is the Hopf specialist.  For the $H$--$P$ boundary, Candidate~1
+is the Periodic specialist and Candidate~2 is the Hopf specialist.  In both
+cases, the gate is trained and selected exclusively on the corresponding
+training and validation windows, and the frozen specialists are evaluated
+identically to their native rollouts.
+
+Admissibility acts as a safety filter: if, for a given window, one of the
+two specialists fails the admissibility check, the mask~\eqref{eq:masked_router_weights}
+degenerates the prediction to the single admissible specialist.  In the
+present validated configuration, both specialists passed the preflight
+checks on all development and heldout windows, so the T2-C gate is always
+active.  The $H$--$P$ boundary is thus treated as a full fusion boundary
+rather than a hard fallback, consistent with the validated evidence that
+both the periodic and Hopf specialists deliver stable native rollouts in
+this region.
+
+\paragraph{Complete physical-field predictor}
+Let
+$\Omega_S,\Omega_{SH},\Omega_H,\Omega_{HP},\Omega_P$
+denote the five operating regions frozen from training and validation
+evidence.  Combining the core, fusion, and fail-closed branches, the
+physical-field predictor is
+\begin{equation}
+  \widehat{\boldsymbol{x}}^{\,\mathrm{phys}}
+  =
+  \begin{cases}
+  \mathcal{D}_{S}\!\circ\mathcal{F}_{S},
+  &(\mathcal{H},\mu)\in\Omega_S,\\[1mm]
+  \alpha_{SH}\,\mathcal{D}_{S}\!\circ\mathcal{F}_{S}
+  +(1-\alpha_{SH})\,\mathcal{D}_{H}\!\circ\mathcal{F}_{H},
+  &(\mathcal{H},\mu)\in\Omega_{SH},\\[1mm]
+  \mathcal{D}_{H}\!\circ\mathcal{F}_{H},
+  &(\mathcal{H},\mu)\in\Omega_H,\\[1mm]
+  \alpha_{HP}\,\mathcal{D}_{P}\!\circ\mathcal{F}_{P}
+  +(1-\alpha_{HP})\,\mathcal{D}_{H}\!\circ\mathcal{F}_{H},
+  &(\mathcal{H},\mu)\in\Omega_{HP},\\[1mm]
+  \mathcal{D}_{P}\!\circ\mathcal{F}_{P},
+  &(\mathcal{H},\mu)\in\Omega_P,\\[1mm]
+  \mathrm{FAIL\mbox{-}CLOSED},
+  &\sum_{j\in\mathcal{C}_{\mathrm{top}}}m_j=0.
+  \end{cases}
+  \label{eq:complete_ral_moe_predictor}
+\end{equation}
+In the fusion branches, $\alpha_{SH}$ and $\alpha_{HP}$ are the
+window-conditioned convex weights produced by the respective T2-C gates.
+When only one adjacent specialist is admissible, the corresponding fusion
+branch reduces to the single admissible specialist by construction of the
+masked weights.  The sum in the fail-closed branch is taken over the
+topological candidate set; if no candidate is admissible, no numerical
+prediction is issued.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Offline--online workflow and certified methodological scope}
+\label{subsec:offline_online_scope}
+
+\begin{algorithm}[H]
+  \caption{Offline construction of RAL-MoE-ROM}
+  \label{alg:ral_moe_offline}
+  \KwIn{Complete Reynolds-number trajectories and registered native
+  specialist contracts.}
+  \KwOut{Frozen local specialists, outer router, admissibility records, and
+  the certified $S$--$H$ and $H$--$P$ T2-C gates.}
+  Partition complete trajectories into disjoint training, validation, and
+  test Reynolds-number populations\;
+  Construct train-only local velocity and pressure POD charts, means,
+  scalers, Galerkin operators, and Pressure--Poisson assets\;
+  Train the $S$, $H$, and $P$ HPRS-MoE-ROM specialists independently
+  using the unified RK4 velocity update and gated pressure closure\;
+  Select each specialist with validation trajectories only and freeze all
+  local assets\;
+  Train and freeze the E2 trajectory-level outer router\;
+  Apply the adjacency topology in \eqref{eq:adjacency_matrix}\;
+  Certify each candidate specialist on its registered development domain and
+  horizon (admissibility preflight)\;
+  Train T2-C gates on the validation-supported $S$--$H$ and $H$--$P$
+  boundaries, using the respective chart-independent descriptors
+  \eqref{eq:standardized_physical_descriptors}\;
+  Freeze all thresholds, gates, and hierarchical decisions before final
+  evaluation\;
+\end{algorithm}
+
+\begin{algorithm}[H]
+  \caption{Hierarchical online prediction with RAL-MoE-ROM}
+  \label{alg:ral_moe_online}
+  \KwIn{$\mu$, a valid three-state physical history, query times, and a
+  registered horizon $K$.}
+  \KwOut{Physical velocity, gauge-corrected pressure, active specialists,
+  weights, and admissibility diagnostics.}
+  Evaluate the trajectory-level E2 router once\;
+  restrict the candidates by the adjacency topology\;
+  evaluate the admissibility mask for the candidate specialists\;
+  \eIf{no candidate is admissible}{
+    return fail-closed diagnostics without a forced prediction\;
+  }{
+    \eIf{exactly one candidate is admissible}{
+      execute its frozen native rollout and decode the physical fields\;
+    }{
+      map the common physical history into the two admissible local charts\;
+      execute two independent frozen native rollouts at aligned query times\;
+      evaluate the corresponding T2-C gate once (trained for $S$--$H$ or
+      $H$--$P$) and keep its weight $\alpha$ fixed over the window\;
+      decode both predictions and fuse only the physical outputs by
+      \eqref{eq:field_fusion}--\eqref{eq:pressure_field_fusion}\;
+    }
+  }
+  return predictions and the complete routing/admissibility record\;
+\end{algorithm}
+
+Under Top‑1 routing, one frozen specialist is active.  The legal Top‑2
+case evaluates two frozen native rollouts; the gate cost is small relative
+to this second rollout.  No common POD decoder is needed and no specialist
+parameter is updated online.  Exact wall‑clock acceleration factors are
+not inferred without direct timing measurements.
+
+The certified methodological scope can now be stated precisely.
+RAL‑MoE‑ROM does not introduce a common public POD state, direct
+cross‑chart modal blending, a full‑state continuous vector field, a
+pressure derivative, cross‑specialist RHS fusion, fused‑state feedback, a
+direct $S$--$P$ route, Top‑3 activation, or per‑step outer regime
+switching.  All three specialists employ the unified frozen‑context RK4
+velocity update~\eqref{eq:unified_rk4} and the gated pressure
+closure~\eqref{eq:adaptive_pressure_closure}; no explicit Euler step,
+additive pressure correction, or regime‑specific temporal encoding is
+used.  The only soft combination occurs on the two adjacent boundaries
+$S$--$H$ and $H$--$P$, where a window‑conditioned, output‑only convex
+field fusion is applied via the T2‑C gates.  When admissibility flags a
+specialist as unusable, the hierarchy falls back to the single admissible
+candidate; if no candidate is admissible, the model fails closed.  These
+restrictions define the verified model, rather than engineering omissions
+to be silently replaced by stronger untested claims.
+
+
+

@@ -1,0 +1,18 @@
+{
+  "decisions": {
+    "P": {
+      "status": "interpolation_passed_memory_visual_pending",
+      "nx": 1536,
+      "ny": 1024
+    }
+  },
+  "threshold": {
+    "P": {
+      "Eu": 0.09579883056438825,
+      "Ep": 0.3841636389596146,
+      "reference_model": "dense",
+      "source_sha256": "429249ea5030b9ee7e20498e2470d17c85acc2f090f3742c70abb5faa12ef40b"
+    }
+  },
+  "all_candidates_evaluated": true
+}

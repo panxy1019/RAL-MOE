@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "dtype": "torch.float64",
+  "equation": "dS/dt=-Gamma S + eta k (v-S^T k)^T",
+  "all_passed": true,
+  "tests": [
+    {
+      "name": "DISCRETE_TO_CONTINUOUS_CONVERGENCE",
+      "steps": [
+        0.03125,
+        0.015625,
+        0.0078125,
+        0.00390625
+      ],
+      "errors": [
+        0.011512245074447622,
+        0.005747933461385018,
+        0.0028719213006744046,
+        0.0014354495262713521
+      ],
+      "observed_orders": [
+        1.0020539436002465,
+        1.0010271456221025,
+        1.0005136125579526
+      ],
+      "wrong_sign_errors": [
+        1.7078111750129814,
+        1.7084666487213445,
+        1.7087924942389106,
+        1.7089549452434305
+      ],
+      "passed": true
+    },
+    {
+      "name": "RK4_ORDER_TEST",
+      "steps": [
+        0.125,
+        0.0625,
+        0.03125,
+        0.015625
+      ],
+      "errors": [
+        7.993895506462507e-08,
+        4.9567906507934e-09,
+        3.0875656385659514e-10,
+        1.926746710079809e-11
+      ],
+      "observed_orders": [
+        4.011420481224024,
+        4.004864615722667,
+        4.0022309746082545
+      ],
+      "passed": true
+    },
+    {
+      "name": "MEMORY_BOUNDEDNESS_TEST",
+      "dt": 0.05,
+      "final_time": 200.0,
+      "max_memory_norm": 0.9936383478285675,
+      "final_memory_norm": 0.8793716991128441,
+      "theoretical_asymptotic_norm": 1.299038105676658,
+      "passed": true
+    }
+  ]
+}

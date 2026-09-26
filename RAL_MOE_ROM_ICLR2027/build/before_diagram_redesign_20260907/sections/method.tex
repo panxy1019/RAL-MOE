@@ -1,0 +1,52 @@
+\section{RAL-MoE-ROM}
+\label{sec:method}
+
+We consider parameterized dynamics whose trajectories occupy qualitatively different regions of state space as the physical parameter $\mu$ varies. RAL-MoE-ROM separates representation, within-regime closure, and cross-regime assembly instead of forcing every trajectory into one latent coordinate system.
+
+\subsection{Overlapping regime-local reduced charts}
+
+Let $r\in\{S,H,P\}$ index steady, Hopf-onset, and periodic regimes, and let $\mathcal M_r$ denote overlapping parameter regions. Each chart has its own affine mean, velocity and pressure bases, scaling, and reduced operators. A physical state is encoded and reconstructed as
+\begin{equation}
+  \bm a^{(r)}=\bm\Phi_{u,r}^{\top}\bm W_u(\bm u-\bar{\bm u}_r),\qquad
+  \widehat{\bm u}^{(r)}=\bar{\bm u}_r+\bm\Phi_{u,r}\bm a^{(r)},
+  \label{eq:main_chart}
+\end{equation}
+with the analogous map for gauge-corrected pressure coefficients $\bm b^{(r)}$. Because these coordinates are constructed independently, components of $\bm a^{(r)}$ and $\bm a^{(s)}$ are not assumed to correspond when $r\neq s$. This is the reason cross-regime fusion is deferred to physical space.
+
+\subsection{Physics--data specialists with structured sparse experts}
+
+Projection supplies a regime-local dynamical backbone,
+\begin{equation}
+  \dot{\bm a}^{(r)}=
+  \underbrace{\bm c_r+\bm A_r\bm a^{(r)}+
+  \bm H_r:\bigl(\bm a^{(r)}\otimes\bm a^{(r)}\bigr)+
+  \bm C^p_r\bm b^{(r)}}_{\mathcal F_r^{G}(\bm a^{(r)},\bm b^{(r)};\mu)}
+  +\bm\rho^u_{\theta_r}(\bm\xi^{(r)}).
+  \label{eq:main_specialist}
+\end{equation}
+The feature vector $\bm\xi^{(r)}$ contains standardized local coordinates, the projected right-hand side, the parameter, and a short state history. The learned correction is a channel-wise sparse MoE,
+\begin{equation}
+  \mathcal M^c_{\theta_r}(\bm\xi)=
+  \omega^c_0 E^c_{0,g^\star}(\bm\xi)+
+  \sum_{e\in\mathcal T^c}\omega^c_e E^c_{e,g^\star}(\bm\xi),
+  \qquad
+  E(\bm\xi)=N(\bm\xi)+W_{\rm lin}\bm\xi+
+  \kappa W_o\bigl[(U^\top\bm\xi)\odot(V^\top\bm\xi)\bigr].
+  \label{eq:main_inner_moe}
+\end{equation}
+The first routing decision selects a sparse expert group and the second selects experts within that group. The nonlinear, affine, and low-rank bilinear branches provide complementary correction structures without removing the explicit projected term. Pressure is reconstructed through a physics--data algebraic map rather than evolved as an unconstrained recurrent state; details are in Appendix~\ref{app:specialists}.
+
+\subsection{Closed-loop autonomous training}
+
+Each specialist is trained on rollout windows. Starting from encoded physical history, the numerical integrator repeatedly evaluates Eq.~(\plaineqref{eq:main_specialist}) on its own predictions. The loss aggregates velocity- and pressure-coordinate errors across the window, so the optimization sees the distribution shift produced by recursive use. All comparisons use held-out trajectories and the reported rollout horizons; chart-wise trajectory partitions are listed in Table~\ref{tab:chart_splits}.
+
+\subsection{Regime routing and physical-space T2-C fusion}
+
+The outer E2 router depends only on the standardized physical parameter $\widetilde\mu$ and produces a trajectory-level regime preference $\bm\pi(\mu)=\operatorname{softmax}(\mathcal R_{E2}(\widetilde\mu))$. Its probabilities are evaluated once and remain fixed during the rollout. Chart-independent descriptors extracted from the initial physical history are used only by the T2-C correction gate in an admissible overlap; they are not E2 inputs. Hard Top-1 prediction advances the largest-probability admissible specialist. When an adjacent pair is admissible ($S$--$H$ or $H$--$P$), both specialists encode the same physical history in their native coordinates and then evolve independently. For reconstructed fields $\widehat{\bm q}^{(r)}$ and $\widehat{\bm q}^{(s)}$, T2-C predicts a window-conditioned convex weight and forms
+\begin{equation}
+  \widehat{\bm q}_{\rm T2C}(t)
+  =\alpha\,\widehat{\bm q}^{(r)}(t)+(1-\alpha)\,\widehat{\bm q}^{(s)}(t),
+  \qquad \alpha=\sigma\!\left(\operatorname{logit}(\bar\pi_r)+\Delta_\psi\right).
+  \label{eq:main_t2c}
+\end{equation}
+Here $\bar\pi_r$ is the pair-normalized E2 probability and $\Delta_\psi=c_\psi([\widetilde\mu;\bm d_n])$ is a learned correction based on the standardized parameter and chart-independent physical-history descriptor $\bm d_n$. Fusion occurs after reconstruction and is not fed back into either local rollout. Admissibility is selected from validation support and should not be interpreted as a formal stability certificate.

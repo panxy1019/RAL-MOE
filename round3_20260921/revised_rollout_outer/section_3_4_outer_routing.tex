@@ -1,0 +1,85 @@
+\subsection{Cross-regime routing and physical-space T2-C assembly}
+\label{sec:outer_routing}
+
+Unlike the internal routing in Section~\ref{sec:hybrid_specialists},
+which selects correction experts within a local specialist, the outer
+E2 router produces a preference over the S/H/P specialists using only
+the physical parameter:
+\begin{equation}
+  \widetilde\mu_R=(\mu-\mu_R)/\sigma_R,\qquad
+  \bm\pi(\mu)=\operatorname{softmax}
+  \bigl(\mathcal R_{E2}(\widetilde\mu_R)\bigr).
+  \label{eq:main_e2_preference}
+\end{equation}
+For the verified centered-square router,
+$\mathcal R_{E2}(x)=W_2\tanh(W_1x+\bm b_1)+\bm b_2$
+is a $1$--$24$--$3$ MLP with 123 parameters.
+It is trained on chart-assigned parameter labels, so $\bm\pi$ is a
+parameter-conditioned preference, not an applicability or stability
+probability. The deterministic parameter-only output is identical
+for windows with the same $\mu$ and remains fixed during each rollout.
+The E2 normalization and training protocol are specified in
+Appendix~\ref{app:implementation}.
+
+\paragraph{Prespecified adjacent candidates.}
+In the reported Square overlap experiments, the evaluation protocol
+supplies an ordered candidate pair $(r,s)=(S,H)$ or $(P,H)$ on
+prespecified common chart support, with $K=24$ prediction steps.
+E2 does not generate this candidate set, and no learned or
+validation-thresholded applicability mask is used.
+For the supplied pair, define
+\begin{equation}
+  \bar\pi_r=\frac{\pi_r}{\pi_r+\pi_s},\qquad
+  \bar\pi_s=1-\bar\pi_r.
+  \label{eq:main_pair_preference}
+\end{equation}
+E2 Top-1 selects $r$ when $\bar\pi_r\geq1/2$ and $s$ otherwise.
+The pair order means that the first-candidate weight always refers
+to Steady in the S--H study and Periodic in the H--P study.
+
+\paragraph{History-conditioned output fusion.}
+Both candidates encode the same physical initialization history in
+their own charts and advance independently using their configured
+local predictors. T2-C adjusts the E2 pair preference using a
+chart-independent descriptor of the initial physical history:
+\begin{equation}
+  \widehat{\bm q}_{\rm T2C}(t)
+  =\alpha\,\widehat{\bm q}^{(r)}(t)
+   +(1-\alpha)\widehat{\bm q}^{(s)}(t),\qquad
+  \alpha=\operatorname{sigmoid}
+  \left(\operatorname{logit}(\bar\pi_r^{\rm clip})
+       +c_\psi([\widetilde\mu_G;\bm d_n])\right).
+  \label{eq:main_t2c}
+\end{equation}
+Here $\bar\pi_r^{\rm clip}$ is $\bar\pi_r$ clipped to
+$[10^{-6},1-10^{-6}]$, and $\bm q$ collects reconstructed velocity
+and gauge-corrected pressure on the common physical mesh.
+The eight descriptor channels $\bm d_n$ are computed from the initial
+three physical states, without future reference states.
+The gate input $[\widetilde\mu_G;\bm d_n]$ uses training-window
+normalization, distinct from the trajectory-label normalization
+$\widetilde\mu_R$ used by E2. The correction network is a
+$9$--$64$--$64$--$1$ MLP with SiLU hidden activations and a
+zero-initialized final layer. Its construction and physical-field
+training loss are given in Appendix~\ref{app:routing}.
+
+The scalar $\alpha$ is computed for each prediction window and is
+shared by velocity and pressure throughout that window.
+Unlike E2, it may differ between histories at the same parameter.
+Fusion acts only on reconstructed outputs and is never fed back
+into either candidate. This interface does not require identical
+internal architectures for the two local predictors.
+
+\paragraph{Evaluation scope.}
+These results evaluate conditional routing and assembly on prescribed
+overlap support, not automatic applicability detection or
+out-of-distribution rejection. The offline cache checks, including
+their use of reference-field amplitudes, are disclosed in
+Appendix~\ref{app:routing}; they are not deployable masks.
+Output fusion preserves a common linear constraint only when both
+candidates satisfy it under the same discrete operator, and it need
+not preserve nonlinear momentum or PPE constraints.
+Theoretical identities and their assumptions are given in
+Appendix~\ref{app:fusion_consistency}; the present error tables do not
+establish measured FVM residual or long-time phase consistency.
+

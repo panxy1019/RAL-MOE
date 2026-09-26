@@ -1,0 +1,63 @@
+\section{Trainable and active parameter counts}
+\label{app:parameter_counts}
+
+\paragraph{Definition and verification.}
+Table~\ref{tab:parameter_counts} reports architecture statistics for the
+circular-cylinder Hopf and Periodic specialists analyzed in
+Appendix~\ref{app:internal_routing}. Total parameters count unique parameter
+objects with \texttt{requires\_grad=True} under the training configuration.
+Active parameters count the unique trainable objects actually consumed in one
+batch-size-one Level-1 forward, not the union across a batch, a trajectory, or
+all four RK4 stages. We instantiate the original model classes using recorded
+checkpoint configurations, verify every state-tensor shape and dtype against
+the archived checkpoint inventory, and trace the executed forward modules.
+Source hashes match those recorded in the original routing audit. This is an
+architecture/dispatch audit, not a replay of the pretrained checkpoint weights.
+
+\begin{table}[htbp]
+\centering
+\caption{Exact trainable and per-decision active parameter counts. Native
+stage 1 uses the forward options of the existing rollout evaluator; prediction
+only disables the optional expert-diversity diagnostic stack. Fractions use
+the corresponding specialist's total trainable count.}
+\label{tab:parameter_counts}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+Specialist & Total & Native stage 1 & Prediction only & Native / prediction (\%) \\
+\midrule
+Hopf & 31,810,392 & 22,953,160 & 14,165,816 & 72.16 / 44.53 \\
+Periodic & 48,617,547 & 8,308,959 & 8,308,959 & 17.09 / 17.09 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{What is counted.}
+Active counts include the encoder, refinement blocks, all executed routers,
+the selected group's shared experts, the velocity and pressure Top-2 experts,
+and the learned pressure-correction head. Parameter identity deduplicates
+shared objects and repeated calls. The implementation evaluates every group's
+channel routers even when that group's experts are inactive; these routers
+are therefore included. Fixed POD bases, projected operators, scalers, and
+buffers are excluded. The Hopf model's one-group router is frozen by its
+training definition, so its 193,755 non-trainable parameters are excluded.
+The separate training-loss-only normal-form head has 10 trainable parameters;
+it is outside the deployed specialist and the table totals.
+
+\paragraph{Prediction versus diagnostic execution.}
+The native Hopf first-stage call additionally evaluates all six routed velocity
+experts to form a diversity diagnostic stack. Its pressure channel remains
+Top-2. The Periodic prediction evaluator disables this stack. Thus native
+executed parameter counts need not equal the support of the sparse mixture.
+Turning off the stack in synthetic forward checks leaves the prediction and
+pressure-gate outputs bitwise unchanged; no evaluator or checkpoint was modified.
+All possible group/velocity-pair/pressure-pair supports have the same
+prediction-only count within each architecture (225 Hopf and 675 Periodic
+supports); dispatch checks execute every pair in both channels and every group.
+These are parameter counts, not measured FLOPs, runtime, or speedups.
+
+Complete model-specific checkpoint/configuration records for the Vanilla-FNN-MoE,
+DataOnly-MoE, and Global MoE ablations were not available in this audit. The
+separate Steady diagnostic checkpoint is not established as the paper's Steady
+model. We do not estimate their counts or claim parameter-matched comparisons.

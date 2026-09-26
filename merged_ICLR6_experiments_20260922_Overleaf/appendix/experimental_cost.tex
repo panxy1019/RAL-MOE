@@ -1,0 +1,100 @@
+\section{Computational cost and timing boundaries}
+\label{app:parameter_counts}
+
+\paragraph{Counting convention.}
+Total parameters count unique trainable parameters in each analyzed
+circular-cylinder specialist. Active parameters count unique trainable
+parameters used by one batch-size-one prediction-path routing decision,
+not their union across a batch, trajectory, or all RK4 stages. These include
+the encoder and refinement blocks, executed routers, the selected group's
+shared experts, channel-specific Top-2 velocity and pressure experts, and
+the learned pressure correction. Fixed POD bases, projected operators,
+normalization statistics, and non-trainable buffers are excluded.
+
+\par
+\begin{table}[H]
+\centering
+\caption{Trainable and per-decision active parameter counts for the analyzed
+circular-cylinder specialists. Active counts refer to the sparse prediction
+path; counts are exact integers.}
+\label{tab:parameter_counts}
+\begin{tabular}{lrrr}
+\toprule
+Specialist & Total trainable & Active prediction & Active fraction \\
+\midrule
+Hopf & 31,810,392 & 14,165,816 & 44.53\% \\
+Periodic & 48,617,547 & 8,308,959 & 17.09\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+\par
+
+The Hopf and Periodic specialists activate 44.53\% and 17.09\% of their
+trainable parameters per prediction decision, respectively. These counts
+describe conditional parameter activation, not measured FLOPs, runtime,
+or speedup. Complete parameter-matched counts are unavailable for the
+Vanilla-FNN-MoE, DataOnly-MoE, and Global MoE ablations, so the local
+architecture comparison is not interpreted as a capacity-matched study.
+
+\paragraph{Native local latency diagnostic.}
+For Circular Periodic seed 1248, batch size one and $K=48$, we use three
+warm-up runs and ten timed repetitions. The native implementation
+includes modal rollout, feature generation, data transfers, algebraic
+pressure, all-step physical decoding, and pressure gauge correction.
+It excludes physical-history encoding, E2, descriptor construction,
+T2-C fusion, model/data loading, and error computation. The Galerkin
+NumPy path executes on the CPU; sparse parameter activation does not
+imply a proportional wall-clock saving in this implementation.
+
+\begin{table}[H]
+\centering
+\caption{Local native Circular Periodic diagnostic. GPU memory is peak
+allocated bytes. These times are not complete end-to-end latencies.}
+\label{tab:local_latency}
+\small
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Model & Median time (s) & GPU peak (bytes) & Time / Dense\\
+\midrule
+Proposed & 2.1848 & 204,238,336 & 3.32\\
+Dense & 0.6579 & 43,111,936 & 1.00\\
+Structured & 0.8652 & 43,316,736 & 1.32\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Matching FOM logs alone does not supply an end-to-end speedup: the same
+geometry, physical prediction interval, initialization, and compute/I/O
+boundaries must also be measured for the complete ROM pipeline. No such
+speedup is claimed here.
+
+\paragraph{Paired physical-input/physical-output specialist timing.}
+A separate measurement adds full-size physical-history encoding and
+history right-hand-side construction to the original Periodic specialist
+(seed 1248). For Circular $Re=70.314635$, the frozen first legal $K=48$
+window spans $t=1384.49597$ to $1983.19690$, or 598.70093 physical time
+units. Its three-frame physical input is the POD-reconstructed history
+on 97,368 points; encoding is timed, but acquiring that history is not.
+All 48 velocity and pressure fields are decoded and pressure is
+gauge-corrected. The model and inputs are resident before timing.
+
+On an RTX 4090 with a Xeon Platinum 8358P host, with one CPU numerical
+thread, batch size one, three warm-ups, ten repetitions, and CUDA
+synchronization, the median is 2.18747 s (mean 2.18729 s, sample standard
+deviation 0.00462 s; range 2.18034--2.19550 s). The matched production
+OpenFOAM log contains 4,692 solver steps and a ClockTime difference of
+1,996 s; the largest endpoint discrepancy is $2.3\times10^{-5}$ physical
+time units, attributable to stored timestamp precision. The production
+solver used one process on a Core i5-14600K VMware host with 16 vCPUs and
+at most five concurrent cases. Hardware identification is from the
+subsequent source audit, not a contemporaneous benchmark. There is one
+FOM timing realization, not ten repeated FOM runs.
+
+The resulting ratio, $1996/2.18747\simeq912.5$, is specifically a historical
+production-FOM/warm-specialist wall-time ratio. The FOM interval includes
+native solver field writes but excludes meshing, initialization, periodic
+detection, and subsequent VTK/NPZ conversion. ROM model/input loading,
+output disk writes, E2 selection, and descriptor/T2-C operations are
+excluded. Different hardware, concurrency, and I/O boundaries prevent
+interpreting this ratio as a hardware-independent or complete hierarchical
+pipeline speedup. A fully paired Top-2 end-to-end timing remains unmeasured.

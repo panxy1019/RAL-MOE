@@ -1,0 +1,23 @@
+{
+  "step": 800,
+  "validation": {
+    "complete": true,
+    "worst": 0.7701845224056262,
+    "macro": 0.7570562703255409,
+    "by_Re": [
+      {
+        "Re": 46.7,
+        "Eu": 0.1446298123293617,
+        "Ep": 0.6255547100762644,
+        "joint": 0.7701845224056262
+      },
+      {
+        "Re": 56.5432463134,
+        "Eu": 0.1697410817806295,
+        "Ep": 0.5741869364648262,
+        "joint": 0.7439280182454556
+      }
+    ]
+  },
+  "rule": "complete finite 48-step validation in all windows; lexicographic min worst-Re joint then macro-Re joint; lowest id on exact ties"
+}

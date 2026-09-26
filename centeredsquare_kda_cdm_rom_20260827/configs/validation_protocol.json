@@ -1,0 +1,16 @@
+{
+  "train_case_count": 27,
+  "train_snapshot_count": 3402,
+  "validation_re": [99.0, 101.5, 110.344827586207, 125.862068965517, 141.379310344828, 150.0],
+  "heldout_re_locked": [100.5, 102.0, 120.689655172414, 144.827586206897],
+  "primary_objective": "mean validation long-horizon pointwise velocity relative L2 to t=500",
+  "required_models": ["M0", "M1", "M2", "M3", "mean_flow"],
+  "m3_success_requires": [
+    "6/6 finite validation rollouts to t=500",
+    "bounded memory state",
+    "mean J500 below M0",
+    "mean J500 below M1",
+    "mean J500 below M2"
+  ],
+  "heldout_accessed": false
+}

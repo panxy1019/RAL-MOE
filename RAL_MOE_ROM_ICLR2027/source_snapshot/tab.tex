@@ -1,0 +1,221 @@
+% Main-text tables proposed for Subsection 5.1.
+% All relative errors are multiplied by 100%. Min--max ranges are mechanical
+% extrema over the explicitly listed Reynolds numbers; no mean is reported.
+
+ 
+\begin{table*}[t]
+\centering
+\caption{Data partitions and rollout horizons.
+The numbers of training, validation, and held-out test samples refer to
+complete Reynolds-number trajectories. The physical-time horizon is reported
+as the range associated with the corresponding $K$-step rollouts.}
+\label{tab:cylinder_data_contracts}
+
+\scriptsize
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}p{0.11\textwidth}p{0.17\textwidth}c
+                p{0.16\textwidth}p{0.14\textwidth}p{0.18\textwidth}@{}}
+\toprule
+Regime
+& Reynolds-number range
+& Train/validation/test trajectories
+& Training snapshots
+& Rollout horizon
+& Physical-time horizon \\
+\midrule
+
+Steady
+& $20.0 \le Re \le 46.4$
+& $14/2/4$
+& 894
+& $K=56$
+& $234.604$--$431.274$ \\
+
+Hopf
+& $45.5 \le Re \le 59.2$
+& $29/2/3$
+& 1935
+& $K=56$
+& $1179.953$--$1309.781$ \\
+
+Periodic
+& $57.3 \le Re \le 200$
+& $53/6/4$
+& 8839
+& $K=48$
+& $177.959$--$598.701$ \\
+
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table*}
+
+
+
+\begin{table*}[t]
+\centering
+\caption{Held-out native-horizon prediction ranges for the three local
+regimes.  Entries are the minimum--maximum values across the test Reynolds
+numbers listed in Table~\ref{tab:cylinder_data_contracts}; they are not
+averages.  $E_u$ and $E_p$ are area-weighted velocity and gauge-corrected
+pressure field errors, and $E_{a}$ and $E_{b}$ are the corresponding
+mean-subtracted POD-coefficient errors.  FC denotes that validation failed the
+finite-rollout contract and the test set was not opened.  The dagger marks the
+transductive all-$Re$ representation reference.}
+\label{tab:cylinder_specialist_long}
+\scriptsize
+\setlength{\tabcolsep}{3.2pt}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}llccccccc@{}}
+\toprule
+Regime & Model & $E_u$ (\%) & $E_p$ (\%) & $E_a$ (\%) & $E_b$ (\%) &
+Finite & Divergent windows & Strict coverage \\
+\midrule
+Steady
+& HPRS-MoE-ROM
+& 0.0384--0.2995 & 1.5226--18.5603 & 0.2562--0.5373 & 6.5857--16.4108
+& 4/4 & 0 & 0/4 \\
+& Vanilla-FNN-MoE
+& 0.0330--0.1723 & 2.2163--7.4363 & 0.2480--0.3858 & 6.0504--22.6792
+& 4/4 & 0 & 0/4 \\
+& DataOnly-MoE
+& 0.1637--0.5122 & 4751.1025--27275.4645 & 0.8749--3.6893 &
+15945.6192--58856.7261 & 4/4 & 4 & 0/4 \\
+& Global MoE$^\dagger$
+& 0.0845--0.3404 & 0.2500--1.3249 & 20.7911--44.2564 & 25.2651--101.0296
+& 4/4 & 0 & n/a \\
+\midrule
+Hopf
+& HPRS-MoE-ROM
+& 0.0032--0.0288 & 0.0355--0.4321 & 0.0418--0.8479 & 0.2164--5.7742
+& 3/3 & 0 & 0/3 \\
+& Vanilla-FNN-MoE
+& FC & FC & FC & FC & FC & FC & FC \\
+& DataOnly-MoE
+& 0.1260--0.3880 & 1280.2811--1524.5949 & 1.6428--18.0141 &
+8810.2142--40976.6418 & 3/3 & 15 & 0/3 \\
+& Global MoE$^\dagger$
+& 0.0110--0.0268 & 0.0560--0.2882 & 24.1395--94.7850 & 29.9005--78.2764
+& 3/3 & 0 & n/a \\
+\midrule
+Periodic
+& HPRS-MoE-ROM
+& 0.3809--1.3473 & 1.6825--5.9601 & 1.6843--2.9151 & 2.3345--6.7689
+& 4/4 & 0 & 3/4 \\
+& Vanilla-FNN-MoE
+& 1.0393--3.0836 & 3.9659--13.3257 & 4.4136--9.4908 & 5.3593--19.0759
+& 4/4 & 0 & 1/4 \\
+& DataOnly-MoE
+& 0.7854--1.8677 & 2.2511--10.8189 & 2.2001--4.1827 & 3.4416--5.3181
+& 4/4 & 0 & 3/3 assessed \\
+& Global MoE$^\dagger$
+& 0.5873--1.1726 & 2.1896--6.3566 & 5.3269--16.9732 & 6.6735--21.9848
+& 4/4 & 0 & n/a \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Per-$Re$ sealed $S$--$H$ comparison at $K56$.  ``Joint'' is the
+frozen sealed-window joint-field metric, whereas the remaining field columns
+are the separately evaluated velocity and pressure errors.  The T2-C weights
+are fixed within each prediction window.  Global MoE$^\dagger$ is shown only
+as a transductive representation reference and has no $S/H$ weights or local
+attractor diagnostics.}
+\label{tab:cylinder_sh_boundary}
+\scriptsize
+\setlength{\tabcolsep}{3.7pt}
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}rllrrrrrrrrr@{}}
+\toprule
+$Re$ & Model & Horizon & Joint (\%) & $E_u$ (\%) & $E_p$ (\%) &
+Tail centre (\%) & Orbit (\%) & Terminal increment (\%) &
+$\alpha_S$ & $\alpha_H$ & Finite \\
+\midrule
+42.359071 & E2 Top-1 & K56 & 4.6503 & 0.0357 & 1.6746 & 0.0513 & 1.9375 & 0.0054 & 1.0000 & 0.0000 & 1 \\
+          & T2-C      & K56 & 4.6433 & 0.0355 & 1.6664 & 0.0511 & 1.9392 & 0.0054 & 0.9987 & 0.0013 & 1 \\
+          & Global MoE$^\dagger$ & K56 & 0.4057 & 0.0951 & 0.3106 & n/a & n/a & n/a & n/a & n/a & 1 \\
+\midrule
+43.500000 & E2 Top-1 & K56 & 2.4877 & 0.0397 & 1.8144 & 0.0551 & 1.6198 & 0.0085 & 1.0000 & 0.0000 & 1 \\
+          & T2-C      & K56 & 3.2343 & 0.0260 & 2.1712 & 0.0394 & 0.2458 & 0.0017 & 0.0861 & 0.9139 & 1 \\
+          & Global MoE$^\dagger$ & K56 & 1.0789 & 0.0953 & 0.9836 & n/a & n/a & n/a & n/a & n/a & 1 \\
+\midrule
+43.900000 & E2 Top-1 & K56 & 6.8749 & 0.0410 & 1.9028 & 0.0574 & 1.6135 & 0.0072 & 1.0000 & 0.0000 & 1 \\
+          & T2-C      & K56 & 1.2574 & 0.0148 & 0.7387 & 0.0215 & 0.5202 & 0.0016 & 0.1891 & 0.8109 & 1 \\
+          & Global MoE$^\dagger$ & K56 & 1.0368 & 0.0851 & 0.9517 & n/a & n/a & n/a & n/a & n/a & 1 \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table*}
+
+\begin{table*}[t]
+\centering
+\caption{Attractor-preservation evidence and its interpretation boundary.
+Strict coverage is reported only where the frozen regime-specific evaluator
+was available.  A finite rollout is necessary but is not sufficient for a
+strict pass.}
+\label{tab:cylinder_attractor_evidence}
+\scriptsize
+\begin{adjustbox}{max width=\textwidth}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.12\textwidth}
+                >{\raggedright\arraybackslash}p{0.19\textwidth}
+                >{\raggedright\arraybackslash}p{0.16\textwidth}
+                >{\raggedright\arraybackslash}p{0.12\textwidth}
+                >{\raggedright\arraybackslash}p{0.34\textwidth}@{}}
+\toprule
+Regime/\linebreak evidence set & Model & Strict result &
+Key quantitative\linebreak evidence &
+Permitted interpretation \\
+\midrule
+Steady held-out
+& HPRS-MoE-ROM
+& 0/4
+& Worst paired gain 585.262
+& Reduced worst-case perturbation amplification, but neither strict
+contraction nor universal steady-attractor preservation. \\
+Steady held-out
+& Vanilla-FNN-MoE
+& 0/4
+& Worst paired gain 107702.891
+& Reference for the reduction in perturbation amplification. \\
+\midrule
+Hopf held-out
+& HPRS-MoE-ROM
+& 0/3
+& 3/3 finite, zero divergent windows; field errors remained low
+& Long-horizon field and pressure stability, not held-out attractor
+generalization. \\
+Hopf mechanism cases
+& HPRS-MoE-ROM
+& 3/3 at $Re=49.3,49.6,50.0$
+& All frozen field, phase, frequency, orbit, energy and stability gates passed
+& Train-split mechanism-preservation evidence only. \\
+Hopf mechanism cases
+& DataOnly-MoE
+& 0/3
+& Pressure error 1118.1745--1627.9665\%; five divergent windows per $Re$
+& Evidence that the Hopf pressure structure was not recovered by this
+data-only ablation. \\
+\midrule
+Periodic held-out
+& HPRS-MoE-ROM
+& 3/4
+& $Re=70.314635$ failed because $E_p=5.9601\%$
+& More complete held-out coverage than Vanilla, but not universal passage. \\
+Periodic held-out
+& Vanilla-FNN-MoE
+& 1/4
+& Only $Re=100.352251$ passed
+& Structured experts improved robustness relative to this ablation. \\
+Periodic held-out
+& DataOnly-MoE
+& 3/3 assessed
+& $Re=100.352249$,\linebreak $149.059235$, and\linebreak $189.862274$ passed
+& Physics--data structure is not the sole mechanism capable of preserving
+the tested periodic cycles. \\
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+\end{table*}

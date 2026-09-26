@@ -1,0 +1,26 @@
+{
+  "batch_sampling": "with_replacement",
+  "batch_size": 32,
+  "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+  "device": "cuda",
+  "eval_every": 100,
+  "gradient_clip_norm": 1.0,
+  "input_dim": 9,
+  "input_mode": "full",
+  "lr": 0.0003,
+  "mask_after_standardization": false,
+  "numpy_version": "2.4.4",
+  "optimizer": "AdamW",
+  "parameter_count": 4865,
+  "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+  "seed": 42001,
+  "selection": [
+    "validation worst_Re_mean",
+    "validation joint_mean"
+  ],
+  "started_unix": 1789133546.6282096,
+  "steps": 8000,
+  "swanlab_mode": "disabled",
+  "torch_version": "2.11.0+cu126",
+  "weight_decay": 0.0001
+}

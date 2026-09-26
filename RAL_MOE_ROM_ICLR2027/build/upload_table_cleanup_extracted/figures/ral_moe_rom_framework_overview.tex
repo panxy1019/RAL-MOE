@@ -1,0 +1,72 @@
+\begin{tikzpicture}[
+  x=1cm,y=1cm,
+  font=\scriptsize,
+  block/.style={draw,rounded corners=1.2pt,align=center,minimum height=6.5mm,inner sep=1.5pt,fill=blue!4},
+  route/.style={draw,rounded corners=1.2pt,align=center,minimum height=6.5mm,inner sep=1.5pt,fill=orange!13},
+  expert/.style={draw,rounded corners=1.2pt,align=center,minimum height=8mm,inner sep=1.5pt,fill=violet!8},
+  outputblock/.style={draw,rounded corners=1.2pt,align=center,minimum height=6.5mm,inner sep=1.5pt,fill=green!10},
+  sum/.style={circle,draw,inner sep=0.8pt,minimum size=4.5mm,fill=white},
+  arrow/.style={-{Latex[length=1.6mm]},thick},
+  signal/.style={-{Latex[length=1.4mm]},thin,dashed},
+  title/.style={font=\scriptsize\bfseries,align=center}
+]
+
+% Multi-chart representation.
+\node[title] at (1.45,1.55) {(A) Overlapping local charts};
+\node[block] (historyA) at (0.25,0) {physical history\\$\mathcal H_n$};
+\node[block,minimum width=13mm] (chartS) at (2.05,0.72) {$S$ encoder\\$\bm a^{(S)},\bm b^{(S)}$};
+\node[block,minimum width=13mm] (chartH) at (2.05,0) {$H$ encoder\\$\bm a^{(H)},\bm b^{(H)}$};
+\node[block,minimum width=13mm] (chartP) at (2.05,-0.72) {$P$ encoder\\$\bm a^{(P)},\bm b^{(P)}$};
+\draw[arrow] (historyA.east) -- (chartS.west);
+\draw[arrow] (historyA.east) -- (chartH.west);
+\draw[arrow] (historyA.east) -- (chartP.west);
+\node[align=center,font=\tiny] at (1.3,-1.32) {independent means, bases, and coordinates};
+
+\draw[gray!55,dashed] (3.05,-1.55) -- (3.05,1.62);
+
+% Level-1 routing inside one specialist.
+\node[title] at (6.35,1.55) {(B) Level 1: one physics--data specialist};
+\node[block,text width=11mm] (features) at (3.72,0) {local features\\$\bm\xi^{(r)}$};
+\node[block,text width=14mm] (backbone) at (5.22,0.72) {projected backbone\\$\mathcal F_r^G$};
+\node[route,text width=14mm] (group) at (5.22,-0.72) {group Top-1\\channel Top-2 routers};
+\node[expert,text width=16mm] (experts) at (7.12,-0.62) {shared $+$ routed experts\\nonlinear $\mid$ affine $\mid$ low-rank bilinear};
+\node[sum] (plus) at (8.28,0.62) {$+$};
+\node[outputblock,text width=12.1mm] (localroll) at (9.23,0.62) {autonomous\\rollout $\rightarrow$ decode};
+\draw[arrow] (features.east) -- (backbone.west);
+\draw[arrow] (features.east) -- (group.west);
+\draw[arrow] (group.east) -- (experts.west);
+\draw[arrow] (backbone.east) -- (plus.north west);
+\draw[arrow] (experts.east) -- (plus.south west);
+\draw[arrow] (plus) -- (localroll);
+
+\draw[gray!55,dashed] (10.02,-1.55) -- (10.02,1.62);
+
+% Level-2 parameter routing and overlap correction.
+\node[title] at (14.05,1.55) {(C) Level 2: complete-specialist assembly};
+\node[block,text width=10mm] (mu) at (10.62,0.98) {parameter\\$\widetilde\mu$};
+\node[route,text width=8.4mm] (e2) at (11.82,0.98) {E2 regime\\router};
+\node[block,text width=11mm] (pi) at (13.12,0.98) {trajectory\\preference $\bm\pi$};
+\draw[arrow] (mu) -- (e2);
+\draw[arrow] (e2) -- (pi);
+
+\node[block,text width=10.4mm] (historyB) at (10.68,-0.35) {physical history\\$\mathcal H_n$};
+\node[block,text width=9mm] (native) at (11.99,-0.35) {two native\\encoders};
+\node[block,text width=12.1mm] (independent) at (13.25,-0.35) {independent\\rollouts};
+\node[block,text width=14.2mm] (reconstruct) at (14.75,-0.35) {physical\\reconstruction};
+\node[outputblock,text width=12mm] (fusion) at (16.25,-0.35) {Top-1 output or\\T2-C physical fusion};
+\node[outputblock,text width=9.3mm] (prediction) at (17.55,-0.35) {predicted\\fields};
+\draw[arrow] (historyB) -- (native);
+\draw[arrow] (native) -- (independent);
+\draw[arrow] (independent) -- (reconstruct);
+\draw[arrow] (reconstruct) -- (fusion);
+\draw[arrow] (fusion) -- (prediction);
+\draw[signal] (pi.south) -- node[right,font=\tiny,align=left] {Top-1 or\\admissible pair} (independent.north);
+
+\node[block,text width=19mm] (descriptor) at (11.85,-1.50) {chart-independent\\descriptor $\bm d_n$};
+\node[route,text width=20mm] (gate) at (14.55,-1.50) {T2-C correction\\$c_\vartheta([\widetilde\mu;\bm d_n])\rightarrow\alpha$};
+\draw[signal] (historyB.south) |- (descriptor.west);
+\draw[arrow] (descriptor) -- (gate);
+\draw[signal] (pi.east) -- (15.55,0.98) -- (15.55,-0.98) -- (gate.north east);
+\draw[arrow] (gate.east) -| (fusion.south);
+
+\end{tikzpicture}

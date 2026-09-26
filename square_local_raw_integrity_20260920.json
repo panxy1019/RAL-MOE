@@ -1,0 +1,2381 @@
+{
+  "generated": "2026-09-20",
+  "rows": [
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re094p000000.npz",
+      "bytes": 12932822,
+      "mtime": "2026-07-28T09:17:27.886100",
+      "sha256": "bf9764c2f6fa99992978e78648f9d99740bf26a49e41ddfdbaaec73b63484104",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 94.0,
+      "nu": 0.01063829787234043,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re094p500000.npz",
+      "bytes": 12933900,
+      "mtime": "2026-07-28T09:17:25.611691",
+      "sha256": "d89c7673e5cbc73065724588faaf56dba6a928cd9d30b5d6aee57648b656f606",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 94.5,
+      "nu": 0.01058201058201058,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p000000.npz",
+      "bytes": 12937217,
+      "mtime": "2026-07-28T09:17:28.614623",
+      "sha256": "d7f92f2bf2fac72486b1565b0f36de71ee6bf4e69ab9b55b0cd5e4d77bcae595",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.0,
+      "nu": 0.01052631578947368,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p050000.npz",
+      "bytes": 12938175,
+      "mtime": "2026-07-28T09:17:29.746410",
+      "sha256": "c6d5f071a50e20426a1f81f35a5889c4ef868faa5d4881cdc251410c9aa2aaae",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.05,
+      "nu": 0.01052077853761178,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p100000.npz",
+      "bytes": 12937931,
+      "mtime": "2026-07-28T09:17:21.388345",
+      "sha256": "5c884344b3e2e1cd85c6ccda8e2ede63ece8f14030c7d608e17011046c4f50ad",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.1,
+      "nu": 0.01051524710830705,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p150000.npz",
+      "bytes": 12939584,
+      "mtime": "2026-07-28T09:17:25.342396",
+      "sha256": "476f95ee34732924f510958f3c938fce4a73fde7f206305aa88a29727a1da21a",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.15,
+      "nu": 0.01050972149238045,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p200000.npz",
+      "bytes": 12940740,
+      "mtime": "2026-07-28T09:17:31.084611",
+      "sha256": "edef578c013e3f3ff79c8d2cf6d40e9d216982d6907a691761367f80d1d10106",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.2,
+      "nu": 0.01050420168067227,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p250000.npz",
+      "bytes": 12941483,
+      "mtime": "2026-07-28T09:17:27.617247",
+      "sha256": "5dc541bc70b4c13f13d61c4ec03d2dde0727fc710606afd13094115a84768373",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.25,
+      "nu": 0.01049868766404199,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p300000.npz",
+      "bytes": 12943881,
+      "mtime": "2026-07-28T09:17:26.649614",
+      "sha256": "460e7cc411737dba88f28c60db3280705016bb92ab5f365269880013a344edcd",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.3,
+      "nu": 0.01049317943336831,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p350000.npz",
+      "bytes": 12944106,
+      "mtime": "2026-07-28T09:17:29.287811",
+      "sha256": "c0d69a783477be5dab6a113030357bd58c9720fb17d9b28d1ae9e77e03ff6bfe",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.35,
+      "nu": 0.01048767697954903,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p400000.npz",
+      "bytes": 12945503,
+      "mtime": "2026-07-28T09:17:31.786104",
+      "sha256": "25066576098edd1ea2a1a95ccf9792eb55991e2bd379a8a17c5fc8162eb9a83d",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.4,
+      "nu": 0.01048218029350105,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p450000.npz",
+      "bytes": 12945168,
+      "mtime": "2026-07-28T09:17:28.979101",
+      "sha256": "860f24eefb2361ca820c90dea4e73c5d0bf295a6c1e4a21ae66cde12aa3d664c",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.45,
+      "nu": 0.01047668936668413,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p500000.npz",
+      "bytes": 12947329,
+      "mtime": "2026-07-28T09:17:23.965908",
+      "sha256": "611c3a0aee79cd3875908db04dc7453488eff8a12f8028db40a17d95201d4408",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.5,
+      "nu": 0.01047120418848168,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p550000.npz",
+      "bytes": 12946875,
+      "mtime": "2026-07-28T09:17:21.304703",
+      "sha256": "f5091572a8dbeb12dac5408a02ee7ba251f082b03136ab08c51efa0923a657f7",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.55,
+      "nu": 0.0104657247514382,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p600000.npz",
+      "bytes": 12948782,
+      "mtime": "2026-07-28T09:17:28.194236",
+      "sha256": "31bb67ae97d5b6b920906e3d4d9c13e54117b7d7faee5e1a21d1726814b3c065",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.6,
+      "nu": 0.0104602510460251,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re095p750000.npz",
+      "bytes": 12949749,
+      "mtime": "2026-07-28T09:17:24.638635",
+      "sha256": "0f3b6376f48ffb3acc349ed6291c6cec504b82ff1b016b39cd4774a7772ed6b1",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.75,
+      "nu": 0.01044386422976501,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re096p000000.npz",
+      "bytes": 12952352,
+      "mtime": "2026-07-28T09:17:26.558106",
+      "sha256": "074a1093117dec6bdf8f72f241554c69f38206dbac559123757642676bce9765",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 96.0,
+      "nu": 0.01041666666666667,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re096p250000.npz",
+      "bytes": 12955471,
+      "mtime": "2026-07-28T09:17:26.100345",
+      "sha256": "1bdec17d46994bc7dba5496e484f6ac626a657e8ceb71f1d0a37b03ed0c6f95f",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 96.25,
+      "nu": 0.01038961038961039,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re096p500000.npz",
+      "bytes": 12958675,
+      "mtime": "2026-07-28T09:17:24.734984",
+      "sha256": "1dafd7cfd71dbf98e7324699b2bf06392707fa3efcdf8b0c6e146cabfa3ded47",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 96.5,
+      "nu": 0.01036269430051813,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re096p750000.npz",
+      "bytes": 12962031,
+      "mtime": "2026-07-28T09:17:30.748889",
+      "sha256": "baffcb0f25931fcf43be15a75899a043bf4ff876eadcc9be21b39c77244722ad",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 96.75,
+      "nu": 0.0103359173126615,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re097p000000.npz",
+      "bytes": 12965134,
+      "mtime": "2026-07-28T09:17:22.845393",
+      "sha256": "51297868ef55ad027cd9a59ca3e5ebe3b6f10302dc810b9212258db394762848",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 97.0,
+      "nu": 0.01030927835051546,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re097p250000.npz",
+      "bytes": 12967234,
+      "mtime": "2026-07-28T09:17:30.099847",
+      "sha256": "cbc7d3333ef83155a1fecf71c65bd30e1e6c9b7c075e7cc6caae5f25591fad2b",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 97.25,
+      "nu": 0.0102827763496144,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re097p500000.npz",
+      "bytes": 12969848,
+      "mtime": "2026-07-28T09:17:31.459654",
+      "sha256": "5c0f3f92c6e4a162fc5f21b43e6a2e3affa5cb80cf964757558564cf51d6dd39",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 97.5,
+      "nu": 0.01025641025641026,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re097p750000.npz",
+      "bytes": 12971625,
+      "mtime": "2026-07-28T09:17:27.417060",
+      "sha256": "fae3c5d7db33b4d8b6c2a4bc35dc9f2b98ff8bf3459ad10084d8934dadb687c8",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 97.75,
+      "nu": 0.01023017902813299,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re098p000000.npz",
+      "bytes": 12972943,
+      "mtime": "2026-07-28T09:17:23.588573",
+      "sha256": "356d7eefcb5a3aecb9170057d3def7b610acfcb1ece8814fbf7f7fee797d5e00",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 98.0,
+      "nu": 0.01020408163265306,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re098p500000.npz",
+      "bytes": 12975690,
+      "mtime": "2026-07-28T09:17:22.142980",
+      "sha256": "28ef6b0a38e35fd216a8ced7f7ecf3acc2eae909f9b447fa5c4a7f7966a8c4b8",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 98.5,
+      "nu": 0.01015228426395939,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re099p000000.npz",
+      "bytes": 12977668,
+      "mtime": "2026-07-28T09:17:29.355641",
+      "sha256": "556d90ce33ea71f30810b976215af4c68e89f8ec09b18057b3c652b9117dc8c1",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 99.0,
+      "nu": 0.0101010101010101,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re099p500000.npz",
+      "bytes": 12979669,
+      "mtime": "2026-07-28T09:17:26.994379",
+      "sha256": "2c89f05504664a68ffd16cce4e5813d82c5bb0334c516b65ed9c6e8e6628b106",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 99.5,
+      "nu": 0.01005025125628141,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re100p000000.npz",
+      "bytes": 12980784,
+      "mtime": "2026-07-28T09:17:30.492329",
+      "sha256": "5d846e7b35e0fa640f299192813ec37fd98bbfe208b572d86a266481ad55067e",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 100.0,
+      "nu": 0.01,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re100p500000.npz",
+      "bytes": 12982401,
+      "mtime": "2026-07-28T09:17:25.668574",
+      "sha256": "4e247f336e72f6d0b51c77ca731ba9eddd8058528b3da5d3c17487095cc691a1",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 100.5,
+      "nu": 0.00995024875621891,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re101p000000.npz",
+      "bytes": 12984174,
+      "mtime": "2026-07-28T09:17:23.026247",
+      "sha256": "27dcc51aa739fdd51883249b02931b6ee80c2d8cec5f136d18e3ddf5e78a9beb",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 101.0,
+      "nu": 0.0099009900990099,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re101p500000.npz",
+      "bytes": 12984834,
+      "mtime": "2026-07-28T09:17:22.237119",
+      "sha256": "1c6f4d96e6ecd21d03db2ba499a0ba85901edce5d25f327da65ccacac13db042",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 101.5,
+      "nu": 0.00985221674876847,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re101p724138.npz",
+      "bytes": 12985096,
+      "mtime": "2026-07-28T09:17:21.704112",
+      "sha256": "c2ed60ce09390073048171ff232f95a8ff8a0f9a0d6961ff9ce103a208d78d55",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 101.724137931034,
+      "nu": 0.009830508474576272,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf34",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\cluster_hopf_transfer\\hopf_transfer_34\\cases_npz\\snapshots_Re102p000000.npz",
+      "bytes": 12985373,
+      "mtime": "2026-07-28T09:17:28.673196",
+      "sha256": "4ccd411e1b4f1872afb1b325e83b0b46a8de3f91bd4dea58811a073da790a7a1",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 102.0,
+      "nu": 0.00980392156862745,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re099p000000.npz",
+      "bytes": 12977668,
+      "mtime": "2026-07-28T09:14:52.889274",
+      "sha256": "556d90ce33ea71f30810b976215af4c68e89f8ec09b18057b3c652b9117dc8c1",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 99.0,
+      "nu": 0.0101010101010101,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re100p500000.npz",
+      "bytes": 12982401,
+      "mtime": "2026-07-28T09:14:56.764124",
+      "sha256": "4e247f336e72f6d0b51c77ca731ba9eddd8058528b3da5d3c17487095cc691a1",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 100.5,
+      "nu": 0.00995024875621891,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re101p500000.npz",
+      "bytes": 12984834,
+      "mtime": "2026-07-28T09:14:53.682049",
+      "sha256": "1c6f4d96e6ecd21d03db2ba499a0ba85901edce5d25f327da65ccacac13db042",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 101.5,
+      "nu": 0.00985221674876847,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re102p000000.npz",
+      "bytes": 12985373,
+      "mtime": "2026-07-28T09:14:57.105021",
+      "sha256": "4ccd411e1b4f1872afb1b325e83b0b46a8de3f91bd4dea58811a073da790a7a1",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 102.0,
+      "nu": 0.00980392156862745,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re110p344828.npz",
+      "bytes": 12999483,
+      "mtime": "2026-07-28T09:14:54.168783",
+      "sha256": "d900c6164994db0a5cd03afe8a9539dca0874141555821b456db7c2fe74f6cce",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 110.344827586207,
+      "nu": 0.009062500000000001,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re120p689655.npz",
+      "bytes": 13016567,
+      "mtime": "2026-07-28T09:14:57.763289",
+      "sha256": "ad43758528c1098ef27e444f6f401404ebbd83ca7f6f6fb63ac85ff0370cc583",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 120.689655172414,
+      "nu": 0.008285714285714285,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re125p862069.npz",
+      "bytes": 13024762,
+      "mtime": "2026-07-28T09:14:55.140002",
+      "sha256": "9e173c5d26ba7fa473a3d263d30c5b67b182c9668d4307c34046c069d141f7bc",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 125.862068965517,
+      "nu": 0.007945205479452055,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re141p379310.npz",
+      "bytes": 13047937,
+      "mtime": "2026-07-28T09:14:55.902453",
+      "sha256": "75bd93175cb7afae5f65ca4bc42155b58c6d3ece74965a2fffd1cc99456fde81",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 141.379310344828,
+      "nu": 0.007073170731707317,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re144p827586.npz",
+      "bytes": 13049021,
+      "mtime": "2026-07-28T09:14:58.371399",
+      "sha256": "07f67536d89085e822256f463fe5196f355ac8434e3c9a28d463ff72431da0eb",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 144.827586206897,
+      "nu": 0.006904761904761905,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic10",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\.transfer_square_periodic\\snapshots_Re150p000000.npz",
+      "bytes": 13050056,
+      "mtime": "2026-07-28T09:14:56.471412",
+      "sha256": "fadffa8a50f70b3c849aeb60804dac8437e931c6d562326f30d762a636f39624",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 150.0,
+      "nu": 0.006666666666666667,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "steady_heldout4",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\heldout_cases\\snapshots_Re060p000000.npz",
+      "bytes": 12868315,
+      "mtime": "2026-07-28T14:52:35.807115",
+      "sha256": "b61b17a2626f946327cf1f72de779f3f3ceb5c331fbe8d2a4e14c261ece67c65",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 60.0,
+      "nu": 0.01666666666666667,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "steady_heldout4",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\heldout_cases\\snapshots_Re085p000000.npz",
+      "bytes": 12923232,
+      "mtime": "2026-07-28T14:52:36.325218",
+      "sha256": "c017f08e2ed72ae542ab8ee2d52f07c445a1dfc889fda5f1b3201fc28a8156af",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 85.0,
+      "nu": 0.01176470588235294,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "steady_heldout4",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\heldout_cases\\snapshots_Re095p100000.npz",
+      "bytes": 12937931,
+      "mtime": "2026-07-28T14:52:36.786735",
+      "sha256": "5c884344b3e2e1cd85c6ccda8e2ede63ece8f14030c7d608e17011046c4f50ad",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.1,
+      "nu": 0.01051524710830705,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "steady_heldout4",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\heldout_cases\\snapshots_Re095p300000.npz",
+      "bytes": 12943881,
+      "mtime": "2026-07-28T14:52:37.326674",
+      "sha256": "460e7cc411737dba88f28c60db3280705016bb92ab5f365269880013a344edcd",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 95.3,
+      "nu": 0.01049317943336831,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic_validation4_copy",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\centeredsquare_kda_cdm_rom_20260827\\transfer_runtime\\centeredSquare_validation_20260827\\dataset_Re50_150_N100_npz\\cases_npz\\snapshots_Re110p344828.npz",
+      "bytes": 12999483,
+      "mtime": "2026-08-27T21:20:42.030486",
+      "sha256": "d900c6164994db0a5cd03afe8a9539dca0874141555821b456db7c2fe74f6cce",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 110.344827586207,
+      "nu": 0.009062500000000001,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic_validation4_copy",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\centeredsquare_kda_cdm_rom_20260827\\transfer_runtime\\centeredSquare_validation_20260827\\dataset_Re50_150_N100_npz\\cases_npz\\snapshots_Re125p862069.npz",
+      "bytes": 13024762,
+      "mtime": "2026-08-27T21:20:42.192912",
+      "sha256": "9e173c5d26ba7fa473a3d263d30c5b67b182c9668d4307c34046c069d141f7bc",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 125.862068965517,
+      "nu": 0.007945205479452055,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic_validation4_copy",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\centeredsquare_kda_cdm_rom_20260827\\transfer_runtime\\centeredSquare_validation_20260827\\dataset_Re50_150_N100_npz\\cases_npz\\snapshots_Re141p379310.npz",
+      "bytes": 13047937,
+      "mtime": "2026-08-27T21:20:42.264535",
+      "sha256": "75bd93175cb7afae5f65ca4bc42155b58c6d3ece74965a2fffd1cc99456fde81",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 141.379310344828,
+      "nu": 0.007073170731707317,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "periodic_validation4_copy",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\centeredsquare_kda_cdm_rom_20260827\\transfer_runtime\\centeredSquare_validation_20260827\\dataset_Re50_150_N100_npz\\cases_npz\\snapshots_Re150p000000.npz",
+      "bytes": 13050056,
+      "mtime": "2026-08-27T21:20:42.105365",
+      "sha256": "fadffa8a50f70b3c849aeb60804dac8437e931c6d562326f30d762a636f39624",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 150.0,
+      "nu": 0.006666666666666667,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf_validation2_copy",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\centeredsquare_kda_cdm_rom_20260827\\transfer_runtime\\centeredSquare_validation_20260827\\dataset_Re95_102_refined_N31_npz\\cases_npz\\snapshots_Re099p000000.npz",
+      "bytes": 12977668,
+      "mtime": "2026-08-27T21:20:41.956451",
+      "sha256": "556d90ce33ea71f30810b976215af4c68e89f8ec09b18057b3c652b9117dc8c1",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 99.0,
+      "nu": 0.0101010101010101,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    },
+    {
+      "group": "hopf_validation2_copy",
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\centeredsquare_kda_cdm_rom_20260827\\transfer_runtime\\centeredSquare_validation_20260827\\dataset_Re95_102_refined_N31_npz\\cases_npz\\snapshots_Re101p500000.npz",
+      "bytes": 12984834,
+      "mtime": "2026-08-27T21:20:41.882316",
+      "sha256": "1c6f4d96e6ecd21d03db2ba499a0ba85901edce5d25f327da65ccacac13db042",
+      "fields": [
+        "Re",
+        "nu",
+        "times",
+        "U",
+        "p",
+        "regime_placeholder",
+        "metadata"
+      ],
+      "Re": 101.5,
+      "nu": 0.00985221674876847,
+      "t_shape": [
+        126
+      ],
+      "U_shape": [
+        126,
+        9400,
+        2
+      ],
+      "p_shape": [
+        126,
+        9400
+      ],
+      "t_dtype": "float64",
+      "U_dtype": "float32",
+      "p_dtype": "float32",
+      "t0": 0.0,
+      "t1": 500.0,
+      "dt_min": 4.0,
+      "dt_max": 4.0,
+      "strict_time": true,
+      "U_finite": true,
+      "p_finite": true,
+      "nan_U": 0,
+      "nan_p": 0,
+      "inf_U": 0,
+      "inf_p": 0
+    }
+  ]
+}

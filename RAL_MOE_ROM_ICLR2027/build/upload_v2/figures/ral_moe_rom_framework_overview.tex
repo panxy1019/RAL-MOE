@@ -1,0 +1,31 @@
+\begin{tikzpicture}[
+  font=\scriptsize,
+  node distance=4mm and 5mm,
+  block/.style={draw,rounded corners=1.5pt,align=center,minimum height=7mm,inner sep=3pt,fill=blue!4},
+  chart/.style={draw,rounded corners=2pt,align=center,minimum width=46mm,minimum height=14mm,inner sep=3pt},
+  route/.style={draw,rounded corners=1.5pt,align=center,minimum height=7mm,inner sep=3pt,fill=orange!12},
+  outputblock/.style={draw,rounded corners=1.5pt,align=center,minimum height=7mm,inner sep=3pt,fill=green!10},
+  arrow/.style={-{Latex[length=1.8mm]},thick},
+  soft/.style={-{Latex[length=1.5mm]},thin,dashed}
+]
+\node[block] (history) {physical history\\$\{\bm u,\bm p\}$ and $\mu$};
+\node[route,above=7mm of history] (outer) {Level 2\\regime router};
+
+\node[chart,right=12mm of history] (hopf) {\textbf{Hopf chart}: native encoding $\rightarrow$ projected backbone\\Level-1 sparse experts $\rightarrow$ autonomous rollout $\rightarrow$ decode};
+\node[chart,above=3mm of hopf] (steady) {\textbf{steady chart}: native encoding $\rightarrow$ projected backbone\\Level-1 sparse experts $\rightarrow$ autonomous rollout $\rightarrow$ decode};
+\node[chart,below=3mm of hopf] (periodic) {\textbf{periodic chart}: native encoding $\rightarrow$ projected backbone\\Level-1 sparse experts $\rightarrow$ autonomous rollout $\rightarrow$ decode};
+
+\node[outputblock,right=10mm of hopf] (fusion) {Top-1 or T2-C\\physical-space fusion};
+\node[outputblock,right=5mm of fusion] (prediction) {predicted\\physical fields};
+
+\draw[arrow] (history) -- (outer);
+\draw[arrow] (outer.east) -- (steady.west);
+\draw[arrow] (outer.east) -- (hopf.west);
+\draw[arrow] (outer.east) -- (periodic.west);
+\draw[arrow] (steady.east) -- (fusion.west);
+\draw[arrow] (hopf.east) -- (fusion.west);
+\draw[arrow] (periodic.east) -- (fusion.west);
+\draw[arrow] (fusion) -- (prediction);
+
+\node[above=1mm of steady.north,align=center] {independent native coordinates};
+\end{tikzpicture}

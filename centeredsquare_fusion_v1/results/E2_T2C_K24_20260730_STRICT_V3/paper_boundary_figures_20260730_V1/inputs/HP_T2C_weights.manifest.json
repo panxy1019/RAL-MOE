@@ -1,0 +1,20 @@
+{
+  "schema": "boundary_figure_weights/v1",
+  "boundary": "HP",
+  "candidate_order": [
+    "Periodic",
+    "Hopf"
+  ],
+  "windows": 16,
+  "alpha_min": 0.39677780866622925,
+  "alpha_mean": 0.6481888294219971,
+  "alpha_max": 0.9806753993034363,
+  "cache": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_hp/hp_heldout_cache.npz",
+  "cache_sha256": "bb2a70a3aae3988b1031b3791def1607177ef7b622c455733cf70c7a8491d0d8",
+  "router_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/e2_router/best.pt",
+  "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+  "gate_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/gate_hp/best.pt",
+  "gate_checkpoint_sha256": "fb154d2d3decb68c59b242a17c95c062e24f4443f5034692ec0abfaa55e9c887",
+  "output_csv": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/HP_T2C_weights.csv",
+  "output_csv_sha256": "14a9cf549a033f38b36ad76602e42d61536ab03d556cd7650a81283cb29e6fe8"
+}

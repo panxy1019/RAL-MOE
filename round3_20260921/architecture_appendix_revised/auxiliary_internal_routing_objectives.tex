@@ -1,0 +1,34 @@
+\paragraph{Auxiliary internal-routing objectives.}
+The rollout coefficient loss specifies the prediction term. Learned
+internal group-routing configurations additionally use group-balance,
+entropy, and Reynolds-partition supervision terms. These concern
+expert-group selection within a specialist, not the outer E2 router
+or the T2-C gate. Their exact signs, reductions, and per-run weights
+are not established by the architecture report; no universal
+auxiliary-loss formula or coefficient set is therefore asserted here.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Scope of internal group routing. Deployment policy alone does
+not establish the auxiliary objectives used during training.}
+\label{tab:internal_objective_scope}
+\begin{tabular}{@{}lp{0.30\linewidth}p{0.40\linewidth}@{}}
+\toprule
+Instance & Group configuration & Interpretation\\
+\midrule
+Circular $H$ & Single group; group router frozen & No learned group choice; channel Top-2 remains distinct.\\
+Circular $P$ & Three groups; learned Top-1 & Straight-through group selection with auxiliary group objectives.\\
+Square $S$ & Three groups; learned Top-1 & Group routing is distinct from frozen velocity expert weights.\\
+Square $H$ & Single group; group router frozen & No learned group choice; data-only overlap output path.\\
+Square $P$ & Three stored groups; fixed deployment index 1 & Training auxiliary weights cannot be inferred from fixed deployment.\\
+Pinball $S/H/P$ & Deep-FNN-H3; no group router & Internal group-routing objectives are not applicable.\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+For learned group selection, the straight-through gate has a hard
+one-hot forward value and a softmax backward path. Source confirmation
+of this computation is not a separate dynamic measurement of nonzero
+router gradients. Frozen expert parameters also do not imply constant
+corrections: their inputs and mixture weights can still vary.

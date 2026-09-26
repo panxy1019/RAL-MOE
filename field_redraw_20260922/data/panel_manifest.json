@@ -1,0 +1,1084 @@
+[
+  {
+    "case": "Circular cylinder",
+    "geometry": "circular cylinder, center=(0,0), D=1",
+    "regime_or_overlap": "Periodic",
+    "Re": 70.31463623046875,
+    "source_field_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_evaluation_v2/proposed/1248/modal_rollouts.pt",
+      "sha256": "8c78738790e2b2b32df1104c661fbc99a72bf742879e9ad47c3cbf15d3d142ef"
+    },
+    "reference_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_evaluation_v2/proposed/1248/modal_rollouts.pt",
+      "sha256": "8c78738790e2b2b32df1104c661fbc99a72bf742879e9ad47c3cbf15d3d142ef"
+    },
+    "basis_sources": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+        "sha256": "a2c12dc3ea25772e7bd4216b37683df9dbcce804063f9900bdaebac3e25dc7a2"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+        "sha256": "f6e0a23432581c78e9f649d60bb0fceb9087a6a1d0631778bde444338c16239f"
+      }
+    ],
+    "checkpoint_path": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed/1248/Circular_P_proposed_round2_Re_70p314635_checkpoint.pt",
+        "sha256": "b48eaacc1deb923721f9fa0244169861a6b8a4111cab7a5255a61110679fa625"
+      }
+    ],
+    "model_family": "local sparse-MoE Periodic specialist, original initialization",
+    "original_or_revised_init": "original, round2 P_proposed",
+    "training_seed": 1248,
+    "E2_checkpoint": "N/A",
+    "gate_checkpoint": "N/A",
+    "gate_seed": "N/A",
+    "candidate_r": "N/A",
+    "candidate_s": "N/A",
+    "E2_selection": "N/A",
+    "alpha": "N/A",
+    "split": "heldout",
+    "trajectory_id": "Periodic_Re70.31463623046875",
+    "window_id": 976,
+    "t0": 1384.4959716796875,
+    "dt_output": [
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625,
+      12.472900390625,
+      12.472900390625,
+      12.4730224609375,
+      12.472900390625
+    ],
+    "k": 48,
+    "K": 48,
+    "snapshot_time": 1983.1968994140625,
+    "duration": 598.700927734375,
+    "mesh": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/expanded_validation_20260723/visualization/Re_43p500000_last_snapshot_uvp.vtk",
+      "sha256": "fcc87caedde11bfc6b5c1756ef5df0b0a0e9f9d13fd6e5dbfabaa8811b678e59"
+    },
+    "data_association": "point",
+    "crop_extent": [
+      -2,
+      10,
+      -3,
+      3
+    ],
+    "recovery": "existing frozen rollout cache, no model inference",
+    "archived_metric_delta": {
+      "Eu": 8.824906000369503e-07,
+      "Ep": 8.277453989735672e-07
+    },
+    "reference_type": "POD reconstruction",
+    "velocity_definition": "u,v in physical coefficient scale; speed=hypot(u,v); pointwise velocity error=norm(u_pred-u_ref)",
+    "pressure_definition": "native kinematic pressure p (pressure divided by density), no density multiplication; weighted zero-mean gauge",
+    "nondimensional_scales": "native POD physical scale retained; no additional u/U or p/U^2 rescaling; independent case color scales, not a common nondimensional comparison",
+    "gauge_correction": "independent quadrature-weighted domain-zero-mean for every pressure field; not fitted to the error",
+    "interpolation": "none for cell fields; piecewise-linear on original surface triangles for Circular point fields",
+    "fluid_mask": "original VTK fluid topology; solid interiors have no triangles",
+    "integration_weights": "native point_areas, full computational domain",
+    "missing_points": 0,
+    "nonfinite_points": 0,
+    "selection_rule": "ascending heldout Re, then first archived/common valid window by start index; final output of full saved rollout; no metric sorting",
+    "snapshot_metrics": {
+      "reference": {
+        "Eu": 0.0,
+        "Ep": 0.0
+      },
+      "prediction": {
+        "Eu": 0.025868072904438606,
+        "Ep": 0.14749834490191463
+      }
+    },
+    "metric_units": "fraction (multiply by 100 for percent)",
+    "training_performed": false,
+    "errors_computed_on": "full domain, not cropped ROI",
+    "snapshot_arrays": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/field_redraw_20260922/data/circular_p.npz",
+      "sha256": "1e6bbab7266f97924ed07fd7d014d32ac5faa437d2c35b4b4ca032ab120f1e4c"
+    },
+    "case_id": "circular_p",
+    "mesh_alignment_max_abs": 0.0,
+    "plot_geometry": "circular_p_geometry.npz",
+    "plot_triangles": 96256,
+    "plot_vertices": 48684,
+    "unit_evidence": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/provenance/velocity_rom_periodic.md",
+        "sha256": "2a8be72a33f943c1b8b7550581b163f9db2af4bb77f69aeec268bdb492b09f97"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/provenance/pressure_poisson_surrogate_periodic.md",
+        "sha256": "60b6ac4d8abaacde8cbe60b2689058cc304dd0a52eb7255076349873b769961c"
+      }
+    ],
+    "native_kinematic_viscosity": 0.001,
+    "scale_warning": "Circular source declares raw physical POD modes and fixed nu=0.001; do not label its arrays as sharing the Square/Pinball nondimensional scale.",
+    "plot_scale_records": [
+      {
+        "figure": "field_overview_three_cases_pressure",
+        "field": "pressure",
+        "methods": [
+          "prediction"
+        ],
+        "field_vmin": -0.0029274144174830158,
+        "field_vmax": 0.0029274144174830158,
+        "error_vmin": 0,
+        "error_vmax": 0.0003753424118916705,
+        "clipped": false,
+        "saturation_fraction": {
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          -2,
+          10,
+          -3,
+          3
+        ]
+      },
+      {
+        "figure": "field_overview_three_cases_velocity",
+        "field": "velocity",
+        "methods": [
+          "prediction"
+        ],
+        "field_vmin": 0.0,
+        "field_vmax": 0.0887119159622452,
+        "error_vmin": 0,
+        "error_vmax": 0.014821728388062764,
+        "clipped": false,
+        "saturation_fraction": {
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          -2,
+          10,
+          -3,
+          3
+        ]
+      }
+    ],
+    "local_array": "data/circular_p.npz",
+    "local_geometry": "data/circular_p_geometry.npz",
+    "local_geometry_sha256": "d323231fc8b2d8f1f42df393ea3bc8932776bac724e1ab606707e410cd61086c"
+  },
+  {
+    "case": "Centered square",
+    "geometry": "square, D=1, x=[5,6], y=[1.5,2.5]",
+    "regime_or_overlap": "HP",
+    "Re": 100.5,
+    "source_field_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_hp/hp_heldout_cache.npz",
+      "sha256": "bb2a70a3aae3988b1031b3791def1607177ef7b622c455733cf70c7a8491d0d8"
+    },
+    "reference_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_hp/hp_heldout_cache.npz",
+      "sha256": "bb2a70a3aae3988b1031b3791def1607177ef7b622c455733cf70c7a8491d0d8"
+    },
+    "basis_sources": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_velocity_pod_area_weighted_l2.npz",
+        "sha256": "a959f76ca57e1cf4666e3ee2c74a1863485866d8c214899e750fec65b65b87ba"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_pressure_pod_area_weighted_l2.npz",
+        "sha256": "e8567f554ff609e1c3cbd17985365aefedf578915017adb8170d53dfeb958141"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+        "sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+        "sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+      }
+    ],
+    "checkpoint_path": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/runs/optimized_long_seed1600/best_validation.pt",
+        "sha256": "a84f355ae7eba1faa9e988f56fd89029e0aa15e2bd56163543bf5e7c66a4d988"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/selected_validation_step7200.pt",
+        "sha256": "07af06ec5506e5b6a12d9d00f557a4e48fa722be3c2a183df752f0883ad40beb"
+      }
+    ],
+    "model_family": "T2-C with fixed sparse-MoE local candidates",
+    "original_or_revised_init": "archived original (July 2026), no September repair",
+    "training_seed": [
+      1600,
+      1248
+    ],
+    "E2_checkpoint": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/e2_router/best.pt",
+      "sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac"
+    },
+    "gate_checkpoint": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/gate_hp/best.pt",
+      "sha256": "fb154d2d3decb68c59b242a17c95c062e24f4443f5034692ec0abfaa55e9c887"
+    },
+    "gate_seed": 42001,
+    "candidate_r": "periodic",
+    "candidate_s": "hopf",
+    "E2_selection": "Hopf",
+    "E2_probabilities": [
+      0.017332978546619415,
+      0.6034185886383057,
+      0.3792484402656555
+    ],
+    "alpha": 0.9790508151054382,
+    "split": "heldout",
+    "trajectory_id": "HP_Re100.5",
+    "window_id": 506,
+    "window_index": 0,
+    "t0": 8.0,
+    "dt_output": 4.0,
+    "k": 24,
+    "K": 24,
+    "snapshot_time": 104.0,
+    "duration": 96.0,
+    "mesh": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/centeredSquare_CN09_graded_Re100_internal_final_reference.vtk",
+      "sha256": "57423d8ebcca3f1aaf8d18311366c7f05a0df6b9f10f5973ed75e3334c7d5175"
+    },
+    "data_association": "cell",
+    "crop_extent": [
+      2,
+      17,
+      0,
+      4
+    ],
+    "recovery": "existing frozen rollout coefficients, freshly decoded; E2/gate CPU inference only",
+    "quadratic_metric_max_delta": 1.3877787807814457e-17,
+    "metric_checks": {
+      "candidate1_Eu": 0.0,
+      "candidate1_Ep": 4.336808689942018e-18,
+      "candidate2_Eu": 3.469446951953614e-18,
+      "candidate2_Ep": 1.3877787807814457e-17,
+      "prediction_Eu": 8.673617379884035e-19,
+      "prediction_Ep": 1.734723475976807e-18,
+      "e2_Eu": 3.469446951953614e-18,
+      "e2_Ep": 1.3877787807814457e-17
+    },
+    "reference_type": "POD reconstruction",
+    "velocity_definition": "u,v in physical coefficient scale; speed=hypot(u,v); pointwise velocity error=norm(u_pred-u_ref)",
+    "pressure_definition": "native kinematic pressure p (pressure divided by density), no density multiplication; weighted zero-mean gauge",
+    "nondimensional_scales": "native POD physical scale retained; no additional u/U or p/U^2 rescaling; independent case color scales, not a common nondimensional comparison",
+    "gauge_correction": "independent quadrature-weighted domain-zero-mean for every pressure field; not fitted to the error",
+    "interpolation": "none for cell fields; piecewise-linear on original surface triangles for Circular point fields",
+    "fluid_mask": "original VTK fluid topology; solid interiors have no triangles",
+    "integration_weights": "native point_areas, full computational domain",
+    "missing_points": 0,
+    "nonfinite_points": 0,
+    "selection_rule": "ascending heldout Re, then first archived/common valid window by start index; final output of full saved rollout; no metric sorting",
+    "snapshot_metrics": {
+      "reference": {
+        "Eu": 0.0,
+        "Ep": 0.0
+      },
+      "candidate1": {
+        "Eu": 0.005686569126702089,
+        "Ep": 0.00560835312314421
+      },
+      "candidate2": {
+        "Eu": 0.029078672787839564,
+        "Ep": 0.0996969635675415
+      },
+      "prediction": {
+        "Eu": 0.00541895824197654,
+        "Ep": 0.005382261996226935
+      },
+      "e2": {
+        "Eu": 0.029078672787839564,
+        "Ep": 0.0996969635675415
+      }
+    },
+    "metric_units": "fraction (multiply by 100 for percent)",
+    "training_performed": false,
+    "errors_computed_on": "full domain, not cropped ROI",
+    "snapshot_arrays": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/field_redraw_20260922/data/square_hp.npz",
+      "sha256": "5dbbe4b11e9a82ffe6443c6a1e2f9576baf7c6d276fcfce58a98d70d704c3674"
+    },
+    "case_id": "square_hp",
+    "mesh_alignment_max_abs": 1.9073486328125e-06,
+    "plot_geometry": "square_hp_geometry.npz",
+    "plot_triangles": 18800,
+    "plot_vertices": 9653,
+    "plot_scale_records": [
+      {
+        "figure": "field_overview_three_cases_pressure",
+        "field": "pressure",
+        "methods": [
+          "prediction"
+        ],
+        "field_vmin": -1.1024838568840678,
+        "field_vmax": 1.1024838568840678,
+        "error_vmin": 0,
+        "error_vmax": 0.003994524981716818,
+        "clipped": false,
+        "saturation_fraction": {
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          2,
+          17,
+          0,
+          4
+        ]
+      },
+      {
+        "figure": "fusion_comparison_hp_square_pinball_pressure",
+        "field": "pressure",
+        "methods": [
+          "e2",
+          "prediction"
+        ],
+        "field_vmin": -1.1024838568840678,
+        "field_vmax": 1.1024838568840678,
+        "error_vmin": 0,
+        "error_vmax": 0.03814056605647009,
+        "clipped": false,
+        "saturation_fraction": {
+          "e2": 0.0,
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          2,
+          17,
+          0,
+          4
+        ]
+      },
+      {
+        "figure": "field_overview_three_cases_velocity",
+        "field": "velocity",
+        "methods": [
+          "prediction"
+        ],
+        "field_vmin": 0.0,
+        "field_vmax": 1.3718088392071977,
+        "error_vmin": 0,
+        "error_vmax": 0.01717314106719007,
+        "clipped": false,
+        "saturation_fraction": {
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          2,
+          17,
+          0,
+          4
+        ]
+      },
+      {
+        "figure": "fusion_comparison_hp_square_pinball_velocity",
+        "field": "velocity",
+        "methods": [
+          "e2",
+          "prediction"
+        ],
+        "field_vmin": 0.0,
+        "field_vmax": 1.3718088392071977,
+        "error_vmin": 0,
+        "error_vmax": 0.10625972520468481,
+        "clipped": false,
+        "saturation_fraction": {
+          "e2": 0.0,
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          2,
+          17,
+          0,
+          4
+        ]
+      }
+    ],
+    "local_array": "data/square_hp.npz",
+    "local_geometry": "data/square_hp_geometry.npz",
+    "local_geometry_sha256": "2046478dd4eaf477d15395c824837533e62a56413b382945834d2cffd2b4fa91"
+  },
+  {
+    "case": "Fluidic pinball",
+    "geometry": "three circular cylinders; original finite-volume topology",
+    "regime_or_overlap": "HP",
+    "Re": 22.25,
+    "source_field_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/eval_pod_coefficients_v2/periodic/final_test/Re_022.250_pod_coefficients.npz",
+      "sha256": "8fbbd190f5cda24d9c4f7e45e0d880e75f87e6b42c6cace415c262dd3e3a2951"
+    },
+    "reference_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/eval_pod_coefficients_v2/periodic/final_test/Re_022.250_pod_coefficients.npz",
+      "sha256": "8fbbd190f5cda24d9c4f7e45e0d880e75f87e6b42c6cace415c262dd3e3a2951"
+    },
+    "basis_sources": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/assets/fluidic_pinball_periodic_trainval_rank999.npz",
+        "sha256": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/assets/hopf_rank999_trainval.npz",
+        "sha256": "44915c5143ceceae37a3568e72c6bf51a35504d6e7add60249bd4fa7842c7d5e"
+      }
+    ],
+    "checkpoint_path": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+        "sha256": "c89a0cbf6cc0920664875f00234afaac49bc19b1c5c5f985cbba0b09e2dbdbda"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/runs/formal/FluidicPinballV2_Hopf_rank999_B1_seed1248/best_validation.pt",
+        "sha256": "8be7a5552105116c72fa892b01e3670453de04bd753036ff4080faa75942b3d4"
+      }
+    ],
+    "model_family": "T2-C with Deep-FNN-H3 candidates",
+    "original_or_revised_init": "archived B1 Deep-FNN-H3; quadratic-branch repair not applicable",
+    "training_seed": [
+      1248,
+      1248
+    ],
+    "E2_checkpoint": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/e2_router/best.pt",
+      "sha256": "62ade4d7d2b9dae66ed08691dc477f53f59d97efba6cb71cb555a48ab5f5ee07"
+    },
+    "gate_checkpoint": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/gate_hp/best.pt",
+      "sha256": "ef3ab2a6404bc60e4ab85754fe962dcc4e65bb0ee69e37e1851ebc90bef216d9"
+    },
+    "gate_seed": 42001,
+    "candidate_r": "Periodic",
+    "candidate_s": "Hopf",
+    "E2_selection": "Hopf",
+    "E2_probabilities": [
+      0.013173255138099194,
+      0.7097223997116089,
+      0.27710434794425964
+    ],
+    "alpha": 0.9376579523086548,
+    "split": "final_test",
+    "trajectory_id": "HP_Re22.25",
+    "window_id": 2,
+    "window_index": 0,
+    "t0": 36.75,
+    "dt_output": 0.25,
+    "k": 56,
+    "K": 56,
+    "snapshot_time": 50.75,
+    "duration": 14.0,
+    "mesh": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/rom_assets_v2/reference_vtk/fluidicPinball_production_reference.vtk",
+      "sha256": "e35af4c91db00c40d8896b2535ed0ae6940248d31e0e2c54652098743b2b411b"
+    },
+    "data_association": "cell",
+    "crop_extent": [
+      -3,
+      9,
+      -3,
+      3
+    ],
+    "recovery": "new frozen inference of ONE preselected K56 window using original evaluator; no retraining or model selection",
+    "elapsed_seconds": 2.518521785736084,
+    "final_test_seal": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/full_rollout_20260807_V1/results/FINAL_TEST_SEAL.json",
+      "sha256": "0c31c52c2170662d951ead51021ef5feef44ce8304923b1174d5bf84a51c233b"
+    },
+    "metric_checks": {
+      "candidate1_Eu": 2.574980159653073e-19,
+      "candidate1_Ep": 8.023096076392733e-18,
+      "candidate2_Eu": 4.336808689942018e-19,
+      "candidate2_Ep": 8.239936510889834e-18,
+      "prediction_Eu": 2.710505431213761e-19,
+      "prediction_Ep": 8.998878031629687e-18,
+      "e2_Eu": 4.336808689942018e-19,
+      "e2_Ep": 8.239936510889834e-18
+    },
+    "quadratic_metric_max_delta": 8.998878031629687e-18,
+    "reference_type": "POD reconstruction",
+    "velocity_definition": "u,v in physical coefficient scale; speed=hypot(u,v); pointwise velocity error=norm(u_pred-u_ref)",
+    "pressure_definition": "native kinematic pressure p (pressure divided by density), no density multiplication; weighted zero-mean gauge",
+    "nondimensional_scales": "native POD physical scale retained; no additional u/U or p/U^2 rescaling; independent case color scales, not a common nondimensional comparison",
+    "gauge_correction": "independent quadrature-weighted domain-zero-mean for every pressure field; not fitted to the error",
+    "interpolation": "none for cell fields; piecewise-linear on original surface triangles for Circular point fields",
+    "fluid_mask": "original VTK fluid topology; solid interiors have no triangles",
+    "integration_weights": "native point_areas, full computational domain",
+    "missing_points": 0,
+    "nonfinite_points": 0,
+    "selection_rule": "ascending heldout Re, then first archived/common valid window by start index; final output of full saved rollout; no metric sorting",
+    "snapshot_metrics": {
+      "reference": {
+        "Eu": 0.0,
+        "Ep": 0.0
+      },
+      "candidate1": {
+        "Eu": 0.00011701463887535477,
+        "Ep": 0.0009575412525073537
+      },
+      "candidate2": {
+        "Eu": 0.002928655670123139,
+        "Ep": 0.003444273926900738
+      },
+      "prediction": {
+        "Eu": 0.0002083180706321953,
+        "Ep": 0.0009240296424175998
+      },
+      "e2": {
+        "Eu": 0.002928655670123139,
+        "Ep": 0.003444273926900738
+      }
+    },
+    "metric_units": "fraction (multiply by 100 for percent)",
+    "training_performed": false,
+    "errors_computed_on": "full domain, not cropped ROI",
+    "snapshot_arrays": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/field_redraw_20260922/data/pinball_hp.npz",
+      "sha256": "fd7047ef6f9dde8cf1faf11717298f8f617e90fc87add493677a44d3150a7f4c"
+    },
+    "case_id": "pinball_hp",
+    "mesh_alignment_max_abs": 4.824276542692019e-05,
+    "geometry_coordinate_source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/data_npz/mesh/mesh_production.npz",
+    "geometry_metadata": "D: 1.0\nradius: 0.5\ntriangle_side: 1.5\ndomain: {xmin: -6.0, xmax: 20.0, ymin: -6.0, ymax: 6.0}\nz: {min: 0.0, max: 0.1, cells: 1}\ncylinders:\n  frontCylinder: [-1.299038105676658, 0.0]\n  upperCylinder: [0.0, 0.75]\n  lowerCylinder: [0.0, -0.75]\nboundaries:\n  inlet: {U: \"fixedValue uniform (1 0 0)\", p: zeroGradient}\n  top_bottom: {U: slip, p: zeroGradient}\n  outlet: {U: zeroGradient, p: \"fixedValue uniform 0\"}\n  cylinders: {U: noSlip, p: zeroGradient}\n  front_back: empty\n\n",
+    "mesh_hash_contract": "400800bff33c67c71488899527b17e97e32b4a5e01fd6f8105990ba08519421f",
+    "plot_geometry": "pinball_hp_geometry.npz",
+    "plot_triangles": 70194,
+    "plot_vertices": 36240,
+    "geometry_coordinate_evidence": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/data_npz/mesh/mesh_production.npz",
+      "sha256": "19e7354f53ff11bc79afe16db159f7ee877783522c9cea145b76cb55d41719e6"
+    },
+    "plot_scale_records": [
+      {
+        "figure": "field_overview_three_cases_pressure",
+        "field": "pressure",
+        "methods": [
+          "prediction"
+        ],
+        "field_vmin": -1.0461231323081703,
+        "field_vmax": 1.0461231323081703,
+        "error_vmin": 0,
+        "error_vmax": 0.0005283297840513457,
+        "clipped": false,
+        "saturation_fraction": {
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          -3,
+          9,
+          -3,
+          3
+        ]
+      },
+      {
+        "figure": "fusion_comparison_hp_square_pinball_pressure",
+        "field": "pressure",
+        "methods": [
+          "e2",
+          "prediction"
+        ],
+        "field_vmin": -1.0461231323081703,
+        "field_vmax": 1.0461231323081703,
+        "error_vmin": 0,
+        "error_vmax": 0.002166489716889153,
+        "clipped": false,
+        "saturation_fraction": {
+          "e2": 0.0,
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          -3,
+          9,
+          -3,
+          3
+        ]
+      },
+      {
+        "figure": "field_overview_three_cases_velocity",
+        "field": "velocity",
+        "methods": [
+          "prediction"
+        ],
+        "field_vmin": 0.0,
+        "field_vmax": 1.4676114171562102,
+        "error_vmin": 0,
+        "error_vmax": 0.001530980366919354,
+        "clipped": false,
+        "saturation_fraction": {
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          -3,
+          9,
+          -3,
+          3
+        ]
+      },
+      {
+        "figure": "fusion_comparison_hp_square_pinball_velocity",
+        "field": "velocity",
+        "methods": [
+          "e2",
+          "prediction"
+        ],
+        "field_vmin": 0.0,
+        "field_vmax": 1.4676114171562102,
+        "error_vmin": 0,
+        "error_vmax": 0.022893200105495535,
+        "clipped": false,
+        "saturation_fraction": {
+          "e2": 0.0,
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          -3,
+          9,
+          -3,
+          3
+        ]
+      }
+    ],
+    "local_array": "data/pinball_hp.npz",
+    "local_geometry": "data/pinball_hp_geometry.npz",
+    "local_geometry_sha256": "a7a8e1aa926b28bde0f7836fb9547e11226f0ed7bfc67d5cbd4749b695867819"
+  },
+  {
+    "case": "Centered square",
+    "geometry": "square, D=1, x=[5,6], y=[1.5,2.5]",
+    "regime_or_overlap": "SH",
+    "Re": 95.1,
+    "source_field_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_sh/sh_heldout_cache.npz",
+      "sha256": "5d27b47202ef9d296f0c384dd7e367b2547410634c81c4af9b2bc7adb0443a88"
+    },
+    "reference_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_sh/sh_heldout_cache.npz",
+      "sha256": "5d27b47202ef9d296f0c384dd7e367b2547410634c81c4af9b2bc7adb0443a88"
+    },
+    "basis_sources": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+        "sha256": "3a6f412e4c60309b4f2e913c1f4d2c090e0fb976a960e46869a01b75c7d0a7ca"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+        "sha256": "85a3b5efb1c2dbf87af948217448fec01339786e7805fd591ded17118d3f91a7"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+        "sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+        "sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+      }
+    ],
+    "checkpoint_path": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/checkpoint/frozen_centeredsquare_steady_step3200.pt",
+        "sha256": "23c7b18fb44316fca28bef0aeac4458235c100b99b2b0c4503d7ae5770cc6fe9"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/selected_validation_step7200.pt",
+        "sha256": "07af06ec5506e5b6a12d9d00f557a4e48fa722be3c2a183df752f0883ad40beb"
+      }
+    ],
+    "model_family": "T2-C with fixed sparse-MoE local candidates",
+    "original_or_revised_init": "archived original (July 2026), no September repair",
+    "training_seed": [
+      202607281,
+      1248
+    ],
+    "E2_checkpoint": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/e2_router/best.pt",
+      "sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac"
+    },
+    "gate_checkpoint": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/gate_sh/best.pt",
+      "sha256": "732059a2cf19acf6b4681590fa2a8a43ad4babdc2c5814638ed438c1dc5cafb0"
+    },
+    "gate_seed": 42001,
+    "candidate_r": "steady",
+    "candidate_s": "hopf",
+    "E2_selection": "Hopf",
+    "E2_probabilities": [
+      0.23332267999649048,
+      0.7147641181945801,
+      0.051913198083639145
+    ],
+    "alpha": 0.7718048691749573,
+    "split": "heldout",
+    "trajectory_id": "SH_Re95.1",
+    "window_id": 7814,
+    "window_index": 0,
+    "t0": 8.0,
+    "dt_output": 4.0,
+    "k": 24,
+    "K": 24,
+    "snapshot_time": 104.0,
+    "duration": 96.0,
+    "mesh": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/centeredSquare_CN09_graded_Re100_internal_final_reference.vtk",
+      "sha256": "57423d8ebcca3f1aaf8d18311366c7f05a0df6b9f10f5973ed75e3334c7d5175"
+    },
+    "data_association": "cell",
+    "crop_extent": [
+      2,
+      17,
+      0,
+      4
+    ],
+    "recovery": "existing frozen rollout coefficients, freshly decoded; E2/gate CPU inference only",
+    "quadratic_metric_max_delta": 0.0,
+    "metric_checks": {
+      "candidate1_Eu": 0.0,
+      "candidate1_Ep": 0.0,
+      "candidate2_Eu": 0.0,
+      "candidate2_Ep": 0.0,
+      "prediction_Eu": 0.0,
+      "prediction_Ep": 0.0,
+      "e2_Eu": 0.0,
+      "e2_Ep": 0.0
+    },
+    "reference_type": "POD reconstruction",
+    "velocity_definition": "u,v in physical coefficient scale; speed=hypot(u,v); pointwise velocity error=norm(u_pred-u_ref)",
+    "pressure_definition": "native kinematic pressure p (pressure divided by density), no density multiplication; weighted zero-mean gauge",
+    "nondimensional_scales": "native POD physical scale retained; no additional u/U or p/U^2 rescaling; independent case color scales, not a common nondimensional comparison",
+    "gauge_correction": "independent quadrature-weighted domain-zero-mean for every pressure field; not fitted to the error",
+    "interpolation": "none for cell fields; piecewise-linear on original surface triangles for Circular point fields",
+    "fluid_mask": "original VTK fluid topology; solid interiors have no triangles",
+    "integration_weights": "native point_areas, full computational domain",
+    "missing_points": 0,
+    "nonfinite_points": 0,
+    "selection_rule": "ascending heldout Re, then first archived/common valid window by start index; final output of full saved rollout; no metric sorting",
+    "snapshot_metrics": {
+      "reference": {
+        "Eu": 0.0,
+        "Ep": 0.0
+      },
+      "candidate1": {
+        "Eu": 0.022064389069577094,
+        "Ep": 0.018418876322307542
+      },
+      "candidate2": {
+        "Eu": 0.02104398090777403,
+        "Ep": 0.06928211825570543
+      },
+      "prediction": {
+        "Eu": 0.018347293137663843,
+        "Ep": 0.029460052032271117
+      },
+      "e2": {
+        "Eu": 0.02104398090777403,
+        "Ep": 0.06928211825570543
+      }
+    },
+    "metric_units": "fraction (multiply by 100 for percent)",
+    "training_performed": false,
+    "errors_computed_on": "full domain, not cropped ROI",
+    "snapshot_arrays": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/field_redraw_20260922/data/square_sh.npz",
+      "sha256": "ae481e3e4c6ddf901fd623c864f3ba49ae51e3c6914f7d7feaa35a2b3e0c94f4"
+    },
+    "case_id": "square_sh",
+    "mesh_alignment_max_abs": 1.9073486328125e-06,
+    "plot_geometry": "square_sh_geometry.npz",
+    "plot_triangles": 18800,
+    "plot_vertices": 9653,
+    "training_seed_source": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/training_centeredsquare_steady_rank999.json",
+      "sha256": "ae25369e813441b2b1e2c12fb6235c8647319877fa35591cdd04d556194328ea"
+    },
+    "plot_scale_records": [
+      {
+        "figure": "fusion_comparison_sh_square_pinball_pressure",
+        "field": "pressure",
+        "methods": [
+          "e2",
+          "prediction"
+        ],
+        "field_vmin": -1.1082215567611067,
+        "field_vmax": 1.1082215567611067,
+        "error_vmin": 0,
+        "error_vmax": 0.02357675206421468,
+        "clipped": false,
+        "saturation_fraction": {
+          "e2": 0.0,
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          2,
+          17,
+          0,
+          4
+        ]
+      },
+      {
+        "figure": "fusion_comparison_sh_square_pinball_velocity",
+        "field": "velocity",
+        "methods": [
+          "e2",
+          "prediction"
+        ],
+        "field_vmin": 0.0,
+        "field_vmax": 1.3714243394545802,
+        "error_vmin": 0,
+        "error_vmax": 0.07536010608562774,
+        "clipped": false,
+        "saturation_fraction": {
+          "e2": 0.0,
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          2,
+          17,
+          0,
+          4
+        ]
+      }
+    ],
+    "local_array": "data/square_sh.npz",
+    "local_geometry": "data/square_sh_geometry.npz",
+    "local_geometry_sha256": "2046478dd4eaf477d15395c824837533e62a56413b382945834d2cffd2b4fa91"
+  },
+  {
+    "case": "Fluidic pinball",
+    "geometry": "three circular cylinders; original finite-volume topology",
+    "regime_or_overlap": "SH",
+    "Re": 17.0,
+    "source_field_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/eval_pod_coefficients_v2/steady/final_test/Re_017.000_pod_coefficients.npz",
+      "sha256": "5b284ba6021785092a5b7a4a4175658fb4430464583da2b6c71d64937b6cbfd3"
+    },
+    "reference_path": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/eval_pod_coefficients_v2/steady/final_test/Re_017.000_pod_coefficients.npz",
+      "sha256": "5b284ba6021785092a5b7a4a4175658fb4430464583da2b6c71d64937b6cbfd3"
+    },
+    "basis_sources": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/assets/steady_rank999_trainval.npz",
+        "sha256": "e79bc1c013c6cfb000875c7b93b1cdafef3d22cfc0e5f791d25359d7f7358440"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/assets/hopf_rank999_trainval.npz",
+        "sha256": "44915c5143ceceae37a3568e72c6bf51a35504d6e7add60249bd4fa7842c7d5e"
+      }
+    ],
+    "checkpoint_path": [
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/steady_b1_rank999_20260806/runs/formal/FluidicPinballV2_Steady_rank999_B1_seed1248/best_validation.pt",
+        "sha256": "2ab91013c335645ec5424d2cd3d6396ddcf8ce9f9e08b77a347e1b13d0aaf3cf"
+      },
+      {
+        "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/hopf_b1_rank999_20260806/runs/formal/FluidicPinballV2_Hopf_rank999_B1_seed1248/best_validation.pt",
+        "sha256": "8be7a5552105116c72fa892b01e3670453de04bd753036ff4080faa75942b3d4"
+      }
+    ],
+    "model_family": "T2-C with Deep-FNN-H3 candidates",
+    "original_or_revised_init": "archived B1 Deep-FNN-H3; quadratic-branch repair not applicable",
+    "training_seed": [
+      1248,
+      1248
+    ],
+    "E2_checkpoint": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/e2_router/best.pt",
+      "sha256": "62ade4d7d2b9dae66ed08691dc477f53f59d97efba6cb71cb555a48ab5f5ee07"
+    },
+    "gate_checkpoint": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/gate_sh/best.pt",
+      "sha256": "6d62030656f5cb5722e017867cddca2d4bea8c54cf57e80576eb9d54d38f289a"
+    },
+    "gate_seed": 42001,
+    "candidate_r": "Steady",
+    "candidate_s": "Hopf",
+    "E2_selection": "Steady",
+    "E2_probabilities": [
+      0.6803479790687561,
+      0.3168075680732727,
+      0.0028444549534469843
+    ],
+    "alpha": 0.9083445072174072,
+    "split": "final_test",
+    "trajectory_id": "SH_Re17.0",
+    "window_id": 514,
+    "window_index": 0,
+    "t0": 0.75,
+    "dt_output": 0.25,
+    "k": 56,
+    "K": 56,
+    "snapshot_time": 14.75,
+    "duration": 14.0,
+    "mesh": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/rom_assets_v2/reference_vtk/fluidicPinball_production_reference.vtk",
+      "sha256": "e35af4c91db00c40d8896b2535ed0ae6940248d31e0e2c54652098743b2b411b"
+    },
+    "data_association": "cell",
+    "crop_extent": [
+      -3,
+      9,
+      -3,
+      3
+    ],
+    "recovery": "new frozen inference of ONE preselected K56 window using original evaluator; no retraining or model selection",
+    "elapsed_seconds": 2.7800581455230713,
+    "final_test_seal": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidic_pinball_fusion_v1/runs/E2_T2C_K24_20260806_STRICT_V1/full_rollout_20260807_V1/results/FINAL_TEST_SEAL.json",
+      "sha256": "0c31c52c2170662d951ead51021ef5feef44ce8304923b1174d5bf84a51c233b"
+    },
+    "metric_checks": {
+      "candidate1_Eu": 0.0,
+      "candidate1_Ep": 0.0,
+      "candidate2_Eu": 0.0,
+      "candidate2_Ep": 0.0,
+      "prediction_Eu": 8.673617379884035e-19,
+      "prediction_Ep": 8.673617379884035e-19,
+      "e2_Eu": 0.0,
+      "e2_Ep": 0.0
+    },
+    "quadratic_metric_max_delta": 8.673617379884035e-19,
+    "reference_type": "POD reconstruction",
+    "velocity_definition": "u,v in physical coefficient scale; speed=hypot(u,v); pointwise velocity error=norm(u_pred-u_ref)",
+    "pressure_definition": "native kinematic pressure p (pressure divided by density), no density multiplication; weighted zero-mean gauge",
+    "nondimensional_scales": "native POD physical scale retained; no additional u/U or p/U^2 rescaling; independent case color scales, not a common nondimensional comparison",
+    "gauge_correction": "independent quadrature-weighted domain-zero-mean for every pressure field; not fitted to the error",
+    "interpolation": "none for cell fields; piecewise-linear on original surface triangles for Circular point fields",
+    "fluid_mask": "original VTK fluid topology; solid interiors have no triangles",
+    "integration_weights": "native point_areas, full computational domain",
+    "missing_points": 0,
+    "nonfinite_points": 0,
+    "selection_rule": "ascending heldout Re, then first archived/common valid window by start index; final output of full saved rollout; no metric sorting",
+    "snapshot_metrics": {
+      "reference": {
+        "Eu": 0.0,
+        "Ep": 0.0
+      },
+      "candidate1": {
+        "Eu": 0.00446210476068311,
+        "Ep": 0.005335190863742114
+      },
+      "candidate2": {
+        "Eu": 0.00030240331915631333,
+        "Ep": 0.016002852753639225
+      },
+      "prediction": {
+        "Eu": 0.004053286277204371,
+        "Ep": 0.005061291158691696
+      },
+      "e2": {
+        "Eu": 0.00446210476068311,
+        "Ep": 0.005335190863742114
+      }
+    },
+    "metric_units": "fraction (multiply by 100 for percent)",
+    "training_performed": false,
+    "errors_computed_on": "full domain, not cropped ROI",
+    "snapshot_arrays": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/field_redraw_20260922/data/pinball_sh.npz",
+      "sha256": "7d796281b6879e719175ea2fac64d90aca3a9de7fbd23aeb8ce2847829b3cd68"
+    },
+    "case_id": "pinball_sh",
+    "mesh_alignment_max_abs": 4.824276542692019e-05,
+    "geometry_coordinate_source": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/data_npz/mesh/mesh_production.npz",
+    "geometry_metadata": "D: 1.0\nradius: 0.5\ntriangle_side: 1.5\ndomain: {xmin: -6.0, xmax: 20.0, ymin: -6.0, ymax: 6.0}\nz: {min: 0.0, max: 0.1, cells: 1}\ncylinders:\n  frontCylinder: [-1.299038105676658, 0.0]\n  upperCylinder: [0.0, 0.75]\n  lowerCylinder: [0.0, -0.75]\nboundaries:\n  inlet: {U: \"fixedValue uniform (1 0 0)\", p: zeroGradient}\n  top_bottom: {U: slip, p: zeroGradient}\n  outlet: {U: zeroGradient, p: \"fixedValue uniform 0\"}\n  cylinders: {U: noSlip, p: zeroGradient}\n  front_back: empty\n\n",
+    "mesh_hash_contract": "400800bff33c67c71488899527b17e97e32b4a5e01fd6f8105990ba08519421f",
+    "plot_geometry": "pinball_sh_geometry.npz",
+    "plot_triangles": 70194,
+    "plot_vertices": 36240,
+    "geometry_coordinate_evidence": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2/data_npz/mesh/mesh_production.npz",
+      "sha256": "19e7354f53ff11bc79afe16db159f7ee877783522c9cea145b76cb55d41719e6"
+    },
+    "plot_scale_records": [
+      {
+        "figure": "fusion_comparison_sh_square_pinball_pressure",
+        "field": "pressure",
+        "methods": [
+          "e2",
+          "prediction"
+        ],
+        "field_vmin": -2.020866200538268,
+        "field_vmax": 2.020866200538268,
+        "error_vmin": 0,
+        "error_vmax": 0.8229249689093145,
+        "clipped": false,
+        "saturation_fraction": {
+          "e2": 0.0,
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          -3,
+          9,
+          -3,
+          3
+        ]
+      },
+      {
+        "figure": "fusion_comparison_sh_square_pinball_velocity",
+        "field": "velocity",
+        "methods": [
+          "e2",
+          "prediction"
+        ],
+        "field_vmin": 0.0,
+        "field_vmax": 1.476375918496468,
+        "error_vmin": 0,
+        "error_vmax": 1.476129618895735,
+        "clipped": false,
+        "saturation_fraction": {
+          "e2": 0.0,
+          "prediction": 0.0
+        },
+        "crop_extent": [
+          -3,
+          9,
+          -3,
+          3
+        ]
+      }
+    ],
+    "local_array": "data/pinball_sh.npz",
+    "local_geometry": "data/pinball_sh_geometry.npz",
+    "local_geometry_sha256": "a7a8e1aa926b28bde0f7836fb9547e11226f0ed7bfc67d5cbd4749b695867819"
+  }
+]

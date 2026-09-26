@@ -1,0 +1,240 @@
+{"kind":"deck","id":"pr/87pxnd","name":"Deck"}
+{"kind":"layout","layoutId":"39e62c0d-9946-4898-b6cf-dad823e75442","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"495e20b8-d970-427c-82b4-a4bcda05643b","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/omlbn9","slide":1,"title":"(a) Two-level RAL-MoE-ROM hierarchy","textShapes":71}
+{"kind":"shape","id":"sh/7qd83m9c","slide":1,"name":"module-1","bbox":[6,3,1660,506]}
+{"kind":"shape","id":"sh/8rmpcrqx","slide":1,"name":"module-2","bbox":[6,534,1660,392]}
+{"kind":"textbox","id":"sh/tsvq5wr2","slide":1,"name":"module-3","text":"(a) Two-level RAL-MoE-ROM hierarchy","textPreview":"(a) Two-level RAL-MoE-ROM hierarchy","textChars":35,"textLines":1,"bbox":[25,13,1080,46]}
+{"kind":"textbox","id":"sh/ut47eh8n","slide":1,"name":"module-4","text":"(b) One regime-local specialist (e.g., Hopf specialist)","textPreview":"(b) One regime-local specialist (e.g., Hopf specialist)","textChars":55,"textLines":1,"bbox":[25,541,1030,43]}
+{"kind":"shape","id":"sh/vud87m98","slide":1,"name":"module-5","bbox":[24,119,137,119]}
+{"kind":"textbox","id":"sh/gvmpgrqt","slide":1,"name":"module-6","text":"μ","textPreview":"μ","textChars":1,"textLines":1,"bbox":[59,141,62,39]}
+{"kind":"textbox","id":"sh/hwvq9w7e","slide":1,"name":"module-7","text":"(physical\nparameter)","textPreview":"(physical | parameter)","textChars":20,"textLines":2,"bbox":[31,178,122,46]}
+{"kind":"shape","id":"sh/ax072x8j","slide":1,"name":"Editable tapered module","bbox":[202,106,160,125]}
+{"kind":"textbox","id":"sh/by9ov294","slide":1,"name":"module-8","text":"E2","textPreview":"E2","textChars":2,"textLines":1,"bbox":[219,125,126,29]}
+{"kind":"textbox","id":"sh/napcnyxk","slide":1,"name":"module-9","text":"parameter-only\nrouter","textPreview":"parameter-only | router","textChars":21,"textLines":2,"bbox":[211,153,143,48]}
+{"kind":"textbox","id":"sh/29gvetwz","slide":1,"name":"module-10","text":"π(μ)","textPreview":"π(μ)","textChars":4,"textLines":1,"bbox":[222,220,113,40]}
+{"kind":"shape","id":"sh/pc7up8fq","slide":1,"name":"module-11","bbox":[431,112,273,86]}
+{"kind":"textbox","id":"sh/obydg3e5","slide":1,"name":"module-12","text":"Applicability + selection","textPreview":"Applicability + selection","textChars":25,"textLines":1,"bbox":[441,119,252,28]}
+{"kind":"textbox","id":"sh/f65cjyxo","slide":1,"name":"module-13","text":"Top-1 or adjacent Top-2","textPreview":"Top-1 or adjacent Top-2","textChars":23,"textLines":1,"bbox":[439,145,255,25]}
+{"kind":"textbox","id":"sh/e5wbatw3","slide":1,"name":"module-14","text":"(S–H or H–P)","textPreview":"(S–H or H–P)","textChars":12,"textLines":1,"bbox":[452,169,231,25]}
+{"kind":"shape","id":"sh/18nulofe","slide":1,"name":"module-15","bbox":[337,234,405,178]}
+{"kind":"textbox","id":"sh/07edc3et","slide":1,"name":"module-16","text":"Candidate regime-local specialists","textPreview":"Candidate regime-local specialists","textChars":34,"textLines":1,"bbox":[350,239,380,30]}
+{"kind":"shape","id":"sh/ri5cfexc","slide":1,"name":"module-17","bbox":[349,272,120,127]}
+{"kind":"textbox","id":"sh/qhcb69wr","slide":1,"name":"module-18","text":"Steady\nspecialist","textPreview":"Steady | specialist","textChars":17,"textLines":2,"bbox":[354,278,110,45]}
+{"kind":"textbox","id":"sh/udcvi90j","slide":1,"name":"module-19","text":"S","textPreview":"S","textChars":1,"textLines":1,"bbox":[354,323,110,25]}
+{"kind":"shape","id":"sh/gfudkjip","slide":1,"name":"module-20","bbox":[482,272,121,127]}
+{"kind":"textbox","id":"sh/hg3etoza","slide":1,"name":"module-21","text":"Hopf\nspecialist","textPreview":"Hopf | specialist","textChars":15,"textLines":2,"bbox":[487,278,111,45]}
+{"kind":"textbox","id":"sh/ihcvmtgv","slide":1,"name":"module-22","text":"H","textPreview":"H","textChars":1,"textLines":1,"bbox":[487,323,111,25]}
+{"kind":"shape","id":"sh/43edojy1","slide":1,"name":"module-23","bbox":[615,272,119,127]}
+{"kind":"textbox","id":"sh/54nexozm","slide":1,"name":"module-24","text":"Periodic\nspecialist","textPreview":"Periodic | specialist","textChars":19,"textLines":2,"bbox":[620,278,109,45]}
+{"kind":"textbox","id":"sh/q5wvqtgr","slide":1,"name":"module-25","text":"P","textPreview":"P","textChars":1,"textLines":1,"bbox":[620,323,109,25]}
+{"kind":"shape","id":"sh/107ypsju","slide":1,"name":"module-26","bbox":[753,67,241,325]}
+{"kind":"textbox","id":"sh/0zyxwni9","slide":1,"name":"module-27","text":"Selected specialist(s)","textPreview":"Selected specialist(s)","textChars":22,"textLines":1,"bbox":[765,73,215,29]}
+{"kind":"shape","id":"sh/fypgni1o","slide":1,"name":"module-28","bbox":[769,108,211,109]}
+{"kind":"textbox","id":"sh/exgfuxk3","slide":1,"name":"module-29","text":"Specialist r","textPreview":"Specialist r","textChars":12,"textLines":1,"bbox":[780,112,190,29]}
+{"kind":"textbox","id":"sh/o3ih07i5","slide":1,"name":"module-30","text":"⋮","textPreview":"⋮","textChars":1,"textLines":1,"bbox":[851,217,45,31]}
+{"kind":"shape","id":"sh/n29gr21k","slide":1,"name":"module-31","bbox":[769,249,211,131]}
+{"kind":"textbox","id":"sh/210zyx0z","slide":1,"name":"module-32","text":"Specialist s","textPreview":"Specialist s","textChars":12,"textLines":1,"bbox":[780,254,190,28]}
+{"kind":"textbox","id":"sh/xsryxcjm","slide":1,"name":"module-33","text":"(if selected)","textPreview":"(if selected)","textChars":13,"textLines":1,"bbox":[785,280,180,27]}
+{"kind":"shape","id":"sh/8nm1wb2p","slide":1,"name":"Editable tapered module","bbox":[1023,133,127,182]}
+{"kind":"textbox","id":"sh/tov2pg3u","slide":1,"name":"module-34","text":"Independent\nlocal rollouts","textPreview":"Independent | local rollouts","textChars":26,"textLines":2,"bbox":[1029,177,115,49]}
+{"kind":"textbox","id":"sh/614julkj","slide":1,"name":"module-35","text":"(in native\ncoordinates)","textPreview":"(in native | coordinates)","textChars":23,"textLines":2,"bbox":[1031,226,111,48]}
+{"kind":"shape","id":"sh/7md0n6l4","slide":1,"name":"Editable tapered module","bbox":[1178,153,119,141]}
+{"kind":"textbox","id":"sh/kz21sb2d","slide":1,"name":"module-36","text":"Reconstruct","textPreview":"Reconstruct","textChars":11,"textLines":1,"bbox":[1184,188,107,29]}
+{"kind":"textbox","id":"sh/l0bilg3y","slide":1,"name":"module-37","text":"to physical\nspace","textPreview":"to physical | space","textChars":17,"textLines":2,"bbox":[1186,214,102,49]}
+{"kind":"shape","id":"sh/yxkjq1k7","slide":1,"name":"module-38","bbox":[1324,141,152,149]}
+{"kind":"textbox","id":"sh/jyt0j6ls","slide":1,"name":"module-39","text":"T2-C","textPreview":"T2-C","textChars":4,"textLines":1,"bbox":[1334,155,132,31]}
+{"kind":"textbox","id":"sh/4v614v2h","slide":1,"name":"module-40","text":"physical-space\nfusion","textPreview":"physical-space | fusion","textChars":21,"textLines":2,"bbox":[1330,188,140,49]}
+{"kind":"textbox","id":"sh/5wf2x032","slide":1,"name":"module-41","text":"α(μ̃, π̄, dₙ)","textPreview":"α(μ̃, π̄, dₙ)","textChars":13,"textLines":1,"bbox":[1329,240,142,34]}
+{"kind":"shape","id":"sh/z21cjy9g","slide":1,"name":"module-42","bbox":[1505,135,148,164]}
+{"kind":"textbox","id":"sh/e1svat8b","slide":1,"name":"module-43","text":"Predicted\nphysical fields","textPreview":"Predicted | physical fields","textChars":25,"textLines":2,"bbox":[1513,142,132,49]}
+{"kind":"textbox","id":"sh/1ojel8rm","slide":1,"name":"module-44","text":"û(t), p̂°(t)","textPreview":"û(t), p̂°(t)","textChars":12,"textLines":1,"bbox":[1511,199,136,31]}
+{"kind":"shape","id":"sh/nqlwny9s","slide":1,"name":"module-45","bbox":[24,422,362,71]}
+{"kind":"textbox","id":"sh/mpcved87","slide":1,"name":"module-46","text":"Physical history ℋₙ","textPreview":"Physical history ℋₙ","textChars":19,"textLines":1,"bbox":[38,430,334,30]}
+{"kind":"textbox","id":"sh/9s3ep8ry","slide":1,"name":"module-47","text":"(initialization for selected specialist(s))","textPreview":"(initialization for selected specialist(s))","textChars":43,"textLines":1,"bbox":[33,461,344,27]}
+{"kind":"shape","id":"sh/orudg3qd","slide":1,"name":"module-48","bbox":[1294,417,206,77]}
+{"kind":"textbox","id":"sh/3uhcbe98","slide":1,"name":"module-49","text":"Chart-independent","textPreview":"Chart-independent","textChars":17,"textLines":1,"bbox":[1301,428,191,28]}
+{"kind":"textbox","id":"sh/2t8v2983","slide":1,"name":"module-50","text":"descriptor dₙ","textPreview":"descriptor dₙ","textChars":13,"textLines":1,"bbox":[1301,455,191,29]}
+{"kind":"shape","id":"sh/6pgfahsb","slide":1,"name":"module-51","bbox":[160.95,171.95,0.1,0.1]}
+{"kind":"shape","id":"sh/7qpgjmtw","slide":1,"name":"module-52","bbox":[201.95,171.95,0.1,0.1]}
+{"kind":"shape","id":"sh/sryhcrah","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ts7ylwb2","slide":1,"name":"module-53","bbox":[361.95,155.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ilwf6xsf","slide":1,"name":"module-54","bbox":[430.95,155.95,0.1,0.1]}
+{"kind":"shape","id":"sh/jm5gf2t0","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/knex87al","slide":1,"name":"module-55","bbox":[703.95,155.95,0.1,0.1]}
+{"kind":"shape","id":"sh/5o7yhcb6","slide":1,"name":"module-56","bbox":[752.95,155.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ahwf2xsj","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/bi5gb2to","slide":1,"name":"module-57","bbox":[458.95,232.95,0.1,0.1]}
+{"kind":"shape","id":"sh/dcbih0v6","slide":1,"name":"module-58","bbox":[469.95,197.95,0.1,0.1]}
+{"kind":"shape","id":"sh/cb21ovu1","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/rat0fqdg","slide":1,"name":"module-59","bbox":[549.95,232.95,0.1,0.1]}
+{"kind":"shape","id":"sh/q9kjmlcv","slide":1,"name":"module-60","bbox":[556.95,197.95,0.1,0.1]}
+{"kind":"shape","id":"sh/p8bidgva","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/4721kvup","slide":1,"name":"module-61","bbox":[663.95,232.95,0.1,0.1]}
+{"kind":"shape","id":"sh/3m90bqd4","slide":1,"name":"module-62","bbox":[658.95,197.95,0.1,0.1]}
+{"kind":"shape","id":"sh/2l0jilcj","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/hkri9gve","slide":1,"name":"module-63","bbox":[993.95,220.95,0.1,0.1]}
+{"kind":"shape","id":"sh/gji1gbut","slide":1,"name":"module-64","bbox":[1022.95,220.95,0.1,0.1]}
+{"kind":"shape","id":"sh/sju5sr61","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/tk361w7m","slide":1,"name":"module-65","bbox":[1149.95,220.95,0.1,0.1]}
+{"kind":"shape","id":"sh/6xsnqhov","slide":1,"name":"module-66","bbox":[1177.95,220.95,0.1,0.1]}
+{"kind":"shape","id":"sh/7ilozmpg","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/gnu5wr6x","slide":1,"name":"module-67","bbox":[1296.95,220.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ho365w7i","slide":1,"name":"module-68","bbox":[1323.95,220.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ulcnu1or","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/fmlo3mpc","slide":1,"name":"module-69","bbox":[1475.95,220.95,0.1,0.1]}
+{"kind":"shape","id":"sh/4rep0b69","slide":1,"name":"module-70","bbox":[1504.95,220.95,0.1,0.1]}
+{"kind":"shape","id":"sh/psn69g7u","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/zmp8za9w","slide":1,"name":"module-71","bbox":[385.95,455.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ylgrq58b","slide":1,"name":"module-72","bbox":[1293.95,455.95,0.1,0.1]}
+{"kind":"shape","id":"sh/l8rq1kr2","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/07y9sfqh","slide":1,"name":"module-73","bbox":[540.95,455.95,0.1,0.1]}
+{"kind":"shape","id":"sh/bip8vq9k","slide":1,"name":"module-74","bbox":[540.95,411.95,0.1,0.1]}
+{"kind":"shape","id":"sh/qhgrml8z","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/dk7qx0rq","slide":1,"name":"module-75","bbox":[1396.95,416.95,0.1,0.1]}
+{"kind":"shape","id":"sh/cjy9ovq5","slide":1,"name":"module-76","bbox":[1396.95,289.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ve9s7up4","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ad0ryp8j","slide":1,"name":"module-77","bbox":[22,691,118,90]}
+{"kind":"textbox","id":"sh/zux4bq9s","slide":1,"name":"module-78","text":"Physical\nhistory ℋₙ","textPreview":"Physical | history ℋₙ","textChars":19,"textLines":2,"bbox":[28,709,106,53]}
+{"kind":"shape","id":"sh/yto3ils7","slide":1,"name":"module-79","bbox":[167,683,150,112]}
+{"kind":"textbox","id":"sh/lgfmd0ry","slide":1,"name":"module-80","text":"Chart-local\nPOD encoding","textPreview":"Chart-local | POD encoding","textChars":24,"textLines":2,"bbox":[175,698,134,51]}
+{"kind":"textbox","id":"sh/0f65kvad","slide":1,"name":"module-81","text":"(Φᵤ⁽ʳ⁾, Φₚ⁽ʳ⁾)","textPreview":"(Φᵤ⁽ʳ⁾, Φₚ⁽ʳ⁾)","textChars":14,"textLines":1,"bbox":[174,749,136,34]}
+{"kind":"shape","id":"sh/7ix4fq9o","slide":1,"name":"module-82","bbox":[344,676,146,119]}
+{"kind":"textbox","id":"sh/mhonm5sj","slide":1,"name":"module-83","text":"Local reduced\nhistory","textPreview":"Local reduced | history","textChars":21,"textLines":2,"bbox":[350,681,134,48]}
+{"kind":"textbox","id":"sh/9kzmh0ru","slide":1,"name":"module-84","text":"(aₙ, bₙ)","textPreview":"(aₙ, bₙ)","textChars":8,"textLines":1,"bbox":[352,730,130,31]}
+{"kind":"textbox","id":"sh/8jq5ova9","slide":1,"name":"module-85","text":"(+ context)","textPreview":"(+ context)","textChars":11,"textLines":1,"bbox":[353,762,128,29]}
+{"kind":"shape","id":"sh/3md436tk","slide":1,"name":"module-86","bbox":[678,581,310,56]}
+{"kind":"textbox","id":"sh/2l43a1sz","slide":1,"name":"module-87","text":"Projected Galerkin backbone Fᵣᴳ","textPreview":"Projected Galerkin backbone Fᵣᴳ","textChars":31,"textLines":1,"bbox":[687,586,292,27]}
+{"kind":"textbox","id":"sh/sfito3ml","slide":1,"name":"module-88","text":"(from governing equations)","textPreview":"(from governing equations)","textChars":26,"textLines":1,"bbox":[690,610,287,25]}
+{"kind":"shape","id":"sh/tgrax836","slide":1,"name":"module-89","bbox":[569,652,467,230]}
+{"kind":"textbox","id":"sh/6tgrmd4f","slide":1,"name":"module-90","text":"Velocity sparse-MoE correction","textPreview":"Velocity sparse-MoE correction","textChars":30,"textLines":1,"bbox":[610,658,338,33]}
+{"kind":"textbox","id":"sh/7epsvyl0","slide":1,"name":"module-91","text":"ρ","textPreview":"ρ","textChars":1,"textLines":1,"bbox":[949,659,23,32]}
+{"kind":"textbox","id":"sh/kry9k3mp","slide":1,"name":"module-92","text":"u","textPreview":"u","textChars":1,"textLines":1,"bbox":[968,655,17,18]}
+{"kind":"textbox","id":"sh/5s7at8na","slide":1,"name":"module-93","text":"θᵣ","textPreview":"θᵣ","textChars":2,"textLines":1,"bbox":[968,678,29,18]}
+{"kind":"shape","id":"sh/ipgrit4j","slide":1,"name":"module-94","bbox":[579,707,143,117]}
+{"kind":"textbox","id":"sh/jqpsry54","slide":1,"name":"module-95","text":"Hierarchical\nsparse routing","textPreview":"Hierarchical | sparse routing","textChars":27,"textLines":2,"bbox":[585,714,131,47]}
+{"kind":"textbox","id":"sh/4n2twnmt","slide":1,"name":"module-96","text":"• group Top-1","textPreview":"• group Top-1","textChars":13,"textLines":1,"bbox":[587,762,131,26]}
+{"kind":"textbox","id":"sh/poba5s3e","slide":1,"name":"module-97","text":"• channel Top-2","textPreview":"• channel Top-2","textChars":15,"textLines":1,"bbox":[587,790,131,26]}
+{"kind":"shape","id":"sh/d47apsvi","slide":1,"name":"module-98","bbox":[751,695,177,59]}
+{"kind":"textbox","id":"sh/c3y9gnex","slide":1,"name":"module-99","text":"Shared expert","textPreview":"Shared expert","textChars":13,"textLines":1,"bbox":[758,700,163,28]}
+{"kind":"textbox","id":"sh/b2psnidc","slide":1,"name":"module-100","text":"E₀","textPreview":"E₀","textChars":2,"textLines":1,"bbox":[768,728,143,25]}
+{"kind":"shape","id":"sh/q1gredwr","slide":1,"name":"module-101","bbox":[751,766,177,62]}
+{"kind":"textbox","id":"sh/p0nal8vm","slide":1,"name":"module-102","text":"Top-2 routed experts","textPreview":"Top-2 routed experts","textChars":20,"textLines":1,"bbox":[757,771,165,27]}
+{"kind":"textbox","id":"sh/oze9cne1","slide":1,"name":"module-103","text":"Eₑ₁, Eₑ₂","textPreview":"Eₑ₁, Eₑ₂","textChars":8,"textLines":1,"bbox":[763,798,153,28]}
+{"kind":"shape","id":"sh/3y5sjidg","slide":1,"name":"module-104","bbox":[963,729,62,61]}
+{"kind":"textbox","id":"sh/2dwradwv","slide":1,"name":"module-105","text":"Σ ω","textPreview":"Σ ω","textChars":3,"textLines":1,"bbox":[968,742,52,38]}
+{"kind":"textbox","id":"sh/1cnah8va","slide":1,"name":"module-106","text":"nonlinear + linear + low-rank quadratic responses","textPreview":"nonlinear + linear + low-rank quadratic responses","textChars":49,"textLines":1,"bbox":[591,845,428,29]}
+{"kind":"textbox","id":"sh/gbe983ep","slide":1,"text":"+","textPreview":"+","textChars":1,"textLines":1,"bbox":[1047,651,38,38]}
+{"kind":"shape","id":"sh/6hs7i9cn","slide":1,"name":"module-107","bbox":[1118,674,156,121]}
+{"kind":"textbox","id":"sh/ril8bet8","slide":1,"name":"module-108","text":"Chart-specific\nadvancement","textPreview":"Chart-specific | advancement","textChars":26,"textLines":2,"bbox":[1123,682,146,47]}
+{"kind":"textbox","id":"sh/sjupkjut","slide":1,"name":"module-109","text":"Stepᵣ","textPreview":"Stepᵣ","textChars":5,"textLines":1,"bbox":[1143,729,106,32]}
+{"kind":"textbox","id":"sh/t43qdobe","slide":1,"name":"module-110","text":"(e.g., RK)","textPreview":"(e.g., RK)","textChars":10,"textLines":1,"bbox":[1133,763,126,28]}
+{"kind":"shape","id":"sh/ids7epcr","slide":1,"name":"module-111","bbox":[1363,654,210,159]}
+{"kind":"textbox","id":"sh/je1o7utw","slide":1,"name":"module-112","text":"Algebraic pressure\nreconstruction","textPreview":"Algebraic pressure | reconstruction","textChars":33,"textLines":2,"bbox":[1373,665,190,49]}
+{"kind":"textbox","id":"sh/4fapgzuh","slide":1,"name":"module-113","text":"(Pressure–Poisson +\nlearned correction)","textPreview":"(Pressure–Poisson + | learned correction)","textChars":39,"textLines":2,"bbox":[1374,716,188,47]}
+{"kind":"textbox","id":"sh/5gj694b2","slide":1,"name":"module-114","text":"Qᵣᴾᴾ","textPreview":"Qᵣᴾᴾ","textChars":4,"textLines":1,"bbox":[1405,769,66,34]}
+{"kind":"textbox","id":"sh/u987apcf","slide":1,"name":"module-115","text":"+","textPreview":"+","textChars":1,"textLines":1,"bbox":[1470,769,27,34]}
+{"kind":"textbox","id":"sh/vaho3ut0","slide":1,"name":"module-116","text":"ρ","textPreview":"ρ","textChars":1,"textLines":1,"bbox":[1499,769,23,32]}
+{"kind":"textbox","id":"sh/n214fqxw","slide":1,"name":"module-117","text":"p","textPreview":"p","textChars":1,"textLines":1,"bbox":[1518,765,17,18]}
+{"kind":"textbox","id":"sh/m1s3mlgb","slide":1,"name":"module-118","text":"θᵣ","textPreview":"θᵣ","textChars":2,"textLines":1,"bbox":[1518,788,29,18]}
+{"kind":"textbox","id":"sh/943mh0fm","slide":1,"name":"module-119","text":"Velocity-state update","textPreview":"Velocity-state update","textChars":21,"textLines":1,"bbox":[1093,825,201,34]}
+{"kind":"textbox","id":"sh/83alovy1","slide":1,"name":"module-120","text":"Pressure reconstruction","textPreview":"Pressure reconstruction","textChars":23,"textLines":1,"bbox":[1350,825,239,34]}
+{"kind":"textbox","id":"sh/zy14bqxk","slide":1,"name":"module-121","text":"aₙ₊₁","textPreview":"aₙ₊₁","textChars":4,"textLines":1,"bbox":[1280,700,51,34]}
+{"kind":"textbox","id":"sh/exs3ilgz","slide":1,"name":"module-122","text":"bₙ₊₁","textPreview":"bₙ₊₁","textChars":4,"textLines":1,"bbox":[1588,700,66,34]}
+{"kind":"shape","id":"sh/10jmdgfq","slide":1,"name":"module-123","bbox":[1325.95,619.95,0.1,0.1]}
+{"kind":"shape","id":"sh/0zalkvy5","slide":1,"name":"module-124","bbox":[1325.95,869.95,0.1,0.1]}
+{"kind":"shape","id":"sh/rahk76xo","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/q983e1g3","slide":1,"name":"module-125","bbox":[139.95,736.95,0.1,0.1]}
+{"kind":"shape","id":"sh/gf61o7e1","slide":1,"name":"module-126","bbox":[166.95,736.95,0.1,0.1]}
+{"kind":"shape","id":"sh/hgfihcv6","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/udojmxwv","slide":1,"name":"module-127","bbox":[316.95,736.95,0.1,0.1]}
+{"kind":"shape","id":"sh/fex0f2dg","slide":1,"name":"module-128","bbox":[343.95,736.95,0.1,0.1]}
+{"kind":"shape","id":"sh/4361srex","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/p4zilwvi","slide":1,"name":"module-129","bbox":[489.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/2hojqhwr","slide":1,"name":"module-130","bbox":[546.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/32x0jmdc","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/k7mhgnet","slide":1,"name":"module-131","bbox":[546.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/58vi9sve","slide":1,"name":"module-132","bbox":[546.95,608.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ls3qxk3q","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/0rupof25","slide":1,"name":"module-133","bbox":[546.95,608.95,0.1,0.1]}
+{"kind":"shape","id":"sh/zqlovalk","slide":1,"name":"module-134","bbox":[677.95,608.95,0.1,0.1]}
+{"kind":"shape","id":"sh/epc7mpkf","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/9wnq14j2","slide":1,"name":"module-135","bbox":[489.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/8vupsz2h","slide":1,"name":"module-136","bbox":[519.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/nul8zulw","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/mtc7qpkb","slide":1,"name":"module-137","bbox":[519.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/xknq54jy","slide":1,"name":"module-138","bbox":[519.95,760.95,0.1,0.1]}
+{"kind":"shape","id":"sh/wzepwz2d","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/u58nq10v","slide":1,"name":"module-139","bbox":[519.95,760.95,0.1,0.1]}
+{"kind":"shape","id":"sh/f6h4j61g","slide":1,"name":"module-140","bbox":[578.95,760.95,0.1,0.1]}
+{"kind":"shape","id":"sh/g7q5sbi1","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/h8zmlgjm","slide":1,"name":"module-141","bbox":[987.95,608.95,0.1,0.1]}
+{"kind":"shape","id":"sh/298nul07","slide":1,"name":"module-142","bbox":[1065.95,608.95,0.1,0.1]}
+{"kind":"shape","id":"sh/3uh4nq1c","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/4vq5wbix","slide":1,"name":"module-143","bbox":[1065.95,608.95,0.1,0.1]}
+{"kind":"shape","id":"sh/pwzmpgji","slide":1,"name":"module-144","bbox":[1065.95,650.95,0.1,0.1]}
+{"kind":"shape","id":"sh/qxsnyl03","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ry14rqho","slide":1,"name":"module-145","bbox":[721.95,740.95,0.1,0.1]}
+{"kind":"shape","id":"sh/bqx0nil4","slide":1,"name":"module-146","bbox":[729.95,740.95,0.1,0.1]}
+{"kind":"shape","id":"sh/apojux4j","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/xszips3u","slide":1,"name":"module-147","bbox":[729.95,740.95,0.1,0.1]}
+{"kind":"shape","id":"sh/wrq1wnmp","slide":1,"name":"module-148","bbox":[729.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/juh0r2l0","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/yt8jyx4f","slide":1,"name":"module-149","bbox":[729.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/lwzitc36","slide":1,"name":"module-150","bbox":[750.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/kvq107ml","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/7i10vmlc","slide":1,"name":"module-151","bbox":[721.95,779.95,0.1,0.1]}
+{"kind":"shape","id":"sh/6h8j2h4r","slide":1,"name":"module-152","bbox":[729.95,779.95,0.1,0.1]}
+{"kind":"shape","id":"sh/4nahsr2p","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/5ojilcja","slide":1,"name":"module-153","bbox":[729.95,779.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ilszqhkz","slide":1,"name":"module-154","bbox":[729.95,797.95,0.1,0.1]}
+{"kind":"shape","id":"sh/3m10jm14","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/gjaho72t","slide":1,"name":"module-155","bbox":[729.95,797.95,0.1,0.1]}
+{"kind":"shape","id":"sh/hkjihcje","slide":1,"name":"module-156","bbox":[750.95,797.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ux8zmxkn","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/vy10f218","slide":1,"name":"module-157","bbox":[927.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/8vqhk72h","slide":1,"name":"module-158","bbox":[944.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/twzidsj2","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/gzapkn65","slide":1,"name":"module-159","bbox":[944.95,723.95,0.1,0.1]}
+{"kind":"shape","id":"sh/h0j6ts7q","slide":1,"name":"module-160","bbox":[944.95,748.95,0.1,0.1]}
+{"kind":"shape","id":"sh/uxs7idoz","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/vy1oripk","slide":1,"name":"module-161","bbox":[944.95,748.95,0.1,0.1]}
+{"kind":"shape","id":"sh/4napon61","slide":1,"name":"module-162","bbox":[962.95,748.95,0.1,0.1]}
+{"kind":"shape","id":"sh/5o36xs7m","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/i1s7mdov","slide":1,"name":"module-163","bbox":[927.95,797.95,0.1,0.1]}
+{"kind":"shape","id":"sh/3m1ovipg","slide":1,"name":"module-164","bbox":[944.95,797.95,0.1,0.1]}
+{"kind":"shape","id":"sh/srups76d","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ds3q1cni","slide":1,"name":"module-165","bbox":[944.95,797.95,0.1,0.1]}
+{"kind":"shape","id":"sh/nm5sr690","slide":1,"name":"module-166","bbox":[944.95,772.95,0.1,0.1]}
+{"kind":"shape","id":"sh/2lwri18f","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/po7atgrq","slide":1,"name":"module-167","bbox":[944.95,772.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ony9kbql","slide":1,"name":"module-168","bbox":[962.95,772.95,0.1,0.1]}
+{"kind":"shape","id":"sh/fi5snm9o","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/ehwreh83","slide":1,"name":"module-169","bbox":[1024.95,759.95,0.1,0.1]}
+{"kind":"shape","id":"sh/1knapwru","slide":1,"name":"module-170","bbox":[1065.95,759.95,0.1,0.1]}
+{"kind":"shape","id":"sh/0je9grq9","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/zepszqp8","slide":1,"name":"module-171","bbox":[1065.95,759.95,0.1,0.1]}
+{"kind":"shape","id":"sh/ydgbql8n","slide":1,"name":"module-172","bbox":[1065.95,688.95,0.1,0.1]}
+{"kind":"shape","id":"sh/u9kvypsv","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/vatcru9g","slide":1,"name":"module-173","bbox":[1084.95,669.95,0.1,0.1]}
+{"kind":"shape","id":"sh/wb2d0zal","slide":1,"name":"module-174","bbox":[1091.95,669.95,0.1,0.1]}
+{"kind":"shape","id":"sh/hcbutkr6","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/idkv2psr","slide":1,"name":"module-175","bbox":[1091.95,669.95,0.1,0.1]}
+{"kind":"shape","id":"sh/jedcvu9c","slide":1,"name":"module-176","bbox":[1091.95,736.95,0.1,0.1]}
+{"kind":"shape","id":"sh/4fmd4zax","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/5gvex4ri","slide":1,"name":"module-177","bbox":[1091.95,736.95,0.1,0.1]}
+{"kind":"shape","id":"sh/yh0vq5sn","slide":1,"name":"module-178","bbox":[1117.95,736.95,0.1,0.1]}
+{"kind":"shape","id":"sh/zi9cjat8","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/18z6lsf2","slide":1,"name":"module-179","bbox":[1273.95,738.95,0.1,0.1]}
+{"kind":"shape","id":"sh/07qpc7yh","slide":1,"name":"module-180","bbox":[1362.95,738.95,0.1,0.1]}
+{"kind":"shape","id":"sh/zmhoj2xw","slide":1,"bbox":[0,0,0,0]}
+{"kind":"shape","id":"sh/el87axgb","slide":1,"name":"module-181","bbox":[1572.95,738.95,0.1,0.1]}
+{"kind":"shape","id":"sh/9cj6pcfy","slide":1,"name":"module-182","bbox":[1652.95,738.95,0.1,0.1]}
+{"kind":"shape","id":"sh/obapg7yd","slide":1,"bbox":[0,0,0,0]}
+{"kind":"image","id":"im/wn21or29","slide":1,"name":"","alt":"Original user-supplied flow illustration","bbox":[358,348,103,44]}
+{"kind":"image","id":"im/8ji1k72d","slide":1,"name":"","alt":"Original user-supplied flow illustration","bbox":[491,348,104,44]}
+{"kind":"image","id":"im/0vi1g721","slide":1,"name":"","alt":"Original user-supplied flow illustration","bbox":[623,348,103,44]}
+{"kind":"image","id":"im/2xwfmt03","slide":1,"name":"","alt":"Original user-supplied flow illustration","bbox":[777,145,195,59]}
+{"kind":"image","id":"im/fu5gbyhc","slide":1,"name":"","alt":"Original user-supplied flow illustration","bbox":[777,309,195,60]}
+{"kind":"image","id":"im/fmh0rmxg","slide":1,"name":"","alt":"Original user-supplied flow illustration","bbox":[1513,235,132,56]}
+{"kind":"notes","id":"nt/omlbn9","slide":1,"text":"Source: C:/Users/PANXY1~1/AppData/Local/Temp/codex-clipboard-ff556869-1376-4d06-aa37-ef328edd6874.png. Faithful editable reconstruction of the user-provided figure. Text, panels, module outlines and arrow segments are native PowerPoint objects. Six flow thumbnails remain raster images with native, reversible cropping. Mathematical labels are editable text using Times New Roman and Cambria Math; exact typesetting may differ slightly from the source raster. All wording and connectivity follow the supplied image, not a new method revision."}

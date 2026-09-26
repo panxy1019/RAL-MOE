@@ -1,0 +1,22 @@
+{
+  "width_inches": 5.5,
+  "dpi": 400,
+  "font_family": "DejaVu Sans",
+  "font_size": 8,
+  "tick_size": 7,
+  "velocity_cmap": "cividis",
+  "pressure_cmap": "RdBu_r",
+  "error_cmap": "magma",
+  "color_scale_scope": "full computational domain union of every compared field within the figure row; separate by case",
+  "clipping": false,
+  "overview": ["circular_p", "square_hp", "pinball_hp"],
+  "fusion": {"hp": ["square_hp", "pinball_hp"], "sh": ["square_sh", "pinball_sh"]},
+  "crop_extent": {
+    "circular_p": [-2, 10, -3, 3],
+    "square_hp": [2, 17, 0, 4],
+    "square_sh": [2, 17, 0, 4],
+    "pinball_hp": [-3, 9, -3, 3],
+    "pinball_sh": [-3, 9, -3, 3]
+  },
+  "crop_rule": "geometry-only ROI: include entire obstacle(s) and downstream wake; identical for every method; not error-selected"
+}

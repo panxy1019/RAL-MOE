@@ -1,0 +1,86 @@
+{
+  "figures": {
+    "SH": {
+      "selected_and_metrics_unchanged": true,
+      "cache_weights_mesh_bases_hashes_unchanged": true,
+      "output_hashes_verified": true,
+      "selected": {
+        "window_index": 0,
+        "Re": 95.1,
+        "split": "heldout",
+        "time_index": 1,
+        "physical_time": 16.0,
+        "last_frame": false,
+        "eligibility_tier": 0,
+        "joint_advantage": 0.012376155605970718,
+        "structure_score": 0.13209620118141174,
+        "metrics": {
+          "s_only": {
+            "velocity_relative_l2": 0.027555719458353195,
+            "pressure_relative_l2": 0.05275907623483462,
+            "joint_field_error": 0.040157397846593904
+          },
+          "h_only": {
+            "velocity_relative_l2": 0.033035958660589886,
+            "pressure_relative_l2": 0.043483450469462906,
+            "joint_field_error": 0.03825970456502639
+          },
+          "t2c": {
+            "velocity_relative_l2": 0.014464764668113788,
+            "pressure_relative_l2": 0.03730233324999756,
+            "joint_field_error": 0.025883548959055674
+          }
+        }
+      }
+    },
+    "HP": {
+      "selected_and_metrics_unchanged": true,
+      "cache_weights_mesh_bases_hashes_unchanged": true,
+      "output_hashes_verified": true,
+      "selected": {
+        "window_index": 5,
+        "Re": 100.5,
+        "split": "heldout",
+        "time_index": 23,
+        "physical_time": 384.0,
+        "last_frame": true,
+        "eligibility_tier": 0,
+        "joint_advantage": 0.0016751419383406359,
+        "structure_score": 0.1971757709980011,
+        "metrics": {
+          "p_only": {
+            "velocity_relative_l2": 0.007175677728857269,
+            "pressure_relative_l2": 0.007474574853810655,
+            "joint_field_error": 0.007325126291333962
+          },
+          "h_only": {
+            "velocity_relative_l2": 0.006583916333949354,
+            "pressure_relative_l2": 0.005816578296484991,
+            "joint_field_error": 0.0062002473152171726
+          },
+          "t2c": {
+            "velocity_relative_l2": 0.004695410151263592,
+            "pressure_relative_l2": 0.004354800602489482,
+            "joint_field_error": 0.004525105376876537
+          }
+        }
+      }
+    }
+  },
+  "missing_citations": [],
+  "missing_references": [],
+  "duplicate_labels": [],
+  "missing_images": [],
+  "changed_files": [
+    "appendix\\circular_cylinder.tex",
+    "appendix\\fluidic_pinball.tex",
+    "appendix\\rom_derivation.tex",
+    "appendix\\routing_details.tex",
+    "appendix\\square_cylinder.tex",
+    "sections\\experiments.tex",
+    "figures\\verified_20260920\\HP_errors.png",
+    "figures\\verified_20260920\\HP_fields.png",
+    "figures\\verified_20260920\\SH_errors.png",
+    "figures\\verified_20260920\\SH_fields.png"
+  ]
+}

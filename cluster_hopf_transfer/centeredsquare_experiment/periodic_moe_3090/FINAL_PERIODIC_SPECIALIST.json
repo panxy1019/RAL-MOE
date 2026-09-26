@@ -1,0 +1,38 @@
+{
+  "status": "FINALIZED",
+  "finalized_at": "2026-07-19T10:32:22+08:00",
+  "decision": "Adopt epoch-85 Periodic local r32/rp32 as the final Periodic specialist; stop the Periodic training route and do not continue K16.",
+  "model": {
+    "experiment_name": "periodic_v16_public_r32",
+    "ru": 32,
+    "rp": 32,
+    "checkpoint_epoch": 85,
+    "best_validation_score": 0.28529463210143147,
+    "checkpoint_path": "/root/V17indepentMOEV2/periodic_v16_public/runs/20260719_004132/ru32_rp32/best_validation.pt",
+    "checkpoint_sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5",
+    "swanlab_run": "https://swanlab.cn/@panxy1019/V17indepentMOEV2/runs/k6syaunj"
+  },
+  "heldout_contract": {
+    "Re": [70.314635, 100.352251, 149.059229, 189.862278],
+    "preserved_count": 3,
+    "total": 4,
+    "finite_fraction_all_horizons": 1.0,
+    "divergent_windows_all_horizons": 0,
+    "note": "Re=70.314635 misses only the strict K48 pressure area-weighted L2 threshold: 5.960% versus 5.000%; no numerical divergence or attractor loss."
+  },
+  "artifact_sha256": {
+    "training_code": "500c2179734e6c3a6db6469629d4727637ae4552843b4d3154ca7b281a102314",
+    "evaluation_json": "3c1973e1ea2c54d3c8dc5e016cff4d91fd84252d2c7ab789771ac321e0d5c0db",
+    "evaluation_report": "9afc583e3df75b482698cf08b6fda7fb3cef3af2a6e26c7e93918582c7f3d33b",
+    "velocity_pod": "a2c12dc3ea25772e7bd4216b37683df9dbcce804063f9900bdaebac3e25dc7a2",
+    "pressure_pod": "f6e0a23432581c78e9f649d60bb0fceb9087a6a1d0631778bde444338c16239f",
+    "normalization": "a938909e01a6f16a5310b343a91e7077f86d0ca570388f9ea134f3bd115770c2",
+    "velocity_rom": "8af11eaaab376d7c146fa45884f5d56d8bc4a6e48780cbc57cd8cb3f8f4ce87b",
+    "pressure_poisson_surrogate": "bf64858428733e90bda185b504ab98ef7fc96f5e0f3bb3d6d788d758e2b15a09"
+  },
+  "retired_alternatives": {
+    "periodic_r80": "Not selected because its long-horizon heldout accuracy is materially worse.",
+    "r32_k16_continuation": "Explicitly declined to avoid degrading mature-periodic performance for a 0.96 percentage-point Re=70 pressure gap."
+  },
+  "next_priority": "Hopf specialist"
+}

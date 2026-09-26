@@ -1,0 +1,258 @@
+\section{Internal routing and physical-field consistency diagnostics}
+\label{app:routing_physics}
+
+\subsection{Additional internal-routing diagnostics}
+\label{app:internal_routing}
+
+\paragraph{Evaluation protocol and routing statistics.}
+We analyze the frozen circular-cylinder Hopf and Periodic specialists on their held-out autonomous rollout windows.
+For the Periodic specialist, we use 13 fixed windows at each of four held-out Reynolds numbers, giving 52 windows of length $K=48$. For the Hopf specialist, we use five fixed windows at each of three held-out Reynolds numbers, giving 15 windows of length $K=56$. One routing record is collected per reduced time step at the first integration stage, resulting in 2496 Periodic and 840 Hopf routing decisions per channel. Thus the reported statistics characterize reduced time step routing rather than all intermediate right-hand-side evaluations. Overlapping windows are not interpreted as independent trajectories, and these diagnostics are not used for model selection.
+
+For $N$ routing decisions, let $I_{n,e}\in\{0,1\}$ indicate whether routed expert $e$ is selected at decision $n$, with the group identity included in the expert label. We define the normalized activation frequency
+\begin{equation}
+  f_e
+  =
+  \frac{1}{2N}
+  \sum_{n=1}^{N} I_{n,e},
+  \label{eq:app_routing_frequency}
+\end{equation}
+where the factor $2$ accounts for the Top-2 routed experts selected at each decision, so that $\sum_e f_e=1$. The corresponding mean routing mass is
+\begin{equation}
+  m_e
+  =
+  \frac{1}{N}
+  \sum_{n=1}^{N}
+  \omega_{n,e}I_{n,e},
+  \label{eq:app_routing_mass}
+\end{equation}
+where $\omega_{n,e}$ denotes the final routed mixing coefficient assigned to expert $e$. Experts that are never selected are retained with $f_e=m_e=0$.
+
+We summarize the dispersion of expert selection by the normalized utilization entropy
+\begin{equation}
+  H
+  =
+  -\frac{
+    \sum_{e:f_e>0} f_e\log f_e
+  }{
+    \log N_E
+  },
+  \qquad
+  0\le H\le1,
+  \label{eq:app_routing_entropy}
+\end{equation}
+where $N_E$ is the number of routed experts available to the corresponding channel. Because $H$ is computed from activation frequency rather than routing mass, it characterizes diversity of expert selection rather than equality of the assigned weights. Distinct Top-2 pairs retain group identity but are treated as unordered.
+
+For the two specialists considered here, the architecture assigns a fixed coefficient $4/7$ to the shared expert and a total coefficient $3/7$ to the routed Top-2 component. Consequently,
+\begin{equation}
+  \sum_e m_e=\frac{3}{7}.
+\end{equation}
+The routing mass therefore measures mixture allocation; it does not quantify the norm of an expert output or, by itself, establish a physical interpretation.
+Labels such as \texttt{g0:e0} refer only to routed experts and should not be confused with the shared expert $e=0$ in
+Eq.~(\plaineqref{eq:app_channel_sparse_moe}).
+
+\par
+\begin{table}[H]
+\centering
+\caption{
+Post-hoc internal-routing statistics for the circular-cylinder Hopf and Periodic specialists on held-out autonomous rollout windows. ``Dominant-pair share'' denotes the fraction of routing decisions associated with the most frequently selected unordered Top-2 pair. $H$ denotes the normalized utilization entropy defined in Eq.~(\plaineqref{eq:app_routing_entropy}).
+}
+\label{tab:internal_routing_summary}
+\small
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}llrrrr@{}}
+\toprule
+Specialist & Channel & \shortstack{Active\\experts} & \shortstack{Distinct\\Top-2 pairs} & \shortstack{Dominant-pair\\share (\%)} & $H$ \\
+\midrule
+Hopf & Velocity & 2/6 & 1 & 100.00 & 0.387 \\
+     & Pressure & 2/6 & 1 & 100.00 & 0.387 \\
+\addlinespace
+Periodic & Velocity & 18/18 & 33 & 16.27 & 0.929 \\
+         & Pressure & 14/18 & 16 & 31.25 & 0.784 \\
+\bottomrule
+\end{tabular}
+\end{table}
+\par
+
+\paragraph{Periodic routing profile.}
+The Periodic specialist uses a broad range of its available routed experts. Across the held-out rollouts, the velocity channel selects all 18 routed experts and realizes 33 distinct group--pair combinations, while the pressure channel selects 14 of 18 experts through 16 combinations (Table~\ref{tab:internal_routing_summary}). The most frequent pair accounts for only $16.27\%$ of velocity decisions and $31.25\%$ of pressure decisions, consistent with the higher utilization entropy of the velocity channel. The selected groups also vary across the four held-out Reynolds numbers.
+Figure~\ref{fig:periodic_internal_routing} summarizes the corresponding group frequencies and routed-expert masses.
+
+
+
+\paragraph{Hopf routing profile.}
+The Hopf specialist exhibits a substantially more concentrated routing pattern. Because it contains a single expert group, only channel-level routing is active. Across all evaluated windows, the velocity channel selects the pair
+$(e_1,e_3)$ and the pressure channel selects $(e_2,e_4)$ at every recorded reduced time step. A separate stage-wise check confirms that these same pairs are retained across all four Runge--Kutta stages.
+
+Although the selected support is fixed, the routed weights are strongly nonuniform. Velocity expert $e_3$ receives approximately $99.93\%$ of the total routed mass, while pressure expert $e_2$ receives $84.16\%$. The secondary pressure expert $e_4$ nevertheless receives a Reynolds-number-dependent weight, with its mean mass increasing across the three held-out parameter values.
+
+The two specialists therefore exhibit different internal utilization patterns. The Periodic specialist distributes routing decisions across many group--pair combinations, whereas the Hopf specialist retains fixed sparse support and adapts primarily through the mixture weights. The single Hopf group is part of the prescribed architecture and should not be interpreted as collapse of a learned multi-group router.
+
+\paragraph{Periodic rollout-position diagnostic.}
+Figure~\ref{fig:periodic_routing_step} shows the mean routed-expert mass as a function of normalized rollout position, using the same 52 held-out Periodic windows. The horizontal coordinate reflects prediction position within the
+autonomous window rather than physical oscillation phase. This diagnostic complements the aggregate statistics above by showing how expert allocation varies over the autonomous rollout.
+
+
+\par
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/periodic_internal_routing.pdf}
+\caption{
+Internal routing of the circular-cylinder Periodic specialist on held-out autonomous rollouts, recorded once per reduced time step at the first integration stage. (a) Top-1 group-selection frequencies. (b,c) Mean routed-expert mass for the velocity and pressure channels. Expert identifiers are local to the corresponding specialist, group, and channel and are not assigned physical labels.
+}
+\label{fig:periodic_internal_routing}
+\end{figure}
+\par
+
+\par
+\begin{figure}[H]
+\centering
+\includegraphics[width=\linewidth]{figures/periodic_rollout_step_routing.pdf}
+\caption{
+Routed-expert mass versus autonomous rollout position for the circular-cylinder Periodic specialist. Each column averages the routing decision at the corresponding reduced time step over the 52 fixed held-out windows, and all routed experts are retained. The horizontal coordinate is the normalized prediction position $k/48$ and is not interpreted as physical oscillation phase.
+}
+\label{fig:periodic_routing_step}
+\end{figure}
+\par
+
+\subsection{Conditional consistency of output-space fusion}
+\label{app:fusion_consistency}
+Let $\bm u_\alpha=\alpha\bm u_1+\beta\bm u_2$ and $p_\alpha=\alpha p_1+\beta p_2$, where $\beta=1-\alpha$, $\alpha\in[0,1]$ is constant in space and time over the window, and both candidates share a mesh, parameter, time grid, and pressure gauge. For a common linear operator $D_h$, $D_h\bm u_\alpha=\alpha D_h\bm u_1+\beta D_h\bm u_2$. Thus zero discrete divergence, a zero-mean pressure gauge, and identical affine boundary constraints are preserved only to the extent that both candidates satisfy them.
+
+\paragraph{Nonlinear residuals.}
+For a fixed bilinear discretization $N_h$, set $\delta\bm u=\bm u_1-\bm u_2$. Bilinearity gives
+\begin{equation}
+N_h(\bm u_\alpha,\bm u_\alpha)
+=\alpha N_h(\bm u_1,\bm u_1)+\beta N_h(\bm u_2,\bm u_2)
+-\alpha\beta N_h(\delta\bm u,\delta\bm u).
+\end{equation}
+With the sign convention
+$R_u(\bm u,p)=\partial_t\bm u-\bm f_h-L_h\bm u+N_h(\bm u,\bm u)+G_hp$, one obtains
+\begin{equation}
+R_u(\bm u_\alpha,p_\alpha)
+=\alpha R_u(\bm u_1,p_1)+\beta R_u(\bm u_2,p_2)
+-\alpha\beta N_h(\delta\bm u,\delta\bm u).
+\end{equation}
+For the pressure residual
+$R_p(\bm u,p)=A_hp-[\bm s_0+S_1\bm u+B_p(\bm u,\bm u)]$, with fixed bilinear $B_p$, similarly
+\begin{equation}
+R_p(\bm u_\alpha,p_\alpha)
+=\alpha R_p(\bm u_1,p_1)+\beta R_p(\bm u_2,p_2)
++\alpha\beta B_p(\delta\bm u,\delta\bm u).
+\end{equation}
+These identities distinguish the candidates' existing residuals from the additional fusion defect. They are conditional algebraic identities, not measurements of the CFD residual: state-dependent limiters or other non-bilinear discretizations require their actual discrete operators.
+
+\paragraph{Energy and phase cancellation.}
+For $E(\bm u)=\tfrac12\|\bm u\|_M^2$ with a common positive quadrature matrix,
+\begin{equation}
+E(\bm u_\alpha)=\alpha E(\bm u_1)+\beta E(\bm u_2)
+-\frac{\alpha\beta}{2}\|\bm u_1-\bm u_2\|_M^2.
+\end{equation}
+Candidate disagreement can therefore reduce the blend's energy relative to the weighted candidate energies, including through phase cancellation. This does not imply that its energy is below the reference solution or below both candidates. Since the blend is not fed back into either specialist, this term is not a recurrent dissipative modification of their reduced dynamics. Empirical residual and phase-sensitive evaluations remain separate from these identities.
+
+\subsubsection{Measured common-grid diagnostics}
+\label{app:fusion_measured}
+We evaluate both candidates, their frozen T2-C blend, and the common
+POD-reconstructed reference on all 16 held-out windows at each square-cylinder
+interface ($K=24$, output spacing 4). No window is selected by prediction
+quality. These are reconstructed-field diagnostics, not residuals of the
+original OpenFOAM finite-volume equations and not errors against unprojected
+CFD fields.
+
+\paragraph{Operators and averaging.}
+On the common 9,400-cell grid, quadratic local least-squares fits define
+$D_x,D_y$ and $L$. The initial stencil has 24 nearest cells, with independent
+coordinate scaling; it is expanded only if the polynomial matrix is
+rank-deficient or has condition number above $10^6$. A 36-neighbor version
+checks sensitivity. Actual stencils contain at most 72 cells. Both versions
+differentiate a manufactured quadratic polynomial with maximum absolute
+error below $1.4\times10^{-10}$. We use
+\begin{equation}
+\widehat R_u=\delta_t\bm u+N_D(\bm u,\bm u)+\nabla_Dp-Re^{-1}L\bm u,
+\qquad
+\widehat R_p=Lp+D_xN_{D,x}+D_yN_{D,y},
+\end{equation}
+where $N_D(\bm u,\bm u)=uD_x\bm u+vD_y\bm u$.
+Residual norms use area-weighted RMS over the interior wake
+$6\leq x\leq16$, $1\leq y\leq3$ (2,627 cells).
+Centered time differences and summary statistics use output steps 2--23.
+The nonzero reference residual includes POD truncation and spatial/temporal
+differentiation error; it is not a solver convergence tolerance. Windows
+are averaged within each parameter, then parameters equally. The two
+parameters per interface each contribute eight overlapping windows;
+these windows are not independent experimental replications.
+
+\begin{table}[H]
+\centering\small
+\caption{Measured square-interface diagnostics with the 24-neighbor initial
+stencil. Energy error is $|E-E_{\rm ref}|/E_{\rm ref}$ in percent over the
+whole domain; residuals are interior RMS. All columns average steps 2--23.
+Reference denotes POD-reconstructed CFD, not raw CFD.}
+\label{tab:fusion_residual_measured}
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+Interface & Field & Energy error (\%) & $\|\widehat R_u\|$ & $\|\widehat R_p\|$\\
+\midrule
+S--H & Reference & 0 & 0.00460 & 0.03395\\
+& Steady & 2.81100 & 0.00530 & 0.03674\\
+& Hopf & 0.14296 & 0.00607 & 0.03513\\
+& T2-C & 0.17641 & 0.00520 & 0.03421\\
+\midrule
+H--P & Reference & 0 & 0.11486 & 0.03736\\
+& Periodic & 0.09163 & 0.11627 & 0.03785\\
+& Hopf & 0.17298 & 0.11189 & 0.04047\\
+& T2-C & 0.05974 & 0.11408 & 0.03631\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Identities versus measured accuracy.}
+The maximum absolute discrepancies in the energy, momentum-residual and
+pressure-residual identities are $1.2\times10^{-15}$,
+$7.4\times10^{-15}$ and $6.1\times10^{-14}$, respectively, across both
+stencils and all windows. These values verify the implementation of the
+identities, not physical accuracy. The mean blend-energy deficit relative
+to reference energy is $0.00314\%$ (S--H) and $0.00181\%$ (H--P), distinct
+from the energy-error column in Table~\ref{tab:fusion_residual_measured}.
+T2-C has a lower measured pressure residual than either candidate for both
+interfaces and both stencils. However, it does not minimize every diagnostic:
+the Hopf candidate has a smaller H--P momentum residual and a smaller S--H
+energy error. Changing the stencil also changes residual magnitudes
+substantially. Thus output blending is not a general residual minimizer,
+nor do these results establish discrete conservation or stability.
+
+\paragraph{Phase diagnostics.}
+A transverse-velocity probe is fixed geometrically at the cell nearest
+$(8,2.5)$. We detrend each signal and compare Hilbert phases with the
+reference. A window is marked unresolved if the reference dominant
+non-Nyquist Fourier component spans fewer than two cycles or its detrended
+standard deviation is below $10^{-5}$. None of the 16 S--H windows and only
+15 of the 16 H--P windows pass this screening. Even passing this necessary
+screen is not evidence that temporal aliasing or Hilbert endpoint effects
+are absent. We therefore report phase traces as short-window diagnostics,
+not as evidence for a general reduction of phase error or long-time
+phase stability.
+
+\begin{figure}[H]
+\centering\includegraphics[width=\linewidth]{figures/round3_sh_diagnostics.pdf}
+\caption{S--H diagnostics: the first four panels average all 16 windows;
+the last two show the first frozen window, not a best-case selection.
+Candidate 1 is Steady and candidate 2 is Hopf. Reference is POD-reconstructed
+CFD. The unresolved phase trace is descriptive only.}
+\end{figure}
+\begin{figure}[H]
+\centering\includegraphics[width=\linewidth]{figures/round3_hp_diagnostics.pdf}
+\caption{H--P diagnostics under the same protocol. Candidate 1 is Periodic
+and candidate 2 is Hopf. The first four panels average all 16 windows;
+the probe and phase panels show the first frozen window, which is
+unresolved by the stated phase screen.}
+\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[width=.95\linewidth]{figures/round3_sh_energy_excess.pdf}
+\includegraphics[width=.95\linewidth]{figures/round3_hp_energy_excess.pdf}
+\caption{Actual kinetic energy and additional fusion defects averaged over
+all windows. The energy deficit is measured relative to the weighted
+candidate energies, normalized by reference energy; it is not the energy
+error. Momentum and pressure excesses are differences from the
+weighted candidate residuals, not the total fused residuals.}
+\end{figure}

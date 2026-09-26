@@ -1,0 +1,220 @@
+{
+  "scope": "POD-reconstructed fields, offline LS differential operators, not OpenFOAM FV residuals",
+  "roi": [
+    6,
+    16,
+    1,
+    3
+  ],
+  "probe_target": [
+    8,
+    2.5
+  ],
+  "probe_actual": [
+    7.963667392730713,
+    2.5204925537109375
+  ],
+  "mesh_sha256": "57423d8ebcca3f1aaf8d18311366c7f05a0df6b9f10f5973ed75e3334c7d5175",
+  "operators": {
+    "24": {
+      "manufactured_polynomial_max_abs_error": {
+        "errors": [
+          1.0743406164692715e-11,
+          2.1373125491663814e-11,
+          1.000444171950221e-10
+        ],
+        "adaptive_neighbor_min": 24,
+        "adaptive_neighbor_max": 72,
+        "expanded_points": 92
+      },
+      "points": 9400,
+      "roi_points": 2627,
+      "pod_mesh_max_delta": 1.9073486328125e-06
+    },
+    "36": {
+      "manufactured_polynomial_max_abs_error": {
+        "errors": [
+          1.0686562745831907e-11,
+          2.9672264645341784e-11,
+          1.3460521586239338e-10
+        ],
+        "adaptive_neighbor_min": 36,
+        "adaptive_neighbor_max": 72,
+        "expanded_points": 46
+      },
+      "points": 9400,
+      "roi_points": 2627,
+      "pod_mesh_max_delta": 1.9073486328125e-06
+    }
+  },
+  "sources": {
+    "sh": {
+      "config": {
+        "schema": "field_figure_config/v1",
+        "mode": "boundary_fusion",
+        "figure_stem": "CenteredSquare_SH_boundary_T2C",
+        "bundle": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_sh/sh_heldout_cache.npz",
+        "weights_csv": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/SH_T2C_weights.csv",
+        "weight_key_column": "start",
+        "weight_alpha_column": "T2_C_alpha_candidate_1",
+        "time_offset": 0,
+        "arrays": {
+          "re": "re",
+          "split": "split",
+          "times": "timestamps",
+          "truth_a": "truth_a",
+          "truth_b": "truth_b",
+          "weight_key": "starts",
+          "quad_u": "quad_u",
+          "quad_p": "quad_p"
+        },
+        "truth_basis": "steady",
+        "bases": {
+          "steady": {
+            "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+            "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+            "velocity_layout": "interleaved",
+            "r_u": 5,
+            "r_p": 4
+          },
+          "hopf": {
+            "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+            "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+            "mean_u_key": "mean_uv_train",
+            "mean_p_key": "mean_p_train",
+            "velocity_layout": "interleaved",
+            "r_u": 11,
+            "r_p": 11
+          }
+        },
+        "methods": {
+          "s_only": {
+            "a": "candidate_1_a",
+            "b": "candidate_1_b",
+            "basis": "steady"
+          },
+          "h_only": {
+            "a": "candidate_2_a",
+            "b": "candidate_2_b",
+            "basis": "hopf"
+          },
+          "t2c": {
+            "candidate_1_a": "candidate_1_a",
+            "candidate_1_b": "candidate_1_b",
+            "candidate_1_basis": "steady",
+            "candidate_2_a": "candidate_2_a",
+            "candidate_2_b": "candidate_2_b",
+            "candidate_2_basis": "hopf"
+          }
+        },
+        "plot_order": [
+          "s_only",
+          "h_only",
+          "t2c"
+        ],
+        "target_method": "t2c",
+        "comparator_methods": [
+          "s_only",
+          "h_only"
+        ],
+        "method_labels": {
+          "truth": "Truth (CFD)",
+          "s_only": "Steady Specialist",
+          "h_only": "Hopf Specialist",
+          "t2c": "RAL-MoE-ROM"
+        }
+      },
+      "bundle_sha256": "5d27b47202ef9d296f0c384dd7e367b2547410634c81c4af9b2bc7adb0443a88",
+      "weights_sha256": "b0f19665c59ea55fb2452dc6f4c67f3c1579420a3ad579be6e90857b72084739",
+      "basis_hashes": {
+        "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz": "3a6f412e4c60309b4f2e913c1f4d2c090e0fb976a960e46869a01b75c7d0a7ca",
+        "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz": "85a3b5efb1c2dbf87af948217448fec01339786e7805fd591ded17118d3f91a7",
+        "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+      }
+    },
+    "hp": {
+      "config": {
+        "schema": "field_figure_config/v1",
+        "mode": "boundary_fusion",
+        "figure_stem": "CenteredSquare_HP_boundary_T2C",
+        "bundle": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_hp/hp_heldout_cache.npz",
+        "weights_csv": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/HP_T2C_weights.csv",
+        "weight_key_column": "start",
+        "weight_alpha_column": "T2_C_alpha_candidate_1",
+        "time_offset": 0,
+        "arrays": {
+          "re": "re",
+          "split": "split",
+          "times": "timestamps",
+          "truth_a": "truth_a",
+          "truth_b": "truth_b",
+          "weight_key": "starts",
+          "quad_u": "quad_u",
+          "quad_p": "quad_p"
+        },
+        "truth_basis": "periodic",
+        "bases": {
+          "periodic": {
+            "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_velocity_pod_area_weighted_l2.npz",
+            "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_pressure_pod_area_weighted_l2.npz",
+            "velocity_layout": "interleaved",
+            "r_u": 28,
+            "r_p": 26
+          },
+          "hopf": {
+            "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+            "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+            "mean_u_key": "mean_uv_train",
+            "mean_p_key": "mean_p_train",
+            "velocity_layout": "interleaved",
+            "r_u": 11,
+            "r_p": 11
+          }
+        },
+        "methods": {
+          "p_only": {
+            "a": "candidate_1_a",
+            "b": "candidate_1_b",
+            "basis": "periodic"
+          },
+          "h_only": {
+            "a": "candidate_2_a",
+            "b": "candidate_2_b",
+            "basis": "hopf"
+          },
+          "t2c": {
+            "candidate_1_a": "candidate_1_a",
+            "candidate_1_b": "candidate_1_b",
+            "candidate_1_basis": "periodic",
+            "candidate_2_a": "candidate_2_a",
+            "candidate_2_b": "candidate_2_b",
+            "candidate_2_basis": "hopf"
+          }
+        },
+        "plot_order": [
+          "p_only",
+          "h_only",
+          "t2c"
+        ],
+        "target_method": "t2c",
+        "comparator_methods": [
+          "p_only",
+          "h_only"
+        ],
+        "method_labels": {
+          "truth": "Truth (CFD)",
+          "p_only": "Periodic Specialist",
+          "h_only": "Hopf Specialist",
+          "t2c": "RAL-MoE-ROM"
+        }
+      },
+      "bundle_sha256": "bb2a70a3aae3988b1031b3791def1607177ef7b622c455733cf70c7a8491d0d8",
+      "weights_sha256": "14a9cf549a033f38b36ad76602e42d61536ab03d556cd7650a81283cb29e6fe8",
+      "basis_hashes": {
+        "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_velocity_pod_area_weighted_l2.npz": "a959f76ca57e1cf4666e3ee2c74a1863485866d8c214899e750fec65b65b87ba",
+        "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_pressure_pod_area_weighted_l2.npz": "e8567f554ff609e1c3cbd17985365aefedf578915017adb8170d53dfeb958141",
+        "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+      }
+    }
+  }
+}

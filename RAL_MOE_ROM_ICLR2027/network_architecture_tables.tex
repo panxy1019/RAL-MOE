@@ -1,0 +1,187 @@
+% Standalone appendix fragment. Requires booktabs, array, amsmath, amssymb.
+% Audit scope: these are verified source/checkpoint configurations, not a claim
+% that unresolved Table 4 or Pinball identities have been settled.
+% Do not silently integrate before addressing paper_revision_notes.md.
+
+\subsection{Checkpoint-verified neural configurations}
+The configurations below describe the circular-cylinder specialists analyzed
+for internal routing and parameter counts, and the centered-square specialists
+used to construct the routing/fusion candidates. They are not a uniform
+architecture shared across benchmarks. Unresolved baseline configurations are
+not inferred from these models.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Verified specialist architectures. $D$ is the input-feature dimension,
+$h$ the encoder width, and $m/B$ the expert expansion width/block count.
+Each group has six routed experts and one shared expert \emph{per channel}.
+Both channels use Top-2 routed experts.}
+\label{tab:audit_specialist_architecture}
+\begin{tabular}{@{}lrrrrrl@{}}
+\toprule
+Specialist & $(r_u,r_p)$ & $D$ & $h$ & $m/B$ & Groups & Group selection \\
+\midrule
+Circular Hopf & $(32,32)$ & 493 & 256 & 1024/4 & 1 & Frozen single group \\
+Circular Periodic & $(32,32)$ & 501 & 224 & 768/3 & 3 & Learned Top-1 \\
+Square Steady & $(5,4)$ & 91 & 224 & 768/3 & 3 & Learned Top-1 \\
+Square Hopf & $(11,11)$ & 178 & 256 & 1024/4 & 1 & Frozen single group \\
+Square Periodic & $(28,26)$ & 431 & 224 & 768/3 & 3 & Fixed group ID 1 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Source-level block definitions for the verified structured specialists.
+$s=r_u$ for velocity and $s=r_u+r_p$ for pressure; $o=r_u$ or $r_p$.
+Layer normalization is denoted LN. Ordinary Linear layers include bias unless
+explicitly stated otherwise.}
+\label{tab:audit_network_blocks}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.0cm}
+>{\raggedright\arraybackslash}p{4.6cm}
+>{\raggedright\arraybackslash}p{6.0cm}@{}}
+\toprule
+Block & Dimensions & Operations \\
+\midrule
+Encoder & $D\to h\to h\to h$ & LN and SiLU after each Linear; dropout .04 after the first two activations. \\
+\addlinespace
+Refinement & Two blocks, $h\to h\to h$ & Pre-LN, SiLU, dropout .04; additive residual connection. \\
+\addlinespace
+Expert nonlinear & $(h+s)\to h$; $B$ blocks $h\to m\to h$; $h\to o$ & LN/GELU input projection; pre-LN residual FFNs with GELU, dropout .04 and learned scalar residual scale (initially .1); LN output head. \\
+\addlinespace
+Expert linear & Weight $o\times s$ & Applied to the standardized local state slice; no bias. \\
+\addlinespace
+Expert bilinear & $U,V\in\mathbb R^{o\times4\times s}$ & Output-specific sum of four products, scaled by .05; no separate output-projection tensor or bias. \\
+\addlinespace
+Routers & $(D+h)\to h\to G$ or $6$ & Pre-LN, SiLU, dropout .04; temperature-softmax and normalized Top-$k$. \\
+\addlinespace
+Pressure gate & $h\to64\to r_p$ & GELU and output sigmoid in adaptive-gate mode; componentwise. Square Steady instead stores a frozen, bypassed $224\to56\to2$ head. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Chart-specific execution.}
+Square Steady freezes its velocity experts. The square Hopf candidate uses
+direct learned velocity derivatives and direct pressure outputs in its final
+rollout wrapper, although projected quantities remain input features. Its
+stored pressure gate is not used to assemble the pressure output. In the
+adaptive-gate paths, pressure is a gated Poisson base plus a learned residual,
+not a convex mixture of two independently predicted candidates.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Verified centered-square outer networks. E2 and the two overlap gates
+have separately trained weights. The full and $\mu$-only gates have identical
+architecture; $\mu$-only masks eight standardized history channels.}
+\label{tab:audit_outer_networks}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Component & Dimensions & Activation & Trainable \\
+\midrule
+E2 & $1\to24\to3$ & Tanh; output softmax & 123 \\
+T2-C full & $9\to64\to64\to1$ & SiLU; logit correction then sigmoid & 4,865 \\
+T2-C $\mu$-only & $9\to64\to64\to1$ & Same network, masked history & 4,865 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+E2 consumes only the standardized Reynolds number. T2-C consumes that parameter
+and eight standardized physical-history descriptors. Its final Linear layer
+is initialized to zero, so the initial gate reproduces the selected E2 pair
+preference. One scalar fusion weight is fixed for the entire window and shared
+by velocity and pressure; no fused field is fed back to either specialist.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Specialist optimization settings from checkpoint configurations and
+their training entry points. All use AdamW and norm clipping at 1. ``Budget''
+is the configured limit, not a claim that the selected checkpoint completed
+every curriculum stage.}
+\label{tab:audit_specialist_training}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{2.1cm}
+>{\raggedright\arraybackslash}p{2.5cm}
+>{\raggedright\arraybackslash}p{2.6cm}
+>{\raggedright\arraybackslash}p{2.8cm}
+>{\raggedright\arraybackslash}p{2.6cm}@{}}
+\toprule
+Specialist & Initial LR / decay & Batch & Budget / selected & Curriculum / seed \\
+\midrule
+Circular Hopf & $.001/10^{-4}$ & 232 & 8000/7200 steps & $1,2,4,8$; 1248 \\
+\addlinespace
+Circular Periodic & $.00055/.00015$ & 256; rollout 2 & 240/85 epochs & $4,8,12,16$; 1600 \\
+\addlinespace
+Square Steady & $1.5516\!\times\!10^{-5}/10^{-4}$ & $16\times4=64$ & 4000/3200 steps & $1,4,8,16$; 202607281 \\
+\addlinespace
+Square Hopf & $.001/10^{-4}$ & 46 & 8000/7200 steps & $1,2,4,8$; 1248 \\
+\addlinespace
+Square Periodic & $.00055/.00015$ & 1024; rollout 56/56/40/28 & 720/490 epochs & $4,8,12,16$; 1600 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+All five use cosine learning-rate schedules. Square Steady has a second
+parameter group at 0.1 times the listed initial learning rate. Hopf training
+uses fluctuation/normal-form losses and validation safeguards in addition to
+the common losses. Periodic checkpoints use the validation score combining
+RHS, velocity-head, and pressure-head relative errors, with weights
+$1,1,0.35$. These objectives and selectors are not uniform across charts.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{4pt}
+\caption{Centered-square outer-network training. All use AdamW with initial
+learning rate $3\times10^{-4}$, weight decay $10^{-4}$, gradient-norm clipping
+at 1, and validation every 100 steps (also at the first/final step).}
+\label{tab:audit_outer_training}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{1.7cm}
+>{\raggedright\arraybackslash}p{2.1cm}
+>{\raggedright\arraybackslash}p{2.6cm}
+>{\raggedright\arraybackslash}p{6.4cm}@{}}
+\toprule
+Component & Batch / steps & Schedule / seed & Selection \\
+\midrule
+E2 & 110 /8000 & Cosine to $1.5\times10^{-5}$; 20260730 & Maximize validation balanced accuracy plus macro F1 minus .001 times the current training-batch loss. \\
+\addlinespace
+T2-C SH & 56 /8000 & Constant; 42001/2/3 & Lexicographically minimize validation worst-Re mean and then global mean joint error. \\
+\addlinespace
+T2-C HP & 32 /8000 & Constant; 42001/2/3 & Same selector and matched full/$\mu$-only settings. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+E2 minimizes class-weighted cross entropy plus an adjacency penalty
+$0.05\,\operatorname{mean}(\pi_S\pi_P)$. T2-C minimizes the mean summed
+squared relative velocity/pressure field errors across the training windows
+and all 24 prediction steps. Its validation selector uses the corresponding
+unsquared component errors. The three gate seeds are 42001, 42002, and 42003.
+
+\begin{table}[htbp]
+\centering\small
+\setlength{\tabcolsep}{5pt}
+\caption{Recomputed trainable counts for the verified source models. Active
+counts are independently traced only for the circular Hopf/Periodic
+prediction paths. A dash denotes not independently verified, not zero.
+Fixed tensors and frozen parameters are excluded from trainable counts.}
+\label{tab:audit_parameter_recheck}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Specialist & Trainable & Frozen parameters & Active prediction \\
+\midrule
+Circular Hopf & 31,810,392 & 193,755 & 14,165,816 \\
+Circular Periodic & 48,617,547 & 0 & 8,308,959 \\
+Square Steady & 23,746,370 & 22,908,825 & --- \\
+Square Hopf & 31,205,844 & 112,485 & --- \\
+Square Periodic & 48,209,967 & 0 & --- \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Active counts refer to unique trainable parameters consumed by one
+batch-size-one prediction-path routing decision, not a union over a batch,
+trajectory, or four RK stages. They are not FLOP counts, timings, or speedups.
+Unresolved circular Steady, Vanilla-FNN-MoE, DataOnly-MoE, Global MoE, and
+Pinball publication identities are intentionally excluded from these tables.

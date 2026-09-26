@@ -1,0 +1,2124 @@
+{
+  "scope": "Checkpoint-extracted facts; unresolved publication identities are not promoted to confirmed paper configurations.",
+  "local": {
+    "square_e2": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\centeredsquare_fusion_v1\\results\\E2_T2C_K24_20260730_STRICT_V3\\e2_router\\best.pt",
+      "sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+      "input_dim": 1,
+      "total_trainable": 123,
+      "model_repr": "Router(\n  (net): Sequential(\n    (0): Linear(in_features=1, out_features=24, bias=True)\n    (1): Tanh()\n    (2): Linear(in_features=24, out_features=3, bias=True)\n  )\n)",
+      "state_dict": {
+        "net.0.weight": {
+          "shape": [
+            24,
+            1
+          ],
+          "dtype": "torch.float32"
+        },
+        "net.0.bias": {
+          "shape": [
+            24
+          ],
+          "dtype": "torch.float32"
+        },
+        "net.2.weight": {
+          "shape": [
+            3,
+            24
+          ],
+          "dtype": "torch.float32"
+        },
+        "net.2.bias": {
+          "shape": [
+            3
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "feature_mean": [
+          [
+            92.24791717529297
+          ]
+        ],
+        "feature_std": [
+          [
+            21.898788452148438
+          ]
+        ],
+        "best_step": 3300,
+        "validation_metrics": {
+          "accuracy": 0.7647058823529411,
+          "balanced_accuracy": 0.7555555555555555,
+          "macro_f1": 0.7666666666666666,
+          "confusion_matrix": [
+            [
+              3,
+              2,
+              0
+            ],
+            [
+              0,
+              6,
+              0
+            ],
+            [
+              0,
+              2,
+              4
+            ]
+          ],
+          "illegal_S_P_top2_count": 0
+        },
+        "seed": 20260730,
+        "class_names": [
+          "Steady",
+          "Hopf",
+          "Periodic"
+        ],
+        "split_Re": {
+          "Steady": {
+            "train": [
+              50.0,
+              51.0,
+              52.0,
+              53.0,
+              54.0,
+              56.0,
+              57.0,
+              58.0,
+              59.0,
+              61.0,
+              62.0,
+              63.0,
+              64.0,
+              65.0,
+              66.0,
+              67.0,
+              68.0,
+              69.0,
+              70.0,
+              71.0,
+              72.0,
+              73.0,
+              74.0,
+              76.0,
+              77.0,
+              78.0,
+              79.0,
+              80.0,
+              80.5,
+              81.0,
+              81.5,
+              82.0,
+              82.5,
+              83.0,
+              83.5,
+              84.0,
+              84.5,
+              85.5,
+              86.0,
+              86.5,
+              87.0,
+              87.5,
+              88.0,
+              88.5,
+              89.0,
+              89.5,
+              90.5,
+              91.0,
+              91.5,
+              92.0,
+              92.5,
+              93.0,
+              93.5,
+              94.0,
+              95.0,
+              95.05,
+              95.15,
+              95.2,
+              95.35,
+              95.4
+            ],
+            "validation": [
+              55.0,
+              75.0,
+              90.0,
+              94.5,
+              95.25
+            ]
+          },
+          "Hopf": {
+            "train": [
+              94.0,
+              95.0,
+              95.05,
+              95.15,
+              95.2,
+              95.35,
+              95.4,
+              95.45,
+              95.55,
+              95.6,
+              95.75,
+              96.0,
+              96.25,
+              96.75,
+              97.0,
+              97.25,
+              97.75,
+              98.0,
+              98.5,
+              99.5,
+              100.0,
+              101.0,
+              101.724137931034
+            ],
+            "validation": [
+              94.5,
+              95.25,
+              95.5,
+              97.5,
+              99.0,
+              101.5
+            ]
+          },
+          "Periodic": {
+            "train": [
+              98.5,
+              99.5,
+              100.0,
+              101.0,
+              101.724137931034,
+              103.448275862069,
+              105.172413793103,
+              106.896551724138,
+              108.620689655172,
+              112.068965517241,
+              113.793103448276,
+              115.51724137931,
+              117.241379310345,
+              118.965517241379,
+              122.413793103448,
+              124.137931034483,
+              127.586206896552,
+              129.310344827586,
+              131.034482758621,
+              132.758620689655,
+              134.48275862069,
+              136.206896551724,
+              137.931034482759,
+              139.655172413793,
+              143.103448275862,
+              146.551724137931,
+              148.275862068966
+            ],
+            "validation": [
+              99.0,
+              101.5,
+              110.344827586207,
+              125.862068965517,
+              141.379310344828,
+              150.0
+            ]
+          }
+        }
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "square_sh_original": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\centeredsquare_fusion_v1\\results\\E2_T2C_K24_20260730_STRICT_V3\\gate_sh\\best.pt",
+      "sha256": "732059a2cf19acf6b4681590fa2a8a43ad4babdc2c5814638ed438c1dc5cafb0",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "SH",
+        "feature_mean": [
+          95.02141571044922,
+          -1.7136400938034058,
+          -2.7276337146759033,
+          20.59858512878418,
+          18.569074630737305,
+          0.0357142873108387,
+          0.25,
+          19.74380111694336,
+          20.75144386291504
+        ],
+        "feature_std": [
+          0.43822431564331055,
+          3.7334864139556885,
+          2.2875375747680664,
+          6.981695652008057,
+          2.785862922668457,
+          0.9993622303009033,
+          0.9682458639144897,
+          5.706777572631836,
+          6.88156270980835
+        ],
+        "best_step": 5500,
+        "validation_metrics": {
+          "velocity_mean": 0.0038206928878054543,
+          "pressure_mean": 0.00681863863559018,
+          "joint_mean": 0.010639331523395634,
+          "joint_worst": 0.10722084241716834,
+          "worst_Re_mean": 0.011019907085707248,
+          "per_Re": {
+            "94.5": {
+              "joint_mean": 0.01025875596108402,
+              "joint_worst": 0.10263403643257757,
+              "alpha_mean": 0.0969625934958458,
+              "alpha_min": 0.00019505867385305464,
+              "alpha_max": 0.7573754787445068
+            },
+            "95.25": {
+              "joint_mean": 0.011019907085707248,
+              "joint_worst": 0.10722084241716834,
+              "alpha_mean": 0.09701664745807648,
+              "alpha_min": 1.0358372492191847e-05,
+              "alpha_max": 0.7751379013061523
+            }
+          },
+          "alpha_mean": 0.09698962420225143,
+          "alpha_min": 1.0358372492191847e-05,
+          "alpha_max": 0.7751379013061523
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "pair_indices": [
+          0,
+          1
+        ],
+        "seed": 42001,
+        "fusion_feedback": false
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "square_hp_original": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\centeredsquare_fusion_v1\\results\\E2_T2C_K24_20260730_STRICT_V3\\gate_hp\\best.pt",
+      "sha256": "fb154d2d3decb68c59b242a17c95c062e24f4443f5034692ec0abfaa55e9c887",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "HP",
+        "feature_mean": [
+          99.75,
+          -1.7552069425582886,
+          -2.858804225921631,
+          26.36236572265625,
+          24.67444610595703,
+          -0.75,
+          0.375,
+          25.739612579345703,
+          26.785789489746094
+        ],
+        "feature_std": [
+          0.9013878107070923,
+          3.848541259765625,
+          2.594031572341919,
+          4.92283821105957,
+          0.8370219469070435,
+          0.6614378094673157,
+          0.927024781703949,
+          3.78598952293396,
+          4.762125015258789
+        ],
+        "best_step": 3500,
+        "validation_metrics": {
+          "velocity_mean": 0.004157836711491133,
+          "pressure_mean": 0.0037484542677862285,
+          "joint_mean": 0.007906290979277362,
+          "joint_worst": 0.035456738548034064,
+          "worst_Re_mean": 0.008545057221821492,
+          "per_Re": {
+            "99.0": {
+              "joint_mean": 0.007267524736733232,
+              "joint_worst": 0.033144628748792614,
+              "alpha_mean": 0.44745177030563354,
+              "alpha_min": 0.35142630338668823,
+              "alpha_max": 0.9780234694480896
+            },
+            "101.5": {
+              "joint_mean": 0.008545057221821492,
+              "joint_worst": 0.035456738548034064,
+              "alpha_mean": 0.6492589712142944,
+              "alpha_min": 0.40202659368515015,
+              "alpha_max": 0.9799802899360657
+            }
+          },
+          "alpha_mean": 0.5483553409576416,
+          "alpha_min": 0.35142630338668823,
+          "alpha_max": 0.9799802899360657
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "pair_indices": [
+          2,
+          1
+        ],
+        "seed": 42001,
+        "fusion_feedback": false
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/hp/full/seed_42001": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\hp\\full\\seed_42001\\best.pt",
+      "sha256": "8241dc458dfb480cf36e8f69145a8d8a0698c200960993c2634915b595e1a75b",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "HP",
+        "feature_mean": [
+          99.75,
+          -1.7552069425582886,
+          -2.858804225921631,
+          26.36236572265625,
+          24.67444610595703,
+          -0.75,
+          0.375,
+          25.739612579345703,
+          26.785789489746094
+        ],
+        "feature_std": [
+          0.9013878107070923,
+          3.848541259765625,
+          2.594031572341919,
+          4.92283821105957,
+          0.8370219469070435,
+          0.6614378094673157,
+          0.927024781703949,
+          3.78598952293396,
+          4.762125015258789
+        ],
+        "best_step": 3500,
+        "validation_metrics": {
+          "velocity_mean": 0.004157836711491133,
+          "pressure_mean": 0.0037484542677862285,
+          "joint_mean": 0.007906290979277362,
+          "joint_worst": 0.035456738548034064,
+          "worst_Re_mean": 0.008545057221821492,
+          "per_Re": {
+            "99.0": {
+              "joint_mean": 0.007267524736733232,
+              "joint_worst": 0.033144628748792614,
+              "alpha_mean": 0.44745177030563354,
+              "alpha_min": 0.35142630338668823,
+              "alpha_max": 0.9780234694480896
+            },
+            "101.5": {
+              "joint_mean": 0.008545057221821492,
+              "joint_worst": 0.035456738548034064,
+              "alpha_mean": 0.6492589712142944,
+              "alpha_min": 0.40202659368515015,
+              "alpha_max": 0.9799802899360657
+            }
+          },
+          "alpha_mean": 0.5483553409576416,
+          "alpha_min": 0.35142630338668823,
+          "alpha_max": 0.9799802899360657
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "pair_indices": [
+          2,
+          1
+        ],
+        "seed": 42001,
+        "input_mode": "full",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 32,
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "full",
+        "lr": 0.0003,
+        "mask_after_standardization": false,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42001,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133546.6282096,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/hp/full/seed_42002": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\hp\\full\\seed_42002\\best.pt",
+      "sha256": "658c3bdf90b80bc00c4f6ddfcb100f0a824f4c0af93ff6a17899450ac68762e3",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "HP",
+        "feature_mean": [
+          99.75,
+          -1.7552069425582886,
+          -2.858804225921631,
+          26.36236572265625,
+          24.67444610595703,
+          -0.75,
+          0.375,
+          25.739612579345703,
+          26.785789489746094
+        ],
+        "feature_std": [
+          0.9013878107070923,
+          3.848541259765625,
+          2.594031572341919,
+          4.92283821105957,
+          0.8370219469070435,
+          0.6614378094673157,
+          0.927024781703949,
+          3.78598952293396,
+          4.762125015258789
+        ],
+        "best_step": 3500,
+        "validation_metrics": {
+          "velocity_mean": 0.004160263787412233,
+          "pressure_mean": 0.003752482349520901,
+          "joint_mean": 0.007912746136933135,
+          "joint_worst": 0.035499829382867054,
+          "worst_Re_mean": 0.00855317626580569,
+          "per_Re": {
+            "99.0": {
+              "joint_mean": 0.007272316008060577,
+              "joint_worst": 0.03315478648898546,
+              "alpha_mean": 0.4458194077014923,
+              "alpha_min": 0.3457128703594208,
+              "alpha_max": 0.978249192237854
+            },
+            "101.5": {
+              "joint_mean": 0.00855317626580569,
+              "joint_worst": 0.035499829382867054,
+              "alpha_mean": 0.6441631317138672,
+              "alpha_min": 0.4083494246006012,
+              "alpha_max": 0.9808925986289978
+            }
+          },
+          "alpha_mean": 0.5449912548065186,
+          "alpha_min": 0.3457128703594208,
+          "alpha_max": 0.9808925986289978
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "pair_indices": [
+          2,
+          1
+        ],
+        "seed": 42002,
+        "input_mode": "full",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 32,
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "full",
+        "lr": 0.0003,
+        "mask_after_standardization": false,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42002,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133587.4760163,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/hp/full/seed_42003": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\hp\\full\\seed_42003\\best.pt",
+      "sha256": "6a05daec78aad5ea025d1cdfb822c11ca9f978387fce92bfa8704b3adeaf0c96",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "HP",
+        "feature_mean": [
+          99.75,
+          -1.7552069425582886,
+          -2.858804225921631,
+          26.36236572265625,
+          24.67444610595703,
+          -0.75,
+          0.375,
+          25.739612579345703,
+          26.785789489746094
+        ],
+        "feature_std": [
+          0.9013878107070923,
+          3.848541259765625,
+          2.594031572341919,
+          4.92283821105957,
+          0.8370219469070435,
+          0.6614378094673157,
+          0.927024781703949,
+          3.78598952293396,
+          4.762125015258789
+        ],
+        "best_step": 3200,
+        "validation_metrics": {
+          "velocity_mean": 0.0041586243845057776,
+          "pressure_mean": 0.003754426701832322,
+          "joint_mean": 0.007913051086338099,
+          "joint_worst": 0.035533953847093784,
+          "worst_Re_mean": 0.0085535597890024,
+          "per_Re": {
+            "99.0": {
+              "joint_mean": 0.007272542383673798,
+              "joint_worst": 0.033133691090985906,
+              "alpha_mean": 0.4425407648086548,
+              "alpha_min": 0.34404271841049194,
+              "alpha_max": 0.9777801632881165
+            },
+            "101.5": {
+              "joint_mean": 0.0085535597890024,
+              "joint_worst": 0.035533953847093784,
+              "alpha_mean": 0.6482896208763123,
+              "alpha_min": 0.43454599380493164,
+              "alpha_max": 0.9816119074821472
+            }
+          },
+          "alpha_mean": 0.5454151630401611,
+          "alpha_min": 0.34404271841049194,
+          "alpha_max": 0.9816119074821472
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "pair_indices": [
+          2,
+          1
+        ],
+        "seed": 42003,
+        "input_mode": "full",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 32,
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "full",
+        "lr": 0.0003,
+        "mask_after_standardization": false,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42003,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133630.0555105,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/hp/mu_only/seed_42001": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\hp\\mu_only\\seed_42001\\best.pt",
+      "sha256": "16fb938fec96b36aa2db46b17cd0ef157aa2f5d5da787b8c7419fd294343b840",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "HP",
+        "feature_mean": [
+          99.75,
+          -1.7552069425582886,
+          -2.858804225921631,
+          26.36236572265625,
+          24.67444610595703,
+          -0.75,
+          0.375,
+          25.739612579345703,
+          26.785789489746094
+        ],
+        "feature_std": [
+          0.9013878107070923,
+          3.848541259765625,
+          2.594031572341919,
+          4.92283821105957,
+          0.8370219469070435,
+          0.6614378094673157,
+          0.927024781703949,
+          3.78598952293396,
+          4.762125015258789
+        ],
+        "best_step": 400,
+        "validation_metrics": {
+          "velocity_mean": 0.005309375764568461,
+          "pressure_mean": 0.00487360997411978,
+          "joint_mean": 0.010182985738688241,
+          "joint_worst": 0.03314936939776364,
+          "worst_Re_mean": 0.010242912564249801,
+          "per_Re": {
+            "99.0": {
+              "joint_mean": 0.010242912564249801,
+              "joint_worst": 0.030385675861668023,
+              "alpha_mean": 0.9012147784233093,
+              "alpha_min": 0.9012147784233093,
+              "alpha_max": 0.9012147784233093
+            },
+            "101.5": {
+              "joint_mean": 0.010123058913126681,
+              "joint_worst": 0.03314936939776364,
+              "alpha_mean": 0.920820951461792,
+              "alpha_min": 0.920820951461792,
+              "alpha_max": 0.920820951461792
+            }
+          },
+          "alpha_mean": 0.911017894744873,
+          "alpha_min": 0.9012147784233093,
+          "alpha_max": 0.920820951461792
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "pair_indices": [
+          2,
+          1
+        ],
+        "seed": 42001,
+        "input_mode": "mu_only",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 32,
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "mu_only",
+        "lr": 0.0003,
+        "mask_after_standardization": true,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42001,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133566.9425,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/hp/mu_only/seed_42002": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\hp\\mu_only\\seed_42002\\best.pt",
+      "sha256": "01a3d08bb74adc17c6a389c0be43ba8ceb99426eed585918ac44b769c14e015e",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "HP",
+        "feature_mean": [
+          99.75,
+          -1.7552069425582886,
+          -2.858804225921631,
+          26.36236572265625,
+          24.67444610595703,
+          -0.75,
+          0.375,
+          25.739612579345703,
+          26.785789489746094
+        ],
+        "feature_std": [
+          0.9013878107070923,
+          3.848541259765625,
+          2.594031572341919,
+          4.92283821105957,
+          0.8370219469070435,
+          0.6614378094673157,
+          0.927024781703949,
+          3.78598952293396,
+          4.762125015258789
+        ],
+        "best_step": 400,
+        "validation_metrics": {
+          "velocity_mean": 0.005303964347636951,
+          "pressure_mean": 0.004878856079622417,
+          "joint_mean": 0.010182820427259369,
+          "joint_worst": 0.03312474018517312,
+          "worst_Re_mean": 0.010241876329647856,
+          "per_Re": {
+            "99.0": {
+              "joint_mean": 0.010241876329647856,
+              "joint_worst": 0.03031695507664868,
+              "alpha_mean": 0.8985387682914734,
+              "alpha_min": 0.8985387682914734,
+              "alpha_max": 0.8985387682914734
+            },
+            "101.5": {
+              "joint_mean": 0.010123764524870882,
+              "joint_worst": 0.03312474018517312,
+              "alpha_mean": 0.9200052618980408,
+              "alpha_min": 0.9200052618980408,
+              "alpha_max": 0.9200052618980408
+            }
+          },
+          "alpha_mean": 0.9092720150947571,
+          "alpha_min": 0.8985387682914734,
+          "alpha_max": 0.9200052618980408
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "pair_indices": [
+          2,
+          1
+        ],
+        "seed": 42002,
+        "input_mode": "mu_only",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 32,
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "mu_only",
+        "lr": 0.0003,
+        "mask_after_standardization": true,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42002,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133608.450443,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/hp/mu_only/seed_42003": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\hp\\mu_only\\seed_42003\\best.pt",
+      "sha256": "aa7e14aa9392b126fa9a7e53dd2afeb392f421fb07e0df060f61e6e660c4be09",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "HP",
+        "feature_mean": [
+          99.75,
+          -1.7552069425582886,
+          -2.858804225921631,
+          26.36236572265625,
+          24.67444610595703,
+          -0.75,
+          0.375,
+          25.739612579345703,
+          26.785789489746094
+        ],
+        "feature_std": [
+          0.9013878107070923,
+          3.848541259765625,
+          2.594031572341919,
+          4.92283821105957,
+          0.8370219469070435,
+          0.6614378094673157,
+          0.927024781703949,
+          3.78598952293396,
+          4.762125015258789
+        ],
+        "best_step": 400,
+        "validation_metrics": {
+          "velocity_mean": 0.005337102333869873,
+          "pressure_mean": 0.0048445910287265165,
+          "joint_mean": 0.01018169336259639,
+          "joint_worst": 0.03371357303438907,
+          "worst_Re_mean": 0.010243937819112765,
+          "per_Re": {
+            "99.0": {
+              "joint_mean": 0.010243937819112765,
+              "joint_worst": 0.03044126814805847,
+              "alpha_mean": 0.9033251404762268,
+              "alpha_min": 0.9033251404762268,
+              "alpha_max": 0.9033251404762268
+            },
+            "101.5": {
+              "joint_mean": 0.010119448906080014,
+              "joint_worst": 0.03371357303438907,
+              "alpha_mean": 0.9379453659057617,
+              "alpha_min": 0.9379453659057617,
+              "alpha_max": 0.9379453659057617
+            }
+          },
+          "alpha_mean": 0.9206352233886719,
+          "alpha_min": 0.9033251404762268,
+          "alpha_max": 0.9379453659057617
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "pair_indices": [
+          2,
+          1
+        ],
+        "seed": 42003,
+        "input_mode": "mu_only",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 32,
+        "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "mu_only",
+        "lr": 0.0003,
+        "mask_after_standardization": true,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42003,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133650.457959,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/sh/full/seed_42001": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\sh\\full\\seed_42001\\best.pt",
+      "sha256": "bfa459e6122a86f39696e745e668d4b6b999b8ee1eea7769084a6f9cb3002abf",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "SH",
+        "feature_mean": [
+          95.02141571044922,
+          -1.7136400938034058,
+          -2.7276337146759033,
+          20.59858512878418,
+          18.569074630737305,
+          0.0357142873108387,
+          0.25,
+          19.74380111694336,
+          20.75144386291504
+        ],
+        "feature_std": [
+          0.43822431564331055,
+          3.7334864139556885,
+          2.2875375747680664,
+          6.981695652008057,
+          2.785862922668457,
+          0.9993622303009033,
+          0.9682458639144897,
+          5.706777572631836,
+          6.88156270980835
+        ],
+        "best_step": 5500,
+        "validation_metrics": {
+          "velocity_mean": 0.0038206928878054543,
+          "pressure_mean": 0.00681863863559018,
+          "joint_mean": 0.010639331523395634,
+          "joint_worst": 0.10722084241716834,
+          "worst_Re_mean": 0.011019907085707248,
+          "per_Re": {
+            "94.5": {
+              "joint_mean": 0.01025875596108402,
+              "joint_worst": 0.10263403643257757,
+              "alpha_mean": 0.0969625934958458,
+              "alpha_min": 0.00019505867385305464,
+              "alpha_max": 0.7573754787445068
+            },
+            "95.25": {
+              "joint_mean": 0.011019907085707248,
+              "joint_worst": 0.10722084241716834,
+              "alpha_mean": 0.09701664745807648,
+              "alpha_min": 1.0358372492191847e-05,
+              "alpha_max": 0.7751379013061523
+            }
+          },
+          "alpha_mean": 0.09698962420225143,
+          "alpha_min": 1.0358372492191847e-05,
+          "alpha_max": 0.7751379013061523
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "pair_indices": [
+          0,
+          1
+        ],
+        "seed": 42001,
+        "input_mode": "full",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 56,
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "full",
+        "lr": 0.0003,
+        "mask_after_standardization": false,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42001,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133418.1486807,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/sh/full/seed_42002": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\sh\\full\\seed_42002\\best.pt",
+      "sha256": "479cd0b0ab27cb518f5e9b46454f51e176ce4918ac09705a3fa6aba61adee51d",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "SH",
+        "feature_mean": [
+          95.02141571044922,
+          -1.7136400938034058,
+          -2.7276337146759033,
+          20.59858512878418,
+          18.569074630737305,
+          0.0357142873108387,
+          0.25,
+          19.74380111694336,
+          20.75144386291504
+        ],
+        "feature_std": [
+          0.43822431564331055,
+          3.7334864139556885,
+          2.2875375747680664,
+          6.981695652008057,
+          2.785862922668457,
+          0.9993622303009033,
+          0.9682458639144897,
+          5.706777572631836,
+          6.88156270980835
+        ],
+        "best_step": 7100,
+        "validation_metrics": {
+          "velocity_mean": 0.0038217844320593435,
+          "pressure_mean": 0.006817312836278455,
+          "joint_mean": 0.010639097268337798,
+          "joint_worst": 0.10724104374135815,
+          "worst_Re_mean": 0.011019606757261524,
+          "per_Re": {
+            "94.5": {
+              "joint_mean": 0.010258587779414073,
+              "joint_worst": 0.10263348075223205,
+              "alpha_mean": 0.09666739404201508,
+              "alpha_min": 0.0003516093420330435,
+              "alpha_max": 0.7573652863502502
+            },
+            "95.25": {
+              "joint_mean": 0.011019606757261524,
+              "joint_worst": 0.10724104374135815,
+              "alpha_mean": 0.09699158370494843,
+              "alpha_min": 1.0934233614534605e-05,
+              "alpha_max": 0.7754638195037842
+            }
+          },
+          "alpha_mean": 0.09682948887348175,
+          "alpha_min": 1.0934233614534605e-05,
+          "alpha_max": 0.7754638195037842
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "pair_indices": [
+          0,
+          1
+        ],
+        "seed": 42002,
+        "input_mode": "full",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 56,
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "full",
+        "lr": 0.0003,
+        "mask_after_standardization": false,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42002,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133461.895943,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/sh/full/seed_42003": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\sh\\full\\seed_42003\\best.pt",
+      "sha256": "26ae9a942b0f9f1c98d5ad70b48c50f3e82b8cd14f6d2f85d80256800956bc1f",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "SH",
+        "feature_mean": [
+          95.02141571044922,
+          -1.7136400938034058,
+          -2.7276337146759033,
+          20.59858512878418,
+          18.569074630737305,
+          0.0357142873108387,
+          0.25,
+          19.74380111694336,
+          20.75144386291504
+        ],
+        "feature_std": [
+          0.43822431564331055,
+          3.7334864139556885,
+          2.2875375747680664,
+          6.981695652008057,
+          2.785862922668457,
+          0.9993622303009033,
+          0.9682458639144897,
+          5.706777572631836,
+          6.88156270980835
+        ],
+        "best_step": 5900,
+        "validation_metrics": {
+          "velocity_mean": 0.00381804895966424,
+          "pressure_mean": 0.006821260116094308,
+          "joint_mean": 0.01063930907575855,
+          "joint_worst": 0.1072454017089871,
+          "worst_Re_mean": 0.011019664171101756,
+          "per_Re": {
+            "94.5": {
+              "joint_mean": 0.010258953980415342,
+              "joint_worst": 0.10264563159001466,
+              "alpha_mean": 0.09846687316894531,
+              "alpha_min": 0.001875139307230711,
+              "alpha_max": 0.7575878500938416
+            },
+            "95.25": {
+              "joint_mean": 0.011019664171101756,
+              "joint_worst": 0.1072454017089871,
+              "alpha_mean": 0.09704126417636871,
+              "alpha_min": 4.61180716229137e-05,
+              "alpha_max": 0.7755340337753296
+            }
+          },
+          "alpha_mean": 0.09775406122207642,
+          "alpha_min": 4.61180716229137e-05,
+          "alpha_max": 0.7755340337753296
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "pair_indices": [
+          0,
+          1
+        ],
+        "seed": 42003,
+        "input_mode": "full",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 56,
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "full",
+        "lr": 0.0003,
+        "mask_after_standardization": false,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42003,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133505.9243107,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/sh/mu_only/seed_42001": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\sh\\mu_only\\seed_42001\\best.pt",
+      "sha256": "e20ef9d4219bd3f40dd6d68118c6f8ee61cd6e576797555b88c53c0d80804c20",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "SH",
+        "feature_mean": [
+          95.02141571044922,
+          -1.7136400938034058,
+          -2.7276337146759033,
+          20.59858512878418,
+          18.569074630737305,
+          0.0357142873108387,
+          0.25,
+          19.74380111694336,
+          20.75144386291504
+        ],
+        "feature_std": [
+          0.43822431564331055,
+          3.7334864139556885,
+          2.2875375747680664,
+          6.981695652008057,
+          2.785862922668457,
+          0.9993622303009033,
+          0.9682458639144897,
+          5.706777572631836,
+          6.88156270980835
+        ],
+        "best_step": 1,
+        "validation_metrics": {
+          "velocity_mean": 0.006916769361307324,
+          "pressure_mean": 0.011289118324455033,
+          "joint_mean": 0.018205887685762357,
+          "joint_worst": 0.088027183822369,
+          "worst_Re_mean": 0.018222920191871793,
+          "per_Re": {
+            "94.5": {
+              "joint_mean": 0.018222920191871793,
+              "joint_worst": 0.088027183822369,
+              "alpha_mean": 0.30297306180000305,
+              "alpha_min": 0.30297306180000305,
+              "alpha_max": 0.30297306180000305
+            },
+            "95.25": {
+              "joint_mean": 0.01818885517965292,
+              "joint_worst": 0.08766086776505516,
+              "alpha_mean": 0.23305396735668182,
+              "alpha_min": 0.23305396735668182,
+              "alpha_max": 0.23305396735668182
+            }
+          },
+          "alpha_mean": 0.26801350712776184,
+          "alpha_min": 0.23305396735668182,
+          "alpha_max": 0.30297306180000305
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "pair_indices": [
+          0,
+          1
+        ],
+        "seed": 42001,
+        "input_mode": "mu_only",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 56,
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "mu_only",
+        "lr": 0.0003,
+        "mask_after_standardization": true,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42001,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133439.6385677,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/sh/mu_only/seed_42002": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\sh\\mu_only\\seed_42002\\best.pt",
+      "sha256": "72e7e946fa9477717328b2986815d32ed64aa0b357351b87e383cfbb96d7b2df",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "SH",
+        "feature_mean": [
+          95.02141571044922,
+          -1.7136400938034058,
+          -2.7276337146759033,
+          20.59858512878418,
+          18.569074630737305,
+          0.0357142873108387,
+          0.25,
+          19.74380111694336,
+          20.75144386291504
+        ],
+        "feature_std": [
+          0.43822431564331055,
+          3.7334864139556885,
+          2.2875375747680664,
+          6.981695652008057,
+          2.785862922668457,
+          0.9993622303009033,
+          0.9682458639144897,
+          5.706777572631836,
+          6.88156270980835
+        ],
+        "best_step": 1,
+        "validation_metrics": {
+          "velocity_mean": 0.0069201258984601345,
+          "pressure_mean": 0.01129125531041029,
+          "joint_mean": 0.018211381208870423,
+          "joint_worst": 0.0880314993709993,
+          "worst_Re_mean": 0.01822998920344648,
+          "per_Re": {
+            "94.5": {
+              "joint_mean": 0.01822998920344648,
+              "joint_worst": 0.0880314993709993,
+              "alpha_mean": 0.30332180857658386,
+              "alpha_min": 0.30332180857658386,
+              "alpha_max": 0.30332180857658386
+            },
+            "95.25": {
+              "joint_mean": 0.018192773214294373,
+              "joint_worst": 0.08766384830122746,
+              "alpha_mean": 0.23326358199119568,
+              "alpha_min": 0.23326358199119568,
+              "alpha_max": 0.23326358199119568
+            }
+          },
+          "alpha_mean": 0.26829269528388977,
+          "alpha_min": 0.23326358199119568,
+          "alpha_max": 0.30332180857658386
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "pair_indices": [
+          0,
+          1
+        ],
+        "seed": 42002,
+        "input_mode": "mu_only",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 56,
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "mu_only",
+        "lr": 0.0003,
+        "mask_after_standardization": true,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42002,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133484.1431427,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    },
+    "seed_study/sh/mu_only/seed_42003": {
+      "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\experiments\\iclr_seed_study_20260911\\results_v1\\centered_square\\sh\\mu_only\\seed_42003\\best.pt",
+      "sha256": "eda4ccd650d562bf4e5a19b6476926fca5919aa8c557c643b84f8211c8c32da5",
+      "input_dim": 9,
+      "total_trainable": 4865,
+      "model_repr": "ConvexGate(\n  (correction): MLP(\n    (net): Sequential(\n      (0): Linear(in_features=9, out_features=64, bias=True)\n      (1): SiLU()\n      (2): Linear(in_features=64, out_features=64, bias=True)\n      (3): SiLU()\n      (4): Linear(in_features=64, out_features=1, bias=True)\n    )\n  )\n)",
+      "state_dict": {
+        "correction.net.0.weight": {
+          "shape": [
+            64,
+            9
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.0.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.weight": {
+          "shape": [
+            64,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.2.bias": {
+          "shape": [
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.weight": {
+          "shape": [
+            1,
+            64
+          ],
+          "dtype": "torch.float32"
+        },
+        "correction.net.4.bias": {
+          "shape": [
+            1
+          ],
+          "dtype": "torch.float32"
+        }
+      },
+      "metadata": {
+        "schema_version": 1,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "boundary": "SH",
+        "feature_mean": [
+          95.02141571044922,
+          -1.7136400938034058,
+          -2.7276337146759033,
+          20.59858512878418,
+          18.569074630737305,
+          0.0357142873108387,
+          0.25,
+          19.74380111694336,
+          20.75144386291504
+        ],
+        "feature_std": [
+          0.43822431564331055,
+          3.7334864139556885,
+          2.2875375747680664,
+          6.981695652008057,
+          2.785862922668457,
+          0.9993622303009033,
+          0.9682458639144897,
+          5.706777572631836,
+          6.88156270980835
+        ],
+        "best_step": 1,
+        "validation_metrics": {
+          "velocity_mean": 0.006920656572822638,
+          "pressure_mean": 0.011291598200316874,
+          "joint_mean": 0.01821225477313951,
+          "joint_worst": 0.08803249987097914,
+          "worst_Re_mean": 0.018231620468283336,
+          "per_Re": {
+            "94.5": {
+              "joint_mean": 0.018231620468283336,
+              "joint_worst": 0.08803249987097914,
+              "alpha_mean": 0.30340224504470825,
+              "alpha_min": 0.30340224504470825,
+              "alpha_max": 0.30340224504470825
+            },
+            "95.25": {
+              "joint_mean": 0.01819288907799569,
+              "joint_worst": 0.08766394213340489,
+              "alpha_mean": 0.23326972126960754,
+              "alpha_min": 0.23326972126960754,
+              "alpha_max": 0.23326972126960754
+            }
+          },
+          "alpha_mean": 0.2683359980583191,
+          "alpha_min": 0.23326972126960754,
+          "alpha_max": 0.30340224504470825
+        },
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "pair_indices": [
+          0,
+          1
+        ],
+        "seed": 42003,
+        "input_mode": "mu_only",
+        "fusion_feedback": false
+      },
+      "resolved_config": {
+        "batch_sampling": "with_replacement",
+        "batch_size": 56,
+        "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+        "device": "cuda",
+        "eval_every": 100,
+        "gradient_clip_norm": 1.0,
+        "input_dim": 9,
+        "input_mode": "mu_only",
+        "lr": 0.0003,
+        "mask_after_standardization": true,
+        "numpy_version": "2.4.4",
+        "optimizer": "AdamW",
+        "parameter_count": 4865,
+        "router_checkpoint_sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac",
+        "seed": 42003,
+        "selection": [
+          "validation worst_Re_mean",
+          "validation joint_mean"
+        ],
+        "started_unix": 1789133525.649364,
+        "steps": 8000,
+        "swanlab_mode": "disabled",
+        "torch_version": "2.11.0+cu126",
+        "weight_decay": 0.0001
+      },
+      "recorded_last_step": 8000,
+      "history_records": 81
+    }
+  }
+}

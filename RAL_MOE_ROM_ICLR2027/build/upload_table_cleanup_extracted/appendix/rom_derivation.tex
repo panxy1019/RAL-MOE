@@ -1,0 +1,128 @@
+\section{Full problem setup and weighted POD construction}
+\label{app:problem_pod}
+
+\subsection{Parameterized full-order model, gauge, and regime cover}
+
+After spatial discretization, the velocity $\bm u(t;\mu)\in\mathbb R^{N_u}$ and pressure $p(t;\mu)\in\mathbb R^{N_p}$ satisfy
+\begin{equation}
+ \dot{\bm u}=\bm f_h(\mu)+\mathcal L_h(\mu)\bm u
+ -\mathcal N_h(\bm u,\bm u;\mu)-\nabla_h(\mu)p,
+ \qquad \operatorname{div}_h(\mu)\bm u=0.
+ \label{eq:app_fom}
+\end{equation}
+Pressure is defined only up to an additive constant. With positive finite-volume weights $\bm w$, every pressure snapshot is mapped to the weighted zero-mean gauge
+\begin{equation}
+ \Gamma_p(q)=q-\frac{\bm w^\top q}{\bm w^\top\bm 1}\bm 1,
+ \qquad p^\circ=\Gamma_p(p),
+ \qquad \bm w^\top p^\circ=0.
+ \label{eq:app_pressure_gauge}
+\end{equation}
+The parameter domain is covered by overlapping regions
+\begin{equation}
+ \mathcal M\subseteq\bigcup_{r\in\{S,H,P\}}\mathcal M_r,
+ \qquad \mathcal O_{SH}=\mathcal M_S\cap\mathcal M_H,
+ \qquad \mathcal O_{HP}=\mathcal M_H\cap\mathcal M_P.
+ \label{eq:app_regime_cover}
+\end{equation}
+No direct $S$--$P$ overlap is used.
+
+\subsection{Area-weighted local POD}
+
+The finite-volume quadrature induces
+\begin{equation}
+ \langle\bm v,\bm z\rangle_{M_u}=\bm v^\top M_u\bm z,
+ \qquad \langle q,s\rangle_{M_p}=q^\top M_p s,
+ \qquad M_p=\operatorname{diag}(\bm w),\quad M_u=\operatorname{diag}(M_p,M_p).
+ \label{eq:app_weighted_inner_products}
+\end{equation}
+For chart $r$, let $X_u^{(r)}$ and $X_p^{(r)}$ contain velocity and gauge-corrected pressure snapshots after subtracting their chart-specific means $\bar{\bm u}^{(r)}$ and $\bar p^{(r),\circ}$. The local bases solve
+\begin{align}
+ \Phi_u^{(r)}&\in\underset{\Psi^\top M_u\Psi=I_{d_u}}{\operatorname{arg\,min}}
+ \left\|X_u^{(r)}-\Psi\Psi^\top M_uX_u^{(r)}\right\|_{M_u,F}^2,\\
+ \Phi_p^{(r)}&\in\underset{\Psi^\top M_p\Psi=I_{d_p}}{\operatorname{arg\,min}}
+ \left\|X_p^{(r)}-\Psi\Psi^\top M_pX_p^{(r)}\right\|_{M_p,F}^2,
+ \label{eq:app_pod_optimization}
+\end{align}
+where $\|Y\|_{M,F}^2=\operatorname{tr}(Y^\top MY)$. Equivalently, for the weighted singular value decompositions
+\begin{equation}
+ M_u^{1/2}X_u^{(r)}=U_u^{(r)}\Sigma_u^{(r)}{V_u^{(r)}}^\top,
+ \qquad M_p^{1/2}X_p^{(r)}=U_p^{(r)}\Sigma_p^{(r)}{V_p^{(r)}}^\top,
+\end{equation}
+the bases are
+\begin{equation}
+ \Phi_u^{(r)}=M_u^{-1/2}U_u^{(r)}(:,1{:}d_u),
+ \qquad \Phi_p^{(r)}=M_p^{-1/2}U_p^{(r)}(:,1{:}d_p),
+ \label{eq:app_weighted_svd_bases}
+\end{equation}
+and satisfy ${\Phi_u^{(r)}}^\top M_u\Phi_u^{(r)}=I$ and ${\Phi_p^{(r)}}^\top M_p\Phi_p^{(r)}=I$. Gauge consistency also gives $\bm w^\top\Phi_p^{(r)}=\bm 0^\top$.
+
+Encoding and decoding are chart specific:
+\begin{align}
+ \bm a^{(r)}&={\Phi_u^{(r)}}^\top M_u(\bm u-\bar{\bm u}^{(r)}),
+ &\mathcal D_r^u(\bm a^{(r)})&=\bar{\bm u}^{(r)}+\Phi_u^{(r)}\bm a^{(r)},\\
+ \bm b^{(r)}&={\Phi_p^{(r)}}^\top M_p(\Gamma_p(p)-\bar p^{(r),\circ}),
+ &\mathcal D_r^p(\bm b^{(r)})&=\bar p^{(r),\circ}+\Phi_p^{(r)}\bm b^{(r)}.
+ \label{eq:app_encode_decode}
+\end{align}
+Learned components use local standardizations
+\begin{equation}
+ \widetilde{\bm a}^{(r)}=(\bm a^{(r)}-\bm\mu_a^{(r)})\oslash\bm\sigma_a^{(r)},
+ \qquad
+ \widetilde{\bm b}^{(r)}=(\bm b^{(r)}-\bm\mu_b^{(r)})\oslash\bm\sigma_b^{(r)}.
+ \label{eq:app_local_scalers}
+\end{equation}
+
+\section{Projected Galerkin and pressure operators}
+\label{app:rom}
+
+\subsection{Chart-local momentum dynamics}
+
+Substituting the affine reconstructions into Eq.~(\plaineqref{eq:app_fom}) and testing against the local velocity basis gives
+\begin{equation}
+ \dot{\bm a}^{(r)}=\bm c_r(\mu)+A_r(\mu)\bm a^{(r)}
+ +H_r(\mu):(\bm a^{(r)}\otimes\bm a^{(r)})+C_r^p(\mu)\bm b^{(r)}.
+ \label{eq:app_projected_momentum}
+\end{equation}
+For velocity modes $\bm\phi_i^{u,(r)}$ and pressure modes $\phi_\ell^{p,(r)}$,
+\begin{align}
+ [\bm c_r]_i
+ &=\left\langle\bm\phi_i^{u,(r)},
+ \bm f_h+\mathcal L_h\bar{\bm u}^{(r)}
+ -\mathcal N_h(\bar{\bm u}^{(r)},\bar{\bm u}^{(r)};\mu)
+ -\nabla_h\bar p^{(r),\circ}\right\rangle_{M_u},\\
+ [A_r]_{ij}
+ &=\left\langle\bm\phi_i^{u,(r)},
+ \mathcal L_h\bm\phi_j^{u,(r)}
+ -\mathcal N_h(\bar{\bm u}^{(r)},\bm\phi_j^{u,(r)};\mu)
+ -\mathcal N_h(\bm\phi_j^{u,(r)},\bar{\bm u}^{(r)};\mu)
+ \right\rangle_{M_u},\\
+ [H_r]_{ijk}
+ &=-\left\langle\bm\phi_i^{u,(r)},
+ \mathcal N_h(\bm\phi_j^{u,(r)},\bm\phi_k^{u,(r)};\mu)
+ \right\rangle_{M_u},\\
+ [C_r^p]_{i\ell}
+ &=-\left\langle\bm\phi_i^{u,(r)},\nabla_h(\mu)\phi_\ell^{p,(r)}\right\rangle_{M_u}.
+ \label{eq:app_projected_operators}
+\end{align}
+These terms define the backbone $\mathcal F_r^G(\bm a,\bm b;\mu)$ used in Eq.~(\plaineqref{eq:main_specialist}).
+
+\subsection{Gauge-consistent pressure--Poisson map}
+
+At the continuous level the gauge-fixed pressure satisfies
+\begin{equation}
+ -\Delta p^\circ=\nabla\!\cdot\!\left[(\bm u\!\cdot\!\nabla)\bm u-\bm f\right],
+ \qquad \int_\Omega p^\circ\,\mathrm d\Omega=0,
+\end{equation}
+with boundary conditions inherited from the momentum equation. Projection of the discrete relation gives
+\begin{equation}
+ K_r^p(\mu)\bm b^{PP,(r)}=\bm d_r(\mu)+B_r(\mu)\bm a^{(r)}
+ +Q_r(\mu):(\bm a^{(r)}\otimes\bm a^{(r)}),
+ \label{eq:app_pressure_poisson_system}
+\end{equation}
+and hence
+\begin{equation}
+ \mathcal Q_r^{PP}(\bm a;\mu)=[K_r^p(\mu)]^{-1}
+ \left[\bm d_r(\mu)+B_r(\mu)\bm a+Q_r(\mu):(\bm a\otimes\bm a)\right].
+ \label{eq:app_pressure_poisson_map}
+\end{equation}
+The gauge removes the constant pressure nullspace. Each complete chart therefore contains its own parameter region, affine means, bases, scalers, $\mathcal F_r^G$, and $\mathcal Q_r^{PP}$. Equal reduced dimensions do not create a canonical componentwise identification between two charts; only decoded physical fields share a common representation.

@@ -1,0 +1,86 @@
+% Replace the existing Section 3.3 with this subsection.
+% This file is a manuscript fragment, not a standalone compilable document.
+\subsection{Closed-loop rollout training}
+\label{sec:rollout_training}
+
+Each specialist is initialized by encoding a physical history into
+its own local coordinates. It then advances autonomously, using its
+predicted velocity and reconstructed pressure to update the history.
+No reference state inside the prediction window is injected after
+initialization.
+
+\paragraph{Frozen-context advancement.}
+During one reduced velocity step, the pressure $\bm b_n^{(r)}$,
+preceding-state history, and parameter define a fixed context
+$\mathcal C_n^{(r)}$. For a trial velocity state $\bm a$, the hybrid
+right-hand side and numerical update are
+\begin{align}
+  F_r(\bm a;\mathcal C_n^{(r)})
+  &=\mathcal F_r^G(\bm a,\bm b_n^{(r)};\mu)
+    +\bm\rho^u_{\theta_r}\!\left(
+      \bm\xi^{(r)}(\bm a;\mathcal C_n^{(r)})\right),
+    \label{eq:main_frozen_context_rhs}
+    \\
+  \bm a_{n+1}^{(r)}
+  &=\operatorname{Step}_r\!\left(
+     \bm a_n^{(r)};
+     F_r(\cdot;\mathcal C_n^{(r)}),\Delta t_r\right).
+    \label{eq:main_specialist_step}
+\end{align}
+Here $\Delta t_r$ is the reduced time step and
+$\operatorname{Step}_r$ denotes the chart-specific advancement rule.
+For continuous-time instances, Runge--Kutta stages evaluate the
+velocity-dependent right-hand side with the same frozen context;
+each trial velocity triggers recomputation of the Galerkin right-hand
+side, current features, embedding, internal group selection, channel
+Top-2 weights, and expert responses. Single-group and fixed-group
+configurations retain their prescribed group. Intermediate pressure
+outputs that may be computed by the full network forward pass are
+not used to advance pressure at the Runge--Kutta stages. The updated velocity is then supplied to
+Eq.~\eqref{eq:main_pressure_closure}, and the local history is shifted
+before the next step. The nominal Runge--Kutta order applies to the
+frozen-context velocity subproblem, not automatically to the complete
+pressure/history-coupled scheme. Benchmark-specific stepping rules,
+including the data-only Square H overlap path and the eight internal
+substeps of the deployed Square P configuration, are given in
+Appendix~\ref{app:implementation}.
+
+\paragraph{Rollout prediction objective.}
+Training unrolls the complete specialist update for $K$ steps with the following normalized coefficient prediction loss
+\begin{equation}
+  \mathcal L_r=\frac{1}{K}\sum_{k=1}^{K}\left[
+  \frac{\left\|(\widehat{\bm a}_{n+k}^{(r)}-\bm a_{n+k}^{(r)})
+  \oslash\bm\sigma_a^{(r)}\right\|_2^2}{d_u^{(r)}}
+  +\frac{\left\|(\widehat{\bm b}_{n+k}^{(r)}-\bm b_{n+k}^{(r)})
+  \oslash\bm\sigma_b^{(r)}\right\|_2^2}{d_p^{(r)}}\right].
+  \label{eq:main_rollout_loss}
+\end{equation}
+Hats denote recursively predicted coefficients, while unhatted
+coefficients are reference targets. The dimensions $d_u^{(r)}$ and
+$d_p^{(r)}$ are chart-specific; the scaling vectors
+$\bm\sigma_a^{(r)}$ and $\bm\sigma_b^{(r)}$ are estimated from the
+corresponding training set, and $\oslash$ denotes componentwise
+division. Reference coefficients are used to compute the loss but
+are not fed back into the predicted trajectory. Progressively longer
+rollout horizons expose the learned corrections to their own
+accumulated prediction errors. The curricula and optimization
+settings are reported in Appendix~\ref{app:implementation}, and
+held-out trajectory splits are listed in Table~\ref{tab:chart_splits}.
+
+This expression defines the rollout prediction term, not every term
+in every training configuration. Learned group-routing configurations
+also employ auxiliary group-balance, entropy, and Reynolds-partition
+supervision terms; their activation and coefficients are
+configuration-dependent. The straight-through group-selection rule
+is defined in Section~\ref{sec:hybrid_specialists}.
+These auxiliary objectives should not be confused with the separately
+trained outer E2 router.
+
+The prediction objective is distinct from physical-field evaluation:
+variance normalization reweights reduced-coordinate errors and is
+not a physical energy norm. Weighted POD orthonormality gives
+$\|\Phi_u^{(r)}(\widehat{\bm a}-\bm a)\|_{M_u}^2
+=\|\widehat{\bm a}-\bm a\|_2^2$ within a common chart, but comparison
+with the original CFD field additionally includes its POD projection
+remainder. The coefficient loss alone guarantees neither
+conservation nor long-term stability.

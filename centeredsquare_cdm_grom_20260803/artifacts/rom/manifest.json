@@ -1,0 +1,57 @@
+{
+  "A_all_shape": [
+    23,
+    64,
+    64
+  ],
+  "G_u_shape": [
+    64,
+    64
+  ],
+  "H_p_shape": [
+    64,
+    64,
+    64
+  ],
+  "H_shape": [
+    64,
+    64,
+    64
+  ],
+  "H_tilde_shape": [
+    64,
+    64,
+    64
+  ],
+  "L_shape": [
+    64,
+    64
+  ],
+  "P_shape": [
+    64,
+    64
+  ],
+  "c_all_shape": [
+    23,
+    64
+  ],
+  "cond_G_u": 1.0000000138293392,
+  "dataset": "/home/ray/Desktop/centeredSquare/cdm_grom_hopf_r64_v1",
+  "eig_L_max": -0.013029727120939512,
+  "eig_L_min": -41.37156594837658,
+  "finite": true,
+  "label": "full64",
+  "max_abs_G_u_minus_I": 3.7771270555708725e-09,
+  "norm_H_fro": 39.87507692352135,
+  "norm_P_fro": 1.8463596196984868,
+  "num_cells": 9400,
+  "num_re": 23,
+  "output_dir": "/home/ray/Desktop/centeredSquare/cdm_grom_hopf_r64_v1/pod/rom/full64_ru64_rp64",
+  "pod_rank_pack": "/home/ray/Desktop/centeredSquare/cdm_grom_hopf_r64_v1/pod/rom/full64_ru64_rp64/pod_rank_pack_Re50_150_N100_full64_ru64_rp64.npz",
+  "pressure_H_tilde_relative_residual": 2.8930261242764527e-15,
+  "pressure_tensor_file": "/home/ray/Desktop/centeredSquare/cdm_grom_hopf_r64_v1/pod/rom/full64_ru64_rp64/pressure_poisson_surrogate_tensors_Re50_150_N100_full64_ru64_rp64.npz",
+  "rank_L": 64,
+  "rp": 64,
+  "ru": 64,
+  "velocity_tensor_file": "/home/ray/Desktop/centeredSquare/cdm_grom_hopf_r64_v1/pod/rom/full64_ru64_rp64/semi_intrusive_galerkin_tensors_Re50_150_N100_full64_ru64_rp64_compact.npz"
+}

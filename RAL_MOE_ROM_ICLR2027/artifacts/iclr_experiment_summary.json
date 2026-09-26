@@ -1,0 +1,378 @@
+{
+  "status": "BLOCKED_PROVENANCE",
+  "scope": "Precondition audit only; no new experiment",
+  "blockers": [
+    "Table4 current-paper per-Re raw/checkpoint identity unresolved; revision8 fails regression",
+    "Paper descriptor dimension 6 versus original cache history dimension 8"
+  ],
+  "candidate_source": {
+    "path": "C:\\Users\\panxy1019\\Documents\\CHANNEL\\RAL_MOE_ROM_ICLR2027\\artifacts\\experiment_p123_20260911\\sources\\REVISION8_DETAILED_ROWS.csv",
+    "sha256": "d99e8a84187b859691edb79ea0498c1bc2ead3ea0ca511b4ccec717f95febcb0",
+    "qualification": "Historical rounded per-Re report; NOT approved as current-paper raw data"
+  },
+  "table4_candidate_checks": [
+    {
+      "model": "RAL-MoE-ROM",
+      "regime": "Steady",
+      "metric": "Velocity_field",
+      "paper": "0.0330--0.1723",
+      "candidate": "0.0384--0.2995",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "RAL-MoE-ROM",
+      "regime": "Steady",
+      "metric": "Pressure_field",
+      "paper": "0.2500--1.3249",
+      "candidate": "1.5226--18.5603",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "RAL-MoE-ROM",
+      "regime": "Hopf",
+      "metric": "Velocity_field",
+      "paper": "0.0032--0.0288",
+      "candidate": "0.0032--0.0288",
+      "n_numeric": 3,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "RAL-MoE-ROM",
+      "regime": "Hopf",
+      "metric": "Pressure_field",
+      "paper": "0.0355--0.4321",
+      "candidate": "0.0355--0.4321",
+      "n_numeric": 3,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "RAL-MoE-ROM",
+      "regime": "Periodic",
+      "metric": "Velocity_field",
+      "paper": "0.3809--1.3473",
+      "candidate": "0.3809--1.3473",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "RAL-MoE-ROM",
+      "regime": "Periodic",
+      "metric": "Pressure_field",
+      "paper": "1.6825--5.9601",
+      "candidate": "1.6825--5.9601",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "Vanilla-FNN-MoE",
+      "regime": "Steady",
+      "metric": "Velocity_field",
+      "paper": "0.0384--0.2995",
+      "candidate": "0.0330--0.1723",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "Vanilla-FNN-MoE",
+      "regime": "Steady",
+      "metric": "Pressure_field",
+      "paper": "2.2163--18.5603",
+      "candidate": "2.2163--7.4363",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "Vanilla-FNN-MoE",
+      "regime": "Hopf",
+      "metric": "Velocity_field",
+      "paper": "N/E",
+      "candidate": "N/E",
+      "n_numeric": 0,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "Vanilla-FNN-MoE",
+      "regime": "Hopf",
+      "metric": "Pressure_field",
+      "paper": "N/E",
+      "candidate": "N/E",
+      "n_numeric": 0,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "Vanilla-FNN-MoE",
+      "regime": "Periodic",
+      "metric": "Velocity_field",
+      "paper": "1.0393--3.0836",
+      "candidate": "1.0393--3.0836",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "Vanilla-FNN-MoE",
+      "regime": "Periodic",
+      "metric": "Pressure_field",
+      "paper": "3.9659--13.3257",
+      "candidate": "3.9659--13.3257",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "DataOnly-MoE",
+      "regime": "Steady",
+      "metric": "Velocity_field",
+      "paper": "0.1637--0.5122",
+      "candidate": "0.0795--0.5122",
+      "n_numeric": 3,
+      "count_ok": false,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "DataOnly-MoE",
+      "regime": "Steady",
+      "metric": "Pressure_field",
+      "paper": "4751.1025--27275.4645",
+      "candidate": "5465.6783--27275.4654",
+      "n_numeric": 3,
+      "count_ok": false,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "DataOnly-MoE",
+      "regime": "Hopf",
+      "metric": "Velocity_field",
+      "paper": "0.1260--0.3880",
+      "candidate": "0.1097--0.3895",
+      "n_numeric": 3,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "DataOnly-MoE",
+      "regime": "Hopf",
+      "metric": "Pressure_field",
+      "paper": "1280.2811--1524.5949",
+      "candidate": "1164.2404--1583.5883",
+      "n_numeric": 3,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "DataOnly-MoE",
+      "regime": "Periodic",
+      "metric": "Velocity_field",
+      "paper": "0.7854--1.8677",
+      "candidate": "0.6416--1.8104",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "DataOnly-MoE",
+      "regime": "Periodic",
+      "metric": "Pressure_field",
+      "paper": "2.2511--10.8189",
+      "candidate": "1.3018--10.6074",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "Global MoE",
+      "regime": "Steady",
+      "metric": "Velocity_field",
+      "paper": "0.0845--0.3404",
+      "candidate": "0.0845--0.3404",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "Global MoE",
+      "regime": "Steady",
+      "metric": "Pressure_field",
+      "paper": "1.5226--7.4363",
+      "candidate": "0.2500--1.3249",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": false
+    },
+    {
+      "model": "Global MoE",
+      "regime": "Hopf",
+      "metric": "Velocity_field",
+      "paper": "0.0110--0.0268",
+      "candidate": "0.0110--0.0268",
+      "n_numeric": 3,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "Global MoE",
+      "regime": "Hopf",
+      "metric": "Pressure_field",
+      "paper": "0.0560--0.2882",
+      "candidate": "0.0560--0.2882",
+      "n_numeric": 3,
+      "count_ok": true,
+      "horizon_ok": true,
+      "matches": true
+    },
+    {
+      "model": "Global MoE",
+      "regime": "Periodic",
+      "metric": "Velocity_field",
+      "paper": "0.5873--1.1726",
+      "candidate": "0.7461--1.5601",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": false,
+      "matches": false
+    },
+    {
+      "model": "Global MoE",
+      "regime": "Periodic",
+      "metric": "Pressure_field",
+      "paper": "2.1896--6.3566",
+      "candidate": "2.7039--8.0550",
+      "n_numeric": 4,
+      "count_ok": true,
+      "horizon_ok": false,
+      "matches": false
+    }
+  ],
+  "table4_candidate_matches": 11,
+  "table4_candidate_total": 24,
+  "centered_square": {
+    "SH": {
+      "stored_K24_percent": {
+        "velocity_mean": 0.4615099534430873,
+        "pressure_mean": 0.7343308822973225,
+        "joint_mean": 1.1958408357404098
+      },
+      "matches_paper_rounding": true,
+      "joint_sum_ok": true,
+      "gate_hash_ok": true,
+      "cache_hash_ok": true,
+      "router_hash_ok": true,
+      "feature_shapes": {
+        "development": [
+          72,
+          9
+        ],
+        "heldout": [
+          16,
+          9
+        ]
+      },
+      "Re_by_split": {
+        "train": [
+          94.0,
+          95.0,
+          95.05,
+          95.15,
+          95.2,
+          95.35,
+          95.4
+        ],
+        "validation": [
+          94.5,
+          95.25
+        ],
+        "heldout": [
+          95.1,
+          95.3
+        ]
+      },
+      "cached_gate_splits_disjoint": true,
+      "full_pipeline_split_audit": "NOT_COMPLETED",
+      "evaluation_replayed": false
+    },
+    "HP": {
+      "stored_K24_percent": {
+        "velocity_mean": 0.4509120026568808,
+        "pressure_mean": 0.3956169536147143,
+        "joint_mean": 0.8465289562715951
+      },
+      "matches_paper_rounding": true,
+      "joint_sum_ok": true,
+      "gate_hash_ok": true,
+      "cache_hash_ok": true,
+      "router_hash_ok": true,
+      "feature_shapes": {
+        "development": [
+          48,
+          9
+        ],
+        "heldout": [
+          16,
+          9
+        ]
+      },
+      "Re_by_split": {
+        "train": [
+          98.5,
+          99.5,
+          100.0,
+          101.0
+        ],
+        "validation": [
+          99.0,
+          101.5
+        ],
+        "heldout": [
+          100.5,
+          102.0
+        ]
+      },
+      "cached_gate_splits_disjoint": true,
+      "full_pipeline_split_audit": "NOT_COMPLETED",
+      "evaluation_replayed": false
+    }
+  },
+  "original_report_sha256": "396ad2e4086834bb5ece181a0da8dae4cd08a8ade0c354ea6af5b380129e935e",
+  "manuscript_files_checked": 31,
+  "manuscript_changed_vs_20260909": [],
+  "missing_deliverables": [
+    "approved table4 raw data and mean/std",
+    "descriptor ablation",
+    "seed study",
+    "complete benchmark protocol and split verification",
+    "revised paper/PDF"
+  ]
+}

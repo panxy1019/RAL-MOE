@@ -1,0 +1,19 @@
+% Copy this package's output/ and captions.tex next to this snippet, or
+% adjust paths. Choose the main-text version before editing the manuscript.
+\input{captions.tex}
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{output/field_overview_three_cases_pressure.pdf}
+  \caption{\OverviewCaption{pressure}}
+  \label{fig:field-overview-pressure}
+\end{figure}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\linewidth]{output/fusion_comparison_hp_square_pinball_pressure.pdf}
+  \caption{\FusionCaption{H--P}{pressure} \HPWindows}
+  \label{fig:fusion-hp-verified-pressure}
+\end{figure}
+% Alternatives: replace pressure with velocity in the filename and caption.
+% S--H supplement: fusion_comparison_sh_square_pinball_pressure.pdf,
+% with \FusionCaption{S--H}{pressure} \SHWindows.

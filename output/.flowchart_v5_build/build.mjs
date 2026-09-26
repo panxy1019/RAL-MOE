@@ -1,0 +1,63 @@
+import fs from 'node:fs/promises';
+import {Presentation,PresentationFile,FileBlob} from '@oai/artifact-tool';
+import {finalizePresentation} from 'file:///C:/Users/panxy1019/.codex/plugins/cache/openai-primary-runtime/presentations/26.915.20218/skills/presentations/container_tools/artifact_tool_utils.mjs';
+const dir='C:/Users/panxy1019/Documents/CHANNEL/output';
+const skill='C:/Users/panxy1019/.codex/plugins/cache/openai-primary-runtime/presentations/26.915.20218/skills/presentations';
+const imported=await PresentationFile.importPptx(await FileBlob.load(dir+'/flowchart_refined_v4_final.pptx'));
+await fs.writeFile(dir+'/.flowchart_v5_build/source-inspect.json',(await imported.inspect({kind:'slide,textbox,shape',maxChars:50000})).ndjson);
+// Rebuild the rerouted diagram as editable native objects, retaining the source canvas and visual language.
+const p=Presentation.create({slideSize:{width:1821,height:936}});const s=p.slides.add();s.background.fill='#FFFFFF';
+const C={ink:'#101638',blue:'#1784FF',pale:'#E7F2FF',purple:'#9857FF',lav:'#F0E6FF',orange:'#FF8A30',cream:'#FFF3E6',green:'#40A36C',mint:'#E8F7EC',red:'#F06767'};
+function box(name,text,x,y,w,h,fill=C.pale,stroke=C.blue,size=22,bold=false){let o=s.shapes.add({name,geometry:'roundRect',position:{left:x,top:y,width:w,height:h},fill,line:{fill:stroke,width:1.3},borderRadius:8});o.text=text;o.text.style={typeface:'Times New Roman',fontSize:size,color:C.ink,bold,alignment:'center',verticalAlignment:'middle',autoFit:'none'};return o;}
+function txt(name,text,x,y,w,h,size=23,color=C.ink,bold=false){const o=box(name,text,x,y,w,h,'none','none',size,bold);o.text.style={typeface:'Times New Roman',fontSize:size,color,bold,alignment:'center',verticalAlignment:'middle',autoFit:'none'};return o;}
+function link(a,b,from='right',to='left',dash=false){return s.shapes.connect(a,b,{kind:'elbow',fromSide:from,toSide:to,line:{fill:dash?C.purple:C.ink,width:1.7,style:dash?'dashed':'solid'},tail:{type:'triangle',width:'sm',length:'sm'}});}
+function frame(name,x,y,w,h,fill='#FFFFFF',color='#83B7FF'){let o=box(name,'',x,y,w,h,fill,color);o.line={fill:color,width:1,style:'dashed'};return o;}
+frame('level2',12,12,1797,445);frame('level1',12,477,1797,445);
+txt('titlea','(a)  Routing and physical-space fusion',30,24,720,44,31,C.ink,true);
+txt('subtitlea','Level 2: selection among regime-local specialists',60,71,660,30,23,'#1769B1');
+const mu=box('parameter','Parameter\nμ',40,167,140,82,C.lav,C.purple,24);
+const e2=box('outer-router','E2 router\nParameter only',230,155,170,106,'#DAF4F2','#16A0A5',25,true);
+const select=box('selection','Masked selection\nTop-1 / adjacent Top-2\nS–H / H–P',465,145,235,126,'#EDF0F4','#7F94AC',21);
+const run=box('selected-rollouts','Selected specialist(s)\nIndependent rollouts',765,153,240,110,C.cream,C.orange,24,true);
+txt('candidates','Candidates: Steady S / Hopf H / Periodic P',740,112,290,34,19);
+const recon=box('reconstruction','Physical\nreconstruction',1065,161,200,94,C.pale,C.blue,24,true);
+const assembly=box('assembly','Physical-space assembly\nTop-1: identity\nTop-2: T2-C fusion',1325,145,245,126,C.mint,C.green,24,true);
+const pred=box('fields','Predicted fields\nû, p̂',1630,168,145,80,'#FFF0F0',C.red,24);
+link(mu,e2);link(e2,select);link(select,run);link(run,recon);link(recon,assembly);link(assembly,pred);
+txt('preferences','π(μ)',400,174,64,30,24);
+const hist=box('history-a','Physical history Hₙ',70,346,270,66,C.pale,C.blue,25);
+link(hist,run,'right','bottom');
+txt('init-label','Initialization',515,303,190,30,21);
+const desc=box('descriptor','History descriptor dₙ',785,385,270,49,C.pale,C.blue,22);
+link(hist,desc,'bottom','left');
+const inputs=box('gate-context','Parameter μ + pair preference π̄',1020,302,310,44,C.lav,C.purple,20);
+const gate=box('T2C-gate','T2-C gate\nα',1380,336,180,88,C.mint,C.green,24,true);
+link(inputs,gate);link(desc,gate);link(gate,assembly,'top','bottom');
+txt('titleb','(b)  Regime-local specialist',30,491,555,44,31,C.ink,true);
+txt('subtitleb','Level 1: sparse correction within a local chart',65,536,550,30,23,'#1769B1');
+const histb=box('history-b','Physical history\nHₙ',40,679,150,91,C.pale,C.blue,24);
+const enc=box('POD-encoder','Local POD\nencoding',235,679,145,91,C.cream,C.orange,24);
+const state=box('local-state','Local reduced\nstate + history\n(aₙ, bₙ)',425,669,170,110,C.pale,C.blue,23);
+link(histb,enc);link(enc,state);
+frame('moe-boundary',645,643,520,254,'#FFF7EF',C.orange);
+txt('moe-title','Velocity sparse MoE correction',655,651,490,33,25,C.orange,true);
+const backbone=box('galerkin','Projected Galerkin ROM',700,577,420,54,C.pale,C.blue,25,true);
+const router=box('internal-routing','Internal routing\nGroup Top-1\nChannel Top-2',670,772,165,99,C.lav,C.purple,22);
+const shared=box('shared','Shared expert E₀\nAlways active',875,690,165,72,'#FFF0EC',C.red,20);
+const routed=box('routed','Top-2 experts\nEₑ₁, Eₑ₂',875,795,165,65,'#FFF0EC',C.red,23);
+const sum=box('expert-sum','Weighted\nsum',1056,739,100,76,'#FFF0EC',C.red,19);
+const add=s.shapes.add({name:'hybrid-sum',geometry:'ellipse',position:{left:1202,top:585,width:46,height:46},fill:'#FFFFFF',line:{fill:C.ink,width:1.5}});add.text='+';add.text.style={typeface:'Times New Roman',fontSize:34,alignment:'center',verticalAlignment:'middle',color:C.ink};
+const advance=box('integrator','Time integration',1290,682,195,85,'#EDF0F4','#7F94AC',24);
+const pressure=box('pressure-reconstruction','Algebraic pressure\nreconstruction\nPPE + learned correction',1550,672,235,110,C.pale,C.blue,22);
+link(state,backbone,'top','left');link(state,shared,'right','left');link(state,router,'bottom','left');
+const branchpoint=box('feature-branch','',848,724,2,2,'none','none',1);link(branchpoint,routed,'bottom','left');
+link(router,routed,'right','left',true);link(shared,sum);link(routed,sum);link(backbone,add);link(sum,add,'right','bottom');link(add,advance,'right','left');link(advance,pressure);
+txt('a-next','aₙ₊₁',1485,680,65,28,23,'#1769B1');
+txt('b-next','Output: bₙ₊₁',1560,798,215,30,23,'#1769B1');
+txt('vel-label','Velocity update',1290,788,195,30,22,'#1769B1');
+txt('branch-types','nonlinear + affine + low-rank bilinear',670,872,465,24,18);
+txt('control-key','Dashed arrow: expert selection and weights',1235,865,520,26,19,'#7650A0');
+s.speakerNotes.textFrame.setText('Revised from flowchart_refined_v4_final.pptx. E2 consumes parameter only. Physical history initializes selected specialists and supplies the T2-C descriptor. Gate inputs include parameter and selected-pair preference; weighted fusion is after physical reconstruction. Lower panel depicts velocity correction and algebraic pressure reconstruction. Expert response formulas and pressure-specific routing follow the manuscript. All diagram elements are editable native PowerPoint objects.');
+const candidatePath=dir+'/.flowchart_v5_build/candidate.pptx';await(await PresentationFile.exportPptx(p)).save(candidatePath);
+await finalizePresentation({workspaceDir:dir,candidatePath,finalPath:dir+'/flowchart_corrected/flowchart_refined_v5_corrected.pptx',pythonExecutable:'C:/Users/panxy1019/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe',integrityValidatorPath:skill+'/container_tools/inspect_presentation_package_integrity.py',layoutValidatorPath:skill+'/container_tools/inspect_presentation_layout_geometry.py',layoutArgs:['--expected-slide-size-emu','17345025,8915400'],explicitTotalSlideCount:1,requiredNativeTableOwnerSlides:[],fontPolicy:{basis:'design',families:['Times New Roman']},verifyArtifactToolImport:true,receiptPath:dir+'/.flowchart_v5_build/validation.json'});
+console.log('DONE');

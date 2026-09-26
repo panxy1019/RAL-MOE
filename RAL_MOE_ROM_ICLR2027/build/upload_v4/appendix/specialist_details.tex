@@ -1,0 +1,198 @@
+\section{Specialist architecture and closed-loop objective}
+\label{app:specialists}
+
+Each regime-local chart is equipped with an independently parameterized
+semi-explicit specialist. The velocity coefficients evolve under the sum of
+the chart-local Galerkin vector field and a learned closure,
+\begin{equation}
+  \dot{\bm a}^{(r)}
+  =
+  \mathcal F_r^G\!\left(\bm a^{(r)},\bm b^{(r)};\mu\right)
+  +\bm\rho^u_{\theta_r}\!\left(\bm\xi^{(r)}\right).
+  \label{eq:app_hybrid_velocity_rhs}
+\end{equation}
+Pressure is algebraic rather than an independently evolved recurrent state.
+After the velocity macro-step, the local pressure--Poisson operator provides
+the physics-based candidate
+\begin{equation}
+  \bm b_{n+1}^{PP,(r)}
+  =\mathcal Q_r^{PP}\!\left(\bm a_{n+1}^{(r)};\mu\right),
+  \label{eq:app_pressure_poisson_candidate}
+\end{equation}
+while a data-driven candidate and a componentwise gate are evaluated from the
+specialist feature vector,
+\begin{align}
+  \widehat{\bm b}_{n+1}^{D,(r)}
+  &=\bm\rho^p_{\theta_r}\!\left(\bm\xi_n^{(r)}\right),
+  &
+  \bm\alpha_n^{(r)}
+  &=\operatorname{sigmoid}\!\left(
+      \bm\eta^p_{\theta_r}\!\left(\bm\xi_n^{(r)}\right)
+    \right).
+  \label{eq:app_pressure_candidates}
+\end{align}
+The next pressure state is the componentwise convex combination
+\begin{equation}
+  \bm b_{n+1}^{(r)}
+  =\bm\alpha_n^{(r)}\odot\bm b_{n+1}^{PP,(r)}
+  +\left(\bm 1-\bm\alpha_n^{(r)}\right)
+   \odot\widehat{\bm b}_{n+1}^{D,(r)},
+  \qquad \bm\alpha_n^{(r)}\in(0,1)^{d_p}.
+  \label{eq:app_pressure_closure}
+\end{equation}
+
+\subsection{Features and structured sparse experts}
+
+Let
+\begin{equation}
+  \bm g_n^{(r)}
+  =\mathcal F_r^G\!\left(
+      \bm a_n^{(r)},\bm b_n^{(r)};\mu
+    \right)
+  \label{eq:app_galerkin_feature}
+\end{equation}
+be the current projected right-hand side, and let tildes denote
+standardization with statistics from the corresponding regime-local training
+population. The current and two preceding feature blocks are
+\begin{align}
+  \bm\chi_n^{(r)}
+  &=\operatorname{col}\!\left(
+      \widetilde{\bm a}_n^{(r)},
+      \widetilde{\bm b}_n^{(r)},
+      \widetilde{\bm g}_n^{(r)},
+      \widetilde\mu
+    \right),
+  \label{eq:app_current_feature_block}\\
+  \bm h_{n,\ell}^{(r)}
+  &=\operatorname{col}\!\left(
+      \widetilde{\bm a}_{n-\ell}^{(r)},
+      \widetilde{\bm b}_{n-\ell}^{(r)},
+      \widetilde{\bm g}_{n-\ell}^{(r)},
+      \widetilde\mu
+    \right),
+  \qquad \ell\in\{1,2\}.
+  \label{eq:app_history_feature_blocks}
+\end{align}
+Thus the complete input is the three-state history
+\begin{equation}
+  \bm\xi_n^{(r)}
+  =\operatorname{col}\!\left(
+      \bm\chi_n^{(r)},\bm h_{n,1}^{(r)},\bm h_{n,2}^{(r)}
+    \right).
+  \label{eq:app_specialist_features}
+\end{equation}
+The sampling interval is supplied to the numerical integrator; it is not an
+additional trainable network feature.
+
+Within each specialist, the group router first makes a hard Top-1 decision,
+\begin{equation}
+  g^\star
+  =\underset{g\in\mathcal G}{\operatorname{arg\,max}}
+    \;\pi_g^{\mathrm{grp}}(\bm\xi).
+  \label{eq:app_group_top1}
+\end{equation}
+Velocity and pressure then use separate channel routers. For
+$c\in\{u,p\}$, let $\mathcal T_2^c(\bm\xi;g^\star)$ contain the two routed
+experts with the largest channel-specific scores. Together with the shared
+expert $e=0$, the active output is
+\begin{equation}
+  \mathcal M^c_{\theta_r}(\bm\xi)
+  =\omega_0^c E^c_{0,g^\star}(\bm\xi)
+  +\sum_{e\in\mathcal T_2^c(\bm\xi;g^\star)}
+     \omega_e^c E^c_{e,g^\star}(\bm\xi),
+  \qquad
+  \omega_e^c\geq0,
+  \quad
+  \omega_0^c+\sum_{e\in\mathcal T_2^c}\omega_e^c=1.
+  \label{eq:app_channel_sparse_moe}
+\end{equation}
+Consequently, one group, one shared expert, and two routed experts are active
+for each output channel. Each expert combines nonlinear, linear/affine, and
+low-rank bilinear branches,
+\begin{equation}
+  E^c_{e,g}(\bm\xi)
+  =N^c_{e,g}(\bm\xi)
+   +W^{c,\mathrm{lin}}_{e,g}\bm\xi
+   +\kappa W^{c,o}_{e,g}
+    \left[
+      \left({U^c_{e,g}}^\top\bm\xi\right)
+      \odot
+      \left({V^c_{e,g}}^\top\bm\xi\right)
+    \right],
+  \qquad q_b=4,\quad \kappa=0.05,
+  \label{eq:app_structured_expert}
+\end{equation}
+where $q_b$ is the rank of the bilinear branch. Equation~(\plaineqref{eq:app_structured_expert})
+specifies the retained structured map without
+assuming undocumented hidden widths.
+
+\subsection{Frozen-context advancement and closed-loop training}
+
+During a velocity macro-step, the current pressure, the recent history, and
+the physical parameter form a context $\mathcal C_n^{(r)}$ that is held fixed
+across all Runge--Kutta stages. Define
+\begin{equation}
+  F_r\!\left(\bm a;\mathcal C_n^{(r)}\right)
+  =\mathcal F_r^G\!\left(\bm a,\bm b_n^{(r)};\mu\right)
+   +\bm\rho^u_{\theta_r}\!\left(
+      \bm\xi^{(r)}\!\left(\bm a;\mathcal C_n^{(r)}\right)
+    \right).
+  \label{eq:app_frozen_context_rhs}
+\end{equation}
+All three specialists use the classical fourth-order Runge--Kutta update
+\begin{align}
+  \bm k_1
+  &=F_r\!\left(\bm a_n^{(r)};\mathcal C_n^{(r)}\right),\nonumber\\
+  \bm k_2
+  &=F_r\!\left(
+      \bm a_n^{(r)}+\tfrac{\Delta t_r(\mu)}{2}\bm k_1;
+      \mathcal C_n^{(r)}
+    \right),\nonumber\\
+  \bm k_3
+  &=F_r\!\left(
+      \bm a_n^{(r)}+\tfrac{\Delta t_r(\mu)}{2}\bm k_2;
+      \mathcal C_n^{(r)}
+    \right),\nonumber\\
+  \bm k_4
+  &=F_r\!\left(
+      \bm a_n^{(r)}+\Delta t_r(\mu)\bm k_3;
+      \mathcal C_n^{(r)}
+    \right),\nonumber\\
+  \bm a_{n+1}^{(r)}
+  &=\bm a_n^{(r)}
+    +\frac{\Delta t_r(\mu)}{6}
+      \left(\bm k_1+2\bm k_2+2\bm k_3+\bm k_4\right).
+  \label{eq:app_unified_rk4}
+\end{align}
+The updated velocity is supplied to
+Eq.~(\plaineqref{eq:app_pressure_closure}); the history is then shifted and the
+autonomous rollout continues. In particular, the retained specialist
+definition uses this unified RK4 update for the Steady, Hopf, and Periodic
+models, not a separate forward-Euler step for the Steady model.
+
+For a closed-loop rollout of length $K$, the model recursively consumes its
+own predicted states and minimizes the regime-locally normalized coefficient
+error
+\begin{equation}
+  \mathcal L_r
+  =\frac{1}{K}\sum_{k=1}^{K}\left[
+    \frac{1}{d_u}
+    \left\|
+      \left(\widehat{\bm a}_{n+k}^{(r)}-\bm a_{n+k}^{(r)}\right)
+      \oslash\bm\sigma_a^{(r)}
+    \right\|_2^2
+    +\frac{1}{d_p}
+    \left\|
+      \left(\widehat{\bm b}_{n+k}^{(r)}-\bm b_{n+k}^{(r)}\right)
+      \oslash\bm\sigma_b^{(r)}
+    \right\|_2^2
+  \right].
+  \label{eq:app_true_rollout_loss}
+\end{equation}
+The retained training specification uses progressively longer horizons
+$K\in\{4,8,12,16\}$. The retained rollout objective is
+Eq.~(\plaineqref{eq:app_true_rollout_loss}); we do not append an unverified
+single routing penalty or loss weight. The three specialists are
+trained and selected independently; subsequent outer-router or T2-C training
+does not update their local bases, scalers, reduced operators, internal
+routers, experts, integrators, or pressure maps.

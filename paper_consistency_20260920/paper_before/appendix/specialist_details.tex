@@ -1,0 +1,264 @@
+
+\section{Regime-local specialist architecture and closed-loop training}
+\label{app:specialists}
+
+For each regime-local chart $r$, we define a self-contained 
+specialist in its native reduced coordinates: velocity is advanced
+dynamically, whereas pressure is reconstructed algebraically.
+The projected operators from Appendix~\ref{app:rom} provide the underlying physics, while learned terms model unresolved reduced dynamics. The velocity coefficients satisfy
+\begin{equation}
+  \dot{\bm a}^{(r)}
+  =
+  \mathcal F_r^G
+  \left(
+    \bm a^{(r)},\bm b^{(r)};\mu
+  \right)
+  +
+  \bm\rho^u_{\theta_r}
+  \left(
+    \bm\xi^{(r)}
+  \right).
+  \label{eq:app_hybrid_velocity_rhs}
+\end{equation}
+After each reduced velocity time step, pressure is reconstructed through
+\begin{align}
+  \bm b_{n+1}^{PP,(r)}
+  &=
+  \mathcal Q_r^{PP}
+  \left(
+    \bm a_{n+1}^{(r)};\mu
+  \right),
+  \nonumber\\
+  \bm\gamma_n^{(r)}
+  &=
+  \operatorname{sigmoid}
+  \left(
+    \bm\eta^p_{\theta_r}
+    (\bm\xi_n^{(r)})
+  \right),
+  \nonumber\\
+  \bm b_{n+1}^{(r)}
+  &=
+  \bm\gamma_n^{(r)}
+  \odot
+  \bm b_{n+1}^{PP,(r)}
+  +
+  \bm\rho^p_{\theta_r}
+  (\bm\xi_n^{(r)}),
+  \qquad
+  \bm\gamma_n^{(r)}
+  \in(0,1)^{d_p^{(r)}}.
+  \label{eq:app_pressure_closure}
+\end{align}
+The gate modulates the projected Pressure--Poisson contribution, while
+$\bm\rho^p_{\theta_r}$ provides the learned pressure correction.
+
+
+\subsection{Features and structured sparse experts}
+
+Let
+\begin{equation}
+  \bm g_n^{(r)}
+  =
+  \mathcal F_r^G
+  \left(
+    \bm a_n^{(r)},\bm b_n^{(r)};\mu
+  \right)
+  \label{eq:app_galerkin_feature}
+\end{equation}
+denote the projected velocity right-hand side defined in Eq.~(\plaineqref{eq:app_galerkin_backbone}). The specialist uses the ordered three-state history
+\begin{equation}
+  \mathcal H_n^{(r)}
+  =
+  \left(
+    \bm a_{n-\ell}^{(r)},
+    \bm b_{n-\ell}^{(r)},
+    \bm g_{n-\ell}^{(r)}
+  \right)_{\ell=0}^{2},
+  \label{eq:app_specialist_history}
+\end{equation}
+and constructs
+\begin{equation}
+  \bm\xi_n^{(r)}
+  =
+  \operatorname{Feat}_r
+  \left(
+    \mathcal H_n^{(r)},\mu
+  \right),
+  \qquad
+  \bm z_n^{(r)}
+  =
+  \operatorname{Enc}_r
+  \left(
+    \bm\xi_n^{(r)}
+  \right).
+  \label{eq:app_specialist_features}
+\end{equation}
+The feature map contains standardized local states, projected
+right-hand sides and parameter features. All normalization statistics are estimated from the corresponding chart-specific training set. Internal routing first selects an expert group. When group selection is learned,
+\begin{equation}
+  m^\star
+  =
+  \underset{m\in\mathcal G_r}{\operatorname{arg\,max}}
+  \;
+  \pi_{r,m}^{\mathrm{grp}}
+  \left(
+    \bm z_n^{(r)},\bm\xi_n^{(r)}
+  \right),
+  \label{eq:app_group_top1}
+\end{equation}
+whereas $m^\star$ is predetermined for single-group or fixed-group
+specialists. Within the selected group, velocity and pressure use separate channel routers. For $c\in\{u,p\}$, let $\mathcal T_2^c$ denote the two routed experts with the largest channel-specific weights. Together with the shared expert $e=0$,
+\begin{equation}
+  \mathcal M_{\theta_r}^c
+  =
+  \omega_0^c
+  E_{0,m^\star}^c
+  +
+  \sum_{e\in\mathcal T_2^c}
+  \omega_e^c
+  E_{e,m^\star}^c,
+  \qquad
+  \omega_e^c\ge0,
+  \qquad
+  \omega_0^c+\sum_{e\in\mathcal T_2^c}\omega_e^c=1.
+  \label{eq:app_channel_sparse_moe}
+\end{equation}
+For the circular-cylinder Hopf and Periodic specialists analyzed in Appendix~\ref{app:internal_routing}, $\omega_0^c=4/7$ and $\omega_e^c=(3/7)\exp(\ell_e^c/\tau_c)/\sum_{j\in\mathcal T_2^c}\exp(\ell_j^c/\tau_c)$ on the selected Top-2 support, with channel temperature $\tau_c=0.8$. Thus a fixed shared/routed split is compatible with the normalized mixture above; it is not asserted for every specialist. Channel logits are produced from the concatenated encoded and raw features using LayerNorm, a hidden linear layer with SiLU and dropout, and a six-logit output. The Circular Hopf group is fixed; the Circular Periodic group router selects among three groups (temperature $0.9$).
+
+The two channel mixtures define the velocity and pressure corrections
+$\bm\rho_{\theta_r}^u$ and $\bm\rho_{\theta_r}^p$, respectively. The explicit linear and quadratic branches operate on the channel-specific reduced-state inputs
+\begin{equation}
+  \bm s^{u,(r)}
+  =
+  \widetilde{\bm a}^{(r)},
+  \qquad
+  \bm s^{p,(r)}
+  =
+  \operatorname{col}
+  \left(
+    \widetilde{\bm a}^{(r)},
+    \widetilde{\bm b}^{(r)}
+  \right).
+  \label{eq:app_expert_state_slices}
+\end{equation}
+For output component $j$, each expert is
+\begin{align}
+  \left[E_{e,m}^c\right]_j
+  &=
+  \left[
+    N_{e,m}^c
+    \left(
+      \bm z,\bm s^c
+    \right)
+  \right]_j
+  +
+  \left[
+    W_{e,m}^{c,\mathrm{lin}}
+    \bm s^c
+  \right]_j
+  \nonumber\\
+  &\quad+
+  \kappa
+  \sum_{\ell=1}^{q_b}
+  \left(
+    {\bm v_{e,m,j\ell}^{c,(1)}}^{\top}
+    \bm s^c
+  \right)
+  \left(
+    {\bm v_{e,m,j\ell}^{c,(2)}}^{\top}
+    \bm s^c
+  \right),
+  \qquad
+  q_b=4,
+  \qquad
+  \kappa=0.05.
+  \label{eq:app_structured_expert}
+\end{align}
+Thus each expert combines a nonlinear feature-conditioned response with
+explicit linear and low-rank quadratic responses of the local reduced state.
+
+
+\subsection{Frozen-context advancement and closed-loop training}
+
+During one reduced velocity time step, the current pressure, recent history, and
+physical parameter define a context $\mathcal C_n^{(r)}$ that is held fixed
+while the velocity state is advanced. We write
+\begin{equation}
+  F_r
+  \left(
+    \bm a;\mathcal C_n^{(r)}
+  \right)
+  =
+  \mathcal F_r^G
+  \left(
+    \bm a,\bm b_n^{(r)};\mu
+  \right)
+  +
+  \bm\rho^u_{\theta_r}
+  \left(
+    \bm\xi^{(r)}
+    \left(
+      \bm a;\mathcal C_n^{(r)}
+    \right)
+  \right).
+  \label{eq:app_frozen_context_rhs}
+\end{equation}
+The chart-specific numerical update is denoted by
+\begin{equation}
+  \bm a_{n+1}^{(r)}
+  =
+  \operatorname{Step}_r
+  \left(
+    \bm a_n^{(r)};
+    F_r(\cdot;\mathcal C_n^{(r)}),
+    \Delta t_r
+  \right).
+  \label{eq:app_specialist_step}
+\end{equation}
+Continuous-time specialist instances use Runge--Kutta integration with the
+same frozen context across stage evaluations; benchmark-specific stepping
+details are reported in Appendix~\ref{app:implementation}.
+The nominal Runge--Kutta order applies to this frozen-context velocity subproblem, not automatically to the complete pressure/history-coupled update. Relative to an instantaneously coupled smooth system, lagged pressure can introduce a lower-order splitting defect. Closed-loop training at a prescribed cadence is not a proof that this defect vanishes; hard routing also requires care at nonsmooth switching points.
+The updated velocity is then supplied to
+Eq.~(\plaineqref{eq:app_pressure_closure}), after which the history is
+shifted and autonomous rollout continues.
+
+For a closed-loop rollout of length $K$, the specialist recursively
+consumes its own predicted states and minimizes
+\begin{equation}
+  \mathcal L_r
+  =
+  \frac{1}{K}
+  \sum_{k=1}^{K}
+  \left[
+    \frac{1}{d_u^{(r)}}
+    \left\|
+      \left(
+        \widehat{\bm a}_{n+k}^{(r)}
+        -
+        \bm a_{n+k}^{(r)}
+      \right)
+      \oslash
+      \bm\sigma_a^{(r)}
+    \right\|_2^2
+    +
+    \frac{1}{d_p^{(r)}}
+    \left\|
+      \left(
+        \widehat{\bm b}_{n+k}^{(r)}
+        -
+        \bm b_{n+k}^{(r)}
+      \right)
+      \oslash
+      \bm\sigma_b^{(r)}
+    \right\|_2^2
+  \right].
+  \label{eq:app_true_rollout_loss}
+\end{equation}
+The componentwise scaling weights errors by inverse modal variance. It is not a physical kinetic-energy norm or a conservation constraint. For an $M$-orthonormal POD basis, coefficient-error isometry holds between reconstructions in the same chart; comparison with an unprojected reference field additionally includes its orthogonal projection residual. Equal channel averages in this loss do not imply equal physical energy weights.
+
+After initialization, no reference state inside the prediction window is
+injected into the autonomous rollout. Training uses progressively longer
+chart-specific rollout horizons; the corresponding curricula and
+optimization settings are listed in Appendix~\ref{app:implementation}.

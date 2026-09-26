@@ -1,0 +1,45 @@
+\section{Reproducibility and implementation details}
+\label{app:implementation}
+
+\paragraph{Trajectory-level data partition and evaluation protocol.}
+The split unit is a complete Reynolds-number trajectory, not an individual snapshot or a randomly sampled time window. Each local specialist is fitted only on its stated training trajectories, model and routing choices use the validation trajectories, and test trajectories are used only for the reported autonomous rollouts. A Reynolds number that occurs in two overlapping fluidic-pinball charts keeps the same split role in both.
+
+\begin{table}[h]
+\centering
+\caption{Chart-wise parameter coverage, trajectory counts, and rollout horizons. Train, validation, and test counts refer to complete Reynolds-number trajectories.}
+\label{tab:chart_splits}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{llrrrrr}
+\toprule
+Benchmark & Chart & $Re$ range & Train & Validation & Test & $K$ \\
+\midrule
+Circular cylinder & $S$ & 20.0--46.4 & 14 & 2 & 4 & 56 \\
+                  & $H$ & 45.5--59.2 & 29 & 2 & 3 & 56 \\
+                  & $P$ & 57.3--200  & 53 & 6 & 4 & 48 \\
+\addlinespace
+Centered square   & $S$ & 50--95.4   & 60 & 5 & 4 & 16 \\
+                  & $H$ & 94--102    & 23 & 6 & 5 & 48 \\
+                  & $P$ & 98.5--150  & 27 & 6 & 4 & 24 \\
+\addlinespace
+Fluidic pinball   & $S$ & 10--19     & 37 & 8 & 7 & 56 \\
+                  & $H$ & 16.6--25   & 39 & 8 & 7 & 56 \\
+                  & $P$ & 21.25--60  & 47 & 9 & 9 & 32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Unified autonomous integrator.}
+All steady, Hopf, and periodic specialists use the same classical fourth-order Runge--Kutta update with a frozen context within each macro-step. Specifically, the pressure coefficients, recent-history features, and physical parameter are held fixed across the four RK stages; only the trial velocity state changes from stage to stage. After the RK4 velocity update, the algebraic pressure closure is evaluated, the history is shifted, and the resulting predictions are fed back at the next macro-step. The rollout is initialized from the available physical history, and no reference state from inside the prediction window is injected thereafter.
+
+\paragraph{Datasets and local reduced dimensions.}
+For the circular cylinder, all three charts use $(r_u,r_p)=(32,32)$ and their regime-specific snapshot intervals. For the centered square, $(r_u,r_p)$ is $(5,4)$, $(11,11)$, and $(28,26)$ for the steady, Hopf, and periodic charts, respectively. Its 120 complete trajectories cover $Re\in[50,150]$ on a 9,400-cell finite-volume mesh; the CFD step is $\delta t_{\mathrm{CFD}}=0.02$, and one snapshot is recorded every 200 CFD steps, so $\Delta t_{\mathrm{snap}}=4$. For fluidic pinball, the corresponding ranks are $(4,3)$, $(5,5)$, and $(17,16)$. Its 131 complete trajectories cover $Re\in[10,60]$, with 94/19/18 train/validation/test trajectories overall, on a 70,194-cell mesh; $\delta t_{\mathrm{CFD}}=0.005$ and snapshots are sampled every $0.25$ physical time units. Chart-wise Reynolds-number ranges, split counts, and rollout horizons are listed in Table~\ref{tab:chart_splits}.
+
+\paragraph{Admissible routing and fusion.}
+The outer regime graph permits only adjacent $S$--$H$ and $H$--$P$ pairs; neither a direct $S$--$P$ pair nor a three-specialist route is evaluated. The parameter-only E2 probabilities are evaluated once for a complete fixed-$Re$ trajectory and remain fixed throughout its rollout. In an admissible Top-2 case, the two specialists encode the same initial physical history, evolve independently in their native coordinates, and are combined only after reconstruction in the common physical space. Rollout windows and routing/fusion choices are fixed using validation data before test evaluation.
+
+\paragraph{Reproducibility limitations.}
+The main comparisons retain fixed validation-selected runs. Appendix~\ref{app:square}
+adds a parameter-matched gate descriptor ablation and three-seed gate variability
+with specialists, E2, partitions, and normalization fixed. Multi-seed evaluation
+and parameter-matched capacity controls for the local specialists remain future work.

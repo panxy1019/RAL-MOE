@@ -1,0 +1,31 @@
+% Non-destructive TeX annotation layer. Scientific pixels, legends and
+% numerical error annotations remain in the original archived PNGs.
+\newcommand{\FieldPanel}[2]{%
+\begin{tikzpicture}
+\node[anchor=south west,inner sep=0] (im) at (0,0)
+ {\includegraphics[width=0.80\linewidth]{#1}};
+\begin{scope}[x={(im.south east)},y={(im.north west)}]
+ \fill[white] (0,0.13) rectangle (0.055,0.98);
+ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.863) {Reference};
+ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.656) {#2};
+ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.449) {Hopf};
+ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.242) {RAL-MoE-ROM};
+\end{scope}
+\end{tikzpicture}%
+}
+\newcommand{\ErrorPanel}[2]{%
+\begin{tikzpicture}
+\node[anchor=south west,inner sep=0] (im) at (0,0)
+ {\includegraphics[width=0.80\linewidth]{#1}};
+\begin{scope}[x={(im.south east)},y={(im.north west)}]
+ \fill[white] (0,0.17) rectangle (0.055,0.985);
+ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.83) {#2};
+ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.57) {Hopf};
+ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.31) {RAL-MoE-ROM};
+ \foreach \x/\y/\lab in {0.080/0.932/i,0.583/0.932/j,0.080/0.673/k,0.583/0.673/l,0.080/0.415/m,0.583/0.415/n}{
+  \fill[white] (\x-0.018,\y-0.020) rectangle (\x+0.018,\y+0.020);
+  \node[font=\scriptsize\bfseries,inner sep=0] at (\x,\y) {(\lab)};
+ }
+\end{scope}
+\end{tikzpicture}%
+}

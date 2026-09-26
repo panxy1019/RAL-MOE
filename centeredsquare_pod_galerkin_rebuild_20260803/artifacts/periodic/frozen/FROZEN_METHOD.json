@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN",
+  "method": "periodic OpenFOAM-discrete FVM-Galerkin r28 with ungauged rp24 linear pressure closure",
+  "fvm_tensors_sha256": "d5e849b393a5b2649c19cb1431af738260a97bc593dd1f378647dd3659265b6b",
+  "pressure_closure_sha256": "f719721c926f3a0f28fcede759e93da6676e880e306c56605b20ed827a07acf5",
+  "evaluator_sha256": "01bf016a7472bb669fe61a245d315eb78ea16f9942f2b28ada9650209bb2fc92",
+  "validation_metrics_sha256": "d1881240f6fd30bc6ad80dc0d242a467785de81ed682136ed804d1531242d119",
+  "validation_aggregate": {
+    "velocity_rollout_relative_l2": 1.1402909273219726,
+    "pressure_rollout_relative_l2": 0.9424851162653646,
+    "one_step_velocity_relative_l2": 0.05985998133749393,
+    "coarse_derivative_relative_l2": 5.429357681154652
+  },
+  "choices": {
+    "velocity_rank": 28,
+    "pressure_rank": 24,
+    "probe_epsilon": 0.05,
+    "pressure_kind": "linear",
+    "pressure_ridge": 0.01,
+    "warmup_intervals": 2,
+    "max_internal_step": 0.05,
+    "eddy_damping": 0.0
+  },
+  "heldout_loaded_at_freeze": false
+}

@@ -1,0 +1,24 @@
+import fs from 'node:fs/promises';
+import JSZip from 'jszip';
+import {PresentationFile,FileBlob} from '@oai/artifact-tool';
+import {finalizePresentation} from 'file:///C:/Users/panxy1019/.codex/plugins/cache/openai-primary-runtime/presentations/26.904.11930/skills/presentations/container_tools/artifact_tool_utils.mjs';
+const root='C:/Users/panxy1019/Documents/CHANNEL/output';
+const skill='C:/Users/panxy1019/.codex/plugins/cache/openai-primary-runtime/presentations/26.904.11930/skills/presentations';
+const z=await JSZip.loadAsync(await fs.readFile(root+'/flowchart_refined_v4_final.pptx'));
+const before=await z.file('ppt/slides/slide1.xml').async('string');
+const em=x=>Math.round(x*9525);
+function pathShape(sp,pts){const minx=Math.min(...pts.map(p=>p[0])),miny=Math.min(...pts.map(p=>p[1]));const w=Math.max(1,Math.max(...pts.map(p=>p[0]))-minx),h=Math.max(1,Math.max(...pts.map(p=>p[1]))-miny);sp=sp.replace(/<a:xfrm[^>]*>[\s\S]*?<\/a:xfrm>/,`<a:xfrm><a:off x="${em(minx)}" y="${em(miny)}"/><a:ext cx="${em(w)}" cy="${em(h)}"/></a:xfrm>`);sp=sp.replace(/<a:pathLst>[\s\S]*?<\/a:pathLst>/,`<a:pathLst><a:path w="${em(w)}" h="${em(h)}">${pts.map((p,i)=>`<a:${i?'lnTo':'moveTo'}><a:pt x="${em(p[0]-minx)}" y="${em(p[1]-miny)}"/></a:${i?'lnTo':'moveTo'}>`).join('')}</a:path></a:pathLst>`);return sp;}
+let after=before.replace(/<p:sp>[\s\S]*?<\/p:sp>/g,sp=>{const id=sp.match(/<p:cNvPr[^>]*\bid="(\d+)"/)?.[1];
+if(id==='14')return pathShape(sp,[[497,246],[620,246],[620,243],[661,243]]);
+if(id==='15')return sp.replace(/<a:off x="\d+" y="\d+"\s*\/>/,`<a:off x="${em(649)}" y="${em(238)}"/>`);
+if(id==='18')return pathShape(sp,[[807,242],[860,242],[860,166],[1035,166]]);
+if(id==='20')return pathShape(sp,[[807,242],[860,242],[860,316],[1035,316]]);
+if(id==='21')return sp.replace(/<a:off x="\d+" y="\d+"\s*\/>/,`<a:off x="${em(1023)}" y="${em(311)}"/>`);
+return sp;});
+const text=x=>x.match(/<(?:a:t|m:t)[^>]*>[\s\S]*?<\/(?:a:t|m:t)>/g);
+if(JSON.stringify(text(before))!==JSON.stringify(text(after)))throw Error('Text changed');
+z.file('ppt/slides/slide1.xml',after);
+const out=root+'/flowchart_connections_fixed';await fs.mkdir(out,{recursive:true});
+const candidate=root+'/.beautify_build/connections_candidate.pptx';await fs.writeFile(candidate,await z.generateAsync({type:'nodebuffer'}));
+await finalizePresentation({workspaceDir:root,candidatePath:candidate,finalPath:out+'/flowchart_v4_connections_fixed.pptx',pythonExecutable:'C:/Users/panxy1019/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe',integrityValidatorPath:skill+'/container_tools/inspect_presentation_package_integrity.py',layoutValidatorPath:skill+'/container_tools/inspect_presentation_layout_geometry.py',layoutArgs:['--expected-slide-size-emu','17345025,8915400'],explicitTotalSlideCount:1,verifyArtifactToolImport:true,receiptPath:root+'/.beautify_build/connections_validation.json'});
+const p=await PresentationFile.importPptx(await FileBlob.load(out+'/flowchart_v4_connections_fixed.pptx'));const b=await p.export({slide:p.slides.items[0],format:'png',scale:1});await fs.writeFile(out+'/preview.png',new Uint8Array(await b.arrayBuffer()));console.log('Saved and rendered');

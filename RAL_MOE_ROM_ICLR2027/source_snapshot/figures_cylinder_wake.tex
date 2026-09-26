@@ -1,0 +1,94 @@
+
+\begin{figure*}[htbp]
+\centering
+
+\includegraphics[width=0.76\textwidth]
+{drafts/cylinder_wake_20260726/figures/periodic1.png}
+
+\vspace{0.5em}
+
+\includegraphics[width=0.80\textwidth]
+{drafts/cylinder_wake_20260726/figures/periodic1_1.png}
+
+\caption{Representative held-out Periodic prediction at
+$Re=70.314636$ and $K=48$. The upper panel compares the CFD reference with
+Vanilla-FNN-MoE, DataOnly-MoE, and the proposed Periodic specialist in
+velocity magnitude and gauge-corrected pressure. The lower panel shows the
+corresponding pointwise absolute errors
+$\lvert\Delta\boldsymbol{u}\rvert$ and $\lvert\Delta p^\circ\rvert$.
+A common reference-based colour scale is used within each physical quantity.
+The proposed specialist preserves the alternating wake structure while its
+largest discrepancies remain localized around the near wake and transported
+vortical structures.}
+\label{fig:cylinder_periodic_fields_errors}
+\end{figure*}
+
+
+
+
+\begin{figure*}[htbp]
+\centering
+
+\includegraphics[width=0.80\textwidth]
+{drafts/cylinder_wake_20260726/figures/SH_1.png}
+
+\vspace{0.5em}
+
+\includegraphics[width=0.82\textwidth]
+{drafts/cylinder_wake_20260726/figures/SH_1_1.png}
+
+\caption{Representative held-out prediction in the $S$--$H$ overlap at
+$Re=43.9$ and $K=56$. The Steady and Hopf specialists are advanced
+independently in their respective local reduced coordinates, and T2-C combines
+only the reconstructed physical fields. The upper panel compares the CFD
+reference, the two local specialists, and the fused prediction; the lower
+panel shows the corresponding pointwise velocity and gauge-corrected pressure
+errors. For this trajectory, T2-C assigns
+$\alpha_S=0.1891$ and $\alpha_H=0.8109$, illustrating a nontrivial
+combination of the two adjacent specialists.}
+\label{fig:cylinder_sh_fields_errors}
+\end{figure*}
+
+
+
+
+
+
+
+
+
+
+
+
+% \begin{figure*}[t]
+% \centering
+% \includegraphics[width=0.82\textwidth]
+% {drafts/cylinder_wake_20260726/figures/SH_1.png}
+% \caption{Representative $S$--$H$ overlap snapshot at held-out
+% $Re=42.359071$ and $K56$, selected by the frozen qualitative rule.  The
+% Steady and Hopf specialists were advanced independently in their native
+% charts, and T2-C combined only their aligned physical outputs.  All rows share
+% truth-determined velocity and gauge-corrected pressure scales.  With
+% $\alpha_S=0.9987$, T2-C retained the reliable Steady prediction and applied
+% only a small Hopf correction; the frame therefore verifies non-disruptive
+% admissibility-enabled fusion rather than strong expert complementarity.  The
+% larger quantitative fusion gain is instead established at $Re=43.90$ in
+% Table~\ref{tab:cylinder_sh_boundary}.}
+% \label{fig:cylinder_sh_fields}
+% \end{figure*}
+
+
+% \begin{figure*}[t]
+% \centering
+% \includegraphics[width=0.85\textwidth]
+% {drafts/cylinder_wake_20260726/figures/SH_1_1.png}
+% \caption{Pointwise absolute errors for the $S$--$H$ snapshot in
+% Fig.~\ref{fig:cylinder_sh_fields}.  The Hopf-only error extends through the
+% far wake and the pressure-recovery region, while T2-C remains close to the
+% Steady-only spatial pattern and introduces no additional oscillatory or
+% discontinuous structure.  At this selected frame the area-weighted relative
+% errors were $0.0573\%/3.1862\%$ for Steady-only,
+% $0.2968\%/9.9141\%$ for Hopf-only, and $0.0564\%/3.1604\%$ for T2-C
+% in velocity/pressure, respectively.}
+% \label{fig:cylinder_sh_errors}
+% \end{figure*}

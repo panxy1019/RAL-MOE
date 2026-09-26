@@ -1,0 +1,36 @@
+\section{Fluidic-pinball results}
+\label{app:pinball}
+
+The fluidic-pinball dataset contains 131 trajectories over $Re\in[10,60]$, with 94/19/18 train/validation/test trajectories overall. A POD--DeepONet one-step baseline gives $E_u=1.5921\%$ and $E_p=23.3447\%$ on 4,228 held-out input--output pairs, but only 1 of 28 held-out trajectories remains finite under recursive rollout. This contrast motivates evaluation under autonomous use rather than one-step accuracy alone. The one-step baseline uses a different cadence from the matched Periodic specialist evaluation and is not a cadence-matched long-horizon accuracy baseline.
+
+\paragraph{Periodic-core evaluation protocol.}
+The $K=32$ Periodic row in Table~\ref{tab:pinball_autonomous} reports the
+standard periodic evaluation. Periodic core is the Periodic regime's core
+final-test evaluation at $K=56$, using stride-four matched periodic chains.
+Snapshots are stored every $0.25$ time units; taking every fourth snapshot
+gives an effective sampling interval $\Delta t=1$. This aligns the evaluation
+with the Periodic specialist's native history cadence and provides a
+longer-horizon autonomous comparison within the same regime.
+
+\begin{table}[h]
+\centering
+\caption{Fluidic-pinball overlap joint errors (\%). Primary denotes the Steady
+specialist for $S$--$H$ and the Periodic specialist for $H$--$P$; the adjacent
+specialist is Hopf in both cases. The oracle selects its convex weight a
+posteriori for each evaluation window and is unavailable during prediction.}
+\label{tab:pinball_overlap}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrccccc}
+\toprule
+Overlap & $K$ & Primary & Adjacent & E2 prob. & T2-C & Oracle \\
+\midrule
+$S$--$H$ & 24 & 0.6014 & 3.1925 & 1.7511 & 0.5897 & 0.5889 \\
+$S$--$H$ & 56 & 0.6927 & 3.1193 & 1.7714 & 0.6767 & 0.6763 \\
+$H$--$P$ & 24 & 0.0990 & 0.5146 & 0.2972 & 0.0945 & 0.0928 \\
+$H$--$P$ & 56 & 0.1028 & 0.5346 & 0.3085 & 0.0978 & 0.0955 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+T2-C improves the primary single-specialist prediction in all four overlap evaluations and remains close to the window-wise convex oracle. The result is consistent across the short and long rollout horizons shown here.

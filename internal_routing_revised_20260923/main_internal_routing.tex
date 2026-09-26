@@ -1,0 +1,21 @@
+% Replace the entire old Section 4.3, up to but excluding the cost subsection.
+% Physical-field diagnostics now belong to Section 4.2 and its appendix.
+\subsection{Internal expert routing and utilization}
+\label{sec:exp_diagnostics}
+
+We examine which correction experts are selected and how their weights
+are allocated within the frozen original Circular H/P specialists,
+distinct from E2 selection between regime-local specialists.
+Periodic uses 18/18 velocity experts and 14/18 pressure experts across
+the evaluated windows, with 33 and 16 distinct group--pair combinations,
+respectively. Hopf has one group by construction and selects a fixed
+Top-2 pair in each channel on these windows, while retaining nonuniform
+weights and parameter-dependent pressure allocation.
+Thus the observed behavior ranges from broad expert utilization to
+fixed-support mixing; utilization alone does not establish an accuracy
+advantage or physical specialization.
+Appendix~\ref{app:internal_routing} provides the sampling protocol,
+selection and weight statistics, and parameter- and rollout-position
+profiles. These post-hoc diagnostics use different windows from the
+controlled local comparisons and do not assess the repaired three-seed
+configurations.

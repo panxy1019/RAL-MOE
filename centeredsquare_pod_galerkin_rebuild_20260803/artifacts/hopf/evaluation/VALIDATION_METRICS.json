@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "method": "OpenFOAM-discrete FVM-Galerkin r11 with calibrated quadratic pressure closure",
+  "max_step": 0.05,
+  "warmup_intervals": 2,
+  "cases": [
+    {
+      "Re": 94.5,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 3.8463186812067063,
+      "pressure_rollout_relative_l2": 1.3430828965340111,
+      "one_step_velocity_relative_l2": 0.1277836999207879,
+      "coarse_derivative_relative_l2": 0.9860393913460442,
+      "truth_final_norm": 0.025397336774969286,
+      "predicted_final_norm": 0.1581290906703452
+    },
+    {
+      "Re": 95.25,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 3.8551834450928086,
+      "pressure_rollout_relative_l2": 1.8435156120329692,
+      "one_step_velocity_relative_l2": 0.1260216655696924,
+      "coarse_derivative_relative_l2": 1.037270832564412,
+      "truth_final_norm": 0.027962060388553835,
+      "predicted_final_norm": 0.16368368700069238
+    },
+    {
+      "Re": 95.5,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 3.8254113329848947,
+      "pressure_rollout_relative_l2": 2.0521205615368494,
+      "one_step_velocity_relative_l2": 0.1263375712319233,
+      "coarse_derivative_relative_l2": 1.0720457244421364,
+      "truth_final_norm": 0.029659583920821173,
+      "predicted_final_norm": 0.16548594852544554
+    },
+    {
+      "Re": 97.5,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 2.4652945340127137,
+      "pressure_rollout_relative_l2": 2.0655970598215014,
+      "one_step_velocity_relative_l2": 0.1355070112285222,
+      "coarse_derivative_relative_l2": 2.362365968742592,
+      "truth_final_norm": 0.10493231330081759,
+      "predicted_final_norm": 0.1790893350669294
+    },
+    {
+      "Re": 99.0,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 1.3446577976584162,
+      "pressure_rollout_relative_l2": 1.1210227428746833,
+      "one_step_velocity_relative_l2": 0.08612403944744716,
+      "coarse_derivative_relative_l2": 3.886500181693566,
+      "truth_final_norm": 0.19308301747585307,
+      "predicted_final_norm": 0.1884528612750877
+    },
+    {
+      "Re": 101.5,
+      "diverged_at_index": null,
+      "finite_final_time": 500.0,
+      "velocity_rollout_relative_l2": 0.9832280823972316,
+      "pressure_rollout_relative_l2": 0.8223224386084163,
+      "one_step_velocity_relative_l2": 0.07416656117904295,
+      "coarse_derivative_relative_l2": 4.7871357680644495,
+      "truth_final_norm": 0.2531036388320072,
+      "predicted_final_norm": 0.20289149868677744
+    }
+  ],
+  "aggregate": {
+    "velocity_rollout_relative_l2": 2.7200156455587945,
+    "pressure_rollout_relative_l2": 1.5412768852347385,
+    "one_step_velocity_relative_l2": 0.11265675809623599,
+    "coarse_derivative_relative_l2": 2.3552263111422
+  },
+  "validation_loaded": true,
+  "heldout_loaded": false
+}

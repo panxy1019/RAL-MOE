@@ -1,0 +1,165 @@
+OperatorSpaceMoEROM(
+  (encoder): PhysicalContextEncoder(
+    (net): Sequential(
+      (0): Linear(in_features=91, out_features=224, bias=True)
+      (1): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+      (2): SiLU()
+      (3): Dropout(p=0.04, inplace=False)
+      (4): Linear(in_features=224, out_features=224, bias=True)
+      (5): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+      (6): SiLU()
+      (7): Dropout(p=0.04, inplace=False)
+      (8): Linear(in_features=224, out_features=224, bias=True)
+      (9): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+      (10): SiLU()
+    )
+  )
+  (refine_blocks): ModuleList(
+    (0-1): 2 x Sequential(
+      (0): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+      (1): Linear(in_features=224, out_features=224, bias=True)
+      (2): SiLU()
+      (3): Dropout(p=0.04, inplace=False)
+      (4): Linear(in_features=224, out_features=224, bias=True)
+    )
+  )
+  (attractor_adapters): ModuleList()
+  (group_router): Sequential(
+    (0): LayerNorm((315,), eps=1e-05, elementwise_affine=True, bias=True)
+    (1): Linear(in_features=315, out_features=224, bias=True)
+    (2): SiLU()
+    (3): Dropout(p=0.04, inplace=False)
+    (4): Linear(in_features=224, out_features=3, bias=True)
+  )
+  (velocity_group_routers): ModuleList(
+    (0-2): 3 x Sequential(
+      (0): LayerNorm((315,), eps=1e-05, elementwise_affine=True, bias=True)
+      (1): Linear(in_features=315, out_features=224, bias=True)
+      (2): SiLU()
+      (3): Dropout(p=0.04, inplace=False)
+      (4): Linear(in_features=224, out_features=6, bias=True)
+    )
+  )
+  (pressure_group_routers): ModuleList(
+    (0-2): 3 x Sequential(
+      (0): LayerNorm((315,), eps=1e-05, elementwise_affine=True, bias=True)
+      (1): Linear(in_features=315, out_features=224, bias=True)
+      (2): SiLU()
+      (3): Dropout(p=0.04, inplace=False)
+      (4): Linear(in_features=224, out_features=6, bias=True)
+    )
+  )
+  (velocity_expert_groups): ModuleList(
+    (0-2): 3 x ModuleList(
+      (0-5): 6 x PhysicsAwareExpert(
+        (input_proj): Sequential(
+          (0): LayerNorm((229,), eps=1e-05, elementwise_affine=True, bias=True)
+          (1): Linear(in_features=229, out_features=224, bias=True)
+          (2): GELU(approximate='none')
+        )
+        (blocks): ModuleList(
+          (0-2): 3 x ExpandedFFNBlock(
+            (norm): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+            (ffn): Sequential(
+              (0): Linear(in_features=224, out_features=768, bias=True)
+              (1): GELU(approximate='none')
+              (2): Dropout(p=0.04, inplace=False)
+              (3): Linear(in_features=768, out_features=224, bias=True)
+              (4): Dropout(p=0.04, inplace=False)
+            )
+          )
+        )
+        (mlp_head): Sequential(
+          (0): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+          (1): Linear(in_features=224, out_features=5, bias=True)
+        )
+        (linear): Linear(in_features=5, out_features=5, bias=False)
+      )
+    )
+  )
+  (pressure_expert_groups): ModuleList(
+    (0-2): 3 x ModuleList(
+      (0-5): 6 x PhysicsAwareExpert(
+        (input_proj): Sequential(
+          (0): LayerNorm((233,), eps=1e-05, elementwise_affine=True, bias=True)
+          (1): Linear(in_features=233, out_features=224, bias=True)
+          (2): GELU(approximate='none')
+        )
+        (blocks): ModuleList(
+          (0-2): 3 x ExpandedFFNBlock(
+            (norm): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+            (ffn): Sequential(
+              (0): Linear(in_features=224, out_features=768, bias=True)
+              (1): GELU(approximate='none')
+              (2): Dropout(p=0.04, inplace=False)
+              (3): Linear(in_features=768, out_features=224, bias=True)
+              (4): Dropout(p=0.04, inplace=False)
+            )
+          )
+        )
+        (mlp_head): Sequential(
+          (0): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+          (1): Linear(in_features=224, out_features=4, bias=True)
+        )
+        (linear): Linear(in_features=9, out_features=4, bias=False)
+      )
+    )
+  )
+  (velocity_shared_experts): ModuleList(
+    (0-2): 3 x PhysicsAwareExpert(
+      (input_proj): Sequential(
+        (0): LayerNorm((229,), eps=1e-05, elementwise_affine=True, bias=True)
+        (1): Linear(in_features=229, out_features=224, bias=True)
+        (2): GELU(approximate='none')
+      )
+      (blocks): ModuleList(
+        (0-2): 3 x ExpandedFFNBlock(
+          (norm): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+          (ffn): Sequential(
+            (0): Linear(in_features=224, out_features=768, bias=True)
+            (1): GELU(approximate='none')
+            (2): Dropout(p=0.04, inplace=False)
+            (3): Linear(in_features=768, out_features=224, bias=True)
+            (4): Dropout(p=0.04, inplace=False)
+          )
+        )
+      )
+      (mlp_head): Sequential(
+        (0): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+        (1): Linear(in_features=224, out_features=5, bias=True)
+      )
+      (linear): Linear(in_features=5, out_features=5, bias=False)
+    )
+  )
+  (pressure_shared_experts): ModuleList(
+    (0-2): 3 x PhysicsAwareExpert(
+      (input_proj): Sequential(
+        (0): LayerNorm((233,), eps=1e-05, elementwise_affine=True, bias=True)
+        (1): Linear(in_features=233, out_features=224, bias=True)
+        (2): GELU(approximate='none')
+      )
+      (blocks): ModuleList(
+        (0-2): 3 x ExpandedFFNBlock(
+          (norm): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+          (ffn): Sequential(
+            (0): Linear(in_features=224, out_features=768, bias=True)
+            (1): GELU(approximate='none')
+            (2): Dropout(p=0.04, inplace=False)
+            (3): Linear(in_features=768, out_features=224, bias=True)
+            (4): Dropout(p=0.04, inplace=False)
+          )
+        )
+      )
+      (mlp_head): Sequential(
+        (0): LayerNorm((224,), eps=1e-05, elementwise_affine=True, bias=True)
+        (1): Linear(in_features=224, out_features=4, bias=True)
+      )
+      (linear): Linear(in_features=9, out_features=4, bias=False)
+    )
+  )
+  (closure_confidence_head): Sequential(
+    (0): Linear(in_features=224, out_features=56, bias=True)
+    (1): SiLU()
+    (2): Linear(in_features=56, out_features=2, bias=True)
+  )
+)

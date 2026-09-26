@@ -1,0 +1,26 @@
+% Source: audited three-gate-seed full-window means; no field pixels generated.
+\begin{tikzpicture}[x=3cm,y=0.55cm,font=\small]
+\draw[->] (0,0)--(2.1,0);
+\node at (1.05,-1.0) {$E_u+E_p$ (\%)};
+\foreach \t in {0,0.5,1,1.5,2} {
+ \draw (\t,0.06)--(\t,-0.06) node[below] {\t};
+}
+\node[anchor=east] at (-0.06,3.7) {$S$--$H$};
+\node[anchor=east] at (-0.06,1.5) {$H$--$P$};
+\fill[gray!55] (0,3.7) rectangle (1.814699,4.25);
+\fill[blue!55!black] (0,3.0) rectangle (1.095351,3.55);
+\fill[gray!55] (0,1.5) rectangle (0.976939,2.05);
+\fill[blue!55!black] (0,0.8) rectangle (0.812343,1.35);
+% Display precision only; bar geometry retains the original means.
+% The displayed 0.0000 is rounded from a nonzero standard deviation.
+\node[anchor=west,font=\scriptsize] at (1.83,3.975) {$1.8147\pm0.0002$};
+\node[anchor=west,font=\scriptsize] at (1.11,3.275) {$1.0954\pm0.0000$};
+\node[anchor=west,font=\scriptsize] at (0.99,1.775) {$0.9769\pm0.0002$};
+\node[anchor=west,font=\scriptsize] at (0.83,1.075) {$0.8123\pm0.0002$};
+\fill[gray!55] (0,4.75) rectangle (0.1,5.0);
+\node[anchor=west] at (0.13,4.87) {$\mu$-only};
+\fill[blue!55!black] (0.85,4.75) rectangle (0.95,5.0);
+\node[anchor=west] at (0.98,4.87) {Full T2-C};
+\node[anchor=west,font=\scriptsize] at (2.0,3.25) {$-39.64\%$};
+\node[anchor=west,font=\scriptsize] at (1.75,1.05) {$-16.85\%$};
+\end{tikzpicture}

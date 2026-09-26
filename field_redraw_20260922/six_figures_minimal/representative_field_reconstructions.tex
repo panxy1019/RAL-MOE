@@ -1,0 +1,88 @@
+% Insert within the existing appendix section:
+% Routing and fusion: protocols and supplementary results.
+% Replace the old Representative field reconstructions paragraph and figures;
+% do not place this cross-case subsection inside a Square-only subsection.
+% Requires graphicx. Upload the two PNGs to figures/ in the Overleaf project.
+
+\subsection{Representative field reconstructions}
+\label{app:representative_fields_crosscase}
+
+The following snapshots complement the aggregate routing and fusion
+results with spatially resolved comparisons. For each case, we use the
+terminal prediction of the first available valid window at the lowest
+held-out Reynolds number in the corresponding evaluation set, rather
+than selecting the snapshot with the largest improvement. All reference
+fields are reconstructed from reference POD coefficients; the comparisons
+therefore exclude the original CFD projection remainder.
+
+\paragraph{Pressure reconstruction at the H--P interface.}
+Figure~\ref{fig:hp_pressure_fields_supp} compares E2 Top-1 and T2-C on
+the same frozen candidate trajectories. In both displayed windows,
+E2 selects the Hopf candidate, whereas T2-C combines the Hopf and
+Periodic reconstructions using a window-fixed weight. The full-domain,
+quadrature-weighted relative pressure error at the displayed terminal
+step decreases from $9.9697\%$ to $0.5382\%$ for Square and from
+$0.3444\%$ to $0.0924\%$ for Pinball. These are individual-snapshot
+comparisons with E2, not full-window averages or evidence that fusion
+outperforms every candidate: for example, the Pinball Periodic candidate
+has a lower joint velocity--pressure error than T2-C at this snapshot
+($0.1075\%$ versus $0.1132\%$).
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\linewidth]{figures/fusion_comparison_hp_square_pinball_pressure.png}
+  \caption{Representative H--P pressure reconstructions for
+  (a) centered square and (b) fluidic pinball.
+  In each case, the upper row shows, from left to right, the POD reference,
+  E2 Top-1 prediction, and T2-C prediction; the lower row shows the
+  corresponding E2 and T2-C pointwise absolute pressure errors in the
+  middle and right columns, with the left position intentionally blank.
+  Pressure is kinematic pressure with its full-domain quadrature-weighted
+  mean removed. The upper colorbar is shared by the three pressure fields;
+  the lower colorbar is shared by the two absolute-error fields.
+  All scales are linear, retain each dataset's original scale, and are
+  set separately for each case; their values are not percentages.
+  White obstacles denote solid regions.
+  Square uses sparse-MoE candidates at $\mathrm{Re}=100.5000$,
+  $k=K=24$, and $t=104.0000$ (rollout duration $96.0000$);
+  Pinball uses Deep-FNN-H3 candidates at $\mathrm{Re}=22.2500$,
+  $k=K=56$, and $t=50.7500$ (duration $14.0000$).
+  The Periodic candidate weights are $0.9791$ and $0.9377$, respectively.}
+  \label{fig:hp_pressure_fields_supp}
+\end{figure}
+
+\paragraph{Velocity reconstructions across geometries.}
+Figure~\ref{fig:three_case_velocity_fields_supp} provides a complementary
+overview of velocity reconstruction in all three geometries. The
+predictions reproduce the principal low-speed wakes, while the
+vector-error maps reveal spatial discrepancies that are less apparent
+from speed alone. This is a cross-case visualization of separately
+trained configurations, not a matched architecture comparison or a
+three-case fusion ablation: Circular uses a local specialist without
+T2-C, whereas Square and Pinball use the H--P fusion configurations
+shown above. Individual terminal snapshots do not establish long-time
+stability or average test-set accuracy.
+
+\begin{figure}[p]
+  \centering
+  \includegraphics[width=\linewidth]{figures/field_overview_three_cases_velocity.png}
+  \caption{Representative terminal velocity reconstructions for
+  (a) circular cylinder, (b) centered square, and (c) fluidic pinball.
+  Columns show, from left to right, POD-reference speed
+  $\|\mathbf{u}_{\mathrm{ref}}\|_2$, predicted speed
+  $\|\widehat{\mathbf{u}}\|_2$, and pointwise velocity-vector error
+  $\|\widehat{\mathbf{u}}-\mathbf{u}_{\mathrm{ref}}\|_2$.
+  The error is not the absolute difference between the two speed fields.
+  Each row has a shared speed colorbar for the first two columns and
+  a separate error colorbar for the third; all scales are linear and
+  case-specific, use the original dataset scales, and are not percentages.
+  White obstacles denote solid regions.
+  Circular uses the original-initialization Periodic sparse-MoE specialist
+  with seed 1248 at $\mathrm{Re}=70.3146$, $k=K=48$, and
+  $t=1983.1969$ (rollout duration $598.7009$).
+  Square and Pinball use the same T2-C configurations and terminal
+  snapshots as Figure~\ref{fig:hp_pressure_fields_supp}.
+  The cases do not share a common prediction duration or a common
+  cross-case nondimensional amplitude scale.}
+  \label{fig:three_case_velocity_fields_supp}
+\end{figure}

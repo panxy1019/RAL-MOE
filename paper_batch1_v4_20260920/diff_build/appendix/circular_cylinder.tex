@@ -1,0 +1,131 @@
+\section{Circular-cylinder controlled reevaluation}
+\label{app:circular}
+
+\paragraph{Common evaluation protocol.}
+The new study uses seeds 1248, 1600, and 2026. Hopf has 42 windows
+from $Re=47.081355,49.022357,51.786450$; Periodic has 32 windows from
+$Re=70.314635,100.352251,149.059229,189.862278$. Each window contains
+48 prediction steps; $K=24$ uses its first 24 steps. We average relative
+physical-field errors over steps, then windows within each Reynolds
+number, then equally over Reynolds numbers. Means and sample standard
+deviations are computed over the accepted seeds. All reference fields
+are reconstructed from true POD coefficients on the corresponding basis.
+Only checkpoints accepted by the original validation rule are evaluated
+on held-out windows. The training configurations in
+Table~\ref{tab:specialist_training} describe the archived original
+specialists, not the selected checkpoints of these repeated runs.
+
+\paragraph{Controls and scope.}
+Dense matches the active parameter budget, rather than total stored
+parameters or execution time. Structured retains explicit response
+branches but removes input-dependent expert routing. Neither control
+is identical to the older Vanilla-FNN-MoE or Global MoE configuration.
+The former Circular summary and min--max tables are replaced by this
+explicitly aggregated evaluation. No claim about the former Steady
+architecture comparison is inferred from the present H/P results.
+
+\begin{table}[H]
+\centering
+\caption{Circular Periodic full-window errors (\%) at $K=48$ against
+POD-reconstructed truth. All neural rows have 3/3 accepted seeds.
+OpInf is one deterministic validation-selected fit.}
+\label{tab:circular_full}
+\small
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & $E_u$ & $E_p$ & $E_u+E_p$\\
+\midrule
+Proposed, original & $1.0107\pm0.6513$ & $3.9337\pm2.5070$ & $4.9443\pm3.1576$\\
+Proposed, repaired & $1.1040\pm0.7840$ & $4.4282\pm2.8786$ & $5.5322\pm3.6623$\\
+Dense, active-matched & $\mathbf{0.4790\pm0.1208}$ & $\mathbf{1.9208\pm0.5391}$ & $\mathbf{2.3998\pm0.6599}$\\
+Structured, original & $1.0405\pm0.5015$ & $4.2406\pm2.0664$ & $5.2810\pm2.5679$\\
+Structured, repaired & $0.9983\pm0.4944$ & $4.0693\pm1.8827$ & $5.0677\pm2.3762$\\
+OpInf & 17.6639 & 97.3258 & 114.9897\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Quadratic-branch audit.}
+The two accepted original Hopf proposed checkpoints each contain 28
+quadratic-factor tensors, all zero. The three original Periodic
+proposed checkpoints each contain 84 such tensors, all zero; the three
+Periodic structured checkpoints each contain four, also all zero.
+Thus the original results cannot establish a contribution from the
+explicit quadratic branch. The repaired initialization keeps one factor
+random and the other zero. Smoke training updates all 14 factor pairs
+for Hopf proposed, 42 for Periodic proposed, and two for Periodic
+structured. This verifies learning activity, not improved generalization.
+For Periodic proposed, the mean joint error increases by $6.52\%$ at
+$K=24$ and $11.89\%$ at $K=48$ after repair. Retraining changes the
+optimization trajectory and checkpoint selection, so the difference is
+not a pure isolated estimate of the quadratic term's effect.
+
+\begin{table}[H]
+\centering
+\caption{Hopf training completion and validation acceptance.
+Counts are over three attempted seeds per architecture; failed runs
+are not silently omitted from the denominator.}
+\label{tab:hopf_completion}
+\small
+\begin{tabular}{@{}lccp{5.8cm}@{}}
+\toprule
+Configuration & Proposed & Structured & Failure or rejection\\
+\midrule
+Original & 2/3 & 3/3 & Proposed seed 1600 not accepted by validation\\
+Repaired, AMP & 0/3 & 0/3 & Non-finite gradients\\
+Repaired, FP32 & 2/3 & 2/3 & Proposed 2026: step 3220; structured 1248:
+step 2860, both during $K=4$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Hopf accepted-only joint errors (\%) against POD-reconstructed
+truth, using the common full-window metric. Error bars are sample
+standard deviations over accepted seeds only. Rows with 2/3 are
+descriptive and are not complete three-seed estimates.}
+\label{tab:hopf_accepted}
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Model & $K=24$ & $K=48$ & Accepted\\
+\midrule
+Proposed, original & $0.11521\pm0.08694$ & $0.11487\pm0.10033$ & 2/3\\
+Dense, active-matched & $0.15406\pm0.16364$ & $0.15480\pm0.15525$ & 2/3\\
+Proposed, repaired FP32 & $0.04334\pm0.02379$ & $0.05044\pm0.03439$ & 2/3\\
+Structured, original & $0.12537\pm0.04614$ & $0.12724\pm0.04302$ & 3/3\\
+Structured, repaired FP32 & $0.02229\pm0.00432$ & $0.02392\pm0.00778$ & 2/3\\
+OpInf & 0.03870 & 0.05340 & Deterministic\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The original Dense control also has only two accepted seeds out of three.
+The accepted seed sets differ between original and repaired runs.
+Consequently, their lower accepted-only errors do not establish improved
+expected three-seed performance. FP32 passes the initial 116-combination
+preflight (29 training parameters and four curriculum lengths), but this
+does not guarantee finite gradients later in optimization.
+
+\paragraph{OpInf adaptation.}
+The regularized polynomial model uses constant, linear, compact quadratic,
+standardized $1/Re$, and parameter--state interaction features.
+Training-trajectory derivatives are estimated by second-order numerical
+differentiation. Ridge regularization is selected on validation windows;
+a non-finite window invalidates a candidate. Prediction uses fixed RK4
+with four substeps per output interval. Pressure is an algebraic ridge
+output using the same polynomial features, rather than the proposed
+PPE-plus-correction map. Test windows, reference reconstructions, and
+quadrature agree with the neural comparison. This is a task-specific
+OpInf adaptation, not a reproduction of every detail of an external
+implementation.
+
+At $K=24$, OpInf gives $(E_u,E_p,E_{\mathrm{joint}})=
+(0.00585,0.03285,0.03870)\%$ on Hopf and
+$(15.8676,98.2264,114.0941)\%$ on Periodic.
+The Periodic ridge choice lies at the upper boundary of the searched
+grid (100), which limits interpretation of that failure. The Hopf result
+shows that the method is competitive in the near-onset regime; the
+Periodic result does not justify a general claim against OpInf.

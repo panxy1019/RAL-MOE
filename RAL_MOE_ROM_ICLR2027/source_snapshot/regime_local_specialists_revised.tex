@@ -1,0 +1,289 @@
+\section{Regime-Local Hybrid ROM Specialists}
+\label{sec:regime_local_specialists}
+\label{sec:hprs_specialists}
+
+Each regime-local chart $\mathcal{C}^{\mathrm{ROM}}_r$ is augmented with a
+complete autonomous reduced dynamical model, referred to as a
+\emph{regime-local specialist}.  The specialists share a common
+physics--data architecture but are parameterized independently on their
+respective regime-local data.  Within a specialist, the term \emph{expert}
+refers only to a neural component of the internal sparse mixture and should
+not be confused with the specialist itself.  The construction has two
+levels: a projected reduced model provides the local physical backbone, and
+a structured sparse mixture of experts represents unresolved contributions
+conditioned on the recent reduced trajectory.
+
+\subsection{Semi-explicit hybrid reduced dynamics}
+\label{subsec:semi_explicit_hybrid_dynamics}
+
+For regime $r\in\mathcal{R}$, the velocity coefficients satisfy
+\begin{equation}
+  \dot{\boldsymbol{a}}^{(r)}
+  =
+  \mathscr{F}^{\mathrm{G}}_r
+  \bigl(\boldsymbol{a}^{(r)},\boldsymbol{b}^{(r)};\mu\bigr)
+  +
+  \boldsymbol{\rho}^{u}_{\theta_r}
+  \bigl(\boldsymbol{\xi}^{(r)}\bigr),
+  \label{eq:hybrid_velocity_rhs}
+\end{equation}
+where $\mathscr{F}^{\mathrm{G}}_r$ is the chart-local Galerkin vector field
+from~\eqref{eq:chart_local_galerkin_rhs_definition}.  The learned term
+$\boldsymbol{\rho}^{u}_{\theta_r}$ therefore acts as a closure of the
+projected dynamics rather than replacing them.
+
+Pressure is treated as an algebraic variable.  After advancing the velocity,
+the reduced Pressure--Poisson map provides the physics-based candidate
+\begin{equation}
+  \boldsymbol{b}^{PP,(r)}_{n+1}
+  =
+  \mathscr{Q}^{PP}_{r}
+  \bigl(\boldsymbol{a}^{(r)}_{n+1};\mu\bigr).
+  \label{eq:pressure_poisson_base}
+\end{equation}
+A data-driven candidate and a componentwise gate are evaluated from the same
+specialist feature vector,
+\begin{align}
+  \widehat{\boldsymbol{b}}^{D,(r)}_{n+1}
+  &=
+  \boldsymbol{\rho}^{p}_{\theta_r}
+  \bigl(\boldsymbol{\xi}^{(r)}_n\bigr),
+  \label{eq:data_driven_pressure_candidate}\\
+  \boldsymbol{\alpha}^{(r)}_n
+  &=
+  \operatorname{sigmoid}
+  \left(
+    \boldsymbol{\eta}^{p}_{\theta_r}
+    \bigl(\boldsymbol{\xi}^{(r)}_n\bigr)
+  \right),
+  \qquad
+  \boldsymbol{\alpha}^{(r)}_n\in(0,1)^{d_p}.
+  \label{eq:adaptive_pressure_gate}
+\end{align}
+The pressure coefficients are then reconstructed as
+\begin{equation}
+  \boldsymbol{b}^{(r)}_{n+1}
+  =
+  \boldsymbol{\alpha}^{(r)}_n\odot
+  \boldsymbol{b}^{PP,(r)}_{n+1}
+  +
+  \bigl(\boldsymbol{1}-\boldsymbol{\alpha}^{(r)}_n\bigr)
+  \odot
+  \widehat{\boldsymbol{b}}^{D,(r)}_{n+1}.
+  \label{eq:adaptive_pressure_closure}
+\end{equation}
+Equations~\eqref{eq:hybrid_velocity_rhs}--\eqref{eq:adaptive_pressure_closure}
+form a partitioned semi-explicit ROM: velocity is advanced by a differential
+model, whereas pressure is recovered from an algebraic relation conditioned
+on the updated velocity state.
+
+\subsection{Structured sparse mixture-of-experts closure}
+\label{subsec:sparse_moe_features}
+
+The learned closure is conditioned on the local state, the projected
+Galerkin contribution, the physical parameter, and a short temporal history.
+Define
+\begin{equation}
+  \boldsymbol{g}^{(r)}_n
+  =
+  \mathscr{F}^{\mathrm{G}}_r
+  \bigl(
+    \boldsymbol{a}^{(r)}_n,
+    \boldsymbol{b}^{(r)}_n;
+    \mu
+  \bigr),
+  \label{eq:current_galerkin_feature}
+\end{equation}
+and let tildes denote regime-local standardization.  The current-state block
+is
+\begin{equation}
+  \boldsymbol{\chi}^{(r)}_n
+  =
+  \operatorname{col}
+  \left(
+    \widetilde{\boldsymbol{a}}^{(r)}_n,
+    \widetilde{\boldsymbol{b}}^{(r)}_n,
+    \widetilde{\boldsymbol{g}}^{(r)}_n,
+    \widetilde{\mu}
+  \right),
+  \label{eq:current_feature_block}
+\end{equation}
+and the two preceding states are encoded analogously,
+\begin{equation}
+  \boldsymbol{h}^{(r)}_{n,\ell}
+  =
+  \operatorname{col}
+  \left(
+    \widetilde{\boldsymbol{a}}^{(r)}_{n-\ell},
+    \widetilde{\boldsymbol{b}}^{(r)}_{n-\ell},
+    \widetilde{\boldsymbol{g}}^{(r)}_{n-\ell},
+    \widetilde{\mu}
+  \right),
+  \qquad \ell=1,2.
+  \label{eq:history_feature_block}
+\end{equation}
+The complete specialist feature vector is
+\begin{equation}
+  \boldsymbol{\xi}^{(r)}_n
+  =
+  \operatorname{col}
+  \left(
+    \boldsymbol{\chi}^{(r)}_n,
+    \boldsymbol{h}^{(r)}_{n,1},
+    \boldsymbol{h}^{(r)}_{n,2}
+  \right).
+  \label{eq:complete_specialist_features}
+\end{equation}
+The inclusion of $\boldsymbol{g}^{(r)}_n$ exposes the local projected vector
+field directly to the learned closure, while the short history provides
+information on recent temporal evolution that is not contained in the
+instantaneous reduced state alone.
+
+The closure is represented by a hierarchical sparse mixture of experts.  A
+group router first selects a local expert group,
+\begin{equation}
+  g^{\star}
+  =
+  \underset{g\in\mathcal{G}}{\operatorname{arg\,max}}
+  \;\pi_g^{\mathrm{grp}}(\boldsymbol{\xi}),
+  \label{eq:group_top1}
+\end{equation}
+and, within the selected group, a channel-specific router activates a small
+subset $\mathcal{T}^{c}(\boldsymbol{\xi};g^{\star})$ together with a shared
+expert.  For channel $c\in\{u,p\}$,
+\begin{equation}
+  \boldsymbol{\mathcal{M}}^{c}_{\theta_r}(\boldsymbol{\xi})
+  =
+  \omega^{c}_{0}\,
+  \mathcal{E}^{c}_{0,g^{\star}}(\boldsymbol{\xi})
+  +
+  \sum_{e\in\mathcal{T}^{c}(\boldsymbol{\xi};g^{\star})}
+  \omega^{c}_{e}\,
+  \mathcal{E}^{c}_{e,g^{\star}}(\boldsymbol{\xi}),
+  \label{eq:channel_sparse_moe}
+\end{equation}
+with non-negative normalized weights,
+\begin{equation}
+  \omega^{c}_{e}\ge 0,
+  \qquad
+  \omega^{c}_{0}
+  +\sum_{e\in\mathcal{T}^{c}}\omega^{c}_{e}=1.
+  \label{eq:channel_sparse_weights}
+\end{equation}
+Separate channel routing allows the velocity closure and learned pressure map
+to specialize differently while retaining a common reduced-state context.
+
+Each expert has a structured decomposition
+\begin{equation}
+  \mathcal{E}^{c}_{e,g}(\boldsymbol{\xi})
+  =
+  \mathcal{N}^{c}_{e,g}(\boldsymbol{\xi})
+  +W^{c,\mathrm{lin}}_{e,g}\boldsymbol{\xi}
+  +\kappa W^{c,o}_{e,g}
+  \left[
+    \bigl({U^{c}_{e,g}}^{\mathsf T}\boldsymbol{\xi}\bigr)
+    \odot
+    \bigl({V^{c}_{e,g}}^{\mathsf T}\boldsymbol{\xi}\bigr)
+  \right].
+  \label{eq:physics_aware_expert}
+\end{equation}
+Here $\mathcal{N}^{c}_{e,g}$ is a nonlinear branch, the second term is an
+affine contribution, and the third term is a low-rank bilinear interaction.
+The matrices $U^{c}_{e,g},V^{c}_{e,g}\in\mathbb{R}^{m_r\times q_b}$ and
+$W^{c,o}_{e,g}\in\mathbb{R}^{d_c\times q_b}$ define a rank-$q_b$ bilinear
+map.  This branch provides an economical representation of pairwise
+interactions among reduced and physical features and is consistent with the
+low-order polynomial structure inherited from the projected convective
+operator, without constraining the learned correction to reproduce the
+Galerkin tensor.  Architectural hyperparameters such as $q_b$, the number of
+routed experts, and network widths are specified with the numerical setup.
+
+\subsection{Autonomous time advancement and rollout training}
+\label{subsec:regime_specific_contracts}
+
+Each specialist uses the same numerical form but an independent parameter set
+$\theta_r$.  During a velocity macro-step, the pressure coefficients, recent
+history, and physical parameter define a context $\mathcal{C}^{(r)}_n$.  The
+stagewise right-hand side is
+\begin{equation}
+  F_r
+  \bigl(\boldsymbol{a};\mathcal{C}^{(r)}_n\bigr)
+  =
+  \mathscr{F}^{\mathrm{G}}_r
+  \bigl(\boldsymbol{a},\boldsymbol{b}^{(r)}_n;\mu\bigr)
+  +
+  \boldsymbol{\rho}^{u}_{\theta_r}
+  \bigl(
+    \boldsymbol{\xi}^{(r)}(\boldsymbol{a};\mathcal{C}^{(r)}_n)
+  \bigr).
+  \label{eq:frozen_context_rhs}
+\end{equation}
+With the classical fourth-order Runge--Kutta method,
+\begin{align}
+  \boldsymbol{k}_1
+  &=F_r\bigl(\boldsymbol{a}^{(r)}_n;\mathcal{C}^{(r)}_n\bigr),\nonumber\\
+  \boldsymbol{k}_2
+  &=F_r\left(
+      \boldsymbol{a}^{(r)}_n
+      +\tfrac{\Delta t_r(\mu)}{2}\boldsymbol{k}_1;
+      \mathcal{C}^{(r)}_n
+    \right),\nonumber\\
+  \boldsymbol{k}_3
+  &=F_r\left(
+      \boldsymbol{a}^{(r)}_n
+      +\tfrac{\Delta t_r(\mu)}{2}\boldsymbol{k}_2;
+      \mathcal{C}^{(r)}_n
+    \right),\nonumber\\
+  \boldsymbol{k}_4
+  &=F_r\left(
+      \boldsymbol{a}^{(r)}_n
+      +\Delta t_r(\mu)\boldsymbol{k}_3;
+      \mathcal{C}^{(r)}_n
+    \right),\nonumber\\
+  \boldsymbol{a}^{(r)}_{n+1}
+  &=
+  \boldsymbol{a}^{(r)}_n
+  +\frac{\Delta t_r(\mu)}{6}
+   \bigl(
+     \boldsymbol{k}_1+2\boldsymbol{k}_2
+     +2\boldsymbol{k}_3+\boldsymbol{k}_4
+   \bigr).
+  \label{eq:unified_rk4}
+\end{align}
+The updated velocity is then supplied to the algebraic pressure reconstruction
+\eqref{eq:adaptive_pressure_closure}, after which the temporal history is
+shifted and the autonomous rollout proceeds.
+
+The specialist parameters are learned from closed-loop multi-step rollouts.
+For a rollout of length $K$, the normalized reduced-coordinate objective is
+\begin{equation}
+  \mathcal{L}_{r}
+  =
+  \frac{1}{K}\sum_{k=1}^{K}
+  \left[
+    \frac{1}{d_u}
+    \left\|
+      \bigl(
+        \boldsymbol{a}^{(r)}_{n+k}
+        -\widehat{\boldsymbol{a}}^{(r)}_{n+k}
+      \bigr)
+      \oslash\boldsymbol{\sigma}^{(r)}_a
+    \right\|_2^2
+    +
+    \frac{1}{d_p}
+    \left\|
+      \bigl(
+        \boldsymbol{b}^{(r)}_{n+k}
+        -\widehat{\boldsymbol{b}}^{(r)}_{n+k}
+      \bigr)
+      \oslash\boldsymbol{\sigma}^{(r)}_b
+    \right\|_2^2
+  \right].
+  \label{eq:unified_rollout_loss}
+\end{equation}
+Training proceeds with progressively longer closed-loop horizons so that the
+learned closure is optimized for recursive use rather than only one-step
+approximation.  The schedule and optimizer settings are reported with the
+numerical experiments.  The three specialists are trained independently;
+inter-regime routing and fusion introduced in Section~\ref{sec:hierarchical_ral_moe}
+do not modify their local reduced representations or dynamical parameters.

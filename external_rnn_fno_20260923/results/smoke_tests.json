@@ -1,0 +1,30 @@
+[
+  {
+    "regime": "H",
+    "cell": "LSTM",
+    "identity_initialization": 0.0,
+    "finite_forward_backward": true,
+    "no_future_state_leakage": true
+  },
+  {
+    "regime": "H",
+    "cell": "GRU",
+    "identity_initialization": 0.0,
+    "finite_forward_backward": true,
+    "no_future_state_leakage": true
+  },
+  {
+    "regime": "P",
+    "cell": "LSTM",
+    "identity_initialization": 0.0,
+    "finite_forward_backward": true,
+    "no_future_state_leakage": true
+  },
+  {
+    "regime": "P",
+    "cell": "GRU",
+    "identity_initialization": 0.0,
+    "finite_forward_backward": true,
+    "no_future_state_leakage": true
+  }
+]

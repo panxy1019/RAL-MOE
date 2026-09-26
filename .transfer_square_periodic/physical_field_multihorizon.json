@@ -1,0 +1,221 @@
+{
+  "checkpoint": "runs/official_seed1600/best_validation.pt",
+  "epoch": 205,
+  "best_epoch": 205,
+  "integrator": "rk4",
+  "max_integrator_dt": 0.5,
+  "external_dt": 4.0,
+  "comparison": "full raw snapshots; pressure volume-mean removed per frame",
+  "horizons": {
+    "K1": {
+      "physical_time": 4.0,
+      "rollout_start_stride": 24,
+      "windows": 20,
+      "nonfinite_windows": 0,
+      "aggregate": {
+        "velocity": 0.15059307350750503,
+        "pressure": 0.17789189508887893,
+        "velocity_pod_floor": 0.00406773533464764,
+        "pressure_pod_floor": 0.004566231024429186
+      },
+      "per_Re": {
+        "Re100p500000": {
+          "velocity": 0.06611582032108,
+          "pressure": 0.061525662389143095,
+          "velocity_pod_floor": 0.0038996355513330866,
+          "pressure_pod_floor": 0.003734933404366395,
+          "windows": 5
+        },
+        "Re102p000000": {
+          "velocity": 0.07923281545972875,
+          "pressure": 0.07569850619903801,
+          "velocity_pod_floor": 0.0038145579685066712,
+          "pressure_pod_floor": 0.0040803153220891905,
+          "windows": 5
+        },
+        "Re120p689655": {
+          "velocity": 0.18094827762195126,
+          "pressure": 0.20771236178576852,
+          "velocity_pod_floor": 0.003527842717268104,
+          "pressure_pod_floor": 0.0053358240788373736,
+          "windows": 5
+        },
+        "Re144p827586": {
+          "velocity": 0.21430515977974116,
+          "pressure": 0.2792648612377832,
+          "velocity_pod_floor": 0.004872174003748525,
+          "pressure_pod_floor": 0.005009461347797142,
+          "windows": 5
+        }
+      }
+    },
+    "K4": {
+      "physical_time": 16.0,
+      "rollout_start_stride": 24,
+      "windows": 20,
+      "nonfinite_windows": 0,
+      "aggregate": {
+        "velocity": 0.13864199860983462,
+        "pressure": 0.1623856986542709,
+        "velocity_pod_floor": 0.003976050846383103,
+        "pressure_pod_floor": 0.004423917385834612
+      },
+      "per_Re": {
+        "Re100p500000": {
+          "velocity": 0.048009535390265076,
+          "pressure": 0.040639739883899496,
+          "velocity_pod_floor": 0.003622106504206714,
+          "pressure_pod_floor": 0.0037524776220342914,
+          "windows": 5
+        },
+        "Re102p000000": {
+          "velocity": 0.05657410514583209,
+          "pressure": 0.05146388365720902,
+          "velocity_pod_floor": 0.0038226373884544993,
+          "pressure_pod_floor": 0.003936555966140727,
+          "windows": 5
+        },
+        "Re120p689655": {
+          "velocity": 0.1645012607922278,
+          "pressure": 0.18485152435525357,
+          "velocity_pod_floor": 0.0034696700271641613,
+          "pressure_pod_floor": 0.00494327053715968,
+          "windows": 5
+        },
+        "Re144p827586": {
+          "velocity": 0.20726727615650464,
+          "pressure": 0.2658241279413546,
+          "velocity_pod_floor": 0.004816786532110185,
+          "pressure_pod_floor": 0.0049924543141083005,
+          "windows": 5
+        }
+      }
+    },
+    "K8": {
+      "physical_time": 32.0,
+      "rollout_start_stride": 24,
+      "windows": 16,
+      "nonfinite_windows": 0,
+      "aggregate": {
+        "velocity": 0.12796735954001698,
+        "pressure": 0.15025316560705063,
+        "velocity_pod_floor": 0.003965258040075117,
+        "pressure_pod_floor": 0.004283482984395796
+      },
+      "per_Re": {
+        "Re100p500000": {
+          "velocity": 0.041207405379423336,
+          "pressure": 0.031271215241755544,
+          "velocity_pod_floor": 0.0035604230610544237,
+          "pressure_pod_floor": 0.003465771729256419,
+          "windows": 4
+        },
+        "Re102p000000": {
+          "velocity": 0.04815074982685882,
+          "pressure": 0.037760341781412986,
+          "velocity_pod_floor": 0.003805811835038241,
+          "pressure_pod_floor": 0.0037789091965913756,
+          "windows": 4
+        },
+        "Re120p689655": {
+          "velocity": 0.15891590523058083,
+          "pressure": 0.17768985491416062,
+          "velocity_pod_floor": 0.003542811717044921,
+          "pressure_pod_floor": 0.00480698748295824,
+          "windows": 4
+        },
+        "Re144p827586": {
+          "velocity": 0.18726878894927523,
+          "pressure": 0.24387510707666232,
+          "velocity_pod_floor": 0.004786296893992873,
+          "pressure_pod_floor": 0.00497163786556507,
+          "windows": 4
+        }
+      }
+    },
+    "K16": {
+      "physical_time": 64.0,
+      "rollout_start_stride": 24,
+      "windows": 16,
+      "nonfinite_windows": 0,
+      "aggregate": {
+        "velocity": 0.12678219407977034,
+        "pressure": 0.15091455228086342,
+        "velocity_pod_floor": 0.003971189202797286,
+        "pressure_pod_floor": 0.004324290877119964
+      },
+      "per_Re": {
+        "Re100p500000": {
+          "velocity": 0.04064759644250369,
+          "pressure": 0.029734205309353154,
+          "velocity_pod_floor": 0.0036504552312774997,
+          "pressure_pod_floor": 0.0035482550059021505,
+          "windows": 4
+        },
+        "Re102p000000": {
+          "velocity": 0.0494944823062722,
+          "pressure": 0.03982882823767197,
+          "velocity_pod_floor": 0.0038643557127296395,
+          "pressure_pod_floor": 0.0038397696854240247,
+          "windows": 4
+        },
+        "Re120p689655": {
+          "velocity": 0.13899586385133952,
+          "pressure": 0.15434833786063357,
+          "velocity_pod_floor": 0.003489261524346926,
+          "pressure_pod_floor": 0.004839056260490355,
+          "windows": 4
+        },
+        "Re144p827586": {
+          "velocity": 0.1990730702595907,
+          "pressure": 0.2610742862724569,
+          "velocity_pod_floor": 0.004734518171684128,
+          "pressure_pod_floor": 0.004974414985949541,
+          "windows": 4
+        }
+      }
+    },
+    "K24": {
+      "physical_time": 96.0,
+      "rollout_start_stride": 24,
+      "windows": 16,
+      "nonfinite_windows": 0,
+      "aggregate": {
+        "velocity": 0.13026842237816022,
+        "pressure": 0.1547876281911948,
+        "velocity_pod_floor": 0.004017888082029416,
+        "pressure_pod_floor": 0.004354135248137507
+      },
+      "per_Re": {
+        "Re100p500000": {
+          "velocity": 0.041912155835776906,
+          "pressure": 0.031223128075973973,
+          "velocity_pod_floor": 0.003720934764459735,
+          "pressure_pod_floor": 0.0036310421886197237,
+          "windows": 4
+        },
+        "Re102p000000": {
+          "velocity": 0.051050340563732075,
+          "pressure": 0.04155981340714969,
+          "velocity_pod_floor": 0.003920610847589744,
+          "pressure_pod_floor": 0.0039023497085293405,
+          "windows": 4
+        },
+        "Re120p689655": {
+          "velocity": 0.1284263569937426,
+          "pressure": 0.1431424829892097,
+          "velocity_pod_floor": 0.003525436806979686,
+          "pressure_pod_floor": 0.004812274031789544,
+          "windows": 4
+        },
+        "Re144p827586": {
+          "velocity": 0.21363385058552936,
+          "pressure": 0.2761961645447641,
+          "velocity_pod_floor": 0.0047650385399897995,
+          "pressure_pod_floor": 0.004993184087655027,
+          "windows": 4
+        }
+      }
+    }
+  }
+}

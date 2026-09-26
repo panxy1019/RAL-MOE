@@ -1,0 +1,10 @@
+\section{Related Work}
+
+\paragraph{Projection and learned reduced dynamics.}
+POD--Galerkin models obtain interpretable low-dimensional dynamics by projecting the governing equations onto a data-adapted basis \citep{sirovich1987,berkooz1993,benner2015}. Their main limitation is the influence of truncated scales and imperfect closure. Learned reduced models and neural operators provide flexible nonlinear approximations \citep{hesthaven2018,lu2021,kovachki2023}, while hybrid models retain a projected backbone and learn only unresolved corrections \citep{duraisamy2019,brunton2020,lee2020}. RAL-MoE-ROM follows the hybrid view but learns a conditionally sparse correction under closed-loop rollout rather than a single global residual map.
+
+\paragraph{Local representations for parameterized dynamics.}
+Local bases and clustered or manifold-based ROMs reduce the burden placed on a global representation \citep{amsallem2012,kaiser2014,li2021cluster,diaz2024}. These methods motivate our overlapping charts, but do not by themselves resolve how autonomous local models with unrelated coordinates should be assembled near regime boundaries. Our construction preserves each chart's own affine mean, basis, scaling, and operators, and defers coupling until after physical reconstruction.
+
+\paragraph{Mixture-of-experts and conditional computation.}
+MoE models route inputs among specialized predictors \citep{jacobs1991,jordan1994,shazeer2017,fedus2022}. Most architectures route experts acting in a shared feature space. In contrast, RAL-MoE-ROM uses two distinct routing levels: structured closure experts share one local chart, whereas the outer router selects complete autonomous specialists whose reduced coordinates are chart dependent. The latter are never averaged coefficientwise; adjacent predictions are fused only in the common physical space.

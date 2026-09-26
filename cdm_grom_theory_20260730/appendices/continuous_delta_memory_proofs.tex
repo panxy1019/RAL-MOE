@@ -1,0 +1,583 @@
+\section{Consistency and gradient-flow proofs}
+\label{app:consistency}
+
+\subsection{Proof of \hyperref[lem:expansions]{Lemma 1}}
+\label{app:expansions}
+
+\begin{proof}
+For a square matrix $\Gamma$ and $h\ge0$, the integral remainder formula for
+the matrix exponential gives
+\begin{equation}
+ \e^{-h\Gamma}
+ =I-h\Gamma+
+ h^2\int_0^1(1-\theta)\Gamma^2\e^{-\theta h\Gamma}\dd\theta.
+ \label{eq:matrix-exp-remainder}
+\end{equation}
+Consequently,
+\begin{equation}
+ \norm{\e^{-h\Gamma}-I+h\Gamma}
+ \le \frac{h^2}{2}\norm{\Gamma}^2\e^{h\norm{\Gamma}}.
+ \label{eq:matrix-exp-bound}
+\end{equation}
+If $\norm{\Gamma}\le M_\Gamma$ on the coefficient set under consideration,
+the right-hand side is bounded by
+$\tfrac12M_\Gamma^2\e^{h_0M_\Gamma}h^2$ for $0\le h\le h_0$.
+
+Similarly, for $\eta\ge0$,
+\begin{equation}
+ 1-\e^{-h\eta}
+ =h\eta-h^2\eta^2\int_0^1(1-\theta)\e^{-\theta h\eta}\dd\theta,
+ \label{eq:beta-remainder}
+\end{equation}
+so that
+\begin{equation}
+ \left|1-\e^{-h\eta}-h\eta\right|
+ \le\frac12h^2\eta^2.
+ \label{eq:beta-remainder-bound}
+\end{equation}
+Uniform boundedness of $\eta$ gives a uniform $O(h^2)$ remainder. Applying
+these estimates with $h=h_n$, $\Gamma=\Gamma_n$, and $\eta=\eta_n$ proves
+\eqref{eq:first-order-expansions}.
+\end{proof}
+
+\subsection{Proof of \hyperref[thm:local-consistency]{Theorem 1}}
+\label{app:local-consistency}
+
+\begin{proof}
+All quantities in this proof are evaluated at $t_n$ unless stated otherwise.
+Write
+\begin{equation}
+ D=I-h\Gamma+R_D,\qquad
+ \beta=h\eta+r_\beta,
+ \label{eq:local-remainders}
+\end{equation}
+where \hyperref[lem:expansions]{Lemma 1} gives
+\begin{equation}
+ \norm{R_D}\le c_Dh^2,\qquad
+ |r_\beta|\le c_\beta h^2.
+ \label{eq:local-remainder-bounds}
+\end{equation}
+With $\overline S=DS$,
+\begin{equation}
+ \overline S=S-h\Gamma S+R_DS.
+ \label{eq:sbar-expansion}
+\end{equation}
+The reconstruction error evaluated after forgetting satisfies
+\begin{align}
+ v-\overline S^\top k
+ &=
+ v-S^\top k+hS^\top\Gamma^\top k-(R_DS)^\top k \notag\\
+ &=v-S^\top k+O(h),
+ \label{eq:forgotten-error-expansion}
+\end{align}
+uniformly on a compact set of $(S,k,v,\Gamma)$. Substitution into
+\eqref{eq:erase-write} yields
+\begin{align}
+ S^{\rm rec}_{n+1}
+ &=
+ S-h\Gamma S+R_DS
+ +(h\eta+r_\beta)k
+ \left[v-S^\top k+O(h)\right]^\top \notag\\
+ &=
+ S+h\left[-\Gamma S+\eta k(v-S^\top k)^\top\right]
+ +R_{\rm rec},
+ \label{eq:recurrence-local-expansion}
+\end{align}
+where $\norm{R_{\rm rec}}\le C_{\rm rec}h^2$. The continuous vector field at
+$t_n$ is precisely the bracketed term. Hence
+\begin{equation}
+ \fnorm{
+ S^{\rm rec}_{n+1}-S(t_n)-h\dot S(t_n)}
+ \le C_{\rm rec}h^2.
+ \label{eq:recurrence-defect-proof}
+\end{equation}
+The assumed solution regularity also gives
+\begin{equation}
+ \fnorm{S(t_{n+1})-S(t_n)-h\dot S(t_n)}
+ \le C_{\rm sol}h^2
+ \label{eq:solution-taylor-remainder}
+\end{equation}
+with a uniform $C_{\rm sol}$. The triangle inequality proves
+\eqref{eq:local-defect} with
+$C_{\rm loc}=C_{\rm rec}+C_{\rm sol}$.
+\end{proof}
+
+\subsection{Proof of \hyperref[cor:global-first-order]{Corollary 1}}
+\label{app:global-convergence}
+
+\begin{proof}
+Let $\Phi_n$ denote one step of the recurrence and set
+$e_n=\fnorm{S_n-S(t_n)}$. Add and subtract
+$\Phi_n(S(t_n))$:
+\begin{align}
+ e_{n+1}
+ &\le
+ \fnorm{\Phi_n(S_n)-\Phi_n(S(t_n))}
+ +\fnorm{\Phi_n(S(t_n))-S(t_{n+1})}.
+ \label{eq:error-recursion-start}
+\end{align}
+The one-step Lipschitz assumption bounds the first term by
+$(1+L_hh_n)e_n$.
+\hyperref[thm:local-consistency]{Theorem 1} bounds the second term by
+$C_{\rm loc}h_n^2$. Since $h_n^2\le hh_n$,
+\begin{equation}
+ e_{n+1}\le(1+L_hh_n)e_n+C_{\rm loc}hh_n.
+ \label{eq:error-recursion}
+\end{equation}
+For identical initial data, $e_0=0$. Iteration and
+$1+x\le\e^x$ give
+\begin{align}
+ e_n
+ &\le C_{\rm loc}h
+ \sum_{j=0}^{n-1}h_j
+ \prod_{\ell=j+1}^{n-1}(1+L_hh_\ell) \notag\\
+ &\le C_{\rm loc}h
+ \sum_{j=0}^{n-1}h_j
+ \e^{L_h(t_n-t_{j+1})}.
+ \label{eq:discrete-gronwall-sum}
+\end{align}
+For $L_h>0$, the right Riemann sum is bounded by
+\begin{equation}
+ \frac{C_{\rm loc}}{L_h}
+ (\e^{L_ht_n}-1)h
+ \le
+ \frac{C_{\rm loc}}{L_h}
+ (\e^{L_hT}-1)h.
+ \label{eq:discrete-gronwall-result}
+\end{equation}
+If $L_h=0$, \eqref{eq:error-recursion} gives
+$e_n\le C_{\rm loc}t_nh\le C_{\rm loc}Th$.
+\end{proof}
+
+\subsection{Proof of \hyperref[prop:gradient-flow]{Proposition 1}}
+\label{app:gradient-flow}
+
+\begin{proof}
+Let $R(S)=v-S^\top k\in\R^{d_v}$. For a variation
+$H\in\R^{d_k\times d_v}$,
+\begin{align}
+ \left.\frac{\dd}{\dd\epsilon}
+ \frac12\norm{R(S+\epsilon H)}^2\right|_{\epsilon=0}
+ &=-R(S)^\top H^\top k \notag\\
+ &=-\tr\!\left([kR(S)^\top]^\top H\right).
+ \label{eq:first-objective-variation}
+\end{align}
+Thus the gradient of the first term is $-kR(S)^\top$. Since $\Gamma$ is
+symmetric,
+\begin{align}
+ \left.\frac{\dd}{\dd\epsilon}
+ \frac{1}{2\eta}
+ \tr[(S+\epsilon H)^\top\Gamma(S+\epsilon H)]
+ \right|_{\epsilon=0}
+ =\frac1\eta\tr[(\Gamma S)^\top H].
+ \label{eq:regularizer-variation}
+\end{align}
+Therefore
+\begin{equation}
+ \nabla_S\mathcal J
+ =-k(v-S^\top k)^\top+\frac1\eta\Gamma S.
+ \label{eq:objective-gradient}
+\end{equation}
+Multiplication by $-\eta$ produces
+\eqref{eq:continuous-memory}.
+\end{proof}
+
+\subsection{Proof of \hyperref[cor:fixed-equilibrium]{Corollary 2}}
+\label{app:equilibrium}
+
+\begin{proof}
+With fixed coefficients, \eqref{eq:continuous-memory} is
+\begin{equation}
+ \dot S=-(\Gamma+\eta kk^\top)S+\eta kv^\top.
+ \label{eq:fixed-memory-linear}
+\end{equation}
+Set $A=\Gamma+\eta kk^\top$. Since $\Gamma\succ0$ and $\eta kk^\top$
+is positive semidefinite, $A$ is symmetric positive definite. Therefore
+$A^{-1}$ exists, and the unique equilibrium is
+$S_\star=A^{-1}\eta kv^\top$.
+
+The error $E=S-S_\star$ obeys $\dot E=-AE$, hence
+$E(t)=\e^{-At}E(0)$. Symmetry and positive definiteness imply
+\begin{equation}
+ \norm{\e^{-At}}\le\e^{-\lambda_{\min}(A)t}.
+ \label{eq:spd-semigroup}
+\end{equation}
+The Frobenius norm is subordinate column by column to the spectral norm,
+which proves \eqref{eq:equilibrium-convergence}.
+\end{proof}
+
+\section{Boundedness and well-posedness proofs}
+\label{app:boundedness}
+
+\subsection{Proof of \hyperref[thm:local-wellposedness]{Theorem 2}}
+\label{app:wellposedness}
+
+\begin{proof}
+Identify $S\in\R^{d_k\times d_v}$ with
+$s=\operatorname{vec}(S)\in\R^{d_kd_v}$. On a bounded set in $(a,S)$,
+A2 bounds the local Lipschitz constant of $F_G$. By A3, the coefficient maps
+$k,v,q,\Gamma,\eta$ are locally Lipschitz and bounded on that set.
+
+The map $(a,S)\mapsto S^\top q(a,\mu)$ is locally Lipschitz because, for two
+states,
+\begin{align}
+ \norm{S_1^\top q(a_1)-S_2^\top q(a_2)}
+ &\le
+ \norm{S_1-S_2}\norm{q(a_1)}
+ +\norm{S_2}\norm{q(a_1)-q(a_2)}.
+ \label{eq:read-lipschitz}
+\end{align}
+The same product estimate applies to
+$\Gamma(a,\mu)S$ and to
+$\eta(a,\mu)k(a,\mu)[v(a,\mu)-S^\top k(a,\mu)]^\top$.
+Consequently, the vectorized right-hand side of \eqref{eq:cdm-grom} is
+locally Lipschitz in $(a,s)$. Picard--Lindel\"of yields a unique solution on a
+nonzero interval and a unique maximal continuation.
+
+No linear-growth or dissipativity condition on the full augmented vector
+field has been assumed. The maximal interval therefore need not be infinite,
+which is why the statement is local.
+\end{proof}
+
+\subsection{Proof of \hyperref[thm:memory-boundedness]{Theorem 3}}
+\label{app:memory-bound}
+
+\begin{proof}
+Set $y=S^\top k\in\R^{d_v}$. Taking the Frobenius product of
+\eqref{eq:continuous-memory} with $S$ gives
+\begin{align}
+ \frac12\frac{\dd}{\dd t}\fnorm S^2
+ &=-\ipF{S}{\Gamma S}
+ +\eta\ipF{S}{k(v-S^\top k)^\top} \notag\\
+ &=-\ipF{S}{\Gamma S}
+ +\eta y^\top(v-y).
+ \label{eq:memory-energy-full}
+\end{align}
+The last equality follows from
+\begin{equation}
+ \ipF{S}{k(v-y)^\top}
+ =\tr(S^\top k(v-y)^\top)
+ =y^\top(v-y).
+ \label{eq:frobenius-write}
+\end{equation}
+Complete the square:
+\begin{equation}
+ y^\top(v-y)
+ =-\norm{y-\tfrac12v}^2+\frac14\norm v^2
+ \le\frac14\norm v^2.
+ \label{eq:complete-square}
+\end{equation}
+Using A5--A7 in \eqref{eq:memory-energy-full},
+\begin{equation}
+ \frac12\frac{\dd}{\dd t}\fnorm S^2
+ \le
+ -\gamma_{\min}\fnorm S^2+
+ \frac{\eta_{\max}v_{\max}^2}{4}.
+ \label{eq:scalar-memory-inequality}
+\end{equation}
+Let $z(t)=\fnorm{S(t)}^2$. Then
+\begin{equation}
+ z'(t)+2\gamma_{\min}z(t)
+ \le\frac{\eta_{\max}v_{\max}^2}{2}.
+ \label{eq:z-inequality}
+\end{equation}
+Multiplication by $\e^{2\gamma_{\min}t}$ and integration from $0$ to $t$
+give
+\begin{equation}
+ z(t)\le
+ \e^{-2\gamma_{\min}t}z(0)
+ +\frac{\eta_{\max}v_{\max}^2}{4\gamma_{\min}}
+ (1-\e^{-2\gamma_{\min}t}),
+ \label{eq:z-bound-proof}
+\end{equation}
+which is \eqref{eq:memory-explicit-bound} on the maximal interval of the
+coupled solution. If that interval is $[0,\infty)$, taking $\limsup$ proves
+\eqref{eq:memory-limsup}.
+\end{proof}
+
+\subsection{Proof of \hyperref[prop:memory-passivity]{Proposition 2}}
+\label{app:passivity}
+
+\begin{proof}
+Identity \eqref{eq:memory-energy-identity} was established in
+\eqref{eq:memory-energy-full}. Young's inequality gives
+\begin{equation}
+ y^\top v
+ \le\frac12\norm y^2+\frac12\norm v^2.
+ \label{eq:young-yv}
+\end{equation}
+Therefore
+\begin{equation}
+ y^\top(v-y)
+ \le-\frac12\norm y^2+\frac12\norm v^2.
+ \label{eq:passivity-square}
+\end{equation}
+Use A5 in the forgetting term and multiply
+\eqref{eq:passivity-square} by the nonnegative $\eta$ from A6 to obtain
+\eqref{eq:passivity-bound}.
+\end{proof}
+
+\section{Finite-state, Volterra, and linear-elimination proofs}
+\label{app:finite-state}
+
+\subsection{Proof of \hyperref[prop:fixed-key]{Proposition 3}}
+\label{app:fixed-key}
+
+\begin{proof}
+Under the stated specialization, the matrix equation is
+\begin{equation}
+ \dot S=-\gamma S+\eta e(Ca-S^\top e)^\top.
+ \label{eq:fixed-key-matrix}
+\end{equation}
+Because $y=S^\top e$ and $\norm e=1$,
+\begin{align}
+ \dot y
+ &=\dot S^\top e \notag\\
+ &=-\gamma S^\top e+
+ \eta(Ca-S^\top e)e^\top e \notag\\
+ &=-(\gamma+\eta)y+\eta Ca,
+ \label{eq:fixed-key-proof}
+\end{align}
+which proves \eqref{eq:fixed-key-vector}.
+
+Let $P_\perp=I-ee^\top$. Since $P_\perp e=0$,
+\begin{equation}
+ \frac{\dd}{\dd t}(P_\perp S)
+ =-\gamma P_\perp S.
+ \label{eq:orthogonal-equation}
+\end{equation}
+Solving this linear equation gives \eqref{eq:orthogonal-decay}. Moreover,
+\begin{equation}
+ S^\top e=(ee^\top S)^\top e,
+ \label{eq:read-projection}
+\end{equation}
+so $P_\perp S$ is unobservable from the read and closure. The observable
+single-address dynamics are therefore represented by $y$. Further reduction
+can occur only if the ordinary linear input/output realization defined by
+$B$ and $C$ is itself nonminimal.
+\end{proof}
+
+\subsection{Proof of \hyperref[thm:volterra]{Theorem 4}}
+\label{app:volterra}
+
+\begin{proof}
+Variation of constants applied to \eqref{eq:auxiliary-system} gives
+\begin{equation}
+ y_j(t)=\e^{-\Lambda_jt}y_j(0)
+ +\int_0^t\e^{-\Lambda_j(t-s)}C_ja(s)\dd s.
+ \label{eq:auxiliary-voc}
+\end{equation}
+Substitute \eqref{eq:auxiliary-voc} into
+$\dot a=F_G(a;\mu)+\sum_jB_jy_j$:
+\begin{align}
+ \dot a(t)
+ &=F_G(a(t);\mu)
+ +\sum_jB_j\e^{-\Lambda_jt}y_j(0) \notag\\
+ &\quad+
+ \int_0^t\sum_j
+ B_j\e^{-\Lambda_j(t-s)}C_ja(s)\dd s.
+ \label{eq:volterra-substitution}
+\end{align}
+The finite sum may be interchanged with the integral. Definitions
+\eqref{eq:initial-slip} and \eqref{eq:finite-kernel} then give
+\eqref{eq:volterra-resolved}.
+
+Exponential stability of $-\Lambda_j$ makes
+$\e^{-\Lambda_jt}$ exponentially integrable. For $\operatorname{Re}s$
+larger than the semigroup growth bound,
+\begin{equation}
+ \int_0^\infty\e^{-st}\e^{-\Lambda_jt}\dd t
+ =(sI+\Lambda_j)^{-1}.
+ \label{eq:matrix-laplace}
+\end{equation}
+Taking the Laplace transform term by term proves
+\eqref{eq:kernel-laplace}.
+\end{proof}
+
+\subsection{Proof of \hyperref[thm:linear-elimination]{Theorem 5}}
+\label{app:linear-elimination}
+
+\begin{proof}
+The unresolved block of \eqref{eq:block-linear} is
+\begin{equation}
+ \dot c=A_{uu}c+A_{ur}a.
+ \label{eq:unresolved-block}
+\end{equation}
+Variation of constants yields
+\begin{equation}
+ c(t)=\e^{A_{uu}t}c(0)+
+ \int_0^t\e^{A_{uu}(t-s)}A_{ur}a(s)\dd s.
+ \label{eq:unresolved-voc}
+\end{equation}
+The resolved block is
+$\dot a=A_{rr}a+A_{ru}c$. Substitution of
+\eqref{eq:unresolved-voc} gives
+\begin{align}
+ \dot a(t)
+ &=A_{rr}a(t)+A_{ru}\e^{A_{uu}t}c(0) \notag\\
+ &\quad+
+ \int_0^tA_{ru}\e^{A_{uu}(t-s)}A_{ur}a(s)\dd s,
+ \label{eq:linear-substitution}
+\end{align}
+which proves \eqref{eq:exact-linear-memory} and
+\eqref{eq:exact-kernel}.
+
+This algebra is valid on finite intervals for every finite matrix $A_{uu}$.
+Under A8, standard finite-dimensional semigroup theory provides constants
+$M_u\ge1$ and $\omega_u>0$ such that
+\begin{equation}
+ \norm{\e^{A_{uu}t}}\le M_u\e^{-\omega_ut},
+ \label{eq:hurwitz-semigroup}
+\end{equation}
+so the slip and kernel decay exponentially.
+\end{proof}
+
+\subsection{Proof of \hyperref[cor:exact-realization]{Corollary 3}}
+\label{app:exact-realization}
+
+\begin{proof}
+With $\Lambda=-A_{uu}$, $B=A_{ru}$, and $C=A_{ur}$,
+\begin{equation}
+ B\e^{-\Lambda\tau}C
+ =A_{ru}\e^{A_{uu}\tau}A_{ur}
+ =K_{\rm exact}(\tau).
+ \label{eq:realization-identity}
+\end{equation}
+The auxiliary initial-slip term is
+$B\e^{-\Lambda t}y(0)=A_{ru}\e^{A_{uu}t}c(0)$ when $y(0)=c(0)$.
+A8 makes $-\Lambda=A_{uu}$ Hurwitz and hence makes the realization
+exponentially stable.
+
+If stable model reduction replaces $(A_{uu},A_{ur},A_{ru})$ by a lower-order
+realization, the identity becomes an approximation
+$K_{\rm exact}\approx K_m$. The resulting trajectory error is then bounded
+under the hypotheses of \hyperref[thm:kernel-error]{Theorem 7}.
+\end{proof}
+
+\section{Energy and kernel-error proofs}
+\label{app:energy-kernel}
+
+\subsection{Proof of \hyperref[thm:reciprocal-energy]{Theorem 6}}
+\label{app:reciprocal-energy}
+
+\begin{proof}
+Differentiate \eqref{eq:augmented-energy} along
+\eqref{eq:reciprocal-model-assumption}:
+\begin{align}
+ \dot{\mathcal E}
+ &=a^\top F_G(a)
+ -\sum_j a^\top C_j^\top y_j
+ +\sum_j\frac1{\eta_j}
+ y_j^\top(\eta_jC_ja-\lambda_jy_j) \notag\\
+ &=a^\top F_G(a)
+ -\sum_j a^\top C_j^\top y_j
+ +\sum_j y_j^\top C_ja
+ -\sum_j\frac{\lambda_j}{\eta_j}\norm{y_j}^2.
+ \label{eq:energy-before-cancel}
+\end{align}
+Since the scalar $a^\top C_j^\top y_j$ equals
+$y_j^\top C_ja$, the cross terms cancel exactly. This proves
+\eqref{eq:reciprocal-energy-identity}.
+
+If $a^\top F_G(a)\le0$, every remaining memory term is nonpositive, so
+$\mathcal E$ is non-increasing. Under \eqref{eq:galerkin-absorbing},
+\begin{equation}
+ \dot{\mathcal E}
+ \le c_0-c_1\norm a^2
+ -\sum_j\frac{\lambda_j}{\eta_j}\norm{y_j}^2.
+ \label{eq:energy-absorbing-step}
+\end{equation}
+By the definition \eqref{eq:kappa},
+\begin{align}
+ c_1\norm a^2
+ +\sum_j\frac{\lambda_j}{\eta_j}\norm{y_j}^2
+ &\ge
+ \kappa\left[
+ \frac12\norm a^2+
+ \sum_j\frac{1}{2\eta_j}\norm{y_j}^2
+ \right] \notag\\
+ &=\kappa\mathcal E.
+ \label{eq:kappa-coercivity}
+\end{align}
+Thus $\dot{\mathcal E}\le c_0-\kappa\mathcal E$. The integrating-factor
+formula gives \eqref{eq:augmented-absorbing-bound}. Under A2 the reciprocal
+augmented vector field is locally Lipschitz. Bound
+\eqref{eq:augmented-absorbing-bound} confines every finite-time trajectory
+to a bounded set, so the standard continuation criterion for ordinary
+differential equations excludes a finite maximal endpoint. The solution is
+therefore global.
+\end{proof}
+
+\subsection{Proof of \hyperref[thm:kernel-error]{Theorem 7}}
+\label{app:kernel-error-proof}
+
+\begin{proof}
+Let $e(t)=a(t)-a_m(t)$. Subtract the integral forms of
+\eqref{eq:exact-volterra} and \eqref{eq:approx-volterra}, and decompose the
+convolution difference as
+\begin{align}
+ K*a-K_m*a_m
+ =K*e+(K-K_m)*a_m.
+ \label{eq:convolution-decomposition}
+\end{align}
+For every $t\in[0,T]$, A2 and the common-ball hypothesis give
+\begin{align}
+ \norm{e(t)}
+ &\le\norm{e(0)}
+ +L\int_0^t\norm{e(s)}\dd s
+ +\int_0^t\norm{g(s)-g_m(s)}\dd s \notag\\
+ &\quad+
+ \int_0^t\int_0^s
+ \norm{K(s-u)}\norm{e(u)}\dd u\dd s \notag\\
+ &\quad+
+ \int_0^t\int_0^s
+ \norm{K(s-u)-K_m(s-u)}
+ \norm{a_m(u)}\dd u\dd s.
+ \label{eq:kernel-error-pre-fubini}
+\end{align}
+All integrands are nonnegative and integrable, so Tonelli's theorem applies.
+For the term containing $e$,
+\begin{align}
+ &\int_0^t\int_0^s
+ \norm{K(s-u)}\norm{e(u)}\dd u\dd s \notag\\
+ &\quad=
+ \int_0^t
+ \left[\int_0^{t-u}\norm{K(\tau)}\dd\tau\right]
+ \norm{e(u)}\dd u \notag\\
+ &\quad\le
+ \kappa_T\int_0^t\norm{e(u)}\dd u.
+ \label{eq:exact-kernel-error-term}
+\end{align}
+For the kernel mismatch, use $\norm{a_m(u)}\le M$:
+\begin{align}
+ &\int_0^t\int_0^s
+ \norm{K(s-u)-K_m(s-u)}
+ \norm{a_m(u)}\dd u\dd s \notag\\
+ &\quad\le
+ M\int_0^t(t-\tau)\norm{K(\tau)-K_m(\tau)}\dd\tau \notag\\
+ &\quad\le MT\delta_K(T).
+ \label{eq:kernel-mismatch-term}
+\end{align}
+The slip mismatch is bounded by $\delta_g(T)$. Therefore
+\begin{equation}
+ \norm{e(t)}
+ \le A_T+(L+\kappa_T)
+ \int_0^t\norm{e(u)}\dd u,
+ \label{eq:gronwall-kernel}
+\end{equation}
+where
+\begin{equation}
+ A_T=\norm{e(0)}+\delta_g(T)+MT\delta_K(T).
+ \label{eq:AT}
+\end{equation}
+Gronwall's inequality gives
+$\norm{e(t)}\le A_T\e^{(L+\kappa_T)t}$. Taking the supremum over
+$t\in[0,T]$ proves \eqref{eq:kernel-error-bound}. Finally,
+\begin{equation}
+ \norm{e(0)}+\delta_g(T)+MT\delta_K(T)
+ \le\max\{1,MT\}
+ [\norm{e(0)}+\delta_g(T)+\delta_K(T)],
+ \label{eq:CT-grouping}
+\end{equation}
+which yields the stated $C_T$.
+\end{proof}

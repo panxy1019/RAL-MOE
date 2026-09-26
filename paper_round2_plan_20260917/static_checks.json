@@ -1,0 +1,15 @@
+{
+  "missing_refs": [],
+  "duplicate_labels": [],
+  "missing_cites": [],
+  "circular_appendix_active": false,
+  "gate_input_dimension": 7,
+  "gate_trainable_parameters": 4737,
+  "compiled": false,
+  "experiments_started": false,
+  "changed_files": [
+    "main.tex",
+    "appendix\\rom_derivation.tex",
+    "appendix\\routing_details.tex"
+  ]
+}

@@ -1,0 +1,35 @@
+\section{Trainable and active parameter counts}
+\label{app:parameter_counts}
+
+\paragraph{Counting convention.}
+Total parameters count unique trainable parameters in each analyzed
+circular-cylinder specialist. Active parameters count unique trainable
+parameters used by one batch-size-one prediction-path routing decision,
+not their union across a batch, trajectory, or all RK4 stages. These include
+the encoder and refinement blocks, executed routers, the selected group's
+shared experts, channel-specific Top-2 velocity and pressure experts, and
+the learned pressure correction. Fixed POD bases, projected operators,
+normalization statistics, and non-trainable buffers are excluded.
+
+\begin{table}[htbp]
+\centering
+\caption{Trainable and per-decision active parameter counts for the analyzed
+circular-cylinder specialists. Active counts refer to the sparse prediction
+path; M denotes one million parameters.}
+\label{tab:parameter_counts}
+\begin{tabular}{lrrr}
+\toprule
+Specialist & Total trainable & Active prediction & Active fraction \\
+\midrule
+Hopf & 31.81M & 14.17M & 44.53\% \\
+Periodic & 48.62M & 8.31M & 17.09\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Hopf and Periodic specialists activate 44.53\% and 17.09\% of their
+trainable parameters per prediction decision, respectively. These counts
+describe conditional parameter activation, not measured FLOPs, runtime,
+or speedup. Complete parameter-matched counts are unavailable for the
+Vanilla-FNN-MoE, DataOnly-MoE, and Global MoE ablations, so the local
+architecture comparison is not interpreted as a capacity-matched study.

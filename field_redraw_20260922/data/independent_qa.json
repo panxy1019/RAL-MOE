@@ -1,0 +1,499 @@
+[
+  {
+    "case": "circular_p",
+    "fields": {
+      "reference": {
+        "gauge_abs_weighted_mean": 1.537966069263266e-20,
+        "velocity": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            -10.0,
+            -10.0
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": false
+        },
+        "pressure": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            -10.0,
+            -10.0
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": false
+        }
+      },
+      "prediction": {
+        "gauge_abs_weighted_mean": 6.694675830910687e-21,
+        "velocity": {
+          "global_max": 0.014821728388062764,
+          "global_max_xy": [
+            3.2166666984558105,
+            -0.15625
+          ],
+          "roi_max": 0.014821728388062764,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.0003753424118916705,
+          "global_max_xy": [
+            3.058333396911621,
+            0.9375
+          ],
+          "roi_max": 0.0003753424118916705,
+          "global_max_in_roi": true
+        }
+      }
+    },
+    "all_finite": true,
+    "weights_positive": true
+  },
+  {
+    "case": "square_hp",
+    "fields": {
+      "reference": {
+        "gauge_abs_weighted_mean": 6.487583739698346e-18,
+        "velocity": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            0.0816195085644722,
+            0.08546674251556396
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": false
+        },
+        "pressure": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            0.0816195085644722,
+            0.08546674251556396
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": false
+        }
+      },
+      "prediction": {
+        "gauge_abs_weighted_mean": 1.0956612212561202e-17,
+        "velocity": {
+          "global_max": 0.01717314106719007,
+          "global_max_xy": [
+            11.994128227233887,
+            2.4814815521240234
+          ],
+          "roi_max": 0.01717314106719007,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.003994524981716818,
+          "global_max_xy": [
+            7.9453887939453125,
+            2.569934844970703
+          ],
+          "roi_max": 0.003994524981716818,
+          "global_max_in_roi": true
+        }
+      },
+      "e2": {
+        "gauge_abs_weighted_mean": 1.045417705880739e-17,
+        "velocity": {
+          "global_max": 0.10625972520468481,
+          "global_max_xy": [
+            8.748797416687012,
+            2.037036895751953
+          ],
+          "roi_max": 0.10625972520468481,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.03814056605647009,
+          "global_max_xy": [
+            8.16722583770752,
+            1.5370370149612427
+          ],
+          "roi_max": 0.03814056605647009,
+          "global_max_in_roi": true
+        }
+      },
+      "candidate1": {
+        "gauge_abs_weighted_mean": 7.730449646352513e-18,
+        "velocity": {
+          "global_max": 0.017529492364193735,
+          "global_max_xy": [
+            11.994128227233887,
+            2.4814815521240234
+          ],
+          "roi_max": 0.017529492364193735,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.004009519214057969,
+          "global_max_xy": [
+            9.631983757019043,
+            2.4814815521240234
+          ],
+          "roi_max": 0.004009519214057969,
+          "global_max_in_roi": true
+        }
+      },
+      "candidate2": {
+        "gauge_abs_weighted_mean": 1.045417705880739e-17,
+        "velocity": {
+          "global_max": 0.10625972520468481,
+          "global_max_xy": [
+            8.748797416687012,
+            2.037036895751953
+          ],
+          "roi_max": 0.10625972520468481,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.03814056605647009,
+          "global_max_xy": [
+            8.16722583770752,
+            1.5370370149612427
+          ],
+          "roi_max": 0.03814056605647009,
+          "global_max_in_roi": true
+        }
+      }
+    },
+    "all_finite": true,
+    "weights_positive": true
+  },
+  {
+    "case": "pinball_hp",
+    "fields": {
+      "reference": {
+        "gauge_abs_weighted_mean": 2.240923348230319e-19,
+        "velocity": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            -1.8933833837509155,
+            0.13265065848827362
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            -1.8933833837509155,
+            0.13265065848827362
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": true
+        }
+      },
+      "prediction": {
+        "gauge_abs_weighted_mean": 6.722770044690957e-19,
+        "velocity": {
+          "global_max": 0.001530980366919354,
+          "global_max_xy": [
+            1.3141366243362427,
+            0.07472746819257736
+          ],
+          "roi_max": 0.001530980366919354,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.0005283297840513457,
+          "global_max_xy": [
+            5.663013458251953,
+            0.06388143450021744
+          ],
+          "roi_max": 0.0005283297840513457,
+          "global_max_in_roi": true
+        }
+      },
+      "e2": {
+        "gauge_abs_weighted_mean": 1.3445540089381914e-18,
+        "velocity": {
+          "global_max": 0.022893200105495535,
+          "global_max_xy": [
+            1.3141366243362427,
+            0.07472746819257736
+          ],
+          "roi_max": 0.022893200105495535,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.002166489716889153,
+          "global_max_xy": [
+            0.1842096596956253,
+            1.2161632776260376
+          ],
+          "roi_max": 0.002166489716889153,
+          "global_max_in_roi": true
+        }
+      },
+      "candidate1": {
+        "gauge_abs_weighted_mean": 2.689108017876383e-18,
+        "velocity": {
+          "global_max": 0.00043712001942164495,
+          "global_max_xy": [
+            5.629006862640381,
+            0.8622164130210876
+          ],
+          "roi_max": 0.00043712001942164495,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.0006225552564491366,
+          "global_max_xy": [
+            5.832630157470703,
+            0.05832609906792641
+          ],
+          "roi_max": 0.0006225552564491366,
+          "global_max_in_roi": true
+        }
+      },
+      "candidate2": {
+        "gauge_abs_weighted_mean": 1.3445540089381914e-18,
+        "velocity": {
+          "global_max": 0.022893200105495535,
+          "global_max_xy": [
+            1.3141366243362427,
+            0.07472746819257736
+          ],
+          "roi_max": 0.022893200105495535,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.002166489716889153,
+          "global_max_xy": [
+            0.1842096596956253,
+            1.2161632776260376
+          ],
+          "roi_max": 0.002166489716889153,
+          "global_max_in_roi": true
+        }
+      }
+    },
+    "all_finite": true,
+    "weights_positive": true
+  },
+  {
+    "case": "square_sh",
+    "fields": {
+      "reference": {
+        "gauge_abs_weighted_mean": 6.126183015068411e-18,
+        "velocity": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            0.0816195085644722,
+            0.08546674251556396
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": false
+        },
+        "pressure": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            0.0816195085644722,
+            0.08546674251556396
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": false
+        }
+      },
+      "prediction": {
+        "gauge_abs_weighted_mean": 1.9683117514601097e-17,
+        "velocity": {
+          "global_max": 0.028310164603751346,
+          "global_max_xy": [
+            4.951028347015381,
+            2.555459976196289
+          ],
+          "roi_max": 0.028310164603751346,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.018732244671338494,
+          "global_max_xy": [
+            5.047268390655518,
+            1.4871801137924194
+          ],
+          "roi_max": 0.018732244671338494,
+          "global_max_in_roi": true
+        }
+      },
+      "e2": {
+        "gauge_abs_weighted_mean": 9.23775510761395e-18,
+        "velocity": {
+          "global_max": 0.07536010608562774,
+          "global_max_xy": [
+            8.511439323425293,
+            2.037036895751953
+          ],
+          "roi_max": 0.07536010608562774,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.02357675206421468,
+          "global_max_xy": [
+            7.9453887939453125,
+            1.703703761100769
+          ],
+          "roi_max": 0.02357675206421468,
+          "global_max_in_roi": true
+        }
+      },
+      "candidate1": {
+        "gauge_abs_weighted_mean": 2.4416585542071223e-18,
+        "velocity": {
+          "global_max": 0.02974730137653713,
+          "global_max_xy": [
+            4.951028347015381,
+            1.4342225790023804
+          ],
+          "roi_max": 0.02974730137653713,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.019662774135018823,
+          "global_max_xy": [
+            5.047268390655518,
+            1.4871801137924194
+          ],
+          "roi_max": 0.019662774135018823,
+          "global_max_in_roi": true
+        }
+      },
+      "candidate2": {
+        "gauge_abs_weighted_mean": 9.23775510761395e-18,
+        "velocity": {
+          "global_max": 0.07536010608562774,
+          "global_max_xy": [
+            8.511439323425293,
+            2.037036895751953
+          ],
+          "roi_max": 0.07536010608562774,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.02357675206421468,
+          "global_max_xy": [
+            7.9453887939453125,
+            1.703703761100769
+          ],
+          "roi_max": 0.02357675206421468,
+          "global_max_in_roi": true
+        }
+      }
+    },
+    "all_finite": true,
+    "weights_positive": true
+  },
+  {
+    "case": "pinball_sh",
+    "fields": {
+      "reference": {
+        "gauge_abs_weighted_mean": 4.033662027852261e-18,
+        "velocity": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            -1.8933833837509155,
+            0.13265065848827362
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.0,
+          "global_max_xy": [
+            -1.8933833837509155,
+            0.13265065848827362
+          ],
+          "roi_max": 0.0,
+          "global_max_in_roi": true
+        }
+      },
+      "prediction": {
+        "gauge_abs_weighted_mean": 8.963693395227246e-19,
+        "velocity": {
+          "global_max": 1.3409608732041924,
+          "global_max_xy": [
+            -1.8195600509643555,
+            -0.010884699411690235
+          ],
+          "roi_max": 1.3409608732041924,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.7417181883502992,
+          "global_max_xy": [
+            -1.802526593208313,
+            -0.015559534542262554
+          ],
+          "roi_max": 0.7417181883502992,
+          "global_max_in_roi": true
+        }
+      },
+      "e2": {
+        "gauge_abs_weighted_mean": 1.792738679045449e-18,
+        "velocity": {
+          "global_max": 1.476129618895735,
+          "global_max_xy": [
+            -1.8195600509643555,
+            -0.010884699411690235
+          ],
+          "roi_max": 1.476129618895735,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.8229249689093145,
+          "global_max_xy": [
+            -1.802526593208313,
+            -0.015559534542262554
+          ],
+          "roi_max": 0.8229249689093145,
+          "global_max_in_roi": true
+        }
+      },
+      "candidate1": {
+        "gauge_abs_weighted_mean": 1.792738679045449e-18,
+        "velocity": {
+          "global_max": 1.476129618895735,
+          "global_max_xy": [
+            -1.8195600509643555,
+            -0.010884699411690235
+          ],
+          "roi_max": 1.476129618895735,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.8229249689093145,
+          "global_max_xy": [
+            -1.802526593208313,
+            -0.015559534542262554
+          ],
+          "roi_max": 0.8229249689093145,
+          "global_max_in_roi": true
+        }
+      },
+      "candidate2": {
+        "gauge_abs_weighted_mean": 1.1204616744034058e-18,
+        "velocity": {
+          "global_max": 0.00341970960493349,
+          "global_max_xy": [
+            -1.802526593208313,
+            0.015559534542262554
+          ],
+          "roi_max": 0.00341970960493349,
+          "global_max_in_roi": true
+        },
+        "pressure": {
+          "global_max": 0.19560291098750682,
+          "global_max_xy": [
+            -1.8013533353805542,
+            -0.00740944966673851
+          ],
+          "roi_max": 0.19560291098750682,
+          "global_max_in_roi": true
+        }
+      }
+    },
+    "all_finite": true,
+    "weights_positive": true
+  }
+]

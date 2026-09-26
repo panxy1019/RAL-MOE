@@ -1,0 +1,80 @@
+[
+  {
+    "lambda_value": 1e-10,
+    "score": null,
+    "failed_windows": 16,
+    "elapsed": 0.14652013778686523
+  },
+  {
+    "lambda_value": 1e-09,
+    "score": null,
+    "failed_windows": 16,
+    "elapsed": 0.18078041076660156
+  },
+  {
+    "lambda_value": 1e-08,
+    "score": null,
+    "failed_windows": 16,
+    "elapsed": 0.22420048713684082
+  },
+  {
+    "lambda_value": 1e-07,
+    "score": null,
+    "failed_windows": 16,
+    "elapsed": 0.2955746650695801
+  },
+  {
+    "lambda_value": 1e-06,
+    "score": null,
+    "failed_windows": 14,
+    "elapsed": 0.4453463554382324
+  },
+  {
+    "lambda_value": 9.999999999999999e-06,
+    "score": null,
+    "failed_windows": 5,
+    "elapsed": 0.6688013076782227
+  },
+  {
+    "lambda_value": 0.0001,
+    "score": 0.1935594133967628,
+    "failed_windows": 0,
+    "elapsed": 0.9082298278808594
+  },
+  {
+    "lambda_value": 0.001,
+    "score": 0.0038677789563763237,
+    "failed_windows": 0,
+    "elapsed": 1.152712106704712
+  },
+  {
+    "lambda_value": 0.01,
+    "score": 0.004043225265004077,
+    "failed_windows": 0,
+    "elapsed": 1.387425184249878
+  },
+  {
+    "lambda_value": 0.1,
+    "score": 0.010401649519899256,
+    "failed_windows": 0,
+    "elapsed": 1.626028299331665
+  },
+  {
+    "lambda_value": 1.0,
+    "score": 0.046895717080080675,
+    "failed_windows": 0,
+    "elapsed": 1.8626255989074707
+  },
+  {
+    "lambda_value": 10.0,
+    "score": 0.13751509186336322,
+    "failed_windows": 0,
+    "elapsed": 2.0974597930908203
+  },
+  {
+    "lambda_value": 100.0,
+    "score": 0.19111812064804057,
+    "failed_windows": 0,
+    "elapsed": 2.344245672225952
+  }
+]

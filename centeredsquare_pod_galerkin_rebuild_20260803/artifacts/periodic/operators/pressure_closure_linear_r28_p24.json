@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "selected": {
+    "kind": "linear",
+    "ridge": 0.01,
+    "feature_count": 58,
+    "train_relative_l2": 0.02225934947605272,
+    "validation_mean_relative_l2": 0.01820073544560782,
+    "validation_max_relative_l2": 0.03432365623303833,
+    "validation_case_relative_l2": [
+      0.011487030467083211,
+      0.012582306679159948,
+      0.019068347085396332,
+      0.03432365623303833,
+      0.012475642482375073,
+      0.019267429726594006
+    ]
+  },
+  "candidates": [
+    {
+      "kind": "linear",
+      "ridge": 0.01,
+      "feature_count": 58,
+      "train_relative_l2": 0.02225934947605272,
+      "validation_mean_relative_l2": 0.01820073544560782,
+      "validation_max_relative_l2": 0.03432365623303833,
+      "validation_case_relative_l2": [
+        0.011487030467083211,
+        0.012582306679159948,
+        0.019068347085396332,
+        0.03432365623303833,
+        0.012475642482375073,
+        0.019267429726594006
+      ]
+    },
+    {
+      "kind": "linear",
+      "ridge": 0.0001,
+      "feature_count": 58,
+      "train_relative_l2": 0.022257364013000627,
+      "validation_mean_relative_l2": 0.018210731881967222,
+      "validation_max_relative_l2": 0.034313283558451556,
+      "validation_case_relative_l2": [
+        0.011497558346066855,
+        0.012592379617218116,
+        0.01908484587710145,
+        0.034313283558451556,
+        0.01246973854060518,
+        0.01930658535236017
+      ]
+    },
+    {
+      "kind": "linear",
+      "ridge": 1e-06,
+      "feature_count": 58,
+      "train_relative_l2": 0.022257363800266765,
+      "validation_mean_relative_l2": 0.018210858534849144,
+      "validation_max_relative_l2": 0.03431319211179391,
+      "validation_case_relative_l2": [
+        0.011497674365847484,
+        0.012592490438610875,
+        0.019085022867932244,
+        0.03431319211179391,
+        0.012469714663971024,
+        0.01930705676093933
+      ]
+    },
+    {
+      "kind": "linear",
+      "ridge": 1e-08,
+      "feature_count": 58,
+      "train_relative_l2": 0.022257363800245417,
+      "validation_mean_relative_l2": 0.01821085980422978,
+      "validation_max_relative_l2": 0.03431319119865702,
+      "validation_case_relative_l2": [
+        0.01149767552718193,
+        0.012592491547898543,
+        0.01908502463911359,
+        0.03431319119865702,
+        0.012469714428967788,
+        0.0193070614835598
+      ]
+    },
+    {
+      "kind": "linear",
+      "ridge": 1e-10,
+      "feature_count": 58,
+      "train_relative_l2": 0.02225736380024546,
+      "validation_mean_relative_l2": 0.018210859816927136,
+      "validation_max_relative_l2": 0.034313191189513925,
+      "validation_case_relative_l2": [
+        0.011497675538795767,
+        0.012592491558996144,
+        0.019085024656838548,
+        0.034313191189513925,
+        0.012469714426632302,
+        0.019307061530786145
+      ]
+    },
+    {
+      "kind": "linear",
+      "ridge": 0.0,
+      "feature_count": 58,
+      "train_relative_l2": 0.022257363800245473,
+      "validation_mean_relative_l2": 0.018210859817053626,
+      "validation_max_relative_l2": 0.03431319118942731,
+      "validation_case_relative_l2": [
+        0.01149767553891293,
+        0.01259249155910562,
+        0.0190850246570108,
+        0.03431319118942731,
+        0.01246971442660196,
+        0.01930706153126315
+      ]
+    },
+    {
+      "kind": "linear",
+      "ridge": 1.0,
+      "feature_count": 58,
+      "train_relative_l2": 0.0241115898556439,
+      "validation_mean_relative_l2": 0.01982895350074082,
+      "validation_max_relative_l2": 0.035941613732530846,
+      "validation_case_relative_l2": [
+        0.011869711493165435,
+        0.012917121200147468,
+        0.019449921633899497,
+        0.035941613732530846,
+        0.01607551198943797,
+        0.022719840955263724
+      ]
+    },
+    {
+      "kind": "linear",
+      "ridge": 100.0,
+      "feature_count": 58,
+      "train_relative_l2": 0.05196066497377515,
+      "validation_mean_relative_l2": 0.05231217361865962,
+      "validation_max_relative_l2": 0.06894116683434631,
+      "validation_case_relative_l2": [
+        0.050628808546605675,
+        0.0491878109781571,
+        0.040541644846296035,
+        0.053189354515066165,
+        0.05138425599148642,
+        0.06894116683434631
+      ]
+    }
+  ],
+  "validation_loaded": true,
+  "heldout_loaded": false
+}

@@ -1,0 +1,52 @@
+{
+  "Re_by_split": {
+    "train": [
+      98.5,
+      99.5,
+      100.0,
+      101.0
+    ],
+    "validation": [
+      99.0,
+      101.5
+    ]
+  },
+  "boundary": "HP",
+  "cache_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/cache_hp/hp_development_cache.npz",
+  "cache_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+  "candidate_1_divergent_windows": 0,
+  "candidate_1_finite_fraction": 1.0,
+  "candidate_1_max_norm_ratio": 1.0030551599940036,
+  "candidate_2_divergent_windows": 0,
+  "candidate_2_finite_fraction": 1.0,
+  "candidate_2_max_norm_ratio": 1.0569124116364017,
+  "candidate_order": [
+    "Periodic",
+    "Hopf"
+  ],
+  "common_grid_area_match": true,
+  "common_physical_timestamps": true,
+  "elapsed_seconds": 464.9047408103943,
+  "fusion_feedback": false,
+  "heldout_loaded": false,
+  "history_length": 3,
+  "horizon": 24,
+  "metadata_repair": "pair_indices changed from [Hopf,Periodic] to [Periodic,Hopf]; rollouts, truth, features, and quadratic statistics are unchanged",
+  "native_source": "Periodic",
+  "pair_probability_order": [
+    "Periodic",
+    "Hopf"
+  ],
+  "samples": 48,
+  "schema_version": 1,
+  "source_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/runs/optimized_long_seed1600/best_validation.pt",
+  "source_checkpoint_sha256": "a84f355ae7eba1faa9e988f56fd89029e0aa15e2bd56163543bf5e7c66a4d988",
+  "split_counts": {
+    "train": 32,
+    "validation": 16
+  },
+  "status": "PASS",
+  "target_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/selected_validation_step7200.pt",
+  "target_checkpoint_sha256": "07af06ec5506e5b6a12d9d00f557a4e48fa722be3c2a183df752f0883ad40beb",
+  "windows_per_Re": 8
+}

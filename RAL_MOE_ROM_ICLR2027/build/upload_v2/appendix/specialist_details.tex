@@ -1,0 +1,17 @@
+\section{Specialist architecture and closed-loop objective}
+\label{app:specialists}
+
+Each specialist receives standardized velocity and pressure coordinates, the Galerkin right-hand side, the physical parameter, and two preceding local states. Separate channel routers produce velocity and pressure corrections. A first sparse decision selects an expert group and a second decision activates a small set of experts within the group. Every expert combines a nonlinear branch, an affine skip, and a low-rank bilinear interaction,
+\begin{equation}
+ E(\xi)=N(\xi)+W_{\rm lin}\xi+\kappa W_o[(U^\top\xi)\odot(V^\top\xi)].
+\end{equation}
+The selected expert outputs are weighted and added to the projected dynamics. The pressure path combines a projected pressure--Poisson estimate and a data-driven algebraic map using a componentwise gate.
+
+For a rollout window of length $K$, the training objective evaluates predictions generated recursively from the model's own previous states,
+\begin{equation}
+ \mathcal L_{\rm roll}=\frac{1}{K}\sum_{k=1}^{K}
+ \left(\lambda_u\|\widehat{\bm a}_k-\bm a_k\|_2^2+
+       \lambda_p\|\widehat{\bm b}_k-\bm b_k\|_2^2\right)
+ +\lambda_{\rm route}\mathcal R_{\rm route}.
+\end{equation}
+The routing regularizer promotes sparse use without forcing every sample through the same branch. The important experimental distinction from a one-step learner is that the state supplied at step $k+1$ is the model prediction at step $k$.

@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "status": "REJECT_CDM",
+  "baseline": {
+    "velocity_rollout_relative_l2": 1.1402909273219726,
+    "amplitude_relative_error": 0.2134351049359197,
+    "dominant_frequency_relative_error": 0.05866220837485205
+  },
+  "gate": "stable; lower rollout L2; amplitude and frequency degradation <=10%",
+  "passing_candidates": [],
+  "best_true_memory_by_rollout": {
+    "rates": [
+      0.01,
+      0.05
+    ],
+    "ridge": 10.0,
+    "memory_state_dimension": 56,
+    "aggregate": {
+      "velocity_rollout_relative_l2": 1.0861088889843524,
+      "pressure_rollout_relative_l2": 0.9191307480922214,
+      "amplitude_relative_error": 0.40739251576851926,
+      "dominant_frequency_relative_error": 0.276435612067796
+    },
+    "gates": {
+      "stable": true,
+      "rollout_improves": true,
+      "amplitude_not_degraded_10pct": false,
+      "frequency_not_degraded_10pct": false
+    },
+    "passes": false
+  },
+  "heldout_loaded": false
+}

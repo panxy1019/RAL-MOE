@@ -1,0 +1,12 @@
+{
+  "reference_total_trainable": 48617547,
+  "dense_total_trainable": 48609532,
+  "common_parameters": 433568,
+  "dense_width": 4820,
+  "hidden_layers": 3,
+  "relative_parameter_difference": -0.0001648581735314618,
+  "matching": "total allocated trainable parameters, NOT active parameters",
+  "correction": "one joint dense GELU network, velocity and pressure output slices",
+  "removed": "all group/channel routers and shared/routed experts",
+  "retained": "native encoder, inputs, Galerkin, pressure base, closure confidence, optimizer, curriculum, splits, validation selector"
+}

@@ -1,0 +1,150 @@
+\section{RAL-MoE-ROM}
+\label{sec:method}
+
+RAL-MoE-ROM separates reduced modeling into three complementary components: regime-local ROMs, autonomous local specialists, and cross-regime router and fusion. These components are organized by a two-level routing hierarchy. 
+
+\subsection{Regime-local ROMs}
+\label{sec:local_roms}
+
+We consider parameterized incompressible flows governed by the
+Navier--Stokes equations,
+\begin{equation}
+  \partial_t\bm u+(\bm u\cdot\nabla)\bm u
+  =-\nabla p+\nu(\mu)\Delta\bm u+\bm f(\mu),
+  \qquad \nabla\cdot\bm u=0,
+  \label{eq:main_ns}
+\end{equation}
+with the initial and boundary conditions of each benchmark. Here
+$\bm u$ and $p$ denote velocity and pressure, $\mu$ is the physical
+parameter, $\nu$ is the viscosity, and $\bm f$ denotes a prescribed
+forcing term. In our nondimensional benchmarks, $\mu=Re$ and
+$\nu(\mu)=Re^{-1}$.
+
+As $\mu$ varies, the flow can exhibit different dynamical regimes.
+Let $r\in\{S,H,P\}$ index steady, Hopf-onset, and periodic regimes,
+with corresponding overlapping parameter regions $\mathcal M_r$.
+For each region, we construct separate velocity and pressure bases by
+area-weighted proper orthogonal decomposition (POD) of its training
+snapshots. After finite-volume discretization, the velocity basis
+$\Phi_u^{(r)}$ satisfies ${\Phi_u^{(r)}}^\top M_u\Phi_u^{(r)}=I$,
+where $M_u$ is the quadrature matrix. It defines the local encoding
+and reconstruction
+\begin{equation}
+  \bm a^{(r)}={\Phi_u^{(r)}}^{\top}M_u(\bm u-\bar{\bm u}^{(r)}),\qquad
+  \widehat{\bm u}^{(r)}=\bar{\bm u}^{(r)}+\Phi_u^{(r)}\bm a^{(r)},
+  \label{eq:main_chart}
+\end{equation}
+where $\bar{\bm u}^{(r)}$ is the local training mean. Pressure is first
+mapped to a common weighted zero-mean gauge and then encoded analogously
+using $\Phi_p^{(r)}$, yielding coefficients $\bm b^{(r)}$.
+Appendix~\ref{app:problem_pod} details the semi-discrete equations,
+pressure gauge, and weighted POD construction.
+
+Substituting these local reconstructions into the semi-discrete momentum
+equation and projecting onto the velocity basis gives the Galerkin backbone
+\begin{equation}
+  \mathcal F_r^{G}(\bm a^{(r)},\bm b^{(r)};\mu)
+  =\bm c_r(\mu)+\bm A_r(\mu)\bm a^{(r)}
+  +\bm H_r(\mu):\bigl(\bm a^{(r)}\otimes\bm a^{(r)}\bigr)
+  +\bm C_r^p(\mu)\bm b^{(r)},
+  \label{eq:main_galerkin_backbone}
+\end{equation}
+where the terms collect the constant, linear, quadratic, and pressure
+contributions, respectively; $:$ denotes double contraction.
+Appendix~\ref{app:rom} defines these projected operators and the
+reduced pressure--Poisson map.
+Each local reduced representation, or chart, is constructed independently,
+with its own means, bases, normalization statistics, and operators.
+Its coordinates need not align componentwise with those of another chart,
+even at equal reduced dimension. Cross-regime assembly therefore uses
+reconstructed physical fields.
+
+\subsection{Regime-local hybrid specialists}
+
+Each additive hybrid specialist augments the Galerkin backbone from
+Section~\ref{sec:local_roms} with a learned velocity closure:
+\begin{equation}
+  \dot{\bm a}^{(r)}=
+  \mathcal F_r^{G}(\bm a^{(r)},\bm b^{(r)};\mu)
+  +\bm\rho^u_{\theta_r}(\bm\xi^{(r)}).
+  \label{eq:main_specialist}
+\end{equation}
+The centered-square overlap evaluator uses a data-only advancement path for its Hopf candidate; the precise scope of this exception is documented in Appendix~\ref{app:implementation}. The learned term $\bm\rho^u_{\theta_r}$ is the velocity closure associated with chart $r$. Its input $\bm\xi^{(r)}$ collects standardized local state variables, the projected right-hand side, the physical parameter, and a short history of preceding states.
+
+Separate sparse MoE maps are used for the velocity correction $\bm\rho^u_{\theta_r}$ and the learned pressure correction $\bm\rho^p_{\theta_r}$:
+\begin{equation}
+  \mathcal M^c_{\theta_r}(\bm\xi)=
+  \omega^c_0 E^c_{0,m^\star}(\bm\xi)+
+  \sum_{e\in\mathcal T_2^c}\omega^c_e E^c_{e,m^\star}(\bm\xi).
+  \label{eq:main_inner_moe}
+\end{equation}
+Routing is hierarchical within each specialist. An expert group $m^\star$ is selected by a chart-local router or predetermined for a single-group or fixed-group specialist. Within that group, the velocity and pressure channels $c\in\{u,p\}$ independently select their two highest-scoring routed experts, while a shared expert remains active. The nonnegative weights $\omega_e^c$ are normalized over the active experts. The parameterization allows nonlinear, explicit linear, and low-rank quadratic branches (Appendix~\ref{app:specialists}). A checkpoint audit found the quadratic branch inactive in the original Circular models; its initialization repair and comparative results are reported in Appendix~\ref{app:circular}. These original results therefore do not establish a benefit from the explicit quadratic branch.
+
+After advancing velocity over one reduced time step, pressure is reconstructed algebraically as
+\begin{equation}
+  \bm b_{n+1}^{(r)}
+  =\bm\gamma_n^{(r)}\odot\mathcal Q_r^{PP}(\bm a_{n+1}^{(r)};\mu)
+  +\bm\rho^p_{\theta_r}(\bm\xi_n^{(r)}).
+  \label{eq:main_pressure_closure}
+\end{equation}
+Here $\mathcal Q_r^{PP}$ denotes the chart-local reduced Pressure--Poisson map, $\bm\rho^p_{\theta_r}$ provides the learned pressure correction, and $\bm\gamma_n^{(r)} =\operatorname{sigmoid}(\bm\eta^p_{\theta_r}(\bm\xi_n^{(r)}))$ modulates the Pressure--Poisson contribution componentwise; $\odot$ denotes componentwise multiplication. Thus velocity is advanced dynamically, whereas pressure is reconstructed algebraically rather than evolved as a separate recurrent state.
+
+
+\subsection{Closed-loop rollout training}
+
+Each specialist is initialized from an encoded physical history and is then advanced recursively using its own predicted states. To expose the learned correction to the states encountered during autonomous rollout, training unrolls each specialist for $K$ steps and minimizes the
+normalized coefficient error
+\begin{equation}
+  \mathcal L_r=\frac{1}{K}\sum_{k=1}^{K}\left[
+  \frac{\left\|(\widehat{\bm a}_{n+k}^{(r)}-\bm a_{n+k}^{(r)})
+  \oslash\bm\sigma_a^{(r)}\right\|_2^2}{d_u^{(r)}}
+  +\frac{\left\|(\widehat{\bm b}_{n+k}^{(r)}-\bm b_{n+k}^{(r)})
+  \oslash\bm\sigma_b^{(r)}\right\|_2^2}{d_p^{(r)}}\right].
+  \label{eq:main_rollout_loss}
+\end{equation}
+Here $d_u^{(r)}$ and $d_p^{(r)}$ denote the chart-specific velocity and pressure coordinate dimensions, while $\bm\sigma_a^{(r)}$ and $\bm\sigma_b^{(r)}$ are scaling
+vectors estimated from the corresponding regime-local training set; $\oslash$ denotes componentwise division. This coefficient-space objective is used for specialist training, whereas evaluation is performed on reconstructed physical fields. After initialization, no reference state from inside the prediction window is injected into the rollout. The chart-specific advancement rule is detailed in Appendix~\ref{app:specialists}, while rollout curricula and optimization settings are reported in Appendix~\ref{app:implementation}. Held-out trajectory splits are listed in Table~\ref{tab:chart_splits}.
+
+
+
+\subsection{Cross-regime routing and physical-space T2-C assembly}
+
+The outer E2 router receives only the standardized physical parameter $\widetilde\mu$ and returns a trajectory-level preference over the
+regime-local specialists,
+\[
+\bm\pi(\mu)
+=
+\operatorname{softmax}\!\left(
+\mathcal R_{E2}(\widetilde\mu)
+\right).
+\]
+The probabilities are evaluated once and remain fixed throughout the rollout. The outer router does not use physical history. Chart-independent descriptors extracted from the initial history $\mathcal H_n$ enter only the T2-C gate described below.
+
+In the evaluated Square overlaps, the cache supplies a fixed adjacent candidate pair. The more general interface is expressed through a validation-supported applicability mask $m_r(\mathcal H_n,\mu,K)\in\{0,1\}$ marks whether specialist $r$ is applicable for the current parameter, initial history, and rollout horizon. The mask restricts the candidate set but does not modify the E2 probability
+model itself. Under hard Top-1 routing, only the applicable specialist with the largest E2 probability is advanced.
+
+When an adjacent pair is applicable ($S$--$H$ or $H$--$P$), both specialists are initialized from the same physical history, encoded in
+their own coordinates, and advanced independently. Let $\bar\pi_r$ denote the E2 probability normalized over the selected pair. For reconstructed fields $\widehat{\bm q}^{(r)}$ and $\widehat{\bm q}^{(s)}$, T2-C predicts a history-conditioned logit correction to this pairwise preference and forms
+\begin{equation}
+  \widehat{\bm q}_{\rm T2C}(t)
+  =\alpha\,\widehat{\bm q}^{(r)}(t)
+  +(1-\alpha)\,\widehat{\bm q}^{(s)}(t),
+  \qquad
+  \alpha=
+  \sigma\!\left(
+  \operatorname{logit}(\bar\pi_r)+\Delta_\psi
+  \right).
+  \label{eq:main_t2c}
+\end{equation}
+We use ordered pairs $(r,s)=(S,H)$ and $(P,H)$, so $\alpha$ weights Steady and Periodic, respectively. Here $\Delta_\psi=c_\psi([\widetilde\mu;\bm d_n])$ is a learned logit correction based on the standardized parameter and the eight-dimensional chart-independent physical-history descriptor $\bm d_n$, and $\sigma$ denotes the sigmoid. The scalar $\alpha$ is computed once for the prediction window and is shared by velocity and pressure. The field vector $\bm q$ collects reconstructed velocity and gauge-corrected pressure on the common physical mesh.
+
+The two local trajectories remain independent throughout the rollout: fusion is applied only to their reconstructed outputs and is never fed back into either specialist. If no specialist is applicable, the method abstains from producing a ROM prediction. Applicability is determined empirically from validation support and should not be interpreted as a formal stability guarantee.
+
+
+\paragraph{Scope of physical consistency.}
+Output fusion preserves a common linear constraint only when both
+candidates satisfy it under the same discrete operator. It does not in
+general preserve nonlinear momentum or PPE constraints. Energy and
+residual identities, together with their assumptions, are given in
+Appendix~\ref{app:fusion_consistency}; measured FVM residuals and long-time
+phase consistency are not established by the present error tables.

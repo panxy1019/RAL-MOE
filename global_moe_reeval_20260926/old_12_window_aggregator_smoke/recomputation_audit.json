@@ -1,0 +1,9 @@
+{
+  "input_rows": 576,
+  "unique_windows": 12,
+  "target_key_check": false,
+  "all_rows_finite": true,
+  "aggregation": "step mean -> window mean -> Re mean -> equal-Re mean; joint=Eu+Ep; sample SD across checkpoints only",
+  "no_denominator_epsilon_added": true,
+  "passed": true
+}

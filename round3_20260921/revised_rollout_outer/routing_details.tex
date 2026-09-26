@@ -1,0 +1,223 @@
+\section{Outer routing and T2-C details}
+\label{app:routing}
+
+\paragraph{Parameter-only regime preference.}
+The outer E2 router receives only the standardized scalar parameter,
+\begin{equation}
+  \widetilde\mu_R=\frac{\mu-\mu_R}{\sigma_R},\qquad
+  \bm\pi(\mu)=\operatorname{softmax}
+    \bigl(\mathcal R_{E2}(\widetilde\mu_R)\bigr)
+  =[\pi_S,\pi_H,\pi_P]^\top.
+  \label{eq:app_e2_parameter_only}
+\end{equation}
+For the verified Square configuration,
+$\mathcal R_{E2}(x)=W_2\tanh(W_1x+\bm b_1)+\bm b_2$
+has widths $1$--$24$--$3$, with biases in both linear layers.
+Softmax is applied by the caller; there is no routing temperature,
+dropout, or additional normalization layer in this network.
+Training labels are chart assignments, not candidate-error rankings
+or stability labels. The parameter-only preference is deterministic
+and fixed through each prediction window, even though the evaluator
+computes it in batches of windows.
+
+\paragraph{Prespecified candidate support.}
+The reported Square experiment supplies the ordered pair
+$(r_1,r_2)=(S,H)$ or $(P,H)$ through the cache-building protocol.
+These pairs belong to the adjacency graph
+\begin{equation}
+  \mathcal E_{\rm adj}=\{\{S,H\},\{H,P\}\}.
+  \label{eq:app_adjacency}
+\end{equation}
+The protocol does not infer a history- or horizon-dependent
+applicability mask. For S--H, Steady supplies the native windows;
+for H--P, Periodic supplies them. Within each split, only Reynolds
+numbers also present in the Hopf assets are included. Eight evenly
+spaced legal initialization windows are selected per Reynolds number.
+Both candidates use the same physical history and independently
+predict $K=24$ steps. Neither candidate identity nor window selection
+is determined by ranking prediction errors.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{4pt}
+\caption{Prespecified Square overlap support. Each parameter contributes
+eight windows of length $K=24$. All four development/held-out caches
+passed the all-window finite-value and amplitude preflight:
+no non-finite or divergent windows were found for either candidate,
+and no windows were removed.}
+\label{tab:outer_candidate_support}
+\begin{tabular}{@{}llp{0.53\linewidth}r@{}}
+\toprule
+Pair & Split & Reynolds numbers & Windows\\
+\midrule
+$(S,H)$ & Train & $94,95,95.05,95.15,95.2,95.35,95.4$ & 56\\
+& Validation & $94.5,95.25$ & 16\\
+& Held-out & $95.1,95.3$ & 16\\
+\addlinespace
+$(P,H)$ & Train & $98.5,99.5,100,101$ & 32\\
+& Validation & $99,101.5$ & 16\\
+& Held-out & $100.5,102.0$ & 16\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Offline cache preflight, not an applicability detector.}
+Before writing a cache, the builder checks finite predictions and
+flags divergence when the monitored predicted-to-reference field
+norm ratio exceeds 20 at any evaluated time. Both candidates must
+pass for every window: one failure terminates the entire cache
+construction rather than removing individual failed windows and
+continuing. The development caches contain 72 S--H and 48 H--P
+windows, including training and validation; the held-out caches
+contain 16 windows each. All passed, so this check did not change
+the reported sample sets.
+The held-out amplitude check uses held-out reference norms.
+It is therefore an offline integrity/amplitude audit, not a
+deployment-time rule available without future reference data.
+The results remain conditional evaluations on prescribed common
+support. Automatic applicability, continuous support extrapolation,
+zero/one/three-candidate handling, and abstention or OOD coverage
+were not implemented and evaluated by this Square protocol.
+In particular, there is no validation-derived thresholding algorithm
+for a mask $m_j(\mathcal H_n,\mu,K)$.
+
+\paragraph{Pair preference and Top-1 selection.}
+The evaluator retains the supplied pair probabilities and computes
+\begin{equation}
+  \bar\pi_1=\frac{\pi_{r_1}}{\pi_{r_1}+\pi_{r_2}},
+  \qquad \bar\pi_2=1-\bar\pi_1,\qquad
+  \ell^{E2}=\log\frac{\bar\pi_1^{\rm clip}}
+                           {1-\bar\pi_1^{\rm clip}},
+  \quad
+  \bar\pi_1^{\rm clip}
+  =\operatorname{clip}(\bar\pi_1,10^{-6},1-10^{-6}).
+  \label{eq:app_pair_logit}
+\end{equation}
+Top-1 chooses the first candidate when $\bar\pi_1\geq1/2$,
+and the second otherwise. Thus selection is within the supplied
+pair, not an unrestricted three-class decision.
+The cache and T2-C checkpoint pair orders are checked for equality.
+The first-candidate weight refers to Steady for $(S,H)$ and
+Periodic for $(P,H)$; reversing order replaces $\alpha$ by
+$1-\alpha$ and reverses the pair logit sign.
+
+\paragraph{Chart-independent physical-history descriptor.}
+The centered-square implementation uses eight descriptor channels and one parameter input. These features are computed from the initial three physical states at $t_{n-2}<t_{n-1}<t_n$, with pressure mapped to the common zero-mean gauge. They are independent of the specialists' POD coordinates. All quantities below use the nondimensional data conventions of the experiment, and $\epsilon=10^{-12}$ is the numerical floor.
+
+Define $A_\Omega=\sum_i w_i$, $U_j=\|\bm u_j\|_{M_u}^2$, $P_j=\|p_j^\circ\|_{M_p}^2$, and
+\begin{align}
+ h_j&=\max(t_j-t_{j-1},\epsilon),&
+ s_j^u&=\sqrt{\max(U_j,\epsilon)},&
+ s_j^p&=\sqrt{\max(P_j,\epsilon)},\\
+ v_j&=(\bm u_j-\bm u_{j-1})/h_j,&
+ g_j&=\frac{\log\max(U_j,\epsilon)-\log\max(U_{j-1},\epsilon)}{h_j}.
+\end{align}
+The ordered raw descriptor is
+\begin{equation}
+\bm s_n=\operatorname{col}\left(
+\begin{array}{l}
+ \tfrac12\log\max(U_n/A_\Omega,\epsilon),\\
+ \tfrac12\log\max(P_n/A_\Omega,\epsilon),\\
+ \log(1+\|v_n\|_{M_u}/(s_n^u+\epsilon)),\\
+ \log(1+\|v_{n-1}\|_{M_u}/(s_{n-1}^u+\epsilon)),\\
+ \tanh(g_n),\\
+ \tanh(g_n-g_{n-1}),\\
+ \log(1+\|p_n^\circ-p_{n-1}^\circ\|_{M_p}/[h_n(s_n^p+\epsilon)]),\\
+ \log(1+\|v_n-v_{n-1}\|_{M_u}/(s_n^u+\epsilon))
+\end{array}\right).
+\label{eq:app_t2c_descriptor}
+\end{equation}
+The last channel measures a difference of velocity rates: it is not divided again by a time interval and is not the second-derivative descriptor in an acceleration discretization. The log and hyperbolic-tangent transformations above are part of the actual feature construction.
+
+For the gate, the nine raw features $[\mu;\bm s_n]$ are standardized using the means and population standard deviations of training windows only. Any feature standard deviation below $10^{-8}$ is replaced by one. We denote the resulting vector by $[\widetilde\mu_G;\bm d_n]$; its parameter normalization is fitted for the gate and is distinct from the E2 training-row normalization $\widetilde\mu_R$. The architecture-matched $\mu$-only control sets all eight descriptor channels to zero after standardization. No state from inside the prediction window is used to construct these features.
+
+
+\paragraph{Physical-space T2-C fusion.}
+The logit-correction network receives
+$[\widetilde\mu_G;\bm d_n]\in\mathbb R^9$ and uses two hidden layers of width 64 with SiLU
+activations followed by a scalar linear output (9--64--64--1; 4,865 trainable parameters).
+The final layer is initialized at zero, so the initial correction vanishes
+and the fusion weight reduces to the E2 pair preference.
+Specifically,
+\begin{equation}
+  \Delta_\psi
+  =
+  c_\psi
+  \left(
+    [\widetilde\mu_G;\bm d_n]
+  \right),
+  \qquad
+  \alpha
+  =
+  \operatorname{sigmoid}
+  \left(
+    \ell^{E2}+\Delta_\psi
+  \right).
+  \label{eq:app_t2c_gate}
+\end{equation}
+
+The two selected specialists encode the same physical history in their
+respective local charts and then evolve independently.
+The scalar $\alpha$ is fixed throughout the prediction window and is shared
+by velocity and pressure.
+After reconstruction on the common physical mesh, T2-C forms
+\begin{equation}
+  \widehat{\bm q}_{\alpha}^{\,c}(t)
+  =
+  \alpha\,
+  \widehat{\bm q}_{1}^{\,c}(t)
+  +
+  (1-\alpha)\,
+  \widehat{\bm q}_{2}^{\,c}(t),
+  \qquad
+  c\in\{u,p\},
+  \label{eq:app_t2c_field_fusion}
+\end{equation}
+where the pressure field is gauge corrected.
+The fused field is an output only and is never projected back into either
+specialist.
+
+The correction network is trained directly on the reconstructed physical
+fields. For rollout windows $w$ and prediction steps $k$,
+\begin{equation}
+  \mathcal L_{\rm T2C}
+  =
+  \operatorname{mean}_{w,k}
+  \left[
+    \frac{
+      \left\|
+        \widehat{\bm u}_{\alpha}^{(w,k)}
+        -
+        \bm u_{\rm true}^{(w,k)}
+      \right\|_{M_u}^2
+    }{
+      \max\!\left(
+        \left\|\bm u_{\rm true}^{(w,k)}\right\|_{M_u}^2,10^{-12}
+      \right)
+    }
+    +
+    \frac{
+      \left\|
+        \widehat p_{\alpha}^{\circ,(w,k)}
+        -
+        p_{\rm true}^{\circ,(w,k)}
+      \right\|_{M_p}^2
+    }{
+      \max\!\left(
+        \left\|p_{\rm true}^{\circ,(w,k)}\right\|_{M_p}^2,10^{-12}
+      \right)
+    }
+  \right].
+  \label{eq:app_t2c_loss}
+\end{equation}
+Optimization and checkpoint-selection details are reported in
+Appendix~\ref{app:implementation}.
+
+\paragraph{Numerical convention.}
+The pair normalization, probability clipping, and denominator floors
+above describe the archived centered-square evaluator. The E2 and
+T2-C feature scalers are fitted separately on their respective
+training rows and training windows. These numerical conventions are
+not assumed to be shared by every benchmark.
+

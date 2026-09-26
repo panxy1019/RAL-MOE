@@ -1,0 +1,1114 @@
+--- before/appendix\circular_cylinder.tex
++++ after/appendix\circular_cylinder.tex
+@@ -1,37 +1,131 @@
+-\section{Circular-cylinder results}
++\section{Circular-cylinder controlled reevaluation}
+ \label{app:circular}
+ 
+-Table~\ref{tab:circular_full} reports the min--max physical-field error across held-out parameter trajectories under autonomous rollout. In the Hopf regime, the Vanilla-FNN-MoE model does not satisfy the predefined validation-stage rollout criterion; no held-out result is therefore reported.
++\paragraph{Common evaluation protocol.}
++The new study uses seeds 1248, 1600, and 2026. Hopf has 42 windows
++from $Re=47.081355,49.022357,51.786450$; Periodic has 32 windows from
++$Re=70.314635,100.352251,149.059229,189.862278$. Each window contains
++48 prediction steps; $K=24$ uses its first 24 steps. We average relative
++physical-field errors over steps, then windows within each Reynolds
++number, then equally over Reynolds numbers. Means and sample standard
++deviations are computed over the accepted seeds. All reference fields
++are reconstructed from true POD coefficients on the corresponding basis.
++Only checkpoints accepted by the original validation rule are evaluated
++on held-out windows. The training configurations in
++Table~\ref{tab:specialist_training} describe the archived original
++specialists, not the selected checkpoints of these repeated runs.
+ 
+-\par
++\paragraph{Controls and scope.}
++Dense matches the active parameter budget, rather than total stored
++parameters or execution time. Structured retains explicit response
++branches but removes input-dependent expert routing. Neither control
++is identical to the older Vanilla-FNN-MoE or Global MoE configuration.
++The former Circular summary and min--max tables are replaced by this
++explicitly aggregated evaluation. No claim about the former Steady
++architecture comparison is inferred from the present H/P results.
++
+ \begin{table}[H]
+ \centering
+-\caption{Circular-cylinder autonomous-rollout error ranges (\%). }
++\caption{Circular Periodic full-window errors (\%) at $K=48$ against
++POD-reconstructed truth. All neural rows have 3/3 accepted seeds.
++OpInf is one deterministic validation-selected fit.}
+ \label{tab:circular_full}
+ \small
+-\setlength{\tabcolsep}{4pt}
+-\begin{tabular}{llcc}
++\setlength{\tabcolsep}{3pt}
++\begin{tabular}{@{}lccc@{}}
+ \toprule
+-Regime & Model & $E_u$ & $E_p$ \\
++Model & $E_u$ & $E_p$ & $E_u+E_p$\\
+ \midrule
+-Steady & RAL-MoE-ROM & 0.0330--0.1723 & 0.2500--1.3249 \\
+- & Vanilla-FNN-MoE & 0.0384--0.2995 & 2.2163--18.5603 \\
+- & DataOnly-MoE & 0.1637--0.5122 & - \\
+- & Global MoE & 0.0845--0.3404 & 1.5226--7.4363 \\
+-\midrule
+-Hopf & RAL-MoE-ROM & 0.0032--0.0288 & 0.0355--0.4321 \\
+- & Vanilla-FNN-MoE & - & -  \\
+- & DataOnly-MoE & 0.1260--0.3880 & - \\
+- & Global MoE & 0.0110--0.0268 & 0.0560--0.2882 \\
+-\midrule
+-Periodic & RAL-MoE-ROM & 0.3809--1.3473 & 1.6825--5.9601 \\
+- & Vanilla-FNN-MoE & 1.0393--3.0836 & 3.9659--13.3257 \\
+- & DataOnly-MoE & 0.7854--1.8677 & 2.2511--10.8189 \\
+- & Global MoE & 0.5873--1.1726 & 2.1896--6.3566 \\
++Proposed, original & $1.0107\pm0.6513$ & $3.9337\pm2.5070$ & $4.9443\pm3.1576$\\
++Proposed, repaired & $1.1040\pm0.7840$ & $4.4282\pm2.8786$ & $5.5322\pm3.6623$\\
++Dense, active-matched & $\mathbf{0.4790\pm0.1208}$ & $\mathbf{1.9208\pm0.5391}$ & $\mathbf{2.3998\pm0.6599}$\\
++Structured, original & $1.0405\pm0.5015$ & $4.2406\pm2.0664$ & $5.2810\pm2.5679$\\
++Structured, repaired & $0.9983\pm0.4944$ & $4.0693\pm1.8827$ & $5.0677\pm2.3762$\\
++OpInf & 17.6639 & 97.3258 & 114.9897\\
+ \bottomrule
+ \end{tabular}
+ \end{table}
+-\par
+ 
+-In the $S$--$H$ overlap, E2 Top-1 yields $E_u=0.0357$--$0.0410\%$ and
+-$E_p=1.6746$--$1.9028\%$ across the held-out trajectories. T2-C lowers these ranges to $0.0148$--$0.0355\%$ and $0.7387$--$1.7212\%$, respectively. The corresponding mean weight assigned to the Steady specialist varies from $0.0861$ to $0.9987$, indicating that the learned assembly is not equivalent to a fixed blend across the overlap. For reference, the Global MoE gives $E_u=0.0851$--$0.0953\%$ and $E_p=1.9517$--$2.3106\%$ under the same overlap evaluation.
++\paragraph{Quadratic-branch audit.}
++The two accepted original Hopf proposed checkpoints each contain 28
++quadratic-factor tensors, all zero. The three original Periodic
++proposed checkpoints each contain 84 such tensors, all zero; the three
++Periodic structured checkpoints each contain four, also all zero.
++Thus the original results cannot establish a contribution from the
++explicit quadratic branch. The repaired initialization keeps one factor
++random and the other zero. Smoke training updates all 14 factor pairs
++for Hopf proposed, 42 for Periodic proposed, and two for Periodic
++structured. This verifies learning activity, not improved generalization.
++For Periodic proposed, the mean joint error increases by $6.52\%$ at
++$K=24$ and $11.89\%$ at $K=48$ after repair. Retraining changes the
++optimization trajectory and checkpoint selection, so the difference is
++not a pure isolated estimate of the quadratic term's effect.
++
++\begin{table}[H]
++\centering
++\caption{Hopf training completion and validation acceptance.
++Counts are over three attempted seeds per architecture; failed runs
++are not silently omitted from the denominator.}
++\label{tab:hopf_completion}
++\small
++\begin{tabular}{@{}lccp{5.8cm}@{}}
++\toprule
++Configuration & Proposed & Structured & Failure or rejection\\
++\midrule
++Original & 2/3 & 3/3 & Proposed seed 1600 not accepted by validation\\
++Repaired, AMP & 0/3 & 0/3 & Non-finite gradients\\
++Repaired, FP32 & 2/3 & 2/3 & Proposed 2026: step 3220; structured 1248:
++step 2860, both during $K=4$\\
++\bottomrule
++\end{tabular}
++\end{table}
++
++\begin{table}[H]
++\centering
++\caption{Hopf accepted-only joint errors (\%) against POD-reconstructed
++truth, using the common full-window metric. Error bars are sample
++standard deviations over accepted seeds only. Rows with 2/3 are
++descriptive and are not complete three-seed estimates.}
++\label{tab:hopf_accepted}
++\small
++\begin{tabular}{@{}lccc@{}}
++\toprule
++Model & $K=24$ & $K=48$ & Accepted\\
++\midrule
++Proposed, original & $0.11521\pm0.08694$ & $0.11487\pm0.10033$ & 2/3\\
++Dense, active-matched & $0.15406\pm0.16364$ & $0.15480\pm0.15525$ & 2/3\\
++Proposed, repaired FP32 & $0.04334\pm0.02379$ & $0.05044\pm0.03439$ & 2/3\\
++Structured, original & $0.12537\pm0.04614$ & $0.12724\pm0.04302$ & 3/3\\
++Structured, repaired FP32 & $0.02229\pm0.00432$ & $0.02392\pm0.00778$ & 2/3\\
++OpInf & 0.03870 & 0.05340 & Deterministic\\
++\bottomrule
++\end{tabular}
++\end{table}
++
++The original Dense control also has only two accepted seeds out of three.
++The accepted seed sets differ between original and repaired runs.
++Consequently, their lower accepted-only errors do not establish improved
++expected three-seed performance. FP32 passes the initial 116-combination
++preflight (29 training parameters and four curriculum lengths), but this
++does not guarantee finite gradients later in optimization.
++
++\paragraph{OpInf adaptation.}
++The regularized polynomial model uses constant, linear, compact quadratic,
++standardized $1/Re$, and parameter--state interaction features.
++Training-trajectory derivatives are estimated by second-order numerical
++differentiation. Ridge regularization is selected on validation windows;
++a non-finite window invalidates a candidate. Prediction uses fixed RK4
++with four substeps per output interval. Pressure is an algebraic ridge
++output using the same polynomial features, rather than the proposed
++PPE-plus-correction map. Test windows, reference reconstructions, and
++quadrature agree with the neural comparison. This is a task-specific
++OpInf adaptation, not a reproduction of every detail of an external
++implementation.
++
++At $K=24$, OpInf gives $(E_u,E_p,E_{\mathrm{joint}})=
++(0.00585,0.03285,0.03870)\%$ on Hopf and
++$(15.8676,98.2264,114.0941)\%$ on Periodic.
++The Periodic ridge choice lies at the upper boundary of the searched
++grid (100), which limits interpretation of that failure. The Hopf result
++shows that the method is competitive in the near-onset regime; the
++Periodic result does not justify a general claim against OpInf.
+--- before/appendix\fusion_consistency.tex
++++ after/appendix\fusion_consistency.tex
+@@ -0,0 +1,34 @@
++\section{Conditional consistency of output-space fusion}
++\label{app:fusion_consistency}
++Let $\bm u_\alpha=\alpha\bm u_1+\beta\bm u_2$ and $p_\alpha=\alpha p_1+\beta p_2$, where $\beta=1-\alpha$, $\alpha\in[0,1]$ is constant in space and time over the window, and both candidates share a mesh, parameter, time grid, and pressure gauge. For a common linear operator $D_h$, $D_h\bm u_\alpha=\alpha D_h\bm u_1+\beta D_h\bm u_2$. Thus zero discrete divergence, a zero-mean pressure gauge, and identical affine boundary constraints are preserved only to the extent that both candidates satisfy them.
++
++\paragraph{Nonlinear residuals.}
++For a fixed bilinear discretization $N_h$, set $\delta\bm u=\bm u_1-\bm u_2$. Bilinearity gives
++\begin{equation}
++N_h(\bm u_\alpha,\bm u_\alpha)
++=\alpha N_h(\bm u_1,\bm u_1)+\beta N_h(\bm u_2,\bm u_2)
++-\alpha\beta N_h(\delta\bm u,\delta\bm u).
++\end{equation}
++With the sign convention
++$R_u(\bm u,p)=\partial_t\bm u-\bm f_h-L_h\bm u+N_h(\bm u,\bm u)+G_hp$, one obtains
++\begin{equation}
++R_u(\bm u_\alpha,p_\alpha)
++=\alpha R_u(\bm u_1,p_1)+\beta R_u(\bm u_2,p_2)
++-\alpha\beta N_h(\delta\bm u,\delta\bm u).
++\end{equation}
++For the pressure residual
++$R_p(\bm u,p)=A_hp-[\bm s_0+S_1\bm u+B_p(\bm u,\bm u)]$, with fixed bilinear $B_p$, similarly
++\begin{equation}
++R_p(\bm u_\alpha,p_\alpha)
++=\alpha R_p(\bm u_1,p_1)+\beta R_p(\bm u_2,p_2)
+++\alpha\beta B_p(\delta\bm u,\delta\bm u).
++\end{equation}
++These identities distinguish the candidates' existing residuals from the additional fusion defect. They are conditional algebraic identities, not measurements of the CFD residual: state-dependent limiters or other non-bilinear discretizations require their actual discrete operators.
++
++\paragraph{Energy and phase cancellation.}
++For $E(\bm u)=\tfrac12\|\bm u\|_M^2$ with a common positive quadrature matrix,
++\begin{equation}
++E(\bm u_\alpha)=\alpha E(\bm u_1)+\beta E(\bm u_2)
++-\frac{\alpha\beta}{2}\|\bm u_1-\bm u_2\|_M^2.
++\end{equation}
++Candidate disagreement can therefore reduce the blend's energy relative to the weighted candidate energies, including through phase cancellation. This does not imply that its energy is below the reference solution or below both candidates. Since the blend is not fed back into either specialist, this term is not a recurrent dissipative modification of their reduced dynamics. Empirical residual and phase-sensitive evaluations remain separate from these identities.
+--- before/appendix\implementation.tex
++++ after/appendix\implementation.tex
+@@ -134,3 +134,32 @@
+ \end{tabular}
+ \end{table}
+ \par
++
++\paragraph{Distinct gate objectives.}
++Gate fitting minimizes the full-window squared relative field loss in Eq.~(\plaineqref{eq:app_t2c_loss}). Validation selection instead uses the worst-parameter full-window mean of $E_u+E_p$, with the pooled mean as a tie-breaker. The centered-square main comparison reports terminal-step errors; Table~\ref{tab:t2c_window_seeds} additionally reports full-window means. These objectives differ in temporal aggregation, squaring, and parameter weighting. An oracle optimized for a full-window objective is an a posteriori diagnostic, not a guaranteed lower bound for terminal-step error. Three gate-training seeds quantify conditional gate variability, not full-pipeline uncertainty or a confidence interval over independent trajectories.
++
++\paragraph{Verified centered-square E2 configuration.}
++The parameter-only router is an MLP $1\to24\to3$ with a Tanh hidden activation and 123 trainable parameters. The scalar Reynolds number is standardized using training-trajectory mean and population standard deviation; a standard deviation below $10^{-7}$ is replaced by one. Each chart-assigned trajectory supplies its chart label. A parameter occurring in more than one chart can therefore produce multiple labeled rows, rather than an assumed unique bifurcation label. The loss is class-weighted cross entropy plus $0.05\,\operatorname{mean}(\pi_S\pi_P)$, with class weight $N/(3N_c)$. Training uses AdamW (learning rate $3\times10^{-4}$, weight decay $10^{-4}$), a cosine schedule over 8,000 steps ending at $1.5\times10^{-5}$, sampling with replacement in batches of $\min(256,N)$, and gradient-norm clipping at one. Selection maximizes validation balanced accuracy plus macro-F1 minus $10^{-3}$ times the current training-batch loss, rather than validation cross entropy alone. For the archived centered-square run, seed 20260730 selects step 3300. These settings describe that verified router, not an assumed common configuration for all benchmarks.
++
++\paragraph{Scope of the hybrid formulation.}
++The archived centered-square overlap evaluator loads a Hopf checkpoint through a data-only advancement path: the Galerkin right-hand side enters its features, but is not added to the learned velocity output, and pressure is a learned algebraic output. Consequently, the overlap study tests assembly of frozen local predictors and should not be interpreted as verifying the additive hybrid formulation for every candidate. This implementation distinction does not change the reported overlap numbers or the output-only fusion protocol.
++
++\paragraph{Audited circular-cylinder architectures.}
++For the two specialists used in the internal-routing analysis, the Hopf model has input width 493, encoder width 256, one fixed group, and four expert residual blocks with expansion width 1024; the Periodic model has input width 501, encoder width 224, three groups, and three expert residual blocks with expansion width 768. Each group has six routed experts and one shared expert per channel. The encoder has three linear layers with LayerNorm and SiLU, followed by two refinement residual blocks; dropout is 0.04. These configurations identify the analyzed models and are not a substitute for a verified nine-specialist and baseline configuration manifest.
++
++\paragraph{Reference fields and reporting scope.}
++The new circular-cylinder control study and centered-square cache-based
++reevaluation use POD-reconstructed reference fields. Their errors measure
++prediction error in physical space relative to these reconstructions and
++do not include the POD projection remainder relative to the original CFD
++fields. The original CFD total error and the POD projection error require
++a separate aligned-field evaluation. The nominal chart-wise splits above
++do not by themselves establish a global cross-chart data-role audit.
++
++\paragraph{Training and evaluation lengths.}
++The configured maximum rollout lengths in Table~\ref{tab:specialist_training}
++are $16,8,16$ for both Circular and Square $S,H,P$, and $16,56,32$ for
++Pinball $S,H,P$. These are training budgets, not the local evaluation
++horizons in Table~\ref{tab:chart_splits}. The new Circular H/P comparison
++uses $K=24,48$, while Square overlaps use $K=24$. The selected checkpoint
++may precede the end of its configured curriculum.
+--- before/appendix\parameter_counts.tex
++++ after/appendix\parameter_counts.tex
+@@ -16,14 +16,14 @@
+ \centering
+ \caption{Trainable and per-decision active parameter counts for the analyzed
+ circular-cylinder specialists. Active counts refer to the sparse prediction
+-path; M denotes one million parameters.}
++path; counts are exact integers.}
+ \label{tab:parameter_counts}
+ \begin{tabular}{lrrr}
+ \toprule
+ Specialist & Total trainable & Active prediction & Active fraction \\
+ \midrule
+-Hopf & 31.81M & 14.17M & 44.53\% \\
+-Periodic & 48.62M & 8.31M & 17.09\% \\
++Hopf & 31,810,392 & 14,165,816 & 44.53\% \\
++Periodic & 48,617,547 & 8,308,959 & 17.09\% \\
+ \bottomrule
+ \end{tabular}
+ \end{table}
+@@ -35,3 +35,35 @@
+ or speedup. Complete parameter-matched counts are unavailable for the
+ Vanilla-FNN-MoE, DataOnly-MoE, and Global MoE ablations, so the local
+ architecture comparison is not interpreted as a capacity-matched study.
++
++\paragraph{Native local latency diagnostic.}
++For Circular Periodic seed 1248, batch size one and $K=48$, we use three
++warm-up runs and ten timed repetitions. The native implementation
++includes modal rollout, feature generation, data transfers, algebraic
++pressure, all-step physical decoding, and pressure gauge correction.
++It excludes physical-history encoding, E2, descriptor construction,
++T2-C fusion, model/data loading, and error computation. The Galerkin
++NumPy path executes on the CPU; sparse parameter activation does not
++imply a proportional wall-clock saving in this implementation.
++
++\begin{table}[H]
++\centering
++\caption{Local native Circular Periodic diagnostic. GPU memory is peak
++allocated bytes. These times are not complete end-to-end latencies.}
++\label{tab:local_latency}
++\small
++\begin{tabular}{@{}lrrr@{}}
++\toprule
++Model & Median time (s) & GPU peak (bytes) & Time / Dense\\
++\midrule
++Proposed & 2.1848 & 204,238,336 & 3.32\\
++Dense & 0.6579 & 43,111,936 & 1.00\\
++Structured & 0.8652 & 43,316,736 & 1.32\\
++\bottomrule
++\end{tabular}
++\end{table}
++
++Matching FOM logs alone does not supply an end-to-end speedup: the same
++geometry, physical prediction interval, initialization, and compute/I/O
++boundaries must also be measured for the complete ROM pipeline. No such
++speedup is claimed here.
+--- before/appendix\rom_derivation.tex
++++ after/appendix\rom_derivation.tex
+@@ -334,51 +334,51 @@
+     \int_\Omega p^\circ\,\mathrm d\Omega=0,
+     \label{eq:app_continuous_pressure_poisson}
+ \end{equation}
+-with boundary conditions inherited from the momentum equation.
+-After discretization, substitution of the chart-local affine velocity
+-representation, and projection onto the local pressure basis, the reduced
+-pressure coefficients satisfy
+-\begin{equation}
+-    K_r^p(\mu)\bm b^{PP,(r)}
+-    =
+-    \bm d_r(\mu)
+-    +
+-    B_r(\mu)\bm a^{(r)}
+-    +
+-    Q_r(\mu):
+-    \bigl(
+-        \bm a^{(r)}\otimes\bm a^{(r)}
+-    \bigr).
+-    \label{eq:app_pressure_poisson_system}
+-\end{equation}
+-The corresponding chart-local Pressure--Poisson map is therefore
+-\begin{equation}
+-    \mathcal Q_r^{PP}
+-    \bigl(
+-        \bm a^{(r)};
+-        \mu
+-    \bigr)
+-    =
+-    [K_r^p(\mu)]^{-1}
+-    \left[
+-        \bm d_r(\mu)
+-        +
+-        B_r(\mu)\bm a^{(r)}
+-        +
+-        Q_r(\mu):
+-        \bigl(
+-            \bm a^{(r)}\otimes\bm a^{(r)}
+-        \bigr)
+-    \right].
+-    \label{eq:app_pressure_poisson_map}
+-\end{equation}
+-
+-Because the pressure basis lies in the weighted zero-mean subspace defined in
+-Appendix~\ref{app:problem_pod}, the constant-pressure null direction is
+-removed before projection.
+-Thus $\mathcal Q_r^{PP}$ produces pressure coefficients in the native
+-coordinates of chart $r$ without introducing an additional cross-chart
+-pressure gauge.
++with boundary conditions inherited from the momentum equation. The archived Circular Periodic pressure base is a projected weak-form surrogate, not the original finite-volume pressure solve. Its asset metadata explicitly states that boundary terms are neglected.
++
++\paragraph{Verified weak-form construction for Circular Periodic.}
++Let $\psi_\ell$ be a pressure mode and $\bm\phi_j$ a velocity mode, and suppress the chart index in the following definitions. The archived construction evaluates gradients using \texttt{pyvista.UnstructuredGrid.compute\_derivative()} on the unstructured source mesh and uses the POD \texttt{point\_areas} as quadrature weights $w_i$. Define
++\begin{equation}
++ \langle x,y\rangle_w=\sum_i w_i\,x_i\cdot y_i,
++ \qquad
++ C(v,z)_i=(v_i\cdot G_h)z_i ,
++\end{equation}
++where $G_h$ denotes this post-processing gradient, not an assertion of equality with the full-order face-flux stencil. With $\bm u=\bar{\bm u}+\sum_j a_j\bm\phi_j$ and $p=\bar p+\sum_m b_m\psi_m$, the saved weak-form system is
++\begin{equation}
++ K_r^p\bm b^{PP}=\bm d_r+B_r\bm a+Q_r:(\bm a\otimes\bm a),
++ \label{eq:app_pressure_poisson_system}
++\end{equation}
++with
++\begin{align}
++ [K_r^p]_{\ell m}&=-\langle G_h\psi_\ell,G_h\psi_m\rangle_w,
++ \label{eq:app_ppe_K_definition}\\
++ [\bm d_r]_\ell&=\langle G_h\psi_\ell,C(\bar{\bm u},\bar{\bm u})+G_h\bar p\rangle_w,
++ \label{eq:app_ppe_d_definition}\\
++ [B_r]_{\ell j}&=\langle G_h\psi_\ell,C(\bar{\bm u},\bm\phi_j)+C(\bm\phi_j,\bar{\bm u})\rangle_w,
++ \label{eq:app_ppe_B_definition}\\
++ [Q_r]_{\ell jk}&=\langle G_h\psi_\ell,C(\bm\phi_j,\bm\phi_k)\rangle_w.
++ \label{eq:app_ppe_Q_definition}
++\end{align}
++Here $K_r^p\in\mathbb R^{d_p\times d_p}$, $\bm d_r\in\mathbb R^{d_p}$, $B_r\in\mathbb R^{d_p\times d_u}$, and $Q_r\in\mathbb R^{d_p\times d_u\times d_u}$. The negative sign in $K_r^p$ follows the archived convention $\Delta p=-\nabla\cdot[(\bm u\cdot\nabla)\bm u]$ after integration by parts. The velocity mean generates both constant and linear terms, and the pressure mean contributes to $\bm d_r$. Neglecting the boundary integral is an approximation; it must not be described as incorporation of the exact full-order pressure boundary closure.
++
++The asset stores an SVD pseudoinverse with relative cutoff $10^{-10}$ and the precontracted arrays
++\begin{equation}
++ \widetilde{\bm c}=(K_r^p)^\dagger\bm d_r,\qquad
++ \widetilde A=(K_r^p)^\dagger B_r,\qquad
++ \widetilde H=(K_r^p)^\dagger Q_r.
++\end{equation}
++Online evaluation is therefore
++\begin{equation}
++ \mathcal Q_r^{PP}(\bm a;\mu)
++ =\widetilde{\bm c}(\mu)+\widetilde A(\mu)\bm a+
++   \widetilde H:(\bm a\otimes\bm a).
++ \label{eq:app_pressure_poisson_map}
++\end{equation}
++No full-mesh pressure equation is solved online. The Circular Periodic asset has $d_u=d_p=32$, numerical rank 32, and a reported condition estimate of approximately $72.5$. Its metadata and construction report identify a projected polynomial surrogate, rather than a polynomial fitted to pressure targets. This verified provenance is specific to this asset and is not inferred solely from the polynomial form of other archived pressure maps.
++
++A replay of the saved weak-form coefficients at 63 parameter nodes reproduces the online polynomial to a maximum absolute discrepancy of $1.73\times10^{-14}$. This checks algebraic consistency of the stored arrays; it does not reassemble mesh derivatives or validate the original finite-volume residual.
++
++The pressure fields are compared after the common weighted gauge correction. Neither the approximate pressure base, its learned correction, nor the subsequent physical-space fusion is claimed to satisfy the original finite-volume PPE exactly. In particular, a residual evaluated using $G_h$ would be a post-processing consistency diagnostic, not the residual of the original face-flux solver.
+ 
+ The pair
+ \begin{equation}
+--- before/appendix\routing_details.tex
++++ after/appendix\routing_details.tex
+@@ -34,7 +34,7 @@
+ $m_j(\mathcal H_n,\mu,K)\in\{0,1\}$
+ denote the validation-supported applicability of specialist $j$ for the
+ given initialization and rollout horizon.
+-The E2 preference restricted to applicable specialists is
++The regularized E2 weight restricted to applicable specialists is
+ \begin{equation}
+   \widetilde\pi_j
+   =
+@@ -45,12 +45,12 @@
+   }.
+   \label{eq:app_masked_e2}
+ \end{equation}
+-A single applicable specialist yields the Top-1 prediction.
++For $Z=\sum_k m_k\pi_k>0$, these regularized weights sum to $Z/(Z+\varepsilon)$, rather than exactly one. They preserve the ranking of applicable specialists; the selected pair is normalized separately below. A single applicable specialist yields the Top-1 prediction.
+ Top-2 fusion is considered only for an applicable pair belonging to
+ $\mathcal E_{\rm adj}$.
+-If no specialist is applicable, the hierarchy abstains from prediction.
++If no specialist is applicable, the hierarchy abstains from prediction. This is the general interface contract, not an experimentally validated out-of-distribution detector. In the reported centered-square overlap implementation, the evaluation cache specifies a fixed candidate pair, $(S,H)$ or $(P,H)$, and $K=24$. E2 Top-1 chooses within this supplied pair and T2-C blends its two independently generated trajectories. These experiments evaluate conditional routing and assembly on prescribed overlap support; they do not test a learned history-dependent mask, the three-applicable case, or abstention coverage on arbitrary new inputs.
+ 
+-For an ordered selected pair $(r_1,r_2)$, the pair-normalized E2
++We use the canonical ordered pairs $(r_1,r_2)=(S,H)$ and $(P,H)$, including in all tables reporting candidate weights. Reversing the order replaces $\alpha$ by $1-\alpha$ and reverses the corresponding logit sign. For an ordered selected pair $(r_1,r_2)$, the pair-normalized E2
+ preference is
+ \begin{equation}
+   \bar\pi_1
+@@ -72,123 +72,40 @@
+ 
+ 
+ \paragraph{Chart-independent physical-history descriptor.}
+-E2 is intentionally parameter only.
+-T2-C augments this trajectory-level preference with a chart-independent
+-descriptor computed from the current physical state and the two preceding
+-states.
+-The descriptor summarizes field magnitude, first-order temporal variation,
+-velocity growth, and second-order velocity variation.
++The centered-square implementation uses eight descriptor channels and one parameter input. These features are computed from the initial three physical states at $t_{n-2}<t_{n-1}<t_n$, with pressure mapped to the common zero-mean gauge. They are independent of the specialists' POD coordinates. All quantities below use the nondimensional data conventions of the experiment, and $\epsilon=10^{-12}$ is the numerical floor.
+ 
+-Let
+-$|\Omega|=\bm 1^\top\bm w$,
+-$\Delta t_n=t_n-t_{n-1}$,
+-and let $U_{\rm ref}$, $P_{\rm ref}$, and $T_{\rm ref}$ denote fixed
+-reference scales.
+-For gauge-corrected pressure $p_n^\circ$, define the normalized field
+-magnitudes
++Define $A_\Omega=\sum_i w_i$, $U_j=\|\bm u_j\|_{M_u}^2$, $P_j=\|p_j^\circ\|_{M_p}^2$, and
++\begin{align}
++ h_j&=\max(t_j-t_{j-1},\epsilon),&
++ s_j^u&=\sqrt{\max(U_j,\epsilon)},&
++ s_j^p&=\sqrt{\max(P_j,\epsilon)},\\
++ v_j&=(\bm u_j-\bm u_{j-1})/h_j,&
++ g_j&=\frac{\log\max(U_j,\epsilon)-\log\max(U_{j-1},\epsilon)}{h_j}.
++\end{align}
++The ordered raw descriptor is
+ \begin{equation}
+-  \widehat M_n^u
+-  =
+-  \frac{
+-    \|\bm u_n\|_{M_u}^2
+-  }{
+-    |\Omega|U_{\rm ref}^2
+-  },
+-  \qquad
+-  \widehat M_n^p
+-  =
+-  \frac{
+-    \|p_n^\circ\|_{M_p}^2
+-  }{
+-    |\Omega|P_{\rm ref}^2
+-  },
+-  \label{eq:app_t2c_magnitude}
++\bm s_n=\operatorname{col}\left(
++\begin{array}{l}
++ \tfrac12\log\max(U_n/A_\Omega,\epsilon),\\
++ \tfrac12\log\max(P_n/A_\Omega,\epsilon),\\
++ \log(1+\|v_n\|_{M_u}/(s_n^u+\epsilon)),\\
++ \log(1+\|v_{n-1}\|_{M_u}/(s_{n-1}^u+\epsilon)),\\
++ \tanh(g_n),\\
++ \tanh(g_n-g_{n-1}),\\
++ \log(1+\|p_n^\circ-p_{n-1}^\circ\|_{M_p}/[h_n(s_n^p+\epsilon)]),\\
++ \log(1+\|v_n-v_{n-1}\|_{M_u}/(s_n^u+\epsilon))
++\end{array}\right).
++\label{eq:app_t2c_descriptor}
+ \end{equation}
+-and the corresponding first-difference rates
+-\begin{equation}
+-  \widehat R_n^u
+-  =
+-  \frac{
+-    T_{\rm ref}
+-    \|\bm u_n-\bm u_{n-1}\|_{M_u}
+-  }{
+-    \Delta t_n\sqrt{|\Omega|}U_{\rm ref}
+-  },
+-  \qquad
+-  \widehat R_n^p
+-  =
+-  \frac{
+-    T_{\rm ref}
+-    \|p_n^\circ-p_{n-1}^\circ\|_{M_p}
+-  }{
+-    \Delta t_n\sqrt{|\Omega|}P_{\rm ref}
+-  }.
+-  \label{eq:app_t2c_rate}
+-\end{equation}
+-A velocity-growth indicator is
+-\begin{equation}
+-  \widehat G_n
+-  =
+-  \frac{T_{\rm ref}}{\Delta t_n}
+-  \log
+-  \frac{
+-    \widehat M_n^u+\varepsilon_E
+-  }{
+-    \widehat M_{n-1}^u+\varepsilon_E
+-  }.
+-  \label{eq:app_t2c_growth}
+-\end{equation}
+-To capture changes in the local temporal trend, define
+-\begin{align}
+-  \bm A_n^u
+-  &=
+-  \frac{2}{\Delta t_n+\Delta t_{n-1}}
+-  \left[
+-    \frac{\bm u_n-\bm u_{n-1}}{\Delta t_n}
+-    -
+-    \frac{\bm u_{n-1}-\bm u_{n-2}}{\Delta t_{n-1}}
+-  \right],
+-  \nonumber\\
+-  \widehat C_n^u
+-  &=
+-  \frac{
+-    T_{\rm ref}^2
+-    \|\bm A_n^u\|_{M_u}
+-  }{
+-    \sqrt{|\Omega|}U_{\rm ref}
+-  }.
+-  \label{eq:app_t2c_curvature}
+-\end{align}
++The last channel measures a difference of velocity rates: it is not divided again by a time interval and is not the second-derivative descriptor in an acceleration discretization. The log and hyperbolic-tangent transformations above are part of the actual feature construction.
+ 
+-The resulting descriptor is
+-\begin{equation}
+-  \bm s_n
+-  =
+-  \operatorname{col}
+-  \left(
+-    \widehat M_n^u,
+-    \widehat M_n^p,
+-    \widehat R_n^u,
+-    \widehat R_n^p,
+-    \widehat G_n,
+-    \widehat C_n^u
+-  \right),
+-  \qquad
+-  \bm d_n
+-  =
+-  (\bm s_n-\bm\mu_s)
+-  \oslash
+-  (\bm\sigma_s+\varepsilon_s\bm 1).
+-  \label{eq:app_t2c_descriptor}
+-\end{equation}
+-Because $\bm d_n$ is computed entirely from reconstructed physical fields,
+-it is independent of either specialist's native POD coordinates.
++For the gate, the nine raw features $[\mu;\bm s_n]$ are standardized using the means and population standard deviations of training windows only. Any feature standard deviation below $10^{-8}$ is replaced by one. We denote the resulting vector by $[\widetilde\mu;\bm d_n]$; its parameter normalization is fitted for the gate and need not equal the trajectory-level E2 normalization. The architecture-matched $\mu$-only control sets all eight descriptor channels to zero after standardization. No state from inside the prediction window is used to construct these features.
+ 
+ 
+ \paragraph{Physical-space T2-C fusion.}
+ The logit-correction network receives
+-$[\widetilde\mu;\bm d_n]$ and uses two hidden layers of width 64 with SiLU
+-activations followed by a scalar linear output.
++$[\widetilde\mu;\bm d_n]\in\mathbb R^9$ and uses two hidden layers of width 64 with SiLU
++activations followed by a scalar linear output (9--64--64--1; 4,865 trainable parameters).
+ The final layer is initialized at zero, so the initial correction vanishes
+ and the fusion weight reduces to the E2 pair preference.
+ Specifically,
+@@ -265,3 +182,6 @@
+ \end{equation}
+ Optimization and checkpoint-selection details are reported in
+ Appendix~\ref{app:implementation}.
++
++\paragraph{Numerical convention in the centered-square evaluator.}
++The archived implementation normalizes the selected E2 probabilities, clips the first probability to $[10^{-6},1-10^{-6}]$, and then forms its logit. Its squared relative field loss uses $\max(\|q_{\rm true}\|_M^2,10^{-12})$ as denominator rather than an additive regularizer. Feature standard deviations below $10^{-8}$ are replaced by one before standardization. These are implementation-specific safeguards; the generic additive-$\varepsilon$ notation above should not be read as a claim that all numerical constants or normalization rules are shared across benchmarks.
+--- before/appendix\specialist_details.tex
++++ after/appendix\specialist_details.tex
+@@ -124,6 +124,10 @@
+   \omega_0^c+\sum_{e\in\mathcal T_2^c}\omega_e^c=1.
+   \label{eq:app_channel_sparse_moe}
+ \end{equation}
++For the audited Circular H/P instances, $\omega_0^c=4/7$ and
++$\omega_e^c=(3/7)\,p_e^c/\sum_{j\in\mathcal T_2^c}p_j^c$ for selected
++routed experts. This fixed shared/routed split is not assumed for every
++benchmark configuration.
+ The two channel mixtures define the velocity and pressure corrections
+ $\bm\rho_{\theta_r}^u$ and $\bm\rho_{\theta_r}^p$, respectively. The explicit linear and quadratic branches operate on the channel-specific reduced-state inputs
+ \begin{equation}
+@@ -160,11 +164,11 @@
+   \kappa
+   \sum_{\ell=1}^{q_b}
+   \left(
+-    {\bm u_{e,m,j\ell}^c}^{\top}
++    {\bm v_{e,m,j\ell}^{c,(1)}}^{\top}
+     \bm s^c
+   \right)
+   \left(
+-    {\bm v_{e,m,j\ell}^c}^{\top}
++    {\bm v_{e,m,j\ell}^{c,(2)}}^{\top}
+     \bm s^c
+   \right),
+   \qquad
+@@ -217,6 +221,7 @@
+ Continuous-time specialist instances use Runge--Kutta integration with the
+ same frozen context across stage evaluations; benchmark-specific stepping
+ details are reported in Appendix~\ref{app:implementation}.
++The nominal Runge--Kutta order applies to this frozen-context velocity subproblem, not automatically to the complete pressure/history-coupled update. We do not claim fourth-order convergence of the full scheme.
+ The updated velocity is then supplied to
+ Eq.~(\plaineqref{eq:app_pressure_closure}), after which the history is
+ shifted and autonomous rollout continues.
+@@ -257,3 +262,21 @@
+ injected into the autonomous rollout. Training uses progressively longer
+ chart-specific rollout horizons; the corresponding curricula and
+ optimization settings are listed in Appendix~\ref{app:implementation}.
++
++
++\paragraph{Initialization audit.}
++In the audited original Circular checkpoints, both factors of the
++multiplicative quadratic branch were initialized at zero and remained
++zero, since the gradient of either factor contains the other factor.
++The repaired configuration retains a random right factor and zeroes only
++the left factor, preserving zero initial output with a nonzero learning
++direction. The repair activates this branch but does not establish an
++accuracy benefit; see Appendix~\ref{app:circular}.
++
++\paragraph{Loss interpretation.}
++Variance normalization weights coefficient errors by inverse training
++variance and is distinct from the physical energy norm. The equality
++$\|\Phi(\widehat a-a)\|_M^2=\|\widehat a-a\|_2^2$ holds within a common
++weighted-orthonormal chart; comparison to original CFD fields additionally
++involves the projection remainder. Neither loss alone guarantees
++conservation or long-term stability.
+--- before/appendix\square_cylinder.tex
++++ after/appendix\square_cylinder.tex
+@@ -1,3 +1,4 @@
++\input{figures/field_panel_labels.tex}
+ \section{Centered-square results}
+ \label{app:square}
+ 
+@@ -148,15 +149,15 @@
+ \par
+ \begin{figure}[p]
+ \centering
+-\includegraphics[width=0.80\linewidth]{figures/original/SH_2.png}
++\FieldPanel{figures/original/SH_2.png}{Steady}
+ 
+ \vspace{0.35em}
+-\includegraphics[width=0.80\linewidth]{figures/original/SH_2_1.png}
++\ErrorPanel{figures/original/SH_2_1.png}{Steady}
+ \caption{Representative held-out prediction in the centered-square
+-$S$--$H$ overlap at $Re=95.1$. The upper panel compares the CFD reference,
++$S$--$H$ overlap at $Re=95.1$. The upper panel compares the archived reference reconstruction,
+ Steady specialist, Hopf specialist, and T2-C prediction for velocity
+ magnitude and gauge-corrected pressure. The lower panel gives the
+-corresponding pointwise absolute errors.}
++corresponding pointwise absolute errors. Panel identifiers run (a)--(h) for fields and (i)--(n) for errors. The displayed snapshots and color scales are retained from the archived figures; row labels and identifiers are typeset separately.}
+ \label{fig:app_square_sh_full}
+ \end{figure}
+ \par
+@@ -164,13 +165,85 @@
+ \par
+ \begin{figure}[p]
+ \centering
+-\includegraphics[width=0.80\linewidth]{figures/original/HP_2.png}
++\FieldPanel{figures/original/HP_2.png}{Periodic}
+ 
+ \vspace{0.35em}
+-\includegraphics[width=0.80\linewidth]{figures/original/HP_2_1.png}
++\ErrorPanel{figures/original/HP_2_1.png}{Periodic}
+ \caption{Representative held-out prediction in the centered-square
+-$H$--$P$ overlap at $Re=100.5$. The upper panel compares the CFD reference, Periodic specialist, Hopf specialist, and T2-C prediction for velocity magnitude and gauge-corrected pressure. The lower panel gives the
+-corresponding pointwise absolute errors.}
++$H$--$P$ overlap at $Re=100.5$. The upper panel compares the archived reference reconstruction, Periodic specialist, Hopf specialist, and T2-C prediction for velocity magnitude and gauge-corrected pressure. The lower panel gives the
++corresponding pointwise absolute errors. Panel identifiers run (a)--(h) for fields and (i)--(n) for errors. The displayed snapshots and color scales are retained from the archived figures; row labels and identifiers are typeset separately.}
+ \label{fig:app_square_hp_full}
+ \end{figure}
+ \par
++
++
++\paragraph{Full-window reevaluation and scalar controls.}
++Table~\ref{tab:t2c_full_window_controls} uses all $K=24$ steps, first
++averaging windows within each Reynolds number and then weighting the
++two held-out Reynolds numbers equally. It also reports the dimensionless
++squared relative objective, $L_{\mathrm{sq}}=\operatorname{mean}
++[(E_u/100)^2+(E_p/100)^2]$. This is different from the displayed
++percentage joint error. The constant-$\alpha$ control minimizes the
++training-window squared objective analytically over $[0,1]$; its weights
++are $0.357850555$ in $S$--$H$ and $0.928683495$ in $H$--$P$.
++The constant-logit control fits a single training-only offset in
++$[-20,20]$, giving $0.490963974$ and $3.480802826$, respectively.
++The validation-fixed candidate is selected on validation squared error,
++rather than chosen a posteriori on held-out data. Both candidates are
++finite and no held-out windows are excluded in this reevaluation.
++These are deterministic scalar controls for the archived candidates.
++
++\begin{table}[H]
++\centering
++\caption{Centered-square full-window $K=24$ reevaluation using the
++archived physical-field quadratic cache. Errors are percentages against
++the cached POD reference; the last column is $10^4 L_{\mathrm{sq}}$.
++This table uses a single frozen gate checkpoint, not the three-seed mean.}
++\label{tab:t2c_full_window_controls}
++\small
++\setlength{\tabcolsep}{3.5pt}
++\begin{tabular}{@{}llrrrr@{}}
++\toprule
++Overlap & Method & $E_u$ & $E_p$ & $E_u+E_p$ & $10^4L_{\mathrm{sq}}$\\
++\midrule
++$S$--$H$ & E2 Top-1 & 0.5355 & 1.0432 & 1.5786 & 5.6364 \\
++ & E2 probability & 0.6624 & 1.1521 & 1.8145 & 4.3056 \\
++ & Equal blend & 1.0133 & 1.3717 & 2.3849 & 4.3665 \\
++ & Train-fixed $\alpha$ & 0.8128 & 1.2462 & 2.0591 & 4.1324 \\
++ & Train-fixed logit offset & 0.7857 & 1.2292 & 2.0149 & 4.1398 \\
++ & Validation-fixed candidate & 0.5355 & 1.0432 & 1.5786 & 5.6364 \\
++ & T2-C & 0.3831 & 0.7123 & 1.0954 & 2.3199 \\
++\midrule
++$H$--$P$ & E2 Top-1 & 0.7263 & 0.9161 & 1.6424 & 4.8921 \\
++ & E2 probability & 0.6108 & 0.8381 & 1.4489 & 2.9087 \\
++ & Equal blend & 0.5920 & 0.8010 & 1.3930 & 2.5103 \\
++ & Train-fixed $\alpha$ & 0.5016 & 0.4752 & 0.9767 & 0.5818 \\
++ & Train-fixed logit offset & 0.5134 & 0.4687 & 0.9821 & 0.5941 \\
++ & Validation-fixed candidate & 0.5310 & 0.4758 & 1.0068 & 0.6323 \\
++ & T2-C & 0.4263 & 0.3860 & 0.8123 & 0.4072 \\
++\bottomrule
++\end{tabular}
++\end{table}
++
++\begin{table}[H]
++\centering
++\caption{Three paired gate seeds: full-window joint error (\%) at
++$K=24$, mean $\pm$ sample standard deviation. All specialists and
++candidate trajectories are fixed; these are not full-pipeline seeds.}
++\label{tab:t2c_window_seeds}
++\small
++\begin{tabular}{@{}lccc@{}}
++\toprule
++Overlap & $\mu$-only & Full T2-C & Relative reduction\\
++\midrule
++$S$--$H$ & $1.814699\pm0.000242$ & $1.095351\pm0.000015$ & $39.64\%$\\
++$H$--$P$ & $0.976939\pm0.000179$ & $0.812343\pm0.000177$ & $16.85\%$\\
++\bottomrule
++\end{tabular}
++\end{table}
++
++The single-checkpoint T2-C also improves on the training-fitted constant
++weight and constant-logit controls in both overlaps. Together with the
++paired $\mu$-only ablation, this supports history-conditioned assembly
++for these fixed candidate sets; it does not establish long-time phase
++alignment or nonlinear physical consistency.
+--- before/figures\field_panel_labels.tex
++++ after/figures\field_panel_labels.tex
+@@ -0,0 +1,31 @@
++% Non-destructive TeX annotation layer. Scientific pixels, legends and
++% numerical error annotations remain in the original archived PNGs.
++\newcommand{\FieldPanel}[2]{%
++\begin{tikzpicture}
++\node[anchor=south west,inner sep=0] (im) at (0,0)
++ {\includegraphics[width=0.80\linewidth]{#1}};
++\begin{scope}[x={(im.south east)},y={(im.north west)}]
++ \fill[white] (0,0.13) rectangle (0.055,0.98);
++ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.863) {Reference};
++ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.656) {#2};
++ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.449) {Hopf};
++ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.242) {RAL-MoE-ROM};
++\end{scope}
++\end{tikzpicture}%
++}
++\newcommand{\ErrorPanel}[2]{%
++\begin{tikzpicture}
++\node[anchor=south west,inner sep=0] (im) at (0,0)
++ {\includegraphics[width=0.80\linewidth]{#1}};
++\begin{scope}[x={(im.south east)},y={(im.north west)}]
++ \fill[white] (0,0.17) rectangle (0.055,0.985);
++ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.83) {#2};
++ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.57) {Hopf};
++ \node[rotate=90,font=\scriptsize\bfseries] at (0.023,0.31) {RAL-MoE-ROM};
++ \foreach \x/\y/\lab in {0.080/0.932/i,0.583/0.932/j,0.080/0.673/k,0.583/0.673/l,0.080/0.415/m,0.583/0.415/n}{
++  \fill[white] (\x-0.018,\y-0.020) rectangle (\x+0.018,\y+0.020);
++  \node[font=\scriptsize\bfseries,inner sep=0] at (\x,\y) {(\lab)};
++ }
++\end{scope}
++\end{tikzpicture}%
++}
+--- before/figures\t2c_window_comparison.tex
++++ after/figures\t2c_window_comparison.tex
+@@ -0,0 +1,24 @@
++% Source: audited three-gate-seed full-window means; no field pixels generated.
++\begin{tikzpicture}[x=3cm,y=0.55cm,font=\small]
++\draw[->] (0,0)--(2.1,0);
++\node at (1.05,-1.0) {$E_u+E_p$ (\%)};
++\foreach \t in {0,0.5,1,1.5,2} {
++ \draw (\t,0.06)--(\t,-0.06) node[below] {\t};
++}
++\node[anchor=east] at (-0.06,3.7) {$S$--$H$};
++\node[anchor=east] at (-0.06,1.5) {$H$--$P$};
++\fill[gray!55] (0,3.7) rectangle (1.814699,4.25);
++\fill[blue!55!black] (0,3.0) rectangle (1.095351,3.55);
++\fill[gray!55] (0,1.5) rectangle (0.976939,2.05);
++\fill[blue!55!black] (0,0.8) rectangle (0.812343,1.35);
++\node[anchor=west,font=\scriptsize] at (1.83,3.975) {$1.814699\pm0.000242$};
++\node[anchor=west,font=\scriptsize] at (1.11,3.275) {$1.095351\pm0.000015$};
++\node[anchor=west,font=\scriptsize] at (0.99,1.775) {$0.976939\pm0.000179$};
++\node[anchor=west,font=\scriptsize] at (0.83,1.075) {$0.812343\pm0.000177$};
++\fill[gray!55] (0,4.75) rectangle (0.1,5.0);
++\node[anchor=west] at (0.13,4.87) {$\mu$-only};
++\fill[blue!55!black] (0.85,4.75) rectangle (0.95,5.0);
++\node[anchor=west] at (0.98,4.87) {Full T2-C};
++\node[anchor=west,font=\scriptsize] at (2.0,3.25) {$-39.64\%$};
++\node[anchor=west,font=\scriptsize] at (1.75,1.05) {$-16.85\%$};
++\end{tikzpicture}
+--- before/main.tex
++++ after/main.tex
+@@ -44,13 +44,14 @@
+ Appendix~\ref{app:internal_routing} reports post-hoc internal-routing statistics
+ from fixed validation-selected Hopf and Periodic specialists on held-out
+ rollout windows; these diagnostics are not used for model selection.
++Appendix~\ref{app:circular} reports the new Circular control study, initialization audit, and accepted/failed seed counts; Appendix~\ref{app:parameter_counts} separates parameter counts from measured local latency.
+ Appendix~\ref{app:square} additionally reports an architecture-matched descriptor
+ ablation and three-seed variability of the centered-square T2-C gate, with the
+ underlying specialists and E2 router held fixed.
+ 
+ \subsection*{AI use statement}
+ % Authors must confirm this disclosure against the final submission workflow.
+-Generative AI tools, including ChatGPT and Codex, were used solely to assist with language polishing and LaTeX formatting. The authors take full responsibility for reviewing and verifying all scientific
++Generative AI tools, including ChatGPT and Codex, assisted with language polishing, LaTeX formatting, consistency checks, experiment-code development, and analysis of experimental records. The authors take full responsibility for reviewing and verifying all scientific
+ content, mathematical formulations, experimental configurations, numerical
+ results, and conclusions, and for the final manuscript and all reported results.
+ 
+@@ -71,5 +72,6 @@
+ \input{appendix/internal_routing}
+ \clearpage
+ \input{appendix/parameter_counts}
++\input{appendix/fusion_consistency}
+ 
+ \end{document}
+--- before/references.bib
++++ after/references.bib
+@@ -561,7 +561,7 @@
+ }
+ 
+ @inproceedings{NEURIPS2025_2d23a999,
+- author = {Wang, Hong and Xin, Haiyang and Wang, Jie and Yang, Xuanze and Zha, Fei and dong, huanshuo and Jiang, Yan},
++ author = {Wang, Hong and Xin, Haiyang and Wang, Jie and Yang, Xuanze and Zha, Fei and Dong, Huanshuo and Jiang, Yan},
+  booktitle = {Advances in Neural Information Processing Systems},
+  doi = {10.52202/085713-1057},
+  editor = {D. Belgrave and C. Zhang and H. Lin and R. Pascanu and P. Koniusz and M. Ghassemi and N. Chen},
+--- before/sections\conclusion.tex
++++ after/sections\conclusion.tex
+@@ -1,4 +1,16 @@
+ \section{Conclusion}
+-
+-We introduced RAL-MoE-ROM, a hierarchical reduced-order modeling framework that separates within-regime dynamical specialization from cross-regime assembly. Regime-local ROMs retain independent reduced coordinates and augment projected dynamics with structured sparse corrections, while
+-cross-regime coupling is performed only after reconstruction in physical space. Across three parameterized incompressible-flow benchmarks, the local specialists support accurate autonomous rollouts, and history-conditioned T2-C improves prediction in the evaluated regime overlaps. The present study assumes validation-supported regime coverage and evaluates pairwise fusion only for adjacent specialists on two-dimensional incompressible flows. Future work will investigate learned regime discovery, constraint-preserving physical-space assembly, and higher-dimensional dynamical systems.
++We introduced RAL-MoE-ROM to combine autonomous regime-local predictors
++through physical-space assembly while retaining independent reduced
++coordinates. On the evaluated centered-square overlaps, physical-history
++conditioning improves T2-C over the architecture-matched parameter-only
++gate for all three gate-training seeds. The local control experiments
++qualify the role of the inner architecture: the active-parameter-matched
++Dense control is more accurate on Circular Periodic, and the original
++audited quadratic branches remained inactive. Repaired Hopf training
++also retains failed seeds. These results support the evaluated local
++prediction and output-assembly capabilities, but do not establish sparse
++routing or explicit quadratic corrections as necessary sources of
++accuracy. The study assumes prescribed regime coverage and supplied
++initial physical histories. Full-field CFD errors, nonlinear
++constraint preservation, global cross-chart data-role verification,
++and end-to-end FOM speedups remain to be established.
+--- before/sections\experiments.tex
++++ after/sections\experiments.tex
+@@ -3,18 +3,21 @@
+ 
+ We organize the experiments around three questions: whether the regime-local specialists support autonomous prediction, whether
+ physical-space fusion improves prediction near regime transitions, and how the main local architectural choices affect prediction.
+-The three incompressible-flow benchmarks play complementary roles in answering these questions. All are two-dimensional systems in which varying the Reynolds number traverses steady, Hopf-onset, and periodic regimes. The circular-cylinder benchmark provides the local architecture ablation, the centered-square benchmark evaluates cross-regime routing and fusion in the $S$--$H$ and $H$--$P$ overlaps, and the fluidic-pinball benchmark provides the autonomous comparison with a classical POD--Galerkin ROM. Table~\ref{tab:benchmark_summary} summarizes the benchmark scope and roles. All splits are made at the level of complete parameter trajectories rather than individual snapshots or rollout windows; chart-wise parameter ranges and split counts are reported in Appendix~\ref{app:implementation}.
+-
+-We report relative physical-field errors $E_u$ and $E_p$ in percent; their weighted definitions and benchmark-specific aggregation rules are given in Appendix~\ref{app:implementation}. For routing and fusion comparisons, $E_{\mathrm{joint}}=E_u+E_p$. The sum of displayed component errors can differ slightly from the reported joint error because values are rounded independently. A rollout window is labeled ``Divergent'' if it violates the predefined rollout-divergence criterion, either through a non-finite state or a
+-threshold violation. N/E denotes a setting that is not evaluable under this criterion; table-specific notes identify the cause.
++The three incompressible-flow benchmarks play complementary roles in answering these questions. All are two-dimensional systems in which varying the Reynolds number traverses steady, Hopf-onset, and periodic regimes. The circular-cylinder benchmark provides matched local controls and an initialization audit, the centered-square benchmark evaluates cross-regime routing and fusion in the $S$--$H$ and $H$--$P$ overlaps, and the fluidic-pinball benchmark provides the autonomous comparison with a classical POD--Galerkin ROM. Table~\ref{tab:benchmark_summary} summarizes the benchmark scope and roles. The reported chart-wise splits use complete parameter trajectories rather than individual snapshots or rollout windows; chart-wise parameter ranges and split counts are reported in Appendix~\ref{app:implementation}.
++
++We report relative physical-field errors $E_u$ and $E_p$ in percent; their weighted definitions and benchmark-specific aggregation rules are given in Appendix~\ref{app:implementation}. For routing and fusion comparisons, $E_{\mathrm{joint}}=E_u+E_p$. The sum of displayed component errors can differ slightly from the reported joint error because values are rounded independently. The new Circular controls and Square cache-based reevaluation use
++POD-reconstructed reference fields, excluding the original CFD projection
++remainder. We distinguish training failure, validation rejection, and
++non-finite test rollout; an unavailable result is not automatically a
++divergence. 
+ 
+ \par
+ \begin{table}[H]
+ \centering
+ \caption{
+ Experimental scope and benchmark roles.
+-Local rank pairs $(r_u,r_p)$ and rollout horizons $K$ are ordered
+-$S,H,P$.
++Local rank pairs $(r_u,r_p)$ are ordered $S,H,P$.
++Horizons are ordered $S,H,P$ except for the new Circular H/P controls.
+ Additional overlap and periodic-core settings are specified in their
+ respective comparisons.
+ }
+@@ -32,8 +35,8 @@
+ Circular cylinder
+ & 20--200
+ & $(32,32),\ (32,32),\ (32,32)$
+-& $56/56/48$
+-& Local architecture ablation \\
++& H/P: $24,48$
++& Matched local controls \\
+ \addlinespace
+ Centered square
+ & 50--150
+@@ -115,7 +118,7 @@
+ To evaluate the second routing level while holding the local specialists fixed, we compare the centered-square $S$--$H$ and $H$--$P$ overlaps at $K=24$ (Table~\ref{tab:routing_fusion}). We compare hard E2 Top-1 routing with two simple fusion rules, the Equal blend and the E2-probability blend, together with the learned T2-C gate; a diagnostic convex oracle provides an a posteriori reference. To test whether T2-C benefits specifically from physical-history information, we additionally include an architecture-matched T2-C $\mu$-only ablation. The same gate architecture and optimization protocol are retained, but the standardized history-descriptor channels are set to zero. This preserves the gate parameterization and trainable parameter count while removing history information.
+ 
+ 
+-The $\mu$-only ablation reveals that parameter conditioning alone has overlap-dependent value. For $S$--$H$, its joint error is essentially unchanged relative to the E2-probability blend ($2.1846\%$ versus $2.1847\%$), whereas for $H$--$P$ it improves the same baseline from $1.6618\%$ to $1.1504\%$. Adding the physical-history descriptor improves both overlaps further, reducing $E_{\mathrm{joint}}$ to $1.1958\%$ and $0.8465\%$, respectively. Relative to the a posteriori best fixed-specialist reference, full T2-C reduces joint error by $30.9\%$ on $S$--$H$ and $29.9\%$ on $H$--$P$. Relative to the deployable E2 Top-1 router, the corresponding reductions are $30.9\%$ and $54.2\%$. The validation-selected T2-C errors are also close to the diagnostic convex oracle in both overlaps. Representative reconstructed fields and velocity-error maps are shown in Figure~\ref{fig:square_overlap}.
++The $\mu$-only ablation reveals that parameter conditioning alone has overlap-dependent value. For $S$--$H$, its joint error is essentially unchanged relative to the E2-probability blend ($2.1846\%$ versus $2.1847\%$), whereas for $H$--$P$ it improves the same baseline from $1.6618\%$ to $1.1504\%$. Adding the physical-history descriptor improves both overlaps further, reducing $E_{\mathrm{joint}}$ to $1.1958\%$ and $0.8465\%$, respectively. Relative to the a posteriori best fixed-specialist reference, full T2-C reduces joint error by $30.9\%$ on $S$--$H$ and $29.9\%$ on $H$--$P$. Relative to the deployable E2 Top-1 router, the corresponding reductions are $30.9\%$ and $54.2\%$. The terminal scores are numerically close to the diagnostic convex reference, whose full-window objective differs from this terminal metric; this is not evidence of terminal optimality. Figure~\ref{fig:square_overlap} summarizes the paired gate-seed results; reconstructed fields showing both candidates are given in Appendix~\ref{app:square}.
+ 
+ Across three paired gate-training seeds, full T2-C outperforms the architecture-matched $\mu$-only gate in every run for both overlaps.
+ Across the three paired runs, the mean reduction relative to $\mu$-only is $45.3\%$ for $S$--$H$ and $26.2\%$ for $H$--$P$. Full T2-C yields
+@@ -150,70 +153,86 @@
+ \end{table}
+ \par
+ 
+-\par
++
+ \begin{figure}[H]
+ \centering
+-\includegraphics[width=\linewidth]{figures/square_overlap_compact.png}
+-\caption{Representative centered-square overlap predictions for $S$--$H$ (left) and $H$--$P$ (right). T2-C combines independently evolved local predictions only after reconstruction in physical space. The displayed examples illustrate the corresponding reduction in velocity-field error; complete velocity and pressure comparisons are reported in Appendix~\ref{app:square}.
+-}
++\input{figures/t2c_window_comparison.tex}
++\caption{Full-window joint errors at $K=24$ for both centered-square
++overlaps. Values are mean $\pm$ sample standard deviation across three
++paired gate-training seeds with all candidate trajectories fixed.
++The reductions are relative to the architecture-matched $\mu$-only gate.
++The field comparisons in Appendix~\ref{app:square} include both
++specialists, including the stronger Periodic candidate in $H$--$P$.}
+ \label{fig:square_overlap}
+ \end{figure}
+-\par
+-
+-
+-
+-\subsection{How do local architectural choices affect prediction?}
+-
+-The circular-cylinder benchmark is used to examine three local architectural choices: structured expert parameterization, the projected ROM backbone, and regime localization (Table~\ref{tab:circular_full_reorg}). Vanilla-FNN-MoE retains the regime-local setting but replaces the structured expert map with conventional feed-forward experts. DataOnly-MoE removes the projected Galerkin and Pressure--Poisson backbone, leaving the learned local dynamics to account for the evolution from data. Global MoE replaces the regime-local charts and specialists with a single global reduced representation and dynamical model. All comparisons are reported in physical-field error so that models with different reduced coordinates are assessed in a common physical space. These comparisons characterize architectural effects under the available fixed models rather than parameter-matched capacity controls. Total and active trainable parameter counts for the analyzed Hopf and Periodic specialists are reported in Appendix~\ref{app:parameter_counts}.
+-
+-\begin{table}[H]
+-\centering
+-\caption{Circular-cylinder autonomous-rollout errors (\%). A dash indicates that the rollout diverged.}
++
++The full-window comparison in Figure~\ref{fig:square_overlap} gives the
++same direction of effect as the terminal metric: history conditioning
++reduces the three-seed mean joint error by $39.64\%$ in $S$--$H$ and
++$16.85\%$ in $H$--$P$. These results condition on fixed candidates.
++The frozen-checkpoint reevaluation also improves on training-fitted
++constant mixing weights and constant-logit offsets
++(Appendix~\ref{app:square}).
++
++\subsection{What do matched local controls establish?}
++
++We reevaluate Circular H/P models with common held-out windows and
++POD-reconstructed reference fields. The Dense control matches the active
++parameter budget of the proposed model; the structured control removes
++input-dependent routing. This is distinct from the earlier
++Vanilla-FNN-MoE, DataOnly-MoE, and Global MoE comparison, whose summary and
++min--max tables are replaced here because their historical aggregation
++could not be fully reconciled. The new results do not retroactively
++validate those old statistics or isolate every architectural factor.
++
++\begin{table}[H]
++\centering
++\caption{Circular Periodic controls: full-window mean physical-field
++errors (\%) at $K=24$, against POD-reconstructed truth. Entries are mean
++$\pm$ sample standard deviation over seeds 1248, 1600, and 2026; all
++listed neural configurations have 3/3 accepted seeds. Repaired denotes
++the changed quadratic-branch initialization.}
+ \label{tab:circular_full_reorg}
+ \small
+ \setlength{\tabcolsep}{4pt}
+-\begin{tabular}{llcc}
+-\toprule
+-Regime & Model & $E_u$ & $E_p$ \\
+-\midrule
+-Steady ($K=56$)
+-& RAL-MoE-ROM & 0.1027 & 0.7875 \\
+-& Vanilla-FNN-MoE & 0.1690 & 10.3883 \\
+-& DataOnly-MoE & 0.3380 & - \\
+-& Global MoE & 0.2125 & 4.4795 \\
+-\midrule
+-Hopf ($K=56$)
+-& RAL-MoE-ROM & 0.0160 & 0.1338 \\
+-& Vanilla-FNN-MoE & - & - \\
+-& DataOnly-MoE & 0.2570 & - \\
+-& Global MoE & 0.0189 & 0.1721 \\
+-\midrule
+-Periodic ($K=48$)
+-& RAL-MoE-ROM & 0.7412 & 3.8213 \\
+-& Vanilla-FNN-MoE & 2.0615 & 8.6458 \\
+-& DataOnly-MoE & 1.3266 & 6.5350 \\
+-& Global MoE & 0.8800 & 4.2731 \\
+-\bottomrule
+-\end{tabular}
+-\end{table}
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-
+-Replacing the structured expert map with conventional feed-forward experts increases both velocity and pressure errors in the Steady and Periodic regimes; the Vanilla-FNN-MoE Hopf model is not evaluable under the prescribed rollout criterion. Removing the projected ROM backbone produces the largest degradation, with particularly large pressure errors for DataOnly-MoE in the Steady and Hopf regimes. Among the ablations, Global MoE provides the closest overall comparison and is particularly close to the full model in the Hopf regime. Nevertheless, the regime-local specialists retain lower reported physical-field errors in all three regimes. Together, these comparisons support the roles of structured expert corrections, the projected ROM backbone, and regime-local representations under the tested architectures. They are not parameter-matched capacity controls. Cross-regime assembly is evaluated separately in Table~\ref{tab:routing_fusion}. Additional post-hoc internal-routing diagnostics are reported in
+-Appendix~\ref{app:internal_routing}.
+-
+-
+-
++\begin{tabular}{@{}lccc@{}}
++\toprule
++Model & $E_u$ & $E_p$ & $E_u+E_p$\\
++\midrule
++Proposed, original & $0.5731\pm0.3638$ & $2.3060\pm1.3681$ & $2.8791\pm1.7269$\\
++Proposed, repaired & $0.5814\pm0.3949$ & $2.4854\pm1.4427$ & $3.0667\pm1.8373$\\
++Dense, active-matched & $\mathbf{0.2446\pm0.0323}$ & $\mathbf{1.0805\pm0.1946}$ & $\mathbf{1.3251\pm0.2268}$\\
++Structured, original & $0.5178\pm0.2667$ & $2.3489\pm1.1688$ & $2.8666\pm1.4342$\\
++Structured, repaired & $0.5429\pm0.2783$ & $2.3168\pm1.0315$ & $2.8598\pm1.3081$\\
++\bottomrule
++\end{tabular}
++\end{table}
++
++The Dense control is more accurate than both proposed configurations at
++$K=24$ and $K=48$ (Appendix~\ref{app:circular}). The routing-free
++structured control is close to the proposed model. Thus this study does
++not identify sparse local routing as a source of Periodic accuracy under
++the matched active-parameter budget.
++
++A checkpoint audit found that the original Circular quadratic branches
++remained zero because both multiplicative factors were initialized at
++zero. Keeping one factor random activates the branch but does not improve
++Periodic accuracy consistently. For Hopf, two of six repaired FP32 runs
++still develop non-finite gradients, leaving two accepted seeds per
++architecture. We report their errors as accepted-only descriptive
++statistics, not complete three-seed estimates.
++
++A regularized polynomial OpInf adaptation is competitive on Hopf
++($K=24$ joint error $0.03870\%$) but performs poorly on Periodic
++($114.0941\%$). Its pressure map, derivative estimation, and validation
++search are documented in Appendix~\ref{app:circular}; these results do
++not establish a general advantage over the OpInf method family.
++
++\paragraph{Computational scope.}
++Per-decision active parameter counts characterize conditional execution,
++not latency. A batch-one native Circular Periodic $K=48$ rollout with
++physical decoding takes a median $2.1848$ s for proposed, compared with
++$0.6579$ s for Dense. This diagnostic excludes initialization, outer
++routing, descriptor construction, and fusion. It therefore provides
++neither an end-to-end runtime nor a FOM speedup
++(Appendix~\ref{app:parameter_counts}).
+--- before/sections\method.tex
++++ after/sections\method.tex
+@@ -19,7 +19,7 @@
+ 
+ \subsection{Regime-local hybrid specialists}
+ 
+-Within each chart, a projected Galerkin backbone describes the resolved dynamics, while a learned closure accounts for the unresolved reduced dynamics:
++For the additive hybrid instances, a projected Galerkin backbone describes the resolved dynamics, while a learned closure accounts for the unresolved reduced dynamics:
+ \begin{equation}
+   \dot{\bm a}^{(r)}=
+   \underbrace{\bm c_r+\bm A_r\bm a^{(r)}+
+@@ -28,7 +28,7 @@
+   +\bm\rho^u_{\theta_r}(\bm\xi^{(r)}).
+   \label{eq:main_specialist}
+ \end{equation}
+-The learned term $\bm\rho^u_{\theta_r}$ is the velocity closure associated with chart $r$. Its input $\bm\xi^{(r)}$ collects standardized local state variables, the projected right-hand side, the physical parameter, and a short history of preceding states.
++The centered-square overlap evaluator uses a data-only advancement path for its Hopf candidate; the precise scope of this exception is documented in Appendix~\ref{app:implementation}. The learned term $\bm\rho^u_{\theta_r}$ is the velocity closure associated with chart $r$. Its input $\bm\xi^{(r)}$ collects standardized local state variables, the projected right-hand side, the physical parameter, and a short history of preceding states.
+ 
+ Separate sparse MoE maps are used for the velocity correction $\bm\rho^u_{\theta_r}$ and the learned pressure correction $\bm\rho^p_{\theta_r}$:
+ \begin{equation}
+@@ -37,7 +37,7 @@
+   \sum_{e\in\mathcal T_2^c}\omega^c_e E^c_{e,m^\star}(\bm\xi).
+   \label{eq:main_inner_moe}
+ \end{equation}
+-Routing is hierarchical within each specialist. An expert group $m^\star$ is selected by a chart-local router or predetermined for a single-group or fixed-group specialist. Within that group, the velocity and pressure channels $c\in\{u,p\}$ independently select their two highest-scoring routed experts, while a shared expert remains active. The nonnegative weights $\omega_e^c$ are normalized over the active experts. Each active expert combines a nonlinear feature-conditioned branch with explicit linear and low-rank quadratic responses of the local reduced state; the exact parameterization is given in Appendix~\ref{app:specialists}.
++Routing is hierarchical within each specialist. An expert group $m^\star$ is selected by a chart-local router or predetermined for a single-group or fixed-group specialist. Within that group, the velocity and pressure channels $c\in\{u,p\}$ independently select their two highest-scoring routed experts, while a shared expert remains active. The nonnegative weights $\omega_e^c$ are normalized over the active experts. The parameterization allows nonlinear, explicit linear, and low-rank quadratic branches (Appendix~\ref{app:specialists}). A checkpoint audit found the quadratic branch inactive in the original Circular models; its initialization repair and comparative results are reported in Appendix~\ref{app:circular}. These original results therefore do not establish a benefit from the explicit quadratic branch.
+ 
+ After advancing velocity over one reduced time step, pressure is reconstructed algebraically as
+ \begin{equation}
+@@ -79,7 +79,7 @@
+ \]
+ The probabilities are evaluated once and remain fixed throughout the rollout. The outer router does not use physical history. Chart-independent descriptors extracted from the initial history $\mathcal H_n$ enter only the T2-C gate described below.
+ 
+-A validation-supported applicability mask $m_r(\mathcal H_n,\mu,K)\in\{0,1\}$ marks whether specialist $r$ is applicable for the current parameter, initial history, and rollout horizon. The mask restricts the candidate set but does not modify the E2 probability
++In the evaluated Square overlaps, the cache supplies a fixed adjacent candidate pair. The more general interface is expressed through a validation-supported applicability mask $m_r(\mathcal H_n,\mu,K)\in\{0,1\}$ marks whether specialist $r$ is applicable for the current parameter, initial history, and rollout horizon. The mask restricts the candidate set but does not modify the E2 probability
+ model itself. Under hard Top-1 routing, only the applicable specialist with the largest E2 probability is advanced.
+ 
+ When an adjacent pair is applicable ($S$--$H$ or $H$--$P$), both specialists are initialized from the same physical history, encoded in
+@@ -95,6 +95,15 @@
+   \right).
+   \label{eq:main_t2c}
+ \end{equation}
+-Here $\Delta_\psi=c_\psi([\widetilde\mu;\bm d_n])$ is a learned logit correction based on the standardized parameter and the chart-independent physical-history descriptor $\bm d_n$, and $\sigma$ denotes the sigmoid. The scalar $\alpha$ is computed once for the prediction window and is shared by velocity and pressure. The field vector $\bm q$ collects reconstructed velocity and gauge-corrected pressure on the common physical mesh.
++We use ordered pairs $(r,s)=(S,H)$ and $(P,H)$, so $\alpha$ weights Steady and Periodic, respectively. Here $\Delta_\psi=c_\psi([\widetilde\mu;\bm d_n])$ is a learned logit correction based on the standardized parameter and the eight-dimensional chart-independent physical-history descriptor $\bm d_n$, and $\sigma$ denotes the sigmoid. The scalar $\alpha$ is computed once for the prediction window and is shared by velocity and pressure. The field vector $\bm q$ collects reconstructed velocity and gauge-corrected pressure on the common physical mesh.
+ 
+ The two local trajectories remain independent throughout the rollout: fusion is applied only to their reconstructed outputs and is never fed back into either specialist. If no specialist is applicable, the method abstains from producing a ROM prediction. Applicability is determined empirically from validation support and should not be interpreted as a formal stability guarantee.
++
++
++\paragraph{Scope of physical consistency.}
++Output fusion preserves a common linear constraint only when both
++candidates satisfy it under the same discrete operator. It does not in
++general preserve nonlinear momentum or PPE constraints. Energy and
++residual identities, together with their assumptions, are given in
++Appendix~\ref{app:fusion_consistency}; measured FVM residuals and long-time
++phase consistency are not established by the present error tables.

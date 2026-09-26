@@ -1,0 +1,22 @@
+{
+  "grid": [
+    1536,
+    1024
+  ],
+  "width": 32,
+  "modes": 12,
+  "FP32": true,
+  "training_step_seconds": [
+    0.09950443264096975,
+    0.09921289701014757,
+    0.0992187699303031
+  ],
+  "forward_seconds": [
+    0.03896450251340866,
+    0.038794863037765026,
+    0.038792974315583706
+  ],
+  "scope": "warm resource probe only on validation field, weights discarded; not formal model training",
+  "full_validation_48windows_K48_serial_forward_estimate_seconds": 89.38336443901062,
+  "training_4000_optimizer_updates_estimate_hours": 0.11024307770033677
+}

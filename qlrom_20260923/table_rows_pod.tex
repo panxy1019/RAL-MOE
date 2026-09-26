@@ -1,0 +1,16 @@
+% Component rows
+Proposed, original & $0.5731\pm 0.3638$ & $2.3060\pm 1.3681$ & $1.0107\pm 0.6513$ & $3.9337\pm 2.5070$ \\
+Dense, active-matched & $0.2446\pm 0.0323$ & $1.0805\pm 0.1946$ & $0.4790\pm 0.1208$ & $1.9208\pm 0.5391$ \\
+Structured, original & $0.5178\pm 0.2667$ & $2.3489\pm 1.1688$ & $1.0405\pm 0.5015$ & $4.2406\pm 2.0664$ \\
+OpInf & $15.8676$ & $98.2264$ & $17.6639$ & $97.3258$ \\
+ql-ROM-style (fixed POD space) & $2.1005\pm 0.0218$ & $20.6947\pm 0.0818$ & $3.9869\pm 0.1316$ & $24.6263\pm 0.2534$ \\
+
+% Joint-error rows
+Proposed, original & $2.8791\pm 1.7269$ & $4.9443\pm 3.1576$ \\
+Dense, active-matched & $1.3251\pm 0.2268$ & $2.3998\pm 0.6599$ \\
+Structured, original & $2.8666\pm 1.4342$ & $5.2810\pm 2.5679$ \\
+OpInf & $114.0941$ & $114.9897$ \\
+ql-ROM-style (fixed POD space) & $22.7952\pm 0.1000$ & $28.6132\pm 0.3802$ \\
+
+% Suggested caption
+Errors against the common training-only POD-reconstructed reference on the same 32 frozen Circular Periodic windows. A single autonomous 48-output rollout provides both horizons. Errors are averaged over output times, windows within each Reynolds number, and equally weighted Reynolds numbers, followed by the mean and sample standard deviation across three neural-training or clustering seeds. All 32 windows complete for every seed; OpInf is deterministic. Neural-training and clustering randomness are not paired. The ql-ROM-style baseline is independently implemented within the inherited fixed 32-dimensional POD space, with eight local charts of rank 16 and an inherited algebraic PPE; it is not a full-physical-space reproduction of ql-ROM. Pressure is independently area-mean centered for prediction and reference.

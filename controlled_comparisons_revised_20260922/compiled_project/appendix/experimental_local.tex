@@ -1,0 +1,157 @@
+\section{Local prediction: protocols, controls, and robustness}
+\label{app:local_evidence}
+
+\subsection{Circular-cylinder controlled reevaluation}
+\label{app:circular}
+
+\paragraph{Evaluation and aggregation protocol.}
+The neural study uses seeds 1248, 1600, and 2026.
+Hopf has 42 windows from
+$Re=47.081355,49.022357,51.786450$; Periodic has 32 windows from
+$Re=70.314635,100.352251,149.059229,189.862278$.
+Each window contains 48 prediction steps, with $K=24$ using its
+first 24 steps. Relative physical-field errors are averaged over
+steps, then windows within each Reynolds number, then equally over
+Reynolds numbers. Means and sample standard deviations are computed
+over accepted seeds. Reference fields are reconstructed from true
+POD coefficients on the corresponding basis.
+Only checkpoints accepted by the original validation rule are
+evaluated on held-out windows.
+Table~\ref{tab:specialist_training} describes the archived original
+training configurations, not the selected checkpoints of every
+repeated run.
+
+Dense matches active neural parameter count, not total stored
+parameters or execution time. Structured removes input-dependent
+expert routing while retaining explicit response branches.
+Neither is identical to the older Vanilla-FNN-MoE or Global MoE
+configuration. The present protocol does not retroactively validate
+the earlier Circular min--max summaries or establish the identity
+of the unresolved Steady comparison.
+Joint errors and their interpretation are reported once in
+Table~\ref{tab:circular_full_reorg} and the accompanying main-text
+discussion; the supplementary table below supplies component errors.
+
+\begin{table}[t]
+\centering
+\small
+\setlength{\tabcolsep}{3.5pt}
+\caption{Circular Periodic component errors (\%). Neural entries
+are mean $\pm$ sample standard deviation over three accepted seeds.
+OpInf is deterministic. Joint errors are reported in the main-text
+comparison and are not repeated here. Components and joint values
+are independently rounded.}
+\label{tab:circular_full}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& \multicolumn{2}{c}{$K=24$} & \multicolumn{2}{c}{$K=48$}\\
+\cmidrule(lr){2-3}\cmidrule(l){4-5}
+Model & $E_u$ & $E_p$ & $E_u$ & $E_p$\\
+\midrule
+Proposed, original
+& $0.5731\pm0.3638$ & $2.3060\pm1.3681$
+& $1.0107\pm0.6513$ & $3.9337\pm2.5070$\\
+Proposed, repaired
+& $0.5814\pm0.3949$ & $2.4854\pm1.4427$
+& $1.1040\pm0.7840$ & $4.4282\pm2.8786$\\
+Dense, active-matched
+& $0.2446\pm0.0323$ & $1.0805\pm0.1946$
+& $0.4790\pm0.1208$ & $1.9208\pm0.5391$\\
+Structured, original
+& $0.5178\pm0.2667$ & $2.3489\pm1.1688$
+& $1.0405\pm0.5015$ & $4.2406\pm2.0664$\\
+Structured, repaired
+& $0.5429\pm0.2783$ & $2.3168\pm1.0315$
+& $0.9983\pm0.4944$ & $4.0693\pm1.8827$\\
+OpInf & 15.8676 & 98.2264 & 17.6639 & 97.3258\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\paragraph{Quadratic-factor initialization.}
+For a multiplicative response
+$(\bm v_1^\top\bm s)(\bm v_2^\top\bm s)$, the gradient of either
+factor contains the other factor. Initializing both at zero therefore
+prevents learning in this branch.
+Each accepted original Hopf Proposed checkpoint contains 28
+quadratic-factor tensors, all zero. Each original Periodic Proposed
+checkpoint contains 84, and each Periodic Structured checkpoint
+contains four, also all zero.
+The repaired initialization preserves a random factor and zeros
+only its partner. Smoke training updates all 14 factor pairs for
+Hopf Proposed, 42 for Periodic Proposed, and two for Periodic
+Structured. This check measures branch learning activity, separately
+from the accuracy comparison in the main text.
+
+\paragraph{Training completion and validation acceptance.}
+Table~\ref{tab:hopf_completion} records the attempted Hopf campaigns.
+Acceptance requires a usable run and the prescribed validation rule;
+a missing accepted checkpoint is not automatically a divergent
+held-out rollout. The original Dense control also has two accepted
+seeds out of three.
+
+\begin{table}[t]
+\centering
+\small
+\caption{Hopf completion and validation acceptance over three
+attempted seeds per architecture. AMP and FP32 are separate repaired
+campaigns, not pooled repeats.}
+\label{tab:hopf_completion}
+\begin{tabular}{@{}lccp{5.8cm}@{}}
+\toprule
+Configuration & Proposed & Structured & Failure or rejection\\
+\midrule
+Original & 2/3 & 3/3 & Proposed seed 1600 not accepted by validation\\
+Repaired, AMP & 0/3 & 0/3 & Non-finite gradients\\
+Repaired, FP32 & 2/3 & 2/3 & Proposed 2026: step 3220;
+Structured 1248: step 2860, both during $K=4$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The FP32 preflight covers 116 combinations of 29 training parameters
+and four curriculum lengths. Passing it does not guarantee finite
+gradients later in optimization.
+The repaired FP32 training-failure rate is $1/3$ per architecture
+($2/6$ pooled across these two configurations). The earlier AMP
+campaign failed for all six attempts and is not pooled with FP32.
+Original validation rejection is distinct from non-finite-gradient
+training failure. Failed seeds are not replaced by post-hoc retries
+in the reported statistics.
+
+\paragraph{OpInf adaptation and validation.}
+The regularized polynomial model uses constant, linear, compact
+quadratic, standardized $1/Re$, and parameter--state interaction
+features. Training-trajectory derivatives are estimated by
+second-order numerical differentiation.
+Ridge regularization is selected on validation windows, with a
+non-finite window invalidating a candidate.
+Prediction uses fixed RK4 with four substeps per output interval.
+Pressure is an algebraic ridge output using the same polynomial
+features rather than the proposed PPE-plus-correction map.
+Test windows, reference reconstructions, and quadrature match the
+neural comparison. The upper endpoint of the Periodic ridge search
+is 100. This is a task-specific adaptation, not a reproduction of
+every implementation detail of an external method.
+
+\subsection{Archived Pinball local predictions}
+\label{app:pinball}
+
+The POD--DeepONet baseline provides a complementary comparison between
+one-step prediction and autonomous rollout. It attains $E_u=1.5921\%$ and $E_p=23.3447\%$ on 4,228 held-out input--output pairs, but only 1 of 28 held-out trajectories completes the prescribed autonomous rollout evaluation. This difference illustrates that one-step accuracy does not by itself imply reliable autonomous prediction. Because the POD--DeepONet evaluation uses a different temporal cadence from
+the Periodic specialist, it is used only for this comparison of one-step prediction and autonomous rollout and not as a cadence-matched long-horizon accuracy baseline.
+
+\paragraph{Periodic-core evaluation protocol.}
+The $K=32$ Periodic result in Table~\ref{tab:pinball_autonomous} corresponds to the standard periodic evaluation. We additionally report a longer $K=56$ evaluation restricted to the Periodic-core final-test trajectories. The full-order snapshots are stored every $0.25$ physical time units; subsampling every fourth snapshot gives an effective interval $\Delta t=1$, matching the Periodic specialist's native history cadence. The $K=56$ setting therefore provides a longer autonomous evaluation within the same periodic regime without changing the specialist representation or
+sampling convention.
+
+
+\paragraph{Predictor identity and interpretation.}
+The Periodic autonomous values are associated with Deep-FNN-H3.
+Formal Pinball outer-candidate seals identify all three local
+candidates as Deep-FNN-H3, but do not resolve every earlier standalone
+Steady/Hopf table row. Table~\ref{tab:pinball_autonomous} is retained
+as an archived comparison, not a matched ablation of adding sparse
+MoE to bare Galerkin. Its finite evaluation lengths do not prove
+arbitrary-time stability. No baseline Steady error is inferred from
+the missing entry.

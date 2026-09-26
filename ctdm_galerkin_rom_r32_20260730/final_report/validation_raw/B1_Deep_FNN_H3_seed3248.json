@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "split": "validation",
+  "variant": "b1",
+  "model_name": "B1_Deep_FNN_H3",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B1_Deep_FNN_H3_seed3248/best_validation.pt",
+  "checkpoint_sha256": "3c3355f1dddca772949897796a021627254c34531ff80d76cf601adc59291c77",
+  "checkpoint_step": 6800,
+  "seed": 3248,
+  "main_warmup_length": 3,
+  "main": {
+    "aggregate": {
+      "Eu": 0.0002648589215823449,
+      "Ep": 0.00087589246686548,
+      "Ea": 0.04126911796629429,
+      "Eb": 0.12130222469568253,
+      "terminal_Eu": 0.0005255889846011996,
+      "terminal_Ep": 0.0014465932617895305,
+      "worst_window_joint": 0.0018295388435944915,
+      "pressure_drift": 0.0052892062813043594,
+      "finite_fraction_min": 1.0,
+      "divergent_windows": 0,
+      "available_re_count": 2,
+      "requested_re_count": 2
+    },
+    "by_re": [
+      {
+        "Re": 46.7,
+        "warmup_length": 3,
+        "windows": 3,
+        "available": true,
+        "Eu": 0.0002051766641670838,
+        "Ep": 0.0009817632380872965,
+        "Ea": 0.03810759261250496,
+        "Eb": 0.10279291868209839,
+        "terminal_Eu": 0.0003196852048859,
+        "terminal_Ep": 0.0010036261519417167,
+        "worst_window_joint": 0.0012086003553122282,
+        "pressure_drift": 0.005622836761176586,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0046316385269165,
+        "joint_K1": 0.001544516533613205,
+        "joint_K4": 0.0008922164561226964,
+        "joint_K8": 0.0008341578068211675,
+        "joint_K16": 0.0010934490710496902,
+        "joint_K32": 0.001240184297785163,
+        "joint_K56": 0.0013233113568276167
+      },
+      {
+        "Re": 56.543246,
+        "warmup_length": 3,
+        "windows": 16,
+        "available": true,
+        "Eu": 0.00032454117899760604,
+        "Ep": 0.0007700216956436634,
+        "Ea": 0.04443064332008362,
+        "Eb": 0.13981153070926666,
+        "terminal_Eu": 0.0007314927643164992,
+        "terminal_Ep": 0.0018895603716373444,
+        "worst_window_joint": 0.0018295388435944915,
+        "pressure_drift": 0.004955575801432133,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0018922090530396,
+        "joint_K1": 0.0005622808821499348,
+        "joint_K4": 0.00043949513928964734,
+        "joint_K8": 0.0004264416638761759,
+        "joint_K16": 0.0005378372734412551,
+        "joint_K32": 0.0010359433945268393,
+        "joint_K56": 0.0026210532523691654
+      }
+    ]
+  },
+  "capacity_warmup_diagnostics": {},
+  "timestep_consistency": [
+    {
+      "Re": 46.7,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 5.5743264965713024e-05,
+      "C_p": 0.00018604486831463873,
+      "C_S": NaN,
+      "windows": 3
+    },
+    {
+      "Re": 46.7,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 4.7771609388291836e-05,
+      "C_p": 0.00015153254207689315,
+      "C_S": NaN,
+      "windows": 3
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 0.0005508721806108952,
+      "C_p": 0.0022812767419964075,
+      "C_S": NaN,
+      "windows": 4
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 0.00019148201681673527,
+      "C_p": 0.0008453945047222078,
+      "C_S": NaN,
+      "windows": 4
+    }
+  ],
+  "memory_diagnostics": [],
+  "elapsed_seconds": 8.311513246968389,
+  "training_performance": {
+    "elapsed_seconds": 4638.004606817383,
+    "optimizer_steps": 8000,
+    "steps_per_minute": 103.49278206719545,
+    "peak_gpu_memory_gb": 0.23898983001708984
+  },
+  "gate_manifest": null
+}

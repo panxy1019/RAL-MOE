@@ -1,0 +1,13 @@
+{
+  "Re": 100.0,
+  "time": 100.0,
+  "velocity_rank": 28,
+  "pressure_rank": 24,
+  "direct_rhs_norm": 0.03324598331692981,
+  "tensor_rhs_norm": 0.033353529116322965,
+  "tensor_vs_direct_relative_l2": 0.07630102328943443,
+  "state_norm": 0.24099634703835396,
+  "pressure_coefficient_norm": 0.0748878577770541,
+  "validation_loaded": false,
+  "heldout_loaded": false
+}

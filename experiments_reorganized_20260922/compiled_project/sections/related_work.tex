@@ -1,0 +1,25 @@
+\section{Related Work}
+\paragraph{Projection, learned dynamics, and autonomous rollout.}
+POD--Galerkin methods project the governing equations onto a reduced basis and retain an explicit reduced dynamical system \citep{sirovich1987,berkooz1993,benner2015}. Their long-horizon accuracy can deteriorate when truncated interactions are not adequately represented, motivating closure and stabilization strategies
+\citep{amsallem2012}. Non-intrusive and data-driven ROMs instead infer reduced evolution laws directly from simulation data, ranging from projection-based operator inference to neural and latent-state dynamics
+\citep{peherstorfer2016,hesthaven2018,champion2019,lee2020, pan2024domain,park2024}. Operator-inference methods provide a particularly direct connection between data-driven reduced dynamics and classical projection-based ROMs \citep{peherstorfer2016}. Neural-operator approaches learn mappings between function spaces rather than explicit low-dimensional state evolution\citep{lu2021,kovachki2023}. Hybrid ROMs retain projected or physics-based structure while learning missing or unresolved reduced dynamics \citep{duraisamy2019,fresca2022,dar2023}. RAL-MoE-ROM follows this hybrid principle, but places a structured sparse-MoE correction inside each regime-local ROM and trains the resulting specialist under multi-step  autonomous rollout.
+
+
+
+\paragraph{Localized representations and local reduced dynamics.}
+Localization has been explored through parameter-dependent reduced bases, localized operators and nonlinear manifolds \citep{amsallem2008,peherstorfer2014,kaiser2014,li2021cluster,diaz2024,bhat2025}. These approaches all reduce the burden on a single global representation, differing in whether localization is performed along parameter, state, or spatial coordinates. Recent work has further emphasized explicitly local reduced dynamics. More recently, ql-ROM partitions the solution manifold into clusters, constructs an intrusive ROM within each cluster, and connects the local models through assignment and change-of-basis operations
+\citep{colanera2025}. Therefore, when complete local ROMs are constructed independently, their reduced coordinates and operators need not be directly compatible, so switching or combining them requires an explicit coordination mechanism. RAL-MoE-ROM takes a different approach: instead of coordinating local models in reduced-coordinate space, it lets local specialists evolve independently in their native coordinates and combines neighboring predictions only after reconstruction in the common physical space.
+
+
+
+
+
+\paragraph{Mixture-of-experts and cross-chart assembly.}
+Classical hierarchical mixtures learn conditional expert assignments \citep{jacobs1991,jordan1994}, while sparse MoE architectures activate only a subset of experts for each input \citep{shazeer2017,fedus2022}. MoE-based conditional specialization has also been introduced into scientific machine learning, including physics-informed constraints, 
+neural-operator pretraining, and PDE forecasting
+\citep{ICLR2024_9aeda582,NEURIPS2024_b83fae17,
+NEURIPS2025_2d23a999,ICLR2026_754612bd}. These methods demonstrate the value of conditional specialization, but do
+not address routing among complete autonomous ROMs. RAL-MoE-ROM therefore applies router  at two levels: sparse experts model unresolved dynamics within each local ROM, while an outer router acts on the complete regime-local specialists. The outer level selects a single specialist or an
+applicable neighboring pair, with the latter combined through a history-conditioned gate after physical reconstruction.
+
+

@@ -1,0 +1,23 @@
+\section{Related Work}
+\paragraph{Projection, learned dynamics, and autonomous rollout.}
+POD--Galerkin methods project the governing equations onto a data-adapted basis and retain an explicit reduced dynamical system \citep{sirovich1987,berkooz1993,benner2015}. Their long-horizon accuracy can deteriorate when truncated interactions are not adequately represented, motivating closure and stabilization strategies
+\citep{amsallem2012}. Non-intrusive reduced models instead infer reduced evolution laws directly from simulation data, ranging from projection-based operator inference to neural and latent-state dynamics
+\citep{peherstorfer2016,hesthaven2018,champion2019,lee2020, pan2024domain,park2024}. Operator-inference methods provide a particularly direct connection between data-driven reduced dynamics and classical projection-based ROMs \citep{kramer2024}. Related neural-operator approaches learn mappings between function spaces
+rather than explicit low-dimensional state evolution \citep{lu2021,kovachki2023}. Hybrid ROMs retain projected or physics-based structure while learning missing or unresolved reduced dynamics \citep{duraisamy2019,brunton2020,fresca2022,dar2023,geelen2023,manti2025}. RAL-MoE-ROM follows this hybrid principle, but places a structured sparse-MoE correction inside each regime-local ROM and trains the resulting specialist under closed-loop rollout, explicitly targeting autonomous multi-step prediction.
+
+
+
+
+\paragraph{Localized representations and conditional dynamics.}
+Local reduced bases, clustering strategies, localized operators, nonlinear manifolds, and parameter-space partitioning have been used to reduce the representational burden placed on a single global ROM \citep{amsallem2008,peherstorfer2014,kaiser2014,li2021cluster,diaz2024,bhat2025}. Recent work has further emphasized explicitly local reduced dynamics. In particular, ql-ROM partitions the solution manifold into clusters, constructs an intrusive ROM within each cluster, and connects the local models through assignment and change-of-basis operations
+\citep{colanera2025}. These approaches motivate local reduced representations over restricted regions of parameter or state space, but they also introduce a coordination problem because independently constructed local models generally differ in
+their mean fields, bases, scalings, and reduced operators. RAL-MoE-ROM addresses this issue differently: each reduced chart is paired with a complete autonomous specialist, the specialists retain independent coordinates during rollout, and cross-regime coupling is performed only after reconstruction in the common physical space. The resulting problem is therefore not merely one of selecting a local basis or switching between local coordinates, but of assembling independently evolved local dynamical systems.
+
+
+
+
+
+
+\paragraph{Mixture-of-experts and cross-chart assembly.}
+Classical hierarchical mixtures learn conditional expert assignments \citep{jacobs1991,jordan1994}, while sparse MoE architectures activate only a subset of experts for each input \citep{shazeer2017,fedus2022}. Many widely used MoE formulations specialize predictors or operator blocks that operate within a shared latent representation or a common output space. Recent work extends conditional specialization to physics-informed constraints, local implicit representations, neural-operator pretraining, and PDE forecasting \citep{ICLR2024_9aeda582,NEURIPS2024_b83fae17,NEURIPS2025_2d23a999,ICLR2026_754612bd}. These approaches demonstrate the value of conditional specialization, but they do not address the same cross-chart assembly problem considered here. RAL-MoE-ROM places conditional computation at two distinct levels: sparse experts operate within a single local coordinate system, while the outer routing level acts on complete local ROMs whose coordinates are constructed independently. When two local models are combined, they are evolved independently and
+combined only after reconstruction in physical space, rather than by interpolating their reduced coefficients or operators. This distinction separates the present setting from standard within-representation MoE routing.

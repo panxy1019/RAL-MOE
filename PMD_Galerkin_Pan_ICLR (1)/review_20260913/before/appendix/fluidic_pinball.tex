@@ -1,0 +1,36 @@
+\section{Fluidic-pinball results}
+\label{app:pinball}
+
+The POD--DeepONet baseline provides a complementary comparison between
+one-step fitting and recursive prediction. It attains $E_u=1.5921\%$ and $E_p=23.3447\%$ on 4,228 held-out input--output pairs, but only 1 of 28 held-out trajectories completes the prescribed recursive evaluation. This difference illustrates that one-step accuracy does not by itself imply reliable autonomous prediction. Because the POD--DeepONet evaluation uses a different temporal cadence from
+the Periodic specialist, it is used only for this one-step-versus-recursive comparison and not as a cadence-matched long-horizon accuracy baseline.
+
+\paragraph{Periodic-core evaluation protocol.}
+The $K=32$ Periodic result in Table~\ref{tab:pinball_autonomous} corresponds to the standard periodic evaluation. We additionally report a longer $K=56$ evaluation restricted to the Periodic-core final-test trajectories. The full-order snapshots are stored every $0.25$ physical time units; subsampling every fourth snapshot gives an effective interval $\Delta t=1$, matching the Periodic specialist's native history cadence. The $K=56$ setting therefore provides a longer autonomous evaluation within the same periodic regime without changing the specialist representation or
+sampling convention.
+
+\begin{table}[h]
+\centering
+\caption{
+Fluidic-pinball overlap joint errors (\%). For $S$--$H$, Candidate~1 is the Steady specialist and Candidate~2 is Hopf; for $H$--$P$, Candidate~1 is the Periodic specialist and Candidate~2 is Hopf.
+The convex oracle selects its weight a posteriori for each evaluation window and is unavailable during prediction.
+}
+\label{tab:pinball_overlap}
+\small
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{lrccccc}
+\toprule
+Overlap & $K$ & Cand.~1 & Cand.~2 & E2 prob. & T2-C & Oracle \\
+\midrule
+$S$--$H$ & 24 & 0.6014 & 3.1925 & 1.7511 & 0.5897 & \mathbf{0.5889} \\
+$S$--$H$ & 56 & 0.6927 & 3.1193 & 1.7714 & 0.6767 & \mathbf{0.6763} \\
+$H$--$P$ & 24 & 0.0990 & 0.5146 & 0.2972 & 0.0945 & \mathbf{0.0928} \\
+$H$--$P$ & 56 & 0.1028 & 0.5346 & 0.3085 & 0.0978 & \mathbf{0.0955} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+T2-C improves upon Candidate~1 in all four overlap evaluations.
+The relative reductions in joint error are approximately $1.9\%$ and
+$2.3\%$ for $S$--$H$ at $K=24$ and $K=56$, and $4.5\%$ and $4.9\%$
+for $H$--$P$, respectively. Although these gains are more modest than those observed for the centered-square benchmark, they persist at both rollout horizons. T2-C also remains close to the corresponding window-wise convex oracle, indicating that the learned correction captures most of the available benefit from convex physical-space assembly in these overlap evaluations.

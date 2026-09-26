@@ -1,0 +1,25 @@
+{
+  "seconds": [
+    2.126090543344617,
+    2.1242087250575423,
+    2.1268060049042106,
+    2.1235978584736586,
+    2.1217634985223413,
+    2.1280233869329095,
+    2.127964995801449,
+    2.1244492419064045,
+    2.127561313100159,
+    2.1319250585511327
+  ],
+  "median_seconds": 2.1264482741244137,
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "peak_allocated_bytes": 204238336,
+  "peak_reserved_bytes": 218103808,
+  "warmups": 3,
+  "repeats": 10,
+  "batch": 1,
+  "horizon": 48,
+  "includes": "native modal rollout, feature building, host/device transfers, pressure reconstruction in modal coordinates",
+  "excludes": "checkpoint/data loading, physical-field decoding, error computation",
+  "caveat": "Galerkin native NumPy path runs on CPU; this is native implementation timing, not GPU-kernel parity"
+}

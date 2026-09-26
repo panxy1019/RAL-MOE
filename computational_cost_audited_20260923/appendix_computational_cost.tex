@@ -1,0 +1,185 @@
+% Replace appendix/experimental_cost.tex. All existing reference labels
+% and archived numerical results are retained. A separate latency audit
+% is described without replacing the original timing table.
+\section{Computational cost and timing boundaries}
+\label{app:parameter_counts}
+
+The computational cost of a sparse reduced model depends on both the
+parameters selected by its routers and the implementation used to
+advance and reconstruct the flow. We therefore examine parameter
+utilization and measured prediction time separately. The Circular H/P
+specialists provide the parameter comparison, while Circular Periodic
+is used to compare local prediction costs and to place the measured
+ROM time in the context of a historical full-order simulation.
+
+\subsection{Parameter utilization}
+
+Table~\ref{tab:parameter_counts} compares the total trainable capacity
+of each specialist with the parameters active in one prediction-path
+routing decision. The active count includes the encoder and refinement
+blocks, executed routers, the selected group's shared experts,
+channel-specific Top-2 experts, and learned pressure correction.
+Each trainable parameter is counted once. Fixed POD bases, projected
+operators, normalization statistics, and non-trainable buffers are
+excluded. The count refers to a batch-size-one decision, rather than
+the union of parameters used over a trajectory or all integration stages.
+
+\begin{table}[tbp]
+\centering
+\caption{Total trainable capacity and per-decision active parameters
+of the Circular specialists. The active fraction measures parameter
+utilization, not the fraction of total runtime or memory consumption.}
+\label{tab:parameter_counts}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Specialist & Total trainable & Active prediction & Active fraction\\
+\midrule
+Hopf & 31,810,392 & 14,165,816 & 44.53\%\\
+Periodic & 48,617,547 & 8,308,959 & 17.09\%\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The Periodic specialist has more total trainable parameters than Hopf
+but uses fewer in each analyzed decision. This illustrates the
+distinction between available model capacity and the capacity selected
+for an individual prediction. It does not establish a corresponding
+reduction in floating-point operations or wall-clock time. In particular,
+the Dense control is matched to the active neural parameter budget,
+not to the full sparse model's parameter count. A smaller active fraction
+therefore does not, by itself, imply less computation than this control.
+
+\subsection{Local prediction time}
+\label{app:cost_local_latency}
+
+To test whether sparse parameter use translates into lower latency,
+we compare the native Circular Periodic implementation with Dense and
+Structured for seed 1248, batch size one, and a $K=48$ rollout.
+The three original-initialization checkpoints use the same held-out
+window, reduced velocity/pressure dimensions of 32, three-frame history,
+and four-stage RK4 integration. FP32 neural inference runs on an RTX 4090
+with a Xeon Platinum 8358P host, while the NumPy Galerkin computation
+and physical decoding run on the CPU. This local benchmark uses two
+CPU numerical threads, inference mode, and CUDA synchronization before
+and after each timed repetition.
+Table~\ref{tab:local_latency} reports median times from ten repetitions
+following three warm-up runs. The timed prediction path includes modal
+advancement, feature generation, data transfers, algebraic pressure
+reconstruction, decoding of all predicted fields, and pressure gauge
+correction. Physical-history encoding, model and data loading, error
+evaluation, and the outer E2/descriptor/T2-C pipeline are excluded.
+The measurements thus compare local prediction paths rather than
+single network evaluations or the complete hierarchy.
+
+\begin{table}[tbp]
+\centering\small
+\caption{Circular Periodic local prediction cost at $K=48$.
+Times are medians over ten repetitions after three warm-ups.
+Memory is peak allocated GPU memory in bytes, excluding host memory;
+the last column normalizes latency by Dense.}
+\label{tab:local_latency}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Model & Median time (s) & GPU peak (bytes) & Time / Dense\\
+\midrule
+Proposed & 2.1848 & 204,238,336 & 3.32\\
+Dense & 0.6579 & 43,111,936 & 1.00\\
+Structured & 0.8652 & 43,316,736 & 1.32\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The sparse implementation takes $3.32$ times as long as Dense and also
+has higher peak allocated GPU memory; Structured is intermediate in
+latency. Thus the reduced active fraction in
+Table~\ref{tab:parameter_counts} does not translate into a measured
+runtime or memory advantage over these controls. A separate reproduction
+using the same checkpoints and execution logic gives medians of
+$2.1587$, $0.6486$, and $0.8714$ s for Proposed, Dense, and Structured,
+respectively, all within $1.5\%$ of the archived values. The ordering
+is therefore reproduced; Table~\ref{tab:local_latency} retains the
+original measurements rather than mixing the two timing runs.
+
+A subsequent execution audit helps explain why sparse activation does
+not translate into lower latency here. Each rollout evaluates the model
+192 times. Proposed genuinely skips unselected expert forwards: each
+evaluation executes one shared and two routed experts per channel.
+Nevertheless, this produces 1,152 expert forwards per rollout, compared
+with 384 non-routed expert forwards for Structured and 192 joint
+correction-network forwards for Dense. These calls involve different
+networks, so their counts do not establish a FLOP ratio; they show that
+matching active parameters does not match the executed computational
+structure.
+
+The sparse dispatch also introduces work absent from the controls.
+Each evaluation runs the group router and all six channel routers
+(three groups in each of two channels), even though experts are executed
+only in the selected group. Across the rollout, the trace records
+1,344 Top-k calls and 3,456 GPU scalar reads associated with Python
+checks of group and expert activation, introducing synchronization and
+fine-grained dispatch overhead. In contrast, all three models share
+the same 192 CPU Galerkin evaluations, 48 algebraic pressure-baseline
+evaluations, and explicit host/device transfer counts and byte volumes.
+The common CPU Galerkin and explicit transfer path therefore cannot
+alone explain the latency gap; the distinguishing work includes the
+larger number of expert calls, all-group channel routing, and sparse
+dispatch checks.
+
+These observations identify additional execution work, not a precise
+allocation of the slowdown to independent causes. Profiling was
+performed separately from the repeated benchmark, and the instrumented
+modal outputs matched the uninstrumented outputs exactly. Profiler
+intervals are nested and incur instrumentation overhead, so they are
+not summed or substituted for the wall times in the table. No optimized
+implementation was benchmarked in this audit, and the removable share
+of the overhead remains unmeasured. The result consequently describes
+the current implementation rather than an inherent speed ordering of
+sparse and dense architectures.
+
+\subsection{Comparison with a historical full-order simulation}
+\label{app:cost_fom_reference}
+
+The comparison with Dense addresses the cost of the local architecture;
+a separate comparison with CFD addresses the cost of replacing a
+full-order simulation by reduced prediction. For this purpose, we time
+the original Circular Periodic specialist with physical-history encoding
+and history right-hand-side construction included. At
+$\mathrm{Re}=70.314635$, the first fixed valid $K=48$ window extends
+from $t=1384.49597$ to $1983.19690$, covering $598.70093$ physical time
+units. The input consists of three POD-reconstructed history frames on
+97,368 points, and all 48 velocity and pressure predictions are decoded
+with pressure gauge correction. The model and inputs are already
+resident in memory, so history acquisition and loading are not timed.
+
+On an RTX 4090 with a Xeon Platinum 8358P host, one CPU numerical
+thread, and batch size one, ten CUDA-synchronized repetitions after
+three warm-ups give a median of $2.18747$ s (mean $2.18729$ s, sample
+standard deviation $0.00462$ s, range $2.18034$--$2.19550$ s).
+This differs from Table~\ref{tab:local_latency} because the timing
+boundary additionally includes the physical-input processing.
+The corresponding production OpenFOAM interval contains 4,692 solver
+steps and a ClockTime difference of 1,996 s. Its endpoints agree with
+the ROM interval to within $2.3\times10^{-5}$ physical time units,
+consistent with stored timestamp precision.
+
+The ratio $1996/2.18747\simeq912.5$ shows that this warm local ROM
+prediction takes substantially less wall time than the corresponding
+historical CFD interval. It is nevertheless not a hardware-matched
+benchmark. The FOM ran as one process on a Core i5-14600K VMware host
+with 16 vCPUs and at most five concurrent cases; that configuration
+was identified retrospectively, and only one FOM timing realization
+is available. The FOM interval includes native field writes, whereas
+the ROM measurement excludes prediction writes, E2 selection,
+descriptor construction, and T2-C fusion. FOM meshing, initialization,
+periodic detection, and subsequent VTK/NPZ conversion are outside the
+recorded interval, while offline ROM construction and training are
+outside the prediction timing.
+
+These differences limit the ratio to a historical FOM/warm-specialist
+reference for this case. It neither measures the cost of advancing and
+combining two specialists nor establishes a hardware-independent
+end-to-end speedup. Taken together, the measurements distinguish two
+findings: the local ROM is inexpensive relative to this historical CFD
+run, but its current sparse implementation is more expensive than the
+Dense and Structured controls. Neither finding implies a runtime result
+for Square or Pinball.
