@@ -1,0 +1,348 @@
+{
+  "profiler_wall_seconds": 3.6939126010984182,
+  "warning": "Profiler overhead; not a speed benchmark. Nested inclusive ranges and CPU/GPU time must not be summed.",
+  "calls": {
+    "native_rollout": 1,
+    "integration_step": 48,
+    "model_outputs": 192,
+    "galerkin_rhs": 192,
+    "features": 192,
+    "encoder": 192,
+    "module:encoder": 192,
+    "closure_confidence_head": 192,
+    "module:closure_confidence_head": 192,
+    "group_router": 192,
+    "module:group_router": 192,
+    "topk_router": 1344,
+    "velocity_channel_router": 576,
+    "module:velocity_group_routers.0": 192,
+    "velocity_routed_expert": 384,
+    "module:velocity_expert_groups.0.2": 96,
+    "module:velocity_expert_groups.0.5": 96,
+    "velocity_shared_expert": 192,
+    "module:velocity_shared_experts.0": 96,
+    "module:velocity_group_routers.1": 192,
+    "module:velocity_group_routers.2": 192,
+    "pressure_channel_router": 576,
+    "module:pressure_group_routers.0": 192,
+    "pressure_routed_expert": 384,
+    "module:pressure_expert_groups.0.3": 96,
+    "module:pressure_expert_groups.0.5": 96,
+    "pressure_shared_expert": 192,
+    "module:pressure_shared_experts.0": 96,
+    "module:pressure_group_routers.1": 192,
+    "module:pressure_group_routers.2": 192,
+    "pressure_surrogate": 48,
+    "module:velocity_expert_groups.1.0": 60,
+    "module:velocity_expert_groups.1.1": 61,
+    "module:velocity_shared_experts.1": 61,
+    "module:pressure_expert_groups.1.2": 20,
+    "module:pressure_expert_groups.1.5": 61,
+    "module:pressure_shared_experts.1": 61,
+    "module:pressure_expert_groups.1.3": 18,
+    "module:pressure_expert_groups.1.4": 7,
+    "module:velocity_expert_groups.2.0": 31,
+    "module:velocity_expert_groups.2.1": 35,
+    "module:velocity_shared_experts.2": 35,
+    "module:pressure_expert_groups.2.2": 19,
+    "module:pressure_expert_groups.2.5": 35,
+    "module:pressure_shared_experts.2": 35,
+    "module:pressure_expert_groups.1.0": 6,
+    "module:pressure_expert_groups.2.3": 16,
+    "module:pressure_expert_groups.1.1": 10,
+    "module:velocity_expert_groups.2.5": 4,
+    "module:velocity_expert_groups.1.5": 1
+  },
+  "events": [
+    {
+      "key": "audit.native_rollout",
+      "count": 1,
+      "self_cpu_us": 2070.4240000001155,
+      "cpu_total_us": 3612451.5300000003,
+      "self_device_us": 0.0,
+      "device_total_us": 175075.1300000147
+    },
+    {
+      "key": "audit.integration_step",
+      "count": 48,
+      "self_cpu_us": 6418.8800000024785,
+      "cpu_total_us": 3610381.106,
+      "self_device_us": 0.0,
+      "device_total_us": 175075.1300000147
+    },
+    {
+      "key": "audit.model_outputs",
+      "count": 192,
+      "self_cpu_us": 346285.11499997217,
+      "cpu_total_us": 3502039.7139999988,
+      "self_device_us": 0.0,
+      "device_total_us": 175075.1300000147
+    },
+    {
+      "key": "audit.galerkin_rhs",
+      "count": 192,
+      "self_cpu_us": 329878.52200000046,
+      "cpu_total_us": 329878.52200000046,
+      "self_device_us": 0,
+      "device_total_us": 0
+    },
+    {
+      "key": "audit.features",
+      "count": 192,
+      "self_cpu_us": 22445.705999998456,
+      "cpu_total_us": 22445.705999998456,
+      "self_device_us": 0,
+      "device_total_us": 0
+    },
+    {
+      "key": "aten::to",
+      "count": 5184,
+      "self_cpu_us": 2780.6210000019273,
+      "cpu_total_us": 69668.03400000109,
+      "self_device_us": 0.0,
+      "device_total_us": 1006.8740000147009
+    },
+    {
+      "key": "aten::_to_copy",
+      "count": 960,
+      "self_cpu_us": 44485.03000000987,
+      "cpu_total_us": 65889.91599999915,
+      "self_device_us": 0.0,
+      "device_total_us": 1006.8740000147009
+    },
+    {
+      "key": "aten::copy_",
+      "count": 4416,
+      "self_cpu_us": 21961.392999998934,
+      "cpu_total_us": 61966.322000004926,
+      "self_device_us": 4459.089000010972,
+      "device_total_us": 4459.089000010972
+    },
+    {
+      "key": "audit.model_outputs",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 3061779.006000008,
+      "device_total_us": 3061779.006000008
+    },
+    {
+      "key": "audit.encoder",
+      "count": 192,
+      "self_cpu_us": 49546.922999997674,
+      "cpu_total_us": 117217.15200000044,
+      "self_device_us": 0.0,
+      "device_total_us": 3305.0130000103236
+    },
+    {
+      "key": "audit.encoder",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 75327.90400000346,
+      "device_total_us": 75327.90400000346
+    },
+    {
+      "key": "aten::cat",
+      "count": 3072,
+      "self_cpu_us": 29169.682000005763,
+      "cpu_total_us": 46184.16300000039,
+      "self_device_us": 4761.204999992799,
+      "device_total_us": 4761.204999992799
+    },
+    {
+      "key": "audit.closure_confidence_head",
+      "count": 192,
+      "self_cpu_us": 8542.30900000711,
+      "cpu_total_us": 23201.966000002518,
+      "self_device_us": 0.0,
+      "device_total_us": 948.7810000058089
+    },
+    {
+      "key": "audit.closure_confidence_head",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 11007.232000001182,
+      "device_total_us": 11007.232000001182
+    },
+    {
+      "key": "audit.group_router",
+      "count": 192,
+      "self_cpu_us": 11520.747999997853,
+      "cpu_total_us": 33155.4349999964,
+      "self_device_us": 0.0,
+      "device_total_us": 1825.6229999965435
+    },
+    {
+      "key": "audit.group_router",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 22630.804999999338,
+      "device_total_us": 22630.804999999338
+    },
+    {
+      "key": "audit.topk_router",
+      "count": 1344,
+      "self_cpu_us": 75103.93799999924,
+      "cpu_total_us": 268970.6849999961,
+      "self_device_us": 0.0,
+      "device_total_us": 21625.409999971
+    },
+    {
+      "key": "audit.topk_router",
+      "count": 1344,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 213052.457999998,
+      "device_total_us": 213052.457999998
+    },
+    {
+      "key": "aten::topk",
+      "count": 1344,
+      "self_cpu_us": 21193.410999975007,
+      "cpu_total_us": 43098.702999996895,
+      "self_device_us": 8526.755000000732,
+      "device_total_us": 8540.066999999719
+    },
+    {
+      "key": "audit.velocity_channel_router",
+      "count": 576,
+      "self_cpu_us": 37134.57400000228,
+      "cpu_total_us": 104083.39700000167,
+      "self_device_us": 0.0,
+      "device_total_us": 5515.221999998015
+    },
+    {
+      "key": "audit.velocity_channel_router",
+      "count": 576,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 70611.60899999966,
+      "device_total_us": 70611.60899999966
+    },
+    {
+      "key": "aten::item",
+      "count": 3456,
+      "self_cpu_us": 3877.605999992171,
+      "cpu_total_us": 51722.991999984224,
+      "self_device_us": 0.0,
+      "device_total_us": 4141.9869999875955
+    },
+    {
+      "key": "aten::_local_scalar_dense",
+      "count": 3456,
+      "self_cpu_us": 16250.524999994435,
+      "cpu_total_us": 47845.38599999205,
+      "self_device_us": 4140.834999987361,
+      "device_total_us": 4141.9869999875955
+    },
+    {
+      "key": "aten::index",
+      "count": 5760,
+      "self_cpu_us": 91847.73400000973,
+      "cpu_total_us": 468784.0000000063,
+      "self_device_us": 10875.007000001671,
+      "device_total_us": 37140.84200001547
+    },
+    {
+      "key": "aten::nonzero",
+      "count": 6912,
+      "self_cpu_us": 175197.89900000003,
+      "cpu_total_us": 400388.03899999836,
+      "self_device_us": 31471.074000009292,
+      "device_total_us": 31547.89800001071
+    },
+    {
+      "key": "audit.velocity_routed_expert",
+      "count": 384,
+      "self_cpu_us": 124346.2480000197,
+      "cpu_total_us": 388574.34400000004,
+      "self_device_us": 0.0,
+      "device_total_us": 21114.988000015932
+    },
+    {
+      "key": "audit.velocity_routed_expert",
+      "count": 384,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 369261.43100000045,
+      "device_total_us": 369261.43100000045
+    },
+    {
+      "key": "audit.velocity_shared_expert",
+      "count": 192,
+      "self_cpu_us": 59539.878000005294,
+      "cpu_total_us": 188954.82100000203,
+      "self_device_us": 0.0,
+      "device_total_us": 10468.594000013516
+    },
+    {
+      "key": "audit.velocity_shared_expert",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 179630.19399999693,
+      "device_total_us": 179630.19399999693
+    },
+    {
+      "key": "audit.pressure_channel_router",
+      "count": 576,
+      "self_cpu_us": 37357.41099999155,
+      "cpu_total_us": 105334.38099999921,
+      "self_device_us": 0.0,
+      "device_total_us": 5527.105999992753
+    },
+    {
+      "key": "audit.pressure_channel_router",
+      "count": 576,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 71185.30599999716,
+      "device_total_us": 71185.30599999716
+    },
+    {
+      "key": "audit.pressure_routed_expert",
+      "count": 384,
+      "self_cpu_us": 121588.2960000145,
+      "cpu_total_us": 384503.6860000038,
+      "self_device_us": 0.0,
+      "device_total_us": 21301.672000018414
+    },
+    {
+      "key": "audit.pressure_routed_expert",
+      "count": 384,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 365597.93500000355,
+      "device_total_us": 365597.93500000355
+    },
+    {
+      "key": "audit.pressure_shared_expert",
+      "count": 192,
+      "self_cpu_us": 59617.42599999145,
+      "cpu_total_us": 188981.72599999787,
+      "self_device_us": 0.0,
+      "device_total_us": 10534.45799999783
+    },
+    {
+      "key": "audit.pressure_shared_expert",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 179814.99000000375,
+      "device_total_us": 179814.99000000375
+    },
+    {
+      "key": "audit.pressure_surrogate",
+      "count": 48,
+      "self_cpu_us": 101922.51199999891,
+      "cpu_total_us": 101922.51199999891,
+      "self_device_us": 0,
+      "device_total_us": 0
+    }
+  ],
+  "max_modal_difference_from_uninstrumented": 0.0,
+  "source_sha256": "9a57c91c8751a52926d79dcd23d72503a9edf483351e295f39779f0a4838764f"
+}

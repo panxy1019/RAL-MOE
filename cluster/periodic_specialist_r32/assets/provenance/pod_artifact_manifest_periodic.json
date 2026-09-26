@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "regime": "periodic",
+  "created_utc": "2026-07-15T17:10:05.399502+00:00",
+  "code": {
+    "path": "/cephfs/shared/V17_RegimeIndependentROM/code/build_independent_regime_pod.py",
+    "sha256": "e6c07e3a0a52be7825ea38013e9058cc3f30653cbb6bc1f225fccf7e46fd23a6"
+  },
+  "split_config_sha256": "b4b64b5cf7e63f6dd36dcc482ca3329ee13d389057fc300c1815f553dee46a74",
+  "environment": {
+    "python": "3.11.15 (main, Mar 11 2026, 17:20:07) [GCC 14.3.0]",
+    "platform": "Linux-5.4.0-216-generic-x86_64-with-glibc2.31",
+    "numpy": "2.4.4",
+    "scipy": "1.17.1",
+    "conda_default_env": null
+  },
+  "inputs": {
+    "data_dir": "/cephfs/shared/V17_RegimeIndependentROM/source_database",
+    "global_pod_dir": "/cephfs/shared/V17_RegimeIndependentROM/source_database/Global_POD_AreaWeighted_L2",
+    "global_velocity_sha256": "11633d29b3c7db8cf73a0d813504521829689f32e6e9d2d233d90062becf76c5",
+    "global_pressure_sha256": "6103c45d77da830aa5cb29f081047440ad561ec27bfad36594b381e2770abcc8",
+    "weights_sha256": "7724bbbcd37a5dd30ade862c590977401197e2640d44ce5a58aec21e9a7466df",
+    "raw_case_count": 63,
+    "raw_case_labels_sha256": "818b337b3f8b94ef56525c78cc74fa9b1f37d32cb22c70ca843a78e0feb7d20e",
+    "train_case_labels_sha256": "722b9a8d322e71dc66e08574467a921921481cba83a0fafb22701c0950afd7dd"
+  },
+  "artifacts": {
+    "velocity_pod_periodic.npz": {
+      "path": "/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic/velocity_pod_periodic.npz",
+      "bytes": 69610538,
+      "sha256": "a2c12dc3ea25772e7bd4216b37683df9dbcce804063f9900bdaebac3e25dc7a2"
+    },
+    "pressure_pod_periodic.npz": {
+      "path": "/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic/pressure_pod_periodic.npz",
+      "bytes": 36189358,
+      "sha256": "f6e0a23432581c78e9f649d60bb0fceb9087a6a1d0631778bde444338c16239f"
+    },
+    "normalization_periodic.npz": {
+      "path": "/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic/normalization_periodic.npz",
+      "bytes": 2851,
+      "sha256": "a938909e01a6f16a5310b343a91e7077f86d0ca570388f9ea134f3bd115770c2"
+    },
+    "pod_projection_diagnostics_periodic.json": {
+      "path": "/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic/pod_projection_diagnostics_periodic.json",
+      "bytes": 6360,
+      "sha256": "c6079525dd073cb0b7d4be0d26245d24e050700475bd6ddecbfef1c239585847"
+    },
+    "pod_snapshot_index.csv": {
+      "path": "/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+      "bytes": 952324,
+      "sha256": "94525b6d5b4318aa1c6f11762ef2b1021b14d6da3e12f882a48e97c6cc0dd358"
+    },
+    "pod_area_weighted_l2_metadata.json": {
+      "path": "/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic/Global_POD_AreaWeighted_L2/pod_area_weighted_l2_metadata.json",
+      "bytes": 384,
+      "sha256": "2ddaf5f4533225f3717b7e805bfee52ec000c23d6183ea404323a3efc59f06f0"
+    }
+  },
+  "leakage_audit": {
+    "fit_rows": "train only",
+    "basis_uses_validation": false,
+    "basis_uses_heldout": false,
+    "mean_uses_validation": false,
+    "mean_uses_heldout": false,
+    "normalization_uses_validation": false,
+    "normalization_uses_heldout": false
+  }
+}

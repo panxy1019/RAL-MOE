@@ -1,0 +1,57 @@
+{
+  "b1": {
+    "variant": "b1",
+    "model_name": "B1_Deep_FNN_H3",
+    "trainable_parameters": 2379284,
+    "total_parameters": 2379284,
+    "parameter_groups": {
+      "heads": 2379284
+    },
+    "runtime_memory_state_per_trajectory": 0
+  },
+  "b2": {
+    "variant": "b2",
+    "model_name": "B2_Deep_FNN_current",
+    "trainable_parameters": 1984532,
+    "total_parameters": 1984532,
+    "parameter_groups": {
+      "heads": 1984532
+    },
+    "runtime_memory_state_per_trajectory": 0
+  },
+  "b3": {
+    "variant": "b3",
+    "model_name": "B3_Discrete_KDA_FNN",
+    "trainable_parameters": 2238718,
+    "total_parameters": 2238718,
+    "parameter_groups": {
+      "memory": 168862,
+      "heads": 2069856
+    },
+    "runtime_memory_state_per_trajectory": 1024,
+    "paired_variant": "b4",
+    "paired_trainable_parameters": 2238718,
+    "paired_parameter_shapes_identical": true
+  },
+  "b4": {
+    "variant": "b4",
+    "model_name": "B4_CTDM_Galerkin_ROM",
+    "trainable_parameters": 2238718,
+    "total_parameters": 2238718,
+    "parameter_groups": {
+      "memory": 168862,
+      "heads": 2069856
+    },
+    "runtime_memory_state_per_trajectory": 1024,
+    "paired_variant": "b3",
+    "paired_trainable_parameters": 2238718,
+    "paired_parameter_shapes_identical": true
+  },
+  "b0": {
+    "variant": "b0",
+    "model_name": "B0_frozen_HPRS_MoE_ROM",
+    "trainable_parameters": 32004147,
+    "total_parameters": 32004147,
+    "runtime_memory_state_per_trajectory": 0
+  }
+}

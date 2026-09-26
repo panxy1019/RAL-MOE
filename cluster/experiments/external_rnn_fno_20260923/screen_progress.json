@@ -1,0 +1,58 @@
+{
+  "H": {
+    "LSTM": {
+      "status": "selected",
+      "config": {
+        "id": 2,
+        "width": 128,
+        "layers": 1,
+        "dropout": 0.0,
+        "lr": 0.001,
+        "weight_decay": 0.0001
+      },
+      "validation_worst": 0.42968657883644396,
+      "validation_macro": 0.350566806595
+    },
+    "GRU": {
+      "status": "selected",
+      "config": {
+        "id": 11,
+        "width": 128,
+        "layers": 2,
+        "dropout": 0.1,
+        "lr": 0.001,
+        "weight_decay": 0.0001
+      },
+      "validation_worst": 0.2700056093442067,
+      "validation_macro": 0.26929500991442384
+    }
+  },
+  "P": {
+    "LSTM": {
+      "status": "selected",
+      "config": {
+        "id": 8,
+        "width": 128,
+        "layers": 1,
+        "dropout": 0.1,
+        "lr": 0.001,
+        "weight_decay": 1e-05
+      },
+      "validation_worst": 30.26446442637604,
+      "validation_macro": 9.66167378425198
+    },
+    "GRU": {
+      "status": "selected",
+      "config": {
+        "id": 8,
+        "width": 128,
+        "layers": 1,
+        "dropout": 0.1,
+        "lr": 0.001,
+        "weight_decay": 1e-05
+      },
+      "validation_worst": 29.912399347138045,
+      "validation_macro": 9.12323402620918
+    }
+  }
+}

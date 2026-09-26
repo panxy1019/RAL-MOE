@@ -1,0 +1,32 @@
+{
+  "assets": {
+    "E2": {
+      "path": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/frozen_E2_baseline_candidate/best.pt",
+      "sha256": "f0286a9974f16b513bb42cd94232c397123dcd3e0a01eab475ff1593f7881dcd"
+    },
+    "Hopf": {
+      "path": "/root/panxy/particalMOE/Hopf/migrated_h4_expanded/runs/HopfExpanded34_H4_NormalFormRadial_r32/best_validation.pt",
+      "sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235"
+    },
+    "Periodic": {
+      "path": "/root/panxy/particalMOE/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt",
+      "sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5"
+    },
+    "Steady": {
+      "path": "/root/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s4_validation_step_1200.pt",
+      "sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d"
+    }
+  },
+  "config_sha256": {
+    "LookAheadShortRolloutRouter": "40f13526087fedfd7aae60b00b016d26e341bf49d4def162029317c686d7c87e",
+    "RiskPredictionRouter": "fe358483e7ead8cc6a6f71725234dd1ca8d654f2449a2820a108065762833c3c",
+    "T2-C_LearnedConvexCorrection_FieldBlend": "1302da2e7b8d8539eab5bf04e9d8721e703da12207ef5c0e9d95bf91fa23eeb4"
+  },
+  "created_unix": 1784728708.5059183,
+  "known_history_disclosure": "Earlier project work already reported legacy test metrics. This run is mechanically test-sealed but is not represented as a never-observed blind test.",
+  "status": "PRE_REGISTERED_PENDING_FAIL_CLOSED_PREFLIGHT",
+  "test_seal": {
+    "rule": "training and validation executables must reject split=test; a separate final evaluator may unlock only after three freeze manifests exist",
+    "state": "SEALED"
+  }
+}

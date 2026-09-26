@@ -1,0 +1,37 @@
+{
+  "created_unix": 1784724938.6073873,
+  "destination": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/frozen_E2_baseline_candidate",
+  "inventory": {
+    "DATA_AUDIT.json": {
+      "bytes": 2960,
+      "sha256": "7bf441be6c831e66f409b13ed7cd312aca5e99a2c0d4d7b15b55fc698b9d1bae",
+      "source": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/formal_E2_re_only_top1/DATA_AUDIT.json"
+    },
+    "FROZEN_CONFIG.json": {
+      "bytes": 477,
+      "sha256": "5df9dca8e91a0e80b63afde89db8a99519cfd62ef1e72fdb10a024992a3df79b",
+      "source": "generated from frozen STARTED.json and metrics.json"
+    },
+    "STARTED.json": {
+      "bytes": 397,
+      "sha256": "47d349c37e943735276afebbadb000e8f547ccb28d12acb8ed64365a8ad07928",
+      "source": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/formal_E2_re_only_top1/STARTED.json"
+    },
+    "best.pt": {
+      "bytes": 3327,
+      "sha256": "f0286a9974f16b513bb42cd94232c397123dcd3e0a01eab475ff1593f7881dcd",
+      "source": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/formal_E2_re_only_top1/best.pt"
+    },
+    "metrics.json": {
+      "bytes": 11203,
+      "sha256": "fa912cf5b103bac92ecd93317c0d6e2d25d5a9a69db88943deacb20d832adffb",
+      "source": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/formal_E2_re_only_top1/metrics.json"
+    },
+    "run_top1_experiment.py": {
+      "bytes": 21460,
+      "sha256": "25fa20abc8340f6c5fcef94cd99933974b757384cbe59b92b2bf6f76681d655d",
+      "source": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/run_top1_experiment.py"
+    }
+  },
+  "status": "FROZEN_CANDIDATE_AWAITING_UNIFIED_WRAPPER_SMOKE"
+}

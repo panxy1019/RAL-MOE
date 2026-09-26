@@ -1,0 +1,130 @@
+{
+  "created_before_optimizer_step": true,
+  "experiment": "V17 S4-Steady anchor-only controlled branch",
+  "failure_policy": "do not replace S3-B; freeze current S3-B as final Steady sub-MoE",
+  "fixed_point_anchor": {
+    "calibration": {
+      "anchor_detail": {
+        "pressure_raw_mse": 1.603954191686796e-10,
+        "velocity_raw_mse": 0.0
+      },
+      "fixed_calibration_bank_ids": [
+        640,
+        197,
+        290,
+        297,
+        802,
+        596,
+        758,
+        997,
+        721,
+        672,
+        894,
+        233,
+        1066,
+        635,
+        951,
+        754
+      ],
+      "fixed_calibration_clean_ids": [
+        109,
+        361,
+        928,
+        789,
+        536,
+        915,
+        870,
+        713,
+        597,
+        466,
+        26,
+        1042,
+        551,
+        1188,
+        542,
+        215
+      ],
+      "lambda_fixed_point": 193366295.035771,
+      "original_detail": {
+        "clean": 120.99032592773438,
+        "gain_terminal": 28.26416015625,
+        "gain_worst": 94.71625518798828,
+        "pair": 3288.510009765625
+      },
+      "original_s3b_total_grad_norm": 18.247880935668945,
+      "realized_initial_gradient_ratio": 0.075,
+      "schema_version": 1,
+      "target_gradient_ratio": 0.075,
+      "unweighted_fixed_point_grad_norm": 7.077712638192679e-09
+    },
+    "formula": "mean(||F_a(z*)-a*||_2^2/ru)+mean(||F_b(z*)-b*||_2^2/rp)",
+    "lambda": 193366295.035771,
+    "pressure_gauge": "subtract_area_mean_per_snapshot; pressure POD basis is gauge-consistent",
+    "ramp_steps": 300,
+    "target_gradient_ratio": 0.075
+  },
+  "heldout": "forbidden during training/selection; exactly once after selected checkpoint frozen",
+  "immutable_inputs": {
+    "s3b_checkpoint": {
+      "path": "/data/V17indepentMOEV2/s3_3090/runs/20260718_011714/S3-B/checkpoints/best_contraction.pt",
+      "sha256": "b85f01bfcd8c209ee4ff6fe6f2a61dfa12acbcecd83da09b153fc0f15b19c23b",
+      "step": 600
+    },
+    "training_bank": {
+      "path": "/data/V17indepentMOEV2/s3_3090/data/perturbation_bank.npz",
+      "sha256": "69fa522aa4c06f26cad26718dd99b5dcce0b7dd60c30b3efff8a31a154d891c8"
+    }
+  },
+  "protection_gate": {
+    "clean_k": [
+      1,
+      16,
+      56
+    ],
+    "clean_physical_velocity_pressure_max_relative_degradation": 0.05,
+    "divergent_windows": 0,
+    "finite_fraction": 1,
+    "k16_k56_pressure_gain_median_max_exclusive": 1,
+    "k16_k56_pressure_gain_p95_max_relative_degradation": 0.05,
+    "paired_metric": "raw/area-weighted physical pressure; scales 0.5%-5%; same validation bank"
+  },
+  "schema_version": 1,
+  "selection": "among protection-pass validation checkpoints, minimize worst K16 physical pressure fixed-point residual; tie by K56 FP then K16 pressure gain P95",
+  "single_variable": "add one-step raw-POD/area-weighted-equivalent fixed-point anchor to unchanged S3-B training objective",
+  "success": {
+    "aspirational_heldout_re_below_5pct": "at least 3 of 4; reported but not required",
+    "clean_max_relative_degradation": 0.05,
+    "divergent_windows": 0,
+    "finite_fraction": 1,
+    "k16_k56_pressure_gain_median_max_exclusive": 1,
+    "p95_max_relative_degradation": 0.05,
+    "validation_and_one-time-heldout_k16_pressure_fp_worst_relative_improvement_min": 0.1
+  },
+  "success_policy": "freeze S4 only as candidate; do not start other training",
+  "training": {
+    "checkpoint_every": 200,
+    "early_stop": "after step 2400, stop on 5 protected validations without >=1% K16 pressure FP improvement or 3 consecutive >5% FP rises",
+    "initialization": "model parameters only from S3-B best_contraction step 600; optimizer/scheduler/AMP/early state reset",
+    "max_steps": 3600,
+    "minimum_steps_before_early_stop": 2400,
+    "validation_every": 200
+  },
+  "unchanged_s3b": {
+    "architecture": true,
+    "curriculum": {
+      "K16": 2000,
+      "K4": 600,
+      "K8": 1000
+    },
+    "effective_batch": 64,
+    "grad_accum": 4,
+    "lambda_pair": 2.9341519870712936e-09,
+    "learning_rate": 1.5516372391099407e-05,
+    "micro_batch": 16,
+    "normalization": true,
+    "normalized_pair_training_loss": true,
+    "perturbation_bank": true,
+    "pod": true,
+    "split": true
+  }
+}

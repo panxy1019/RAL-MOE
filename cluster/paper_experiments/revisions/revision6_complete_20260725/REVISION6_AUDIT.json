@@ -1,0 +1,30 @@
+{
+  "schema": "revision6_complete_manuscript_audit/v1",
+  "output": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision6_complete_20260725\\manuscript\\NUMERICAL_EXPERIMENTS_DRAFT_REVISION6_COMPLETE.md",
+  "inputs": {
+    "revision4_manuscript": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision4_global_fusion_20260724\\manuscript\\NUMERICAL_EXPERIMENTS_DRAFT_REVISION4.md",
+      "sha256": "3845f3033d5c6312b9dcba9c1209537d81c80bf091a07b575e388e77eda7e493"
+    },
+    "revision5_supplement_report": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision5_supplemental_evaluation_20260725\\reports\\REVISION5_SUPPLEMENTAL_EVALUATION_ZH.md",
+      "sha256": "12e467a88598b1c7b441e84a94378d789fb6fe25d3cfdeefd64b1e6ca09696d7"
+    }
+  },
+  "coverage": {
+    "global_k56_aggregate_physical_and_coefficient_errors": true,
+    "global_k56_per_Re": true,
+    "steady_all_split_pressure_scan": true,
+    "steady_fixed_point_qualified_cross_method_table": true,
+    "dataonly_hopf_strict_table": true,
+    "dataonly_periodic_strict_table": true,
+    "objective_claim_boundary": true,
+    "traceability_and_limits": true
+  },
+  "preserved": {
+    "revision3_sha256": "cac3130685d08a543887b8088dec48309e4c4d18e9b9b8630e72b640ac23dff8",
+    "revision4_sha256": "3845f3033d5c6312b9dcba9c1209537d81c80bf091a07b575e388e77eda7e493",
+    "revision5_full_sha256": "17366c22756d3402aabd2a896d075f444cef4d7a81697e041ceb7bae6db11f40"
+  },
+  "builder_sha256": "327654bef849c3ff6541c86d28c136905004b6fcd03ae54f8fd3935fb0f2e319"
+}

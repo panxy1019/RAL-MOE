@@ -1,0 +1,23 @@
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/evaluate_hopf_round2.py", line 41, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/evaluate_hopf_round2.py", line 35, in main
+    with torch.inference_mode():result=m.evaluate_one(B,checkpoint,controls.ROOT/'Hopf/artifacts/hopf',BASE/'trainonly_contract/trainonly_fluctuation_contract.npz',8)
+                                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/evaluate_h4_expanded.py", line 158, in evaluate_one
+    checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/torch/serialization.py", line 1530, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/torch/serialization.py", line 795, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/torch/serialization.py", line 776, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/H_proposed/1600/HopfExpanded34_H4_NormalFormRadial_r32/best_validation.pt'

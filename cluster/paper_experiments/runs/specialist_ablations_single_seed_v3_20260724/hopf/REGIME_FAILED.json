@@ -1,0 +1,11 @@
+{
+  "error": "RuntimeError('terminal method failures: {\\'vanilla-fnn\\': \"FileNotFoundError(2, \\'No such file or directory\\')\"}')",
+  "finished_unix": 1784825699.6260207,
+  "regime": "hopf",
+  "return_codes": {
+    "data-only_evaluate_test": 0,
+    "data-only_evaluate_validation": 0
+  },
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py\", line 640, in main\n    runner.run_all()\n  File \"/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py\", line 627, in run_all\n    raise RuntimeError(f\"terminal method failures: {errors}\")\nRuntimeError: terminal method failures: {'vanilla-fnn': \"FileNotFoundError(2, 'No such file or directory')\"}\n"
+}

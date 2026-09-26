@@ -1,0 +1,10 @@
+{
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/hopf_v6/hopf/vanilla-fnn/training/HopfExpanded34_H4_NormalFormRadial_r32/best_validation.pt",
+  "checkpoint_sha256": "0d7320872c8cd3492ad9822aaf6663496fb29f1754c0d97996c4fa937bf47dd8",
+  "selection": {
+    "budget_steps": 8000
+  },
+  "selection_source": "validation only",
+  "status": "FROZEN",
+  "test_read_before_freeze": false
+}

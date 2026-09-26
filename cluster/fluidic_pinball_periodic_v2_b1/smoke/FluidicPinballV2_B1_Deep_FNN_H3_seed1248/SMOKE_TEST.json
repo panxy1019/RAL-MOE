@@ -1,0 +1,67 @@
+{
+  "checks": {
+    "all_initialized_parameters_finite": true,
+    "checkpoint_roundtrip": true,
+    "forward_backward_finite": true,
+    "future_truth_not_used_as_model_input": true,
+    "macro_boundary_single_update": true,
+    "memory_fp32_under_amp": true,
+    "memory_reset_and_no_cross_trajectory_leak": true,
+    "reset_determinism": true,
+    "rk4_memory_frozen": true,
+    "shape_contract": true
+  },
+  "passed": true,
+  "rows": [
+    {
+      "gradient_norms": {
+        "fnn": 11.803607940673828,
+        "kda_projection": 0.0,
+        "tau_beta": 0.0
+      },
+      "horizon": 4,
+      "loss": 74.20924377441406,
+      "memory_dtype": null,
+      "memory_updates": 0,
+      "parts": {
+        "coeff": 4.812435463463771e-07,
+        "dynamics": 2.708920419536298e-06,
+        "energy": 9.263444455953618e-10,
+        "memory": 0.0,
+        "pressure": 133.87374877929688,
+        "pressure_gate_mean": 0.98828125,
+        "radial": 0.0,
+        "rollout_p": 4.208554267883301,
+        "rollout_u": 2.3180040997772267e-08,
+        "total": 74.20924377441406
+      },
+      "stage_memory_mutations": 0
+    },
+    {
+      "gradient_norms": {
+        "fnn": 17.100862503051758,
+        "kda_projection": 0.0,
+        "tau_beta": 0.0
+      },
+      "horizon": 8,
+      "loss": 74.21520233154297,
+      "memory_dtype": null,
+      "memory_updates": 0,
+      "parts": {
+        "coeff": 1.2383853800201905e-06,
+        "dynamics": 6.850912541267462e-06,
+        "energy": 2.2085886453027115e-09,
+        "memory": 0.0,
+        "pressure": 133.88455200195312,
+        "pressure_gate_mean": 0.98828125,
+        "radial": 0.0,
+        "rollout_p": 4.20863151550293,
+        "rollout_u": 6.666430607538132e-08,
+        "total": 74.21520233154297
+      },
+      "stage_memory_mutations": 0
+    }
+  ],
+  "schema_version": 1,
+  "variant": "b1"
+}

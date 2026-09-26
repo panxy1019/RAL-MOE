@@ -1,0 +1,6 @@
+{
+  "identity": "alpha*K(u1)+(1-alpha)*K(u2)-K(alpha*u1+(1-alpha)*u2)=0.5*alpha*(1-alpha)*||u1-u2||_M^2",
+  "source": "||u1-u2||^2 recovered exactly as q11+q22-2*q12 from common-truth error quadratic statistics",
+  "meaning": "kinetic-energy deficit relative to weighted candidate energies; NOT energy error vs CFD, and NOT momentum/PPE residual",
+  "scope": "fixed cached K24 candidates and weights; no retraining"
+}

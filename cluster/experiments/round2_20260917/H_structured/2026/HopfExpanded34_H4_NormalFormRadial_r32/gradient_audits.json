@@ -1,0 +1,60 @@
+{
+  "audits": [
+    {
+      "step": 0,
+      "common_grad_norm": 32412.09375,
+      "h3_raw_grad_norm": 495929.59375,
+      "h3_weight": 0.011764123513533745,
+      "h3_weighted_ratio": 0.18,
+      "h3_raw": 204299.640625,
+      "h3_weighted": 2403.406005859375,
+      "nf_raw_grad_norm": 263.035400390625,
+      "nf_weight": 9.857865020356245,
+      "nf_weighted_ratio": 0.08,
+      "nf_raw": 1.1385265588760376,
+      "nf_weighted": 11.223441123962402
+    },
+    {
+      "step": 1200,
+      "common_grad_norm": 1416.78466796875,
+      "h3_raw_grad_norm": 149511.53125,
+      "h3_weight": 0.0017056961078136528,
+      "h3_weighted_ratio": 0.18,
+      "h3_raw": 150.90127563476562,
+      "h3_weighted": 0.25739172101020813,
+      "nf_raw_grad_norm": 34.171756744384766,
+      "nf_weight": 3.316855217356452,
+      "nf_weighted_ratio": 0.08,
+      "nf_raw": 1.2274879217147827,
+      "nf_weighted": 4.071399688720703
+    },
+    {
+      "step": 2800,
+      "common_grad_norm": 853.7987060546875,
+      "h3_raw_grad_norm": 8107.5927734375,
+      "h3_weight": 0.01895553560345399,
+      "h3_weighted_ratio": 0.18,
+      "h3_raw": 20.318317413330078,
+      "h3_weighted": 0.38514459133148193,
+      "nf_raw_grad_norm": 75.24315643310547,
+      "nf_weight": 0.9077754989632892,
+      "nf_weighted_ratio": 0.08,
+      "nf_raw": 1.1874750852584839,
+      "nf_weighted": 1.0779608488082886
+    },
+    {
+      "step": 4800,
+      "common_grad_norm": 2667.042236328125,
+      "h3_raw_grad_norm": 18671.533203125,
+      "h3_weight": 0.025711204936880113,
+      "h3_weighted_ratio": 0.18,
+      "h3_raw": 5.33526611328125,
+      "h3_weighted": 0.13717612624168396,
+      "nf_raw_grad_norm": 47.616390228271484,
+      "nf_weight": 4.480880834161703,
+      "nf_weighted_ratio": 0.08000000000000002,
+      "nf_raw": 1.2087535858154297,
+      "nf_weighted": 5.416280746459961
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "experiments": [
+    {
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "failure_reason": "RuntimeError('vanilla_train_s2 returned 1')",
+      "method": "vanilla-fnn",
+      "regime": "steady",
+      "result_directory": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/steady/vanilla-fnn",
+      "status": "FAILED",
+      "test_complete": false,
+      "validation_evaluation_complete": false,
+      "validation_selection": null
+    },
+    {
+      "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/steady/data-only/training/best_validation.pt",
+      "checkpoint_sha256": "9d7f2c1bd2eb92d6c0b8137cc8a0abd7d7b44db6896238a0593cd54a11e9ed16",
+      "failure_reason": null,
+      "method": "data-only",
+      "regime": "steady",
+      "result_directory": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/steady/data-only",
+      "status": "DONE",
+      "test_complete": true,
+      "validation_evaluation_complete": true,
+      "validation_selection": {
+        "budget_steps": 11000
+      }
+    },
+    {
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "failure_reason": "FileNotFoundError(2, 'No such file or directory')",
+      "method": "vanilla-fnn",
+      "regime": "hopf",
+      "result_directory": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/hopf/vanilla-fnn",
+      "status": "FAILED",
+      "test_complete": false,
+      "validation_evaluation_complete": false,
+      "validation_selection": null
+    },
+    {
+      "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v2/hopf/dataonly/seed_1248/best_validation.pt",
+      "checkpoint_sha256": "0d02a1d2e0e69cd370388e4548e7be9a2081a82004ff72cd98935debce1f7012",
+      "failure_reason": null,
+      "method": "data-only",
+      "regime": "hopf",
+      "result_directory": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/hopf/data-only",
+      "status": "DONE",
+      "test_complete": true,
+      "validation_evaluation_complete": true,
+      "validation_selection": {
+        "adopted_completed_training": true,
+        "best_step": 7600,
+        "final_step": 8000
+      }
+    },
+    {
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "failure_reason": "RuntimeError('vanilla_preflight_rollout_smoke returned 1')",
+      "method": "vanilla-fnn",
+      "regime": "periodic",
+      "result_directory": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/periodic/vanilla-fnn",
+      "status": "FAILED",
+      "test_complete": false,
+      "validation_evaluation_complete": false,
+      "validation_selection": null
+    },
+    {
+      "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/periodic/data-only/training/best_validation.pt",
+      "checkpoint_sha256": "7a65e7fe8db4ea5d0022bc30cb86d14aa7654a91e81b6f0756b12c409a04bada",
+      "failure_reason": null,
+      "method": "data-only",
+      "regime": "periodic",
+      "result_directory": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/periodic/data-only",
+      "status": "DONE",
+      "test_complete": true,
+      "validation_evaluation_complete": true,
+      "validation_selection": {
+        "budget_steps": 10080
+      }
+    }
+  ]
+}

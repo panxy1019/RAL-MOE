@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "variant": "b2",
+  "shape_forward_backward": true,
+  "checkpoint_roundtrip": true,
+  "memory_fp32": true,
+  "continuous_memory_joint_rk4": true,
+  "discrete_memory_one_macro_update": true,
+  "rows": [
+    {
+      "horizon": 4,
+      "loss": 356.2443542480469,
+      "gradient_norm": 1011.1062622070312,
+      "parts": {
+        "Ea": 11.061627388000488,
+        "Eb": 627.5845947265625,
+        "Eu_modal": 2.3228371901495848e-06,
+        "Ep_modal": 0.11798529326915741,
+        "memory": 0.0,
+        "total": 356.2443542480469
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0
+    },
+    {
+      "horizon": 8,
+      "loss": 352.8828125,
+      "gradient_norm": 1039.4071044921875,
+      "parts": {
+        "Ea": 26.552892684936523,
+        "Eb": 593.3065185546875,
+        "Eu_modal": 8.3529157564044e-06,
+        "Ep_modal": 0.11916626989841461,
+        "memory": 0.0,
+        "total": 352.8828125
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0
+    },
+    {
+      "horizon": 16,
+      "loss": 382.15191650390625,
+      "gradient_norm": 1066.996337890625,
+      "parts": {
+        "Ea": 53.78099060058594,
+        "Eb": 597.01708984375,
+        "Eu_modal": 2.9599463232443668e-05,
+        "Ep_modal": 0.12135796993970871,
+        "memory": 0.0,
+        "total": 382.15191650390625
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0
+    },
+    {
+      "horizon": 32,
+      "loss": 471.84674072265625,
+      "gradient_norm": 1127.2371826171875,
+      "parts": {
+        "Ea": 78.95475006103516,
+        "Eb": 714.327392578125,
+        "Eu_modal": 0.0001028356928145513,
+        "Ep_modal": 0.12521177530288696,
+        "memory": 0.0,
+        "total": 471.84674072265625
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0
+    },
+    {
+      "horizon": 56,
+      "loss": 498.7089538574219,
+      "gradient_norm": 1150.9207763671875,
+      "parts": {
+        "Ea": 74.30421447753906,
+        "Eb": 771.6222534179688,
+        "Eu_modal": 0.00028261783882044256,
+        "Ep_modal": 0.12995466589927673,
+        "memory": 0.0,
+        "total": 498.7089538574219
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0
+    }
+  ],
+  "checkpoint_sha256": "1d8e56be91ceb2cfeeb2f182ec88745e2ca4b4b83a741173fd6a5ac762378943"
+}

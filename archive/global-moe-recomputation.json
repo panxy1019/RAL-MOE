@@ -1,0 +1,40 @@
+{
+  "passed": true,
+  "target_step_keys": 3552,
+  "actual_step_keys": 3552,
+  "unique_windows": 74,
+  "finite_rows": 3552,
+  "independent_summary": [
+    {
+      "regime": "Hopf",
+      "K": 24,
+      "Eu": 0.019680197522882158,
+      "Ep": 0.11172059298587012,
+      "joint": 0.13140079050875228
+    },
+    {
+      "regime": "Hopf",
+      "K": 48,
+      "Eu": 0.022527934061142254,
+      "Ep": 0.10735667133284967,
+      "joint": 0.1298846053939919
+    },
+    {
+      "regime": "Periodic",
+      "K": 24,
+      "Eu": 0.5388970031525808,
+      "Ep": 2.174639136801159,
+      "joint": 2.7135361399537397
+    },
+    {
+      "regime": "Periodic",
+      "K": 48,
+      "Eu": 0.8062417212766395,
+      "Ep": 3.0927257623462365,
+      "joint": 3.898967483622876
+    }
+  ],
+  "max_difference_vs_primary_aggregate": 8.881784197001252e-16,
+  "direct_decode_checks": 12,
+  "max_cross_basis_vs_direct_difference_percentage_points": 1.3329282122498398e-11
+}

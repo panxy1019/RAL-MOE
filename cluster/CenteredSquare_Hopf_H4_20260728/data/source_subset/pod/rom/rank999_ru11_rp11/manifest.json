@@ -1,0 +1,57 @@
+{
+  "A_all_shape": [
+    23,
+    11,
+    11
+  ],
+  "G_u_shape": [
+    11,
+    11
+  ],
+  "H_p_shape": [
+    11,
+    11,
+    11
+  ],
+  "H_shape": [
+    11,
+    11,
+    11
+  ],
+  "H_tilde_shape": [
+    11,
+    11,
+    11
+  ],
+  "L_shape": [
+    11,
+    11
+  ],
+  "P_shape": [
+    11,
+    11
+  ],
+  "c_all_shape": [
+    23,
+    11
+  ],
+  "cond_G_u": 1.0000000054587899,
+  "dataset": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf",
+  "eig_L_max": -0.061253226197061424,
+  "eig_L_min": -7.404211030759088,
+  "finite": true,
+  "label": "rank999",
+  "max_abs_G_u_minus_I": 1.7910621874506205e-09,
+  "norm_H_fro": 3.287402145176917,
+  "norm_P_fro": 0.1227271110284991,
+  "num_cells": 9400,
+  "num_re": 23,
+  "output_dir": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/rom/rank999_ru11_rp11",
+  "pod_rank_pack": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/rom/rank999_ru11_rp11/pod_rank_pack_Re50_150_N100_rank999_ru11_rp11.npz",
+  "pressure_H_tilde_relative_residual": 1.7154183437234295e-15,
+  "pressure_tensor_file": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/rom/rank999_ru11_rp11/pressure_poisson_surrogate_tensors_Re50_150_N100_rank999_ru11_rp11.npz",
+  "rank_L": 11,
+  "rp": 11,
+  "ru": 11,
+  "velocity_tensor_file": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/rom/rank999_ru11_rp11/semi_intrusive_galerkin_tensors_Re50_150_N100_rank999_ru11_rp11_compact.npz"
+}

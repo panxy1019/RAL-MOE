@@ -1,0 +1,93 @@
+Looking in indexes: https://mirrors.aliyun.com/pypi/simple
+Collecting swanlab
+  Downloading swanlab-0.9.7-py3-none-any.whl (519 kB)
+Collecting click (from swanlab)
+  Downloading click-8.4.2-py3-none-any.whl (119 kB)
+Collecting nvidia-ml-py (from swanlab)
+  Downloading nvidia_ml_py-13.610.43-py3-none-any.whl (53 kB)
+Collecting orjson (from swanlab)
+  Downloading orjson-3.12.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (131 kB)
+Collecting platformdirs>=4.2.0 (from swanlab)
+  Downloading platformdirs-4.11.4-py3-none-any.whl (23 kB)
+Collecting protobuf!=6.31.0,<7,>=6.31.1 (from swanlab)
+  Downloading protobuf-6.33.6-cp39-abi3-manylinux2014_x86_64.whl (323 kB)
+Collecting psutil>=5.0.0 (from swanlab)
+  Downloading psutil-7.2.2-cp36-abi3-manylinux2010_x86_64.manylinux_2_12_x86_64.manylinux_2_28_x86_64.whl (155 kB)
+Collecting pwinput>=1.0.3 (from swanlab)
+  Downloading pwinput-1.0.3.tar.gz (4.4 kB)
+  Installing build dependencies: started
+  Installing build dependencies: finished with status 'done'
+  Getting requirements to build wheel: started
+  Getting requirements to build wheel: finished with status 'done'
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Collecting pydantic-settings>=2.8.1 (from swanlab)
+  Downloading pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+Collecting pydantic~=2.0 (from swanlab)
+  Downloading pydantic-2.13.4-py3-none-any.whl (472 kB)
+Collecting pyecharts>=2.0.0 (from swanlab)
+  Downloading pyecharts-2.1.0-py3-none-any.whl (161 kB)
+Collecting pyroaring<1.0.4,>=1.0.0 (from swanlab)
+  Downloading pyroaring-1.0.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 78.4 kB/s  0:00:26
+Collecting pyyaml (from swanlab)
+  Downloading pyyaml-6.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (806 kB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 806.6/806.6 kB 78.8 kB/s  0:00:10
+Collecting requests>=2.28.0 (from swanlab)
+  Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Collecting rich>=13.6.0 (from swanlab)
+  Downloading rich-15.0.0-py3-none-any.whl (310 kB)
+Collecting setuptools (from swanlab)
+  Using cached setuptools-84.0.0-py3-none-any.whl (818 kB)
+Collecting urllib3>=1.26.0 (from swanlab)
+  Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+Collecting watchdog (from swanlab)
+  Downloading watchdog-6.0.0-py3-none-manylinux2014_x86_64.whl (79 kB)
+Collecting wrapt>=1.17.0 (from swanlab)
+  Downloading wrapt-2.3.0-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (161 kB)
+Collecting annotated-types>=0.6.0 (from pydantic~=2.0->swanlab)
+  Downloading annotated_types-0.8.0-py3-none-any.whl (13 kB)
+Collecting pydantic-core==2.46.4 (from pydantic~=2.0->swanlab)
+  Downloading pydantic_core-2.46.4-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (2.1 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.1/2.1 MB 73.4 kB/s  0:00:29
+Collecting typing-extensions>=4.14.1 (from pydantic~=2.0->swanlab)
+  Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+Collecting typing-inspection>=0.4.2 (from pydantic~=2.0->swanlab)
+  Downloading typing_inspection-0.4.4-py3-none-any.whl (14 kB)
+Collecting python-dotenv>=0.21.0 (from pydantic-settings>=2.8.1->swanlab)
+  Downloading python_dotenv-1.2.3-py3-none-any.whl (22 kB)
+Collecting jinja2 (from pyecharts>=2.0.0->swanlab)
+  Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Collecting prettytable (from pyecharts>=2.0.0->swanlab)
+  Downloading prettytable-3.18.0-py3-none-any.whl (37 kB)
+Collecting simplejson (from pyecharts>=2.0.0->swanlab)
+  Downloading simplejson-4.1.1-cp311-cp311-manylinux1_x86_64.manylinux_2_28_x86_64.manylinux_2_5_x86_64.whl (180 kB)
+Collecting charset_normalizer<4,>=2 (from requests>=2.28.0->swanlab)
+  Downloading charset_normalizer-3.5.1-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (262 kB)
+Collecting idna<4,>=2.5 (from requests>=2.28.0->swanlab)
+  Downloading idna-3.19-py3-none-any.whl (68 kB)
+Collecting certifi>=2023.5.7 (from requests>=2.28.0->swanlab)
+  Downloading certifi-2026.7.22-py3-none-any.whl (136 kB)
+Collecting markdown-it-py>=2.2.0 (from rich>=13.6.0->swanlab)
+  Downloading markdown_it_py-4.2.0-py3-none-any.whl (91 kB)
+Collecting pygments<3.0.0,>=2.13.0 (from rich>=13.6.0->swanlab)
+  Downloading pygments-2.21.0-py3-none-any.whl (1.3 MB)
+     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.3/1.3 MB 78.8 kB/s  0:00:15
+Collecting mdurl~=0.1 (from markdown-it-py>=2.2.0->rich>=13.6.0->swanlab)
+  Downloading mdurl-0.1.2-py3-none-any.whl (10.0 kB)
+Collecting MarkupSafe>=2.0 (from jinja2->pyecharts>=2.0.0->swanlab)
+  Downloading markupsafe-3.0.3-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (22 kB)
+Collecting wcwidth>=0.3.5 (from prettytable->pyecharts>=2.0.0->swanlab)
+  Downloading wcwidth-0.8.2-py3-none-any.whl (323 kB)
+Building wheels for collected packages: pwinput
+  Building wheel for pwinput (pyproject.toml): started
+  Building wheel for pwinput (pyproject.toml): finished with status 'done'
+  Created wheel for pwinput: filename=pwinput-1.0.3-py3-none-any.whl size=4595 sha256=8cab16ea36e7eb4845932173f14c05dc670516269b42660d63c05c54f1524daf
+  Stored in directory: /root/.cache/pip/wheels/0f/f9/77/51b10477eb09aa316983850abd7b7c34f6a1a677f5984a4fc6
+Successfully built pwinput
+Installing collected packages: pyroaring, pwinput, nvidia-ml-py, wrapt, wcwidth, watchdog, urllib3, typing-extensions, simplejson, setuptools, pyyaml, python-dotenv, pygments, psutil, protobuf, platformdirs, orjson, mdurl, MarkupSafe, idna, click, charset_normalizer, certifi, annotated-types, typing-inspection, requests, pydantic-core, prettytable, markdown-it-py, jinja2, rich, pyecharts, pydantic, pydantic-settings, swanlab
+
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+torch 2.11.0+cu126 requires setuptools<82, but you have setuptools 84.0.0 which is incompatible.
+Successfully installed MarkupSafe-3.0.3 annotated-types-0.8.0 certifi-2026.7.22 charset_normalizer-3.5.1 click-8.4.2 idna-3.19 jinja2-3.1.6 markdown-it-py-4.2.0 mdurl-0.1.2 nvidia-ml-py-13.610.43 orjson-3.12.0 platformdirs-4.11.4 prettytable-3.18.0 protobuf-6.33.6 psutil-7.2.2 pwinput-1.0.3 pydantic-2.13.4 pydantic-core-2.46.4 pydantic-settings-2.15.0 pyecharts-2.1.0 pygments-2.21.0 pyroaring-1.0.3 python-dotenv-1.2.3 pyyaml-6.0.3 requests-2.34.2 rich-15.0.0 setuptools-84.0.0 simplejson-4.1.1 swanlab-0.9.7 typing-extensions-4.16.0 typing-inspection-0.4.4 urllib3-2.7.0 watchdog-6.0.0 wcwidth-0.8.2 wrapt-2.3.0
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.

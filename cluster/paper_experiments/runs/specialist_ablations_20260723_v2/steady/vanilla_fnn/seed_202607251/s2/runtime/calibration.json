@@ -1,0 +1,32 @@
+{
+  "fixed_batch": [
+    109,
+    361,
+    928,
+    789,
+    536,
+    915,
+    870,
+    713,
+    597,
+    466,
+    26,
+    1042,
+    551,
+    1188,
+    542,
+    215
+  ],
+  "gradient_norms": {
+    "anchor": 0.6747488975524902,
+    "base": 164.6949920654297,
+    "one": 163.40408325195312,
+    "rollout": 11627.9921875
+  },
+  "initial_model_sha256": "db3c87c62ba7676391bc7e5ddf568fbef752d323ecccb98c9ca22d990008bf1c",
+  "lambda_anchor": 12.204169037017042,
+  "lambda_rollout": 0.0014052648180105523,
+  "regime": "steady",
+  "schema_version": 1,
+  "source_experiment": "S2-B"
+}

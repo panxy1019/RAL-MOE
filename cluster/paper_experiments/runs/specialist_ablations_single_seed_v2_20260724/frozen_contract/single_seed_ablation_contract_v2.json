@@ -1,0 +1,109 @@
+{
+  "schema": "specialist_single_seed_ablation_contract/v2",
+  "frozen_on": "2026-07-24",
+  "methods": [
+    "Vanilla-FNN-MoE",
+    "DataOnly-MoE"
+  ],
+  "execution": {
+    "seed_repetitions": 1,
+    "phase_1": [
+      "steady/vanilla-fnn",
+      "hopf/vanilla-fnn",
+      "periodic/vanilla-fnn"
+    ],
+    "phase_2_dependency": "DataOnly for a regime starts only after that regime's Vanilla task is terminal and its unified rollout has returned",
+    "no_followup_seed": true,
+    "no_test_feedback": true,
+    "no_automatic_manuscript": true
+  },
+  "fixed_seeds": {
+    "steady": 202607251,
+    "hopf": 1248,
+    "periodic": 1600
+  },
+  "budgets": {
+    "steady_vanilla": "native S2 11000 optimizer steps followed by unchanged S3-B and S4 contracts",
+    "hopf_vanilla": "8000 optimizer steps",
+    "periodic_vanilla": "240 epochs",
+    "steady_data_only": "11000 optimizer steps",
+    "hopf_data_only": "8000 optimizer steps; completed seed-1248 training is adopted read-only",
+    "periodic_data_only": "10080 optimizer steps"
+  },
+  "shared_contract": {
+    "r_u": 32,
+    "r_p": 32,
+    "history_length": 3,
+    "checkpoint_selection": "validation only",
+    "evaluation_order": [
+      "freeze validation-selected checkpoint",
+      "unified validation rollout",
+      "seal thresholds and selection",
+      "single mechanical test rollout"
+    ],
+    "rollout_horizons": [
+      1,
+      4,
+      8,
+      16,
+      56
+    ],
+    "optional_horizon": 128,
+    "test_runs": 1,
+    "pressure_gauge": "reuse the exact specialist-local POD/evaluator gauge"
+  },
+  "allowlist": {
+    "vanilla-fnn": {
+      "allowed": [
+        "replace PhysicsAwareExpert special residual, explicit linear and low-rank quadratic implementation by a parameter-matched plain GELU FNN",
+        "for Hopf only, downgrade the legacy magnitude-only pre-optimizer gate to a recorded diagnostic while retaining hard NaN/Inf failure"
+      ],
+      "preserved": [
+        "complete-Re split",
+        "POD, mean and scaler",
+        "router and expert count",
+        "input features and history",
+        "RK4, Galerkin and pressure closure",
+        "loss, curriculum, optimizer budget and validation selector"
+      ]
+    },
+    "data-only": {
+      "allowed": [
+        "direct discrete POD-state mapping",
+        "remove continuous RHS, RK4, Galerkin and fixed pressure/physics operators",
+        "remove physics residual losses and physics-operator input features"
+      ],
+      "preserved": [
+        "complete-Re split",
+        "specialist-local POD state",
+        "router topology and expert count",
+        "history length",
+        "validation-only checkpoint selection",
+        "same final physical-field metric contract"
+      ]
+    }
+  },
+  "immutable_proposed_checkpoints": {
+    "steady": {
+      "sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d"
+    },
+    "hopf": {
+      "sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235"
+    },
+    "periodic": {
+      "sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5"
+    }
+  },
+  "legacy_runs": {
+    "preserve": true,
+    "exclude_repeated_seed_1348_from_new_matrix": true,
+    "adopt_hopf_data_only_seed_1248_training": true,
+    "adopted_best_validation_step": 7600,
+    "adopted_final_step": 8000
+  },
+  "terminal_artifacts_only": [
+    "READY_FOR_OBJECTIVE_REPORT.json",
+    "FINAL_EXECUTION_MATRIX.json",
+    "FINAL_RETURN_CODES.json"
+  ]
+}

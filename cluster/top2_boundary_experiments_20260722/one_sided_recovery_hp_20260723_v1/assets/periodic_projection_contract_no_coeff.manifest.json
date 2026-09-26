@@ -1,0 +1,29 @@
+{
+  "excluded_members": [
+    "coeff_uv",
+    "coeff_p"
+  ],
+  "included_members": [
+    "Re_labels",
+    "Re_values",
+    "centering",
+    "fit_split",
+    "mean_p_regime",
+    "mean_uv_regime",
+    "phi_p",
+    "phi_uv",
+    "point_areas",
+    "points",
+    "pressure_gauge",
+    "regimes",
+    "split_by_Re",
+    "sqrt_point_areas"
+  ],
+  "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_hp_20260723_v1/assets/periodic_projection_contract_no_coeff.npz",
+  "output_sha256": "663fe53aaed012ca4ec8ba9fd851136b1d6a596c9ea4de39896c829d5918aa76",
+  "schema": "periodic_projection_contract/v1",
+  "source_pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+  "source_pressure_sha256": "f6e0a23432581c78e9f649d60bb0fceb9087a6a1d0631778bde444338c16239f",
+  "source_velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+  "source_velocity_sha256": "a2c12dc3ea25772e7bd4216b37683df9dbcce804063f9900bdaebac3e25dc7a2"
+}

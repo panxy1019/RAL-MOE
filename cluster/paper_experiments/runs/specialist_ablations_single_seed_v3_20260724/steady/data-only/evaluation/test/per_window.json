@@ -1,0 +1,167 @@
+[
+  {
+    "Re": 24.630435943603516,
+    "divergent": true,
+    "finite": true,
+    "horizon": 1,
+    "joint_field_error": 32.94591586806498,
+    "pressure_physical_relative_l2": 65.88997639466164,
+    "start_index": 130,
+    "start_time": 1198.671875,
+    "velocity_physical_relative_l2": 0.0018553414683127644
+  },
+  {
+    "Re": 24.630435943603516,
+    "divergent": true,
+    "finite": true,
+    "horizon": 4,
+    "joint_field_error": 66.31411267944351,
+    "pressure_physical_relative_l2": 132.62392310330176,
+    "start_index": 130,
+    "start_time": 1198.671875,
+    "velocity_physical_relative_l2": 0.004302255585262257
+  },
+  {
+    "Re": 24.630435943603516,
+    "divergent": true,
+    "finite": true,
+    "horizon": 8,
+    "joint_field_error": 93.27403556594673,
+    "pressure_physical_relative_l2": 186.54422244711262,
+    "start_index": 130,
+    "start_time": 1198.671875,
+    "velocity_physical_relative_l2": 0.003848684780847569
+  },
+  {
+    "Re": 24.630435943603516,
+    "divergent": true,
+    "finite": true,
+    "horizon": 16,
+    "joint_field_error": 97.49523478661075,
+    "pressure_physical_relative_l2": 194.98742613699125,
+    "start_index": 130,
+    "start_time": 1198.671875,
+    "velocity_physical_relative_l2": 0.003043436230256608
+  },
+  {
+    "Re": 24.630435943603516,
+    "divergent": true,
+    "finite": true,
+    "horizon": 56,
+    "joint_field_error": 136.37988802256618,
+    "pressure_physical_relative_l2": 272.7546541666622,
+    "start_index": 130,
+    "start_time": 1198.671875,
+    "velocity_physical_relative_l2": 0.005121878470188685
+  },
+  {
+    "Re": 32.74006652832031,
+    "divergent": true,
+    "finite": true,
+    "horizon": 1,
+    "joint_field_error": 11.25842483790158,
+    "pressure_physical_relative_l2": 22.51604433196794,
+    "start_index": 388,
+    "start_time": 1221.7445068359375,
+    "velocity_physical_relative_l2": 0.0008053438352215557
+  },
+  {
+    "Re": 32.74006652832031,
+    "divergent": true,
+    "finite": true,
+    "horizon": 4,
+    "joint_field_error": 25.334905410854844,
+    "pressure_physical_relative_l2": 50.66931550069764,
+    "start_index": 388,
+    "start_time": 1221.7445068359375,
+    "velocity_physical_relative_l2": 0.0004953210120467831
+  },
+  {
+    "Re": 32.74006652832031,
+    "divergent": true,
+    "finite": true,
+    "horizon": 8,
+    "joint_field_error": 27.157905967888116,
+    "pressure_physical_relative_l2": 54.315356273438375,
+    "start_index": 388,
+    "start_time": 1221.7445068359375,
+    "velocity_physical_relative_l2": 0.0004556623378556471
+  },
+  {
+    "Re": 32.74006652832031,
+    "divergent": true,
+    "finite": true,
+    "horizon": 16,
+    "joint_field_error": 25.724454389401508,
+    "pressure_physical_relative_l2": 51.4484641151339,
+    "start_index": 388,
+    "start_time": 1221.7445068359375,
+    "velocity_physical_relative_l2": 0.0004446636691122115
+  },
+  {
+    "Re": 32.74006652832031,
+    "divergent": true,
+    "finite": true,
+    "horizon": 56,
+    "joint_field_error": 51.82853019923463,
+    "pressure_physical_relative_l2": 103.65527085366095,
+    "start_index": 388,
+    "start_time": 1221.7445068359375,
+    "velocity_physical_relative_l2": 0.0017895448083009187
+  },
+  {
+    "Re": 39.68547821044922,
+    "divergent": true,
+    "finite": true,
+    "horizon": 1,
+    "joint_field_error": 7.380035983979509,
+    "pressure_physical_relative_l2": 14.760038432309681,
+    "start_index": 645,
+    "start_time": 1228.708984375,
+    "velocity_physical_relative_l2": 3.353564933640657e-05
+  },
+  {
+    "Re": 39.68547821044922,
+    "divergent": true,
+    "finite": true,
+    "horizon": 4,
+    "joint_field_error": 12.549463917975995,
+    "pressure_physical_relative_l2": 25.098805196978862,
+    "start_index": 645,
+    "start_time": 1228.708984375,
+    "velocity_physical_relative_l2": 0.00012263897312669376
+  },
+  {
+    "Re": 39.68547821044922,
+    "divergent": true,
+    "finite": true,
+    "horizon": 8,
+    "joint_field_error": 19.935063555469725,
+    "pressure_physical_relative_l2": 39.86987735742322,
+    "start_index": 645,
+    "start_time": 1228.708984375,
+    "velocity_physical_relative_l2": 0.0002497535162275816
+  },
+  {
+    "Re": 39.68547821044922,
+    "divergent": true,
+    "finite": true,
+    "horizon": 16,
+    "joint_field_error": 20.93254801902573,
+    "pressure_physical_relative_l2": 41.86476172963344,
+    "start_index": 645,
+    "start_time": 1228.708984375,
+    "velocity_physical_relative_l2": 0.0003343084180154459
+  },
+  {
+    "Re": 39.68547821044922,
+    "divergent": true,
+    "finite": true,
+    "horizon": 56,
+    "joint_field_error": 27.328789121332207,
+    "pressure_physical_relative_l2": 54.65678311396314,
+    "start_index": 645,
+    "start_time": 1228.708984375,
+    "velocity_physical_relative_l2": 0.0007951287012776375
+  }
+]

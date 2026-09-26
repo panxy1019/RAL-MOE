@@ -1,0 +1,28 @@
+{
+  "checkpoint_sha256": {
+    "Hopf": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+    "Steady": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d"
+  },
+  "files": {
+    "PER_WINDOW_S_H_CAPABILITY_SCAN.csv": "a5a944756136392a4ed78087767e4b306da3ba70a3dba41e4302294d93b40619",
+    "STARTED.json": "4c810ea1ae6b8e2e1a0aa6846775f55d14305ffba76810fa93b5a042b5249f58",
+    "S_H_CAPABILITY_CURVES.csv": "83bda464549520d3699a729f6333bb779d615445089d3eacd96c35382cbdccd1",
+    "S_H_CAPABILITY_CURVES.svg": "30cf6decafc7b4e9f48897435e5158ad2b796d9c06ee88dcee8869fddb37cfa6",
+    "S_H_CAPABILITY_SCAN.json": "fc7a0098c723ec56647be8131c972d713531c6473ddce306a71ac9bee61922fd",
+    "S_H_CAPABILITY_SCAN.md": "32ebb2f2fe0a0b75e00bd6b108d0fdf642b975024794dd0bd10992f4ea95baf3",
+    "runtime_config_migrated_paths.json": "ed543812c9dcde996eae73ecd161794719ebb525680b4f9a417b16e829e35b36"
+  },
+  "status": "FROZEN_AFTER_INDEPENDENT_VALIDATION",
+  "validation": {
+    "Re_count": 7,
+    "all_metrics_finite": true,
+    "checkpoint_hashes_unchanged": true,
+    "split_window_counts": {
+      "heldout": 12,
+      "train": 18,
+      "validation": 12
+    },
+    "window_count": 42,
+    "windows_per_Re": 6
+  }
+}

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 392, in <module>
+    orchestrate(arguments)
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 349, in orchestrate
+    raise RuntimeError(f"{class_name} native worker failed; see {log_path}")
+RuntimeError: Hopf native worker failed; see /root/panxy/particalMOE/e2_unified_validation_smoke_20260722/run4/native_hopf.log

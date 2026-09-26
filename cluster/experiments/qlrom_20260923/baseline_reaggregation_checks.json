@@ -1,0 +1,65 @@
+[
+  {
+    "method": "proposed",
+    "seed": 1248,
+    "Eu_max_abs_diff": 0.00021329058895513953,
+    "Ep_max_abs_diff": 0.00014504911002077847,
+    "note": "recomputed FP64 quadratic norm and independently centered pressure gauge; original uses its native arithmetic"
+  },
+  {
+    "method": "proposed",
+    "seed": 1600,
+    "Eu_max_abs_diff": 8.246513341259032e-05,
+    "Ep_max_abs_diff": 4.931058762736029e-05,
+    "note": "recomputed FP64 quadratic norm and independently centered pressure gauge; original uses its native arithmetic"
+  },
+  {
+    "method": "proposed",
+    "seed": 2026,
+    "Eu_max_abs_diff": 0.00043127266273579323,
+    "Ep_max_abs_diff": 0.00026654556403826746,
+    "note": "recomputed FP64 quadratic norm and independently centered pressure gauge; original uses its native arithmetic"
+  },
+  {
+    "method": "dense",
+    "seed": 1248,
+    "Eu_max_abs_diff": 9.103319906866858e-05,
+    "Ep_max_abs_diff": 5.312063309759196e-05,
+    "note": "recomputed FP64 quadratic norm and independently centered pressure gauge; original uses its native arithmetic"
+  },
+  {
+    "method": "dense",
+    "seed": 1600,
+    "Eu_max_abs_diff": 0.0001950755806188198,
+    "Ep_max_abs_diff": 0.00012091489377397124,
+    "note": "recomputed FP64 quadratic norm and independently centered pressure gauge; original uses its native arithmetic"
+  },
+  {
+    "method": "dense",
+    "seed": 2026,
+    "Eu_max_abs_diff": 4.2372345824492896e-05,
+    "Ep_max_abs_diff": 2.3649542994164108e-05,
+    "note": "recomputed FP64 quadratic norm and independently centered pressure gauge; original uses its native arithmetic"
+  },
+  {
+    "method": "structured",
+    "seed": 1248,
+    "Eu_max_abs_diff": 0.00047412692059189965,
+    "Ep_max_abs_diff": 0.0002835976446746713,
+    "note": "recomputed FP64 quadratic norm and independently centered pressure gauge; original uses its native arithmetic"
+  },
+  {
+    "method": "structured",
+    "seed": 1600,
+    "Eu_max_abs_diff": 0.0004580649848584528,
+    "Ep_max_abs_diff": 0.00027681037473570314,
+    "note": "recomputed FP64 quadratic norm and independently centered pressure gauge; original uses its native arithmetic"
+  },
+  {
+    "method": "structured",
+    "seed": 2026,
+    "Eu_max_abs_diff": 0.00018828613363996993,
+    "Ep_max_abs_diff": 0.00011724938907065052,
+    "note": "recomputed FP64 quadratic norm and independently centered pressure gauge; original uses its native arithmetic"
+  }
+]

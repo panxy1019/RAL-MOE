@@ -1,0 +1,283 @@
+{
+  "eval_re_values": [
+    24.630436,
+    32.740068,
+    39.685479,
+    45.142703,
+    47.081355,
+    49.022357,
+    51.78645,
+    70.314635,
+    100.352251,
+    149.059229,
+    189.862278,
+    34.737568,
+    36.657768,
+    38.35725,
+    40.711525,
+    41.576576
+  ],
+  "results": [
+    {
+      "K56": {
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "pressure_energy_relative_error": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 24.630435943603516,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_24p630436",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "pressure_energy_relative_error": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 32.74006652832031,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_32p740068",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "pressure_energy_relative_error": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 39.68547821044922,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_39p685479",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "pressure_energy_relative_error": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 45.142704010009766,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_45p142703",
+      "regime": "pre_hopf_steady"
+    },
+    {
+      "K56": {
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.0010787978303099224,
+        "pressure_coefficient_relative_l2": 0.3030833303928375,
+        "pressure_energy_relative_error": 0.4482110593835923,
+        "velocity_area_weighted_physical_relative_l2": 0.00029457432468053585,
+        "velocity_coefficient_relative_l2": 0.7426869869232178
+      },
+      "Re": 47.081356048583984,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_47p081355",
+      "regime": "hopf_transition"
+    },
+    {
+      "K56": {
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.0014637519744380484,
+        "pressure_coefficient_relative_l2": 0.3373985290527344,
+        "pressure_energy_relative_error": 0.5346008352779544,
+        "velocity_area_weighted_physical_relative_l2": 0.00018417743862211042,
+        "velocity_coefficient_relative_l2": 0.36906614899635315
+      },
+      "Re": 49.02235794067383,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_49p022357",
+      "regime": "hopf_transition"
+    },
+    {
+      "K56": {
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.00045959116759199993,
+        "pressure_coefficient_relative_l2": 0.9007971286773682,
+        "pressure_energy_relative_error": 0.2876838323561997,
+        "velocity_area_weighted_physical_relative_l2": 0.00010879174957783274,
+        "velocity_coefficient_relative_l2": 1.019040822982788
+      },
+      "Re": 51.78644943237305,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_51p786450",
+      "regime": "hopf_transition"
+    },
+    {
+      "K56": {
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.0510909677551489,
+        "pressure_coefficient_relative_l2": 0.17160381376743317,
+        "pressure_energy_relative_error": 0.08062608741963616,
+        "velocity_area_weighted_physical_relative_l2": 0.013027096325002374,
+        "velocity_coefficient_relative_l2": 0.1571056842803955
+      },
+      "Re": 70.31463623046875,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_70p314635",
+      "regime": "developing_periodic_shedding"
+    },
+    {
+      "K56": {
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.027063666055180177,
+        "pressure_coefficient_relative_l2": 0.08520254492759705,
+        "pressure_energy_relative_error": 0.0009690833338507611,
+        "velocity_area_weighted_physical_relative_l2": 0.006988851627331561,
+        "velocity_coefficient_relative_l2": 0.07217557728290558
+      },
+      "Re": 100.35224914550781,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_100p352251",
+      "regime": "mature_periodic_shedding"
+    },
+    {
+      "K56": {
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.018600673525856436,
+        "pressure_coefficient_relative_l2": 0.05756762623786926,
+        "pressure_energy_relative_error": 0.0027950916419377204,
+        "velocity_area_weighted_physical_relative_l2": 0.005413724580988422,
+        "velocity_coefficient_relative_l2": 0.04893334582448006
+      },
+      "Re": 149.05923461914062,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_149p059229",
+      "regime": "mature_periodic_shedding"
+    },
+    {
+      "K56": {
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.02739743594240133,
+        "pressure_coefficient_relative_l2": 0.08735789358615875,
+        "pressure_energy_relative_error": 0.03665998485291631,
+        "velocity_area_weighted_physical_relative_l2": 0.007789197293861957,
+        "velocity_coefficient_relative_l2": 0.06519202142953873
+      },
+      "Re": 189.86227416992188,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_189p862278",
+      "regime": "high_re_2d_periodic_near_modeA"
+    },
+    {
+      "K56": {
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "pressure_energy_relative_error": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 34.73756790161133,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_34p737570",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "pressure_energy_relative_error": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 36.65776824951172,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_36p657767",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "pressure_energy_relative_error": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 38.35725021362305,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_38p357249",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "pressure_energy_relative_error": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 40.711524963378906,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_40p711525",
+      "regime": "pre_hopf_steady"
+    },
+    {
+      "K56": {
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "pressure_energy_relative_error": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 41.576576232910156,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_41p576575",
+      "regime": "pre_hopf_steady"
+    }
+  ],
+  "rollout_steps": 56,
+  "runtime_seconds": 483.42895698547363,
+  "schema": "global_k56_physical_compact/v1",
+  "source_metrics": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_physical_v3/V16_1_SteadyPressureAnchor32_ru32_rp32_metrics.json",
+  "source_sha256": "9b9c042be6657dfa9f634671ffb0283f5b7ce728f35f1c6683213d73fb918a87"
+}

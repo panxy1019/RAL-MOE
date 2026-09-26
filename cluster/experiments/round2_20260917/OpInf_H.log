@@ -1,0 +1,36 @@
+{"lambda_value": 1e-10, "score": null, "failed_windows": 16, "elapsed": 0.14652013778686523}
+{"lambda_value": 1e-09, "score": null, "failed_windows": 16, "elapsed": 0.18078041076660156}
+{"lambda_value": 1e-08, "score": null, "failed_windows": 16, "elapsed": 0.22420048713684082}
+{"lambda_value": 1e-07, "score": null, "failed_windows": 16, "elapsed": 0.2955746650695801}
+{"lambda_value": 1e-06, "score": null, "failed_windows": 14, "elapsed": 0.4453463554382324}
+{"lambda_value": 9.999999999999999e-06, "score": null, "failed_windows": 5, "elapsed": 0.6688013076782227}
+{"lambda_value": 0.0001, "score": 0.1935594133967628, "failed_windows": 0, "elapsed": 0.9082298278808594}
+{"lambda_value": 0.001, "score": 0.0038677789563763237, "failed_windows": 0, "elapsed": 1.152712106704712}
+{"lambda_value": 0.01, "score": 0.004043225265004077, "failed_windows": 0, "elapsed": 1.387425184249878}
+{"lambda_value": 0.1, "score": 0.010401649519899256, "failed_windows": 0, "elapsed": 1.626028299331665}
+{"lambda_value": 1.0, "score": 0.046895717080080675, "failed_windows": 0, "elapsed": 1.8626255989074707}
+{"lambda_value": 10.0, "score": 0.13751509186336322, "failed_windows": 0, "elapsed": 2.0974597930908203}
+{"lambda_value": 100.0, "score": 0.19111812064804057, "failed_windows": 0, "elapsed": 2.344245672225952}
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/opinf_hopf_development.py", line 108, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/opinf_hopf_development.py", line 106, in main
+    (OUT/'status.json').write_text(json.dumps(dict(status='completed_development',selected_available=np.isfinite(best),best_validation_score=best if np.isfinite(best) else None,heldout_evaluated=False),indent=2))
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/json/encoder.py", line 439, in _iterencode
+    o = _default(o)
+        ^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/json/encoder.py", line 180, in default
+    raise TypeError(f'Object of type {o.__class__.__name__} '
+TypeError: Object of type bool is not JSON serializable

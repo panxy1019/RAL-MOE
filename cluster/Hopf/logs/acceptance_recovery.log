@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "counts": {
+    "all": 34,
+    "train": 29,
+    "validation": 2,
+    "test": 3
+  },
+  "validation_labels": [
+    "Re_46p700000",
+    "Re_56p543246"
+  ],
+  "test_labels": [
+    "Re_47p081355",
+    "Re_49p022357",
+    "Re_51p786450"
+  ],
+  "artifacts": {
+    "velocity_pod_hopf.npz": {
+      "sha256": "2f951192f6eeaa69e7d911aa21552454d1a99a49ab796166b4a13df16016a192",
+      "basis_shape": [
+        80,
+        194736
+      ],
+      "coefficient_shape": [
+        4800,
+        80
+      ]
+    },
+    "pressure_pod_hopf.npz": {
+      "sha256": "cc128a4361ab2a239165ac22a48407290de7d085b857bbff6726988457cfddf3",
+      "basis_shape": [
+        80,
+        97368
+      ],
+      "coefficient_shape": [
+        4800,
+        80
+      ]
+    },
+    "velocity_rom_hopf.npz": {
+      "sha256": "7d16ca813efa0f92109689a686de0c3de02cdd269a4b31029c53c3ed1309d3e9",
+      "Re_count": 34
+    },
+    "pressure_poisson_surrogate_hopf.npz": {
+      "sha256": "a6646aa3eb3814d8648293ee3cd798a6abe268bf46a79ec0c0b8b17b30aaf06d",
+      "Re_count": 34
+    }
+  }
+}

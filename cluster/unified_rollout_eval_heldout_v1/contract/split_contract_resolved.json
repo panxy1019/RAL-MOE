@@ -1,0 +1,797 @@
+{
+  "config": {
+    "schema_version": 1,
+    "contract_name": "V17_regime_independent_pod_rom_v1",
+    "split_policy": "Reynolds-number-disjoint; validation labels preregistered before local-POD diagnostics",
+    "canonical_heldout_source": "/root/moe/V17_StableAttractorPrecisionLoop/config/canonical_contract.json",
+    "pressure_gauge": "subtract_area_mean_per_snapshot",
+    "centering": "single_train_only_regime_mean",
+    "rank": 80,
+    "control_rank": 32,
+    "oversampling": 32,
+    "power_iterations": 2,
+    "seed": 20260715,
+    "validation_labels": {
+      "steady": [
+        "Re_28p695138",
+        "Re_43p797402"
+      ],
+      "hopf": [
+        "Re_50p368054",
+        "Re_56p543246"
+      ],
+      "periodic": [
+        "Re_66p970112",
+        "Re_91p792204",
+        "Re_121p050171",
+        "Re_139p642302",
+        "Re_169p244893",
+        "Re_196p160723"
+      ]
+    },
+    "heldout_labels": {
+      "steady": [
+        "Re_24p630436",
+        "Re_32p740068",
+        "Re_39p685479",
+        "Re_45p142703"
+      ],
+      "hopf": [
+        "Re_47p081355",
+        "Re_49p022357",
+        "Re_51p786450"
+      ],
+      "periodic": [
+        "Re_70p314635",
+        "Re_100p352251",
+        "Re_149p059229",
+        "Re_189p862278"
+      ]
+    },
+    "validation_rationale": "Two validation Re values span each small regime; six values span the larger periodic regime. All remaining non-heldout Re values are training cases.",
+    "rank_selection_policy": "Rank recommendations may use training spectra and training-only dynamics diagnostics; validation and heldout projection metrics are reporting-only.",
+    "global_control_policy": "Compare rank-32 local POD against the frozen existing global POD; disclose that the frozen global basis and Re-specific means were fit using all 100 Re cases."
+  },
+  "config_path": "/cephfs/shared/V17_RegimeIndependentROM/code/regime_split_config.json",
+  "config_sha256": "ea72a0a48962cc41b73c77037728c4d8387e793ac3d9ebb14e1d0a25cbf9dca2",
+  "canonical_heldout_audit": {
+    "configured_labels": [
+      "Re_100p352251",
+      "Re_149p059229",
+      "Re_189p862278",
+      "Re_24p630436",
+      "Re_32p740068",
+      "Re_39p685479",
+      "Re_45p142703",
+      "Re_47p081355",
+      "Re_49p022357",
+      "Re_51p786450",
+      "Re_70p314635"
+    ],
+    "configured_values": [
+      24.6304355074,
+      32.740068162,
+      39.6854792076,
+      45.142702578,
+      47.0813545644,
+      49.0223566571,
+      51.7864496836,
+      70.3146353337,
+      100.352251335,
+      149.059229449,
+      189.86227838
+    ],
+    "canonical_contract_checked": true,
+    "canonical_path": "/root/moe/V17_StableAttractorPrecisionLoop/config/canonical_contract.json",
+    "canonical_sha256": "e1f186354f59ee84da168b5b6948413bf128f17d37df183a17d8310b77da82f3",
+    "status": "PASS"
+  },
+  "resolved": {
+    "steady": [
+      {
+        "Re_label": "Re_20p000000",
+        "Re": 20.0,
+        "source_regime": "steady_wake",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_22p535676",
+        "Re": 22.5356758074,
+        "source_regime": "steady_wake",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_24p630436",
+        "Re": 24.6304355074,
+        "source_regime": "steady_wake",
+        "split": "heldout",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_26p667332",
+        "Re": 26.6673319278,
+        "source_regime": "steady_wake",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_28p695138",
+        "Re": 28.695137758,
+        "source_regime": "steady_wake",
+        "split": "validation",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_30p720428",
+        "Re": 30.7204283434,
+        "source_regime": "steady_wake",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_32p740068",
+        "Re": 32.740068162,
+        "source_regime": "steady_wake",
+        "split": "heldout",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_34p737570",
+        "Re": 34.7375697369,
+        "source_regime": "steady_wake",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_36p657767",
+        "Re": 36.6577674843,
+        "source_regime": "steady_wake",
+        "split": "train",
+        "snapshots": 63
+      },
+      {
+        "Re_label": "Re_38p357249",
+        "Re": 38.357249335,
+        "source_regime": "steady_wake",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_39p685479",
+        "Re": 39.6854792076,
+        "source_regime": "steady_wake",
+        "split": "heldout",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_40p711525",
+        "Re": 40.7115247449,
+        "source_regime": "pre_hopf_steady",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_41p576575",
+        "Re": 41.5765746111,
+        "source_regime": "pre_hopf_steady",
+        "split": "train",
+        "snapshots": 63
+      },
+      {
+        "Re_label": "Re_42p359071",
+        "Re": 42.3590705675,
+        "source_regime": "pre_hopf_steady",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_43p093925",
+        "Re": 43.0939251612,
+        "source_regime": "pre_hopf_steady",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_43p797402",
+        "Re": 43.7974019747,
+        "source_regime": "pre_hopf_steady",
+        "split": "validation",
+        "snapshots": 63
+      },
+      {
+        "Re_label": "Re_44p478353",
+        "Re": 44.4783532118,
+        "source_regime": "pre_hopf_steady",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_45p142703",
+        "Re": 45.142702578,
+        "source_regime": "pre_hopf_steady",
+        "split": "heldout",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_45p795194",
+        "Re": 45.7951936696,
+        "source_regime": "pre_hopf_steady",
+        "split": "train",
+        "snapshots": 64
+      },
+      {
+        "Re_label": "Re_46p440072",
+        "Re": 46.440071584,
+        "source_regime": "pre_hopf_steady",
+        "split": "train",
+        "snapshots": 64
+      }
+    ],
+    "hopf": [
+      {
+        "Re_label": "Re_47p081355",
+        "Re": 47.0813545644,
+        "source_regime": "hopf_transition",
+        "split": "heldout",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_47p722947",
+        "Re": 47.7229474482,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_48p368688",
+        "Re": 48.3686884481,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_49p022357",
+        "Re": 49.0223566571,
+        "source_regime": "hopf_transition",
+        "split": "heldout",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_49p687640",
+        "Re": 49.6876404962,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 162
+      },
+      {
+        "Re_label": "Re_50p368054",
+        "Re": 50.3680543703,
+        "source_regime": "hopf_transition",
+        "split": "validation",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_51p066785",
+        "Re": 51.066784903,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_51p786450",
+        "Re": 51.7864496836,
+        "source_regime": "hopf_transition",
+        "split": "heldout",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_52p528767",
+        "Re": 52.5287670834,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 162
+      },
+      {
+        "Re_label": "Re_53p294175",
+        "Re": 53.2941749584,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_54p081508",
+        "Re": 54.0815080552,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_54p887950",
+        "Re": 54.887950068,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_55p709610",
+        "Re": 55.709610114,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_56p543246",
+        "Re": 56.5432463134,
+        "source_regime": "hopf_transition",
+        "split": "validation",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_57p389970",
+        "Re": 57.3899704283,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 162
+      },
+      {
+        "Re_label": "Re_58p262636",
+        "Re": 58.2626356101,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_59p201432",
+        "Re": 59.2014322659,
+        "source_regime": "hopf_transition",
+        "split": "train",
+        "snapshots": 161
+      }
+    ],
+    "periodic": [
+      {
+        "Re_label": "Re_60p307745",
+        "Re": 60.3077454666,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 162
+      },
+      {
+        "Re_label": "Re_61p755954",
+        "Re": 61.7559536282,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_63p499817",
+        "Re": 63.499816815,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_65p259829",
+        "Re": 65.2598292316,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_66p970112",
+        "Re": 66.9701121204,
+        "source_regime": "developing_periodic_shedding",
+        "split": "validation",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_68p649714",
+        "Re": 68.6497139288,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_70p314635",
+        "Re": 70.3146353337,
+        "source_regime": "developing_periodic_shedding",
+        "split": "heldout",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_71p972931",
+        "Re": 71.9729308789,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_73p628287",
+        "Re": 73.6282869994,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_75p282340",
+        "Re": 75.2823402819,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_76p935803",
+        "Re": 76.9358029334,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_78p588971",
+        "Re": 78.5889708164,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_80p241943",
+        "Re": 80.2419430177,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_81p894708",
+        "Re": 81.8947080155,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_83p547164",
+        "Re": 83.5471642516,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_85p199103",
+        "Re": 85.1991031321,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_86p850168",
+        "Re": 86.8501684903,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_88p499815",
+        "Re": 88.4998153335,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_90p147341",
+        "Re": 90.1473406471,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_91p792204",
+        "Re": 91.792204085,
+        "source_regime": "developing_periodic_shedding",
+        "split": "validation",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_93p435204",
+        "Re": 93.4352043333,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_95p081752",
+        "Re": 95.0817519005,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_96p749308",
+        "Re": 96.749307569,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_98p480345",
+        "Re": 98.4803451202,
+        "source_regime": "developing_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_100p352251",
+        "Re": 100.352251335,
+        "source_regime": "mature_periodic_shedding",
+        "split": "heldout",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_102p440042",
+        "Re": 102.440041809,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_104p710911",
+        "Re": 104.710910987,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_107p050737",
+        "Re": 107.050736557,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_109p395985",
+        "Re": 109.395985153,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_111p734011",
+        "Re": 111.734011486,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_114p066308",
+        "Re": 114.066307867,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_116p395488",
+        "Re": 116.395488165,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_118p723173",
+        "Re": 118.723173369,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_121p050171",
+        "Re": 121.05017082,
+        "source_regime": "mature_periodic_shedding",
+        "split": "validation",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_123p376833",
+        "Re": 123.376832843,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_125p703274",
+        "Re": 125.703273692,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 162
+      },
+      {
+        "Re_label": "Re_128p029461",
+        "Re": 128.029461168,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_130p355225",
+        "Re": 130.355224828,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_132p680203",
+        "Re": 132.680202796,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_135p003744",
+        "Re": 135.003743604,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_137p324830",
+        "Re": 137.324829556,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 162
+      },
+      {
+        "Re_label": "Re_139p642302",
+        "Re": 139.642302099,
+        "source_regime": "mature_periodic_shedding",
+        "split": "validation",
+        "snapshots": 162
+      },
+      {
+        "Re_label": "Re_141p956319",
+        "Re": 141.956318757,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_144p273459",
+        "Re": 144.273459297,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_146p619578",
+        "Re": 146.619578296,
+        "source_regime": "mature_periodic_shedding",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_149p059229",
+        "Re": 149.059229449,
+        "source_regime": "mature_periodic_shedding",
+        "split": "heldout",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_151p686208",
+        "Re": 151.686208001,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_154p520852",
+        "Re": 154.520851959,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_157p459588",
+        "Re": 157.45958766,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_160p415176",
+        "Re": 160.415175616,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_163p364123",
+        "Re": 163.364122702,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_166p306373",
+        "Re": 166.306372744,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_169p244893",
+        "Re": 169.244893107,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "validation",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_172p181708",
+        "Re": 172.181708206,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_175p117940",
+        "Re": 175.117940142,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_178p054368",
+        "Re": 178.05436806,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_180p992055",
+        "Re": 180.992054605,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_183p933395",
+        "Re": 183.933394636,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_186p884600",
+        "Re": 186.884600344,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 162
+      },
+      {
+        "Re_label": "Re_189p862278",
+        "Re": 189.86227838,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "heldout",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_192p911664",
+        "Re": 192.911663952,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 162
+      },
+      {
+        "Re_label": "Re_196p160723",
+        "Re": 196.160723205,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "validation",
+        "snapshots": 161
+      },
+      {
+        "Re_label": "Re_200p000000",
+        "Re": 200.0,
+        "source_regime": "high_re_2d_periodic_near_modeA",
+        "split": "train",
+        "snapshots": 162
+      }
+    ]
+  }
+}

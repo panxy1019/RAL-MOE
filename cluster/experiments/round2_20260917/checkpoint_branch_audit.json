@@ -1,0 +1,163 @@
+[
+  {
+    "regime": "H",
+    "method": "proposed",
+    "seed": 1248,
+    "accepted_checkpoint": true,
+    "selected_step": 7200,
+    "quadratic_tensors": 28,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "H",
+    "method": "proposed",
+    "seed": 1600,
+    "accepted_checkpoint": false,
+    "completed_training": true,
+    "best_step": -1,
+    "validation_rejected": true
+  },
+  {
+    "regime": "H",
+    "method": "proposed",
+    "seed": 2026,
+    "accepted_checkpoint": true,
+    "selected_step": 7800,
+    "quadratic_tensors": 28,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "H",
+    "method": "dense",
+    "seed": 1248,
+    "accepted_checkpoint": false,
+    "state": "pending_or_failed_see_campaign_status"
+  },
+  {
+    "regime": "H",
+    "method": "dense",
+    "seed": 1600,
+    "accepted_checkpoint": false,
+    "state": "pending_or_failed_see_campaign_status"
+  },
+  {
+    "regime": "H",
+    "method": "dense",
+    "seed": 2026,
+    "accepted_checkpoint": false,
+    "state": "pending_or_failed_see_campaign_status"
+  },
+  {
+    "regime": "H",
+    "method": "structured",
+    "seed": 1248,
+    "accepted_checkpoint": false,
+    "state": "pending_or_failed_see_campaign_status"
+  },
+  {
+    "regime": "H",
+    "method": "structured",
+    "seed": 1600,
+    "accepted_checkpoint": false,
+    "state": "pending_or_failed_see_campaign_status"
+  },
+  {
+    "regime": "H",
+    "method": "structured",
+    "seed": 2026,
+    "accepted_checkpoint": false,
+    "state": "pending_or_failed_see_campaign_status"
+  },
+  {
+    "regime": "P",
+    "method": "proposed",
+    "seed": 1248,
+    "accepted_checkpoint": true,
+    "selected_step": 60,
+    "quadratic_tensors": 84,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "P",
+    "method": "proposed",
+    "seed": 1600,
+    "accepted_checkpoint": true,
+    "selected_step": 170,
+    "quadratic_tensors": 84,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "P",
+    "method": "proposed",
+    "seed": 2026,
+    "accepted_checkpoint": true,
+    "selected_step": 70,
+    "quadratic_tensors": 84,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "P",
+    "method": "dense",
+    "seed": 1248,
+    "accepted_checkpoint": true,
+    "selected_step": 80,
+    "quadratic_tensors": 0,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "P",
+    "method": "dense",
+    "seed": 1600,
+    "accepted_checkpoint": true,
+    "selected_step": 95,
+    "quadratic_tensors": 0,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "P",
+    "method": "dense",
+    "seed": 2026,
+    "accepted_checkpoint": true,
+    "selected_step": 155,
+    "quadratic_tensors": 0,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "P",
+    "method": "structured",
+    "seed": 1248,
+    "accepted_checkpoint": true,
+    "selected_step": 105,
+    "quadratic_tensors": 4,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "P",
+    "method": "structured",
+    "seed": 1600,
+    "accepted_checkpoint": true,
+    "selected_step": 55,
+    "quadratic_tensors": 4,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  },
+  {
+    "regime": "P",
+    "method": "structured",
+    "seed": 2026,
+    "accepted_checkpoint": true,
+    "selected_step": 120,
+    "quadratic_tensors": 4,
+    "quadratic_nonzero_tensors": 0,
+    "quadratic_max_abs": 0.0
+  }
+]

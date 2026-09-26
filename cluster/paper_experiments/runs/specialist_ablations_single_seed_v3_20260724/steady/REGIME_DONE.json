@@ -1,0 +1,16 @@
+{
+  "errors": {
+    "vanilla-fnn": "RuntimeError('vanilla_train_s2 returned 1')"
+  },
+  "finished_unix": 1784829980.1972916,
+  "regime": "steady",
+  "return_codes": {
+    "data-only_evaluate_test": 0,
+    "data-only_evaluate_validation": 0,
+    "data_only_smoke": 0,
+    "data_only_train": 0,
+    "vanilla_preflight": 0,
+    "vanilla_train_s2": 1
+  },
+  "status": "PARTIAL"
+}

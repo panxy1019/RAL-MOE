@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_regime_ablation_chain.py", line 384, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_regime_ablation_chain.py", line 349, in main
+    run_vanilla_periodic(
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_regime_ablation_chain.py", line 290, in run_vanilla_periodic
+    run(command, output / "train.log", base)
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_regime_ablation_chain.py", line 57, in run
+    raise RuntimeError(f"command failed with code {return_code}: {command}")
+RuntimeError: command failed with code 2: ['/root/miniconda3/envs/pt_env/bin/python', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v1/code/run_vanilla_fnn_moe.py', '--regime', 'periodic', '--trainer', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py', '--data-root', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2', '--tensor-path', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/velocity_rom_periodic.npz', '--pressure-surrogate-path', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/pressure_poisson_surrogate_periodic.npz', '--output-dir', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v1/periodic/vanilla_fnn/seed_1600', '--experiment-name', 'VanillaFNN_periodic_seed1600', '--seed', '1600', '--epochs', '240', '--gpu-memory-fraction', '0.35', '--swanlab-project', 'PaperSpecialistAblations20260723', '--swanlab-group', 'Vanilla-FNN-periodic', '--swanlab-run-name', 'Vanilla-FNN-periodic-seed1600', '--swanlab-mode', 'online', '--swanlab-required']

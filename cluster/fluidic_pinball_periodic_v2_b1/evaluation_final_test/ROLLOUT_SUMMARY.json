@@ -1,0 +1,247 @@
+{
+  "aggregate": {
+    "1": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.06503552342635682,
+      "joint_terminal": 0.06503552342635682,
+      "joint_worst_window": 0.1643560528755188,
+      "pressure_field_mean": 0.05277928449342855,
+      "velocity_field_mean": 0.012256239664263072
+    },
+    "16": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.27378006250364706,
+      "joint_terminal": 0.4419381478542669,
+      "joint_worst_window": 0.9322925806045532,
+      "pressure_field_mean": 0.19122400015799534,
+      "velocity_field_mean": 0.08255605404014608
+    },
+    "2": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.0795161707016329,
+      "joint_terminal": 0.09398494481704095,
+      "joint_worst_window": 0.22607146203517914,
+      "pressure_field_mean": 0.061966327432956964,
+      "velocity_field_mean": 0.01754984600059591
+    },
+    "24": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.33859177694345516,
+      "joint_terminal": 0.4737377950611214,
+      "joint_worst_window": 0.976055383682251,
+      "pressure_field_mean": 0.22878621984919947,
+      "velocity_field_mean": 0.10980556862179786
+    },
+    "32": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.3710083211513443,
+      "joint_terminal": 0.46930082630003905,
+      "joint_worst_window": 0.9916892647743225,
+      "pressure_field_mean": 0.24817453020821428,
+      "velocity_field_mean": 0.12283379754242357
+    },
+    "4": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.1066964519624081,
+      "joint_terminal": 0.14726484766126507,
+      "joint_worst_window": 0.39371904730796814,
+      "pressure_field_mean": 0.08006822178140283,
+      "velocity_field_mean": 0.026628228531990317
+    },
+    "56": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.41200896153329974,
+      "joint_terminal": 0.44421498937946224,
+      "joint_worst_window": 1.0143768787384033,
+      "pressure_field_mean": 0.2745325984950695,
+      "velocity_field_mean": 0.13747636478931075
+    },
+    "8": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.1670453302665717,
+      "joint_terminal": 0.2753051680305766,
+      "joint_worst_window": 0.6716501116752625,
+      "pressure_field_mean": 0.12207648768607113,
+      "velocity_field_mean": 0.04496885002724108
+    }
+  },
+  "asset_audit": {
+    "manifest": {
+      "curriculum": [
+        [
+          0,
+          1600,
+          4
+        ],
+        [
+          1600,
+          3200,
+          8
+        ],
+        [
+          3200,
+          5200,
+          16
+        ],
+        [
+          5200,
+          6800,
+          24
+        ],
+        [
+          6800,
+          8000,
+          32
+        ]
+      ],
+      "dataset": "FluidicPinball_V2_Periodic",
+      "fit_reynolds": [
+        21.25,
+        21.75,
+        22.0,
+        22.5,
+        22.75,
+        23.0,
+        23.5,
+        23.75,
+        24.25,
+        24.5,
+        25.0,
+        25.5,
+        26.5,
+        27.0,
+        28.0,
+        28.5,
+        29.0,
+        30.0,
+        30.5,
+        31.5,
+        32.0,
+        32.5,
+        33.5,
+        34.0,
+        35.0,
+        35.5,
+        36.0,
+        37.0,
+        37.5,
+        38.5,
+        39.0,
+        39.5,
+        41.0,
+        42.0,
+        44.0,
+        45.0,
+        46.0,
+        48.0,
+        49.0,
+        51.0,
+        52.0,
+        53.0,
+        55.0,
+        56.0,
+        58.0,
+        59.0,
+        60.0
+      ],
+      "heldout_reynolds": [
+        22.25,
+        24.0,
+        27.5,
+        31.0,
+        34.5,
+        38.0,
+        43.0,
+        50.0,
+        57.0
+      ],
+      "pressure_gauge_verified": true,
+      "projection_error_verified": true,
+      "projection_errors": {
+        "pressure_energy_tail": 0.0008477996510218855,
+        "velocity_energy_tail": 0.0009024094598510946
+      },
+      "r_p": 16,
+      "r_u": 17,
+      "rom_tensor_verified": true,
+      "schema_version": 2,
+      "scope": "periodic_train_only_with_train_validation_view",
+      "sha256": {
+        "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+        "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+        "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+        "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+      },
+      "split_contract_verified": true,
+      "validation_horizons": [
+        4,
+        8,
+        16,
+        24,
+        32,
+        56
+      ],
+      "validation_reynolds": [
+        21.5,
+        23.25,
+        26.0,
+        29.5,
+        33.0,
+        36.5,
+        40.0,
+        47.0,
+        54.0
+      ]
+    },
+    "observed_sha256": {
+      "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+      "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+      "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+    },
+    "passed": true
+  },
+  "best_step": 8000,
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+  "heldout_hard_disabled": [
+    22.25,
+    24.0,
+    27.5,
+    31.0,
+    34.5,
+    38.0,
+    43.0,
+    50.0,
+    57.0
+  ],
+  "horizons": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    24,
+    32,
+    56
+  ],
+  "optimizer_step": 8000,
+  "scope": "one_time_frozen_final_test",
+  "validation_re": [
+    22.25,
+    24.0,
+    27.5,
+    31.0,
+    34.5,
+    38.0,
+    43.0,
+    50.0,
+    57.0
+  ]
+}

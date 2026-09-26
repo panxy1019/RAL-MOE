@@ -1,0 +1,19 @@
+{
+  "errors": {
+    "vanilla-fnn": "RuntimeError('vanilla-fnn_evaluate_test returned 1')"
+  },
+  "finished_unix": 1784861160.3949142,
+  "methods": [
+    "vanilla-fnn"
+  ],
+  "regime": "hopf",
+  "return_codes": {
+    "vanilla-fnn_evaluate_test": 1,
+    "vanilla-fnn_evaluate_validation": 0,
+    "vanilla_preflight": 0,
+    "vanilla_throughput": 0,
+    "vanilla_train": 0,
+    "vanilla_validation_rollout_smoke": 0
+  },
+  "status": "FAILED"
+}

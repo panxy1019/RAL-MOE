@@ -1,0 +1,16 @@
+{
+  "errors": {
+    "vanilla-fnn": "RuntimeError('vanilla_train returned 1')"
+  },
+  "finished_unix": 1784851732.8997653,
+  "methods": [
+    "vanilla-fnn"
+  ],
+  "regime": "periodic",
+  "return_codes": {
+    "vanilla_preflight": 0,
+    "vanilla_preflight_rollout_smoke": 0,
+    "vanilla_train": 1
+  },
+  "status": "FAILED"
+}

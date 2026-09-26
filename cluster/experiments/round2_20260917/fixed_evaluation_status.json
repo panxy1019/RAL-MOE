@@ -1,0 +1,80 @@
+[
+  {
+    "regime": "H",
+    "kind": "proposed",
+    "seed": 1248,
+    "status": "training_failed_no_test"
+  },
+  {
+    "regime": "H",
+    "kind": "structured",
+    "seed": 1248,
+    "status": "training_failed_no_test"
+  },
+  {
+    "regime": "H",
+    "kind": "proposed",
+    "seed": 1600,
+    "status": "training_failed_no_test"
+  },
+  {
+    "regime": "H",
+    "kind": "structured",
+    "seed": 1600,
+    "status": "training_failed_no_test"
+  },
+  {
+    "regime": "H",
+    "kind": "proposed",
+    "seed": 2026,
+    "status": "training_failed_no_test"
+  },
+  {
+    "regime": "H",
+    "kind": "structured",
+    "seed": 2026,
+    "status": "training_failed_no_test"
+  },
+  {
+    "regime": "P",
+    "kind": "proposed",
+    "seed": 1248,
+    "status": "completed",
+    "returncode": 0
+  },
+  {
+    "regime": "P",
+    "kind": "structured",
+    "seed": 1248,
+    "status": "completed",
+    "returncode": 0
+  },
+  {
+    "regime": "P",
+    "kind": "proposed",
+    "seed": 1600,
+    "status": "completed",
+    "returncode": 0
+  },
+  {
+    "regime": "P",
+    "kind": "structured",
+    "seed": 1600,
+    "status": "completed",
+    "returncode": 0
+  },
+  {
+    "regime": "P",
+    "kind": "proposed",
+    "seed": 2026,
+    "status": "completed",
+    "returncode": 0
+  },
+  {
+    "regime": "P",
+    "kind": "structured",
+    "seed": 2026,
+    "status": "completed",
+    "returncode": 0
+  }
+]

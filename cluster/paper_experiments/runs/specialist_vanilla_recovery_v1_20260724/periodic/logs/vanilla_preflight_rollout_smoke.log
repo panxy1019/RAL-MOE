@@ -1,0 +1,39 @@
+/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/numpy/linalg/_linalg.py:2803: RuntimeWarning: overflow encountered in multiply
+  s = (x.conj() * x).real
+/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/numpy/_core/einsumfunc.py:1217: RuntimeWarning: overflow encountered in matmul
+  ab = matmul(a, b, **kwargs)
+/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/numpy/_core/einsumfunc.py:1217: RuntimeWarning: invalid value encountered in matmul
+  ab = matmul(a, b, **kwargs)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1072: RuntimeWarning: overflow encountered in multiply
+  a_energy = np.sum(a * a, axis=1, keepdims=True)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1075: RuntimeWarning: invalid value encountered in divide
+  low_fraction = (e_low * e_low) / (a_energy + EPS)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1076: RuntimeWarning: invalid value encountered in divide
+  high_fraction = (e_high * e_high) / (a_energy + EPS)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1073: RuntimeWarning: overflow encountered in multiply
+  b_energy = np.sum(b * b, axis=1, keepdims=True)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1077: RuntimeWarning: invalid value encountered in divide
+  pressure_velocity_ratio = b_norm / (np.linalg.norm(a, axis=1, keepdims=True) + EPS)
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py", line 350, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py", line 297, in main
+    trainer.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/evaluate_periodic_r32_portable.py", line 339, in main
+    existing = existing_by_re[round(actual_re, 5)]
+               ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+KeyError: 66.97012
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/evaluate_specialist_ablation.py", line 685, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/evaluate_specialist_ablation.py", line 664, in main
+    result = evaluate_vanilla_validation(args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/evaluate_specialist_ablation.py", line 415, in evaluate_vanilla_validation
+    return evaluate_vanilla_periodic(args, validation=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/evaluate_specialist_ablation.py", line 517, in evaluate_vanilla_periodic
+    raise RuntimeError(f"native Periodic evaluator returned {completed}")
+RuntimeError: native Periodic evaluator returned 1

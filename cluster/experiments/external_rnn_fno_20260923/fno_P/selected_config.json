@@ -1,0 +1,12 @@
+{
+  "frozen_at": "2026-09-23T18:43:13+0800",
+  "architecture": {
+    "id": 3,
+    "width": 48,
+    "modes": 12,
+    "increment": true,
+    "lr": 0.001,
+    "weight_decay": 0.0001
+  },
+  "test_seen": false
+}

@@ -1,0 +1,32 @@
+{
+  "schema": "revision5_supplement_preregistration/v1",
+  "created_before_new_rollouts": true,
+  "existing_revisions_read_only": [
+    "revision3_20260724_frozen",
+    "revision4_global_fusion_20260724"
+  ],
+  "steady_strict_pressure_gate": {
+    "horizon": 56,
+    "finite_fraction": 1.0,
+    "divergent_windows": 0,
+    "pressure_fixed_point_physical_relative_l2_max": 0.05,
+    "pressure_drift_coefficient_relative_l2_max": 0.05,
+    "selection_source": "Proposed Specialist MoE S3-B only",
+    "comparison_rule": "After the Proposed pass-Re list is frozen, evaluate other frozen methods on exactly the same Re without reselection.",
+    "status": "new supplementary diagnostic gate; not the original checkpoint-selection gate"
+  },
+  "global_moe_supplement": {
+    "checkpoint": "frozen V16_1_SteadyPressureAnchor32 checkpoint",
+    "horizon": 56,
+    "retain_original_split_and_checkpoint_scalers": true,
+    "report_coefficient_and_area_weighted_reconstructed_physical_field_errors": true,
+    "no_training": true
+  },
+  "dataonly_supplement": {
+    "checkpoints": "existing validation-selected frozen checkpoints",
+    "horizon": 56,
+    "explicit_Re_evaluation_allowed": true,
+    "no_training": true,
+    "strict_attractor_thresholds": "reuse each native Proposed evaluator threshold without modification"
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "passed": true,
+  "change": "restore native random right factor; left stays zero; no extra RNG draws",
+  "modules": [
+    {
+      "module": "velocity_expert_groups.0.0",
+      "initial_output": 0,
+      "left_gradient_norm": 1.865388035774231,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.1",
+      "initial_output": 0,
+      "left_gradient_norm": 1.7782796621322632,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.2",
+      "initial_output": 0,
+      "left_gradient_norm": 1.8024340867996216,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.3",
+      "initial_output": 0,
+      "left_gradient_norm": 1.7726824283599854,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.4",
+      "initial_output": 0,
+      "left_gradient_norm": 1.9347038269042969,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.5",
+      "initial_output": 0,
+      "left_gradient_norm": 1.913095235824585,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.1.0",
+      "initial_output": 0,
+      "left_gradient_norm": 1.7965950965881348,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.1.1",
+      "initial_output": 0,
+      "left_gradient_norm": 1.8107454776763916,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.1.2",
+      "initial_output": 0,
+      "left_gradient_norm": 1.9324064254760742,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.1.3",
+      "initial_output": 0,
+      "left_gradient_norm": 2.001643657684326,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.1.4",
+      "initial_output": 0,
+      "left_gradient_norm": 1.9471465349197388,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.1.5",
+      "initial_output": 0,
+      "left_gradient_norm": 1.873427152633667,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.2.0",
+      "initial_output": 0,
+      "left_gradient_norm": 1.7238078117370605,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.2.1",
+      "initial_output": 0,
+      "left_gradient_norm": 1.9449490308761597,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.2.2",
+      "initial_output": 0,
+      "left_gradient_norm": 1.6226292848587036,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.2.3",
+      "initial_output": 0,
+      "left_gradient_norm": 1.9778027534484863,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.2.4",
+      "initial_output": 0,
+      "left_gradient_norm": 1.860680341720581,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.2.5",
+      "initial_output": 0,
+      "left_gradient_norm": 1.9479566812515259,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.0",
+      "initial_output": 0,
+      "left_gradient_norm": 3.409703493118286,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.1",
+      "initial_output": 0,
+      "left_gradient_norm": 3.51546573638916,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.2",
+      "initial_output": 0,
+      "left_gradient_norm": 3.5263025760650635,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.3",
+      "initial_output": 0,
+      "left_gradient_norm": 4.111822605133057,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.4",
+      "initial_output": 0,
+      "left_gradient_norm": 3.5657951831817627,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.5",
+      "initial_output": 0,
+      "left_gradient_norm": 3.9274041652679443,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.1.0",
+      "initial_output": 0,
+      "left_gradient_norm": 3.778543710708618,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.1.1",
+      "initial_output": 0,
+      "left_gradient_norm": 3.969249963760376,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.1.2",
+      "initial_output": 0,
+      "left_gradient_norm": 3.245166063308716,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.1.3",
+      "initial_output": 0,
+      "left_gradient_norm": 3.966933012008667,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.1.4",
+      "initial_output": 0,
+      "left_gradient_norm": 3.588747024536133,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.1.5",
+      "initial_output": 0,
+      "left_gradient_norm": 3.734666109085083,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.2.0",
+      "initial_output": 0,
+      "left_gradient_norm": 3.601374387741089,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.2.1",
+      "initial_output": 0,
+      "left_gradient_norm": 3.7759273052215576,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.2.2",
+      "initial_output": 0,
+      "left_gradient_norm": 3.4685370922088623,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.2.3",
+      "initial_output": 0,
+      "left_gradient_norm": 3.4470114707946777,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.2.4",
+      "initial_output": 0,
+      "left_gradient_norm": 3.5547878742218018,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.2.5",
+      "initial_output": 0,
+      "left_gradient_norm": 3.6632046699523926,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_shared_experts.0",
+      "initial_output": 0,
+      "left_gradient_norm": 1.854959487915039,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_shared_experts.1",
+      "initial_output": 0,
+      "left_gradient_norm": 1.7159068584442139,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_shared_experts.2",
+      "initial_output": 0,
+      "left_gradient_norm": 2.028158187866211,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_shared_experts.0",
+      "initial_output": 0,
+      "left_gradient_norm": 4.19354248046875,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_shared_experts.1",
+      "initial_output": 0,
+      "left_gradient_norm": 3.7185425758361816,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_shared_experts.2",
+      "initial_output": 0,
+      "left_gradient_norm": 3.5387086868286133,
+      "right_gradient_norm": 0.0
+    }
+  ]
+}

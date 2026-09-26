@@ -1,0 +1,33 @@
+{
+  "critical_file_sha256": {
+    "development_cache_manifest": "842f082917efd8107aa2374f66f6be2454156b665e17f53c2738faaf5b5cbe4d",
+    "heldout_cache_manifest": "00623f4fddaec916e001b716a029a49fc4acc620fa07d233994967619af30150",
+    "heldout_per_window": "7643315c742937842a21fdd646d313b239053325427d7ef72cb4f2824dcd27b8",
+    "heldout_report": "aeb615fb45e2833e02a1368212e60d5883fcc71f3b07c7ecdecd05702bd9e7ff",
+    "method_comparison_json": "97f30157c0d82547b2f1b3949dc647752ed552fd8b6af9c82bde78caed267b81",
+    "method_comparison_md": "33428b3a80ba9d8647bbee6850510448b5a3d5f8ba81945e0c385b41f6d34379",
+    "preregistration": "dfeae5fa306ad50bb12351a55cc8ca3491c381bf7a0292366f32405628871280",
+    "validation_comparison": "725601d001a4774c94c60119f5d2b4126a7c96b82a4a1168a34b3ae3d4326461",
+    "validation_decision": "242101ecc40070eb8cebf755ae94c580a7a9b78489a4aed4b6bd417a6f56fd8c",
+    "validation_report": "21cd09b912e71afaf089b57597d6cb5d5efcddf2fb565b4736bd11f1f2ce0461"
+  },
+  "route_checkpoint_sha256": {
+    "LookAheadShortRolloutRouter": {
+      "best": "9ec38dc02a61eb0c1af54aafa5baf70cf73ab912ea25ca5c30d4c96e2ed66963",
+      "last": "4eafc8942d834ec0c756da2f9357f7c39a31f9db951d826effe6255424d8fe0f"
+    },
+    "RiskPredictionRouter": {
+      "best": "c5edea4ad28e6604aaf0974fb71440095884d79b5fe9057678494aaecc87b6a3",
+      "last": "3b32fe73a90cc6d58cf820f8c70137836d99cef6ccd6c190a4ec3700f4fcca77"
+    },
+    "T2-C_LearnedConvexCorrection_FieldBlend": {
+      "best": "fe5a52813d03b52cb368d8129c625cd073da10b7abe51745cad1d07cf759202f",
+      "last": "43ee81111c2e4f58dd76c68922978cf7fe72c23ea83d7fa1a6fe01ed24a5db0c"
+    }
+  },
+  "specialist_checkpoint_sha256": {
+    "Hopf": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+    "Steady": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d"
+  },
+  "status": "FINAL_FROZEN"
+}

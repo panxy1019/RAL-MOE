@@ -1,0 +1,30 @@
+{"event": "split_start", "experiment": "Dense_totalmatched_Circular_P", "test_label": "Re_70p314635", "test_Re": 70.31463623046875, "holdout_labels": ["Re_70p314635", "Re_100p352251", "Re_149p059229", "Re_189p862278"], "train_re_count": 53, "test_re_count": 4, "kept_train_samples": 8380, "dense_train_samples_before_time_sparsity": 8380, "compression_ratio_vs_dense_train": 1.0}
+{"event": "epoch_eval", "experiment": "Dense_totalmatched_Circular_P", "test_label": "Re_70p314635", "epoch": 1, "train_loss": 72171337071153.78, "val_score": 0.32596148177981377, "val_rhs_relative_l2": 0.20258603990077972, "val_alpha_relative_l2": 0.1094861626625061, "val_pressure_relative_l2": 0.03968365490436554, "scheduled_sampling": 1.0, "rollout_steps": 4}
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:3323: RuntimeWarning: Mean of empty slice
+  flat = flat - flat.mean(axis=1, keepdims=True)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/numpy/_core/_methods.py:134: RuntimeWarning: invalid value encountered in divide
+  ret = um.true_divide(
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/numpy/_core/fromnumeric.py:3824: RuntimeWarning: Mean of empty slice
+  return _methods._mean(a, axis=axis, dtype=dtype,
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/numpy/_core/_methods.py:142: RuntimeWarning: invalid value encountered in divide
+  ret = ret.dtype.type(ret / rcount)
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/strengthening_20260915/code/dense_periodic.py", line 131, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/strengthening_20260915/code/dense_periodic.py", line 127, in main
+    trainer.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py", line 6532, in main
+    train_one_split(
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py", line 5993, in train_one_split
+    expert_diversity = expert_operator_diversity_analysis(
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py", line 3332, in expert_operator_diversity_analysis
+    "pairwise_cosine_max_abs": float(np.max(np.abs(off))),
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/numpy/_core/fromnumeric.py", line 3123, in max
+    return _wrapreduction(a, np.maximum, 'max', axis, None, out,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/numpy/_core/fromnumeric.py", line 83, in _wrapreduction
+    return ufunc.reduce(obj, axis, dtype, out, **passkwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: zero-size array to reduction operation maximum which has no identity

@@ -1,0 +1,415 @@
+[
+  {
+    "label": "Re_102p440042",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_102p440042_uvp_pointData.npz",
+    "sha256": "fd558be8f26101fa9bd7c7542f11f93373bf41d11eae7fd5b307f189b29f5a82",
+    "frames": 161
+  },
+  {
+    "label": "Re_104p710911",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_104p710911_uvp_pointData.npz",
+    "sha256": "addf78f70997b544806993bc1eb851b3bfc00ea09c0dacc5381e1050dd43444e",
+    "frames": 161
+  },
+  {
+    "label": "Re_107p050737",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_107p050737_uvp_pointData.npz",
+    "sha256": "a4d207d38da1c2b4384cce89b4173aa5078e2b97ff5328a8bcf447fbc8b96836",
+    "frames": 161
+  },
+  {
+    "label": "Re_109p395985",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_109p395985_uvp_pointData.npz",
+    "sha256": "3ee7873d56cf5439452f87e9ab25c4ea76b9604dd8b73bb752a129fbb229d5f1",
+    "frames": 161
+  },
+  {
+    "label": "Re_111p734011",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_111p734011_uvp_pointData.npz",
+    "sha256": "17fff688e484bb6b31c79b5558d0afd20e8a916e0bdcf2237b8cadbbf99ed4eb",
+    "frames": 161
+  },
+  {
+    "label": "Re_114p066308",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_114p066308_uvp_pointData.npz",
+    "sha256": "f313a7ba52c86cc11ad784971cc22f2a9c447de1c261716b08a8df89a0d37250",
+    "frames": 161
+  },
+  {
+    "label": "Re_116p395488",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_116p395488_uvp_pointData.npz",
+    "sha256": "a14cc7e4e9633eb92867134c0284612486ea4ce93f6f87618c964ad134fc7e4e",
+    "frames": 161
+  },
+  {
+    "label": "Re_118p723173",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_118p723173_uvp_pointData.npz",
+    "sha256": "37a3bea7112751f2ed86cc235dcae60ed30249e70956d865cf564a64419a7012",
+    "frames": 161
+  },
+  {
+    "label": "Re_121p050171",
+    "split": "validation",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_validation/Re_121p050171_uvp_pointData.npz",
+    "sha256": "0e79de3013c7fa160e326bf29b8d3c9b898e0622a971f1691cda7ef5d1657b74",
+    "frames": 161
+  },
+  {
+    "label": "Re_123p376833",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_123p376833_uvp_pointData.npz",
+    "sha256": "f610958edab2b367737f8a6d887bd80f3bb2c73f5ef4a517385007b5ec67e11c",
+    "frames": 161
+  },
+  {
+    "label": "Re_125p703274",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_125p703274_uvp_pointData.npz",
+    "sha256": "8731c87710671dcccc7a8ee4dc5bf2d3453f8b60afc70433b47a8eac3a4a391e",
+    "frames": 162
+  },
+  {
+    "label": "Re_128p029461",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_128p029461_uvp_pointData.npz",
+    "sha256": "8baba8a91f79e62ffdc81b94876e807f6769cdc83186dc89094e263b13593f4b",
+    "frames": 161
+  },
+  {
+    "label": "Re_130p355225",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_130p355225_uvp_pointData.npz",
+    "sha256": "05f41236c5d93e2607e5b3a8cb4555d833c7e98370bceec1df329e980d8e94ac",
+    "frames": 161
+  },
+  {
+    "label": "Re_132p680203",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_132p680203_uvp_pointData.npz",
+    "sha256": "5569e0326e3b2d8fdfb9ee1e77a32ae4abb8e622e1d70908bc329d9a507fb71c",
+    "frames": 161
+  },
+  {
+    "label": "Re_135p003744",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_135p003744_uvp_pointData.npz",
+    "sha256": "9464701d5978a32969b88f6ba95372e4fdd3539bff1dc3a1407d0fca6858279f",
+    "frames": 161
+  },
+  {
+    "label": "Re_137p324830",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_137p324830_uvp_pointData.npz",
+    "sha256": "89085c3454322932fac8c5763c9ad7999a7b5340ce0ca8f3247f9898e1febcf4",
+    "frames": 162
+  },
+  {
+    "label": "Re_139p642302",
+    "split": "validation",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_validation/Re_139p642302_uvp_pointData.npz",
+    "sha256": "3220861698164fbc1b32580a3bbfe3de2a8633f6c4b9576c1e5283a7bce0347e",
+    "frames": 162
+  },
+  {
+    "label": "Re_141p956319",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_141p956319_uvp_pointData.npz",
+    "sha256": "325533055b50eaeeccdd31ce170ec03053602223b28a83c6c0f460280e95ed72",
+    "frames": 161
+  },
+  {
+    "label": "Re_144p273459",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_144p273459_uvp_pointData.npz",
+    "sha256": "b1863939c160dd46289b7d0f2341513580fff7cc0c16a71d9eb7bfba7d1d0a61",
+    "frames": 161
+  },
+  {
+    "label": "Re_146p619578",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_146p619578_uvp_pointData.npz",
+    "sha256": "68529569ab54c57e108ae5cb062ac8611fd6beaed226ed7f7a7a4be639982ab0",
+    "frames": 161
+  },
+  {
+    "label": "Re_151p686208",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_151p686208_uvp_pointData.npz",
+    "sha256": "dbf13c3a75e4a199c88a3a6d21c864ee4de3358dd72a798c00f5d46dceaf24e6",
+    "frames": 161
+  },
+  {
+    "label": "Re_154p520852",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_154p520852_uvp_pointData.npz",
+    "sha256": "9d4351c3bee681490a41d4854ff1d3eff19df87294dad4e962c5e0aedcce449a",
+    "frames": 161
+  },
+  {
+    "label": "Re_157p459588",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_157p459588_uvp_pointData.npz",
+    "sha256": "4ffe897eee37011de3bb6971fd0bb9ce85256c3273fc72d655b48520397832b1",
+    "frames": 161
+  },
+  {
+    "label": "Re_160p415176",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_160p415176_uvp_pointData.npz",
+    "sha256": "99ac5bc2116d3434e8d3f5dbef050d7fe35b7821fd352ff8173f54668bf31f28",
+    "frames": 161
+  },
+  {
+    "label": "Re_163p364123",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_163p364123_uvp_pointData.npz",
+    "sha256": "a0e332a94fc9ccdfec35674fece4b11f3e82adf1bfc0c16512b6bdcd9a661288",
+    "frames": 161
+  },
+  {
+    "label": "Re_166p306373",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_166p306373_uvp_pointData.npz",
+    "sha256": "1409521273ca2f130841210fc904c2b56c7ba06b94b4d8cf96ab03b418a3b65a",
+    "frames": 161
+  },
+  {
+    "label": "Re_169p244893",
+    "split": "validation",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_validation/Re_169p244893_uvp_pointData.npz",
+    "sha256": "05543c1d1e3a8e1970b462a97a1b486dd67682f8b12918de788b8d72e9243c12",
+    "frames": 161
+  },
+  {
+    "label": "Re_172p181708",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_172p181708_uvp_pointData.npz",
+    "sha256": "e2909d198ccf3bc3e5b0dbe70dec923bf483ba08422c3e7ac4e67aa4638d68e6",
+    "frames": 161
+  },
+  {
+    "label": "Re_175p117940",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_175p117940_uvp_pointData.npz",
+    "sha256": "c5c29ad87ee96c58836daaa75784c1b8d2d37b9c1ccd952bd8b6ba1da4789392",
+    "frames": 161
+  },
+  {
+    "label": "Re_178p054368",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_178p054368_uvp_pointData.npz",
+    "sha256": "6383af556fc162bb93b223e876167811e3cb490ca24542a39d11ae7ce4587e34",
+    "frames": 161
+  },
+  {
+    "label": "Re_180p992055",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_180p992055_uvp_pointData.npz",
+    "sha256": "e0b7edbe233a4910791804eab02c0216c0ec58f2646ec7d89211d993cd938a7c",
+    "frames": 161
+  },
+  {
+    "label": "Re_183p933395",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_183p933395_uvp_pointData.npz",
+    "sha256": "fd938ebe75d660c6cd2e89511733d089ded8b74eadecf0c34333728bb4e281f1",
+    "frames": 161
+  },
+  {
+    "label": "Re_186p884600",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_186p884600_uvp_pointData.npz",
+    "sha256": "1cfba74721646098a8a3316c6b53f7cda27cb40e01736ad416e2a01b0a567bd1",
+    "frames": 162
+  },
+  {
+    "label": "Re_192p911664",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_192p911664_uvp_pointData.npz",
+    "sha256": "c9238de6ae286a0f42fc68dda805a6c45bd3685fe6a2ba8ae788f229b674b114",
+    "frames": 162
+  },
+  {
+    "label": "Re_196p160723",
+    "split": "validation",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_validation/Re_196p160723_uvp_pointData.npz",
+    "sha256": "b47c89f0639dcbe012f53ab08562c52c68c84eab391a793c3f4bf28ddccdeaea",
+    "frames": 161
+  },
+  {
+    "label": "Re_200p000000",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_200p000000_uvp_pointData.npz",
+    "sha256": "4b83a6a1772e11b1ae1a3c2af40824361ad28c83533440a0439552147adb51ea",
+    "frames": 162
+  },
+  {
+    "label": "Re_60p307745",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_60p307745_uvp_pointData.npz",
+    "sha256": "f8892dceff0bfaeef3bdb61e220bc9ed55218de950c7c7253e3b4ceb8a72c7be",
+    "frames": 162
+  },
+  {
+    "label": "Re_61p755954",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_61p755954_uvp_pointData.npz",
+    "sha256": "cb388408af7ea8fe23a9852ece0eb7499cee36032d238c59ecbe8c09e56a07e0",
+    "frames": 161
+  },
+  {
+    "label": "Re_63p499817",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_63p499817_uvp_pointData.npz",
+    "sha256": "7925ee85eafb24646e34fad5a3b37a79c38f6d8002ab549e2981bb47aaa9d9bb",
+    "frames": 161
+  },
+  {
+    "label": "Re_65p259829",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_65p259829_uvp_pointData.npz",
+    "sha256": "0553072974ee79f574b7792ae1383c2a2750eb89e9ff093a9b26a859c1b507e1",
+    "frames": 161
+  },
+  {
+    "label": "Re_66p970112",
+    "split": "validation",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_validation/Re_66p970112_uvp_pointData.npz",
+    "sha256": "53e8b439459b2aee9f98ae7fef4742290194a2d76f260419f158f627f6718e5a",
+    "frames": 161
+  },
+  {
+    "label": "Re_68p649714",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_68p649714_uvp_pointData.npz",
+    "sha256": "a7b1cb48ed197205a01b1a260059a3a3994ec70fcfbbe44a5c7e73a7c785c50d",
+    "frames": 161
+  },
+  {
+    "label": "Re_71p972931",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_71p972931_uvp_pointData.npz",
+    "sha256": "1a33e2eebc1a8096b7fcf95bec757c3367b01a37d43c6e19b0ddcca142001090",
+    "frames": 161
+  },
+  {
+    "label": "Re_73p628287",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_73p628287_uvp_pointData.npz",
+    "sha256": "c2121e8b3e92e7918e3fa4340bb555cf2644e0e9fd084b7cc2da674138390ead",
+    "frames": 161
+  },
+  {
+    "label": "Re_75p282340",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_75p282340_uvp_pointData.npz",
+    "sha256": "76deea808e1d0ba22684940847d552d384ffee15661550c6ade80d7c2bdb14bd",
+    "frames": 161
+  },
+  {
+    "label": "Re_76p935803",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_76p935803_uvp_pointData.npz",
+    "sha256": "68557069c2bbe4871fd9d4f64aefe98645fd54ed5cb84ca6649fbe09ea08cc16",
+    "frames": 161
+  },
+  {
+    "label": "Re_78p588971",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_78p588971_uvp_pointData.npz",
+    "sha256": "17f4dc231fe72e943bff531bc9446cbc4a2ce8ab6abb9b206907946fd7fb4243",
+    "frames": 161
+  },
+  {
+    "label": "Re_80p241943",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_80p241943_uvp_pointData.npz",
+    "sha256": "71eb6b141e0ba07296bb95d644ee468b9f12a13defb47096267e1dcad6794f77",
+    "frames": 161
+  },
+  {
+    "label": "Re_81p894708",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_81p894708_uvp_pointData.npz",
+    "sha256": "bda9b437e67285ca0f70e26d1c9b4ea12df9ab500fd69225cdef0ea48392fbe9",
+    "frames": 161
+  },
+  {
+    "label": "Re_83p547164",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_83p547164_uvp_pointData.npz",
+    "sha256": "1e18e97efb865d6d10667db63f0c4d9ffba457d31e2483027a7851bd5211193b",
+    "frames": 161
+  },
+  {
+    "label": "Re_85p199103",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_85p199103_uvp_pointData.npz",
+    "sha256": "2f10c65b66f3ca39a6fd4fed02958fc88f5ea1af25422771005f97c0736b353d",
+    "frames": 161
+  },
+  {
+    "label": "Re_86p850168",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_86p850168_uvp_pointData.npz",
+    "sha256": "055dc288249a2c074d55d4bbfd641d924cbce0af1f17410027035679abb9c043",
+    "frames": 161
+  },
+  {
+    "label": "Re_88p499815",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_88p499815_uvp_pointData.npz",
+    "sha256": "82bf47acd145aa0312ae3a4f4ac22bca8c3e4c5f7b2d0be7135ed3051db17314",
+    "frames": 161
+  },
+  {
+    "label": "Re_90p147341",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_90p147341_uvp_pointData.npz",
+    "sha256": "f1795235b56d038bb1f153737e6251dcead5f35da82ed0b58554c0f7bcdcc0cd",
+    "frames": 161
+  },
+  {
+    "label": "Re_91p792204",
+    "split": "validation",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_validation/Re_91p792204_uvp_pointData.npz",
+    "sha256": "f01df163a3518e091f2c49015eca6ca6928294917b2c5ee1626bee482003517c",
+    "frames": 161
+  },
+  {
+    "label": "Re_93p435204",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_93p435204_uvp_pointData.npz",
+    "sha256": "13b6dd43afff155031502d3e895e09a3a2b9ada8d9787eece812d33672a2350e",
+    "frames": 161
+  },
+  {
+    "label": "Re_95p081752",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_95p081752_uvp_pointData.npz",
+    "sha256": "6467de1ba7eaa20e0d73dbd6fd2de80438088caaf8d863241d9daa49493f580e",
+    "frames": 161
+  },
+  {
+    "label": "Re_96p749308",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_96p749308_uvp_pointData.npz",
+    "sha256": "b03001875d496320c0c30f39ddf0ba7593ef51d773a0c28dd6979148f595eb86",
+    "frames": 161
+  },
+  {
+    "label": "Re_98p480345",
+    "split": "train",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_training/Re_98p480345_uvp_pointData.npz",
+    "sha256": "f459f7b179b4746b1e4c861dbb8558870065edf275bb28539d50c24af9f93c2a",
+    "frames": 161
+  }
+]

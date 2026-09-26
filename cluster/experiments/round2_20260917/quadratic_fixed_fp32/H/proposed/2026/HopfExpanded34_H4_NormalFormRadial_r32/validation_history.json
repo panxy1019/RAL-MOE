@@ -1,0 +1,2132 @@
+{
+  "history": [
+    {
+      "step": 200,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.01829214207828045,
+            "fluc_p": 2.316906452178955,
+            "total_u": 7.677714165765792e-05,
+            "total_p": 0.027135398238897324,
+            "radial_rms": 0.28239306807518005,
+            "scale_inflation": 1.5743110179901123,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1542949676513672
+          },
+          "2": {
+            "fluc_u": 0.02920903079211712,
+            "fluc_p": 18.729524612426758,
+            "total_u": 0.0001174511926365085,
+            "total_p": 0.2361541986465454,
+            "radial_rms": 0.9652357697486877,
+            "scale_inflation": 3.0532138347625732,
+            "growth_sign_accuracy": 0.53125,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 2.113211154937744
+          },
+          "4": {
+            "fluc_u": 0.11491328477859497,
+            "fluc_p": 206.8417205810547,
+            "total_u": 0.0004027648828923702,
+            "total_p": 1.3333604335784912,
+            "radial_rms": 3.5059359073638916,
+            "scale_inflation": 6.9660797119140625,
+            "growth_sign_accuracy": 0.3958333432674408,
+            "finite_fraction": 1.0,
+            "divergent_windows": 5,
+            "max_norm_ratio": 47.54508590698242
+          },
+          "8": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": Infinity,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.4375000298023224,
+            "finite_fraction": 0.9375,
+            "divergent_windows": 16,
+            "max_norm_ratio": NaN
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": 0.5128049254417419,
+            "total_p": 4462.07373046875,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.3604166805744171,
+            "finite_fraction": 0.21875,
+            "divergent_windows": 29,
+            "max_norm_ratio": NaN
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.26467621326446533,
+            "fluc_p": 8.243083953857422,
+            "total_u": 0.0007682776777073741,
+            "total_p": 0.09437429159879684,
+            "radial_rms": 0.06658054888248444,
+            "scale_inflation": 0.8377881646156311,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.3520230054855347
+          },
+          "2": {
+            "fluc_u": 0.5136972069740295,
+            "fluc_p": 23.529176712036133,
+            "total_u": 0.0014907827135175467,
+            "total_p": 0.2691771984100342,
+            "radial_rms": 0.17180107533931732,
+            "scale_inflation": 1.1739578247070312,
+            "growth_sign_accuracy": 0.5862069129943848,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.3893963098526
+          },
+          "4": {
+            "fluc_u": 1.245589017868042,
+            "fluc_p": 27.712778091430664,
+            "total_u": 0.003613586537539959,
+            "total_p": 0.2731972634792328,
+            "radial_rms": 0.4749850928783417,
+            "scale_inflation": 2.307227373123169,
+            "growth_sign_accuracy": 0.6477273106575012,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 4.697738170623779
+          },
+          "8": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": Infinity,
+            "total_p": 80923942912.0,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.6169154047966003,
+            "finite_fraction": 0.8125,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.3619489371776581,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": NaN,
+      "hard_gate": false
+    },
+    {
+      "step": 400,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.013042637147009373,
+            "fluc_p": 2.408271551132202,
+            "total_u": 5.455152131617069e-05,
+            "total_p": 0.024972960352897644,
+            "radial_rms": 0.04009072855114937,
+            "scale_inflation": 0.9330865740776062,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0025781393051147
+          },
+          "2": {
+            "fluc_u": 0.021847890689969063,
+            "fluc_p": 2.003788471221924,
+            "total_u": 8.894641359802336e-05,
+            "total_p": 0.022325340658426285,
+            "radial_rms": 0.21282047033309937,
+            "scale_inflation": 1.1058871746063232,
+            "growth_sign_accuracy": 0.53125,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.2610383033752441
+          },
+          "4": {
+            "fluc_u": 0.04024413973093033,
+            "fluc_p": 19.30986976623535,
+            "total_u": 0.00015974295092746615,
+            "total_p": 0.13294121623039246,
+            "radial_rms": 1.0086567401885986,
+            "scale_inflation": 1.5587350130081177,
+            "growth_sign_accuracy": 0.3958333432674408,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 4.325223922729492
+          },
+          "8": {
+            "fluc_u": 2.715780019760132,
+            "fluc_p": 114962.203125,
+            "total_u": 0.00486115925014019,
+            "total_p": 342.9127502441406,
+            "radial_rms": 6.057563781738281,
+            "scale_inflation": 8.40129280090332,
+            "growth_sign_accuracy": 0.4375000298023224,
+            "finite_fraction": 1.0,
+            "divergent_windows": 20,
+            "max_norm_ratio": 39459.1953125
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": 36304.109375,
+            "total_p": 33418209280.0,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.35208335518836975,
+            "finite_fraction": 0.0625,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.18547563254833221,
+            "fluc_p": 4.1872477531433105,
+            "total_u": 0.0005358699709177017,
+            "total_p": 0.04721777141094208,
+            "radial_rms": 0.06680010259151459,
+            "scale_inflation": 0.7259443402290344,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0735836029052734
+          },
+          "2": {
+            "fluc_u": 0.30932798981666565,
+            "fluc_p": 8.069656372070312,
+            "total_u": 0.0008944729343056679,
+            "total_p": 0.09008987247943878,
+            "radial_rms": 0.11382653564214706,
+            "scale_inflation": 0.7062457799911499,
+            "growth_sign_accuracy": 0.24137930572032928,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0171021223068237
+          },
+          "4": {
+            "fluc_u": 0.5352379679679871,
+            "fluc_p": 19.1203556060791,
+            "total_u": 0.0015183542855083942,
+            "total_p": 0.18129998445510864,
+            "radial_rms": 0.24254433810710907,
+            "scale_inflation": 0.8140061497688293,
+            "growth_sign_accuracy": 0.5113636255264282,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 3.5063304901123047
+          },
+          "8": {
+            "fluc_u": 45840621568.0,
+            "fluc_p": Infinity,
+            "total_u": 23710774.0,
+            "total_p": 2.793833448173732e+17,
+            "radial_rms": 6345587712.0,
+            "scale_inflation": 547835840.0,
+            "growth_sign_accuracy": 0.606965184211731,
+            "finite_fraction": 1.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": 4.6077761550790164e+19
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.3248259723186493,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": Infinity,
+      "hard_gate": false
+    },
+    {
+      "step": 600,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.008071829564869404,
+            "fluc_p": 1.355430006980896,
+            "total_u": 3.212458614143543e-05,
+            "total_p": 0.012283291667699814,
+            "radial_rms": 0.06625908613204956,
+            "scale_inflation": 0.9360734224319458,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0652202367782593
+          },
+          "2": {
+            "fluc_u": 0.016880935057997704,
+            "fluc_p": 10.634955406188965,
+            "total_u": 6.26603068667464e-05,
+            "total_p": 0.1309593915939331,
+            "radial_rms": 0.32758671045303345,
+            "scale_inflation": 1.091162919998169,
+            "growth_sign_accuracy": 0.5,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0000970363616943
+          },
+          "4": {
+            "fluc_u": 0.07843628525733948,
+            "fluc_p": 100.6977310180664,
+            "total_u": 0.00031787363695912063,
+            "total_p": 1.118560552597046,
+            "radial_rms": 2.1794769763946533,
+            "scale_inflation": 4.177750587463379,
+            "growth_sign_accuracy": 0.5104166865348816,
+            "finite_fraction": 1.0,
+            "divergent_windows": 2,
+            "max_norm_ratio": 11.354921340942383
+          },
+          "8": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": Infinity,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.4955357313156128,
+            "finite_fraction": 0.71875,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.20208334922790527,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.15966516733169556,
+            "fluc_p": 2.985990047454834,
+            "total_u": 0.0004602255066856742,
+            "total_p": 0.033502247184515,
+            "radial_rms": 0.06957700848579407,
+            "scale_inflation": 0.7215608954429626,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 0.9999895691871643
+          },
+          "2": {
+            "fluc_u": 0.28854599595069885,
+            "fluc_p": 5.4386067390441895,
+            "total_u": 0.0008303801878355443,
+            "total_p": 0.0564056932926178,
+            "radial_rms": 0.12225060909986496,
+            "scale_inflation": 0.6859674453735352,
+            "growth_sign_accuracy": 0.3103448152542114,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.6474523544311523
+          },
+          "4": {
+            "fluc_u": 1.4350223541259766,
+            "fluc_p": 345.9201354980469,
+            "total_u": 0.003825476858764887,
+            "total_p": 2.6685030460357666,
+            "radial_rms": 0.2267233431339264,
+            "scale_inflation": 0.818793773651123,
+            "growth_sign_accuracy": 0.42045456171035767,
+            "finite_fraction": 1.0,
+            "divergent_windows": 15,
+            "max_norm_ratio": 65.2235336303711
+          },
+          "8": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": Infinity,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.5074626803398132,
+            "finite_fraction": 0.0625,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.24825985729694366,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": NaN,
+      "hard_gate": false
+    },
+    {
+      "step": 800,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.008517465554177761,
+            "fluc_p": 0.7387640476226807,
+            "total_u": 3.2890817237785086e-05,
+            "total_p": 0.00585219357162714,
+            "radial_rms": 0.07663542032241821,
+            "scale_inflation": 0.9297594428062439,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0450642108917236
+          },
+          "2": {
+            "fluc_u": 0.0187201090157032,
+            "fluc_p": 0.9236785173416138,
+            "total_u": 6.917356222402304e-05,
+            "total_p": 0.00909586064517498,
+            "radial_rms": 0.4152420461177826,
+            "scale_inflation": 1.069547414779663,
+            "growth_sign_accuracy": 0.4375,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0922236442565918
+          },
+          "4": {
+            "fluc_u": 0.03575823828577995,
+            "fluc_p": 4.274369239807129,
+            "total_u": 0.0001371266698697582,
+            "total_p": 0.04293406009674072,
+            "radial_rms": 0.9209374785423279,
+            "scale_inflation": 1.4825128316879272,
+            "growth_sign_accuracy": 0.5104166865348816,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.389711856842041
+          },
+          "8": {
+            "fluc_u": 1.9033145904541016,
+            "fluc_p": 669488.375,
+            "total_u": 0.002361108548939228,
+            "total_p": 1565.6722412109375,
+            "radial_rms": 3.517965078353882,
+            "scale_inflation": 4.534477233886719,
+            "growth_sign_accuracy": 0.5,
+            "finite_fraction": 1.0,
+            "divergent_windows": 13,
+            "max_norm_ratio": 241018.328125
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": 38247948288.0,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.36666667461395264,
+            "finite_fraction": 0.1875,
+            "divergent_windows": 30,
+            "max_norm_ratio": NaN
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.12352471053600311,
+            "fluc_p": 2.2824478149414062,
+            "total_u": 0.00034935708390548825,
+            "total_p": 0.02529016137123108,
+            "radial_rms": 0.07926405966281891,
+            "scale_inflation": 0.7159185409545898,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0018161535263062
+          },
+          "2": {
+            "fluc_u": 0.20503762364387512,
+            "fluc_p": 2.738271951675415,
+            "total_u": 0.000565302383620292,
+            "total_p": 0.030627887696027756,
+            "radial_rms": 0.15408115088939667,
+            "scale_inflation": 0.6546298265457153,
+            "growth_sign_accuracy": 0.37931033968925476,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0110177993774414
+          },
+          "4": {
+            "fluc_u": 0.4604150056838989,
+            "fluc_p": 61.63095474243164,
+            "total_u": 0.001237108139321208,
+            "total_p": 0.49466341733932495,
+            "radial_rms": 0.27212533354759216,
+            "scale_inflation": 0.596144437789917,
+            "growth_sign_accuracy": 0.2613636553287506,
+            "finite_fraction": 1.0,
+            "divergent_windows": 1,
+            "max_norm_ratio": 16.63104820251465
+          },
+          "8": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": Infinity,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.4776119291782379,
+            "finite_fraction": 0.1875,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.23665893077850342,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 669569.66743423,
+      "hard_gate": false
+    },
+    {
+      "step": 1000,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.007056980859488249,
+            "fluc_p": 0.571871280670166,
+            "total_u": 2.6907751816906966e-05,
+            "total_p": 0.005230397917330265,
+            "radial_rms": 0.04590708762407303,
+            "scale_inflation": 0.9316489100456238,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0346242189407349
+          },
+          "2": {
+            "fluc_u": 0.013382233679294586,
+            "fluc_p": 2.1743359565734863,
+            "total_u": 5.1871211326215416e-05,
+            "total_p": 0.022811101749539375,
+            "radial_rms": 0.15673212707042694,
+            "scale_inflation": 1.0449328422546387,
+            "growth_sign_accuracy": 0.53125,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.069007396697998
+          },
+          "4": {
+            "fluc_u": 0.03411026671528816,
+            "fluc_p": 11.731024742126465,
+            "total_u": 0.00013450771803036332,
+            "total_p": 0.11022736877202988,
+            "radial_rms": 1.5196903944015503,
+            "scale_inflation": 3.579265594482422,
+            "growth_sign_accuracy": 0.5625,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.402640700340271
+          },
+          "8": {
+            "fluc_u": 983.5252685546875,
+            "fluc_p": 321690560.0,
+            "total_u": 0.7670584321022034,
+            "total_p": 754395.875,
+            "radial_rms": 4106.1083984375,
+            "scale_inflation": 3811.634765625,
+            "growth_sign_accuracy": 0.6071428656578064,
+            "finite_fraction": 1.0,
+            "divergent_windows": 30,
+            "max_norm_ratio": 116470112.0
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.34166669845581055,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.11232249438762665,
+            "fluc_p": 1.7995734214782715,
+            "total_u": 0.00031201884848996997,
+            "total_p": 0.0198577418923378,
+            "radial_rms": 0.08302249014377594,
+            "scale_inflation": 0.7143456339836121,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0141733884811401
+          },
+          "2": {
+            "fluc_u": 0.19871267676353455,
+            "fluc_p": 1.8082494735717773,
+            "total_u": 0.0005485083092935383,
+            "total_p": 0.014133268967270851,
+            "radial_rms": 0.15130753815174103,
+            "scale_inflation": 0.6621263027191162,
+            "growth_sign_accuracy": 0.24137930572032928,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.2972240447998047
+          },
+          "4": {
+            "fluc_u": 0.6905218958854675,
+            "fluc_p": 151.1747283935547,
+            "total_u": 0.0019025261281058192,
+            "total_p": 1.646993637084961,
+            "radial_rms": 0.2552325427532196,
+            "scale_inflation": 0.6084949970245361,
+            "growth_sign_accuracy": 0.27272728085517883,
+            "finite_fraction": 1.0,
+            "divergent_windows": 8,
+            "max_norm_ratio": 19.982383728027344
+          },
+          "8": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": Infinity,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.4477611780166626,
+            "finite_fraction": 0.6875,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.22273781895637512,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 321730495.2291767,
+      "hard_gate": false
+    },
+    {
+      "step": 1200,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.005656639114022255,
+            "fluc_p": 0.3750731945037842,
+            "total_u": 2.1280669898260385e-05,
+            "total_p": 0.0034983018413186073,
+            "radial_rms": 0.047706373035907745,
+            "scale_inflation": 0.9260048866271973,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0404638051986694
+          },
+          "2": {
+            "fluc_u": 0.010496964678168297,
+            "fluc_p": 0.9645029306411743,
+            "total_u": 4.0229777368949726e-05,
+            "total_p": 0.01126505434513092,
+            "radial_rms": 0.1452740579843521,
+            "scale_inflation": 1.0040594339370728,
+            "growth_sign_accuracy": 0.625,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1051923036575317
+          },
+          "4": {
+            "fluc_u": 0.018667779862880707,
+            "fluc_p": 5.497480869293213,
+            "total_u": 7.472270226571709e-05,
+            "total_p": 0.05485823005437851,
+            "radial_rms": 0.4321759045124054,
+            "scale_inflation": 1.2377381324768066,
+            "growth_sign_accuracy": 0.6145833730697632,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.2693008184432983
+          },
+          "8": {
+            "fluc_u": 2.5079503059387207,
+            "fluc_p": 396686.9375,
+            "total_u": 0.0070485081523656845,
+            "total_p": 1046.3060302734375,
+            "radial_rms": 2.9207992553710938,
+            "scale_inflation": 5.9663615226745605,
+            "growth_sign_accuracy": 0.6116071939468384,
+            "finite_fraction": 1.0,
+            "divergent_windows": 28,
+            "max_norm_ratio": 137723.890625
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.3687500059604645,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.10370694100856781,
+            "fluc_p": 1.5747590065002441,
+            "total_u": 0.0002675600990187377,
+            "total_p": 0.0172892976552248,
+            "radial_rms": 0.10656492412090302,
+            "scale_inflation": 0.6893504858016968,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0030437707901
+          },
+          "2": {
+            "fluc_u": 0.18787479400634766,
+            "fluc_p": 2.75635027885437,
+            "total_u": 0.0004796157300006598,
+            "total_p": 0.03079289011657238,
+            "radial_rms": 0.1936432123184204,
+            "scale_inflation": 0.6255820989608765,
+            "growth_sign_accuracy": 0.24137930572032928,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1395782232284546
+          },
+          "4": {
+            "fluc_u": 0.3624972105026245,
+            "fluc_p": 27.0831298828125,
+            "total_u": 0.0009367156308144331,
+            "total_p": 0.2948375940322876,
+            "radial_rms": 0.32750141620635986,
+            "scale_inflation": 0.5278964042663574,
+            "growth_sign_accuracy": 0.29545456171035767,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 3.688526153564453
+          },
+          "8": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": Infinity,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.4825870394706726,
+            "finite_fraction": 0.1875,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.24129930138587952,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 396742.67618330225,
+      "hard_gate": false
+    },
+    {
+      "step": 1400,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.004549864213913679,
+            "fluc_p": 1.094551682472229,
+            "total_u": 1.840296681621112e-05,
+            "total_p": 0.012062733992934227,
+            "radial_rms": 0.08121459931135178,
+            "scale_inflation": 0.9047417640686035,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1459230184555054
+          },
+          "2": {
+            "fluc_u": 0.008824314922094345,
+            "fluc_p": 2.350867509841919,
+            "total_u": 3.594318332034163e-05,
+            "total_p": 0.025931833311915398,
+            "radial_rms": 0.17948685586452484,
+            "scale_inflation": 0.9730194211006165,
+            "growth_sign_accuracy": 0.09375,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1177921295166016
+          },
+          "4": {
+            "fluc_u": 0.026044942438602448,
+            "fluc_p": 3.524298906326294,
+            "total_u": 0.00010912396828643978,
+            "total_p": 0.03767737001180649,
+            "radial_rms": 1.0447521209716797,
+            "scale_inflation": 2.431658983230591,
+            "growth_sign_accuracy": 0.4479166865348816,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.055917739868164
+          },
+          "8": {
+            "fluc_u": 0.7068395018577576,
+            "fluc_p": 549.5015869140625,
+            "total_u": 0.0019614396151155233,
+            "total_p": 3.578289031982422,
+            "radial_rms": 2.0174806118011475,
+            "scale_inflation": 4.270779609680176,
+            "growth_sign_accuracy": 0.3705357313156128,
+            "finite_fraction": 1.0,
+            "divergent_windows": 8,
+            "max_norm_ratio": 103.84217834472656
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": 214034964021248.0,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.3270833492279053,
+            "finite_fraction": 0.15625,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.10053422302007675,
+            "fluc_p": 0.5470976829528809,
+            "total_u": 0.0002331493014935404,
+            "total_p": 0.005731956101953983,
+            "radial_rms": 0.12029894441366196,
+            "scale_inflation": 0.6786899566650391,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.036546230316162
+          },
+          "2": {
+            "fluc_u": 0.18483386933803558,
+            "fluc_p": 1.372427225112915,
+            "total_u": 0.0004075246397405863,
+            "total_p": 0.010804874822497368,
+            "radial_rms": 0.22165782749652863,
+            "scale_inflation": 0.6110142469406128,
+            "growth_sign_accuracy": 0.27586206793785095,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.154899001121521
+          },
+          "4": {
+            "fluc_u": 0.3034152090549469,
+            "fluc_p": 3.394770383834839,
+            "total_u": 0.0006725015118718147,
+            "total_p": 0.03567309305071831,
+            "radial_rms": 0.3625035583972931,
+            "scale_inflation": 0.5244737863540649,
+            "growth_sign_accuracy": 0.3181818127632141,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.5318018198013306
+          },
+          "8": {
+            "fluc_u": 0.5901889204978943,
+            "fluc_p": 25.058719635009766,
+            "total_u": 0.0014437364879995584,
+            "total_p": 0.14200860261917114,
+            "radial_rms": 0.5718420743942261,
+            "scale_inflation": 0.3819933831691742,
+            "growth_sign_accuracy": 0.30845770239830017,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 8.736479759216309
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": 6.01631459681239e+16,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.35034802556037903,
+            "finite_fraction": 0.03125,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 551.0556295499089,
+      "hard_gate": false
+    },
+    {
+      "step": 1600,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.003828349057585001,
+            "fluc_p": 0.5582891702651978,
+            "total_u": 1.557590439915657e-05,
+            "total_p": 0.0051986342296004295,
+            "radial_rms": 0.04570252448320389,
+            "scale_inflation": 0.919110894203186,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0726120471954346
+          },
+          "2": {
+            "fluc_u": 0.006865218281745911,
+            "fluc_p": 2.2794454097747803,
+            "total_u": 2.8111964638810605e-05,
+            "total_p": 0.02551242709159851,
+            "radial_rms": 0.09062106162309647,
+            "scale_inflation": 0.9546658992767334,
+            "growth_sign_accuracy": 0.90625,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.107914924621582
+          },
+          "4": {
+            "fluc_u": 0.014035610482096672,
+            "fluc_p": 4.253718376159668,
+            "total_u": 5.916889131185599e-05,
+            "total_p": 0.0448746383190155,
+            "radial_rms": 0.2340424507856369,
+            "scale_inflation": 1.0848283767700195,
+            "growth_sign_accuracy": 0.7291666865348816,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1114119291305542
+          },
+          "8": {
+            "fluc_u": 0.04539366811513901,
+            "fluc_p": 8.208742141723633,
+            "total_u": 0.00017625364125706255,
+            "total_p": 0.08138580620288849,
+            "radial_rms": 0.6256077289581299,
+            "scale_inflation": 1.6908295154571533,
+            "growth_sign_accuracy": 0.6741071939468384,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1567268371582031
+          },
+          "16": {
+            "fluc_u": 0.4865281283855438,
+            "fluc_p": 40300.96875,
+            "total_u": 0.0010609988821670413,
+            "total_p": 92.5064468383789,
+            "radial_rms": 1.8900549411773682,
+            "scale_inflation": 3.4673280715942383,
+            "growth_sign_accuracy": 0.7041667103767395,
+            "finite_fraction": 1.0,
+            "divergent_windows": 8,
+            "max_norm_ratio": 14914.1943359375
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.10418069362640381,
+            "fluc_p": 0.6208614706993103,
+            "total_u": 0.0002244579663965851,
+            "total_p": 0.006586609408259392,
+            "radial_rms": 0.13513746857643127,
+            "scale_inflation": 0.668350100517273,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0023421049118042
+          },
+          "2": {
+            "fluc_u": 0.19296061992645264,
+            "fluc_p": 1.4595046043395996,
+            "total_u": 0.0004007857060059905,
+            "total_p": 0.01595417968928814,
+            "radial_rms": 0.24798771739006042,
+            "scale_inflation": 0.5844859480857849,
+            "growth_sign_accuracy": 0.3103448152542114,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0389387607574463
+          },
+          "4": {
+            "fluc_u": 0.34489068388938904,
+            "fluc_p": 4.037247657775879,
+            "total_u": 0.000707983854226768,
+            "total_p": 0.04639825224876404,
+            "radial_rms": 0.4480636417865753,
+            "scale_inflation": 0.4514840543270111,
+            "growth_sign_accuracy": 0.28409090638160706,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 0.9993183016777039
+          },
+          "8": {
+            "fluc_u": 0.5891931056976318,
+            "fluc_p": 5.098601341247559,
+            "total_u": 0.001408491050824523,
+            "total_p": 0.05868317931890488,
+            "radial_rms": 0.6962964534759521,
+            "scale_inflation": 0.25181296467781067,
+            "growth_sign_accuracy": 0.31840795278549194,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 0.9936125874519348
+          },
+          "16": {
+            "fluc_u": 0.9724398851394653,
+            "fluc_p": 3.829850196838379,
+            "total_u": 0.002617322839796543,
+            "total_p": 0.0440242663025856,
+            "radial_rms": 0.905601978302002,
+            "scale_inflation": 0.11354387551546097,
+            "growth_sign_accuracy": 0.3758700489997864,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 0.982128918170929
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 40306.67725333157,
+      "hard_gate": false
+    },
+    {
+      "step": 1800,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.002889650873839855,
+            "fluc_p": 0.45315590500831604,
+            "total_u": 1.1064760656154249e-05,
+            "total_p": 0.004493192303925753,
+            "radial_rms": 0.05861608311533928,
+            "scale_inflation": 0.9197667837142944,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0424385070800781
+          },
+          "2": {
+            "fluc_u": 0.005287511274218559,
+            "fluc_p": 0.6479547023773193,
+            "total_u": 2.0718785890494473e-05,
+            "total_p": 0.006295990664511919,
+            "radial_rms": 0.11817586421966553,
+            "scale_inflation": 0.9629790782928467,
+            "growth_sign_accuracy": 0.71875,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1017521619796753
+          },
+          "4": {
+            "fluc_u": 0.008895473554730415,
+            "fluc_p": 1.0111597776412964,
+            "total_u": 3.477311474853195e-05,
+            "total_p": 0.009907400235533714,
+            "radial_rms": 0.2532303035259247,
+            "scale_inflation": 1.085280418395996,
+            "growth_sign_accuracy": 0.71875,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1456085443496704
+          },
+          "8": {
+            "fluc_u": 0.013736688531935215,
+            "fluc_p": 1.614242672920227,
+            "total_u": 5.428346048574895e-05,
+            "total_p": 0.017051469534635544,
+            "radial_rms": 0.5181809067726135,
+            "scale_inflation": 1.5617133378982544,
+            "growth_sign_accuracy": 0.7276785969734192,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.199257254600525
+          },
+          "16": {
+            "fluc_u": 0.08417396992444992,
+            "fluc_p": 9.803216934204102,
+            "total_u": 0.00022116265608929098,
+            "total_p": 0.06760717928409576,
+            "radial_rms": 1.0149415731430054,
+            "scale_inflation": 2.9247846603393555,
+            "growth_sign_accuracy": 0.8437500596046448,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 2.6502249240875244
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.09515601396560669,
+            "fluc_p": 0.4317930042743683,
+            "total_u": 0.00019370234804227948,
+            "total_p": 0.0045450408942997456,
+            "radial_rms": 0.1287257820367813,
+            "scale_inflation": 0.6729772090911865,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0149811506271362
+          },
+          "2": {
+            "fluc_u": 0.17874567210674286,
+            "fluc_p": 1.3222867250442505,
+            "total_u": 0.00035830779233947396,
+            "total_p": 0.01447167806327343,
+            "radial_rms": 0.23835551738739014,
+            "scale_inflation": 0.5952728986740112,
+            "growth_sign_accuracy": 0.27586206793785095,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0000450611114502
+          },
+          "4": {
+            "fluc_u": 0.32245180010795593,
+            "fluc_p": 2.4244601726531982,
+            "total_u": 0.0006512718973681331,
+            "total_p": 0.026817217469215393,
+            "radial_rms": 0.43199795484542847,
+            "scale_inflation": 0.46404021978378296,
+            "growth_sign_accuracy": 0.28409090638160706,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 0.9995155930519104
+          },
+          "8": {
+            "fluc_u": 0.5195304751396179,
+            "fluc_p": 5.7730255126953125,
+            "total_u": 0.001087654149159789,
+            "total_p": 0.06561130285263062,
+            "radial_rms": 0.6849561929702759,
+            "scale_inflation": 0.2742663621902466,
+            "growth_sign_accuracy": 0.31343284249305725,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 0.9991195797920227
+          },
+          "16": {
+            "fluc_u": 5.5551910400390625,
+            "fluc_p": 173.97122192382812,
+            "total_u": 0.007303374819457531,
+            "total_p": 0.7886462211608887,
+            "radial_rms": 1.0344959497451782,
+            "scale_inflation": 0.47539639472961426,
+            "growth_sign_accuracy": 0.357308566570282,
+            "finite_fraction": 1.0,
+            "divergent_windows": 3,
+            "max_norm_ratio": 42.34923553466797
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 179.94082837193272,
+      "hard_gate": false
+    },
+    {
+      "step": 2000,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.0022851170506328344,
+            "fluc_p": 0.3608771860599518,
+            "total_u": 8.440598321612924e-06,
+            "total_p": 0.003332444466650486,
+            "radial_rms": 0.06589369475841522,
+            "scale_inflation": 0.9123448133468628,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0328012704849243
+          },
+          "2": {
+            "fluc_u": 0.004167555365711451,
+            "fluc_p": 0.4075276255607605,
+            "total_u": 1.5761248505441472e-05,
+            "total_p": 0.0041853561997413635,
+            "radial_rms": 0.1352589726448059,
+            "scale_inflation": 0.9400991201400757,
+            "growth_sign_accuracy": 0.375,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0529289245605469
+          },
+          "4": {
+            "fluc_u": 0.007223257329314947,
+            "fluc_p": 0.7056785821914673,
+            "total_u": 2.7644488000078127e-05,
+            "total_p": 0.007191359996795654,
+            "radial_rms": 0.28162088990211487,
+            "scale_inflation": 1.0129148960113525,
+            "growth_sign_accuracy": 0.4270833432674408,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1304020881652832
+          },
+          "8": {
+            "fluc_u": 0.012006961740553379,
+            "fluc_p": 1.6643614768981934,
+            "total_u": 4.8009256715886295e-05,
+            "total_p": 0.01759573444724083,
+            "radial_rms": 0.5474422574043274,
+            "scale_inflation": 1.3919187784194946,
+            "growth_sign_accuracy": 0.6205357313156128,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1285783052444458
+          },
+          "16": {
+            "fluc_u": 0.44032949209213257,
+            "fluc_p": 184.4507598876953,
+            "total_u": 0.0006926928763277829,
+            "total_p": 1.252013921737671,
+            "radial_rms": 0.9980640411376953,
+            "scale_inflation": 2.9342546463012695,
+            "growth_sign_accuracy": 0.7875000238418579,
+            "finite_fraction": 1.0,
+            "divergent_windows": 4,
+            "max_norm_ratio": 49.34132766723633
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.09081823378801346,
+            "fluc_p": 0.37533047795295715,
+            "total_u": 0.0001825521030696109,
+            "total_p": 0.00389345595613122,
+            "radial_rms": 0.12418628484010696,
+            "scale_inflation": 0.6777454614639282,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0083909034729004
+          },
+          "2": {
+            "fluc_u": 0.17131009697914124,
+            "fluc_p": 0.5870212316513062,
+            "total_u": 0.0003422191657591611,
+            "total_p": 0.006010971963405609,
+            "radial_rms": 0.2307136505842209,
+            "scale_inflation": 0.6086399555206299,
+            "growth_sign_accuracy": 0.27586206793785095,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0188475847244263
+          },
+          "4": {
+            "fluc_u": 0.30807602405548096,
+            "fluc_p": 0.8962720036506653,
+            "total_u": 0.0006108403904363513,
+            "total_p": 0.008543536998331547,
+            "radial_rms": 0.41688835620880127,
+            "scale_inflation": 0.48516759276390076,
+            "growth_sign_accuracy": 0.3068181872367859,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0191929340362549
+          },
+          "8": {
+            "fluc_u": 0.4931313395500183,
+            "fluc_p": 3.8265016078948975,
+            "total_u": 0.0010059706401079893,
+            "total_p": 0.03989874944090843,
+            "radial_rms": 0.6611165404319763,
+            "scale_inflation": 0.2785494029521942,
+            "growth_sign_accuracy": 0.30845770239830017,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1901683807373047
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": 2508636978937856.0,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.3851507902145386,
+            "finite_fraction": 0.9375,
+            "divergent_windows": 23,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 185.2743939204753,
+      "hard_gate": false
+    },
+    {
+      "step": 2200,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.0019438468152657151,
+            "fluc_p": 0.29176458716392517,
+            "total_u": 7.455030754499603e-06,
+            "total_p": 0.0029617943800985813,
+            "radial_rms": 0.06377197802066803,
+            "scale_inflation": 0.9245412349700928,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0212454795837402
+          },
+          "2": {
+            "fluc_u": 0.0035322026815265417,
+            "fluc_p": 0.6125258207321167,
+            "total_u": 1.3839507118973415e-05,
+            "total_p": 0.007512741722166538,
+            "radial_rms": 0.12927165627479553,
+            "scale_inflation": 0.979408860206604,
+            "growth_sign_accuracy": 0.46875,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.038590431213379
+          },
+          "4": {
+            "fluc_u": 0.006492791697382927,
+            "fluc_p": 1.1653320789337158,
+            "total_u": 2.6294168492313474e-05,
+            "total_p": 0.013872208073735237,
+            "radial_rms": 0.2544589042663574,
+            "scale_inflation": 1.1116470098495483,
+            "growth_sign_accuracy": 0.5833333730697632,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.113041639328003
+          },
+          "8": {
+            "fluc_u": 0.014303670264780521,
+            "fluc_p": 2.0186400413513184,
+            "total_u": 5.963258445262909e-05,
+            "total_p": 0.022213563323020935,
+            "radial_rms": 0.4608030915260315,
+            "scale_inflation": 1.6894334554672241,
+            "growth_sign_accuracy": 0.7142857313156128,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.099992275238037
+          },
+          "16": {
+            "fluc_u": 0.12915171682834625,
+            "fluc_p": 38.18084716796875,
+            "total_u": 0.00034993537701666355,
+            "total_p": 0.24684666097164154,
+            "radial_rms": 1.92059326171875,
+            "scale_inflation": 4.299071788787842,
+            "growth_sign_accuracy": 0.768750011920929,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 8.697663307189941
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.0864313542842865,
+            "fluc_p": 0.3351152539253235,
+            "total_u": 0.00017013674369081855,
+            "total_p": 0.003346087643876672,
+            "radial_rms": 0.11865399032831192,
+            "scale_inflation": 0.6810195446014404,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0094555616378784
+          },
+          "2": {
+            "fluc_u": 0.16375437378883362,
+            "fluc_p": 0.5092051029205322,
+            "total_u": 0.00032282230677083135,
+            "total_p": 0.005580369848757982,
+            "radial_rms": 0.22124458849430084,
+            "scale_inflation": 0.6047765612602234,
+            "growth_sign_accuracy": 0.3103448152542114,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.016542911529541
+          },
+          "4": {
+            "fluc_u": 0.2949054539203644,
+            "fluc_p": 1.0603901147842407,
+            "total_u": 0.0005801671068184078,
+            "total_p": 0.01160387508571148,
+            "radial_rms": 0.4000064730644226,
+            "scale_inflation": 0.48121967911720276,
+            "growth_sign_accuracy": 0.28409090638160706,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.000229835510254
+          },
+          "8": {
+            "fluc_u": 0.4754634201526642,
+            "fluc_p": 4.212119102478027,
+            "total_u": 0.0009707874851301312,
+            "total_p": 0.044619619846343994,
+            "radial_rms": 0.635457456111908,
+            "scale_inflation": 0.3490966260433197,
+            "growth_sign_accuracy": 0.31343284249305725,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1139910221099854
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": 12.026054382324219,
+            "total_p": 224257.78125,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.3480278253555298,
+            "finite_fraction": 0.96875,
+            "divergent_windows": 10,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 38.92166169193806,
+      "hard_gate": false
+    },
+    {
+      "step": 2400,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.0016626440919935703,
+            "fluc_p": 0.28792303800582886,
+            "total_u": 6.3388711168954615e-06,
+            "total_p": 0.00294762896373868,
+            "radial_rms": 0.04918653145432472,
+            "scale_inflation": 0.9121929407119751,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0330342054367065
+          },
+          "2": {
+            "fluc_u": 0.0030542986933141947,
+            "fluc_p": 0.551666796207428,
+            "total_u": 1.1848059330077376e-05,
+            "total_p": 0.00675895344465971,
+            "radial_rms": 0.10048849135637283,
+            "scale_inflation": 0.9406014680862427,
+            "growth_sign_accuracy": 0.9375,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.015222191810608
+          },
+          "4": {
+            "fluc_u": 0.005643483716994524,
+            "fluc_p": 1.011043667793274,
+            "total_u": 2.2940022972761653e-05,
+            "total_p": 0.012116420082747936,
+            "radial_rms": 0.1980733722448349,
+            "scale_inflation": 1.0115845203399658,
+            "growth_sign_accuracy": 0.90625,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.012648344039917
+          },
+          "8": {
+            "fluc_u": 0.01322497520595789,
+            "fluc_p": 2.1307647228240967,
+            "total_u": 5.6188047892646864e-05,
+            "total_p": 0.024479636922478676,
+            "radial_rms": 0.3497798442840576,
+            "scale_inflation": 1.4075713157653809,
+            "growth_sign_accuracy": 0.9151785969734192,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0164235830307007
+          },
+          "16": {
+            "fluc_u": 0.06693501770496368,
+            "fluc_p": 90.48760223388672,
+            "total_u": 0.00025925826048478484,
+            "total_p": 0.3957980275154114,
+            "radial_rms": 1.8239139318466187,
+            "scale_inflation": 3.7712950706481934,
+            "growth_sign_accuracy": 0.9041666984558105,
+            "finite_fraction": 1.0,
+            "divergent_windows": 2,
+            "max_norm_ratio": 29.556087493896484
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.08360414952039719,
+            "fluc_p": 0.3253931701183319,
+            "total_u": 0.0001645286538405344,
+            "total_p": 0.0033132636453956366,
+            "radial_rms": 0.11519929021596909,
+            "scale_inflation": 0.6846619248390198,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0093269348144531
+          },
+          "2": {
+            "fluc_u": 0.1597164124250412,
+            "fluc_p": 0.6019503474235535,
+            "total_u": 0.0003144626971334219,
+            "total_p": 0.006777922622859478,
+            "radial_rms": 0.2163606584072113,
+            "scale_inflation": 0.6080213785171509,
+            "growth_sign_accuracy": 0.27586206793785095,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0430092811584473
+          },
+          "4": {
+            "fluc_u": 0.28780969977378845,
+            "fluc_p": 1.5348151922225952,
+            "total_u": 0.0005710656987503171,
+            "total_p": 0.016654061153531075,
+            "radial_rms": 0.39002150297164917,
+            "scale_inflation": 0.4855423867702484,
+            "growth_sign_accuracy": 0.29545456171035767,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.120647668838501
+          },
+          "8": {
+            "fluc_u": 0.46097299456596375,
+            "fluc_p": 8.836684226989746,
+            "total_u": 0.0009355252841487527,
+            "total_p": 0.07088564336299896,
+            "radial_rms": 0.6189410090446472,
+            "scale_inflation": 0.31893390417099,
+            "growth_sign_accuracy": 0.31343284249305725,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 2.3586108684539795
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": Infinity,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.3921113610267639,
+            "finite_fraction": 0.4375,
+            "divergent_windows": 30,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 91.13109762558888,
+      "hard_gate": false
+    },
+    {
+      "step": 2600,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.0015390533953905106,
+            "fluc_p": 0.2558055818080902,
+            "total_u": 6.113315976108424e-06,
+            "total_p": 0.002695254283025861,
+            "radial_rms": 0.06141757592558861,
+            "scale_inflation": 0.922539472579956,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0299150943756104
+          },
+          "2": {
+            "fluc_u": 0.0029077890794724226,
+            "fluc_p": 0.34136345982551575,
+            "total_u": 1.1817130143754184e-05,
+            "total_p": 0.003988549113273621,
+            "radial_rms": 0.12073273956775665,
+            "scale_inflation": 0.9737796783447266,
+            "growth_sign_accuracy": 0.65625,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0354583263397217
+          },
+          "4": {
+            "fluc_u": 0.005666921380907297,
+            "fluc_p": 0.5664967894554138,
+            "total_u": 2.3837488697608933e-05,
+            "total_p": 0.005833017639815807,
+            "radial_rms": 0.2372502237558365,
+            "scale_inflation": 1.117637276649475,
+            "growth_sign_accuracy": 0.7291666865348816,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0999952554702759
+          },
+          "8": {
+            "fluc_u": 0.010637233033776283,
+            "fluc_p": 1.048721194267273,
+            "total_u": 4.416424053488299e-05,
+            "total_p": 0.010944727808237076,
+            "radial_rms": 0.4606098234653473,
+            "scale_inflation": 1.7521353960037231,
+            "growth_sign_accuracy": 0.785714328289032,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.142160415649414
+          },
+          "16": {
+            "fluc_u": 0.13562248647212982,
+            "fluc_p": 7.416843414306641,
+            "total_u": 0.00030752597376704216,
+            "total_p": 0.05107974261045456,
+            "radial_rms": 1.7069947719573975,
+            "scale_inflation": 3.7567059993743896,
+            "growth_sign_accuracy": 0.7770833969116211,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 2.5465645790100098
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.08229463547468185,
+            "fluc_p": 0.3225060999393463,
+            "total_u": 0.00016166316345334053,
+            "total_p": 0.0034049637615680695,
+            "radial_rms": 0.11345866322517395,
+            "scale_inflation": 0.6847035884857178,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0081161260604858
+          },
+          "2": {
+            "fluc_u": 0.15671949088573456,
+            "fluc_p": 0.5557196140289307,
+            "total_u": 0.00030848715687170625,
+            "total_p": 0.005962440278381109,
+            "radial_rms": 0.212482750415802,
+            "scale_inflation": 0.6096818447113037,
+            "growth_sign_accuracy": 0.3103448152542114,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0174877643585205
+          },
+          "4": {
+            "fluc_u": 0.28198152780532837,
+            "fluc_p": 1.0961072444915771,
+            "total_u": 0.0005557835102081299,
+            "total_p": 0.011856632307171822,
+            "radial_rms": 0.38273370265960693,
+            "scale_inflation": 0.48542001843452454,
+            "growth_sign_accuracy": 0.27272728085517883,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 0.9998205900192261
+          },
+          "8": {
+            "fluc_u": 0.4614744782447815,
+            "fluc_p": 3.7474491596221924,
+            "total_u": 0.0009347931481897831,
+            "total_p": 0.03862359747290611,
+            "radial_rms": 0.6180628538131714,
+            "scale_inflation": 0.3192581534385681,
+            "growth_sign_accuracy": 0.3034825921058655,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1184340715408325
+          },
+          "16": {
+            "fluc_u": 4.349457740783691,
+            "fluc_p": 304.3401794433594,
+            "total_u": 0.007840203121304512,
+            "total_p": 2.2301130294799805,
+            "radial_rms": 0.8223428130149841,
+            "scale_inflation": 0.6029273271560669,
+            "growth_sign_accuracy": 0.3758700489997864,
+            "finite_fraction": 1.0,
+            "divergent_windows": 12,
+            "max_norm_ratio": 49.359737396240234
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 309.1106506847776,
+      "hard_gate": false
+    },
+    {
+      "step": 2800,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.0015120066236704588,
+            "fluc_p": 0.20326992869377136,
+            "total_u": 6.02098043600563e-06,
+            "total_p": 0.002228355035185814,
+            "radial_rms": 0.048383213579654694,
+            "scale_inflation": 0.9157693386077881,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.015932559967041
+          },
+          "2": {
+            "fluc_u": 0.002763620810583234,
+            "fluc_p": 0.28307464718818665,
+            "total_u": 1.1196530977031216e-05,
+            "total_p": 0.003193033393472433,
+            "radial_rms": 0.09223812818527222,
+            "scale_inflation": 0.9413000345230103,
+            "growth_sign_accuracy": 0.96875,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.032474398612976
+          },
+          "4": {
+            "fluc_u": 0.004924173001199961,
+            "fluc_p": 0.4858357608318329,
+            "total_u": 2.0127310563111678e-05,
+            "total_p": 0.005370943807065487,
+            "radial_rms": 0.1723538190126419,
+            "scale_inflation": 1.0455145835876465,
+            "growth_sign_accuracy": 0.9479166865348816,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0818067789077759
+          },
+          "8": {
+            "fluc_u": 0.008977110497653484,
+            "fluc_p": 0.9257289171218872,
+            "total_u": 3.710511373355985e-05,
+            "total_p": 0.010535234585404396,
+            "radial_rms": 0.31749242544174194,
+            "scale_inflation": 1.5240455865859985,
+            "growth_sign_accuracy": 0.9375000596046448,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0942758321762085
+          },
+          "16": {
+            "fluc_u": 0.026874346658587456,
+            "fluc_p": 14.028904914855957,
+            "total_u": 0.00010444459621794522,
+            "total_p": 0.06531833857297897,
+            "radial_rms": 0.6329531669616699,
+            "scale_inflation": 2.5561370849609375,
+            "growth_sign_accuracy": 0.92083340883255,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 3.746577501296997
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.08055510371923447,
+            "fluc_p": 0.21179649233818054,
+            "total_u": 0.0001584908168297261,
+            "total_p": 0.002221138682216406,
+            "radial_rms": 0.11114295572042465,
+            "scale_inflation": 0.6861638426780701,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.014571189880371
+          },
+          "2": {
+            "fluc_u": 0.15476489067077637,
+            "fluc_p": 0.43499651551246643,
+            "total_u": 0.00030438980320468545,
+            "total_p": 0.004619145765900612,
+            "radial_rms": 0.20982128381729126,
+            "scale_inflation": 0.611982524394989,
+            "growth_sign_accuracy": 0.3103448152542114,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0481233596801758
+          },
+          "4": {
+            "fluc_u": 0.2772766649723053,
+            "fluc_p": 0.6701110005378723,
+            "total_u": 0.0005464720306918025,
+            "total_p": 0.006709236651659012,
+            "radial_rms": 0.3761116564273834,
+            "scale_inflation": 0.49248963594436646,
+            "growth_sign_accuracy": 0.28409090638160706,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0499924421310425
+          },
+          "8": {
+            "fluc_u": 0.455035537481308,
+            "fluc_p": 3.0843632221221924,
+            "total_u": 0.000939234800171107,
+            "total_p": 0.030727293342351913,
+            "radial_rms": 0.6071540713310242,
+            "scale_inflation": 0.31932979822158813,
+            "growth_sign_accuracy": 0.2935323417186737,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.3585270643234253
+          },
+          "16": {
+            "fluc_u": Infinity,
+            "fluc_p": NaN,
+            "total_u": Infinity,
+            "total_p": Infinity,
+            "radial_rms": Infinity,
+            "scale_inflation": Infinity,
+            "growth_sign_accuracy": 0.39443153142929077,
+            "finite_fraction": 0.9375,
+            "divergent_windows": 28,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 14.25685300987825,
+      "hard_gate": false
+    },
+    {
+      "step": 3000,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.003658612724393606,
+            "fluc_p": 0.47871023416519165,
+            "total_u": 1.4715387806063518e-05,
+            "total_p": 0.005304153077304363,
+            "radial_rms": 0.08114062249660492,
+            "scale_inflation": 0.9167526364326477,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.059502363204956
+          },
+          "2": {
+            "fluc_u": 0.007145095616579056,
+            "fluc_p": 0.9844598174095154,
+            "total_u": 2.9205568353063427e-05,
+            "total_p": 0.010504143312573433,
+            "radial_rms": 0.1715807467699051,
+            "scale_inflation": 0.9751086831092834,
+            "growth_sign_accuracy": 0.375,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0991597175598145
+          },
+          "4": {
+            "fluc_u": 0.010274390690028667,
+            "fluc_p": 0.8057538866996765,
+            "total_u": 4.305254697101191e-05,
+            "total_p": 0.008644279092550278,
+            "radial_rms": 0.34398990869522095,
+            "scale_inflation": 1.0716739892959595,
+            "growth_sign_accuracy": 0.375,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0776450634002686
+          },
+          "8": {
+            "fluc_u": 0.019777396693825722,
+            "fluc_p": 1.9609081745147705,
+            "total_u": 8.116800745483488e-05,
+            "total_p": 0.018932349979877472,
+            "radial_rms": 0.7820903658866882,
+            "scale_inflation": 2.303211212158203,
+            "growth_sign_accuracy": 0.566964328289032,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.1764731407165527
+          },
+          "16": {
+            "fluc_u": 0.10233551263809204,
+            "fluc_p": 209.60464477539062,
+            "total_u": 0.00029281791648827493,
+            "total_p": 0.7129956483840942,
+            "radial_rms": 1.479885220527649,
+            "scale_inflation": 4.357522964477539,
+            "growth_sign_accuracy": 0.6625000238418579,
+            "finite_fraction": 1.0,
+            "divergent_windows": 1,
+            "max_norm_ratio": 75.02113342285156
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.0855422094464302,
+            "fluc_p": 0.5893917679786682,
+            "total_u": 0.00018230579735245556,
+            "total_p": 0.00641351705417037,
+            "radial_rms": 0.11413829773664474,
+            "scale_inflation": 0.6924737691879272,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0177491903305054
+          },
+          "2": {
+            "fluc_u": 0.16340091824531555,
+            "fluc_p": 1.1434658765792847,
+            "total_u": 0.00034021923784166574,
+            "total_p": 0.012647917494177818,
+            "radial_rms": 0.21504932641983032,
+            "scale_inflation": 0.6324406862258911,
+            "growth_sign_accuracy": 0.3448275923728943,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.061418890953064
+          },
+          "4": {
+            "fluc_u": 0.2900291979312897,
+            "fluc_p": 1.2257078886032104,
+            "total_u": 0.000583386339712888,
+            "total_p": 0.012846441939473152,
+            "radial_rms": 0.38620343804359436,
+            "scale_inflation": 0.5116828680038452,
+            "growth_sign_accuracy": 0.375,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0052034854888916
+          },
+          "8": {
+            "fluc_u": 0.47178542613983154,
+            "fluc_p": 1.3981488943099976,
+            "total_u": 0.0009545207722112536,
+            "total_p": 0.014874258078634739,
+            "radial_rms": 0.6283041834831238,
+            "scale_inflation": 0.3116888403892517,
+            "growth_sign_accuracy": 0.3631840646266937,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.000667691230774
+          },
+          "16": {
+            "fluc_u": 0.648994505405426,
+            "fluc_p": 2.7034759521484375,
+            "total_u": 0.0014010865706950426,
+            "total_p": 0.028878353536128998,
+            "radial_rms": 0.8258154988288879,
+            "scale_inflation": 0.2224637269973755,
+            "growth_sign_accuracy": 0.39443153142929077,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0478250980377197
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": 210.22036027511786,
+      "hard_gate": false
+    },
+    {
+      "step": 3200,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.0033484650775790215,
+            "fluc_p": 0.4336700439453125,
+            "total_u": 1.3473894796334207e-05,
+            "total_p": 0.0051202839240431786,
+            "radial_rms": 0.08235498517751694,
+            "scale_inflation": 0.9238463640213013,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0309803485870361
+          },
+          "2": {
+            "fluc_u": 0.005857302341610193,
+            "fluc_p": 0.5621522068977356,
+            "total_u": 2.3897067876532674e-05,
+            "total_p": 0.00686438474804163,
+            "radial_rms": 0.15604528784751892,
+            "scale_inflation": 0.9847182035446167,
+            "growth_sign_accuracy": 0.34375,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0467743873596191
+          },
+          "4": {
+            "fluc_u": 0.00934294518083334,
+            "fluc_p": 0.5796553492546082,
+            "total_u": 3.912925603799522e-05,
+            "total_p": 0.006931828800588846,
+            "radial_rms": 0.3147819936275482,
+            "scale_inflation": 1.2237703800201416,
+            "growth_sign_accuracy": 0.4375,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.051088809967041
+          },
+          "8": {
+            "fluc_u": 0.013021701015532017,
+            "fluc_p": 0.5395103693008423,
+            "total_u": 5.541549762710929e-05,
+            "total_p": 0.0065803625620901585,
+            "radial_rms": 0.5064816474914551,
+            "scale_inflation": 1.8554400205612183,
+            "growth_sign_accuracy": 0.65625,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.051544189453125
+          },
+          "16": {
+            "fluc_u": 0.0191048551350832,
+            "fluc_p": 0.598621666431427,
+            "total_u": 8.08368349680677e-05,
+            "total_p": 0.006991908419877291,
+            "radial_rms": 0.7108144760131836,
+            "scale_inflation": 2.563687562942505,
+            "growth_sign_accuracy": 0.8000000715255737,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0214494466781616
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 0.0889878198504448,
+            "fluc_p": 0.6903398036956787,
+            "total_u": 0.0001861940254457295,
+            "total_p": 0.0076742516830563545,
+            "radial_rms": 0.11948414146900177,
+            "scale_inflation": 0.6901703476905823,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0069057941436768
+          },
+          "2": {
+            "fluc_u": 0.1692950278520584,
+            "fluc_p": 0.613186240196228,
+            "total_u": 0.00034459237940609455,
+            "total_p": 0.006291099824011326,
+            "radial_rms": 0.22418732941150665,
+            "scale_inflation": 0.6182450652122498,
+            "growth_sign_accuracy": 0.3448275923728943,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0589594841003418
+          },
+          "4": {
+            "fluc_u": 0.2972124516963959,
+            "fluc_p": 0.6235912442207336,
+            "total_u": 0.0005977151449769735,
+            "total_p": 0.006881725043058395,
+            "radial_rms": 0.3959500789642334,
+            "scale_inflation": 0.47564882040023804,
+            "growth_sign_accuracy": 0.34090909361839294,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.0490518808364868
+          },
+          "8": {
+            "fluc_u": 0.4813915491104126,
+            "fluc_p": 1.6017570495605469,
+            "total_u": 0.000971403846051544,
+            "total_p": 0.018134210258722305,
+            "radial_rms": 0.6389912366867065,
+            "scale_inflation": 0.30660444498062134,
+            "growth_sign_accuracy": 0.32338306307792664,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 0.9996898174285889
+          },
+          "16": {
+            "fluc_u": 0.675230860710144,
+            "fluc_p": 1.9805452823638916,
+            "total_u": 0.0014415563782677054,
+            "total_p": 0.02269258350133896,
+            "radial_rms": 0.8649012446403503,
+            "scale_inflation": 0.14162349700927734,
+            "growth_sign_accuracy": 0.3665893077850342,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 0.997661292552948
+          }
+        }
+      },
+      "numeric_gate": true,
+      "hopf_gate": false,
+      "score": 2.9797942926816177,
+      "hard_gate": false
+    }
+  ]
+}

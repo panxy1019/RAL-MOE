@@ -1,0 +1,75 @@
+{
+  "schema": "field_figure_config/v1",
+  "mode": "boundary_fusion",
+  "figure_stem": "CenteredSquare_HP_boundary_T2C",
+  "bundle": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_hp/hp_heldout_cache.npz",
+  "weights_csv": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/HP_T2C_weights.csv",
+  "weight_key_column": "start",
+  "weight_alpha_column": "T2_C_alpha_candidate_1",
+  "time_offset": 0,
+  "arrays": {
+    "re": "re",
+    "split": "split",
+    "times": "timestamps",
+    "truth_a": "truth_a",
+    "truth_b": "truth_b",
+    "weight_key": "starts",
+    "quad_u": "quad_u",
+    "quad_p": "quad_p"
+  },
+  "truth_basis": "periodic",
+  "bases": {
+    "periodic": {
+      "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_velocity_pod_area_weighted_l2.npz",
+      "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_pressure_pod_area_weighted_l2.npz",
+      "velocity_layout": "interleaved",
+      "r_u": 28,
+      "r_p": 26
+    },
+    "hopf": {
+      "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+      "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+      "mean_u_key": "mean_uv_train",
+      "mean_p_key": "mean_p_train",
+      "velocity_layout": "interleaved",
+      "r_u": 11,
+      "r_p": 11
+    }
+  },
+  "methods": {
+    "p_only": {
+      "a": "candidate_1_a",
+      "b": "candidate_1_b",
+      "basis": "periodic"
+    },
+    "h_only": {
+      "a": "candidate_2_a",
+      "b": "candidate_2_b",
+      "basis": "hopf"
+    },
+    "t2c": {
+      "candidate_1_a": "candidate_1_a",
+      "candidate_1_b": "candidate_1_b",
+      "candidate_1_basis": "periodic",
+      "candidate_2_a": "candidate_2_a",
+      "candidate_2_b": "candidate_2_b",
+      "candidate_2_basis": "hopf"
+    }
+  },
+  "plot_order": [
+    "p_only",
+    "h_only",
+    "t2c"
+  ],
+  "target_method": "t2c",
+  "comparator_methods": [
+    "p_only",
+    "h_only"
+  ],
+  "method_labels": {
+    "truth": "Truth (CFD)",
+    "p_only": "Periodic Specialist",
+    "h_only": "Hopf Specialist",
+    "t2c": "Proposed\nRA-LMoE-ROM"
+  }
+}

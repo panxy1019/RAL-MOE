@@ -1,0 +1,877 @@
+nohup: ignoring input
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/swanlog/run-20260731_080849-5ja4p6yi-e9c967685351-135446
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B1_Deep_FNN_H3_seed1248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/5ja4p6yi
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B1_Deep_FNN_H3_seed1248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/5ja4p6yi
+swanlab: Upload complete: 8946 records
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/swanlog/run-20260731_092119-3j7cvulg-e9c967685351-135708
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B2_Deep_FNN_current_seed1248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/3j7cvulg
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B2_Deep_FNN_current_seed1248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/3j7cvulg
+swanlab: Upload complete: 8118 records
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/swanlog/run-20260731_102224-1jsdyu2u-e9c967685351-135840
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B3_Discrete_KDA_FNN_seed1248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/1jsdyu2u
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B3_Discrete_KDA_FNN_seed1248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/1jsdyu2u
+swanlab: Upload complete: 12270 records
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/swanlog/run-20260731_122104-3ivu6hje-e9c967685351-135974
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B4_CTDM_Galerkin_ROM_seed1248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/3ivu6hje
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B4_CTDM_Galerkin_ROM_seed1248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/3ivu6hje
+swanlab: Upload complete: 12558 records
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/code/analyze_ctdm_checkpoint.py:284: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  curve[str(index)] = float(torch.mean(eu + ep))
+{
+  "schema_version": 1,
+  "split": "validation",
+  "variant": "b1",
+  "model_name": "B1_Deep_FNN_H3",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/single_seed/B1_Deep_FNN_H3_seed1248/best_validation.pt",
+  "checkpoint_sha256": "2d370c90b50cd76bc4fc222e9fd4e4cca8dac11272928bba66054af8ea09c649",
+  "checkpoint_step": 8000,
+  "seed": 1248,
+  "main_warmup_length": 3,
+  "main": {
+    "aggregate": {
+      "Eu": 0.0002073194264085032,
+      "Ep": 0.0007249978662002832,
+      "Ea": 0.03892766684293747,
+      "Eb": 0.12097087875008583,
+      "terminal_Eu": 0.0003598820840124972,
+      "terminal_Ep": 0.0009035641560330987,
+      "worst_window_joint": 0.0016695413505658507,
+      "pressure_drift": 0.005262935534119606,
+      "finite_fraction_min": 1.0,
+      "divergent_windows": 0,
+      "available_re_count": 2,
+      "requested_re_count": 2
+    },
+    "by_re": [
+      {
+        "Re": 46.7,
+        "warmup_length": 3,
+        "windows": 3,
+        "available": true,
+        "Eu": 0.00013928495172876865,
+        "Ep": 0.0006851707585155964,
+        "Ea": 0.034231189638376236,
+        "Eb": 0.09048757702112198,
+        "terminal_Eu": 0.0001268569176318124,
+        "terminal_Ep": 0.000643423292785883,
+        "worst_window_joint": 0.0008675302960909903,
+        "pressure_drift": 0.005373381543904543,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0042937994003296,
+        "joint_K1": 0.0029214571695774794,
+        "joint_K4": 0.0017972164787352085,
+        "joint_K8": 0.0006855190731585026,
+        "joint_K16": 0.0004522124654613435,
+        "joint_K32": 0.0006017335108481348,
+        "joint_K56": 0.0007702803122811019
+      },
+      {
+        "Re": 56.543246,
+        "warmup_length": 3,
+        "windows": 16,
+        "available": true,
+        "Eu": 0.00027535390108823776,
+        "Ep": 0.00076482497388497,
+        "Ea": 0.0436241440474987,
+        "Eb": 0.15145418047904968,
+        "terminal_Eu": 0.000592907250393182,
+        "terminal_Ep": 0.0011637050192803144,
+        "worst_window_joint": 0.0016695413505658507,
+        "pressure_drift": 0.005152489524334669,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.006348729133606,
+        "joint_K1": 0.0011865627020597458,
+        "joint_K4": 0.0009891585214063525,
+        "joint_K8": 0.0009827872272580862,
+        "joint_K16": 0.0009105742210522294,
+        "joint_K32": 0.0009032319067046046,
+        "joint_K56": 0.0017566123278811574
+      }
+    ]
+  },
+  "capacity_warmup_diagnostics": {},
+  "timestep_consistency": [
+    {
+      "Re": 46.7,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 9.969114762498066e-05,
+      "C_p": 0.00046377250691875815,
+      "C_S": NaN,
+      "windows": 3
+    },
+    {
+      "Re": 46.7,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 5.7869881857186556e-05,
+      "C_p": 0.00024932570522651076,
+      "C_S": NaN,
+      "windows": 3
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 0.00040226755663752556,
+      "C_p": 0.0016931898426264524,
+      "C_S": NaN,
+      "windows": 4
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 4.9403097364120185e-05,
+      "C_p": 0.0002641943283379078,
+      "C_S": NaN,
+      "windows": 4
+    }
+  ],
+  "memory_diagnostics": [],
+  "elapsed_seconds": 8.246634735260159,
+  "training_performance": {
+    "elapsed_seconds": 4344.919760294259,
+    "optimizer_steps": 8000,
+    "steps_per_minute": 110.47384680988726,
+    "peak_gpu_memory_gb": 0.23898983001708984
+  },
+  "gate_manifest": null
+}
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/code/analyze_ctdm_checkpoint.py:284: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  curve[str(index)] = float(torch.mean(eu + ep))
+{
+  "schema_version": 1,
+  "split": "validation",
+  "variant": "b2",
+  "model_name": "B2_Deep_FNN_current",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/single_seed/B2_Deep_FNN_current_seed1248/best_validation.pt",
+  "checkpoint_sha256": "797a96bce4774d881c3f4890f3bf37c64fc01a4e3576f44150c7d99823abf3d5",
+  "checkpoint_step": 8000,
+  "seed": 1248,
+  "main_warmup_length": 3,
+  "main": {
+    "aggregate": {
+      "Eu": 0.0006251642189454287,
+      "Ep": 0.0011787907278630883,
+      "Ea": 0.041324151679873466,
+      "Eb": 0.12398476898670197,
+      "terminal_Eu": 0.0011649838561424986,
+      "terminal_Ep": 0.0020507339504547417,
+      "worst_window_joint": 0.003612414700910449,
+      "pressure_drift": 0.009991800179705024,
+      "finite_fraction_min": 1.0,
+      "divergent_windows": 0,
+      "available_re_count": 2,
+      "requested_re_count": 2
+    },
+    "by_re": [
+      {
+        "Re": 46.7,
+        "warmup_length": 3,
+        "windows": 3,
+        "available": true,
+        "Eu": 0.00031789508648216724,
+        "Ep": 0.0009703512187115848,
+        "Ea": 0.03683341294527054,
+        "Eb": 0.09104442596435547,
+        "terminal_Eu": 0.0004874145670328289,
+        "terminal_Ep": 0.001140092615969479,
+        "worst_window_joint": 0.0013033689465373755,
+        "pressure_drift": 0.0075665307231247425,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0092178583145142,
+        "joint_K1": 0.001966085284948349,
+        "joint_K4": 0.0020701619796454906,
+        "joint_K8": 0.001932321349158883,
+        "joint_K16": 0.001434546778909862,
+        "joint_K32": 0.0009609460830688477,
+        "joint_K56": 0.0016275073867291212
+      },
+      {
+        "Re": 56.543246,
+        "warmup_length": 3,
+        "windows": 16,
+        "available": true,
+        "Eu": 0.0009324333514086902,
+        "Ep": 0.0013872302370145917,
+        "Ea": 0.045814890414476395,
+        "Eb": 0.15692511200904846,
+        "terminal_Eu": 0.0018425531452521682,
+        "terminal_Ep": 0.0029613752849400043,
+        "worst_window_joint": 0.003612414700910449,
+        "pressure_drift": 0.012417069636285305,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0108182430267334,
+        "joint_K1": 0.0014682156033813953,
+        "joint_K4": 0.001444004476070404,
+        "joint_K8": 0.001129320589825511,
+        "joint_K16": 0.0011392466258257627,
+        "joint_K32": 0.0022096079774200916,
+        "joint_K56": 0.004803928546607494
+      }
+    ]
+  },
+  "capacity_warmup_diagnostics": {},
+  "timestep_consistency": [
+    {
+      "Re": 46.7,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 7.347485279751709e-06,
+      "C_p": 1.56786718434887e-05,
+      "C_S": NaN,
+      "windows": 3
+    },
+    {
+      "Re": 46.7,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 3.6398021165950922e-06,
+      "C_p": 7.8370530900429e-06,
+      "C_S": NaN,
+      "windows": 3
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 0.0004376281285658479,
+      "C_p": 0.0017731250263750553,
+      "C_S": NaN,
+      "windows": 4
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 0.00012836976384278387,
+      "C_p": 0.0005303366342559457,
+      "C_S": NaN,
+      "windows": 4
+    }
+  ],
+  "memory_diagnostics": [],
+  "elapsed_seconds": 7.672205341979861,
+  "training_performance": {
+    "elapsed_seconds": 3659.1358492751606,
+    "optimizer_steps": 8000,
+    "steps_per_minute": 131.17851311671944,
+    "peak_gpu_memory_gb": 0.22354602813720703
+  },
+  "gate_manifest": null
+}
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/code/analyze_ctdm_checkpoint.py:284: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  curve[str(index)] = float(torch.mean(eu + ep))
+{
+  "schema_version": 1,
+  "split": "validation",
+  "variant": "b3",
+  "model_name": "B3_Discrete_KDA_FNN",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/single_seed/B3_Discrete_KDA_FNN_seed1248/best_validation.pt",
+  "checkpoint_sha256": "d6bc653e192380da0b4c0889f81b7ebc2df1b80cd7b7b70cc7429d588344334e",
+  "checkpoint_step": 8000,
+  "seed": 1248,
+  "main_warmup_length": 3,
+  "main": {
+    "aggregate": {
+      "Eu": 0.0007657283858861774,
+      "Ep": 0.00435146177187562,
+      "Ea": 0.07815689407289028,
+      "Eb": 0.13532035797834396,
+      "terminal_Eu": 0.0014969692565500736,
+      "terminal_Ep": 0.005992860067635775,
+      "worst_window_joint": 0.00685243122279644,
+      "pressure_drift": 0.04274127818644047,
+      "finite_fraction_min": 1.0,
+      "divergent_windows": 0,
+      "available_re_count": 2,
+      "requested_re_count": 2
+    },
+    "by_re": [
+      {
+        "Re": 46.7,
+        "warmup_length": 3,
+        "windows": 3,
+        "available": true,
+        "Eu": 0.0003175634774379432,
+        "Ep": 0.004243163857609034,
+        "Ea": 0.04504914954304695,
+        "Eb": 0.07082614302635193,
+        "terminal_Eu": 0.0005208863876760006,
+        "terminal_Ep": 0.0048334673047065735,
+        "worst_window_joint": 0.004609532654285431,
+        "pressure_drift": 0.04309697076678276,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0289342403411865,
+        "joint_K1": 0.008022611029446125,
+        "joint_K4": 0.005248403176665306,
+        "joint_K8": 0.0022837966680526733,
+        "joint_K16": 0.002202098723500967,
+        "joint_K32": 0.005508454516530037,
+        "joint_K56": 0.005354353692382574
+      },
+      {
+        "Re": 56.543246,
+        "warmup_length": 3,
+        "windows": 16,
+        "available": true,
+        "Eu": 0.0012138932943344116,
+        "Ep": 0.004459759686142206,
+        "Ea": 0.11126463860273361,
+        "Eb": 0.199814572930336,
+        "terminal_Eu": 0.0024730521254241467,
+        "terminal_Ep": 0.007152252830564976,
+        "worst_window_joint": 0.00685243122279644,
+        "pressure_drift": 0.042385585606098175,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 0.9997010231018066,
+        "joint_K1": 0.0022657858207821846,
+        "joint_K4": 0.0027328154537826777,
+        "joint_K8": 0.002989592030644417,
+        "joint_K16": 0.0038365796208381653,
+        "joint_K32": 0.005761699751019478,
+        "joint_K56": 0.00962530542165041
+      }
+    ]
+  },
+  "capacity_warmup_diagnostics": {
+    "8": {
+      "aggregate": {
+        "Eu": 0.001217140001244843,
+        "Ep": 0.004460461903363466,
+        "Ea": 0.10389641672372818,
+        "Eb": 0.19201599061489105,
+        "terminal_Eu": 0.0024782002437859774,
+        "terminal_Ep": 0.007336948532611132,
+        "worst_window_joint": 0.0068395864218473434,
+        "pressure_drift": 0.042428381741046906,
+        "finite_fraction_min": 1.0,
+        "divergent_windows": 0,
+        "available_re_count": 1,
+        "requested_re_count": 2
+      },
+      "by_re": [
+        {
+          "Re": 46.7,
+          "warmup_length": 8,
+          "windows": 0,
+          "available": false,
+          "reason": "trajectory too short for warmup plus K56"
+        },
+        {
+          "Re": 56.543246,
+          "warmup_length": 8,
+          "windows": 16,
+          "available": true,
+          "Eu": 0.001217140001244843,
+          "Ep": 0.004460461903363466,
+          "Ea": 0.10389641672372818,
+          "Eb": 0.19201599061489105,
+          "terminal_Eu": 0.0024782002437859774,
+          "terminal_Ep": 0.007336948532611132,
+          "worst_window_joint": 0.0068395864218473434,
+          "pressure_drift": 0.042428381741046906,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 0.9996993541717529,
+          "joint_K1": 0.0022312270011752844,
+          "joint_K4": 0.0026758452877402306,
+          "joint_K8": 0.0029132100753486156,
+          "joint_K16": 0.00381683511659503,
+          "joint_K32": 0.005810956936329603,
+          "joint_K56": 0.009815149009227753
+        }
+      ]
+    },
+    "16": {
+      "aggregate": {
+        "Eu": 0.0012275355402380228,
+        "Ep": 0.004494827706366777,
+        "Ea": 0.1009320616722107,
+        "Eb": 0.1914677619934082,
+        "terminal_Eu": 0.002501176670193672,
+        "terminal_Ep": 0.007444723509252071,
+        "worst_window_joint": 0.006828395649790764,
+        "pressure_drift": 0.04254825785756111,
+        "finite_fraction_min": 1.0,
+        "divergent_windows": 0,
+        "available_re_count": 1,
+        "requested_re_count": 2
+      },
+      "by_re": [
+        {
+          "Re": 46.7,
+          "warmup_length": 16,
+          "windows": 0,
+          "available": false,
+          "reason": "trajectory too short for warmup plus K56"
+        },
+        {
+          "Re": 56.543246,
+          "warmup_length": 16,
+          "windows": 16,
+          "available": true,
+          "Eu": 0.0012275355402380228,
+          "Ep": 0.004494827706366777,
+          "Ea": 0.1009320616722107,
+          "Eb": 0.1914677619934082,
+          "terminal_Eu": 0.002501176670193672,
+          "terminal_Ep": 0.007444723509252071,
+          "worst_window_joint": 0.006828395649790764,
+          "pressure_drift": 0.04254825785756111,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 0.9996986389160156,
+          "joint_K1": 0.0021380255930125713,
+          "joint_K4": 0.002615631092339754,
+          "joint_K8": 0.002974345115944743,
+          "joint_K16": 0.003903935896232724,
+          "joint_K32": 0.005919560790061951,
+          "joint_K56": 0.009945900179445744
+        }
+      ]
+    }
+  },
+  "timestep_consistency": [
+    {
+      "Re": 46.7,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 1.0535071851336397e-05,
+      "C_p": 3.1704264984000474e-05,
+      "C_S": 0.014635637402534485,
+      "windows": 3
+    },
+    {
+      "Re": 46.7,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 3.2031584851210937e-06,
+      "C_p": 1.1881336831720546e-05,
+      "C_S": 0.006151390727609396,
+      "windows": 3
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 0.00021453059162013233,
+      "C_p": 0.0009738848311826587,
+      "C_S": 0.03084196336567402,
+      "windows": 4
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 5.724776929127984e-05,
+      "C_p": 0.0002645179338287562,
+      "C_S": 0.013748410157859325,
+      "windows": 4
+    }
+  ],
+  "memory_diagnostics": [
+    {
+      "Re": 46.7,
+      "gamma_mean": 0.031825266778469086,
+      "gamma_min": 0.0011710799299180508,
+      "gamma_max": 0.3161318600177765,
+      "timescale_mean": 104.7997055053711,
+      "half_life_mean": 72.6416244506836,
+      "eta_mean": 0.026534320786595345,
+      "eta_min": 0.016816111281514168,
+      "eta_max": 0.034541055560112,
+      "memory_frobenius_mean": 2.2326552867889404,
+      "memory_max_singular_mean": 2.2217836380004883,
+      "memory_effective_rank_mean": 1.6404664516448975,
+      "delta_error_mean": 1.131224513053894,
+      "warmup_length": 3
+    },
+    {
+      "Re": 56.543246,
+      "gamma_mean": 0.2655531167984009,
+      "gamma_min": 0.001009826548397541,
+      "gamma_max": 5.107588768005371,
+      "timescale_mean": 231.72181701660156,
+      "half_life_mean": 160.61732482910156,
+      "eta_mean": 0.038570139557123184,
+      "eta_min": 0.017967931926250458,
+      "eta_max": 0.08996611088514328,
+      "memory_frobenius_mean": 4.789945125579834,
+      "memory_max_singular_mean": 4.787782669067383,
+      "memory_effective_rank_mean": 1.1878139972686768,
+      "delta_error_mean": 0.804996132850647,
+      "warmup_length": 3
+    },
+    {
+      "Re": 56.543246,
+      "gamma_mean": 0.2664886713027954,
+      "gamma_min": 0.0010128587018698454,
+      "gamma_max": 5.104132175445557,
+      "timescale_mean": 232.38119506835938,
+      "half_life_mean": 161.07437133789062,
+      "eta_mean": 0.038777049630880356,
+      "eta_min": 0.017540765926241875,
+      "eta_max": 0.08882290124893188,
+      "memory_frobenius_mean": 4.789928913116455,
+      "memory_max_singular_mean": 4.787654399871826,
+      "memory_effective_rank_mean": 1.1952999830245972,
+      "delta_error_mean": 0.7794607877731323,
+      "warmup_length": 8
+    },
+    {
+      "Re": 56.543246,
+      "gamma_mean": 0.26762551069259644,
+      "gamma_min": 0.0010129438014701009,
+      "gamma_max": 5.113362789154053,
+      "timescale_mean": 232.9793701171875,
+      "half_life_mean": 161.48898315429688,
+      "eta_mean": 0.03904915973544121,
+      "eta_min": 0.01672627404332161,
+      "eta_max": 0.08882290124893188,
+      "memory_frobenius_mean": 4.791142463684082,
+      "memory_max_singular_mean": 4.7888898849487305,
+      "memory_effective_rank_mean": 1.2041610479354858,
+      "delta_error_mean": 0.7483020424842834,
+      "warmup_length": 16
+    }
+  ],
+  "elapsed_seconds": 14.26115666795522,
+  "training_performance": {
+    "elapsed_seconds": 7114.152283334173,
+    "optimizer_steps": 8000,
+    "steps_per_minute": 67.47114496332365,
+    "peak_gpu_memory_gb": 0.2777595520019531
+  },
+  "gate_manifest": null
+}
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/code/analyze_ctdm_checkpoint.py:284: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /__w/pytorch/pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:822.)
+  curve[str(index)] = float(torch.mean(eu + ep))
+{
+  "schema_version": 1,
+  "split": "validation",
+  "variant": "b4",
+  "model_name": "B4_CTDM_Galerkin_ROM",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/single_seed/B4_CTDM_Galerkin_ROM_seed1248/best_validation.pt",
+  "checkpoint_sha256": "bb64bd0939def0caecbcc2db56dd4b7f00f748967aa1545a5170a11bfd6b35ec",
+  "checkpoint_step": 8000,
+  "seed": 1248,
+  "main_warmup_length": 3,
+  "main": {
+    "aggregate": {
+      "Eu": 0.0009201936336467043,
+      "Ep": 0.004584756447002292,
+      "Ea": 0.10964188538491726,
+      "Eb": 0.1952630989253521,
+      "terminal_Eu": 0.0018482442683307454,
+      "terminal_Ep": 0.007439650595188141,
+      "worst_window_joint": 0.011234364472329617,
+      "pressure_drift": 0.039675772190093994,
+      "finite_fraction_min": 1.0,
+      "divergent_windows": 0,
+      "available_re_count": 2,
+      "requested_re_count": 2
+    },
+    "by_re": [
+      {
+        "Re": 46.7,
+        "warmup_length": 3,
+        "windows": 3,
+        "available": true,
+        "Eu": 0.0002811743470374495,
+        "Ep": 0.004190000239759684,
+        "Ea": 0.06128784641623497,
+        "Eb": 0.08338960260152817,
+        "terminal_Eu": 0.0004225148295518011,
+        "terminal_Ep": 0.005100704729557037,
+        "worst_window_joint": 0.004530838690698147,
+        "pressure_drift": 0.041951604187488556,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0294787883758545,
+        "joint_K1": 0.009317299351096153,
+        "joint_K4": 0.006968917325139046,
+        "joint_K8": 0.003709855955094099,
+        "joint_K16": 0.0009434185340069234,
+        "joint_K32": 0.005074290093034506,
+        "joint_K56": 0.005523219704627991
+      },
+      {
+        "Re": 56.543246,
+        "warmup_length": 3,
+        "windows": 16,
+        "available": true,
+        "Eu": 0.001559212920255959,
+        "Ep": 0.0049795126542449,
+        "Ea": 0.15799592435359955,
+        "Eb": 0.307136595249176,
+        "terminal_Eu": 0.0032739737071096897,
+        "terminal_Ep": 0.009778596460819244,
+        "worst_window_joint": 0.011234364472329617,
+        "pressure_drift": 0.03739994019269943,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0024605989456177,
+        "joint_K1": 0.00222474941983819,
+        "joint_K4": 0.0026960489340126514,
+        "joint_K8": 0.002609961898997426,
+        "joint_K16": 0.0036146987695246935,
+        "joint_K32": 0.0065674567595124245,
+        "joint_K56": 0.013052571564912796
+      }
+    ]
+  },
+  "capacity_warmup_diagnostics": {
+    "8": {
+      "aggregate": {
+        "Eu": 0.0015684281243011355,
+        "Ep": 0.004979156423360109,
+        "Ea": 0.1506725400686264,
+        "Eb": 0.2994104027748108,
+        "terminal_Eu": 0.003302584867924452,
+        "terminal_Ep": 0.010007068514823914,
+        "worst_window_joint": 0.011182105168700218,
+        "pressure_drift": 0.03692229464650154,
+        "finite_fraction_min": 1.0,
+        "divergent_windows": 0,
+        "available_re_count": 1,
+        "requested_re_count": 2
+      },
+      "by_re": [
+        {
+          "Re": 46.7,
+          "warmup_length": 8,
+          "windows": 0,
+          "available": false,
+          "reason": "trajectory too short for warmup plus K56"
+        },
+        {
+          "Re": 56.543246,
+          "warmup_length": 8,
+          "windows": 16,
+          "available": true,
+          "Eu": 0.0015684281243011355,
+          "Ep": 0.004979156423360109,
+          "Ea": 0.1506725400686264,
+          "Eb": 0.2994104027748108,
+          "terminal_Eu": 0.003302584867924452,
+          "terminal_Ep": 0.010007068514823914,
+          "worst_window_joint": 0.011182105168700218,
+          "pressure_drift": 0.03692229464650154,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 1.0012985467910767,
+          "joint_K1": 0.0017809146083891392,
+          "joint_K4": 0.002460823394358158,
+          "joint_K8": 0.0025664172135293484,
+          "joint_K16": 0.0036964043974876404,
+          "joint_K32": 0.006749184336513281,
+          "joint_K56": 0.013309653848409653
+        }
+      ]
+    },
+    "16": {
+      "aggregate": {
+        "Eu": 0.001592510612681508,
+        "Ep": 0.0050695366226136684,
+        "Ea": 0.1464446783065796,
+        "Eb": 0.29617950320243835,
+        "terminal_Eu": 0.003369887825101614,
+        "terminal_Ep": 0.01028951071202755,
+        "worst_window_joint": 0.011132458224892616,
+        "pressure_drift": 0.0368071123957634,
+        "finite_fraction_min": 1.0,
+        "divergent_windows": 0,
+        "available_re_count": 1,
+        "requested_re_count": 2
+      },
+      "by_re": [
+        {
+          "Re": 46.7,
+          "warmup_length": 16,
+          "windows": 0,
+          "available": false,
+          "reason": "trajectory too short for warmup plus K56"
+        },
+        {
+          "Re": 56.543246,
+          "warmup_length": 16,
+          "windows": 16,
+          "available": true,
+          "Eu": 0.001592510612681508,
+          "Ep": 0.0050695366226136684,
+          "Ea": 0.1464446783065796,
+          "Eb": 0.29617950320243835,
+          "terminal_Eu": 0.003369887825101614,
+          "terminal_Ep": 0.01028951071202755,
+          "worst_window_joint": 0.011132458224892616,
+          "pressure_drift": 0.0368071123957634,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 1.0006259679794312,
+          "joint_K1": 0.0017916117794811726,
+          "joint_K4": 0.0023127440363168716,
+          "joint_K8": 0.002597291488200426,
+          "joint_K16": 0.0037472695112228394,
+          "joint_K32": 0.006862910930067301,
+          "joint_K56": 0.013659399002790451
+        }
+      ]
+    }
+  },
+  "timestep_consistency": [
+    {
+      "Re": 46.7,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 6.359370672726072e-06,
+      "C_p": 5.100666749058291e-05,
+      "C_S": 0.004918317310512066,
+      "windows": 3
+    },
+    {
+      "Re": 46.7,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 2.9380271371337585e-06,
+      "C_p": 2.493687134119682e-05,
+      "C_S": 0.0024207811802625656,
+      "windows": 3
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 3.036489761143457e-05,
+      "C_p": 0.00018032979278359562,
+      "C_S": 0.015597911551594734,
+      "windows": 4
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 1.591225191077683e-05,
+      "C_p": 6.646440306212753e-05,
+      "C_S": 0.010248628444969654,
+      "windows": 4
+    }
+  ],
+  "memory_diagnostics": [
+    {
+      "Re": 46.7,
+      "gamma_mean": 0.026418911293148994,
+      "gamma_min": 0.0017559779807925224,
+      "gamma_max": 0.34400954842567444,
+      "timescale_mean": 90.6566390991211,
+      "half_life_mean": 62.8383903503418,
+      "eta_mean": 0.027053624391555786,
+      "eta_min": 0.012330900877714157,
+      "eta_max": 0.055137719959020615,
+      "memory_frobenius_mean": 2.1387200355529785,
+      "memory_max_singular_mean": 2.129730701446533,
+      "memory_effective_rank_mean": 1.6588267087936401,
+      "delta_error_mean": 1.2209795713424683,
+      "warmup_length": 3
+    },
+    {
+      "Re": 56.543246,
+      "gamma_mean": 0.026698539033532143,
+      "gamma_min": 0.0011562415165826678,
+      "gamma_max": 0.13656552135944366,
+      "timescale_mean": 170.47999572753906,
+      "half_life_mean": 118.16773223876953,
+      "eta_mean": 0.022196702659130096,
+      "eta_min": 0.01220731157809496,
+      "eta_max": 0.04652702063322067,
+      "memory_frobenius_mean": 3.328239679336548,
+      "memory_max_singular_mean": 3.3280911445617676,
+      "memory_effective_rank_mean": 1.0722098350524902,
+      "delta_error_mean": 0.8078370094299316,
+      "warmup_length": 3
+    },
+    {
+      "Re": 56.543246,
+      "gamma_mean": 0.02685007080435753,
+      "gamma_min": 0.0011562415165826678,
+      "gamma_max": 0.1396995335817337,
+      "timescale_mean": 171.78367614746094,
+      "half_life_mean": 119.07137298583984,
+      "eta_mean": 0.02230413816869259,
+      "eta_min": 0.011863994412124157,
+      "eta_max": 0.04672622308135033,
+      "memory_frobenius_mean": 3.3282113075256348,
+      "memory_max_singular_mean": 3.3280344009399414,
+      "memory_effective_rank_mean": 1.078490972518921,
+      "delta_error_mean": 0.7905771732330322,
+      "warmup_length": 8
+    },
+    {
+      "Re": 56.543246,
+      "gamma_mean": 0.027026070281863213,
+      "gamma_min": 0.0011562415165826678,
+      "gamma_max": 0.14383171498775482,
+      "timescale_mean": 173.02088928222656,
+      "half_life_mean": 119.92893981933594,
+      "eta_mean": 0.022438999265432358,
+      "eta_min": 0.01191633939743042,
+      "eta_max": 0.04672622308135033,
+      "memory_frobenius_mean": 3.321793556213379,
+      "memory_max_singular_mean": 3.3215761184692383,
+      "memory_effective_rank_mean": 1.085781216621399,
+      "delta_error_mean": 0.7624431848526001,
+      "warmup_length": 16
+    }
+  ],
+  "elapsed_seconds": 14.349297383800149,
+  "training_performance": {
+    "elapsed_seconds": 7356.261613628827,
+    "optimizer_steps": 8000,
+    "steps_per_minute": 65.25053419942431,
+    "peak_gpu_memory_gb": 0.2849245071411133
+  },
+  "gate_manifest": null
+}

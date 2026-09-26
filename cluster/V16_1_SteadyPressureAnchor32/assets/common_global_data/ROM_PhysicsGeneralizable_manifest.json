@@ -1,0 +1,91 @@
+{
+  "velocity": {
+    "file": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/semi_intrusive_galerkin_tensors_allRe100_areaWeightedL2_ru80_rp80_compact.npz",
+    "bytes": 17753738,
+    "n_re": 100,
+    "first_label": "Re_20p000000",
+    "last_label": "Re_200p000000",
+    "r_u": 80,
+    "r_p": 80,
+    "G_u_shape": [
+      80,
+      80
+    ],
+    "H_shape": [
+      80,
+      80,
+      80
+    ],
+    "P_shape": [
+      80,
+      80
+    ],
+    "c_all_shape": [
+      100,
+      80
+    ],
+    "A_all_shape": [
+      100,
+      80,
+      80
+    ],
+    "bad_numeric_arrays": [],
+    "cond_G_u": 1.0000228219509926,
+    "max_abs_G_minus_I": 7.465469660239421e-06,
+    "norm_H": 14.283786545218533,
+    "norm_P": 0.4957868952887116,
+    "norm_c_first": 2.708366987373927e-05,
+    "norm_A_first": 0.39297182062831987,
+    "norm_c_last": 0.012986721555622329,
+    "norm_A_last": 4.06764579333356,
+    "first_c_stack_delta": 0.0,
+    "last_A_stack_delta": 0.0
+  },
+  "pressure": {
+    "file": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/pressure_poisson_surrogate_tensors_allRe100_areaWeightedL2_ru80_rp80.npz",
+    "bytes": 18011624,
+    "n_re": 100,
+    "first_label": "Re_20p000000",
+    "last_label": "Re_200p000000",
+    "L_shape": [
+      80,
+      80
+    ],
+    "H_p_shape": [
+      80,
+      80,
+      80
+    ],
+    "H_tilde_shape": [
+      80,
+      80,
+      80
+    ],
+    "bad_numeric_arrays": [],
+    "L_rank": 80,
+    "L_singular_min": 0.017072166147038062,
+    "L_singular_max": 70.95177270454566,
+    "L_symmetry_max_abs": 0.0,
+    "L_eig_max": -0.017072166147035363,
+    "L_eig_min": -70.95177270454566,
+    "norm_H_p": 55.124109872093136,
+    "norm_H_tilde": 8.220474221039442,
+    "residual_H_abs": 2.0071688344270403e-13,
+    "residual_H_rel": 3.64118139791166e-15,
+    "residual_first_c_abs": 5.0696636375723454e-18,
+    "residual_first_A_abs": 7.828927186407392e-16,
+    "residual_last_c_abs": 1.1409562741768842e-15,
+    "residual_last_A_abs": 9.557474522979213e-15
+  },
+  "pod": {
+    "dir": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Global_POD_AreaWeighted_L2",
+    "velocity_pod_bytes": 96190127,
+    "pressure_pod_bytes": 50615098,
+    "weights_bytes": 274601
+  },
+  "generated_reports": {
+    "velocity_report": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/SEMI_INTRUSIVE_GALERKIN_TENSORS_allRe100_areaWeightedL2_ru80_rp80.md",
+    "pressure_report": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/PRESSURE_POISSON_SURROGATE_TENSORS_allRe100_areaWeightedL2_ru80_rp80.md",
+    "combined_report": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/ROM_PhysicsGeneralizable_CONSTRUCTION_REPORT.md"
+  }
+}

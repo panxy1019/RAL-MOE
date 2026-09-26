@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/periodic_specialist_r32/code/evaluate_periodic_r32_portable.py", line 397, in <module>
+    main()
+  File "/root/panxy/particalMOE/periodic_specialist_r32/code/evaluate_periodic_r32_portable.py", line 210, in main
+    existing_by_re = {round(float(item["test_Re"]), 5): item for item in old_metrics["results"]}
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/panxy/particalMOE/periodic_specialist_r32/code/evaluate_periodic_r32_portable.py", line 210, in <dictcomp>
+    existing_by_re = {round(float(item["test_Re"]), 5): item for item in old_metrics["results"]}
+                                  ~~~~^^^^^^^^^^^
+KeyError: 'test_Re'

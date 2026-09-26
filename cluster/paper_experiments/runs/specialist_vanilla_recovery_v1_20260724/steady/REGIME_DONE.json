@@ -1,0 +1,15 @@
+{
+  "errors": {
+    "vanilla-fnn": "RuntimeError('vanilla_train_s2 returned -15')"
+  },
+  "finished_unix": 1784894158.6209455,
+  "methods": [
+    "vanilla-fnn"
+  ],
+  "regime": "steady",
+  "return_codes": {
+    "vanilla_preflight": 0,
+    "vanilla_train_s2": -15
+  },
+  "status": "FAILED"
+}

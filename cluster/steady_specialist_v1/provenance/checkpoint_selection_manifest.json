@@ -1,0 +1,252 @@
+{
+  "all_validation_candidates": [
+    {
+      "k16_pressure_fixed_point_worst": 0.1734143205142306,
+      "k16_pressure_gain_p95": 5.343522071838379,
+      "k56_pressure_fixed_point_worst": 0.13652409100134932,
+      "protection": {
+        "pass": true,
+        "reasons": []
+      },
+      "step": 0
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.0665688015663752,
+      "k16_pressure_gain_p95": 43.68476581573486,
+      "k56_pressure_fixed_point_worst": 0.18774119312363174,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "k16_pressure_gain_p95_gt_5pct",
+          "k56_pressure_gain_p95_gt_5pct"
+        ]
+      },
+      "step": 200
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.09967254323633441,
+      "k16_pressure_gain_p95": 6.004235744476318,
+      "k56_pressure_fixed_point_worst": 0.19541550499938248,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "k16_pressure_gain_p95_gt_5pct",
+          "k56_pressure_gain_p95_gt_5pct"
+        ]
+      },
+      "step": 400
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.11801677553601386,
+      "k16_pressure_gain_p95": 38.70939064025879,
+      "k56_pressure_fixed_point_worst": 0.14110562620501488,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "k16_pressure_gain_p95_gt_5pct"
+        ]
+      },
+      "step": 600
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.1331421951290355,
+      "k16_pressure_gain_p95": 15.723278760910034,
+      "k56_pressure_fixed_point_worst": 0.13337207702957568,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "k16_pressure_gain_p95_gt_5pct",
+          "k56_pressure_gain_p95_gt_5pct"
+        ]
+      },
+      "step": 800
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.13974260702382071,
+      "k16_pressure_gain_p95": 5.234667062759399,
+      "k56_pressure_fixed_point_worst": 0.14050521229983662,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct"
+        ]
+      },
+      "step": 1000
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.14029193350097446,
+      "k16_pressure_gain_p95": 5.1679147481918335,
+      "k56_pressure_fixed_point_worst": 0.13900018709391693,
+      "protection": {
+        "pass": true,
+        "reasons": []
+      },
+      "step": 1200
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.13687331528240623,
+      "k16_pressure_gain_p95": 5.808326840400696,
+      "k56_pressure_fixed_point_worst": 0.13694972801482605,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct",
+          "k16_pressure_gain_p95_gt_5pct",
+          "k56_pressure_gain_p95_gt_5pct"
+        ]
+      },
+      "step": 1400
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.14023881885746767,
+      "k16_pressure_gain_p95": 4.864720463752747,
+      "k56_pressure_fixed_point_worst": 0.1401098885929772,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct"
+        ]
+      },
+      "step": 1600
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.14233717854410322,
+      "k16_pressure_gain_p95": 5.697027802467346,
+      "k56_pressure_fixed_point_worst": 0.14165677644109004,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct",
+          "k16_pressure_gain_p95_gt_5pct"
+        ]
+      },
+      "step": 1800
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.1336657794994826,
+      "k16_pressure_gain_p95": 5.395433306694031,
+      "k56_pressure_fixed_point_worst": 0.13320619902395384,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct"
+        ]
+      },
+      "step": 2000
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.13794004428554726,
+      "k16_pressure_gain_p95": 5.012659192085266,
+      "k56_pressure_fixed_point_worst": 0.13872889801670807,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct",
+          "k56_pressure_gain_p95_gt_5pct"
+        ]
+      },
+      "step": 2200
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.1361158332285652,
+      "k16_pressure_gain_p95": 5.656531572341919,
+      "k56_pressure_fixed_point_worst": 0.13607971172499422,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct",
+          "k16_pressure_gain_p95_gt_5pct"
+        ]
+      },
+      "step": 2400
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.13461285812015536,
+      "k16_pressure_gain_p95": 5.416565895080566,
+      "k56_pressure_fixed_point_worst": 0.13424624378737018,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct"
+        ]
+      },
+      "step": 2600
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.1369678369118229,
+      "k16_pressure_gain_p95": 5.444999694824219,
+      "k56_pressure_fixed_point_worst": 0.13662643697684512,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct",
+          "clean_k56_pressure_relative_l2_gt_5pct"
+        ]
+      },
+      "step": 2800
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.13833946684969695,
+      "k16_pressure_gain_p95": 5.358788967132568,
+      "k56_pressure_fixed_point_worst": 0.13758942693168702,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct"
+        ]
+      },
+      "step": 3000
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.1386125739124517,
+      "k16_pressure_gain_p95": 5.307707071304321,
+      "k56_pressure_fixed_point_worst": 0.13792411536369492,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct",
+          "clean_k56_pressure_relative_l2_gt_5pct"
+        ]
+      },
+      "step": 3200
+    },
+    {
+      "k16_pressure_fixed_point_worst": 0.1389540274370496,
+      "k16_pressure_gain_p95": 5.962842702865601,
+      "k56_pressure_fixed_point_worst": 0.1384127816817394,
+      "protection": {
+        "pass": false,
+        "reasons": [
+          "clean_k56_velocity_relative_l2_gt_5pct",
+          "k16_pressure_gain_p95_gt_5pct",
+          "k56_pressure_gain_p95_gt_5pct"
+        ]
+      },
+      "step": 3400
+    }
+  ],
+  "canonical_best_modified": false,
+  "heldout_used_for_selection": false,
+  "schema_version": 1,
+  "selected": {
+    "frozen_path": "/data/V17indepentMOEV2/s4_steady/results/final_20260719_step3480/frozen_s4_validation_step_1200.pt",
+    "k16_pressure_fixed_point_worst": 0.14029193350097446,
+    "k16_pressure_gain_p95": 5.1679147481918335,
+    "k56_pressure_fixed_point_worst": 0.13900018709391693,
+    "protection": {
+      "pass": true,
+      "reasons": []
+    },
+    "sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+    "source_path": "/data/V17indepentMOEV2/s4_steady/runs/20260718_233859/checkpoints/validation_step_1200.pt",
+    "step": 1200
+  },
+  "selection_completed_before_heldout": true,
+  "selection_rule": "protection-pass first; minimum worst validation K16 physical pressure fixed-point residual; tie by K56 fixed-point then K16 pressure gain P95",
+  "training_stop": {
+    "final_logged_optimizer_step": 3480,
+    "last_completed_validation_step": 3400,
+    "reason": "user_requested_stop",
+    "requested_by_user": true
+  }
+}

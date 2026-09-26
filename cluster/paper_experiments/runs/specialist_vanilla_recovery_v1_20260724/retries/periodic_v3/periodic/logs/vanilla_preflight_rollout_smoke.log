@@ -1,0 +1,23 @@
+/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/numpy/linalg/_linalg.py:2803: RuntimeWarning: overflow encountered in multiply
+  s = (x.conj() * x).real
+/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/numpy/_core/einsumfunc.py:1217: RuntimeWarning: overflow encountered in matmul
+  ab = matmul(a, b, **kwargs)
+/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/numpy/_core/einsumfunc.py:1217: RuntimeWarning: invalid value encountered in matmul
+  ab = matmul(a, b, **kwargs)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1072: RuntimeWarning: overflow encountered in multiply
+  a_energy = np.sum(a * a, axis=1, keepdims=True)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1075: RuntimeWarning: invalid value encountered in divide
+  low_fraction = (e_low * e_low) / (a_energy + EPS)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1076: RuntimeWarning: invalid value encountered in divide
+  high_fraction = (e_high * e_high) / (a_energy + EPS)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1073: RuntimeWarning: overflow encountered in multiply
+  b_energy = np.sum(b * b, axis=1, keepdims=True)
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/code/train_periodic_moe.py:1077: RuntimeWarning: invalid value encountered in divide
+  pressure_velocity_ratio = b_norm / (np.linalg.norm(a, axis=1, keepdims=True) + EPS)
+{"event": "re_complete", "Re": 66.9701156616211, "preserved": false}
+{"event": "re_complete", "Re": 91.79220581054688, "preserved": false}
+{"event": "re_complete", "Re": 121.0501708984375, "preserved": false}
+{"event": "re_complete", "Re": 139.64230346679688, "preserved": false}
+{"event": "re_complete", "Re": 169.24488830566406, "preserved": false}
+{"event": "re_complete", "Re": 196.1607208251953, "preserved": false}
+{"event": "evaluation_complete", "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v3/periodic/vanilla-fnn/preflight_rollout_smoke/native/periodic_r32_multihorizon_evaluation.json", "heldout_preserved_count": 0}

@@ -1,0 +1,40 @@
+batch_size:
+  desc: ''
+  sort: 3
+  value: 256
+experiment:
+  desc: ''
+  sort: 0
+  value: E3_chart_independent
+feature_contract:
+  desc: ''
+  sort: 7
+  value: Re + 8 chart-independent fixed-physical-sensor descriptors
+learning_rate:
+  desc: ''
+  sort: 4
+  value: 0.0003
+seed:
+  desc: ''
+  sort: 1
+  value: 31003
+sensor_count:
+  desc: ''
+  sort: 8
+  value: 64
+specialists:
+  desc: ''
+  sort: 9
+  value: frozen and not loaded
+split:
+  desc: ''
+  sort: 6
+  value: original complete Re and complete trajectories
+steps:
+  desc: ''
+  sort: 2
+  value: 8000
+windows_per_Re:
+  desc: ''
+  sort: 5
+  value: 32

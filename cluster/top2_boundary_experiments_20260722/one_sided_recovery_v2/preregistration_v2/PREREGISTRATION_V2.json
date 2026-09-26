@@ -1,0 +1,23 @@
+{
+  "config_sha256": {
+    "LookAheadShortRolloutRouter.json": "62a36145de4b231fbe9091f823103559d41ea2c74cf76ecbca1874deb7d26cf7",
+    "RiskPredictionRouter.json": "8d68d288358693f00aa9846767df0ef2c69e00cd2ad4ad707a418230a5b1252f",
+    "T2-C_LearnedConvexCorrection_FieldBlend.json": "aee4f24f04163d2a7ddf84267e88892690c5cecd1c7bf06fad145e26c858fb51"
+  },
+  "created_unix": 1784732736.2079225,
+  "domains": {
+    "H_P_boundary": "P database-native trajectories only; P indexed phase plus phase-free H",
+    "Hopf_middle": "H only; no S/P candidate",
+    "Periodic_core": "P only",
+    "S_H_boundary": "S database-native trajectories only; S indexed phase plus phase-free H",
+    "Steady_core": "S only"
+  },
+  "known_test_history_disclosure": "Legacy test metrics were seen before this recovery; recovery tuning is mechanically train/validation-only and will not be called blind.",
+  "old_artifacts_modified": false,
+  "status": "ONE_SIDED_V2_PREREGISTERED_PENDING_INDEPENDENT_GATES",
+  "test_seal": "SEALED",
+  "v1_failure_report": "/root/panxy/particalMOE/top2_boundary_experiments_20260722/TOP2_FAIL_CLOSED_REPORT.md",
+  "v1_failure_report_sha256": "e633387fa624d70a79b5478445d0846ae5e889c0f7cd63bbfe7415ed5edf40f4",
+  "v1_preregistration": "/root/panxy/particalMOE/top2_boundary_experiments_20260722/preregistration",
+  "v1_preregistration_sha256": "f34234ee093196245c27f340870e8923fc2ce2070d800a8acdeac29e819f3ddd"
+}

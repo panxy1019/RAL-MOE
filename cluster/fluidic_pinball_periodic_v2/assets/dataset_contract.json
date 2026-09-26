@@ -1,0 +1,45 @@
+{
+  "dataset_root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/Pinball/fluidicPinball_v2",
+  "evaluation_coefficients_used_for_fit": false,
+  "expert": "periodic",
+  "phase_definition": "atan2 of centered first two velocity POD coefficients modulo one",
+  "pod_fit_data": "train only",
+  "rank": {
+    "energy_target": 0.999,
+    "r_p": 16,
+    "r_u": 17
+  },
+  "snapshot_counts": {
+    "final_test": 2080,
+    "train": 2432,
+    "validation": 2080
+  },
+  "split_counts": {
+    "final_test": 9,
+    "train": 47,
+    "validation": 9
+  },
+  "test_re_values": [
+    22.25,
+    24.0,
+    27.5,
+    31.0,
+    34.5,
+    38.0,
+    43.0,
+    50.0,
+    57.0
+  ],
+  "total_snapshots": 6592,
+  "validation_re_values": [
+    21.5,
+    23.25,
+    26.0,
+    29.5,
+    33.0,
+    36.5,
+    40.0,
+    47.0,
+    54.0
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "schema": "revision7_reorganized_source_map/v1",
+  "policy": {
+    "training_started": false,
+    "evaluator_rerun": false,
+    "checkpoint_modified": false,
+    "metric_recomputed": false,
+    "missing_values_fabricated": false,
+    "relative_error_display": "source relative error displayed as percent; no scientific metric recomputation",
+    "revision6_preserved": true
+  },
+  "frozen_parent": {
+    "path": "C:/Users/panxy1019/Desktop/STABLEMOE/V16STABLE/final_paper_reports/revisions/revision6_complete_20260725/manuscript/NUMERICAL_EXPERIMENTS_DRAFT_REVISION6_COMPLETE.md",
+    "sha256": "f4a5fd04b981a90f665f9e8abb462ff508d9011bd13075f986aeb7c1ededb35c"
+  },
+  "sources": {
+    "revision6_audit": {
+      "path": "C:/Users/panxy1019/Desktop/STABLEMOE/V16STABLE/final_paper_reports/revisions/revision6_complete_20260725/REVISION6_AUDIT.json",
+      "sha256": "59f1d908221af19fb8a9d411d23e012b39199f79639eedd2e3bb819216ea4e9a"
+    },
+    "global_compact": {
+      "path": "C:/Users/panxy1019/Desktop/STABLEMOE/V16STABLE/final_paper_reports/revisions/revision6_complete_20260725/inputs/GLOBAL_K56_PHYSICAL_COMPACT.json",
+      "sha256": "b3bc24d1a8a5bbf7fa5d74269f43f7c4235f87f26f5aff6c946013604f512a2e",
+      "upstream_sha256": "f65f248a2944d3a940d4a2b49ad1f9310d5cad7d765e6318fa6ff1cd4794d244"
+    },
+    "steady_scan": {
+      "path": "C:/Users/panxy1019/Desktop/STABLEMOE/V16STABLE/final_paper_reports/revisions/revision6_complete_20260725/inputs/STEADY_PROPOSED_STRICT_PRESSURE_SCAN.json",
+      "sha256": "d7ae3bae8c6720897222354fa40e0dd786f2de3429db0adef3aee23dbe8de9df"
+    },
+    "fixed_point_selection": {
+      "path": "C:/Users/panxy1019/Desktop/STABLEMOE/V16STABLE/final_paper_reports/revisions/revision6_complete_20260725/inputs/FIXED_POINT_QUALIFIED_SELECTION.json",
+      "sha256": "edc6240d5a521c1b0901276de32e977f7f28f348ec89b10a33101e4e0d0de74c"
+    },
+    "dataonly_supplement": {
+      "path": "C:/Users/panxy1019/Desktop/STABLEMOE/V16STABLE/final_paper_reports/revisions/revision6_complete_20260725/inputs/DATAONLY_MISSING_CONTRACTS.json",
+      "sha256": "1294a6987c298a7c9d2aee36f545d5bbd141c58d73740e2a1e087e86ef964b30"
+    },
+    "klong_native_time": {
+      "path": "C:/Users/panxy1019/Desktop/STABLEMOE/V16STABLE/final_paper_reports/revisions/revision3_20260724_frozen/reports/tables/TABLE_KLONG_NATIVE_TIME.csv",
+      "sha256": "538526313eaaf591e6b01e3090cc11a43cb2231da1d4f4b2eaf6ea6fb741cff2"
+    },
+    "specialist_klong_table": {
+      "path": "C:/Users/panxy1019/Desktop/STABLEMOE/V16STABLE/final_paper_reports/revisions/revision3_20260724_frozen/reports/tables/TABLE_A1_SPECIALIST_ABLATIONS.csv",
+      "sha256": "dbc56296c8f366cd8d19854419044865cd45636b4471606f5265dc1e20566c85"
+    },
+    "common_ablation_table": {
+      "path": "C:/Users/panxy1019/Desktop/STABLEMOE/V16STABLE/final_paper_reports/revisions/revision3_20260724_frozen/reports/tables/TABLE_A1_KLONG_PERCENT.csv",
+      "sha256": "ca5e06c4a49ef945479d36e3c4caa3c4d62fd37432e52d2d9d7d9d431390347c"
+    },
+    "global_original": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/reproduction/heldout_eval_frozen_checkpoint_20260723/V16_1_SteadyPressureAnchor32_ru32_rp32_reproduced_metrics.json",
+      "sha256": "111d922e8aebd00336e455e5c73364b8932c954fae0e43b80851ce1afc4a8a99"
+    },
+    "steady_proposed": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/evaluation_inputs/s3_heldout_metrics.json",
+      "sha256": "93805a2466b1e90efd43a9f92b429f27bc5ede2d7645ca6f8f016caf85f8c55d"
+    },
+    "steady_vanilla": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/frozen_user_stop_step6200_20260724/evaluation/test/metrics.json",
+      "sha256": "cadbb20d36f5022549e1bedbd034da3b33f8b0d03a30074be1c92d4d3365c011"
+    },
+    "steady_dataonly": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/steady/data-only/evaluation/test/metrics.json",
+      "sha256": "02b08e13b05a8957bf8505d6166e9825e26b2ddca1d9d6890865bf84df0b5302"
+    },
+    "hopf_proposed_strict": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/native_attractor_audit_20260723_v1/results/HOPF_NATIVE_ATTRACTOR_AUDIT.json",
+      "sha256": "de6211930abd0eff9815cb45eba6b39b396bb64c2e45d7c3024b8820645499d9"
+    },
+    "hopf_vanilla_validation": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/hopf_v6/hopf/vanilla-fnn/evaluation/validation/metrics.json",
+      "sha256": "6d6ed4bb2647ef1249acb29ff80b849fef744ecfe4abaae48a7a2436577fe6b6"
+    },
+    "hopf_dataonly": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/hopf/data-only/evaluation/test/metrics.json",
+      "sha256": "497bc65254531e53e788ffd2282ecf6e9a38698590557bceac1a32ff1bb17b91"
+    },
+    "periodic_proposed": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/reproduction/best_epoch85_heldout_eval_v2/periodic_r32_multihorizon_evaluation.json",
+      "sha256": "43d4dcb69d607ea5805275bf3cd5fad0238d867742a8473901fe12a5cdadd5a1"
+    },
+    "periodic_vanilla": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v4/periodic/vanilla-fnn/evaluation/test/native/periodic_r32_multihorizon_evaluation.json",
+      "sha256": "f2626a808586870575df1f382828b87ecfc60713aae5fa3f24a71a37c6102e11"
+    },
+    "periodic_dataonly": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/periodic/data-only/evaluation/test_k48_supplement_20260724/metrics.json",
+      "sha256": "aa13c543dd6aa8609cfa51df3e464110824492d7f9aa62f79863426b3a3a7c90"
+    },
+    "e2_report": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/E1_E2_E3_TOP1_REPORT.md",
+      "sha256": "e9a936288948a62a2405f2ac664914251a7b0bf7c0b83149355f234a37ac70d1"
+    },
+    "sh_field": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/resplit_20260723_v1/final_test_evaluation/EVALUATION_REPORT.json",
+      "sha256": "aeb615fb45e2833e02a1368212e60d5883fcc71f3b07c7ecdecd05702bd9e7ff"
+    },
+    "sh_oracle": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/resplit_20260723_v1/supplements/per_re_matched_oracle_v4/PER_RE_MATCHED_ORACLE_REPORT.json",
+      "sha256": "2b8b6835fe0a465f46b0a78a1545f71b269c77d56e89eee8d5a4f85809fa6e0f"
+    },
+    "sh_attractor": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/resplit_20260723_v1/supplements/t2c_attractor_v2/T2C_ATTRACTOR_ANALYSIS.json",
+      "sha256": "454aefd942c931566614eb3c0b20f56c892f4e91cbd3441209f4d27d3a0dfbab"
+    },
+    "hp_fail_closed": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_hp_20260723_v1/H_P_RECOVERY_REPORT_20260723.md",
+      "sha256": "f5a9b17625c0637fdbb4a09f1e4bc8064c88d0e7c4d1abbc9c8998af6cb68448",
+      "formal_gate_sha256": "ed90e8a090a6b5dca486f986f76500fd530a784c574d0a9991ca32c699dbfd02"
+    },
+    "mesh_contract": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/trajectory_router_e3_chart_independent_20260722/formal_E3_chart_independent/MESH_CONTRACT_AUDIT.json",
+      "sha256": "f152e4366ea042d5054e89cacbfc93d6191b5267e09dbf93d0ff6655ce588f84"
+    },
+    "cfd_control": {
+      "path": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Regime_ROM_Library_v17_train_only/rollout128/checkpoints/run_rollout128_Re_47p081355/system/controlDict",
+      "sha256": "9884a1b17e59f114aca6d2ee40af375280aaecd16d7bfcc75865079bf27a90f7"
+    },
+    "cfd_mesh": {
+      "path": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Regime_ROM_Library_v17_train_only/rollout128/checkpoints/run_rollout128_Re_47p081355/system/blockMeshDict",
+      "sha256": "402e48a03e95c0b9ec6fe3fa7d1109a44ebce33770eb9141f221a2282a5f0062"
+    },
+    "cfd_velocity_bc": {
+      "path": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Regime_ROM_Library_v17_train_only/rollout128/checkpoints/run_rollout128_Re_47p081355/0/U",
+      "sha256": "82d91cff3622e92d7b27f74ad07f78de11dfe6411ef4e41a19506eae7d157f65"
+    },
+    "cfd_pressure_bc": {
+      "path": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Regime_ROM_Library_v17_train_only/rollout128/checkpoints/run_rollout128_Re_47p081355/0/p",
+      "sha256": "66f706328ed8bd38a7bfc6c3bcc078a6397274101dd28da8d0748a2b1a6ba279"
+    },
+    "cfd_physics": {
+      "path": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Regime_ROM_Library_v17_train_only/rollout128/checkpoints/run_rollout128_Re_47p081355/constant/physicalProperties",
+      "sha256": "901e9ce3b63e4dbd568bd61ce220b175cb04fa3bec8063ae996a2174ddfeedd2"
+    }
+  },
+  "main_tables": {
+    "table_1_proposed_specialist_long": {
+      "sources": ["specialist_klong_table", "steady_proposed", "hopf_proposed_strict", "periodic_proposed"],
+      "source_keys": ["rows[method=Proposed Specialist MoE].long_horizon", "experiments.S3-B.horizons.k56", "per_Re / by_split.heldout", "results[*].horizons.K48"],
+      "test_Re": {
+        "steady": [24.630436, 32.740068, 39.685479, 45.142703],
+        "hopf": [47.081356, 49.022357, 51.78645],
+        "periodic": [70.314635, 100.352251, 149.059229, 189.862278]
+      },
+      "horizon": {"steady": "K56", "hopf": "K56", "periodic": "K48"},
+      "error_space": "area-weighted physical field",
+      "split_identity": "native heldout/test, complete-Re isolated"
+    },
+    "table_2_proposed_attractor": {
+      "sources": ["steady_scan", "steady_proposed", "hopf_proposed_strict", "periodic_proposed"],
+      "source_keys": ["per_Re / strict_gate / summary", "experiments.S3-B.attractivity", "thresholds / by_split / per_Re", "protocol.preserved_thresholds / results"],
+      "test_Re": {
+        "steady_full_scan": "14 train + 2 validation + 4 heldout",
+        "hopf_heldout": [47.081356, 49.022357, 51.78645],
+        "hopf_in_sample": [49.3, 49.6, 50.0],
+        "periodic_strict_heldout": [100.352249, 149.059235, 189.862274]
+      },
+      "horizon": {"steady": "K56", "hopf": "K56", "periodic": "K48"},
+      "error_space": "regime-specific strict attractor diagnostics",
+      "split_identity": "explicitly separated train/validation/heldout"
+    },
+    "table_3_full_system_by_region": {
+      "sources": ["global_compact", "global_original", "e2_report", "sh_field", "hp_fail_closed", "specialist_klong_table"],
+      "source_keys": ["results[*].K56", "frozen E2 top-1 decision", "baselines.E2_pair_Top1 / routes.T2-C", "Native preflight table", "native specialist output identity in core regions"],
+      "test_Re": "listed per row; no nearest-Re substitutions",
+      "horizon": "K56 except native Periodic K48; kept on separate rows",
+      "error_space": "area-weighted physical field; Global coefficient errors retained separately",
+      "split_identity": "regional native test or P-native validation as labelled"
+    },
+    "table_4_sh_per_re": {
+      "sources": ["sh_field", "sh_oracle", "sh_attractor"],
+      "source_keys": [
+        "baselines.E2_pair_Top1.horizons.K56",
+        "routes.T2-C_LearnedConvexCorrection_FieldBlend.horizons.K56",
+        "routes.*.weights.per_Re",
+        "per_Re.*.differences",
+        "per_Re.*.{E2_Top1,T2_C}.tail_*"
+      ],
+      "test_Re": [42.359071, 43.5, 43.9],
+      "horizon": "K56 for joint field; archived all-horizon overall mean for routing regret and oracle gap",
+      "error_space": "sealed-cache area-weighted physical field and local-attractor diagnostics",
+      "split_identity": "sealed S-native test cache; prior disclosure acknowledged"
+    },
+    "table_5_specialist_long_ablation": {
+      "sources": ["common_ablation_table", "steady_vanilla", "steady_dataonly", "hopf_vanilla_validation", "hopf_dataonly", "periodic_vanilla", "periodic_dataonly"],
+      "source_keys": ["all rows", "horizons.K56/K48", "validation finite gate"],
+      "test_Re": {
+        "steady_common": [24.630436, 32.740068, 39.685479],
+        "hopf": [47.081356, 49.022357, 51.78645],
+        "periodic": [70.314635, 100.352251, 149.059229, 189.862278]
+      },
+      "horizon": {"steady": "K56", "hopf": "K56", "periodic": "K48"},
+      "error_space": "area-weighted physical field",
+      "split_identity": "same native test population within each regime; Hopf Vanilla validation fail-closed"
+    },
+    "table_6_specialist_attractor_ablation": {
+      "sources": ["steady_proposed", "steady_vanilla", "steady_dataonly", "dataonly_supplement", "hopf_proposed_strict", "hopf_vanilla_validation", "periodic_proposed", "periodic_vanilla", "periodic_dataonly"],
+      "source_keys": ["fixed_point_residual / paired_gain", "hopf_strict", "periodic_strict"],
+      "test_Re": {
+        "steady": "native heldout plus 20-Re Proposed scan",
+        "hopf_in_sample": [49.3, 49.6, 50.0],
+        "periodic_selected_heldout": [100.352249, 149.059235, 189.862274]
+      },
+      "horizon": {"steady": "K56", "hopf": "K56", "periodic": "K48"},
+      "error_space": "regime-specific attractor diagnostics",
+      "split_identity": "explicitly labelled; no train cases presented as heldout"
+    }
+  },
+  "claims": {
+    "steady_joint_strict_zero": {
+      "source": "steady_scan",
+      "source_key": "summary.strict_pass_count",
+      "value": 0
+    },
+    "hopf_in_sample_strict_three": {
+      "source": "hopf_proposed_strict",
+      "source_key": "by_split.train.attractor_preserved_count / per_Re",
+      "Re": [49.3, 49.6, 50.0]
+    },
+    "periodic_heldout_strict_three_of_four": {
+      "source": "periodic_proposed",
+      "source_key": "heldout_preserved_count",
+      "value": "3/4"
+    },
+    "hp_fail_closed": {
+      "source": "hp_fail_closed",
+      "source_key": "Native preflight",
+      "value": "Hopf train 5/53 finite; validation 0/6 finite; m_H=0,m_P=1"
+    },
+    "sh_counterexample_re_43_5": {
+      "sources": ["sh_oracle", "sh_attractor"],
+      "value": "T2-C K56 field error worse than E2 while all listed local-attractor means improve"
+    }
+  }
+}

@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/code/train_sh_routes.py", line 177, in <module>
+    if __name__ == "__main__": main()
+                               ^^^^^^
+  File "/root/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/code/train_sh_routes.py", line 134, in main
+    tid=torch.flatnonzero(torch.as_tensor(train,device=device)); vid=torch.flatnonzero(torch.as_tensor(val,device=device))
+        ^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/torch/__init__.py", line 2963, in __getattr__
+    raise AttributeError(f"module '{__name__}' has no attribute '{name}'")
+AttributeError: module 'torch' has no attribute 'flatnonzero'

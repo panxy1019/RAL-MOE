@@ -1,0 +1,33 @@
+{
+  "status": "FINAL_MIGRATION_ACCEPTANCE_PASS",
+  "migration_date": "2026-07-25",
+  "destination": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/expanded_validation_20260723",
+  "destination_is_real_directory": true,
+  "source_manifest_sha256_verified": true,
+  "processed_manifest_sha256_verified": true,
+  "raw_case_count": 7,
+  "modal_snapshot_count": 448,
+  "snapshot_split_counts": {
+    "heldout": 128,
+    "train": 192,
+    "validation": 128
+  },
+  "pod_refit": false,
+  "retained_vtk": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/expanded_validation_20260723/visualization/Re_43p500000_last_snapshot_uvp.vtk",
+    "Re": 43.5,
+    "snapshot_index": 63,
+    "time": 1475.64313081,
+    "points": 97368,
+    "cells": 48128,
+    "point_arrays": [
+      "U",
+      "u",
+      "v",
+      "p"
+    ],
+    "size_bytes": 8126035,
+    "sha256": "fcc87caedde11bfc6b5c1756ef5df0b0a0e9f9d13fd6e5dbfabaa8811b678e59"
+  },
+  "plot_example": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/expanded_validation_20260723/code/plot_vtk_example.py"
+}

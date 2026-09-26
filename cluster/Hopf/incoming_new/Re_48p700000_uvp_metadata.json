@@ -1,0 +1,131 @@
+{
+  "Re": 48.7,
+  "label": "Re_48p700000",
+  "regime": "hopf_transition",
+  "D": 1.0,
+  "nu": 0.001,
+  "U_inlet": 0.04870000000000001,
+  "retain_start_time": 1567.39811912,
+  "n_times": 161,
+  "n_points": 97368,
+  "n_cells": 48128,
+  "diagnostics": {
+    "mode": "periodic",
+    "estimated_period": 174.15534656913962,
+    "chunks": [
+      {
+        "end_time": 130.61650993,
+        "samples": 80,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 261.23301985,
+        "samples": 149,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 391.84952978,
+        "samples": 218,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 522.46603971,
+        "samples": 287,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 653.08254964,
+        "samples": 355,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 783.69905956,
+        "samples": 423,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 914.31556949,
+        "samples": 491,
+        "recent_peak_count": 31,
+        "lift_peak_amplitude_cv": 0.004133811270176977,
+        "period_cv": 0.32236116862841857,
+        "detected_period": 117.95254367,
+        "reason": "limit cycle criteria not yet satisfied"
+      },
+      {
+        "end_time": 1044.93207942,
+        "samples": 560,
+        "recent_peak_count": 31,
+        "lift_peak_amplitude_cv": 0.004715988755274396,
+        "period_cv": 0.32236116862841857,
+        "detected_period": 117.95254367,
+        "reason": "limit cycle criteria not yet satisfied"
+      },
+      {
+        "end_time": 1175.54858934,
+        "samples": 627,
+        "recent_peak_count": 32,
+        "lift_peak_amplitude_cv": 0.004320422920583279,
+        "period_cv": 0.3369293485532438,
+        "detected_period": 137.609219225,
+        "reason": "limit cycle criteria not yet satisfied"
+      },
+      {
+        "end_time": 1306.16509927,
+        "samples": 694,
+        "recent_peak_count": 33,
+        "lift_peak_amplitude_cv": 0.004565974288803723,
+        "period_cv": 0.2431571368276712,
+        "detected_period": 161.1031582325,
+        "reason": "limit cycle criteria not yet satisfied"
+      },
+      {
+        "end_time": 1436.7816092,
+        "samples": 761,
+        "recent_peak_count": 27,
+        "lift_peak_amplitude_cv": 0.005009228942135228,
+        "period_cv": 0.2431571368276712,
+        "detected_period": 161.1031582325,
+        "reason": "limit cycle criteria not yet satisfied"
+      },
+      {
+        "end_time": 1567.39811912,
+        "samples": 828,
+        "recent_peak_count": 13,
+        "lift_peak_amplitude_cv": 0.00046290589901375694,
+        "period_cv": 0.004472714668263423,
+        "detected_period": 183.59968843250002,
+        "reason": "stable limit cycle detected"
+      }
+    ],
+    "status": "limit_cycle_detected",
+    "retained_period": 183.59968843250002
+  },
+  "arrays": {
+    "times": [
+      161
+    ],
+    "points": [
+      97368,
+      3
+    ],
+    "u": [
+      161,
+      97368
+    ],
+    "v": [
+      161,
+      97368
+    ],
+    "p": [
+      161,
+      97368
+    ]
+  },
+  "units": {
+    "times": "s",
+    "points": "m",
+    "u/v": "m/s",
+    "p": "m^2/s^2"
+  }
+}

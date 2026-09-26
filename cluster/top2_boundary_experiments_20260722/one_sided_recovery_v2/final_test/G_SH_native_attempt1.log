@@ -1,0 +1,26 @@
+/root/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+{
+  "cache": "final_test/G_SH_native_attempt1/G_SH_native_final_test_cache.npz",
+  "cache_sha256": "390863add9ca6798ada08628696eef81c60b9f2895410c293b26a77e06484c9b",
+  "test_loaded": true,
+  "source": "Steady database-native heldout trajectories",
+  "candidates": [
+    "Steady",
+    "Hopf"
+  ],
+  "horizon": 56,
+  "windows_per_Re": 32,
+  "split_counts": {
+    "heldout": 6
+  },
+  "selected_complete_Re": {
+    "heldout": [
+      45.142704010009766
+    ]
+  },
+  "steady_checkpoint_sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+  "hopf_checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+  "fusion_feedback": false,
+  "timestamps_shared": true
+}

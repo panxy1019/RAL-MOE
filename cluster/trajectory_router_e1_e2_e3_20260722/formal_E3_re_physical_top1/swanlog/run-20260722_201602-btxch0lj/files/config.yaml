@@ -1,0 +1,40 @@
+batch_size:
+  desc: ''
+  sort: 3
+  value: 256
+experiment:
+  desc: ''
+  sort: 0
+  value: E3
+feature_contract:
+  desc: ''
+  sort: 9
+  value: Re plus current/previous-two physical L2 descriptors
+learning_rate:
+  desc: ''
+  sort: 4
+  value: 0.0003
+routing_granularity:
+  desc: ''
+  sort: 6
+  value: trajectory-level fixed Top-1
+seed:
+  desc: ''
+  sort: 1
+  value: 31003
+specialists:
+  desc: ''
+  sort: 7
+  value: frozen and not loaded during outer-router training
+split:
+  desc: ''
+  sort: 8
+  value: complete Re and complete trajectories
+steps:
+  desc: ''
+  sort: 2
+  value: 8000
+windows_per_Re:
+  desc: ''
+  sort: 5
+  value: 32

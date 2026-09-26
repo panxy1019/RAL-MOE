@@ -1,0 +1,355 @@
+{
+  "baselines": {
+    "E2_pair_Top1": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.004619714338332415,
+          "joint_worst": 0.005012793466448784,
+          "pressure_mean": 0.004583819769322872,
+          "velocity_mean": 3.589439802453853e-05
+        },
+        "K16": {
+          "joint_mean": 0.015612522140145302,
+          "joint_worst": 0.01572042517364025,
+          "pressure_mean": 0.015308369882404804,
+          "velocity_mean": 0.0003041521122213453
+        },
+        "K4": {
+          "joint_mean": 0.009018057957291603,
+          "joint_worst": 0.009443972259759903,
+          "pressure_mean": 0.008906347677111626,
+          "velocity_mean": 0.00011170969810336828
+        },
+        "K56": {
+          "joint_mean": 0.07102866470813751,
+          "joint_worst": 0.16021139919757843,
+          "pressure_mean": 0.07036180049180984,
+          "velocity_mean": 0.0006668646237812936
+        },
+        "K8": {
+          "joint_mean": 0.00967422965914011,
+          "joint_worst": 0.010039984248578548,
+          "pressure_mean": 0.009486032649874687,
+          "velocity_mean": 0.00018819703836925328
+        }
+      },
+      "joint_all_mean": 0.019289908930659294,
+      "joint_all_worst": 0.16021139919757843,
+      "per_Re": {
+        "43.797393798828125": {
+          "mean": 0.019289908930659294,
+          "worst": 0.16021139919757843
+        }
+      },
+      "top2_usage": 0.0
+    },
+    "E2_pair_probability_blend": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005400153808295727,
+          "joint_worst": 0.005990115460008383,
+          "pressure_mean": 0.005363479256629944,
+          "velocity_mean": 3.6674591683549806e-05
+        },
+        "K16": {
+          "joint_mean": 0.010318051092326641,
+          "joint_worst": 0.010724027641117573,
+          "pressure_mean": 0.010133396834135056,
+          "velocity_mean": 0.000184655626071617
+        },
+        "K4": {
+          "joint_mean": 0.006559492088854313,
+          "joint_worst": 0.0068878717720508575,
+          "pressure_mean": 0.006484826561063528,
+          "velocity_mean": 7.466521492460743e-05
+        },
+        "K56": {
+          "joint_mean": 0.04243980720639229,
+          "joint_worst": 0.09384414553642273,
+          "pressure_mean": 0.042011626064777374,
+          "velocity_mean": 0.0004281793371774256
+        },
+        "K8": {
+          "joint_mean": 0.007111917249858379,
+          "joint_worst": 0.007499655243009329,
+          "pressure_mean": 0.006996683776378632,
+          "velocity_mean": 0.00011523372813826427
+        }
+      },
+      "joint_all_mean": 0.012708958238363266,
+      "joint_all_worst": 0.09384414553642273,
+      "per_Re": {
+        "43.797393798828125": {
+          "mean": 0.012708958238363266,
+          "worst": 0.09384414553642273
+        }
+      },
+      "top2_usage": 1.0
+    },
+    "fixed_0.5": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005629874300211668,
+          "joint_worst": 0.0064809489995241165,
+          "pressure_mean": 0.005589962936937809,
+          "velocity_mean": 3.991168341599405e-05
+        },
+        "K16": {
+          "joint_mean": 0.00897564273327589,
+          "joint_worst": 0.009463944472372532,
+          "pressure_mean": 0.008819961920380592,
+          "velocity_mean": 0.00015568196249660105
+        },
+        "K4": {
+          "joint_mean": 0.006047018803656101,
+          "joint_worst": 0.0063530695624649525,
+          "pressure_mean": 0.005978149361908436,
+          "velocity_mean": 6.886992196086794e-05
+        },
+        "K56": {
+          "joint_mean": 0.035101551562547684,
+          "joint_worst": 0.0765327662229538,
+          "pressure_mean": 0.03473179414868355,
+          "velocity_mean": 0.0003697574429679662
+        },
+        "K8": {
+          "joint_mean": 0.006583918817341328,
+          "joint_worst": 0.007087560836225748,
+          "pressure_mean": 0.006484411656856537,
+          "velocity_mean": 9.950713865691796e-05
+        }
+      },
+      "joint_all_mean": 0.011112585663795471,
+      "joint_all_worst": 0.0765327662229538,
+      "per_Re": {
+        "43.797393798828125": {
+          "mean": 0.011112585663795471,
+          "worst": 0.0765327662229538
+        }
+      },
+      "top2_usage": 1.0
+    },
+    "per_window_convex_oracle": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.0068106623366475105,
+          "joint_worst": 0.008808617480099201,
+          "pressure_mean": 0.006746058352291584,
+          "velocity_mean": 6.460388249251992e-05
+        },
+        "K16": {
+          "joint_mean": 0.0037888020742684603,
+          "joint_worst": 0.004457106813788414,
+          "pressure_mean": 0.003705134615302086,
+          "velocity_mean": 8.366721158381552e-05
+        },
+        "K4": {
+          "joint_mean": 0.005070543847978115,
+          "joint_worst": 0.005543706938624382,
+          "pressure_mean": 0.004997421521693468,
+          "velocity_mean": 7.312263187486678e-05
+        },
+        "K56": {
+          "joint_mean": 0.00744154816493392,
+          "joint_worst": 0.00835524033755064,
+          "pressure_mean": 0.007249044720083475,
+          "velocity_mean": 0.00019250341574661434
+        },
+        "K8": {
+          "joint_mean": 0.005752658937126398,
+          "joint_worst": 0.0066570695489645,
+          "pressure_mean": 0.005674830172210932,
+          "velocity_mean": 7.782845932524651e-05
+        }
+      },
+      "joint_all_mean": 0.006082231178879738,
+      "joint_all_worst": 0.015409561805427074,
+      "per_Re": {
+        "43.797393798828125": {
+          "mean": 0.006082231178879738,
+          "worst": 0.015409561805427074
+        }
+      },
+      "top2_usage": 1.0
+    }
+  },
+  "routes": {
+    "LookAheadShortRolloutRouter": {
+      "freeze": {
+        "best_checkpoint_sha256": "2899e899e2544e02400ef5dd02e468d69d21f3fc3540e8caf303f5828d1812a1",
+        "config_sha256": "d2e7506f092dc878f7b4026ef9098fb5c9bb02c0f80f1b2faf9bb67a0dac9667",
+        "elapsed_seconds": 22.786715745925903,
+        "method": "LookAheadShortRolloutRouter",
+        "status": "VALIDATION_FROZEN",
+        "test_access": false,
+        "threshold": 0.05
+      },
+      "validation": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "horizons": {
+          "K1": {
+            "joint_mean": 0.006838317960500717,
+            "joint_worst": 0.008946910500526428,
+            "pressure_mean": 0.006772776134312153,
+            "velocity_mean": 6.554229184985161e-05
+          },
+          "K16": {
+            "joint_mean": 0.0038471717853099108,
+            "joint_worst": 0.004457112867385149,
+            "pressure_mean": 0.0037625774275511503,
+            "velocity_mean": 8.45943795866333e-05
+          },
+          "K4": {
+            "joint_mean": 0.005069436971098185,
+            "joint_worst": 0.0055437032133340836,
+            "pressure_mean": 0.0049951705150306225,
+            "velocity_mean": 7.42663542041555e-05
+          },
+          "K56": {
+            "joint_mean": 0.007887685671448708,
+            "joint_worst": 0.008355223573744297,
+            "pressure_mean": 0.007694785483181477,
+            "velocity_mean": 0.0001929007557919249
+          },
+          "K8": {
+            "joint_mean": 0.005776773206889629,
+            "joint_worst": 0.006657066754996777,
+            "pressure_mean": 0.005697884596884251,
+            "velocity_mean": 7.888802792876959e-05
+          }
+        },
+        "joint_all_mean": 0.0060880715027451515,
+        "joint_all_worst": 0.01593960076570511,
+        "per_Re": {
+          "43.797393798828125": {
+            "mean": 0.0060880715027451515,
+            "worst": 0.01593960076570511
+          }
+        },
+        "top2_usage": 1.0
+      }
+    },
+    "RiskPredictionRouter": {
+      "freeze": {
+        "best_checkpoint_sha256": "1328b187fa5315fc548267bff1144e48b189762b28826c64118bb86f427330d0",
+        "config_sha256": "e11cdfa96a0571ce7a8e48a874549a3cf8d26802d09c9dddd530e4c0e1feddee",
+        "elapsed_seconds": 23.54786491394043,
+        "method": "RiskPredictionRouter",
+        "status": "VALIDATION_FROZEN",
+        "test_access": false,
+        "threshold": 0.1
+      },
+      "validation": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "horizons": {
+          "K1": {
+            "joint_mean": 0.006838326808065176,
+            "joint_worst": 0.008946957997977734,
+            "pressure_mean": 0.006772784050554037,
+            "velocity_mean": 6.554260471602902e-05
+          },
+          "K16": {
+            "joint_mean": 0.003847197163850069,
+            "joint_worst": 0.0044571105390787125,
+            "pressure_mean": 0.0037626023404300213,
+            "velocity_mean": 8.459468517685309e-05
+          },
+          "K4": {
+            "joint_mean": 0.005069436971098185,
+            "joint_worst": 0.0055437046103179455,
+            "pressure_mean": 0.004995170049369335,
+            "velocity_mean": 7.426673982990906e-05
+          },
+          "K56": {
+            "joint_mean": 0.007887857034802437,
+            "joint_worst": 0.008355213329195976,
+            "pressure_mean": 0.007694954983890057,
+            "velocity_mean": 0.0001929009158629924
+          },
+          "K8": {
+            "joint_mean": 0.0057767825201153755,
+            "joint_worst": 0.006657067686319351,
+            "pressure_mean": 0.0056978934444487095,
+            "velocity_mean": 7.888837717473507e-05
+          }
+        },
+        "joint_all_mean": 0.006088075693696737,
+        "joint_all_worst": 0.015939783304929733,
+        "per_Re": {
+          "43.797393798828125": {
+            "mean": 0.006088075693696737,
+            "worst": 0.015939783304929733
+          }
+        },
+        "top2_usage": 1.0
+      }
+    },
+    "T2-C_LearnedConvexCorrection_FieldBlend": {
+      "freeze": {
+        "best_checkpoint_sha256": "b39fa14b331a7b130c02b1b9d54260c20bee2504541ce3fd51daafa7c04f0f37",
+        "config_sha256": "557525fb3861d9a1997bce93db5f43dea9b28d1b8746ec318dd8c54e411ebc9a",
+        "elapsed_seconds": 18.113112926483154,
+        "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+        "status": "VALIDATION_FROZEN",
+        "test_access": false,
+        "threshold": null
+      },
+      "validation": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "horizons": {
+          "K1": {
+            "joint_mean": 0.0068383305333554745,
+            "joint_worst": 0.00894696731120348,
+            "pressure_mean": 0.0067727877758443356,
+            "velocity_mean": 6.554270657943562e-05
+          },
+          "K16": {
+            "joint_mean": 0.0038471955340355635,
+            "joint_worst": 0.004457110073417425,
+            "pressure_mean": 0.0037626009434461594,
+            "velocity_mean": 8.459483797196299e-05
+          },
+          "K4": {
+            "joint_mean": 0.005069437436759472,
+            "joint_worst": 0.005543705075979233,
+            "pressure_mean": 0.00499517098069191,
+            "velocity_mean": 7.426687807310373e-05
+          },
+          "K56": {
+            "joint_mean": 0.0078879464417696,
+            "joint_worst": 0.00835523009300232,
+            "pressure_mean": 0.00769504439085722,
+            "velocity_mean": 0.00019290097407065332
+          },
+          "K8": {
+            "joint_mean": 0.005776785314083099,
+            "joint_worst": 0.0066570681519806385,
+            "pressure_mean": 0.005697896238416433,
+            "velocity_mean": 7.888852996984497e-05
+          }
+        },
+        "joint_all_mean": 0.006088074296712875,
+        "joint_all_worst": 0.01593981869518757,
+        "per_Re": {
+          "43.797393798828125": {
+            "mean": 0.006088074296712875,
+            "worst": 0.01593981869518757
+          }
+        },
+        "top2_usage": 1.0
+      }
+    }
+  },
+  "test_access": false
+}

@@ -1,0 +1,14 @@
+{
+  "alpha_order": {
+    "HP": "Periodic weight",
+    "SH": "Steady weight"
+  },
+  "created": 1789459158.9289625,
+  "fit_loss": "mean(all-step Eu_squared+Ep_squared)",
+  "fit_split": "train",
+  "oracle": "future-information diagnostic, not deployable",
+  "primary_fit": "analytic scalar convex minimizer",
+  "seed": "not applicable: deterministic one-dimensional optimum",
+  "sensitivity": "validation grid selected by worst_Re_mean then pooled mean",
+  "test_selection": false
+}

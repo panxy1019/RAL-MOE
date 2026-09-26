@@ -1,0 +1,45 @@
+{
+  "splits": {
+    "train": 53,
+    "validation": 6,
+    "heldout": 4
+  },
+  "snapshot_counts": {
+    "train": 8539,
+    "validation": 967,
+    "heldout": 644
+  },
+  "split_overlap": false,
+  "train_only_parent_basis": true,
+  "operator_Re_c_max_difference": 0.0,
+  "operator_Re_A_max_difference": 0.0,
+  "gram_error": 5.441917938497909e-08,
+  "operator_metadata": {
+    "mesh_vtu": "/cephfs/shared/V17_RegimeIndependentROM/source_mesh/run_Re_100_7107.vtk",
+    "data_layout": {
+      "phi_u": "(N, 3, r_u), velocity components are x/y/z; z modes are zero for this 2D case",
+      "phi_p": "(N, r_p)",
+      "mass_weights": "(N,), area-weighted L2 point_areas from mesh_l2_point_area_weights.npz"
+    },
+    "equations": {
+      "raw": "G da/dt = c_raw + A_raw a + H_raw(a,a) + P_raw b",
+      "ode": "da/dt = c + A a + H(a,a) + P b, with c/A/H/P = G^{-1} raw tensors"
+    },
+    "compact_layout": true,
+    "compact_layout_note": "When skip_raw=True, shared G_u/H/P are written once and per-Re arrays contain c/A only.",
+    "weighted_l2_note": "For this dataset phi_uv/phi_p are raw-space area-weighted POD modes and are M-orthonormal up to storage precision.",
+    "derivative": "pyvista.UnstructuredGrid.compute_derivative(), point preference"
+  },
+  "ppe_metadata": {
+    "data_dir": "/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic",
+    "mesh_vtu": "/cephfs/shared/V17_RegimeIndependentROM/source_mesh/run_Re_100_7107.vtk",
+    "pod_dir": "/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic/Global_POD_AreaWeighted_L2",
+    "equation": "L b = c_p + A_p a + H_p(a,a)",
+    "effective_equation": "b = c_tilde + A_tilde a + H_tilde(a,a)",
+    "L_definition": "L_mk = -int grad(psi_m) dot grad(psi_k) dOmega",
+    "rhs_sign_convention": "Delta p = -div((u dot grad)u); boundary terms are neglected in the projected weak form",
+    "pinv_rcond": 1e-10,
+    "r_u": 32,
+    "r_p": 32
+  }
+}

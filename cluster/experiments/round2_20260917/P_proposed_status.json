@@ -1,0 +1,43 @@
+{
+  "lane": "proposed",
+  "policy": "one process per lane; at least 8 GiB free before each launch; three total training lanes including H",
+  "runs": [
+    {
+      "architecture": "proposed",
+      "seed": 1248,
+      "smoke": false,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed/1248",
+      "pid": 22628,
+      "start_unix": 1789652904.1294162,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed_1248_formal.log",
+      "returncode": 0,
+      "end_unix": 1789667716.567754
+    },
+    {
+      "architecture": "proposed",
+      "seed": 1600,
+      "smoke": false,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed/1600",
+      "pid": 23331,
+      "start_unix": 1789667716.6128855,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed_1600_formal.log",
+      "returncode": 0,
+      "end_unix": 1789685850.5346882
+    },
+    {
+      "architecture": "proposed",
+      "seed": 2026,
+      "smoke": false,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed/2026",
+      "pid": 23481,
+      "start_unix": 1789685850.6065764,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed_2026_formal.log",
+      "returncode": 0,
+      "end_unix": 1789695127.861329
+    }
+  ],
+  "status": "completed"
+}

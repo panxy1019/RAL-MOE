@@ -1,0 +1,257 @@
+{
+  "T2_C_checkpoint_sha256": "fe5a52813d03b52cb368d8129c625cd073da10b7abe51745cad1d07cf759202f",
+  "cache_sha256": "61b2f6b57a7c70700d9665ca71f1867c8b1f7e419870f50670afe5bee8b64558",
+  "frozen_decision_sha256": "242101ecc40070eb8cebf755ae94c580a7a9b78489a4aed4b6bd417a6f56fd8c",
+  "oracle_contracts": {
+    "per_Re_shared_constant_oracle": "One alpha shared by all five K56 windows belonging to the same complete Re trajectory; optimized over every window and every forecast time. This is the stricter per-trajectory/per-Re constant oracle requested for the paper.",
+    "per_window_constant_oracle": "One hindsight alpha per independently queried K56 window, constant inside that rollout. This matches the gate's one-weight-per-query granularity but is a more optimistic hindsight bound."
+  },
+  "paper_claim_checks": {
+    "Re_with_T2_C_better_than_E2": 2,
+    "all_test_Re_better_than_E2": false,
+    "majority_test_Re_better_than_E2": true,
+    "test_Re_count": 3,
+    "weight_pattern": "low Re S-dominant; Re=43.50 and 43.90 H-dominant, with substantial window-to-window variation near/high boundary"
+  },
+  "per_Re": {
+    "42.359071": {
+      "E2_Top1": {
+        "K56_mean": 0.04650335689621661,
+        "K56_worst": 0.12973274303937948,
+        "overall_mean": 0.01710302988050309,
+        "overall_worst": 0.12973274303937948
+      },
+      "H_only": {
+        "K56_mean": 0.10308693267471294,
+        "K56_worst": 0.10544559782117437,
+        "overall_mean": 0.17855299933192892,
+        "overall_worst": 0.31622420888279085
+      },
+      "Re": 42.359071,
+      "S_only": {
+        "K56_mean": 0.04650335689621661,
+        "K56_worst": 0.12973274303937948,
+        "overall_mean": 0.01710302988050309,
+        "overall_worst": 0.12973274303937948
+      },
+      "T2_C": {
+        "K56_mean": 0.046432929105398944,
+        "K56_worst": 0.12973154655568428,
+        "overall_mean": 0.01701915093794766,
+        "overall_worst": 0.12973154655568428
+      },
+      "T2_C_weights": {
+        "alpha_H_max": 0.004076600074768066,
+        "alpha_H_mean": 0.0012506127823144197,
+        "alpha_H_min": 1.3709068298339844e-05,
+        "alpha_S_max": 0.9999862909317017,
+        "alpha_S_mean": 0.9987494349479675,
+        "alpha_S_min": 0.9959233999252319,
+        "per_window_alpha_H": [
+          0.004076600074768066,
+          0.001735389232635498,
+          0.00032126903533935547,
+          0.00010609626770019531,
+          1.3709068298339844e-05
+        ],
+        "per_window_alpha_S": [
+          0.9959233999252319,
+          0.9982646107673645,
+          0.9996787309646606,
+          0.9998939037322998,
+          0.9999862909317017
+        ]
+      },
+      "best_single_expert": "S",
+      "best_single_expert_K56": "S",
+      "differences": {
+        "T2_C_minus_E2_overall_mean": -8.387894255542858e-05,
+        "T2_C_minus_best_expert_overall_mean": -8.387894255542858e-05,
+        "T2_C_minus_per_window_oracle_overall_mean": 0.0010188558904228873,
+        "T2_C_minus_shared_constant_oracle_overall_mean": 0.001012251320101281
+      },
+      "per_Re_shared_constant_oracle": {
+        "K56_mean": 0.045719822277942336,
+        "K56_worst": 0.12722424483553216,
+        "alpha_H": 0.029099999999999904,
+        "alpha_S": 0.9709000000000001,
+        "overall_mean": 0.01600689961784638,
+        "overall_worst": 0.12722424483553216
+      },
+      "per_window_constant_oracle": {
+        "K56_mean": 0.04575949720234603,
+        "K56_worst": 0.12744575033162842,
+        "alpha_S_max": 0.9735,
+        "alpha_S_mean": 0.97062,
+        "alpha_S_min": 0.9668,
+        "overall_mean": 0.016000295047524773,
+        "overall_worst": 0.12744575033162842
+      },
+      "window_counts": {
+        "T2_C_better_than_E2": 5,
+        "T2_C_better_than_best_single_expert": 5
+      },
+      "windows": 5
+    },
+    "43.5": {
+      "E2_Top1": {
+        "K56_mean": 0.024877338096828204,
+        "K56_worst": 0.033729375886106076,
+        "overall_mean": 0.018540863682666997,
+        "overall_worst": 0.1083424228734791
+      },
+      "H_only": {
+        "K56_mean": 0.04488413510881176,
+        "K56_worst": 0.18211568114223478,
+        "overall_mean": 0.033454503729399385,
+        "overall_worst": 0.2513602130881651
+      },
+      "Re": 43.5,
+      "S_only": {
+        "K56_mean": 0.024877338096828204,
+        "K56_worst": 0.033729375886106076,
+        "overall_mean": 0.018540863682666997,
+        "overall_worst": 0.1083424228734791
+      },
+      "T2_C": {
+        "K56_mean": 0.032343287710025405,
+        "K56_worst": 0.119382916024201,
+        "overall_mean": 0.021971383490225163,
+        "overall_worst": 0.14502298053733087
+      },
+      "T2_C_weights": {
+        "alpha_H_max": 0.9995409846305847,
+        "alpha_H_mean": 0.9138921499252319,
+        "alpha_H_min": 0.5881006717681885,
+        "alpha_S_max": 0.4118993282318115,
+        "alpha_S_mean": 0.08610780537128448,
+        "alpha_S_min": 0.0004590229655150324,
+        "per_window_alpha_H": [
+          0.5881006717681885,
+          0.9894763827323914,
+          0.994267463684082,
+          0.9980754852294922,
+          0.9995409846305847
+        ],
+        "per_window_alpha_S": [
+          0.4118993282318115,
+          0.010523593984544277,
+          0.005732561927288771,
+          0.001924533280543983,
+          0.0004590229655150324
+        ]
+      },
+      "best_single_expert": "S",
+      "best_single_expert_K56": "S",
+      "differences": {
+        "T2_C_minus_E2_overall_mean": 0.003430519807558166,
+        "T2_C_minus_best_expert_overall_mean": 0.003430519807558166,
+        "T2_C_minus_per_window_oracle_overall_mean": 0.012197727785396817,
+        "T2_C_minus_shared_constant_oracle_overall_mean": 0.004550838695193977
+      },
+      "per_Re_shared_constant_oracle": {
+        "K56_mean": 0.025993725904793076,
+        "K56_worst": 0.04687669943462996,
+        "alpha_H": 0.09849999999999992,
+        "alpha_S": 0.9015000000000001,
+        "overall_mean": 0.017420544795031186,
+        "overall_worst": 0.10043447657443434
+      },
+      "per_window_constant_oracle": {
+        "K56_mean": 0.016217635573470175,
+        "K56_worst": 0.039392709345276444,
+        "alpha_S_max": 0.9564,
+        "alpha_S_mean": 0.20114,
+        "alpha_S_min": 0.0,
+        "overall_mean": 0.009773655704828346,
+        "overall_worst": 0.10476374746282198
+      },
+      "window_counts": {
+        "T2_C_better_than_E2": 4,
+        "T2_C_better_than_best_single_expert": 1
+      },
+      "windows": 5
+    },
+    "43.9": {
+      "E2_Top1": {
+        "K56_mean": 0.06874867969206129,
+        "K56_worst": 0.15658386768593952,
+        "overall_mean": 0.01943789151531833,
+        "overall_worst": 0.15658386768593952
+      },
+      "H_only": {
+        "K56_mean": 0.020234207697541175,
+        "K56_worst": 0.07108933064472246,
+        "overall_mean": 0.029592127037160465,
+        "overall_worst": 0.22513913610612252
+      },
+      "Re": 43.9,
+      "S_only": {
+        "K56_mean": 0.06874867969206129,
+        "K56_worst": 0.15658386768593952,
+        "overall_mean": 0.01943789151531833,
+        "overall_worst": 0.15658386768593952
+      },
+      "T2_C": {
+        "K56_mean": 0.012573813047791912,
+        "K56_worst": 0.032787368155394785,
+        "overall_mean": 0.007534852739903362,
+        "overall_worst": 0.032787368155394785
+      },
+      "T2_C_weights": {
+        "alpha_H_max": 1.0,
+        "alpha_H_mean": 0.8109018206596375,
+        "alpha_H_min": 0.054508984088897705,
+        "alpha_S_max": 0.9454910159111023,
+        "alpha_S_mean": 0.18909822404384613,
+        "alpha_S_min": 8.872168000273462e-10,
+        "per_window_alpha_H": [
+          0.054508984088897705,
+          0.9999999403953552,
+          0.9999999403953552,
+          1.0,
+          1.0
+        ],
+        "per_window_alpha_S": [
+          0.9454910159111023,
+          7.442121585654604e-08,
+          8.587456079567346e-08,
+          1.677420868873014e-08,
+          8.872168000273462e-10
+        ]
+      },
+      "best_single_expert": "S",
+      "best_single_expert_K56": "H",
+      "differences": {
+        "T2_C_minus_E2_overall_mean": -0.011903038775414966,
+        "T2_C_minus_best_expert_overall_mean": -0.011903038775414966,
+        "T2_C_minus_per_window_oracle_overall_mean": 1.7235674946037421e-07,
+        "T2_C_minus_shared_constant_oracle_overall_mean": -0.01021739388610772
+      },
+      "per_Re_shared_constant_oracle": {
+        "K56_mean": 0.06034404194248803,
+        "K56_worst": 0.13387339762128672,
+        "alpha_H": 0.13929999999999998,
+        "alpha_S": 0.8607,
+        "overall_mean": 0.017752246626011083,
+        "overall_worst": 0.13387339762128672
+      },
+      "per_window_constant_oracle": {
+        "K56_mean": 0.012456817828741805,
+        "K56_worst": 0.03277794067640588,
+        "alpha_S_max": 0.9459000000000001,
+        "alpha_S_mean": 0.19044,
+        "alpha_S_min": 0.0,
+        "overall_mean": 0.007534680383153902,
+        "overall_worst": 0.03278092486324464
+      },
+      "window_counts": {
+        "T2_C_better_than_E2": 5,
+        "T2_C_better_than_best_single_expert": 2
+      },
+      "windows": 5
+    }
+  },
+  "status": "PER_RE_AND_MATCHED_ORACLE_COMPLETE",
+  "test_used_for_retraining_or_model_selection": false
+}

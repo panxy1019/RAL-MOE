@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "experiment": "HopfExpanded34_H4_NormalFormRadial_r32",
+  "training": {
+    "return_code": 0,
+    "final_step": 8000,
+    "elapsed_seconds": 7125.846298522083,
+    "steps_per_min": 67.36042004735118
+  },
+  "selection": {
+    "split": "validation_only",
+    "heldout_consulted": false,
+    "step": 7200,
+    "score": 0.8787674976061681,
+    "hard_gate": true,
+    "checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235"
+  },
+  "final_evaluation": {
+    "status": "COMPLETE",
+    "test_Re": [
+      47.081355,
+      49.022357,
+      51.78645
+    ],
+    "not_strict_blind_due_to_prior_method_diagnostics": true,
+    "k48_finite_and_zero_divergence_count": 3,
+    "strict_attractor_preserved_count": 0,
+    "rows": [
+      {
+        "Re": "47.081355",
+        "preserved": false,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "k48_velocity_physical_relative_l2": 2.3735856085005157e-05,
+        "k48_pressure_physical_relative_l2": 0.00028363034441587407,
+        "rms_amplitude_error": 0.005769225214774908,
+        "p2p_amplitude_error": 0.13054167539918532,
+        "growth_sign_accuracy": 0.7687296416938111,
+        "true_local_log_growth": 3.0086388642587133e-05,
+        "predicted_local_log_growth": -0.002065552073602402,
+        "frequency_relative_error": 0.3725681807257451,
+        "terminal_phase_drift_cycles": 0.00622583667097096,
+        "normalized_orbit_distance": 0.058681994747405784,
+        "false_growth": false,
+        "failed_strict_checks": [
+          "P2P amplitude",
+          "frequency"
+        ]
+      },
+      {
+        "Re": "49.022357",
+        "preserved": false,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "k48_velocity_physical_relative_l2": 0.00016507224953233576,
+        "k48_pressure_physical_relative_l2": 0.0027853668041779678,
+        "rms_amplitude_error": 0.389435742829586,
+        "p2p_amplitude_error": 3.7811100641764774,
+        "growth_sign_accuracy": 0.6766666666666666,
+        "true_local_log_growth": -0.002763091517381863,
+        "predicted_local_log_growth": 0.0022950158862112035,
+        "frequency_relative_error": 0.012035995828123305,
+        "terminal_phase_drift_cycles": -0.01876263940197817,
+        "normalized_orbit_distance": 0.2420919197150016,
+        "false_growth": false,
+        "failed_strict_checks": [
+          "RMS amplitude",
+          "P2P amplitude",
+          "orbit distance"
+        ]
+      },
+      {
+        "Re": "51.786450",
+        "preserved": false,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "k48_velocity_physical_relative_l2": 5.177347824872259e-05,
+        "k48_pressure_physical_relative_l2": 0.000393522715925477,
+        "rms_amplitude_error": 0.21024135176458775,
+        "p2p_amplitude_error": 0.2683192472310309,
+        "growth_sign_accuracy": 0.9412724306688418,
+        "true_local_log_growth": 0.009608001448467166,
+        "predicted_local_log_growth": 0.001986684978405545,
+        "frequency_relative_error": 0.012622699862355197,
+        "terminal_phase_drift_cycles": -0.07821111889645774,
+        "normalized_orbit_distance": 0.292238620334271,
+        "false_growth": false,
+        "failed_strict_checks": [
+          "RMS amplitude",
+          "P2P amplitude",
+          "orbit distance"
+        ]
+      }
+    ]
+  }
+}

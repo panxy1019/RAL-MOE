@@ -1,0 +1,35 @@
+{
+  "method": "streaming exact snapshot POD with lumped nodal 2D area weights",
+  "total_snapshots": 14167,
+  "n_points": 97368,
+  "velocity": {
+    "phi_shape": [
+      80,
+      194736
+    ],
+    "coeff_shape": [
+      14167,
+      80
+    ],
+    "energy_80": 0.9999714940019458
+  },
+  "pressure": {
+    "phi_shape": [
+      80,
+      97368
+    ],
+    "coeff_shape": [
+      14167,
+      80
+    ],
+    "energy_80": 0.9999817385626171
+  },
+  "area_weights": {
+    "thickness": 0.10000000149011612,
+    "total_area": 599.2146806904639,
+    "total_point_area": 599.214680690464,
+    "min_point_area": 1.0423566700092087e-05,
+    "max_point_area": 0.013194506698255282,
+    "max_point_delta": 0.0
+  }
+}

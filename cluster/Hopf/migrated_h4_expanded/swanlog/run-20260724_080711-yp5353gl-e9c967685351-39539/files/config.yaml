@@ -1,0 +1,482 @@
+allow_tf32:
+  desc: ''
+  sort: 25
+  value: true
+amp:
+  desc: ''
+  sort: 24
+  value: false
+asset_audit:
+  desc: ''
+  sort: 48
+  value:
+    manifest:
+      critical_mode_pair_verified: true
+      fit_reynolds:
+      - 45.5
+      - 45.8
+      - 46.1
+      - 46.3
+      - 46.5
+      - 46.9
+      - 47.2
+      - 47.4
+      - 47.6
+      - 47.722947
+      - 47.8
+      - 48.0
+      - 48.3
+      - 48.368688
+      - 48.7
+      - 49.3
+      - 49.6
+      - 49.68764
+      - 50.0
+      - 50.368054
+      - 51.066785
+      - 52.528767
+      - 53.294175
+      - 54.081508
+      - 54.88795
+      - 55.70961
+      - 57.38997
+      - 58.262636
+      - 59.201432
+      frequency_retention_verified: true
+      heldout_reynolds_sealed:
+      - 47.081355
+      - 49.022357
+      - 51.78645
+      heldout_rows_present: false
+      pressure_gauge_verified: true
+      projection_error_verified: true
+      projection_errors:
+        counts:
+          heldout:
+            Re: 3
+            snapshots: 483
+          train:
+            Re: 29
+            snapshots: 4092
+          validation:
+            Re: 2
+            snapshots: 225
+        fit_contract:
+          centering: single_train_only_regime_mean
+          fit_split: train
+          heldout_Re_labels:
+          - Re_47p081355
+          - Re_49p022357
+          - Re_51p786450
+          pressure_gauge: subtract_area_mean_per_snapshot
+          train_Re_labels:
+          - Re_45p500000
+          - Re_45p800000
+          - Re_46p100000
+          - Re_46p300000
+          - Re_46p500000
+          - Re_46p900000
+          - Re_47p200000
+          - Re_47p400000
+          - Re_47p600000
+          - Re_47p722947
+          - Re_47p800000
+          - Re_48p000000
+          - Re_48p300000
+          - Re_48p368688
+          - Re_48p700000
+          - Re_49p300000
+          - Re_49p600000
+          - Re_49p687640
+          - Re_50p000000
+          - Re_50p368054
+          - Re_51p066785
+          - Re_52p528767
+          - Re_53p294175
+          - Re_54p081508
+          - Re_54p887950
+          - Re_55p709610
+          - Re_57p389970
+          - Re_58p262636
+          - Re_59p201432
+          validation_Re_labels:
+          - Re_46p700000
+          - Re_56p543246
+          validation_or_heldout_used_for_fit: false
+        global_control_disclosure: Frozen global-r32 comparison is reported only for
+          legacy labels present in the frozen global asset; new labels are explicitly
+          unavailable for that control.
+        pressure_projection_full_field_relative_l2_gauge_fixed:
+          heldout:
+            global_r32:
+              mean: 0.0013495403704199354
+              median: 0.0011014811747630756
+              p95: 0.004518905546440759
+              worst: 0.018956926985946938
+            local_r32:
+              mean: 8.576820185949025e-06
+              median: 7.082157987067383e-06
+              p95: 1.678981697190044e-05
+              worst: 5.705109956034005e-05
+            local_r80:
+              mean: 1.5938140525348077e-06
+              median: 9.055624822490444e-07
+              p95: 2.982646142989828e-06
+              worst: 5.1377209567968566e-06
+          train:
+            global_r32:
+              mean: 0.0024033156103928015
+              median: 0.0008586482073331246
+              p95: 0.010985808822027964
+              worst: 0.03386752147550628
+            local_r32:
+              mean: 1.1362816066808783e-05
+              median: 5.545626203001525e-06
+              p95: 3.589584234897871e-05
+              worst: 0.00020756041778667426
+            local_r80:
+              mean: 1.287689855001965e-06
+              median: 7.279995726193069e-07
+              p95: 3.6360878956007103e-06
+              worst: 1.6573136291148257e-05
+          validation:
+            global_r32:
+              mean: 0.002666856835463563
+              median: 0.0016805224690554252
+              p95: 0.008367929236925574
+              worst: 0.018398073961887737
+            local_r32:
+              mean: 1.8407939026615392e-05
+              median: 1.4122605315610373e-05
+              p95: 3.5734033979155475e-05
+              worst: 8.574299504739629e-05
+            local_r80:
+              mean: 2.2738525448629683e-06
+              median: 1.8896137869792807e-06
+              p95: 4.124286895067881e-06
+              worst: 2.9177985973730316e-05
+        regime: hopf
+        schema_version: 1
+        training_only_spectrum:
+          note: Hopf rank must additionally use training-only oscillatory-mode diagnostics;
+            energy alone is not authoritative.
+          pressure:
+            captured_at_rank32: 0.9999999779490344
+            captured_at_retained_rank: 0.9999999997704886
+            rank_99p99pct: 8
+            rank_99p9pct: 5
+            rank_99pct: 3
+          rank_selection_used_validation_or_heldout: false
+          velocity:
+            captured_at_rank32: 0.9999999920981687
+            captured_at_retained_rank: 0.9999999999789514
+            rank_99p99pct: 5
+            rank_99p9pct: 4
+            rank_99pct: 1
+        velocity_projection_full_field_relative_l2:
+          heldout:
+            global_r32:
+              mean: 0.00018582596610398818
+              median: 0.00015115208751054294
+              p95: 0.0006232385298229803
+              worst: 0.0025186936743329547
+            local_r32:
+              mean: 2.4602172333100563e-06
+              median: 1.561765352225682e-06
+              p95: 4.917120887602405e-06
+              worst: 1.6012583149382026e-05
+            local_r80:
+              mean: 2.458412354296861e-07
+              median: 2.1695659283317142e-07
+              p95: 3.8284439299522385e-07
+              worst: 1.0211380096208211e-06
+          train:
+            global_r32:
+              mean: 0.00047104292022920617
+              median: 0.00011921080148377317
+              p95: 0.0021429145374693716
+              worst: 0.006490094566884291
+            local_r32:
+              mean: 3.7156015064624074e-06
+              median: 1.864953425092804e-06
+              p95: 1.2177200355262434e-05
+              worst: 6.787481810461244e-05
+            local_r80:
+              mean: 2.2548333508166965e-07
+              median: 1.5493215689663907e-07
+              p95: 6.752736117020886e-07
+              worst: 1.955997453498879e-06
+          validation:
+            global_r32:
+              mean: 0.00046346230458874825
+              median: 0.0002871610803594109
+              p95: 0.0012014555060325545
+              worst: 0.0023429633364749317
+            local_r32:
+              mean: 6.370885763206768e-06
+              median: 5.2535100954069575e-06
+              p95: 1.2968371232834145e-05
+              worst: 2.155941553777911e-05
+            local_r80:
+              mean: 4.0536996644476897e-07
+              median: 3.9056097249703883e-07
+              p95: 7.049279601732567e-07
+              worst: 1.1489695921228926e-06
+      r_p: 32
+      r_u: 32
+      rank_semantics: first 32 modes of the new train-only Hopf-local r80 basis; report
+        fair-control rank
+      schema_version: 2
+      scope: hopf_local_train_val_view
+      sha256:
+        coefficient_view: 53d05065d518de82432e55b191dcee6c3501e09822dfedbf6162e061151f4d45
+        galerkin: ebfb05f23c7fe909cb9b92fdea9098d849927bc732652a3881a4f32bbc6e6e26
+        pressure: 9df6f17413ff884a04b5bbba9e2b791563bde412b5d17649f9badda4e151e44c
+      shift_mode_verified: true
+      source_sha256:
+        pressure_pod_hopf.npz: cc128a4361ab2a239165ac22a48407290de7d085b857bbff6726988457cfddf3
+        pressure_poisson_surrogate_hopf.npz: a6646aa3eb3814d8648293ee3cd798a6abe268bf46a79ec0c0b8b17b30aaf06d
+        velocity_pod_hopf.npz: 2f951192f6eeaa69e7d911aa21552454d1a99a49ab796166b4a13df16016a192
+        velocity_rom_hopf.npz: 7d16ca813efa0f92109689a686de0c3de02cdd269a4b31029c53c3ed1309d3e9
+      validation_reynolds:
+      - 46.7
+      - 56.543246
+    observed_sha256:
+      coefficient_view: 53d05065d518de82432e55b191dcee6c3501e09822dfedbf6162e061151f4d45
+      galerkin: ebfb05f23c7fe909cb9b92fdea9098d849927bc732652a3881a4f32bbc6e6e26
+      pressure: 9df6f17413ff884a04b5bbba9e2b791563bde412b5d17649f9badda4e151e44c
+    passed: true
+asset_manifest:
+  desc: ''
+  sort: 5
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/TRAINING_ASSET_MANIFEST.json
+baseline_code_sha256:
+  desc: ''
+  sort: 45
+  value: f7facb3b6070290e9d6725f09fdd0810f0cf7e1775d35c20563a1b691d2c6975
+baseline_trainer:
+  desc: ''
+  sort: 1
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py
+benchmark_horizon:
+  desc: ''
+  sort: 40
+  value: 8
+benchmark_steps:
+  desc: ''
+  sort: 39
+  value: 0
+coefficient_view:
+  desc: ''
+  sort: 2
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainval_r32.npz
+contract:
+  desc: ''
+  sort: 6
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/trainonly_contract/trainonly_fluctuation_contract.npz
+contract_sha256:
+  desc: ''
+  sort: 47
+  value: 2e3aa04095ab0ccceed2a98e3582a7096d1a80993ab486a7896f2dff7afc1e19
+device:
+  desc: ''
+  sort: 22
+  value: cuda
+early_stop_patience_evals:
+  desc: ''
+  sort: 30
+  value: 8
+eval_every:
+  desc: ''
+  sort: 27
+  value: 200
+experiment_name:
+  desc: ''
+  sort: 8
+  value: HopfExpanded34_H4_NormalFormRadial_r32
+fused_adamw:
+  desc: ''
+  sort: 26
+  value: true
+galerkin_path:
+  desc: ''
+  sort: 3
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainonly_galerkin_r32.npz
+gpu_memory_fraction:
+  desc: ''
+  sort: 23
+  value: 0.32
+grad_accum:
+  desc: ''
+  sort: 11
+  value: 1
+grad_clip:
+  desc: ''
+  sort: 15
+  value: 1.0
+heldout_hard_disabled:
+  desc: ''
+  sort: 44
+  value:
+  - 47.081355
+  - 49.022357
+  - 51.78645
+hopf_grad_max:
+  desc: ''
+  sort: 17
+  value: 0.25
+hopf_grad_min:
+  desc: ''
+  sort: 16
+  value: 0.1
+hopf_grad_target:
+  desc: ''
+  sort: 18
+  value: 0.18
+initialization:
+  desc: ''
+  sort: 50
+  value:
+    model: physical_rom_plus_zero_learned_residual
+    normal_form: strict neutral/zero-output
+    old_checkpoint_loaded: false
+long_eval_every:
+  desc: ''
+  sort: 28
+  value: 400
+lr:
+  desc: ''
+  sort: 13
+  value: 0.001
+max_steps:
+  desc: ''
+  sort: 12
+  value: 8000
+micro_batch:
+  desc: ''
+  sort: 10
+  value: 232
+model_input_semantics:
+  desc: ''
+  sort: 49
+  value: fresh physical-ROM zero-residual initialization in the expanded train-only
+    POD coordinates; fluctuation normalization is loss-only
+nf_grad_max:
+  desc: ''
+  sort: 20
+  value: 0.12
+nf_grad_min:
+  desc: ''
+  sort: 19
+  value: 0.05
+nf_grad_target:
+  desc: ''
+  sort: 21
+  value: 0.08
+output_root:
+  desc: ''
+  sort: 7
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/hopf_v6/hopf/vanilla-fnn/training
+preflight_per_re:
+  desc: ''
+  sort: 37
+  value: false
+preflight_windows:
+  desc: ''
+  sort: 38
+  value: 8
+pressure_path:
+  desc: ''
+  sort: 4
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainonly_pressure_r32.npz
+resume:
+  desc: ''
+  sort: 41
+  value: {}
+seed:
+  desc: ''
+  sort: 9
+  value: 1248
+selector:
+  desc: ''
+  sort: 51
+  value: Hopf-aware fluctuation/radial/growth primary; total-field safeguard secondary
+smoke_only:
+  desc: ''
+  sort: 36
+  value: false
+swanlab_group:
+  desc: ''
+  sort: 34
+  value: Vanilla-FNN-hopf
+swanlab_log_every:
+  desc: ''
+  sort: 35
+  value: 20
+swanlab_mode:
+  desc: ''
+  sort: 32
+  value: online
+swanlab_project:
+  desc: ''
+  sort: 33
+  value: PaperSpecialistAblationsSingleSeed20260724
+train_Re:
+  desc: ''
+  sort: 42
+  value:
+  - 45.5
+  - 45.8
+  - 46.1
+  - 46.3
+  - 46.5
+  - 46.9
+  - 47.2
+  - 47.4
+  - 47.6
+  - 47.722947
+  - 47.8
+  - 48.0
+  - 48.3
+  - 48.368688
+  - 48.7
+  - 49.3
+  - 49.6
+  - 49.68764
+  - 50.0
+  - 50.368054
+  - 51.066785
+  - 52.528767
+  - 53.294175
+  - 54.081508
+  - 54.88795
+  - 55.70961
+  - 57.38997
+  - 58.262636
+  - 59.201432
+trainer_code_sha256:
+  desc: ''
+  sort: 46
+  value: bf25d3fee9ed1b51a02437eaba64ad6d9d618955eed2b54f4a218e14d25c4ee4
+validation_Re:
+  desc: ''
+  sort: 43
+  value:
+  - 46.7
+  - 56.543246
+validation_lock:
+  desc: ''
+  sort: 31
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/hopf_v6/hopf/vanilla-fnn/validation.lock
+validation_windows_per_re:
+  desc: ''
+  sort: 29
+  value: 32
+variant:
+  desc: ''
+  sort: 0
+  value: h4
+weight_decay:
+  desc: ''
+  sort: 14
+  value: 0.0001

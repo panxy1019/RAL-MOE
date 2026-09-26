@@ -1,0 +1,14 @@
+{
+  "errors": {
+    "vanilla-fnn": "RuntimeError('vanilla_smoke returned 1')"
+  },
+  "finished_unix": 1784850225.8225014,
+  "methods": [
+    "vanilla-fnn"
+  ],
+  "regime": "hopf",
+  "return_codes": {
+    "vanilla_smoke": 1
+  },
+  "status": "FAILED"
+}

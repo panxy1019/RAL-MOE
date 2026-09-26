@@ -1,0 +1,81 @@
+{
+  "status": "REPORTS_GENERATED",
+  "generated_files": [
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/manuscript/NUMERICAL_EXPERIMENTS_DRAFT.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/ATTRACTOR_ANALYSIS.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/EXPERIMENT_STATUS.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/FAILURES_AND_LIMITATIONS.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/FULL_SYSTEM_COMPARISON.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/ROUTING_DIAGNOSTICS.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/SPECIALIST_ABLATION_OBJECTIVE_REPORT.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/SPECIALIST_ABLATION_REPORT.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/SPECIALIST_ATTRACTOR_RESULTS.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/SPECIALIST_TRANSIENT_RESULTS.md",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/figure_data/HOPF_STRICT_ATTRACTOR_PER_RE.csv",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/figure_data/SH_BOUNDARY_PER_RE.csv",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/figure_data/SPECIALIST_LONG_HORIZON.csv",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/tables/TABLE_A1_SPECIALIST_ABLATIONS.csv",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/tables/TABLE_A2_FULL_SYSTEM.csv",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/tables/TABLE_B1_SPECIALIST_ATTRACTORS.csv",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/reports/tables/TABLE_B2_SH_ATTRACTOR.csv"
+  ],
+  "source_files": {
+    "steady_vanilla": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/frozen_user_stop_step6200_20260724/evaluation/test/metrics.json",
+    "steady_vanilla_freeze": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/FROZEN_SELECTION.json",
+    "hopf_vanilla_validation": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/hopf_v6/hopf/vanilla-fnn/evaluation/validation/metrics.json",
+    "hopf_vanilla_freeze": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/hopf_v6/hopf/vanilla-fnn/FROZEN_SELECTION.json",
+    "periodic_vanilla": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v4/periodic/vanilla-fnn/evaluation/test/native/periodic_r32_multihorizon_evaluation.json",
+    "periodic_vanilla_freeze": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v4/periodic/vanilla-fnn/FROZEN_SELECTION.json",
+    "steady_data": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/steady/data-only/evaluation/test/metrics.json",
+    "hopf_data": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/hopf/data-only/evaluation/test/metrics.json",
+    "periodic_data": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/periodic/data-only/evaluation/test/metrics.json",
+    "steady_proposed": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/portability_runs/best_checkpoint_evaluation_retry/heldout_metrics.json",
+    "hopf_proposed": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/final_evaluation/20260722_h4_expanded_final/heldout_metrics.json",
+    "hopf_attractor": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/native_attractor_audit_20260723_v1/results/HOPF_NATIVE_ATTRACTOR_AUDIT.json",
+    "periodic_proposed": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/reproduction/best_epoch85_heldout_eval_v2/periodic_r32_multihorizon_evaluation.json",
+    "global": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/reproduction/heldout_eval_frozen_checkpoint_20260723/V16_1_SteadyPressureAnchor32_ru32_rp32_reproduced_metrics.json",
+    "e2_summary": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/E1_E2_E3_TOP1_SUMMARY.json",
+    "e2_report": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/E1_E2_E3_TOP1_REPORT.md",
+    "t2c_eval": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/resplit_20260723_v1/final_test_evaluation/EVALUATION_REPORT.json",
+    "t2c_oracle": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/resplit_20260723_v1/supplements/per_re_matched_oracle_v4/PER_RE_MATCHED_ORACLE_REPORT.json",
+    "t2c_attractor": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/resplit_20260723_v1/supplements/t2c_attractor_v2/T2C_ATTRACTOR_ANALYSIS.json",
+    "hp_report": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_hp_20260723_v1/H_P_RECOVERY_REPORT_20260723.md"
+  },
+  "source_sha256": {
+    "steady_vanilla": "cadbb20d36f5022549e1bedbd034da3b33f8b0d03a30074be1c92d4d3365c011",
+    "steady_vanilla_freeze": "2812c44339be7b459156fe800b12c01ee5be38a9714012a896043f9c2edfa261",
+    "hopf_vanilla_validation": "6d6ed4bb2647ef1249acb29ff80b849fef744ecfe4abaae48a7a2436577fe6b6",
+    "hopf_vanilla_freeze": "298992b03875aeef557bd21dd06e81cd48ad8351015d89705232b5477c6c6b24",
+    "periodic_vanilla": "f2626a808586870575df1f382828b87ecfc60713aae5fa3f24a71a37c6102e11",
+    "periodic_vanilla_freeze": "f6a1c2c5efed5ecf39a1f7777a80398d68f639efeba01084baf90b8a9298b2a4",
+    "steady_data": "02b08e13b05a8957bf8505d6166e9825e26b2ddca1d9d6890865bf84df0b5302",
+    "hopf_data": "497bc65254531e53e788ffd2282ecf6e9a38698590557bceac1a32ff1bb17b91",
+    "periodic_data": "919315393520e90b3b753e8f79ea4554dade4e522f217ae198bd0b0f82ed3f6b",
+    "steady_proposed": "a726f7c99facb526f267e4dc9095592f225dccf445a0ad0e70e0de63a7bd53a1",
+    "hopf_proposed": "255d495f1b404ee67cf423a8413c2edd96b708ef69e75eed87674355c05bd74d",
+    "hopf_attractor": "de6211930abd0eff9815cb45eba6b39b396bb64c2e45d7c3024b8820645499d9",
+    "periodic_proposed": "43d4dcb69d607ea5805275bf3cd5fad0238d867742a8473901fe12a5cdadd5a1",
+    "global": "111d922e8aebd00336e455e5c73364b8932c954fae0e43b80851ce1afc4a8a99",
+    "e2_summary": "2b091ccaad3d58a16095604fa7af46b8012ec24d8a3d40c3e6ad68d45c2f3324",
+    "e2_report": "e9a936288948a62a2405f2ac664914251a7b0bf7c0b83149355f234a37ac70d1",
+    "t2c_eval": "aeb615fb45e2833e02a1368212e60d5883fcc71f3b07c7ecdecd05702bd9e7ff",
+    "t2c_oracle": "2b8b6835fe0a465f46b0a78a1545f71b269c77d56e89eee8d5a4f85809fa6e0f",
+    "t2c_attractor": "454aefd942c931566614eb3c0b20f56c892f4e91cbd3441209f4d27d3a0dfbab",
+    "hp_report": "f5a9b17625c0637fdbb4a09f1e4bc8064c88d0e7c4d1abbc9c8998af6cb68448"
+  },
+  "claim": {
+    "paper_main_conclusion_supported": "PARTIALLY",
+    "supported": [
+      "admissibility-constrained sparse multi-chart routing",
+      "S-H T2-C improvement on 2/3 test Re and mean K56",
+      "Periodic proposed specialist improvement over Vanilla",
+      "physics-data advantage over DataOnly for Steady/Hopf pressure stability"
+    ],
+    "not_supported": [
+      "uniform superiority across every regime/method/Re",
+      "uniform Hopf attractor preservation",
+      "validated H-P soft fusion",
+      "fully blind all-domain comparison"
+    ]
+  }
+}

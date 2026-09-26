@@ -1,0 +1,12 @@
+{
+  "aggregate": {
+    "name": "M2_rates_0.01_0.05_ridge_10",
+    "kind": 2,
+    "stable_6_of_6": true,
+    "J500_mean": 0.17652534861430705,
+    "J500_median": 0.1773741447505051,
+    "J500_max": 0.27817841961180484
+  },
+  "train_fit": 0.013983107435243744,
+  "heldout_loaded": false
+}

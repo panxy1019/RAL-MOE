@@ -1,0 +1,75 @@
+{
+  "schema": "revision8_detailed_source_map/v1",
+  "policy": {
+    "training": false,
+    "evaluator_rerun": false,
+    "metric_recomputation": false,
+    "allowed_transformation": "relative_error * 100 and textual/table reorganization only"
+  },
+  "missing_value_contract": {
+    "N/A1": "DataOnly frozen evaluator did not store POD coefficient errors",
+    "N/A2": "Hopf Vanilla failed validation finite gate; test was not opened",
+    "N/A3": "corresponding frozen attractor evaluator/field was not run or stored",
+    "N/A4": "Global wrapper did not run the local specialist strict-attractor evaluator",
+    "N/A5": "Global database has no exact Re=49.3/49.6/50.0 assets",
+    "N/A6": "S-H sealed cache stores joint field/attractor aggregates, not u/p or POD decomposition"
+  },
+  "sources": {
+    "HOPF_DATAONLY.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\HOPF_DATAONLY.json",
+      "sha256": "497bc65254531e53e788ffd2282ecf6e9a38698590557bceac1a32ff1bb17b91"
+    },
+    "HOPF_NATIVE_ATTRACTOR_AUDIT.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\HOPF_NATIVE_ATTRACTOR_AUDIT.json",
+      "sha256": "de6211930abd0eff9815cb45eba6b39b396bb64c2e45d7c3024b8820645499d9"
+    },
+    "PERIODIC_DATAONLY_K48.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\PERIODIC_DATAONLY_K48.json",
+      "sha256": "aa13c543dd6aa8609cfa51df3e464110824492d7f9aa62f79863426b3a3a7c90"
+    },
+    "PERIODIC_PROPOSED.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\PERIODIC_PROPOSED.json",
+      "sha256": "43d4dcb69d607ea5805275bf3cd5fad0238d867742a8473901fe12a5cdadd5a1"
+    },
+    "PERIODIC_VANILLA.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\PERIODIC_VANILLA.json",
+      "sha256": "f2626a808586870575df1f382828b87ecfc60713aae5fa3f24a71a37c6102e11"
+    },
+    "SH_ATTRACTOR.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\SH_ATTRACTOR.json",
+      "sha256": "454aefd942c931566614eb3c0b20f56c892f4e91cbd3441209f4d27d3a0dfbab"
+    },
+    "SH_PER_RE_ORACLE.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\SH_PER_RE_ORACLE.json",
+      "sha256": "2b8b6835fe0a465f46b0a78a1545f71b269c77d56e89eee8d5a4f85809fa6e0f"
+    },
+    "SH_PER_WINDOW_RESULTS.csv": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\SH_PER_WINDOW_RESULTS.csv",
+      "sha256": "7643315c742937842a21fdd646d313b239053325427d7ef72cb4f2824dcd27b8"
+    },
+    "STEADY_DATAONLY.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\STEADY_DATAONLY.json",
+      "sha256": "02b08e13b05a8957bf8505d6166e9825e26b2ddca1d9d6890865bf84df0b5302"
+    },
+    "STEADY_PROPOSED.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\STEADY_PROPOSED.json",
+      "sha256": "93805a2466b1e90efd43a9f92b429f27bc5ede2d7645ca6f8f016caf85f8c55d"
+    },
+    "STEADY_VANILLA.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision8_detailed_per_re\\inputs\\STEADY_VANILLA.json",
+      "sha256": "cadbb20d36f5022549e1bedbd034da3b33f8b0d03a30074be1c92d4d3365c011"
+    },
+    "GLOBAL_K56_PHYSICAL_COMPACT.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision6_complete_20260725\\inputs\\GLOBAL_K56_PHYSICAL_COMPACT.json",
+      "sha256": "b3bc24d1a8a5bbf7fa5d74269f43f7c4235f87f26f5aff6c946013604f512a2e"
+    },
+    "DATAONLY_MISSING_CONTRACTS.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision6_complete_20260725\\inputs\\DATAONLY_MISSING_CONTRACTS.json",
+      "sha256": "1294a6987c298a7c9d2aee36f545d5bbd141c58d73740e2a1e087e86ef964b30"
+    },
+    "TABLE_B1A_STEADY_ATTRACTOR_PERCENT.csv": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision3_20260724_frozen\\reports\\tables\\TABLE_B1A_STEADY_ATTRACTOR_PERCENT.csv",
+      "sha256": "8a4bc299003465cf5f77701ec40d94aea00f23d7d3bc50f4c3101e180387bab5"
+    }
+  }
+}

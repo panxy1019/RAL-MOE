@@ -1,0 +1,148 @@
+{
+  "case": "Centered square",
+  "geometry": "square, D=1, x=[5,6], y=[1.5,2.5]",
+  "regime_or_overlap": "SH",
+  "Re": 95.1,
+  "source_field_path": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_sh/sh_heldout_cache.npz",
+    "sha256": "5d27b47202ef9d296f0c384dd7e367b2547410634c81c4af9b2bc7adb0443a88"
+  },
+  "reference_path": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_sh/sh_heldout_cache.npz",
+    "sha256": "5d27b47202ef9d296f0c384dd7e367b2547410634c81c4af9b2bc7adb0443a88"
+  },
+  "basis_sources": [
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+      "sha256": "3a6f412e4c60309b4f2e913c1f4d2c090e0fb976a960e46869a01b75c7d0a7ca"
+    },
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+      "sha256": "85a3b5efb1c2dbf87af948217448fec01339786e7805fd591ded17118d3f91a7"
+    },
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+      "sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+    },
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+      "sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+    }
+  ],
+  "checkpoint_path": [
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/checkpoint/frozen_centeredsquare_steady_step3200.pt",
+      "sha256": "23c7b18fb44316fca28bef0aeac4458235c100b99b2b0c4503d7ae5770cc6fe9"
+    },
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/selected_validation_step7200.pt",
+      "sha256": "07af06ec5506e5b6a12d9d00f557a4e48fa722be3c2a183df752f0883ad40beb"
+    }
+  ],
+  "model_family": "T2-C with fixed sparse-MoE local candidates",
+  "original_or_revised_init": "archived original (July 2026), no September repair",
+  "training_seed": [
+    202607281,
+    1248
+  ],
+  "E2_checkpoint": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/e2_router/best.pt",
+    "sha256": "6d9e62729db1fd8e6c39686b582e7d451ceb79b58eb14637a34874c66aea1dac"
+  },
+  "gate_checkpoint": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/gate_sh/best.pt",
+    "sha256": "732059a2cf19acf6b4681590fa2a8a43ad4babdc2c5814638ed438c1dc5cafb0"
+  },
+  "gate_seed": 42001,
+  "candidate_r": "steady",
+  "candidate_s": "hopf",
+  "E2_selection": "Hopf",
+  "E2_probabilities": [
+    0.23332267999649048,
+    0.7147641181945801,
+    0.051913198083639145
+  ],
+  "alpha": 0.7718048691749573,
+  "split": "heldout",
+  "trajectory_id": "SH_Re95.1",
+  "window_id": 7814,
+  "window_index": 0,
+  "t0": 8.0,
+  "dt_output": 4.0,
+  "k": 24,
+  "K": 24,
+  "snapshot_time": 104.0,
+  "duration": 96.0,
+  "mesh": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/centeredSquare_CN09_graded_Re100_internal_final_reference.vtk",
+    "sha256": "57423d8ebcca3f1aaf8d18311366c7f05a0df6b9f10f5973ed75e3334c7d5175"
+  },
+  "data_association": "cell",
+  "crop_extent": [
+    2,
+    17,
+    0,
+    4
+  ],
+  "recovery": "existing frozen rollout coefficients, freshly decoded; E2/gate CPU inference only",
+  "quadratic_metric_max_delta": 0.0,
+  "metric_checks": {
+    "candidate1_Eu": 0.0,
+    "candidate1_Ep": 0.0,
+    "candidate2_Eu": 0.0,
+    "candidate2_Ep": 0.0,
+    "prediction_Eu": 0.0,
+    "prediction_Ep": 0.0,
+    "e2_Eu": 0.0,
+    "e2_Ep": 0.0
+  },
+  "reference_type": "POD reconstruction",
+  "velocity_definition": "u,v in physical coefficient scale; speed=hypot(u,v); pointwise velocity error=norm(u_pred-u_ref)",
+  "pressure_definition": "native kinematic pressure p (pressure divided by density), no density multiplication; weighted zero-mean gauge",
+  "nondimensional_scales": "native POD physical scale retained; no additional u/U or p/U^2 rescaling; independent case color scales, not a common nondimensional comparison",
+  "gauge_correction": "independent quadrature-weighted domain-zero-mean for every pressure field; not fitted to the error",
+  "interpolation": "none for cell fields; piecewise-linear on original surface triangles for Circular point fields",
+  "fluid_mask": "original VTK fluid topology; solid interiors have no triangles",
+  "integration_weights": "native point_areas, full computational domain",
+  "missing_points": 0,
+  "nonfinite_points": 0,
+  "selection_rule": "ascending heldout Re, then first archived/common valid window by start index; final output of full saved rollout; no metric sorting",
+  "snapshot_metrics": {
+    "reference": {
+      "Eu": 0.0,
+      "Ep": 0.0
+    },
+    "candidate1": {
+      "Eu": 0.022064389069577094,
+      "Ep": 0.018418876322307542
+    },
+    "candidate2": {
+      "Eu": 0.02104398090777403,
+      "Ep": 0.06928211825570543
+    },
+    "prediction": {
+      "Eu": 0.018347293137663843,
+      "Ep": 0.029460052032271117
+    },
+    "e2": {
+      "Eu": 0.02104398090777403,
+      "Ep": 0.06928211825570543
+    }
+  },
+  "metric_units": "fraction (multiply by 100 for percent)",
+  "training_performed": false,
+  "errors_computed_on": "full domain, not cropped ROI",
+  "snapshot_arrays": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/field_redraw_20260922/data/square_sh.npz",
+    "sha256": "ae481e3e4c6ddf901fd623c864f3ba49ae51e3c6914f7d7feaa35a2b3e0c94f4"
+  },
+  "case_id": "square_sh",
+  "mesh_alignment_max_abs": 1.9073486328125e-06,
+  "plot_geometry": "square_sh_geometry.npz",
+  "plot_triangles": 18800,
+  "plot_vertices": 9653,
+  "training_seed_source": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/training_centeredsquare_steady_rank999.json",
+    "sha256": "ae25369e813441b2b1e2c12fb6235c8647319877fa35591cdd04d556194328ea"
+  }
+}

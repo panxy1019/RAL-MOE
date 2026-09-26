@@ -1,0 +1,83 @@
+{
+  "status": "COMPLETE",
+  "generated_date": "2026-07-22",
+  "method_contract": "trajectory-level fixed Top-1 routing for complete fixed-Re trajectories",
+  "router_claim": "temporal-consistent regime router",
+  "specialists": {
+    "frozen": true,
+    "loaded_during_router_training": false,
+    "evaluation_binding": "E0 native held-out evidence by immutable SHA-256"
+  },
+  "data": {
+    "complete_Re_isolation": true,
+    "windows_per_Re": 32,
+    "train_windows": 3072,
+    "validation_windows": 320,
+    "test_windows": 352,
+    "train_trajectories": 96,
+    "validation_trajectories": 10,
+    "test_trajectories": 11
+  },
+  "results": {
+    "E1": {
+      "name": "Oracle trajectory-level Top-1",
+      "trainable_parameters": 0,
+      "test_accuracy": 1.0,
+      "test_balanced_accuracy": 1.0,
+      "test_macro_f1": 1.0,
+      "test_confusion_matrix": [[4, 0, 0], [0, 3, 0], [0, 0, 4]],
+      "trajectory_nll": 0.0,
+      "multiclass_brier": 0.0,
+      "ece10": 0.0,
+      "decision": "PASS_ORACLE_UPPER_BOUND"
+    },
+    "E2": {
+      "name": "Re-only Router Top-1",
+      "seed": 31002,
+      "best_step": 6300,
+      "test_accuracy": 1.0,
+      "test_balanced_accuracy": 1.0,
+      "test_macro_f1": 1.0,
+      "test_confusion_matrix": [[4, 0, 0], [0, 3, 0], [0, 0, 4]],
+      "trajectory_nll": 0.18381598940587332,
+      "multiclass_brier": 0.09327966036259339,
+      "ece10": 0.15009304068305276,
+      "mean_confidence": 0.8499069593169473,
+      "minimum_top1_margin": 0.004594564437866211,
+      "minimum_margin_Re": 45.142702578,
+      "illegal_nonadjacent_top2_count": 0,
+      "decision": "PASS_CURRENT_TOP1_BASELINE_BOUNDARY_FRAGILE"
+    },
+    "E3": {
+      "name": "Re plus physical-descriptor Router Top-1",
+      "seed": 31003,
+      "best_step": 5500,
+      "test_accuracy": 1.0,
+      "test_balanced_accuracy": 1.0,
+      "test_macro_f1": 1.0,
+      "test_confusion_matrix": [[4, 0, 0], [0, 3, 0], [0, 0, 4]],
+      "trajectory_nll": 0.027927656458486175,
+      "multiclass_brier": 0.012462514253533228,
+      "ece10": 0.024132918227802665,
+      "mean_confidence": 0.9758670817721974,
+      "minimum_top1_margin": 0.47642120718955994,
+      "minimum_margin_Re": 45.142702578,
+      "illegal_nonadjacent_top2_count": 4,
+      "validation_illegal_nonadjacent_top2_count": 6,
+      "decision": "PASS_AS_TOP1_ABLATION_NOT_YET_DEPLOYMENT_CERTIFIED",
+      "blocking_caveat": "Current descriptors are constructed from source-chart POD coefficients, bases, and means. A chart-independent pre-routing physical-observation implementation and cross-chart invariance test are still required."
+    }
+  },
+  "checkpoint_sha256": {
+    "E2_best": "f0286a9974f16b513bb42cd94232c397123dcd3e0a01eab475ff1593f7881dcd",
+    "E2_last": "b74d2711f07e97d070d16bfa542357c79e4472e8cfabf99901612dd90fc4f001",
+    "E3_best": "087b977b439262f5ffe7b33620c8bae799c0ff01a538a5071a7dbaca7309aaed",
+    "E3_last": "20a77e441d066f086186f902e3490512c5b3cafa35eaf5434ae2b3043777a0ce"
+  },
+  "e0_evidence_sha256": {
+    "Steady": "7df7abd889d62b62acd864b35b476ac3759ade77f246d5886aa790b7517d50d1",
+    "Hopf": "1272698ae9abd8354cce087e3d5764f8d639e515d4ed5318be3ac0a5dd02dae7",
+    "Periodic": "b17be4ec3459dfab11b760f1d3f326fb1b153161b9e65ca7c87e887990f2fc1e"
+  },
+  "overall_conclusion": "E2 is the valid deployable Top-1 baseline on the current fixed-Re held-out set. E3 improves confidence/calibration in this ablation but is not yet certified as a chart-independent deployment Router. No true cross-regime temporal-transition claim is supported."
+}

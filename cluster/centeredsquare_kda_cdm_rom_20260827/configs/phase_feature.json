@@ -1,0 +1,10 @@
+{
+  "phase_pair": [null, null],
+  "phase_pair_source": "train_only_spectral_cross_phase_search",
+  "key_dimension": 7,
+  "value_dimension": 4,
+  "key_query": ["1", "cos(theta)", "sin(theta)", "cos(2theta)", "sin(2theta)", "rho_tilde", "Re_tilde"],
+  "value": ["omega_fvm_tilde", "rho_dot_fvm_tilde", "rho_tilde", "1"],
+  "epsilon": 1e-12,
+  "heldout_accessed": false
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "regime": "H",
+    "kind": "proposed",
+    "seed": 1248,
+    "status": "completed",
+    "returncode": 0
+  },
+  {
+    "regime": "H",
+    "kind": "structured",
+    "seed": 1248,
+    "status": "training_failed_no_test"
+  },
+  {
+    "regime": "H",
+    "kind": "proposed",
+    "seed": 1600,
+    "status": "completed",
+    "returncode": 0
+  },
+  {
+    "regime": "H",
+    "kind": "structured",
+    "seed": 1600,
+    "status": "completed",
+    "returncode": 0
+  },
+  {
+    "regime": "H",
+    "kind": "proposed",
+    "seed": 2026,
+    "status": "training_failed_no_test"
+  },
+  {
+    "regime": "H",
+    "kind": "structured",
+    "seed": 2026,
+    "status": "completed",
+    "returncode": 0
+  }
+]

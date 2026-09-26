@@ -1,0 +1,32 @@
+{
+  "audits": [
+    {
+      "step": 0,
+      "common_grad_norm": 41.59131622314453,
+      "h3_raw_grad_norm": 2000.968017578125,
+      "h3_weight": 0.003741407458564631,
+      "h3_weighted_ratio": 0.18,
+      "h3_raw": 1586.0748291015625,
+      "h3_weighted": 5.934152126312256,
+      "nf_raw_grad_norm": 35.273929595947266,
+      "nf_weight": 0.09432760330178906,
+      "nf_weighted_ratio": 0.08,
+      "nf_raw": 2.313445568084717,
+      "nf_weighted": 0.2182217836380005
+    },
+    {
+      "step": 2,
+      "common_grad_norm": 307.73614501953125,
+      "h3_raw_grad_norm": 2567.495361328125,
+      "h3_weight": 0.021574530525353693,
+      "h3_weighted_ratio": 0.18,
+      "h3_raw": 1512.773193359375,
+      "h3_weighted": 32.63737106323242,
+      "nf_raw_grad_norm": 453870.875,
+      "nf_weight": 5.4242059993194914e-05,
+      "nf_weighted_ratio": 0.08,
+      "nf_raw": 100.3946304321289,
+      "nf_weighted": 0.005445611663162708
+    }
+  ]
+}

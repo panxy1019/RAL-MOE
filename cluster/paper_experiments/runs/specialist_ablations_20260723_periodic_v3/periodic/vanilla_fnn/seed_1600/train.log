@@ -1,0 +1,15 @@
+{"event": "split_start", "experiment": "VanillaFNN_periodic_seed1600", "test_label": "Re_70p314635", "test_Re": 70.31463623046875, "holdout_labels": ["Re_70p314635", "Re_100p352251", "Re_149p059229", "Re_189p862278"], "train_re_count": 53, "test_re_count": 4, "kept_train_samples": 8380, "dense_train_samples_before_time_sparsity": 8380, "compression_ratio_vs_dense_train": 1.0}
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experi
+ments/runs/specialist_ablations_20260723_periodic_v3/periodic/vanilla_fnn/seed_1
+600/swanlog/run-20260723_235632-540aeghb-e9c967685351-26730
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblations20260723
+swanlab: 🚀 View run Vanilla-FNN-periodic-seed1600 at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblations20260723/runs/540aeghb
+{"event": "epoch_eval", "experiment": "VanillaFNN_periodic_seed1600", "test_label": "Re_70p314635", "epoch": 1, "train_loss": 4.4319883621100225, "val_score": 0.3726789804175496, "val_rhs_relative_l2": 0.22943086922168732, "val_alpha_relative_l2": 0.12746313214302063, "val_pressure_relative_l2": 0.04509994015097618, "scheduled_sampling": 1.0, "rollout_steps": 4}
+{"event": "epoch_eval", "experiment": "VanillaFNN_periodic_seed1600", "test_label": "Re_70p314635", "epoch": 5, "train_loss": 1.4412336602355496, "val_score": 0.3273705268278718, "val_rhs_relative_l2": 0.21581608057022095, "val_alpha_relative_l2": 0.10078142583370209, "val_pressure_relative_l2": 0.030780058354139328, "scheduled_sampling": 1.0, "rollout_steps": 4}
+{"event": "epoch_eval", "experiment": "VanillaFNN_periodic_seed1600", "test_label": "Re_70p314635", "epoch": 10, "train_loss": 1.0259167208816067, "val_score": 0.3025981165468693, "val_rhs_relative_l2": 0.19931413233280182, "val_alpha_relative_l2": 0.09431812167167664, "val_pressure_relative_l2": 0.025616750121116638, "scheduled_sampling": 1.0, "rollout_steps": 4}

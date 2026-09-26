@@ -1,0 +1,15 @@
+{
+  "errors": {
+    "vanilla-fnn": "RuntimeError('vanilla_preflight_rollout_smoke returned 1')"
+  },
+  "finished_unix": 1784850423.3164287,
+  "methods": [
+    "vanilla-fnn"
+  ],
+  "regime": "periodic",
+  "return_codes": {
+    "vanilla_preflight": 0,
+    "vanilla_preflight_rollout_smoke": 1
+  },
+  "status": "FAILED"
+}

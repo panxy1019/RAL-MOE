@@ -1,0 +1,2 @@
+Diagnostic log bound to file: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2/runs/long_seed1600/swanlog/run-20260806_153038-7pdxuvl9-ae991e48f12f-8909/debug/debug.log
+2026-08-07 03:17:32.010 | WARNING  | swanlab.sdk.internal.pkg.client.session:increment:48 - [HTTP] retry #1 UNKNOWN  because error=ProtocolError('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))

@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1180" viewBox="0 0 1600 1180">
+  <defs>
+    <style>
+      .title{font:700 38px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#10233f}
+      .subtitle{font:500 20px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#496078}
+      .h{font:700 24px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#12263f}
+      .mh{font:700 21px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#12263f}
+      .t{font:500 20px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#18324c}
+      .s{font:500 17px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#4a6075}
+      .eq{font:600 21px 'Cambria Math','Microsoft YaHei',serif;fill:#10233f}
+      .white{fill:white}
+      .arrow{stroke:#496b8a;stroke-width:4;fill:none;marker-end:url(#arrow)}
+      .dash{stroke:#b77812;stroke-width:3;fill:none;stroke-dasharray:10 8;marker-end:url(#arrowGold)}
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#496b8a"/>
+    </marker>
+    <marker id="arrowGold" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#b77812"/>
+    </marker>
+    <filter id="shadow" x="-15%" y="-15%" width="130%" height="130%">
+      <feDropShadow dx="0" dy="5" stdDeviation="7" flood-color="#17324d" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="1180" fill="#f5f8fc"/>
+  <text x="800" y="58" text-anchor="middle" class="title">V17 Steady MoE-ROM：实际训练与自主推进流程</text>
+  <text x="800" y="92" text-anchor="middle" class="subtitle">最终 S2-B → S3-B → S4 专用路径；速度为显式 Euler，压力为 Poisson/closure 代数更新</text>
+
+  <!-- Input -->
+  <rect x="55" y="150" width="270" height="245" rx="22" fill="#dfefff" stroke="#4a8bc2" stroke-width="3" filter="url(#shadow)"/>
+  <text x="190" y="188" text-anchor="middle" class="h">当前状态与条件</text>
+  <text x="82" y="228" class="t">• aₙ ∈ R³²：速度 POD</text>
+  <text x="82" y="263" class="t">• bₙ ∈ R³²：压力 POD</text>
+  <text x="82" y="298" class="t">• Re、phase、Δt</text>
+  <text x="82" y="333" class="t">• 三步 history</text>
+  <text x="82" y="370" class="s">全部使用 Steady 本地坐标</text>
+
+  <!-- Galerkin -->
+  <rect x="395" y="138" width="315" height="140" rx="22" fill="#e5f6eb" stroke="#3c9962" stroke-width="3" filter="url(#shadow)"/>
+  <text x="552" y="180" text-anchor="middle" class="h">速度物理骨架</text>
+  <text x="552" y="220" text-anchor="middle" class="eq">fᴳₙ = Galerkin(aₙ,bₙ; Re)</text>
+  <text x="552" y="252" text-anchor="middle" class="s">固定 Galerkin 算子</text>
+
+  <!-- Features -->
+  <rect x="395" y="315" width="315" height="155" rx="22" fill="#e9ecff" stroke="#6769c3" stroke-width="3" filter="url(#shadow)"/>
+  <text x="552" y="354" text-anchor="middle" class="h">特征与归一化</text>
+  <text x="552" y="392" text-anchor="middle" class="t">[aₙ,bₙ,fᴳₙ,Re,phase,history]</text>
+  <text x="552" y="428" text-anchor="middle" class="eq">x̃ₙ = (xₙ − μₓ) / σₓ</text>
+
+  <!-- MoE -->
+  <rect x="785" y="178" width="330" height="260" rx="24" fill="#f0e8ff" stroke="#8059bd" stroke-width="3" filter="url(#shadow)"/>
+  <text x="950" y="218" text-anchor="middle" class="mh">Steady OperatorSpace MoE</text>
+  <text x="950" y="256" text-anchor="middle" class="t">shared encoder + group router</text>
+  <text x="950" y="291" text-anchor="middle" class="t">3 groups × (6 routed + 1 shared)</text>
+  <text x="950" y="326" text-anchor="middle" class="t">group top-1；expert top-2</text>
+  <line x1="818" y1="347" x2="1082" y2="347" stroke="#a58acb" stroke-width="2"/>
+  <text x="950" y="382" text-anchor="middle" class="eq">输出：Δfθ 与 Δbθ</text>
+  <text x="950" y="414" text-anchor="middle" class="s">velocity experts 冻结；pressure 正常学习</text>
+
+  <!-- Velocity advance -->
+  <rect x="1190" y="125" width="350" height="250" rx="24" fill="#e7f5ff" stroke="#277bb7" stroke-width="4" filter="url(#shadow)"/>
+  <text x="1365" y="169" text-anchor="middle" class="h">① 速度推进</text>
+  <text x="1365" y="212" text-anchor="middle" class="eq">fₙ = fᴳₙ + Δfθ(x̃ₙ)</text>
+  <text x="1365" y="258" text-anchor="middle" class="eq">aₙ₊₁ = aₙ + Δt · fₙ</text>
+  <rect x="1243" y="292" width="244" height="52" rx="12" fill="#cc3d3d"/>
+  <text x="1365" y="326" text-anchor="middle" class="h white">显式 Euler，不是 RK4</text>
+
+  <!-- Pressure advance -->
+  <rect x="1190" y="440" width="350" height="280" rx="24" fill="#fff0df" stroke="#d07825" stroke-width="4" filter="url(#shadow)"/>
+  <text x="1365" y="484" text-anchor="middle" class="h">② 压力更新</text>
+  <text x="1365" y="528" text-anchor="middle" class="eq">bᴾₙ₊₁ = PoissonROM(aₙ₊₁; Re)</text>
+  <text x="1365" y="574" text-anchor="middle" class="eq">Δbθ = inverse-scale(pressure head)</text>
+  <text x="1365" y="620" text-anchor="middle" class="eq">bₙ₊₁ = bᴾₙ₊₁ + Δbθ</text>
+  <text x="1365" y="661" text-anchor="middle" class="s">代数 closure；不积分压力 ODE</text>
+  <text x="1365" y="691" text-anchor="middle" class="s">压力保持 subtract-area-mean gauge</text>
+
+  <!-- History loop -->
+  <rect x="785" y="520" width="330" height="175" rx="22" fill="#e8f7f4" stroke="#2f9d8a" stroke-width="3" filter="url(#shadow)"/>
+  <text x="950" y="561" text-anchor="middle" class="h">③ 自主闭环</text>
+  <text x="950" y="603" text-anchor="middle" class="t">写入 (aₙ₊₁,bₙ₊₁,fₙ)</text>
+  <text x="950" y="638" text-anchor="middle" class="t">更新三步 history</text>
+  <text x="950" y="672" text-anchor="middle" class="t">循环 K=1/4/8/16…</text>
+
+  <!-- Arrows -->
+  <path d="M325 235 C350 235,365 210,395 210" class="arrow"/>
+  <path d="M325 330 C350 330,365 380,395 380" class="arrow"/>
+  <path d="M552 278 L552 315" class="arrow"/>
+  <path d="M710 392 C740 392,750 310,785 310" class="arrow"/>
+  <path d="M1115 263 C1145 263,1155 250,1190 250" class="arrow"/>
+  <path d="M1365 375 L1365 440" class="arrow"/>
+  <path d="M1190 600 C1155 600,1145 605,1115 605" class="arrow"/>
+  <path d="M785 605 C745 605,730 520,700 470" class="arrow"/>
+
+  <!-- Loss section -->
+  <rect x="55" y="785" width="1485" height="300" rx="28" fill="#ffffff" stroke="#9dafc0" stroke-width="3" filter="url(#shadow)"/>
+  <text x="797" y="833" text-anchor="middle" class="h">④ 训练损失与反向传播（沿上述 autonomous loop 展开）</text>
+
+  <rect x="88" y="870" width="300" height="160" rx="18" fill="#e8f2ff" stroke="#5a8fc4" stroke-width="2"/>
+  <text x="238" y="907" text-anchor="middle" class="h">S2-B clean loss</text>
+  <text x="238" y="944" text-anchor="middle" class="t">one-step velocity + pressure</text>
+  <text x="238" y="978" text-anchor="middle" class="t">rollout: velocity×1, pressure×2</text>
+  <text x="238" y="1012" text-anchor="middle" class="s">另含原 pressure anchor</text>
+
+  <rect x="430" y="870" width="310" height="160" rx="18" fill="#f1eaff" stroke="#8661bd" stroke-width="2"/>
+  <text x="585" y="907" text-anchor="middle" class="h">S3-B 新增</text>
+  <text x="585" y="946" text-anchor="middle" class="t">clean / perturbed 成对 rollout</text>
+  <text x="585" y="980" text-anchor="middle" class="t">paired contraction loss</text>
+  <text x="585" y="1014" text-anchor="middle" class="s">相同 Euler + pressure closure</text>
+
+  <rect x="782" y="870" width="310" height="160" rx="18" fill="#fff2df" stroke="#d28a34" stroke-width="2"/>
+  <text x="937" y="907" text-anchor="middle" class="h">S4 唯一新增</text>
+  <text x="937" y="946" text-anchor="middle" class="t">真实 Steady z* 一步映射</text>
+  <text x="937" y="980" text-anchor="middle" class="t">fixed-point anchor</text>
+  <text x="937" y="1014" text-anchor="middle" class="s">raw POD / physical-equivalent</text>
+
+  <rect x="1134" y="870" width="370" height="160" rx="18" fill="#e9f7ec" stroke="#489765" stroke-width="2"/>
+  <text x="1319" y="907" text-anchor="middle" class="h">梯度更新范围</text>
+  <text x="1319" y="946" text-anchor="middle" class="t">pressure head：base LR</text>
+  <text x="1319" y="980" text-anchor="middle" class="t">encoder/router：约 0.1× LR</text>
+  <text x="1319" y="1014" text-anchor="middle" class="t">velocity experts：冻结</text>
+
+  <path d="M1180 720 C1100 770,1000 780,940 870" class="dash"/>
+  <text x="65" y="1140" class="s">代码事实：vendor 通用函数 integrate_autonomous_step_torch 支持 RK4，但最终 Steady 专用 rollout 直接执行 aₙ₊₁=aₙ+Δt·fₙ，未调用该 RK4 函数。</text>
+</svg>

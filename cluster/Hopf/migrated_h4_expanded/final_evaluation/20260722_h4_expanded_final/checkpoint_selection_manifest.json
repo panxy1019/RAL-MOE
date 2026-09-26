@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "selection_split": "validation_only",
+  "heldout_consulted_for_selection": false,
+  "eligibility": "step>=6400, at least six K8 validations, hard_gate=true",
+  "score": "trainer-registered worst-Re K8/K16 Hopf validation score",
+  "experiments": {
+    "HopfExpanded34_H4_NormalFormRadial_r32": {
+      "source_checkpoint": "runs/HopfExpanded34_H4_NormalFormRadial_r32/best_validation.pt",
+      "frozen_checkpoint": "/root/panxy/particalMOE/Hopf/migrated_h4_expanded/final_evaluation/20260722_h4_expanded_final/HopfExpanded34_H4_NormalFormRadial_r32/final.pt",
+      "sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+      "optimizer_step": 7200,
+      "validation_score": 0.8787674976061681,
+      "hard_gate": true,
+      "validation_record": {
+        "step": 7200,
+        "by_re": {
+          "46.700000": {
+            "1": {
+              "fluc_u": 0.007933713495731354,
+              "fluc_p": 0.21477162837982178,
+              "total_u": 8.618487299827393e-06,
+              "total_p": 0.002285618335008621,
+              "radial_rms": 0.46540483832359314,
+              "scale_inflation": 0.9436795711517334,
+              "growth_sign_accuracy": NaN,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0220978260040283
+            },
+            "2": {
+              "fluc_u": 0.008123236708343029,
+              "fluc_p": 0.4067712426185608,
+              "total_u": 1.1223636647628155e-05,
+              "total_p": 0.002670801244676113,
+              "radial_rms": 0.48451313376426697,
+              "scale_inflation": 0.9385151267051697,
+              "growth_sign_accuracy": 0.84375,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.010353446006775
+            },
+            "4": {
+              "fluc_u": 0.015651561319828033,
+              "fluc_p": 0.48043718934059143,
+              "total_u": 2.0918627342325635e-05,
+              "total_p": 0.00283966981805861,
+              "radial_rms": 1.0117076635360718,
+              "scale_inflation": 0.9967455267906189,
+              "growth_sign_accuracy": 0.90625,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0123652219772339
+            },
+            "8": {
+              "fluc_u": 0.02552086114883423,
+              "fluc_p": 0.28212395310401917,
+              "total_u": 3.524476778693497e-05,
+              "total_p": 0.0021836229134351015,
+              "radial_rms": 1.8855153322219849,
+              "scale_inflation": 1.1605039834976196,
+              "growth_sign_accuracy": 0.9464285969734192,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0138591527938843
+            },
+            "16": {
+              "fluc_u": 0.014717360027134418,
+              "fluc_p": 0.17311175167560577,
+              "total_u": 3.524269413901493e-05,
+              "total_p": 0.0016656368970870972,
+              "radial_rms": 0.9780606627464294,
+              "scale_inflation": 1.5542367696762085,
+              "growth_sign_accuracy": 0.9687500596046448,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0129380226135254
+            },
+            "24": {
+              "fluc_u": 0.06539443880319595,
+              "fluc_p": 1.10326087474823,
+              "total_u": 7.69780162954703e-05,
+              "total_p": 0.0037405765615403652,
+              "radial_rms": 5.061626434326172,
+              "scale_inflation": 4.560324668884277,
+              "growth_sign_accuracy": 0.9646739363670349,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0140256881713867
+            },
+            "48": {
+              "fluc_u": 0.022968286648392677,
+              "fluc_p": 0.22626423835754395,
+              "total_u": 5.6325396144529805e-05,
+              "total_p": 0.0027986341156065464,
+              "radial_rms": 0.9846101403236389,
+              "scale_inflation": 0.9803801774978638,
+              "growth_sign_accuracy": 0.7594107985496521,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.014490008354187
+            }
+          },
+          "56.543246": {
+            "1": {
+              "fluc_u": 0.019708801060914993,
+              "fluc_p": 0.12833064794540405,
+              "total_u": 3.940240276278928e-05,
+              "total_p": 0.0009622497018426657,
+              "radial_rms": 0.026373323053121567,
+              "scale_inflation": 0.7520432472229004,
+              "growth_sign_accuracy": NaN,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0031402111053467
+            },
+            "2": {
+              "fluc_u": 0.039592135697603226,
+              "fluc_p": 0.14856478571891785,
+              "total_u": 7.901433855295181e-05,
+              "total_p": 0.001088817254640162,
+              "radial_rms": 0.052281565964221954,
+              "scale_inflation": 0.734322190284729,
+              "growth_sign_accuracy": 0.5517241358757019,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0040878057479858
+            },
+            "4": {
+              "fluc_u": 0.07703100889921188,
+              "fluc_p": 0.13870994746685028,
+              "total_u": 0.00015203189104795456,
+              "total_p": 0.0012211662251502275,
+              "radial_rms": 0.1031513437628746,
+              "scale_inflation": 0.6993228197097778,
+              "growth_sign_accuracy": 0.6477273106575012,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0034998655319214
+            },
+            "8": {
+              "fluc_u": 0.14761559665203094,
+              "fluc_p": 0.16048569977283478,
+              "total_u": 0.0002918039099313319,
+              "total_p": 0.0015278609935194254,
+              "radial_rms": 0.1964792162179947,
+              "scale_inflation": 0.6394435167312622,
+              "growth_sign_accuracy": 0.6318407654762268,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0043301582336426
+            },
+            "16": {
+              "fluc_u": 0.27039337158203125,
+              "fluc_p": 0.273672878742218,
+              "total_u": 0.0005464539863169193,
+              "total_p": 0.0023535722866654396,
+              "radial_rms": 0.3514215350151062,
+              "scale_inflation": 0.5356471538543701,
+              "growth_sign_accuracy": 0.6403712034225464,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0044457912445068
+            },
+            "24": {
+              "fluc_u": 0.3723312318325043,
+              "fluc_p": 0.37012991309165955,
+              "total_u": 0.0007725909235887229,
+              "total_p": 0.003169754520058632,
+              "radial_rms": 0.4738934338092804,
+              "scale_inflation": 0.44616931676864624,
+              "growth_sign_accuracy": 0.6274809241294861,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0042427778244019
+            },
+            "48": {
+              "fluc_u": 0.6043588519096375,
+              "fluc_p": 0.6003313064575195,
+              "total_u": 0.0013554522302001715,
+              "total_p": 0.005384098272770643,
+              "radial_rms": 0.7089055776596069,
+              "scale_inflation": 0.26756030321121216,
+              "growth_sign_accuracy": 0.6221547722816467,
+              "finite_fraction": 1.0,
+              "divergent_windows": 0,
+              "max_norm_ratio": 1.0036166906356812
+            }
+          }
+        },
+        "numeric_gate": true,
+        "hopf_gate": true,
+        "score": 0.8787674976061681,
+        "hard_gate": true
+      },
+      "training_history_records": 40
+    }
+  }
+}

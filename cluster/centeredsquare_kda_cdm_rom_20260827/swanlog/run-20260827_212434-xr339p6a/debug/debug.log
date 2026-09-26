@@ -1,0 +1,16 @@
+2026-08-27 21:24:34.753 | ERROR    | swanlab.sdk.internal.pkg.safe:block:101 - Error executing 'on_run_initialized' in callback 'SwanLabLocalCallbacker': Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_kda_cdm_rom_20260827/vendor/swanlab/deprecated/local.py", line 350, in on_run_initialized
+    from swanboard.db import ExistedError, connect
+ModuleNotFoundError: No module named 'swanboard'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_kda_cdm_rom_20260827/vendor/swanlab/sdk/internal/pkg/safe/__init__.py", line 98, in block
+    yield
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_kda_cdm_rom_20260827/vendor/swanlab/sdk/internal/context/components/callbacker/__init__.py", line 65, in dispatcher
+    getattr(cb, name)(*args, **kwargs)
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_kda_cdm_rom_20260827/vendor/swanlab/deprecated/local.py", line 353, in on_run_initialized
+    raise ImportError("Please install swanboard to use 'local' mode: pip install 'swanlab[dashboard]'") from e
+ImportError: Please install swanboard to use 'local' mode: pip install 'swanlab[dashboard]'
+Diagnostic log bound to file: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_kda_cdm_rom_20260827/swanlog/run-20260827_212434-xr339p6a/debug/debug.log

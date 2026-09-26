@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py", line 516, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py", line 463, in main
+    trainer.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/evaluate_h4_expanded.py", line 303, in main
+    results[name] = evaluate_one(module, checkpoint, args.source_root, args.contract, args.window_stride)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/evaluate_h4_expanded.py", line 159, in evaluate_one
+    args = SimpleNamespace(**checkpoint["args"])
+                             ~~~~~~~~~~^^^^^^^^
+KeyError: 'args'
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/evaluate_specialist_ablation.py", line 692, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/evaluate_specialist_ablation.py", line 673, in main
+    result = evaluate_vanilla_test(args)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/evaluate_specialist_ablation.py", line 644, in evaluate_vanilla_test
+    raise RuntimeError(f"native Vanilla evaluator returned {completed}")
+RuntimeError: native Vanilla evaluator returned 1

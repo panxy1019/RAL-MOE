@@ -1,0 +1,18 @@
+{
+  "checkpoint_sha256": "2f5295fb0cfc76f89801b64eb4300ae265a32e810a581b94432b4dc3fe21194b",
+  "evaluated_re": [
+    66.970112,
+    91.792204,
+    121.050171,
+    139.642302,
+    169.244893,
+    196.160723
+  ],
+  "method": "vanilla-fnn",
+  "native_result_files": [
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v3/periodic/vanilla-fnn/preflight_rollout_smoke/native/periodic_r32_multihorizon_evaluation.json"
+  ],
+  "regime": "periodic",
+  "schema": "unified_specialist_physical_evaluator/v2",
+  "split": "validation"
+}

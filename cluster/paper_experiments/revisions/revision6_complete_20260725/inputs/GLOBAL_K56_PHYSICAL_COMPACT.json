@@ -1,0 +1,347 @@
+{
+  "eval_re_values": [
+    24.630436,
+    32.740068,
+    39.685479,
+    45.142703,
+    47.081355,
+    49.022357,
+    51.78645,
+    70.314635,
+    100.352251,
+    149.059229,
+    189.862278,
+    34.737568,
+    36.657768,
+    38.35725,
+    40.711525,
+    41.576576
+  ],
+  "results": [
+    {
+      "K56": {
+        "attempted_windows": 1,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.013248941465399233,
+        "pressure_coefficient_relative_l2": 1.0102956295013428,
+        "pressure_energy_relative_error": 1.7172678005876025,
+        "velocity_area_weighted_physical_relative_l2": 0.0034044505975583316,
+        "velocity_coefficient_relative_l2": 0.4425644874572754
+      },
+      "Re": 24.630435943603516,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_24p630436",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 1,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.00683118572165373,
+        "pressure_coefficient_relative_l2": 0.7452024221420288,
+        "pressure_energy_relative_error": 1.3425667933939243,
+        "velocity_area_weighted_physical_relative_l2": 0.0018003163998192779,
+        "velocity_coefficient_relative_l2": 0.3123661279678345
+      },
+      "Re": 32.74006652832031,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_32p740068",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 1,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.0039763418551482105,
+        "pressure_coefficient_relative_l2": 0.41544464230537415,
+        "pressure_energy_relative_error": 0.6433138164310354,
+        "velocity_area_weighted_physical_relative_l2": 0.001185865254359245,
+        "velocity_coefficient_relative_l2": 0.2541581094264984
+      },
+      "Re": 39.68547821044922,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_39p685479",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 1,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.002499634202120505,
+        "pressure_coefficient_relative_l2": 0.2526511251926422,
+        "pressure_energy_relative_error": 0.233144891554776,
+        "velocity_area_weighted_physical_relative_l2": 0.0008453531510802635,
+        "velocity_coefficient_relative_l2": 0.2079106569290161
+      },
+      "Re": 45.142704010009766,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_45p142703",
+      "regime": "pre_hopf_steady"
+    },
+    {
+      "K56": {
+        "attempted_windows": 2,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 2,
+        "pressure_area_weighted_physical_relative_l2": 0.0021990671188633756,
+        "pressure_coefficient_relative_l2": 0.29900501668453217,
+        "pressure_energy_relative_error": 0.44412850011086225,
+        "velocity_area_weighted_physical_relative_l2": 0.00026752744622802793,
+        "velocity_coefficient_relative_l2": 0.4667489677667618
+      },
+      "Re": 47.081356048583984,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_47p081355",
+      "regime": "hopf_transition"
+    },
+    {
+      "K56": {
+        "attempted_windows": 2,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 2,
+        "pressure_area_weighted_physical_relative_l2": 0.00288183216063118,
+        "pressure_coefficient_relative_l2": 0.32621797919273376,
+        "pressure_energy_relative_error": 0.48786558553996034,
+        "velocity_area_weighted_physical_relative_l2": 0.00018294185503996884,
+        "velocity_coefficient_relative_l2": 0.2413945607841015
+      },
+      "Re": 49.02235794067383,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_49p022357",
+      "regime": "hopf_transition"
+    },
+    {
+      "K56": {
+        "attempted_windows": 2,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 2,
+        "pressure_area_weighted_physical_relative_l2": 0.0005595217630285764,
+        "pressure_coefficient_relative_l2": 0.7827641665935516,
+        "pressure_energy_relative_error": 0.3044896815024508,
+        "velocity_area_weighted_physical_relative_l2": 0.00010995848257056246,
+        "velocity_coefficient_relative_l2": 0.9478497207164764
+      },
+      "Re": 51.78644943237305,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_51p786450",
+      "regime": "hopf_transition"
+    },
+    {
+      "K56": {
+        "attempted_windows": 2,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 2,
+        "pressure_area_weighted_physical_relative_l2": 0.08055036588487355,
+        "pressure_coefficient_relative_l2": 0.2803632356226444,
+        "pressure_energy_relative_error": 0.19765960293558588,
+        "velocity_area_weighted_physical_relative_l2": 0.015601092222334478,
+        "velocity_coefficient_relative_l2": 0.23791170120239258
+      },
+      "Re": 70.31463623046875,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_70p314635",
+      "regime": "developing_periodic_shedding"
+    },
+    {
+      "K56": {
+        "attempted_windows": 2,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 2,
+        "pressure_area_weighted_physical_relative_l2": 0.04338718135447146,
+        "pressure_coefficient_relative_l2": 0.134181410074234,
+        "pressure_energy_relative_error": 0.002554594727516451,
+        "velocity_area_weighted_physical_relative_l2": 0.01148378753408637,
+        "velocity_coefficient_relative_l2": 0.11772647127509117
+      },
+      "Re": 100.35224914550781,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_100p352251",
+      "regime": "mature_periodic_shedding"
+    },
+    {
+      "K56": {
+        "attempted_windows": 2,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 2,
+        "pressure_area_weighted_physical_relative_l2": 0.02703923553221546,
+        "pressure_coefficient_relative_l2": 0.08221262693405151,
+        "pressure_energy_relative_error": 0.01210956923018986,
+        "velocity_area_weighted_physical_relative_l2": 0.007461354826285505,
+        "velocity_coefficient_relative_l2": 0.06772697996348143
+      },
+      "Re": 149.05923461914062,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_149p059229",
+      "regime": "mature_periodic_shedding"
+    },
+    {
+      "K56": {
+        "attempted_windows": 2,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 2,
+        "pressure_area_weighted_physical_relative_l2": 0.04720049082413391,
+        "pressure_coefficient_relative_l2": 0.14747582003474236,
+        "pressure_energy_relative_error": 0.03789497783945752,
+        "velocity_area_weighted_physical_relative_l2": 0.014042667737932628,
+        "velocity_coefficient_relative_l2": 0.11847281083464622
+      },
+      "Re": 189.86227416992188,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_189p862278",
+      "regime": "high_re_2d_periodic_near_modeA"
+    },
+    {
+      "K56": {
+        "attempted_windows": 1,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.006014255265704788,
+        "pressure_coefficient_relative_l2": 0.6590187549591064,
+        "pressure_energy_relative_error": 1.1672312147512622,
+        "velocity_area_weighted_physical_relative_l2": 0.0015984450591462673,
+        "velocity_coefficient_relative_l2": 0.2932932674884796
+      },
+      "Re": 34.73756790161133,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_34p737570",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 1,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.005099361557450246,
+        "pressure_coefficient_relative_l2": 0.5461617112159729,
+        "pressure_energy_relative_error": 0.9533917812896634,
+        "velocity_area_weighted_physical_relative_l2": 0.0014139045632520831,
+        "velocity_coefficient_relative_l2": 0.2783103287220001
+      },
+      "Re": 36.65776824951172,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_36p657767",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 1,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.004559340443855628,
+        "pressure_coefficient_relative_l2": 0.4870380461215973,
+        "pressure_energy_relative_error": 0.7995253957158952,
+        "velocity_area_weighted_physical_relative_l2": 0.0012868535337374407,
+        "velocity_coefficient_relative_l2": 0.26353779435157776
+      },
+      "Re": 38.35725021362305,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_38p357249",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 1,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.0037467102393585784,
+        "pressure_coefficient_relative_l2": 0.39225107431411743,
+        "pressure_energy_relative_error": 0.5812582452337665,
+        "velocity_area_weighted_physical_relative_l2": 0.0011015054055970451,
+        "velocity_coefficient_relative_l2": 0.24100975692272186
+      },
+      "Re": 40.711524963378906,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_40p711525",
+      "regime": "pre_hopf_steady"
+    },
+    {
+      "K56": {
+        "attempted_windows": 1,
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "incomplete_windows": 0,
+        "num_windows": 1,
+        "pressure_area_weighted_physical_relative_l2": 0.0033780974101315685,
+        "pressure_coefficient_relative_l2": 0.3459572494029999,
+        "pressure_energy_relative_error": 0.4815434776802047,
+        "velocity_area_weighted_physical_relative_l2": 0.0010543447304000074,
+        "velocity_coefficient_relative_l2": 0.23827742040157318
+      },
+      "Re": 41.576576232910156,
+      "best_epoch": 225,
+      "best_val_score": 0.482090595504269,
+      "checkpoint_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "label": "Re_41p576575",
+      "regime": "pre_hopf_steady"
+    }
+  ],
+  "rollout_steps": 56,
+  "runtime_seconds": 597.7687864303589,
+  "schema": "global_k56_physical_compact/v2-valid-history-windows",
+  "source_metrics": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_metrics.json",
+  "source_sha256": "f65f248a2944d3a940d4a2b49ad1f9310d5cad7d765e6318fa6ff1cd4794d244"
+}

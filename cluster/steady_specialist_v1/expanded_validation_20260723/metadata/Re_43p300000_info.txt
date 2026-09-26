@@ -1,0 +1,34 @@
+{
+  "plan": {
+    "Re": 43.3,
+    "label": "Re_43p300000",
+    "regime": "pre_hopf_steady",
+    "U": 0.0433,
+    "estimated_St": null,
+    "estimated_period": null,
+    "nominal_transient_time": 923.7875288683603,
+    "nominal_retained_time": 277.1362586605081,
+    "nominal_write_interval": 4.398988232706477
+  },
+  "conversion": {
+    "Re": 43.3,
+    "label": "Re_43p300000",
+    "regime": "pre_hopf_steady",
+    "npz": "Re_43p300000_uvp_pointData.npz",
+    "n_times": 64,
+    "n_points": 97368,
+    "n_cells": 48128,
+    "size_bytes": 32526907,
+    "retain_start_time": 1200.0
+  },
+  "diagnostics": {
+    "samples": 61,
+    "reason": "not enough force samples",
+    "mode": "steady_simpleFoam_initialisation",
+    "status": "steady_solver_completed_fallback",
+    "simpleFoam_end_time": 1200.0,
+    "simpleFoam_max_iterations": 1200.0
+  },
+  "nprocs": 1,
+  "free_gb_after_case": 14.873916625976562
+}

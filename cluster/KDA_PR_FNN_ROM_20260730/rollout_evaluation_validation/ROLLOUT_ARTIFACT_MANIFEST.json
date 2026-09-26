@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "files": {
+    "error_growth_by_horizon.svg": {
+      "bytes": 4812,
+      "sha256": "56aee38b36d26e23ed77d250310906a44d47bddbacfef740a21f67112bf1bb0d"
+    },
+    "ERROR_GROWTH_CURVES.csv": {
+      "bytes": 175188,
+      "sha256": "a55fc4d03e92e4f8ec0005a2a3ee4e1977c79bd4441cc35d90d8977604f8f91e"
+    },
+    "FINAL_ROLLOUT_COMPARATIVE_REPORT.md": {
+      "bytes": 9813,
+      "sha256": "68f83822d9d3694424b696ca8be59a1b6f66557f96804f8f47b7ad5d5840fad9"
+    },
+    "k56_error_trajectory.svg": {
+      "bytes": 22793,
+      "sha256": "70150f727569f36cfd28b7f008035513cdd2f442b625b7f839526f9d9ddec74c"
+    },
+    "MEMORY_DIAGNOSTICS.csv": {
+      "bytes": 17392,
+      "sha256": "e6e50ff331351e9adce62b6d05eba39149a15052a8dab99770347f1e6d64a22f"
+    },
+    "memory_effective_rank.svg": {
+      "bytes": 3194,
+      "sha256": "dfc2020d50a81c9b60595978a20a68911cece1e7215df87226c2099b480c984c"
+    },
+    "memory_time_scales.svg": {
+      "bytes": 3190,
+      "sha256": "697cb767375fb32c18f5cb18ec7ea4841a511a15a7b4b35a13a04e29b4441955"
+    },
+    "ROLLOUT_RESULTS.csv": {
+      "bytes": 37570,
+      "sha256": "22e1c5b076f41ef579c76cdbb1a45619d78a0049f50107fc11f703bea4ecdfbd"
+    },
+    "ROLLOUT_SUMMARY.json": {
+      "bytes": 14390,
+      "sha256": "798ea3a91c30763ce0ee3c42feb4c20cc10770598394c260d347f27a27dca243"
+    }
+  }
+}

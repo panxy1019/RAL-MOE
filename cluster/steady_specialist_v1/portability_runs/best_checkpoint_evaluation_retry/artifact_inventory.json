@@ -1,0 +1,45 @@
+{
+  "artifacts": {
+    "HELDOUT_EVALUATION_DONE.json": {
+      "bytes": 329,
+      "sha256": "8df3936843379968be3e01a560078909cbdc1ffb0db605964babf29095665b6e"
+    },
+    "HELDOUT_EVALUATION_STARTED.json": {
+      "bytes": 308,
+      "sha256": "168902f36c3b544965977ce9a49b3228e2b82f8ba8c71d0d8dc27287df50de23"
+    },
+    "configuration.json": {
+      "bytes": 3152,
+      "sha256": "27cde83dd0d1576328ae15c9fad4daa955add889c0d9d21358041e4c72edc0c3"
+    },
+    "evaluation.log": {
+      "bytes": 1780,
+      "sha256": "9cd3c2c5a85e50d21e24b52f01dbf309d4de6e7c90e5e3b742d7de9173d08056"
+    },
+    "experiment_report.md": {
+      "bytes": 11598,
+      "sha256": "16a9b558234724fc630b6fd1d0c71440e5b3d4e1226a06abe77ec6d16e301109"
+    },
+    "fairness_manifest.json": {
+      "bytes": 569,
+      "sha256": "5eb21a424b1d402b020e1d0efb74f1b4db35180ffd018eee2d20b479ebca2118"
+    },
+    "heldout_metrics.json": {
+      "bytes": 22300,
+      "sha256": "a726f7c99facb526f267e4dc9095592f225dccf445a0ad0e70e0de63a7bd53a1"
+    },
+    "paired_gain_four_space.json": {
+      "bytes": 8480975,
+      "sha256": "d28bb79cde60262f0427c4801341d5fe32fd21241966dc4d191f3cfdb2e723f1"
+    },
+    "raw_metrics.json": {
+      "bytes": 10329545,
+      "sha256": "206b86b1ce0c91d194a8614d11114db0867be44fdf72150eb8fca795e95ee328"
+    },
+    "validation.json": {
+      "bytes": 4770161,
+      "sha256": "5d5cacea99aa886e45fc6e1f17d3a6d866a3ae0bf866ee9ef82468b954df3e28"
+    }
+  },
+  "schema_version": 1
+}

@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "purpose": "Additional Steady specialist validation coverage; never refit the frozen Steady POD.",
+  "split_aliases": {
+    "Train": "train",
+    "Validation": "validation",
+    "Final test": "heldout"
+  },
+  "cases": [
+    {"Re": 43.2, "label": "Re_43p200000", "requested_split": "Train", "split": "train"},
+    {"Re": 43.4, "label": "Re_43p400000", "requested_split": "Train", "split": "train"},
+    {"Re": 43.6, "label": "Re_43p600000", "requested_split": "Train", "split": "train"},
+    {"Re": 43.3, "label": "Re_43p300000", "requested_split": "Validation", "split": "validation"},
+    {"Re": 43.7, "label": "Re_43p700000", "requested_split": "Validation", "split": "validation"},
+    {"Re": 43.5, "label": "Re_43p500000", "requested_split": "Final test", "split": "heldout"},
+    {"Re": 43.9, "label": "Re_43p900000", "requested_split": "Final test", "split": "heldout"}
+  ],
+  "pod_policy": {
+    "refit": false,
+    "basis": "steady_specialist_v1/source_artifacts/steady/{velocity,pressure}_pod_steady.npz",
+    "normalization": "steady_specialist_v1/source_artifacts/steady/normalization_steady.npz",
+    "rank": 32,
+    "centering": "single_train_only_regime_mean",
+    "pressure_gauge": "subtract_area_mean_per_snapshot"
+  }
+}

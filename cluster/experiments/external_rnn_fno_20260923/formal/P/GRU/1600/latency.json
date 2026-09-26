@@ -1,0 +1,63 @@
+{
+  "results": [
+    {
+      "K": 24,
+      "seconds": [
+        0.04695672634989023,
+        0.04938375670462847,
+        0.05001310911029577,
+        0.04598070774227381,
+        0.048946987837553024,
+        0.04557591862976551,
+        0.04840349033474922,
+        0.04601470194756985,
+        0.0493352897465229,
+        0.045459932647645473
+      ],
+      "median": 0.04768010834231973,
+      "mean": 0.04760706210508943,
+      "sample_sd": 0.0017857914606693348,
+      "iqr": 0.0032490079756826162,
+      "warmups": 3,
+      "repeats": 10,
+      "batch": 1,
+      "peak_gpu_allocated_bytes": 18986496,
+      "max_modal_difference_vs_cached": 1.1920928955078125e-07,
+      "start_global": 976,
+      "Re": 70.3146353337
+    },
+    {
+      "K": 48,
+      "seconds": [
+        0.08640631102025509,
+        0.0841651875525713,
+        0.09755436331033707,
+        0.08395250886678696,
+        0.08383452612906694,
+        0.08411778509616852,
+        0.08358906768262386,
+        0.08386354520916939,
+        0.08386023715138435,
+        0.08340753614902496
+      ],
+      "median": 0.08390802703797817,
+      "mean": 0.08547510681673884,
+      "sample_sd": 0.004325384066196872,
+      "iqr": 0.00031238305382430553,
+      "warmups": 3,
+      "repeats": 10,
+      "batch": 1,
+      "peak_gpu_allocated_bytes": 18998784,
+      "max_modal_difference_vs_cached": 2.644956111907959e-07,
+      "start_global": 976,
+      "Re": 70.3146353337
+    }
+  ],
+  "scope": "common in-memory POD-reconstructed physical 3-frame history -> normalization/encoding + GPU rollout + all decoded velocity/pressure fields + gauge; includes transfers; excludes load/IO/metrics",
+  "dtype": "FP32 network, FP64 encode/decode",
+  "device": "NVIDIA GeForce RTX 4090",
+  "cpu_threads": 2,
+  "interop_threads": 64,
+  "synchronization": "CUDA before and after each repetition",
+  "peak_process_rss_bytes": 1404657664
+}

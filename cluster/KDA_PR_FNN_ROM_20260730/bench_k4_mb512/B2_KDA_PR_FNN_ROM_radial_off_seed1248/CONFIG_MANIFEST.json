@@ -1,0 +1,214 @@
+{
+  "_median_dt": 4.0,
+  "allow_tf32": true,
+  "amp": true,
+  "amp_dtype": "bfloat16",
+  "asset_audit": {
+    "manifest": {
+      "counts": {
+        "heldout_cases": 5,
+        "heldout_snapshots": 630,
+        "train_cases": 23,
+        "trainval_snapshots": 3654,
+        "validation_cases": 6
+      },
+      "dataset": "CenteredSquare CN09 graded mesh",
+      "fit_reynolds": [
+        94.0,
+        95.0,
+        95.05,
+        95.15,
+        95.2,
+        95.35,
+        95.4,
+        95.45,
+        95.55,
+        95.6,
+        95.75,
+        96.0,
+        96.25,
+        96.75,
+        97.0,
+        97.25,
+        97.75,
+        98.0,
+        98.5,
+        99.5,
+        100.0,
+        101.0,
+        101.724137931034
+      ],
+      "heldout_reynolds_sealed": [
+        95.1,
+        95.3,
+        96.5,
+        100.5,
+        102.0
+      ],
+      "heldout_rows_present": false,
+      "pressure_gauge_verified": true,
+      "projection_error_verified": true,
+      "projection_errors": {
+        "train_pressure_max_abs_coefficient_reproduction": 2.2730528144165874e-06,
+        "train_velocity_max_abs_coefficient_reproduction": 8.493661880493164e-07
+      },
+      "r_p": 11,
+      "r_u": 11,
+      "rom_tensor_verified": true,
+      "schema_version": 1,
+      "scope": "hopf_local_train_val_view",
+      "sha256": {
+        "coefficient_view": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891",
+        "galerkin": "6f2e6c9136a7da1c23fc960f7808e98b2e98dc9ab5f4061326301f873690313e",
+        "heldout_view": "b3b88204eb6529a3bbf6de5b7f7bb55ca52f457167281a9f11c00781e46a32c3",
+        "pressure": "bb7206d488dbcd0e5944f5516248824d125c528e7fada04534bc20e74eb1cc5d"
+      },
+      "source_sha256": {
+        "galerkin": "b8d2d97e03ce20930484e991af6c3089c63a7687893fc299dc9bd559f129f119",
+        "pod_rank_pack": "35625659f82215ef16ffda78887ef1435cf13ccc47051fa7cf57cdca4efd49b6",
+        "pressure": "e5be152fd4bd32749abf88b93b950427d3be38f14779f54089f488d0f0f5abe8"
+      },
+      "split_contract_verified": true,
+      "validation_reynolds": [
+        94.5,
+        95.25,
+        95.5,
+        97.5,
+        99.0,
+        101.5
+      ]
+    },
+    "observed_sha256": {
+      "coefficient_view": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891",
+      "galerkin": "6f2e6c9136a7da1c23fc960f7808e98b2e98dc9ab5f4061326301f873690313e",
+      "pressure": "bb7206d488dbcd0e5944f5516248824d125c528e7fada04534bc20e74eb1cc5d"
+    },
+    "passed": true
+  },
+  "asset_manifest": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/TRAINING_ASSET_MANIFEST.json",
+  "baseline_trainer": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/code/train_centeredsquare_hopf_base.py",
+  "baseline_trainer_sha256": "9dfcae35793252891faea430fca53cf15268bd1c3645a5b6f01af8aa4651693a",
+  "benchmark_horizon": 4,
+  "benchmark_steps": 5,
+  "beta_max": 0.5,
+  "coefficient_view": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+  "current_feature_dim": 46,
+  "curriculum": [
+    [
+      0,
+      1600,
+      4
+    ],
+    [
+      1600,
+      3200,
+      8
+    ],
+    [
+      3200,
+      5200,
+      16
+    ],
+    [
+      5200,
+      6800,
+      32
+    ],
+    [
+      6800,
+      8000,
+      56
+    ]
+  ],
+  "d_k": 16,
+  "d_v": 16,
+  "device": "cuda",
+  "eval_every": 400,
+  "experiment_name": "B2_KDA_PR_FNN_ROM_radial_off_seed1248",
+  "fluctuation_contract": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/trainonly_contract_mb46/trainonly_fluctuation_contract.npz",
+  "fluctuation_contract_sha256": "8e25a2791000ddc95ca153477d7edd4e981443b7f20a7138c1e157004bf0a63a",
+  "fused_adamw": true,
+  "galerkin_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainonly_galerkin_r11.npz",
+  "gpu_memory_fraction": 0.94,
+  "grad_accum": 1,
+  "grad_clip": 1.0,
+  "h3_feature_dim": 178,
+  "heldout_loaded": false,
+  "heldout_re_hard_disabled": [
+    95.1,
+    95.3,
+    96.5,
+    100.5,
+    102.0
+  ],
+  "lambda_memory": 1e-06,
+  "lambda_radial": 1.0,
+  "long_eval_every": 800,
+  "lr": 0.001,
+  "max_steps": 8000,
+  "median_native_dt": 4.0,
+  "micro_batch": 512,
+  "num_heads": 4,
+  "output_root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/KDA_PR_FNN_ROM_20260730/bench_k4_mb512",
+  "parameter_count": {
+    "active_parameters": 1830621,
+    "by_group": {
+      "fnn": 1743741,
+      "kda_projection": 78044,
+      "tau_beta": 8836
+    },
+    "runtime_memory_state": 1024,
+    "total_parameters": 1830621,
+    "trainable_parameters": 1830621,
+    "variant": "b2"
+  },
+  "pressure_backbone": "Pressure-Poisson plus adaptive algebraic residual",
+  "pressure_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainonly_pressure_r11.npz",
+  "resume": null,
+  "seed": 1248,
+  "smoke_only": false,
+  "swanlab_group": "KDA_PR_FNN_single_seed",
+  "swanlab_log_every": 20,
+  "swanlab_mode": "disabled",
+  "swanlab_project": "CenteredSquare_Hopf_KDA_PR_FNN_ROM",
+  "tbptt_steps": 16,
+  "token_dim": 128,
+  "train_re": [
+    94.0,
+    95.0,
+    95.05,
+    95.15,
+    95.2,
+    95.35,
+    95.4,
+    95.45,
+    95.55,
+    95.6,
+    95.75,
+    96.0,
+    96.25,
+    96.75,
+    97.0,
+    97.25,
+    97.75,
+    98.0,
+    98.5,
+    99.5,
+    100.0,
+    101.0,
+    101.724137931034
+  ],
+  "trainer_sha256": "2941a4fed37995d507a64c0753940ff944c27ec0362a52ee4545929d12be6998",
+  "validation_re": [
+    94.5,
+    95.25,
+    95.5,
+    97.5,
+    99.0,
+    101.5
+  ],
+  "validation_windows_per_re": 24,
+  "variant": "b2",
+  "velocity_backbone": "learned finite-difference derivative; Galerkin is input feature",
+  "weight_decay": 0.0001
+}

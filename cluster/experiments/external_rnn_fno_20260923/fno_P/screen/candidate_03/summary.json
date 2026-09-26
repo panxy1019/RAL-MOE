@@ -1,0 +1,25 @@
+{
+  "seed": 1248,
+  "phase": "screen",
+  "budget": 400,
+  "architecture": {
+    "id": 3,
+    "width": 48,
+    "modes": 12,
+    "increment": true,
+    "lr": 0.001,
+    "weight_decay": 0.0001
+  },
+  "code_sha256": "a8851746642f531af0f00de5268623390b2ff0986e6a0a6798b6089ae6763052",
+  "real_parameter_count": 5325203,
+  "protocol_sha256": "9f3327f9ecd9c58abdcc99cdb6ff0db610265e46c4e2ae76c5cb4a004967d616",
+  "accepted": true,
+  "best_step": 400,
+  "validation_worst": 42.38487697718665,
+  "validation_macro": 29.208180393842568,
+  "training_seconds": 715.8269171854481,
+  "peak_gpu_allocated_bytes": 5393876480,
+  "failure": "",
+  "last_step": 400,
+  "heldout_evaluated": false
+}

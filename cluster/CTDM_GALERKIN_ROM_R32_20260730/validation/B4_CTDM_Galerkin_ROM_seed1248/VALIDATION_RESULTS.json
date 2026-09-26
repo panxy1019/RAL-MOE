@@ -1,0 +1,285 @@
+{
+  "schema_version": 1,
+  "split": "validation",
+  "variant": "b4",
+  "model_name": "B4_CTDM_Galerkin_ROM",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/single_seed/B4_CTDM_Galerkin_ROM_seed1248/best_validation.pt",
+  "checkpoint_sha256": "bb64bd0939def0caecbcc2db56dd4b7f00f748967aa1545a5170a11bfd6b35ec",
+  "checkpoint_step": 8000,
+  "seed": 1248,
+  "main_warmup_length": 3,
+  "main": {
+    "aggregate": {
+      "Eu": 0.0009201936336467043,
+      "Ep": 0.004584756447002292,
+      "Ea": 0.10964188538491726,
+      "Eb": 0.1952630989253521,
+      "terminal_Eu": 0.0018482442683307454,
+      "terminal_Ep": 0.007439650595188141,
+      "worst_window_joint": 0.011234364472329617,
+      "pressure_drift": 0.039675772190093994,
+      "finite_fraction_min": 1.0,
+      "divergent_windows": 0,
+      "available_re_count": 2,
+      "requested_re_count": 2
+    },
+    "by_re": [
+      {
+        "Re": 46.7,
+        "warmup_length": 3,
+        "windows": 3,
+        "available": true,
+        "Eu": 0.0002811743470374495,
+        "Ep": 0.004190000239759684,
+        "Ea": 0.06128784641623497,
+        "Eb": 0.08338960260152817,
+        "terminal_Eu": 0.0004225148295518011,
+        "terminal_Ep": 0.005100704729557037,
+        "worst_window_joint": 0.004530838690698147,
+        "pressure_drift": 0.041951604187488556,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0294787883758545,
+        "joint_K1": 0.009317299351096153,
+        "joint_K4": 0.006968917325139046,
+        "joint_K8": 0.003709855955094099,
+        "joint_K16": 0.0009434185340069234,
+        "joint_K32": 0.005074290093034506,
+        "joint_K56": 0.005523219704627991
+      },
+      {
+        "Re": 56.543246,
+        "warmup_length": 3,
+        "windows": 16,
+        "available": true,
+        "Eu": 0.001559212920255959,
+        "Ep": 0.0049795126542449,
+        "Ea": 0.15799592435359955,
+        "Eb": 0.307136595249176,
+        "terminal_Eu": 0.0032739737071096897,
+        "terminal_Ep": 0.009778596460819244,
+        "worst_window_joint": 0.011234364472329617,
+        "pressure_drift": 0.03739994019269943,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0024605989456177,
+        "joint_K1": 0.00222474941983819,
+        "joint_K4": 0.0026960489340126514,
+        "joint_K8": 0.002609961898997426,
+        "joint_K16": 0.0036146987695246935,
+        "joint_K32": 0.0065674567595124245,
+        "joint_K56": 0.013052571564912796
+      }
+    ]
+  },
+  "capacity_warmup_diagnostics": {
+    "8": {
+      "aggregate": {
+        "Eu": 0.0015684281243011355,
+        "Ep": 0.004979156423360109,
+        "Ea": 0.1506725400686264,
+        "Eb": 0.2994104027748108,
+        "terminal_Eu": 0.003302584867924452,
+        "terminal_Ep": 0.010007068514823914,
+        "worst_window_joint": 0.011182105168700218,
+        "pressure_drift": 0.03692229464650154,
+        "finite_fraction_min": 1.0,
+        "divergent_windows": 0,
+        "available_re_count": 1,
+        "requested_re_count": 2
+      },
+      "by_re": [
+        {
+          "Re": 46.7,
+          "warmup_length": 8,
+          "windows": 0,
+          "available": false,
+          "reason": "trajectory too short for warmup plus K56"
+        },
+        {
+          "Re": 56.543246,
+          "warmup_length": 8,
+          "windows": 16,
+          "available": true,
+          "Eu": 0.0015684281243011355,
+          "Ep": 0.004979156423360109,
+          "Ea": 0.1506725400686264,
+          "Eb": 0.2994104027748108,
+          "terminal_Eu": 0.003302584867924452,
+          "terminal_Ep": 0.010007068514823914,
+          "worst_window_joint": 0.011182105168700218,
+          "pressure_drift": 0.03692229464650154,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 1.0012985467910767,
+          "joint_K1": 0.0017809146083891392,
+          "joint_K4": 0.002460823394358158,
+          "joint_K8": 0.0025664172135293484,
+          "joint_K16": 0.0036964043974876404,
+          "joint_K32": 0.006749184336513281,
+          "joint_K56": 0.013309653848409653
+        }
+      ]
+    },
+    "16": {
+      "aggregate": {
+        "Eu": 0.001592510612681508,
+        "Ep": 0.0050695366226136684,
+        "Ea": 0.1464446783065796,
+        "Eb": 0.29617950320243835,
+        "terminal_Eu": 0.003369887825101614,
+        "terminal_Ep": 0.01028951071202755,
+        "worst_window_joint": 0.011132458224892616,
+        "pressure_drift": 0.0368071123957634,
+        "finite_fraction_min": 1.0,
+        "divergent_windows": 0,
+        "available_re_count": 1,
+        "requested_re_count": 2
+      },
+      "by_re": [
+        {
+          "Re": 46.7,
+          "warmup_length": 16,
+          "windows": 0,
+          "available": false,
+          "reason": "trajectory too short for warmup plus K56"
+        },
+        {
+          "Re": 56.543246,
+          "warmup_length": 16,
+          "windows": 16,
+          "available": true,
+          "Eu": 0.001592510612681508,
+          "Ep": 0.0050695366226136684,
+          "Ea": 0.1464446783065796,
+          "Eb": 0.29617950320243835,
+          "terminal_Eu": 0.003369887825101614,
+          "terminal_Ep": 0.01028951071202755,
+          "worst_window_joint": 0.011132458224892616,
+          "pressure_drift": 0.0368071123957634,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 1.0006259679794312,
+          "joint_K1": 0.0017916117794811726,
+          "joint_K4": 0.0023127440363168716,
+          "joint_K8": 0.002597291488200426,
+          "joint_K16": 0.0037472695112228394,
+          "joint_K32": 0.006862910930067301,
+          "joint_K56": 0.013659399002790451
+        }
+      ]
+    }
+  },
+  "timestep_consistency": [
+    {
+      "Re": 46.7,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 6.359370672726072e-06,
+      "C_p": 5.100666749058291e-05,
+      "C_S": 0.004918317310512066,
+      "windows": 3
+    },
+    {
+      "Re": 46.7,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 2.9380271371337585e-06,
+      "C_p": 2.493687134119682e-05,
+      "C_S": 0.0024207811802625656,
+      "windows": 3
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 1,
+      "fine_substeps": 2,
+      "C_u": 3.036489761143457e-05,
+      "C_p": 0.00018032979278359562,
+      "C_S": 0.015597911551594734,
+      "windows": 4
+    },
+    {
+      "Re": 56.543246,
+      "coarse_substeps": 2,
+      "fine_substeps": 4,
+      "C_u": 1.591225191077683e-05,
+      "C_p": 6.646440306212753e-05,
+      "C_S": 0.010248628444969654,
+      "windows": 4
+    }
+  ],
+  "memory_diagnostics": [
+    {
+      "Re": 46.7,
+      "gamma_mean": 0.026418911293148994,
+      "gamma_min": 0.0017559779807925224,
+      "gamma_max": 0.34400954842567444,
+      "timescale_mean": 90.6566390991211,
+      "half_life_mean": 62.8383903503418,
+      "eta_mean": 0.027053624391555786,
+      "eta_min": 0.012330900877714157,
+      "eta_max": 0.055137719959020615,
+      "memory_frobenius_mean": 2.1387200355529785,
+      "memory_max_singular_mean": 2.129730701446533,
+      "memory_effective_rank_mean": 1.6588267087936401,
+      "delta_error_mean": 1.2209795713424683,
+      "warmup_length": 3
+    },
+    {
+      "Re": 56.543246,
+      "gamma_mean": 0.026698539033532143,
+      "gamma_min": 0.0011562415165826678,
+      "gamma_max": 0.13656552135944366,
+      "timescale_mean": 170.47999572753906,
+      "half_life_mean": 118.16773223876953,
+      "eta_mean": 0.022196702659130096,
+      "eta_min": 0.01220731157809496,
+      "eta_max": 0.04652702063322067,
+      "memory_frobenius_mean": 3.328239679336548,
+      "memory_max_singular_mean": 3.3280911445617676,
+      "memory_effective_rank_mean": 1.0722098350524902,
+      "delta_error_mean": 0.8078370094299316,
+      "warmup_length": 3
+    },
+    {
+      "Re": 56.543246,
+      "gamma_mean": 0.02685007080435753,
+      "gamma_min": 0.0011562415165826678,
+      "gamma_max": 0.1396995335817337,
+      "timescale_mean": 171.78367614746094,
+      "half_life_mean": 119.07137298583984,
+      "eta_mean": 0.02230413816869259,
+      "eta_min": 0.011863994412124157,
+      "eta_max": 0.04672622308135033,
+      "memory_frobenius_mean": 3.3282113075256348,
+      "memory_max_singular_mean": 3.3280344009399414,
+      "memory_effective_rank_mean": 1.078490972518921,
+      "delta_error_mean": 0.7905771732330322,
+      "warmup_length": 8
+    },
+    {
+      "Re": 56.543246,
+      "gamma_mean": 0.027026070281863213,
+      "gamma_min": 0.0011562415165826678,
+      "gamma_max": 0.14383171498775482,
+      "timescale_mean": 173.02088928222656,
+      "half_life_mean": 119.92893981933594,
+      "eta_mean": 0.022438999265432358,
+      "eta_min": 0.01191633939743042,
+      "eta_max": 0.04672622308135033,
+      "memory_frobenius_mean": 3.321793556213379,
+      "memory_max_singular_mean": 3.3215761184692383,
+      "memory_effective_rank_mean": 1.085781216621399,
+      "delta_error_mean": 0.7624431848526001,
+      "warmup_length": 16
+    }
+  ],
+  "elapsed_seconds": 14.349297383800149,
+  "training_performance": {
+    "elapsed_seconds": 7356.261613628827,
+    "optimizer_steps": 8000,
+    "steps_per_minute": 65.25053419942431,
+    "peak_gpu_memory_gb": 0.2849245071411133
+  },
+  "gate_manifest": null
+}

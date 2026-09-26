@@ -1,0 +1,142 @@
+ablation_mode:
+  desc: ''
+  sort: 0
+  value: data-only
+curriculum_horizons:
+  desc: ''
+  sort: 12
+  value:
+  - 4
+  - 8
+  - 12
+  - 16
+effective_batch:
+  desc: ''
+  sort: 9
+  value: 24
+log_every:
+  desc: ''
+  sort: 13
+  value: 20
+lr:
+  desc: ''
+  sort: 6
+  value: 0.00055
+max_steps:
+  desc: ''
+  sort: 5
+  value: 10080
+method:
+  desc: ''
+  sort: 17
+  value: direct discrete POD-state mapping; no RK4/Galerkin/pressure physics
+micro_batch:
+  desc: ''
+  sort: 8
+  value: 8
+output_dir:
+  desc: ''
+  sort: 4
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/periodic/data-only/training
+regime:
+  desc: ''
+  sort: 2
+  value: periodic
+root:
+  desc: ''
+  sort: 1
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE
+seed:
+  desc: ''
+  sort: 3
+  value: 1600
+smoke_only:
+  desc: ''
+  sort: 15
+  value: false
+split_re:
+  desc: ''
+  sort: 16
+  value:
+    heldout:
+    - 70.314635
+    - 100.352251
+    - 149.059229
+    - 189.862278
+    train:
+    - 60.307745
+    - 61.755954
+    - 63.499817
+    - 65.259829
+    - 68.649714
+    - 71.972931
+    - 73.628287
+    - 75.28234
+    - 76.935803
+    - 78.588971
+    - 80.241943
+    - 81.894708
+    - 83.547164
+    - 85.199103
+    - 86.850168
+    - 88.499815
+    - 90.147341
+    - 93.435204
+    - 95.081752
+    - 96.749308
+    - 98.480345
+    - 102.440042
+    - 104.710911
+    - 107.050737
+    - 109.395985
+    - 111.734011
+    - 114.066308
+    - 116.395488
+    - 118.723173
+    - 123.376833
+    - 125.703274
+    - 128.029461
+    - 130.355225
+    - 132.680203
+    - 135.003744
+    - 137.32483
+    - 141.956319
+    - 144.273459
+    - 146.619578
+    - 151.686208
+    - 154.520852
+    - 157.459588
+    - 160.415176
+    - 163.364123
+    - 166.306373
+    - 172.181708
+    - 175.11794
+    - 178.054368
+    - 180.992055
+    - 183.933395
+    - 186.8846
+    - 192.911664
+    - 200.0
+    validation:
+    - 66.970112
+    - 91.792204
+    - 121.050171
+    - 139.642302
+    - 169.244893
+    - 196.160723
+swanlab_project:
+  desc: ''
+  sort: 14
+  value: PaperSpecialistAblationsSingleSeed20260724
+validation_every:
+  desc: ''
+  sort: 10
+  value: 200
+validation_horizon:
+  desc: ''
+  sort: 11
+  value: 16
+weight_decay:
+  desc: ''
+  sort: 7
+  value: 0.00015

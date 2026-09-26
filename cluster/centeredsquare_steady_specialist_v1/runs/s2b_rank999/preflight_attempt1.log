@@ -1,0 +1,25 @@
+nohup: ignoring input
+{"event": "startup", "experiment": "CenteredSquare-Steady-S2B-rank999", "host": "e9c967685351", "mode": "preflight", "pid": 96993, "python": "/root/miniconda3/envs/pt_env/bin/python"}
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/train_s2b_3090.py", line 505, in <module>
+    try: main()
+         ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/train_s2b_3090.py", line 500, in main
+    elif cli.mode=="preflight": exp.preflight()
+                                ^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/train_s2b_3090.py", line 436, in preflight
+    smoke=self.smoke(); validation=self.validate_all(0); benchmark=self.benchmark(); gpu=self.gpu_test()
+                                   ^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/train_s2b_3090.py", line 346, in validate_all
+    reports={f"k{k}":self.validate_horizon(step,k) for k in (1,4,8,16)}
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/train_s2b_3090.py", line 346, in <dictcomp>
+    reports={f"k{k}":self.validate_horizon(step,k) for k in (1,4,8,16)}
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/train_s2b_3090.py", line 339, in validate_horizon
+    contraction=self.controlled_contraction() if k==16 else None
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/code/train_s2b_3090.py", line 315, in controlled_contraction
+    da=.01*self.avt*signs; db=-.01*self.bvt*signs
+                              ~~~~~~~~~~~~~^~~~~~
+RuntimeError: The size of tensor a (4) must match the size of tensor b (5) at non-singleton dimension 0

@@ -1,0 +1,77 @@
+{
+  "audit_date": "2026-07-22",
+  "status": "BLOCKED",
+  "training_started": false,
+  "implementation_started": false,
+  "mandatory_stop_reasons": [
+    "The three frozen specialists do not share an identical physical time step; dt varies across charts and across Reynolds trajectories within a chart.",
+    "Periodic phase/time and target-chart history initialization after H<->P switching have no certified autonomous contract."
+  ],
+  "checkpoints": {
+    "steady": {
+      "path": "/root/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s4_validation_step_1200.pt",
+      "sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+      "state_tensors": 1414,
+      "state_elements": 48613781,
+      "deserialization": "PASS"
+    },
+    "hopf": {
+      "path": "/root/panxy/particalMOE/Hopf/migrated_h4_expanded/final_evaluation/20260722_h4_expanded_final/HopfExpanded34_H4_NormalFormRadial_r32/final.pt",
+      "sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+      "state_tensors": 592,
+      "state_elements": 32004147,
+      "deserialization": "PASS"
+    },
+    "periodic": {
+      "path": "/root/panxy/particalMOE/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt",
+      "sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5",
+      "state_tensors": 1414,
+      "state_elements": 48617547,
+      "deserialization": "PASS"
+    }
+  },
+  "common_contract": {
+    "ru": 32,
+    "rp": 32,
+    "history_len": 3,
+    "points": 97368,
+    "velocity_dofs": 194736,
+    "pressure_dofs": 97368,
+    "pressure_gauge": "subtract_area_mean_per_snapshot",
+    "pod_inner_product": "area_weighted",
+    "points_exactly_equal": true,
+    "point_areas_exactly_equal": true,
+    "scaler_roundtrip": "PASS",
+    "trajectory_split_leakage_found": false
+  },
+  "dt_ranges": {
+    "steady_train_validation": [0.619895, 9.52380953],
+    "hopf_train_validation": [0.43349442, 23.63355203],
+    "periodic_native": [0.2712677, 17.63563125]
+  },
+  "weighted_gram_max_abs_error": {
+    "steady_velocity": 4.639126349736955e-08,
+    "steady_pressure": 2.768282869602956e-08,
+    "hopf_velocity": 5.3917069475772905e-08,
+    "hopf_pressure": 5.441961214991409e-08,
+    "periodic_velocity": 5.441917938497909e-08,
+    "periodic_pressure": 5.407525049960782e-08
+  },
+  "adjacent_cross_basis_spectrum": {
+    "steady_hopf": {
+      "velocity_sigma_min": 1.190749217648457e-05,
+      "velocity_condition_2": 83980.74359436748,
+      "pressure_sigma_min": 5.7133478184075605e-05,
+      "pressure_condition_2": 17502.87281247329
+    },
+    "hopf_periodic": {
+      "velocity_sigma_min": 3.7536904925185934e-05,
+      "velocity_condition_2": 26639.86999768318,
+      "pressure_sigma_min": 0.00036971546856623855,
+      "pressure_condition_2": 2704.537776410322
+    }
+  },
+  "certified_true_transition_trajectories_found": false,
+  "router_claim_if_resumed": "temporal-consistent regime router",
+  "new_cluster_free_space_gb_approx": 1.1
+}

@@ -1,0 +1,151 @@
+{
+  "results": [
+    {
+      "K56": {
+        "attempted_windows": 0,
+        "divergent_windows": 0,
+        "finite_fraction": NaN,
+        "incomplete_windows": 0,
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 24.630435943603516,
+      "label": "Re_24p630436",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 0,
+        "divergent_windows": 0,
+        "finite_fraction": NaN,
+        "incomplete_windows": 0,
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 32.74006652832031,
+      "label": "Re_32p740068",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 0,
+        "divergent_windows": 0,
+        "finite_fraction": NaN,
+        "incomplete_windows": 0,
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 34.73756790161133,
+      "label": "Re_34p737570",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 0,
+        "divergent_windows": 0,
+        "finite_fraction": NaN,
+        "incomplete_windows": 0,
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 36.65776824951172,
+      "label": "Re_36p657767",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 0,
+        "divergent_windows": 0,
+        "finite_fraction": NaN,
+        "incomplete_windows": 0,
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 38.35725021362305,
+      "label": "Re_38p357249",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 0,
+        "divergent_windows": 0,
+        "finite_fraction": NaN,
+        "incomplete_windows": 0,
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 39.68547821044922,
+      "label": "Re_39p685479",
+      "regime": "steady_wake"
+    },
+    {
+      "K56": {
+        "attempted_windows": 0,
+        "divergent_windows": 0,
+        "finite_fraction": NaN,
+        "incomplete_windows": 0,
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 40.711524963378906,
+      "label": "Re_40p711525",
+      "regime": "pre_hopf_steady"
+    },
+    {
+      "K56": {
+        "attempted_windows": 0,
+        "divergent_windows": 0,
+        "finite_fraction": NaN,
+        "incomplete_windows": 0,
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 41.576576232910156,
+      "label": "Re_41p576575",
+      "regime": "pre_hopf_steady"
+    },
+    {
+      "K56": {
+        "attempted_windows": 0,
+        "divergent_windows": 0,
+        "finite_fraction": NaN,
+        "incomplete_windows": 0,
+        "num_windows": 0,
+        "pressure_area_weighted_physical_relative_l2": NaN,
+        "pressure_coefficient_relative_l2": NaN,
+        "velocity_area_weighted_physical_relative_l2": NaN,
+        "velocity_coefficient_relative_l2": NaN
+      },
+      "Re": 45.142704010009766,
+      "label": "Re_45p142703",
+      "regime": "pre_hopf_steady"
+    }
+  ],
+  "schema": "global_k56_steady_failure_accounting_compact/v1",
+  "source_metrics": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_steady_failure_accounting_v4/V16_1_SteadyPressureAnchor32_ru32_rp32_metrics.json",
+  "source_sha256": "60253b6bcbcd70b9e0c5f6add4500db2370fb12d373cbd4fa5f68da6f03568d7"
+}

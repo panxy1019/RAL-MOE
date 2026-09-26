@@ -1,0 +1,27 @@
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrate
+d_h4_expanded/swanlog/run-20260724_080254-2jrputcv-e9c967685351-38549
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblationsSingleSeed20260724
+swanlab: 🚀 View run HopfExpanded34_H4_NormalFormRadial_r32 at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblationsSingleSeed20260724/runs/2j
+rputcv
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblationsSingleSeed20260724
+swanlab: 🚀 View run HopfExpanded34_H4_NormalFormRadial_r32 at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblationsSingleSeed20260724/runs/2j
+rputcv
+swanlab: Upload complete: 153 records
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py", line 519, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py", line 466, in main
+    trainer.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_h4_expanded.py", line 238, in main
+    if not math.isfinite(gn):raise FloatingPointError('nonfinite gradient')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FloatingPointError: nonfinite gradient

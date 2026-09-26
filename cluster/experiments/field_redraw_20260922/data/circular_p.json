@@ -1,0 +1,159 @@
+{
+  "case": "Circular cylinder",
+  "geometry": "circular cylinder, center=(0,0), D=1",
+  "regime_or_overlap": "Periodic",
+  "Re": 70.31463623046875,
+  "source_field_path": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_evaluation_v2/proposed/1248/modal_rollouts.pt",
+    "sha256": "8c78738790e2b2b32df1104c661fbc99a72bf742879e9ad47c3cbf15d3d142ef"
+  },
+  "reference_path": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_evaluation_v2/proposed/1248/modal_rollouts.pt",
+    "sha256": "8c78738790e2b2b32df1104c661fbc99a72bf742879e9ad47c3cbf15d3d142ef"
+  },
+  "basis_sources": [
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+      "sha256": "a2c12dc3ea25772e7bd4216b37683df9dbcce804063f9900bdaebac3e25dc7a2"
+    },
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+      "sha256": "f6e0a23432581c78e9f649d60bb0fceb9087a6a1d0631778bde444338c16239f"
+    }
+  ],
+  "checkpoint_path": [
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed/1248/Circular_P_proposed_round2_Re_70p314635_checkpoint.pt",
+      "sha256": "b48eaacc1deb923721f9fa0244169861a6b8a4111cab7a5255a61110679fa625"
+    }
+  ],
+  "model_family": "local sparse-MoE Periodic specialist, original initialization",
+  "original_or_revised_init": "original, round2 P_proposed",
+  "training_seed": 1248,
+  "E2_checkpoint": "N/A",
+  "gate_checkpoint": "N/A",
+  "gate_seed": "N/A",
+  "candidate_r": "N/A",
+  "candidate_s": "N/A",
+  "E2_selection": "N/A",
+  "alpha": "N/A",
+  "split": "heldout",
+  "trajectory_id": "Periodic_Re70.31463623046875",
+  "window_id": 976,
+  "t0": 1384.4959716796875,
+  "dt_output": [
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625,
+    12.472900390625,
+    12.472900390625,
+    12.4730224609375,
+    12.472900390625
+  ],
+  "k": 48,
+  "K": 48,
+  "snapshot_time": 1983.1968994140625,
+  "duration": 598.700927734375,
+  "mesh": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/expanded_validation_20260723/visualization/Re_43p500000_last_snapshot_uvp.vtk",
+    "sha256": "fcc87caedde11bfc6b5c1756ef5df0b0a0e9f9d13fd6e5dbfabaa8811b678e59"
+  },
+  "data_association": "point",
+  "crop_extent": [
+    -2,
+    10,
+    -3,
+    3
+  ],
+  "recovery": "existing frozen rollout cache, no model inference",
+  "archived_metric_delta": {
+    "Eu": 8.824906000369503e-07,
+    "Ep": 8.277453989735672e-07
+  },
+  "reference_type": "POD reconstruction",
+  "velocity_definition": "u,v in physical coefficient scale; speed=hypot(u,v); pointwise velocity error=norm(u_pred-u_ref)",
+  "pressure_definition": "native kinematic pressure p (pressure divided by density), no density multiplication; weighted zero-mean gauge",
+  "nondimensional_scales": "native POD physical scale retained; no additional u/U or p/U^2 rescaling; independent case color scales, not a common nondimensional comparison",
+  "gauge_correction": "independent quadrature-weighted domain-zero-mean for every pressure field; not fitted to the error",
+  "interpolation": "none for cell fields; piecewise-linear on original surface triangles for Circular point fields",
+  "fluid_mask": "original VTK fluid topology; solid interiors have no triangles",
+  "integration_weights": "native point_areas, full computational domain",
+  "missing_points": 0,
+  "nonfinite_points": 0,
+  "selection_rule": "ascending heldout Re, then first archived/common valid window by start index; final output of full saved rollout; no metric sorting",
+  "snapshot_metrics": {
+    "reference": {
+      "Eu": 0.0,
+      "Ep": 0.0
+    },
+    "prediction": {
+      "Eu": 0.025868072904438606,
+      "Ep": 0.14749834490191463
+    }
+  },
+  "metric_units": "fraction (multiply by 100 for percent)",
+  "training_performed": false,
+  "errors_computed_on": "full domain, not cropped ROI",
+  "snapshot_arrays": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/field_redraw_20260922/data/circular_p.npz",
+    "sha256": "1e6bbab7266f97924ed07fd7d014d32ac5faa437d2c35b4b4ca032ab120f1e4c"
+  },
+  "case_id": "circular_p",
+  "mesh_alignment_max_abs": 0.0,
+  "plot_geometry": "circular_p_geometry.npz",
+  "plot_triangles": 96256,
+  "plot_vertices": 48684,
+  "unit_evidence": [
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/provenance/velocity_rom_periodic.md",
+      "sha256": "2a8be72a33f943c1b8b7550581b163f9db2af4bb77f69aeec268bdb492b09f97"
+    },
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/provenance/pressure_poisson_surrogate_periodic.md",
+      "sha256": "60b6ac4d8abaacde8cbe60b2689058cc304dd0a52eb7255076349873b769961c"
+    }
+  ],
+  "native_kinematic_viscosity": 0.001,
+  "scale_warning": "Circular source declares raw physical POD modes and fixed nu=0.001; do not label its arrays as sharing the Square/Pinball nondimensional scale."
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "selection_rule": "largest successful batch with peak allocation <= ceiling",
+  "peak_memory_ceiling_gb": 9.0,
+  "effective_batch": 16,
+  "selected_micro_batch": 16,
+  "selected_gradient_accumulation": 1,
+  "benchmarks": [
+    {
+      "micro_batch": 4,
+      "return_code": 0,
+      "throughput": {
+        "elapsed_seconds": 18.04579435568303,
+        "optimizer_steps": 8,
+        "steps_per_minute": 26.598995341473408,
+        "peak_gpu_memory_gb": 0.14245319366455078
+      },
+      "eligible": true
+    },
+    {
+      "micro_batch": 8,
+      "return_code": 0,
+      "throughput": {
+        "elapsed_seconds": 17.12999151693657,
+        "optimizer_steps": 8,
+        "steps_per_minute": 28.021029638305418,
+        "peak_gpu_memory_gb": 0.18993473052978516
+      },
+      "eligible": true
+    },
+    {
+      "micro_batch": 16,
+      "return_code": 0,
+      "throughput": {
+        "elapsed_seconds": 18.68298803269863,
+        "optimizer_steps": 8,
+        "steps_per_minute": 25.691821841341042,
+        "peak_gpu_memory_gb": 0.2849245071411133
+      },
+      "eligible": true
+    }
+  ]
+}

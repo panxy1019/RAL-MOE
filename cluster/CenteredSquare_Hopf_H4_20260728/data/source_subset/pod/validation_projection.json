@@ -1,0 +1,46 @@
+{
+  "cases": [
+    {
+      "Re": 94.5,
+      "finite": true,
+      "pressure_weighted_rel_l2": 0.018708889998979777,
+      "tag": "Re094p500000",
+      "velocity_weighted_rel_l2": 0.026152148992408416
+    },
+    {
+      "Re": 95.25,
+      "finite": true,
+      "pressure_weighted_rel_l2": 0.01878636415661422,
+      "tag": "Re095p250000",
+      "velocity_weighted_rel_l2": 0.02308652512326491
+    },
+    {
+      "Re": 95.5,
+      "finite": true,
+      "pressure_weighted_rel_l2": 0.019053883255497468,
+      "tag": "Re095p500000",
+      "velocity_weighted_rel_l2": 0.022445816938137072
+    },
+    {
+      "Re": 97.5,
+      "finite": true,
+      "pressure_weighted_rel_l2": 0.03117547825866368,
+      "tag": "Re097p500000",
+      "velocity_weighted_rel_l2": 0.027535307215268263
+    },
+    {
+      "Re": 99.0,
+      "finite": true,
+      "pressure_weighted_rel_l2": 0.03306652138655766,
+      "tag": "Re099p000000",
+      "velocity_weighted_rel_l2": 0.03332284535181626
+    },
+    {
+      "Re": 101.5,
+      "finite": true,
+      "pressure_weighted_rel_l2": 0.04951233651923698,
+      "tag": "Re101p500000",
+      "velocity_weighted_rel_l2": 0.04892628464844196
+    }
+  ]
+}

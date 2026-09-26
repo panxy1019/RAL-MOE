@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py", line 687, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py", line 664, in main
+    runner.run_all()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py", line 617, in run_all
+    raise RuntimeError(f"terminal method failures: {errors}")
+RuntimeError: terminal method failures: {'vanilla-fnn': "RuntimeError('vanilla_preflight_rollout_smoke returned 1')"}

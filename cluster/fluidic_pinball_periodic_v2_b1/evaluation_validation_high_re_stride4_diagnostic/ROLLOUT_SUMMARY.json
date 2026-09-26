@@ -1,0 +1,245 @@
+{
+  "aggregate": {
+    "1": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.004331517033278942,
+      "joint_terminal": 0.004331517033278942,
+      "joint_worst_window": 0.016274046152830124,
+      "pressure_field_mean": 0.003335411287844181,
+      "velocity_field_mean": 0.0009961056872271
+    },
+    "16": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.006753719132393599,
+      "joint_terminal": 0.009227332007139922,
+      "joint_worst_window": 0.02051694318652153,
+      "pressure_field_mean": 0.00461214343085885,
+      "velocity_field_mean": 0.002141575375571847
+    },
+    "2": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.004549608612433076,
+      "joint_terminal": 0.004771802574396133,
+      "joint_worst_window": 0.016274046152830124,
+      "pressure_field_mean": 0.0034426800906658173,
+      "velocity_field_mean": 0.0011069286148995161
+    },
+    "24": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.008290963806211948,
+      "joint_terminal": 0.012350223306566478,
+      "joint_worst_window": 0.023739058524370193,
+      "pressure_field_mean": 0.005477695073932409,
+      "velocity_field_mean": 0.002813268592581153
+    },
+    "32": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.009913424029946327,
+      "joint_terminal": 0.015585231781005859,
+      "joint_worst_window": 0.027505943551659584,
+      "pressure_field_mean": 0.0064070715568959715,
+      "velocity_field_mean": 0.0035063530784100296
+    },
+    "4": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.004928846098482609,
+      "joint_terminal": 0.005457569379359484,
+      "joint_worst_window": 0.01645459048449993,
+      "pressure_field_mean": 0.003654134413227439,
+      "velocity_field_mean": 0.0012747118948027492
+    },
+    "56": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.014969102013856173,
+      "joint_terminal": 0.026551640685647727,
+      "joint_worst_window": 0.04192643612623215,
+      "pressure_field_mean": 0.009343596268445253,
+      "velocity_field_mean": 0.005625505582429469
+    },
+    "8": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.005466963071376086,
+      "joint_terminal": 0.006237326189875603,
+      "joint_worst_window": 0.016493896022439003,
+      "pressure_field_mean": 0.003922457015141845,
+      "velocity_field_mean": 0.001544506149366498
+    }
+  },
+  "asset_audit": {
+    "manifest": {
+      "curriculum": [
+        [
+          0,
+          1600,
+          4
+        ],
+        [
+          1600,
+          3200,
+          8
+        ],
+        [
+          3200,
+          5200,
+          16
+        ],
+        [
+          5200,
+          6800,
+          24
+        ],
+        [
+          6800,
+          8000,
+          32
+        ]
+      ],
+      "dataset": "FluidicPinball_V2_Periodic",
+      "fit_reynolds": [
+        21.25,
+        21.75,
+        22.0,
+        22.5,
+        22.75,
+        23.0,
+        23.5,
+        23.75,
+        24.25,
+        24.5,
+        25.0,
+        25.5,
+        26.5,
+        27.0,
+        28.0,
+        28.5,
+        29.0,
+        30.0,
+        30.5,
+        31.5,
+        32.0,
+        32.5,
+        33.5,
+        34.0,
+        35.0,
+        35.5,
+        36.0,
+        37.0,
+        37.5,
+        38.5,
+        39.0,
+        39.5,
+        41.0,
+        42.0,
+        44.0,
+        45.0,
+        46.0,
+        48.0,
+        49.0,
+        51.0,
+        52.0,
+        53.0,
+        55.0,
+        56.0,
+        58.0,
+        59.0,
+        60.0
+      ],
+      "heldout_reynolds": [
+        22.25,
+        24.0,
+        27.5,
+        31.0,
+        34.5,
+        38.0,
+        43.0,
+        50.0,
+        57.0
+      ],
+      "pressure_gauge_verified": true,
+      "projection_error_verified": true,
+      "projection_errors": {
+        "pressure_energy_tail": 0.0008477996510218855,
+        "velocity_energy_tail": 0.0009024094598510946
+      },
+      "r_p": 16,
+      "r_u": 17,
+      "rom_tensor_verified": true,
+      "schema_version": 2,
+      "scope": "periodic_train_only_with_train_validation_view",
+      "sha256": {
+        "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+        "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+        "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+        "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+      },
+      "split_contract_verified": true,
+      "validation_horizons": [
+        4,
+        8,
+        16,
+        24,
+        32,
+        56
+      ],
+      "validation_reynolds": [
+        21.5,
+        23.25,
+        26.0,
+        29.5,
+        33.0,
+        36.5,
+        40.0,
+        47.0,
+        54.0
+      ]
+    },
+    "observed_sha256": {
+      "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+      "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+      "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+    },
+    "passed": true
+  },
+  "best_step": 8000,
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+  "evaluation_re": [
+    33.0,
+    36.5,
+    40.0,
+    47.0,
+    54.0
+  ],
+  "heldout_hard_disabled": [
+    22.25,
+    24.0,
+    27.5,
+    31.0,
+    34.5,
+    38.0,
+    43.0,
+    50.0,
+    57.0
+  ],
+  "horizons": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    24,
+    32,
+    56
+  ],
+  "optimizer_step": 8000,
+  "scope": "validation_only_no_heldout_loaded",
+  "split": "validation",
+  "temporal_stride": 4
+}

@@ -1,0 +1,17 @@
+{
+  "active_boundary": "S-H",
+  "disabled_boundary": {
+    "H-P": "G_HP_native BLOCKED_TEST_SEAL_ASSET"
+  },
+  "decision_basis": "validation only",
+  "known_legacy_test_disclosure": true,
+  "promoted_method": "T2-C_LearnedConvexCorrection_FieldBlend",
+  "reason": "All three routes are finite with zero divergence and validation differences are numerically negligible. The preregistered tie-break therefore selects the lower-complexity learned convex gate.",
+  "routes_frozen": [
+    "T2-C_LearnedConvexCorrection_FieldBlend",
+    "RiskPredictionRouter",
+    "LookAheadShortRolloutRouter"
+  ],
+  "status": "VALIDATION_DECISION_FROZEN_BEFORE_FINAL_METRIC_EVALUATION",
+  "test_used_for_selection": false
+}

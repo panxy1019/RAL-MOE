@@ -1,0 +1,20 @@
+{
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+  "checkpoint_sha256": "c89a0cbf6cc0920664875f00234afaac49bc19b1c5c5f985cbba0b09e2dbdbda",
+  "final_test_view": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/evaluation_final_test/fluidic_pinball_periodic_finaltest_rank999.npz",
+  "final_test_view_sha256": "c2a768087caf541c6421006e9c41390eb50eaccbe8138ae9099dfa72e297be7c",
+  "heldout_reynolds": [
+    22.25,
+    24.0,
+    27.5,
+    31.0,
+    34.5,
+    38.0,
+    43.0,
+    50.0,
+    57.0
+  ],
+  "hyperparameter_updates_after_unseal_forbidden": true,
+  "scope": "one_time_final_test_rollout",
+  "training_assets_unchanged": true
+}

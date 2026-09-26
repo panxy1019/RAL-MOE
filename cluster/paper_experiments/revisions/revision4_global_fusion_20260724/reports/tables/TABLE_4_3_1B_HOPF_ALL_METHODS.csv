@@ -1,0 +1,13 @@
+指定 Re,方法,时域/误差空间,速度误差,压力误差,RMS 振幅,峰峰值,频率误差,末端相位漂移(周期),轨道距离,能量漂移/不可用原因,finite/发散窗,false growth,Strict
+49.3,Proposed Specialist MoE,K56 / 物理场,0.0013%,0.0095%,2.9146%,2.5017%,1.6477%,-0.1166,7.2697%,"u 0.0007%, p 0.0100%",1.000 / 0,否,PASS
+49.3,Vanilla-FNN-MoE,—,—,—,—,—,—,—,—,validation K16/K56 非有限，按 fail-closed 合同未开放指定案例评估,—,—,N/A
+49.3,DataOnly-MoE,—,—,—,—,—,—,—,—,冻结归档未在 49.3/49.6/50.0 运行同一 strict evaluator,—,—,N/A
+49.3,Global MoE†,—,—,—,—,—,—,—,—,Global held-out 资产不含这三个精确 Re，且仅有 K24 系数域 evaluator,—,—,N/A
+49.6,Proposed Specialist MoE,K56 / 物理场,0.0016%,0.0091%,1.4693%,6.6160%,1.6169%,-0.1136,6.4963%,"u 0.0011%, p 0.0010%",1.000 / 0,否,PASS
+49.6,Vanilla-FNN-MoE,—,—,—,—,—,—,—,—,validation K16/K56 非有限，按 fail-closed 合同未开放指定案例评估,—,—,N/A
+49.6,DataOnly-MoE,—,—,—,—,—,—,—,—,冻结归档未在 49.3/49.6/50.0 运行同一 strict evaluator,—,—,N/A
+49.6,Global MoE†,—,—,—,—,—,—,—,—,Global held-out 资产不含这三个精确 Re，且仅有 K24 系数域 evaluator,—,—,N/A
+50.0,Proposed Specialist MoE,K56 / 物理场,0.0020%,0.0171%,1.3430%,1.3787%,1.5220%,-0.1138,6.4660%,"u 0.0016%, p 0.0078%",1.000 / 0,否,PASS
+50.0,Vanilla-FNN-MoE,—,—,—,—,—,—,—,—,validation K16/K56 非有限，按 fail-closed 合同未开放指定案例评估,—,—,N/A
+50.0,DataOnly-MoE,—,—,—,—,—,—,—,—,冻结归档未在 49.3/49.6/50.0 运行同一 strict evaluator,—,—,N/A
+50.0,Global MoE†,—,—,—,—,—,—,—,—,Global held-out 资产不含这三个精确 Re，且仅有 K24 系数域 evaluator,—,—,N/A

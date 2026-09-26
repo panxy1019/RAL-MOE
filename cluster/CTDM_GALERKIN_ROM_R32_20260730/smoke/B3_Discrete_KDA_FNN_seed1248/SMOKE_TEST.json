@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "variant": "b3",
+  "shape_forward_backward": true,
+  "checkpoint_roundtrip": true,
+  "memory_fp32": true,
+  "continuous_memory_joint_rk4": true,
+  "discrete_memory_one_macro_update": true,
+  "rows": [
+    {
+      "horizon": 4,
+      "loss": 365.331298828125,
+      "gradient_norm": 1090.5677490234375,
+      "parts": {
+        "Ea": 11.061419486999512,
+        "Eb": 644.1060791015625,
+        "Eu_modal": 2.340710807402502e-06,
+        "Ep_modal": 0.1210193783044815,
+        "memory": 1.869119114417117e-05,
+        "total": 365.331298828125
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 4,
+      "memory_gradient_norm": 1.087053750927123e-10
+    },
+    {
+      "horizon": 8,
+      "loss": 361.6390075683594,
+      "gradient_norm": 1088.1307373046875,
+      "parts": {
+        "Ea": 26.549936294555664,
+        "Eb": 609.2317504882812,
+        "Eu_modal": 8.445866114925593e-06,
+        "Ep_modal": 0.12222428619861603,
+        "memory": 3.072447725571692e-05,
+        "total": 361.6390075683594
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 8,
+      "memory_gradient_norm": 0.0313444004701801
+    },
+    {
+      "horizon": 16,
+      "loss": 390.57086181640625,
+      "gradient_norm": 1080.1123046875,
+      "parts": {
+        "Ea": 53.753684997558594,
+        "Eb": 612.3733520507812,
+        "Eu_modal": 3.002088124048896e-05,
+        "Ep_modal": 0.12446103990077972,
+        "memory": 4.2013249185401946e-05,
+        "total": 390.57086181640625
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 16,
+      "memory_gradient_norm": 0.06720078508873198
+    },
+    {
+      "horizon": 32,
+      "loss": 480.1878356933594,
+      "gradient_norm": 1141.66845703125,
+      "parts": {
+        "Ea": 78.852783203125,
+        "Eb": 729.6778564453125,
+        "Eu_modal": 0.00010463118087500334,
+        "Ep_modal": 0.12839385867118835,
+        "memory": 4.7191606427077204e-05,
+        "total": 480.1878356933594
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 32,
+      "memory_gradient_norm": 0.11509697331182983
+    },
+    {
+      "horizon": 56,
+      "loss": 507.0225524902344,
+      "gradient_norm": 1181.48779296875,
+      "parts": {
+        "Ea": 74.20171356201172,
+        "Eb": 786.9237060546875,
+        "Eu_modal": 0.0002882658445741981,
+        "Ep_modal": 0.13323131203651428,
+        "memory": 4.8471938498551026e-05,
+        "total": 507.0225524902344
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 56,
+      "memory_gradient_norm": 0.14877479452693956
+    }
+  ],
+  "checkpoint_sha256": "2c55abb9990332a1171815ec6f16f25306bba180fd822fcc1f5a21467785b612"
+}

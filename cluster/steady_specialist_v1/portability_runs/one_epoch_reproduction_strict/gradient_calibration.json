@@ -1,0 +1,54 @@
+{
+  "anchor_detail": {
+    "pressure_raw_mse": 1.6054732543402395e-10,
+    "velocity_raw_mse": 0.0
+  },
+  "fixed_calibration_bank_ids": [
+    640,
+    197,
+    290,
+    297,
+    802,
+    596,
+    758,
+    997,
+    721,
+    672,
+    894,
+    233,
+    1066,
+    635,
+    951,
+    754
+  ],
+  "fixed_calibration_clean_ids": [
+    109,
+    361,
+    928,
+    789,
+    536,
+    915,
+    870,
+    713,
+    597,
+    466,
+    26,
+    1042,
+    551,
+    1188,
+    542,
+    215
+  ],
+  "lambda_fixed_point": 194906786.53196886,
+  "original_detail": {
+    "clean": 120.99037170410156,
+    "gain_terminal": 24.558547973632812,
+    "gain_worst": 94.27722930908203,
+    "pair": 3154.705810546875
+  },
+  "original_s3b_total_grad_norm": 18.41187858581543,
+  "realized_initial_gradient_ratio": 0.075,
+  "schema_version": 1,
+  "target_gradient_ratio": 0.075,
+  "unweighted_fixed_point_grad_norm": 7.08487846168282e-09
+}

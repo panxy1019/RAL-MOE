@@ -1,0 +1,66 @@
+{
+  "checks": {
+    "checkpoint_roundtrip": true,
+    "forward_backward_finite": true,
+    "future_truth_not_used_as_model_input": true,
+    "macro_boundary_single_update": true,
+    "memory_fp32_under_amp": true,
+    "memory_reset_and_no_cross_trajectory_leak": true,
+    "reset_determinism": true,
+    "rk4_memory_frozen": true,
+    "shape_contract": true
+  },
+  "passed": true,
+  "rows": [
+    {
+      "gradient_norms": {
+        "fnn": 126.32167053222656,
+        "kda_projection": 1.261339643843229e-11,
+        "tau_beta": 2.265881276011794e-12
+      },
+      "horizon": 4,
+      "loss": 396.2786560058594,
+      "memory_dtype": "torch.float32",
+      "memory_updates": 6,
+      "parts": {
+        "coeff": 18.57088279724121,
+        "dynamics": 30.544708251953125,
+        "energy": 0.0010773269459605217,
+        "memory": 1.9236542811995605e-06,
+        "pressure": 476.68572998046875,
+        "pressure_gate_mean": 0.98974609375,
+        "radial": 0.3360942006111145,
+        "rollout_p": 568.9716796875,
+        "rollout_u": 10.18435001373291,
+        "total": 396.2786560058594
+      },
+      "stage_memory_mutations": 0
+    },
+    {
+      "gradient_norms": {
+        "fnn": 196.9213409423828,
+        "kda_projection": 2.6905295699708454e-11,
+        "tau_beta": 4.504579001474163e-12
+      },
+      "horizon": 8,
+      "loss": 427.56976318359375,
+      "memory_dtype": "torch.float32",
+      "memory_updates": 10,
+      "parts": {
+        "coeff": 21.476577758789062,
+        "dynamics": 45.320396423339844,
+        "energy": 0.0011530295014381409,
+        "memory": 3.747230266526458e-06,
+        "pressure": 489.2816162109375,
+        "pressure_gate_mean": 0.98974609375,
+        "radial": 0.3669244050979614,
+        "rollout_p": 534.4180297851562,
+        "rollout_u": 28.283279418945312,
+        "total": 427.56976318359375
+      },
+      "stage_memory_mutations": 0
+    }
+  ],
+  "schema_version": 1,
+  "variant": "b3"
+}

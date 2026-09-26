@@ -1,0 +1,90 @@
+{
+  "passed": true,
+  "change": "restore native random right factor; left stays zero; no extra RNG draws",
+  "modules": [
+    {
+      "module": "velocity_expert_groups.0.0",
+      "initial_output": 0,
+      "left_gradient_norm": 1.8711681365966797,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.1",
+      "initial_output": 0,
+      "left_gradient_norm": 1.9322174787521362,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.2",
+      "initial_output": 0,
+      "left_gradient_norm": 1.8695290088653564,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.3",
+      "initial_output": 0,
+      "left_gradient_norm": 2.1074345111846924,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.4",
+      "initial_output": 0,
+      "left_gradient_norm": 2.0538504123687744,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_expert_groups.0.5",
+      "initial_output": 0,
+      "left_gradient_norm": 1.73934805393219,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.0",
+      "initial_output": 0,
+      "left_gradient_norm": 3.336225986480713,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.1",
+      "initial_output": 0,
+      "left_gradient_norm": 4.153794765472412,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.2",
+      "initial_output": 0,
+      "left_gradient_norm": 3.7986900806427,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.3",
+      "initial_output": 0,
+      "left_gradient_norm": 3.601006031036377,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.4",
+      "initial_output": 0,
+      "left_gradient_norm": 3.560465097427368,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_expert_groups.0.5",
+      "initial_output": 0,
+      "left_gradient_norm": 3.4628167152404785,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "velocity_shared_experts.0",
+      "initial_output": 0,
+      "left_gradient_norm": 1.786515712738037,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "pressure_shared_experts.0",
+      "initial_output": 0,
+      "left_gradient_norm": 3.730586051940918,
+      "right_gradient_norm": 0.0
+    }
+  ]
+}

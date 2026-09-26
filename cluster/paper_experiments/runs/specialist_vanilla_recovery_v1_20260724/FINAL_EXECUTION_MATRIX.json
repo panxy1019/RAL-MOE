@@ -1,0 +1,40 @@
+{
+  "experiments": [
+    {
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "failure_reason": "RuntimeError('vanilla_train_s2 returned -15')",
+      "method": "vanilla-fnn",
+      "regime": "steady",
+      "result_directory": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn",
+      "status": "FAILED",
+      "test_complete": false,
+      "validation_evaluation_complete": false,
+      "validation_selection": null
+    },
+    {
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "failure_reason": "RuntimeError('vanilla_smoke returned 1')",
+      "method": "vanilla-fnn",
+      "regime": "hopf",
+      "result_directory": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/hopf/vanilla-fnn",
+      "status": "FAILED",
+      "test_complete": false,
+      "validation_evaluation_complete": false,
+      "validation_selection": null
+    },
+    {
+      "checkpoint": null,
+      "checkpoint_sha256": null,
+      "failure_reason": "RuntimeError('vanilla_preflight_rollout_smoke returned 1')",
+      "method": "vanilla-fnn",
+      "regime": "periodic",
+      "result_directory": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/periodic/vanilla-fnn",
+      "status": "FAILED",
+      "test_complete": false,
+      "validation_evaluation_complete": false,
+      "validation_selection": null
+    }
+  ]
+}

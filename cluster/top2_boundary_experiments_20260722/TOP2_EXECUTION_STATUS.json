@@ -1,0 +1,36 @@
+{
+  "status": "FAIL_CLOSED",
+  "date": "2026-07-22",
+  "stage_reached": "preregistration_and_native_contract_preflight",
+  "training_started": false,
+  "native_output_cache_constructed": false,
+  "validation_model_selection_started": false,
+  "test_physical_modal_or_metric_data_loaded": false,
+  "test_index_split_labels_scanned_for_exclusion": true,
+  "checkpoints_created": [],
+  "preregistered_routes": [
+    "T2-C_LearnedConvexCorrection_FieldBlend",
+    "RiskPredictionRouter",
+    "LookAheadShortRolloutRouter"
+  ],
+  "passed_gates": {
+    "frozen_asset_hashes": true,
+    "complete_Re_protocol_preregistered": true,
+    "adjacency_only_S_H_H_P": true,
+    "S_P_and_Top3_forbidden": true,
+    "common_mesh_point_order": true,
+    "common_cell_area": true,
+    "common_pressure_gauge": true,
+    "Hopf_future_truth_free_phase": true
+  },
+  "failed_gates": {
+    "Steady_cross_source_phase_contract": "4 harmonics; no phase/period column; native forward reads indexed phase derived from the full database trajectory endpoint",
+    "Periodic_cross_source_phase_contract": "4 harmonics; no phase/period column; native forward reads indexed phase derived from the full database trajectory endpoint",
+    "Steady_Hopf_dual_native_start": false,
+    "Hopf_Periodic_dual_native_start": false,
+    "strict_common_query_time_wrapper_certified": false
+  },
+  "decision_reason": "All three routes require the same dual-native output cache. That cache cannot be constructed without supplying uncertified database endpoint phase metadata to Steady or Periodic, violating the future-truth-free frozen specialist contract.",
+  "authorized_next_action": "Do not train the three Top-2 routes and do not unlock test. First certify a future-truth-free phase/time provider for frozen Steady and Periodic, or explicitly authorize warm-start phase-front-end re-certification.",
+  "remote_root": "/root/panxy/particalMOE/top2_boundary_experiments_20260722"
+}

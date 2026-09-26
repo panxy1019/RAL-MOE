@@ -1,0 +1,124 @@
+[     1.3s] 数据目录: /cephfs/shared/V17_HopfExpanded34_POD_20260721/artifacts/hopf
+[     1.3s] 网格文件: /cephfs/shared/V17_RegimeIndependentROM/source_mesh/run_Re_100_7107.vtk
+[     1.3s] Re labels: ['Re_45p500000', 'Re_45p800000', 'Re_46p100000', 'Re_46p300000', 'Re_46p500000', 'Re_46p700000', 'Re_46p900000', 'Re_47p081355', 'Re_47p200000', 'Re_47p400000', 'Re_47p600000', 'Re_47p722947', 'Re_47p800000', 'Re_48p000000', 'Re_48p300000', 'Re_48p368688', 'Re_48p700000', 'Re_49p022357', 'Re_49p300000', 'Re_49p600000', 'Re_49p687640', 'Re_50p000000', 'Re_50p368054', 'Re_51p066785', 'Re_51p786450', 'Re_52p528767', 'Re_53p294175', 'Re_54p081508', 'Re_54p887950', 'Re_55p709610', 'Re_56p543246', 'Re_57p389970', 'Re_58p262636', 'Re_59p201432']
+[     1.3s] r_u=80, r_p=80
+[     1.4s] mass sum=5.992146803695e+02, min=1.042e-05, max=1.319e-02
+[     1.4s] 计算速度模态梯度: r_u=80
+[     4.6s]   velocity mode gradients 8/80
+[     7.7s]   velocity mode gradients 16/80
+[    10.9s]   velocity mode gradients 24/80
+[    14.0s]   velocity mode gradients 32/80
+[    17.1s]   velocity mode gradients 40/80
+[    20.2s]   velocity mode gradients 48/80
+[    23.2s]   velocity mode gradients 56/80
+[    26.4s]   velocity mode gradients 64/80
+[    29.5s]   velocity mode gradients 72/80
+[    32.6s]   velocity mode gradients 80/80
+[    32.6s] 计算压力模态梯度: r_p=80
+[    34.0s]   pressure mode gradients 8/80
+[    35.4s]   pressure mode gradients 16/80
+[    36.7s]   pressure mode gradients 24/80
+[    38.1s]   pressure mode gradients 32/80
+[    39.4s]   pressure mode gradients 40/80
+[    40.8s]   pressure mode gradients 48/80
+[    42.1s]   pressure mode gradients 56/80
+[    43.5s]   pressure mode gradients 64/80
+[    44.8s]   pressure mode gradients 72/80
+[    46.2s]   pressure mode gradients 80/80
+[    46.2s] 计算压力 Laplacian 矩阵 L
+[    47.6s] 计算非线性压力源张量 H^p: shape=(80,80,80), chunks=48
+[    68.3s]   H^p chunks 2/48
+[    88.8s]   H^p chunks 4/48
+[   109.5s]   H^p chunks 6/48
+[   130.1s]   H^p chunks 8/48
+[   150.7s]   H^p chunks 10/48
+[   171.3s]   H^p chunks 12/48
+[   192.6s]   H^p chunks 14/48
+[   213.2s]   H^p chunks 16/48
+[   233.9s]   H^p chunks 18/48
+[   254.5s]   H^p chunks 20/48
+[   275.0s]   H^p chunks 22/48
+[   295.6s]   H^p chunks 24/48
+[   316.1s]   H^p chunks 26/48
+[   336.7s]   H^p chunks 28/48
+[   357.2s]   H^p chunks 30/48
+[   378.1s]   H^p chunks 32/48
+[   398.7s]   H^p chunks 34/48
+[   419.3s]   H^p chunks 36/48
+[   439.9s]   H^p chunks 38/48
+[   460.5s]   H^p chunks 40/48
+[   481.2s]   H^p chunks 42/48
+[   501.8s]   H^p chunks 44/48
+[   522.3s]   H^p chunks 46/48
+[   538.2s]   H^p chunks 48/48
+[   538.3s] 计算均值梯度: Re_45p500000
+[   538.9s] 装配 c^p/A^p: Re_45p500000
+[   540.9s] 计算均值梯度: Re_45p800000
+[   541.6s] 装配 c^p/A^p: Re_45p800000
+[   543.3s] 计算均值梯度: Re_46p100000
+[   544.0s] 装配 c^p/A^p: Re_46p100000
+[   545.8s] 计算均值梯度: Re_46p300000
+[   546.4s] 装配 c^p/A^p: Re_46p300000
+[   548.2s] 计算均值梯度: Re_46p500000
+[   548.9s] 装配 c^p/A^p: Re_46p500000
+[   550.6s] 计算均值梯度: Re_46p700000
+[   551.3s] 装配 c^p/A^p: Re_46p700000
+[   552.8s] 计算均值梯度: Re_46p900000
+[   553.5s] 装配 c^p/A^p: Re_46p900000
+[   555.4s] 计算均值梯度: Re_47p081355
+[   556.1s] 装配 c^p/A^p: Re_47p081355
+[   557.9s] 计算均值梯度: Re_47p200000
+[   558.7s] 装配 c^p/A^p: Re_47p200000
+[   560.5s] 计算均值梯度: Re_47p400000
+[   561.2s] 装配 c^p/A^p: Re_47p400000
+[   563.1s] 计算均值梯度: Re_47p600000
+[   563.8s] 装配 c^p/A^p: Re_47p600000
+[   565.6s] 计算均值梯度: Re_47p722947
+[   566.3s] 装配 c^p/A^p: Re_47p722947
+[   568.1s] 计算均值梯度: Re_47p800000
+[   568.8s] 装配 c^p/A^p: Re_47p800000
+[   570.6s] 计算均值梯度: Re_48p000000
+[   571.3s] 装配 c^p/A^p: Re_48p000000
+[   573.0s] 计算均值梯度: Re_48p300000
+[   573.7s] 装配 c^p/A^p: Re_48p300000
+[   575.5s] 计算均值梯度: Re_48p368688
+[   576.2s] 装配 c^p/A^p: Re_48p368688
+[   578.0s] 计算均值梯度: Re_48p700000
+[   578.7s] 装配 c^p/A^p: Re_48p700000
+[   580.4s] 计算均值梯度: Re_49p022357
+[   581.1s] 装配 c^p/A^p: Re_49p022357
+[   582.8s] 计算均值梯度: Re_49p300000
+[   583.5s] 装配 c^p/A^p: Re_49p300000
+[   585.2s] 计算均值梯度: Re_49p600000
+[   585.9s] 装配 c^p/A^p: Re_49p600000
+[   587.7s] 计算均值梯度: Re_49p687640
+[   588.4s] 装配 c^p/A^p: Re_49p687640
+[   590.1s] 计算均值梯度: Re_50p000000
+[   590.8s] 装配 c^p/A^p: Re_50p000000
+[   592.7s] 计算均值梯度: Re_50p368054
+[   593.4s] 装配 c^p/A^p: Re_50p368054
+[   595.0s] 计算均值梯度: Re_51p066785
+[   595.7s] 装配 c^p/A^p: Re_51p066785
+[   597.4s] 计算均值梯度: Re_51p786450
+[   598.0s] 装配 c^p/A^p: Re_51p786450
+[   599.7s] 计算均值梯度: Re_52p528767
+[   600.4s] 装配 c^p/A^p: Re_52p528767
+[   602.1s] 计算均值梯度: Re_53p294175
+[   602.8s] 装配 c^p/A^p: Re_53p294175
+[   604.6s] 计算均值梯度: Re_54p081508
+[   605.3s] 装配 c^p/A^p: Re_54p081508
+[   607.1s] 计算均值梯度: Re_54p887950
+[   607.8s] 装配 c^p/A^p: Re_54p887950
+[   609.6s] 计算均值梯度: Re_55p709610
+[   610.3s] 装配 c^p/A^p: Re_55p709610
+[   612.1s] 计算均值梯度: Re_56p543246
+[   612.8s] 装配 c^p/A^p: Re_56p543246
+[   614.5s] 计算均值梯度: Re_57p389970
+[   615.2s] 装配 c^p/A^p: Re_57p389970
+[   616.8s] 计算均值梯度: Re_58p262636
+[   617.6s] 装配 c^p/A^p: Re_58p262636
+[   619.2s] 计算均值梯度: Re_59p201432
+[   619.8s] 装配 c^p/A^p: Re_59p201432
+[   621.4s] 保存张量: /cephfs/shared/V17_HopfExpanded34_POD_20260721/artifacts/hopf/pressure_poisson_surrogate_hopf.npz
+[   622.1s] 写技术报告: /cephfs/shared/V17_HopfExpanded34_POD_20260721/artifacts/hopf/pressure_poisson_surrogate_hopf.md
+[   622.1s] 完成

@@ -1,0 +1,57 @@
+{
+  "seed": 1600,
+  "phase": "formal",
+  "budget": 4000,
+  "architecture": {
+    "id": 3,
+    "width": 48,
+    "modes": 12,
+    "increment": true,
+    "lr": 0.001,
+    "weight_decay": 0.0001
+  },
+  "code_sha256": "a8851746642f531af0f00de5268623390b2ff0986e6a0a6798b6089ae6763052",
+  "real_parameter_count": 5325203,
+  "protocol_sha256": "9f3327f9ecd9c58abdcc99cdb6ff0db610265e46c4e2ae76c5cb4a004967d616",
+  "accepted": true,
+  "best_step": 4000,
+  "validation_worst": 37.91220842720941,
+  "validation_macro": 13.34241073816601,
+  "training_seconds": 8339.854329786263,
+  "peak_gpu_allocated_bytes": 5393364992,
+  "failure": "",
+  "last_step": 4000,
+  "heldout_evaluated": true,
+  "test_score": {
+    "complete": true,
+    "worst": 21.695635030278936,
+    "macro": 10.847946334358616
+  },
+  "horizons": [
+    {
+      "seed": 1600,
+      "K": 24,
+      "complete": 32,
+      "total": 32,
+      "Eu": 1.2111474776174873,
+      "Ep": 6.282384856914481,
+      "joint": 7.493532334531967,
+      "native_Eu": 1.1985753709450364,
+      "native_Ep": 6.230792455219975,
+      "native_joint": 7.429367826165011
+    },
+    {
+      "seed": 1600,
+      "K": 48,
+      "complete": 32,
+      "total": 32,
+      "Eu": 1.8232545784752192,
+      "Ep": 9.024691755883396,
+      "joint": 10.847946334358616,
+      "native_Eu": 1.8127919236818948,
+      "native_Ep": 8.989705619635059,
+      "native_joint": 10.802497543316955
+    }
+  ],
+  "checkpoint_sha256": "f80bf20bcaf8f40452a0f15705af7775a4a5191695d68b8ddc6a315b7dfeaf21"
+}

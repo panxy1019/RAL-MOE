@@ -1,0 +1,42 @@
+{
+  "schema_version": 2,
+  "contract_name": "V17_hopf_expansion_34Re_train_only_pod_v1",
+  "split_policy": "Reynolds-number-disjoint; POD mean, basis, spectrum and normalization use train only",
+  "pressure_gauge": "subtract_area_mean_per_snapshot",
+  "centering": "single_train_only_regime_mean",
+  "rank": 80,
+  "control_rank": 32,
+  "oversampling": 32,
+  "power_iterations": 2,
+  "seed": 20260721,
+  "source_regimes": {
+    "hopf": ["pre_hopf_steady", "hopf_transition"]
+  },
+  "include_labels": {
+    "hopf": [
+      "Re_45p500000", "Re_45p800000", "Re_46p100000", "Re_46p300000",
+      "Re_46p500000", "Re_46p700000", "Re_46p900000", "Re_47p200000",
+      "Re_47p400000", "Re_47p600000", "Re_47p800000", "Re_48p000000",
+      "Re_48p300000", "Re_48p700000", "Re_49p300000", "Re_49p600000",
+      "Re_50p000000", "Re_47p081355", "Re_47p722947", "Re_48p368688",
+      "Re_49p022357", "Re_49p687640", "Re_50p368054", "Re_51p066785",
+      "Re_51p786450", "Re_52p528767", "Re_53p294175", "Re_54p081508",
+      "Re_54p887950", "Re_55p709610", "Re_56p543246", "Re_57p389970",
+      "Re_58p262636", "Re_59p201432"
+    ]
+  },
+  "validation_labels": {
+    "steady": [],
+    "hopf": ["Re_46p700000", "Re_56p543246"],
+    "periodic": []
+  },
+  "heldout_labels": {
+    "steady": [],
+    "hopf": ["Re_47p081355", "Re_49p022357", "Re_51p786450"],
+    "periodic": []
+  },
+  "validation_rationale": "One pre-onset dense case and one upper-Hopf case cover the expanded dynamics range.",
+  "test_rationale": "Retain the three original canonical Hopf heldouts for direct before/after comparison.",
+  "rank_selection_policy": "Training spectra and training-only dynamics diagnostics only; validation and heldout projection metrics are reporting-only.",
+  "global_control_policy": "Frozen global-r32 comparison is reported only for legacy labels present in the frozen global asset; new labels are explicitly unavailable for that control."
+}

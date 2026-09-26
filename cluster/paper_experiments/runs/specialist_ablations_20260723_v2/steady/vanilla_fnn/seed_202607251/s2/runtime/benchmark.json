@@ -1,0 +1,18 @@
+{
+  "candidates": [
+    {
+      "grad_accum": 8,
+      "micro_batch": 8,
+      "peak_gpu_gib": 1.013585090637207,
+      "seconds_per_optimizer_step": 17.78871927249711,
+      "status": "PASS"
+    }
+  ],
+  "selected": {
+    "grad_accum": 8,
+    "micro_batch": 8,
+    "peak_gpu_gib": 1.013585090637207,
+    "seconds_per_optimizer_step": 17.78871927249711,
+    "status": "PASS"
+  }
+}

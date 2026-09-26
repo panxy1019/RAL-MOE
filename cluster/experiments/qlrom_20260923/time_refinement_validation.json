@@ -1,0 +1,154 @@
+{
+  "test_seen": false,
+  "selected_sha256": "479377be844c9b28f9a002294374307b76760954d81074de376a8e63f6c94cfd",
+  "created_at": "2026-09-23T15:06:37+0800",
+  "rows": [
+    {
+      "seed": 1248,
+      "substeps": 1,
+      "completed": 48,
+      "total": 48,
+      "Eu": 4.592227024719125,
+      "Ep": 27.366333884742474,
+      "joint": 31.9585609094616
+    },
+    {
+      "seed": 1248,
+      "substeps": 2,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.893274927589525,
+      "Ep": 22.445003260093667,
+      "joint": 25.338278187683194,
+      "max_velocity_weighted_change_from_half_substeps": 0.6784314462635154
+    },
+    {
+      "seed": 1248,
+      "substeps": 4,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.8230243801214647,
+      "Ep": 22.134444962789917,
+      "joint": 24.95746934291138,
+      "max_velocity_weighted_change_from_half_substeps": 0.11181088962512833
+    },
+    {
+      "seed": 1248,
+      "substeps": 8,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.846087060185598,
+      "Ep": 22.144019176715755,
+      "joint": 24.990106236901354,
+      "max_velocity_weighted_change_from_half_substeps": 0.038026468792695056
+    },
+    {
+      "seed": 1248,
+      "substeps": 16,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.8658270368486014,
+      "Ep": 22.16365863396807,
+      "joint": 25.02948567081667,
+      "max_velocity_weighted_change_from_half_substeps": 0.025240121960137897
+    },
+    {
+      "seed": 1600,
+      "substeps": 1,
+      "completed": 48,
+      "total": 48,
+      "Eu": 4.5021891484805,
+      "Ep": 26.98613735454403,
+      "joint": 31.48832650302453
+    },
+    {
+      "seed": 1600,
+      "substeps": 2,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.9026366812737714,
+      "Ep": 22.41956613420861,
+      "joint": 25.32220281548238,
+      "max_velocity_weighted_change_from_half_substeps": 0.6979382718107286
+    },
+    {
+      "seed": 1600,
+      "substeps": 4,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.828837825303632,
+      "Ep": 22.11167799803053,
+      "joint": 24.940515823334163,
+      "max_velocity_weighted_change_from_half_substeps": 0.13110627997082086
+    },
+    {
+      "seed": 1600,
+      "substeps": 8,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.853340848910167,
+      "Ep": 22.128297905458115,
+      "joint": 24.981638754368284,
+      "max_velocity_weighted_change_from_half_substeps": 0.03512482603532174
+    },
+    {
+      "seed": 1600,
+      "substeps": 16,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.8612773485569303,
+      "Ep": 22.137767517533387,
+      "joint": 24.999044866090316,
+      "max_velocity_weighted_change_from_half_substeps": 0.037913739975525884
+    },
+    {
+      "seed": 2026,
+      "substeps": 1,
+      "completed": 48,
+      "total": 48,
+      "Eu": 5.093924920391253,
+      "Ep": 28.43547359416367,
+      "joint": 33.52939851455493
+    },
+    {
+      "seed": 2026,
+      "substeps": 2,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.9802072920751486,
+      "Ep": 22.585675891800566,
+      "joint": 25.565883183875716,
+      "max_velocity_weighted_change_from_half_substeps": 0.921096182822207
+    },
+    {
+      "seed": 2026,
+      "substeps": 4,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.8421366682093754,
+      "Ep": 22.16424666834303,
+      "joint": 25.006383336552403,
+      "max_velocity_weighted_change_from_half_substeps": 0.11613764560962048
+    },
+    {
+      "seed": 2026,
+      "substeps": 8,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.849508494873349,
+      "Ep": 22.156309273199327,
+      "joint": 25.005817768072674,
+      "max_velocity_weighted_change_from_half_substeps": 0.044928957101378265
+    },
+    {
+      "seed": 2026,
+      "substeps": 16,
+      "completed": 48,
+      "total": 48,
+      "Eu": 2.853313203410178,
+      "Ep": 22.154857229194363,
+      "joint": 25.00817043260454,
+      "max_velocity_weighted_change_from_half_substeps": 0.038846369230779186
+    }
+  ]
+}

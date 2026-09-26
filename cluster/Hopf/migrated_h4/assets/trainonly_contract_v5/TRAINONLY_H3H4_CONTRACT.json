@@ -1,0 +1,266 @@
+{
+  "schema_version": 1,
+  "fit_split": "train",
+  "heldout_rows_present": false,
+  "train_Re": [
+    47.722947,
+    48.368688,
+    49.68764,
+    51.066785,
+    52.528767,
+    53.294175,
+    54.081508,
+    54.88795,
+    55.70961,
+    57.38997,
+    58.262636,
+    59.201432
+  ],
+  "validation_Re": [
+    50.368054,
+    56.543246
+  ],
+  "heldout_Re_sealed": [
+    47.081355,
+    49.022357,
+    51.78645
+  ],
+  "coeff_sha256": "340cc923b111f1d420d30231b3627d566a60ad70d7a56f17e6a22e35ddd9f6d4",
+  "source_velocity_pod_sha256": "5e80a71574e02efb33ff537bef333e46d9de10ed75b8f8a950ad1564bae32c49",
+  "critical_plane": {
+    "modes_1based": [
+      2,
+      3
+    ],
+    "matrix": [
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "dmd_principal_angle_gate_deg": 15.0,
+    "max_observed_deg": 13.328658620356094,
+    "quadrature_gate_abs_deviation_deg": 15.0,
+    "max_observed_abs_deviation_deg": 1.5995875839520437,
+    "status": "PASS",
+    "per_train_Re": [
+      {
+        "Re": 47.722947,
+        "dmd_principal_angles_deg": [
+          12.771059015740375,
+          13.328658620356094
+        ],
+        "quadrature_phase_deg": -89.11434644648595
+      },
+      {
+        "Re": 48.368688,
+        "dmd_principal_angles_deg": [
+          11.984871641980513,
+          12.496405063352837
+        ],
+        "quadrature_phase_deg": -88.8976925428445
+      },
+      {
+        "Re": 49.68764,
+        "dmd_principal_angles_deg": [
+          10.611761839021804,
+          11.004271725581736
+        ],
+        "quadrature_phase_deg": -89.44786440646935
+      },
+      {
+        "Re": 51.066785,
+        "dmd_principal_angles_deg": [
+          9.183549359300159,
+          9.495332847251332
+        ],
+        "quadrature_phase_deg": -89.03662858910764
+      },
+      {
+        "Re": 52.528767,
+        "dmd_principal_angles_deg": [
+          7.949730892022711,
+          8.333291284919826
+        ],
+        "quadrature_phase_deg": -90.77054381034193
+      },
+      {
+        "Re": 53.294175,
+        "dmd_principal_angles_deg": [
+          7.130371404005807,
+          7.347571210800891
+        ],
+        "quadrature_phase_deg": -90.45056060755701
+      },
+      {
+        "Re": 54.081508,
+        "dmd_principal_angles_deg": [
+          6.571458136236996,
+          6.796393583226726
+        ],
+        "quadrature_phase_deg": -90.62397782835535
+      },
+      {
+        "Re": 54.88795,
+        "dmd_principal_angles_deg": [
+          6.0905073116598185,
+          6.386679728194658
+        ],
+        "quadrature_phase_deg": -91.50011707481583
+      },
+      {
+        "Re": 55.70961,
+        "dmd_principal_angles_deg": [
+          5.755537968504452,
+          5.965625041845616
+        ],
+        "quadrature_phase_deg": -89.34680715938384
+      },
+      {
+        "Re": 57.38997,
+        "dmd_principal_angles_deg": [
+          5.3183987277860405,
+          5.473125140065119
+        ],
+        "quadrature_phase_deg": -88.40041241604796
+      },
+      {
+        "Re": 58.262636,
+        "dmd_principal_angles_deg": [
+          1.249179249933953,
+          2.4144510921229316
+        ],
+        "quadrature_phase_deg": -89.18538620258502
+      },
+      {
+        "Re": 59.201432,
+        "dmd_principal_angles_deg": [
+          2.6338593521250036,
+          3.5970718319791466
+        ],
+        "quadrature_phase_deg": -91.38072408007848
+      }
+    ]
+  },
+  "fluctuation_stats": {
+    "conditional_mean": "per-train-Re constant; linear interpolation only",
+    "scale": "max(RMS,0.5*P90,train-only floor)",
+    "radial_scale": "conditional RMS in frozen plane",
+    "radial_floor": 0.05,
+    "growth_tolerance": 0.00426471324982991
+  },
+  "sampler": {
+    "seed": 1248,
+    "micro_batch": 256,
+    "max_steps": 8000,
+    "algorithm": "uniform train Re then uniform available near_floor/weak_growth/strong_growth/near_saturation bin",
+    "excluded_train_starts": [],
+    "exclusion_reason": "zero-residual physical RK4 smoke non-finite; fail-closed",
+    "exposure": {
+      "55.709610|near_floor": 57058,
+      "54.887950|strong_growth": 42966,
+      "59.201432|strong_growth": 57081,
+      "54.887950|near_floor": 42365,
+      "58.262636|near_floor": 57041,
+      "54.887950|near_saturation": 42564,
+      "52.528767|strong_growth": 42392,
+      "57.389970|weak_growth": 56945,
+      "58.262636|weak_growth": 57136,
+      "51.066785|weak_growth": 57066,
+      "58.262636|strong_growth": 56836,
+      "47.722947|strong_growth": 56997,
+      "47.722947|weak_growth": 56888,
+      "51.066785|near_saturation": 56713,
+      "48.368688|near_saturation": 56833,
+      "54.081508|near_saturation": 14908,
+      "48.368688|strong_growth": 56512,
+      "53.294175|strong_growth": 42791,
+      "59.201432|weak_growth": 57125,
+      "49.687640|weak_growth": 85056,
+      "55.709610|strong_growth": 56909,
+      "54.887950|weak_growth": 42571,
+      "53.294175|near_floor": 42644,
+      "48.368688|weak_growth": 57080,
+      "54.081508|near_floor": 51895,
+      "57.389970|strong_growth": 57257,
+      "59.201432|near_floor": 56992,
+      "54.081508|weak_growth": 51746,
+      "53.294175|weak_growth": 42501,
+      "52.528767|near_saturation": 42926,
+      "54.081508|strong_growth": 51802,
+      "57.389970|near_floor": 56870,
+      "51.066785|strong_growth": 56881,
+      "52.528767|near_floor": 42570,
+      "49.687640|strong_growth": 85340,
+      "47.722947|near_saturation": 56445,
+      "52.528767|weak_growth": 42738,
+      "53.294175|near_saturation": 42347,
+      "55.709610|weak_growth": 57213
+    }
+  },
+  "schedule_sha256": "b6a07f8f6313bd5f3fede7ac7164b291ec6c6f6c7a0f3b8cf6663981d467e0c3"
+}

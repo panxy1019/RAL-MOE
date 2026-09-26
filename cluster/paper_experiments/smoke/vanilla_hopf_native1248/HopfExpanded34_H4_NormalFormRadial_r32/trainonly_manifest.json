@@ -1,0 +1,478 @@
+{
+  "schema_version": 2,
+  "fit_split": "train",
+  "heldout_rows_present": false,
+  "train_Re": [
+    45.5,
+    45.8,
+    46.1,
+    46.3,
+    46.5,
+    46.9,
+    47.2,
+    47.4,
+    47.6,
+    47.722947,
+    47.8,
+    48.0,
+    48.3,
+    48.368688,
+    48.7,
+    49.3,
+    49.6,
+    49.68764,
+    50.0,
+    50.368054,
+    51.066785,
+    52.528767,
+    53.294175,
+    54.081508,
+    54.88795,
+    55.70961,
+    57.38997,
+    58.262636,
+    59.201432
+  ],
+  "validation_Re": [
+    46.7,
+    56.543246
+  ],
+  "heldout_Re_sealed": [
+    47.081355,
+    49.022357,
+    51.78645
+  ],
+  "coeff_sha256": "53d05065d518de82432e55b191dcee6c3501e09822dfedbf6162e061151f4d45",
+  "source_velocity_pod_sha256": "2f951192f6eeaa69e7d911aa21552454d1a99a49ab796166b4a13df16016a192",
+  "critical_plane": {
+    "identification": "top two eigenvectors of the equal-snapshot train-only within-Re fluctuation covariance",
+    "dominant_raw_modes_1based": [
+      3,
+      4,
+      2,
+      5,
+      9,
+      6
+    ],
+    "eigenvalues": [
+      1.6019472400888136e-05,
+      1.522687313335854e-05
+    ],
+    "matrix": [
+      [
+        0.000329817422832982,
+        -0.00629980425226331,
+        0.8229752336486746,
+        0.5679472290137026,
+        0.008402903835501496,
+        0.0030829191586567647,
+        0.0019858166667612296,
+        -0.00034985703384875303,
+        0.004490557502780909,
+        -0.0009241878203596024,
+        -0.0005405843639442413,
+        0.001083375115191823,
+        0.0009236067792904814,
+        0.00023169053048401205,
+        -0.000148093632492866,
+        -6.430849017790733e-05,
+        -0.00026121472169800996,
+        -0.000437874441105067,
+        1.2227318878557315e-05,
+        -3.159900479835038e-05,
+        0.0001990119375963764,
+        3.959791249410688e-05,
+        -3.860606487409844e-05,
+        1.1221063334189941e-05,
+        6.806868827442132e-05,
+        -4.56170391842338e-05,
+        -1.1957940968065728e-05,
+        5.683793904035279e-05,
+        -2.563709368089023e-06,
+        1.7586381722037725e-05,
+        4.480414338843398e-05,
+        1.4687348440932254e-05
+      ],
+      [
+        -0.0017515195240741634,
+        0.01616069720548058,
+        0.5679518778176842,
+        -0.8228770001826924,
+        0.00081529926784508,
+        0.0012630568189258634,
+        0.002900674450570322,
+        -0.0005853019319312623,
+        0.004917505801378618,
+        -0.0012765033458762758,
+        -0.0003675126025917606,
+        0.001092382976037084,
+        0.0011950521875059644,
+        0.0001336761157752145,
+        -5.712197655737274e-06,
+        5.369587950490014e-05,
+        -0.00016957460187287223,
+        -0.00041896075926282564,
+        6.14929819255874e-05,
+        -1.4922761641023036e-05,
+        0.00017943465406783295,
+        2.0244366056340924e-05,
+        -8.365069631538475e-05,
+        1.0473734456668942e-05,
+        7.167033415801259e-05,
+        -4.665124748777701e-05,
+        -1.665461844951168e-05,
+        5.8504175146692737e-05,
+        -3.998374779943072e-06,
+        2.3672189589067007e-05,
+        7.477538461003242e-05,
+        2.784675379720995e-05
+      ]
+    ],
+    "diagnostic": "train-only per-Re DMD comparison; pre-Hopf near-steady rows are retained and reported",
+    "dmd_principal_angle_gate_deg": 15.0,
+    "max_observed_deg": 89.96026189278176,
+    "quadrature_gate_abs_deviation_deg": 15.0,
+    "max_observed_abs_deviation_deg": 88.76391961511055,
+    "status": "PASS",
+    "per_train_Re": [
+      {
+        "Re": 45.5,
+        "dmd_principal_angles_deg": [
+          89.17909566941385,
+          89.96002730236292
+        ],
+        "quadrature_phase_deg": -178.7104718448805
+      },
+      {
+        "Re": 45.8,
+        "dmd_principal_angles_deg": [
+          89.17845305348465,
+          89.96005948751777
+        ],
+        "quadrature_phase_deg": -178.72035555742934
+      },
+      {
+        "Re": 46.1,
+        "dmd_principal_angles_deg": [
+          89.17787217567815,
+          89.9601476508853
+        ],
+        "quadrature_phase_deg": -178.73113642126935
+      },
+      {
+        "Re": 46.3,
+        "dmd_principal_angles_deg": [
+          89.17756778359936,
+          89.96026189278176
+        ],
+        "quadrature_phase_deg": -178.7384837319106
+      },
+      {
+        "Re": 46.5,
+        "dmd_principal_angles_deg": [
+          89.17727794806424,
+          89.95724839003287
+        ],
+        "quadrature_phase_deg": -178.76391961511055
+      },
+      {
+        "Re": 46.9,
+        "dmd_principal_angles_deg": [
+          89.17634163250064,
+          89.95678396321757
+        ],
+        "quadrature_phase_deg": -178.75199896856844
+      },
+      {
+        "Re": 47.2,
+        "dmd_principal_angles_deg": [
+          13.497739666405979,
+          14.497353332276335
+        ],
+        "quadrature_phase_deg": -90.31477355482343
+      },
+      {
+        "Re": 47.4,
+        "dmd_principal_angles_deg": [
+          13.117927316029087,
+          13.710323681577279
+        ],
+        "quadrature_phase_deg": -92.15750368203773
+      },
+      {
+        "Re": 47.6,
+        "dmd_principal_angles_deg": [
+          13.046344298439712,
+          13.499349597345038
+        ],
+        "quadrature_phase_deg": -87.7289270274769
+      },
+      {
+        "Re": 47.722947,
+        "dmd_principal_angles_deg": [
+          12.725568455394813,
+          13.248988973907407
+        ],
+        "quadrature_phase_deg": -87.65767616610847
+      },
+      {
+        "Re": 47.8,
+        "dmd_principal_angles_deg": [
+          12.729799554633116,
+          13.158677063755952
+        ],
+        "quadrature_phase_deg": -90.66559734586944
+      },
+      {
+        "Re": 48.0,
+        "dmd_principal_angles_deg": [
+          12.397134641187463,
+          14.57181078497861
+        ],
+        "quadrature_phase_deg": -87.34939763219418
+      },
+      {
+        "Re": 48.3,
+        "dmd_principal_angles_deg": [
+          12.076546942464102,
+          12.515571620559982
+        ],
+        "quadrature_phase_deg": -89.19300637707104
+      },
+      {
+        "Re": 48.368688,
+        "dmd_principal_angles_deg": [
+          11.94560091153202,
+          12.420407251251412
+        ],
+        "quadrature_phase_deg": -87.30764796667859
+      },
+      {
+        "Re": 48.7,
+        "dmd_principal_angles_deg": [
+          11.7235996832329,
+          12.168854646534548
+        ],
+        "quadrature_phase_deg": -88.507681302704
+      },
+      {
+        "Re": 49.3,
+        "dmd_principal_angles_deg": [
+          10.956214273383228,
+          11.328094935580806
+        ],
+        "quadrature_phase_deg": -88.4067385213496
+      },
+      {
+        "Re": 49.6,
+        "dmd_principal_angles_deg": [
+          10.587096227106386,
+          10.97056127924374
+        ],
+        "quadrature_phase_deg": -88.13156266421
+      },
+      {
+        "Re": 49.68764,
+        "dmd_principal_angles_deg": [
+          10.563090046864527,
+          10.900158583825714
+        ],
+        "quadrature_phase_deg": -88.14710192758771
+      },
+      {
+        "Re": 50.0,
+        "dmd_principal_angles_deg": [
+          10.26957797805655,
+          10.500443632536076
+        ],
+        "quadrature_phase_deg": -89.4295666142902
+      },
+      {
+        "Re": 50.368054,
+        "dmd_principal_angles_deg": [
+          9.848373408191984,
+          10.072495693146898
+        ],
+        "quadrature_phase_deg": -89.20687177289483
+      },
+      {
+        "Re": 51.066785,
+        "dmd_principal_angles_deg": [
+          9.130115925097481,
+          9.366748485292781
+        ],
+        "quadrature_phase_deg": -88.43425677312543
+      },
+      {
+        "Re": 52.528767,
+        "dmd_principal_angles_deg": [
+          7.7100025387841615,
+          8.351442289740792
+        ],
+        "quadrature_phase_deg": -89.56668344417258
+      },
+      {
+        "Re": 53.294175,
+        "dmd_principal_angles_deg": [
+          7.033422714630103,
+          7.16882251705542
+        ],
+        "quadrature_phase_deg": -88.00511073157966
+      },
+      {
+        "Re": 54.081508,
+        "dmd_principal_angles_deg": [
+          6.482944898593216,
+          6.580100649962979
+        ],
+        "quadrature_phase_deg": -89.01763795097816
+      },
+      {
+        "Re": 54.88795,
+        "dmd_principal_angles_deg": [
+          6.0057432081703315,
+          6.303750627658933
+        ],
+        "quadrature_phase_deg": -89.32189250117376
+      },
+      {
+        "Re": 55.70961,
+        "dmd_principal_angles_deg": [
+          4.945828903994357,
+          5.94824350861446
+        ],
+        "quadrature_phase_deg": -91.99056098017238
+      },
+      {
+        "Re": 57.38997,
+        "dmd_principal_angles_deg": [
+          5.154130568016427,
+          5.248483295607361
+        ],
+        "quadrature_phase_deg": -93.90741206853957
+      },
+      {
+        "Re": 58.262636,
+        "dmd_principal_angles_deg": [
+          4.630554688185888,
+          4.749310541564269
+        ],
+        "quadrature_phase_deg": -94.0692216100132
+      },
+      {
+        "Re": 59.201432,
+        "dmd_principal_angles_deg": [
+          1.6586193102953535,
+          4.031817169160714
+        ],
+        "quadrature_phase_deg": -99.11416165326008
+      }
+    ]
+  },
+  "fluctuation_stats": {
+    "conditional_mean": "per-train-Re constant; linear interpolation only",
+    "scale": "max(RMS,0.5*P90,train-only floor)",
+    "radial_scale": "conditional RMS in frozen plane",
+    "radial_floor": 0.05,
+    "growth_tolerance": 0.006027176283918356
+  },
+  "sampler": {
+    "seed": 1248,
+    "micro_batch": 232,
+    "max_steps": 8000,
+    "algorithm": "exactly equal train-Re exposure in every batch, then uniform available radial/growth bin within Re",
+    "per_re_per_step": 8,
+    "excluded_train_starts": [],
+    "exclusion_reason": "canonical physical RK4 smoke non-finite; fail-closed",
+    "exposure": {
+      "45.500000|strong_growth": 32189,
+      "45.500000|near_floor": 31811,
+      "45.800000|near_floor": 31961,
+      "45.800000|strong_growth": 32039,
+      "46.100000|near_floor": 31909,
+      "46.100000|strong_growth": 32091,
+      "46.300000|near_floor": 32035,
+      "46.300000|strong_growth": 31965,
+      "46.500000|strong_growth": 32024,
+      "46.500000|near_floor": 31976,
+      "46.900000|strong_growth": 32100,
+      "46.900000|near_floor": 31900,
+      "47.200000|near_saturation": 15886,
+      "47.200000|strong_growth": 15962,
+      "47.200000|weak_growth": 15981,
+      "47.200000|near_floor": 16171,
+      "47.400000|strong_growth": 21616,
+      "47.400000|near_floor": 21266,
+      "47.400000|weak_growth": 21118,
+      "47.600000|weak_growth": 20609,
+      "47.600000|strong_growth": 20427,
+      "47.600000|near_floor": 2461,
+      "47.600000|near_saturation": 20503,
+      "47.722947|near_saturation": 21270,
+      "47.722947|strong_growth": 21458,
+      "47.800000|strong_growth": 21309,
+      "47.800000|near_floor": 21324,
+      "47.800000|weak_growth": 21367,
+      "48.000000|near_saturation": 21479,
+      "48.000000|weak_growth": 21332,
+      "48.000000|strong_growth": 21189,
+      "48.300000|weak_growth": 21265,
+      "48.300000|strong_growth": 21315,
+      "48.300000|near_saturation": 21420,
+      "48.368688|weak_growth": 21371,
+      "48.368688|near_saturation": 21308,
+      "48.368688|strong_growth": 21321,
+      "48.700000|near_saturation": 21528,
+      "48.700000|strong_growth": 21288,
+      "48.700000|weak_growth": 21184,
+      "49.300000|weak_growth": 31921,
+      "49.300000|strong_growth": 32079,
+      "49.600000|weak_growth": 31916,
+      "49.600000|strong_growth": 32084,
+      "49.687640|strong_growth": 21386,
+      "49.687640|near_saturation": 21519,
+      "49.687640|weak_growth": 21095,
+      "50.000000|near_floor": 21526,
+      "50.000000|strong_growth": 21218,
+      "50.000000|weak_growth": 21256,
+      "50.368054|near_floor": 16226,
+      "50.368054|weak_growth": 15769,
+      "50.368054|near_saturation": 16029,
+      "50.368054|strong_growth": 15976,
+      "51.066785|near_saturation": 21202,
+      "51.066785|weak_growth": 21498,
+      "51.066785|strong_growth": 21300,
+      "52.528767|near_floor": 15992,
+      "52.528767|strong_growth": 15782,
+      "52.528767|near_saturation": 16098,
+      "52.528767|weak_growth": 16128,
+      "53.294175|weak_growth": 15998,
+      "53.294175|near_floor": 15930,
+      "53.294175|strong_growth": 16007,
+      "53.294175|near_saturation": 16065,
+      "54.081508|near_saturation": 15847,
+      "54.081508|weak_growth": 16174,
+      "54.081508|near_floor": 16031,
+      "54.081508|strong_growth": 15948,
+      "54.887950|strong_growth": 16077,
+      "54.887950|weak_growth": 15930,
+      "54.887950|near_saturation": 16147,
+      "54.887950|near_floor": 15846,
+      "55.709610|strong_growth": 21443,
+      "55.709610|near_floor": 21210,
+      "55.709610|weak_growth": 21347,
+      "57.389970|weak_growth": 21320,
+      "57.389970|strong_growth": 21405,
+      "57.389970|near_floor": 21275,
+      "58.262636|near_saturation": 5681,
+      "58.262636|weak_growth": 19505,
+      "58.262636|strong_growth": 19592,
+      "58.262636|near_floor": 19222,
+      "59.201432|near_floor": 21292,
+      "59.201432|weak_growth": 21477,
+      "59.201432|strong_growth": 21231,
+      "47.722947|weak_growth": 21272
+    }
+  },
+  "schedule_sha256": "2e3aa04095ab0ccceed2a98e3582a7096d1a80993ab486a7896f2dff7afc1e19"
+}

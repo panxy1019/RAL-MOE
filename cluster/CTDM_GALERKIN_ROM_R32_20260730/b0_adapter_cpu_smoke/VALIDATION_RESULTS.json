@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "split": "validation",
+  "variant": "b0",
+  "model_name": "B0_frozen_HPRS_MoE_ROM",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/final_evaluation/20260722_h4_expanded_final/HopfExpanded34_H4_NormalFormRadial_r32/final.pt",
+  "checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+  "checkpoint_step": 7200,
+  "seed": 1248,
+  "main_warmup_length": 3,
+  "main": {
+    "aggregate": {
+      "Eu": 0.00027999503072351217,
+      "Ep": 0.003244733379688114,
+      "Ea": 0.438479907810688,
+      "Eb": 0.5753882378339767,
+      "terminal_Eu": 0.00037119178159628063,
+      "terminal_Ep": 0.002470577775966376,
+      "worst_window_joint": 0.005234966520220041,
+      "pressure_drift": 0.022129728458821774,
+      "finite_fraction_min": 1.0,
+      "divergent_windows": 0,
+      "available_re_count": 2,
+      "requested_re_count": 2
+    },
+    "by_re": [
+      {
+        "Re": 46.7,
+        "warmup_length": 3,
+        "windows": 1,
+        "available": true,
+        "Eu": 0.0004237316607031971,
+        "Ep": 0.0048112343065440655,
+        "Ea": 0.7648501396179199,
+        "Eb": 0.9500302076339722,
+        "terminal_Eu": 0.0004268278134986758,
+        "terminal_Ep": 0.0035635780077427626,
+        "worst_window_joint": 0.005234966520220041,
+        "pressure_drift": 0.031045636162161827,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0223040580749512,
+        "joint_K1": 0.006141103338450193,
+        "joint_K4": 0.015512396581470966,
+        "joint_K8": 0.016227707266807556,
+        "joint_K16": 0.01074208877980709,
+        "joint_K32": 0.0019322909647598863,
+        "joint_K56": 0.0039904057048261166
+      },
+      {
+        "Re": 56.543246,
+        "warmup_length": 3,
+        "windows": 1,
+        "available": true,
+        "Eu": 0.00013625840074382722,
+        "Ep": 0.0016782324528321624,
+        "Ea": 0.11210967600345612,
+        "Eb": 0.20074626803398132,
+        "terminal_Eu": 0.00031555574969388545,
+        "terminal_Ep": 0.0013775775441899896,
+        "worst_window_joint": 0.00181449088267982,
+        "pressure_drift": 0.01321382075548172,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.004859447479248,
+        "joint_K1": 0.005897073540836573,
+        "joint_K4": 0.005436296109110117,
+        "joint_K8": 0.0029282092582434416,
+        "joint_K16": 0.0007755256956443191,
+        "joint_K32": 0.0011356509057804942,
+        "joint_K56": 0.0016931332647800446
+      }
+    ]
+  },
+  "capacity_warmup_diagnostics": {},
+  "timestep_consistency": [],
+  "memory_diagnostics": [],
+  "elapsed_seconds": 6.109382965601981,
+  "gate_manifest": null,
+  "input_contract": {
+    "runtime_dimension": 493,
+    "checkpoint_first_weight_shape": [
+      256,
+      493
+    ],
+    "hopf_augmentation_role": "loss_only"
+  }
+}

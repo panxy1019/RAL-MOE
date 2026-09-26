@@ -1,0 +1,20 @@
+{
+  "ablation_mode": "vanilla-fnn",
+  "allowed_changes": [
+    "PhysicsAwareExpert implementation -> parameter-matched plain GELU FNN",
+    "Hopf legacy magnitude-only pre-optimizer gate is diagnostic; NaN/Inf remains a hard failure"
+  ],
+  "preserved_contract": [
+    "POD/mean/scaler and ru=rp=32",
+    "complete-Re split",
+    "feature builder and history length",
+    "MoE routers and expert count",
+    "RK4/Galerkin/pressure closure",
+    "loss/curriculum/optimizer budget/validation selector"
+  ],
+  "regime": "hopf",
+  "schema": "specialist_ablation_allowlist/v2",
+  "test_truth_read": false,
+  "trainer": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_h4_expanded.py",
+  "trainer_sha256": "bf25d3fee9ed1b51a02437eaba64ad6d9d618955eed2b54f4a218e14d25c4ee4"
+}

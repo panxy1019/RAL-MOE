@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/evaluate_periodic_round2.py", line 27, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/evaluate_periodic_round2.py", line 26, in main
+    m.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/strengthening_20260915/code/evaluate_periodic_dense.py", line 49, in main
+    saved = ck['args']
+            ~~^^^^^^^^
+KeyError: 'args'

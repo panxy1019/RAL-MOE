@@ -1,0 +1,145 @@
+{
+  "failures": [],
+  "report": {
+    "by_re": {
+      "46.700000": {
+        "1": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 35.65507125854492,
+          "fluc_u": 0.025415845215320587,
+          "growth_sign_accuracy": NaN,
+          "max_norm_ratio": 3.2672674655914307,
+          "radial_rms": 0.001836717827245593,
+          "scale_inflation": 0.9034925699234009,
+          "total_p": 0.4537724554538727,
+          "total_u": 0.00010883979848586023
+        },
+        "16": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 35.89372253417969,
+          "fluc_u": 1.0531115531921387,
+          "growth_sign_accuracy": 1.0,
+          "max_norm_ratio": 3.290130376815796,
+          "radial_rms": 0.04398798570036888,
+          "scale_inflation": 0.851215124130249,
+          "total_p": 0.4561663269996643,
+          "total_u": 0.004513794090598822
+        },
+        "2": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 35.67246627807617,
+          "fluc_u": 0.08405493199825287,
+          "growth_sign_accuracy": 1.0,
+          "max_norm_ratio": 3.2688586711883545,
+          "radial_rms": 0.005622158292680979,
+          "scale_inflation": 0.8948469758033752,
+          "total_p": 0.4539409577846527,
+          "total_u": 0.0003602943033911288
+        },
+        "4": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 35.705894470214844,
+          "fluc_u": 0.22398872673511505,
+          "growth_sign_accuracy": 1.0,
+          "max_norm_ratio": 3.272005796432495,
+          "radial_rms": 0.011793995276093483,
+          "scale_inflation": 0.8966752290725708,
+          "total_p": 0.45427030324935913,
+          "total_u": 0.000960113771725446
+        },
+        "8": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 35.77093505859375,
+          "fluc_u": 0.5033630728721619,
+          "growth_sign_accuracy": 1.0,
+          "max_norm_ratio": 3.278160810470581,
+          "radial_rms": 0.014528989791870117,
+          "scale_inflation": 0.8780247569084167,
+          "total_p": 0.454912006855011,
+          "total_u": 0.0021576471626758575
+        }
+      },
+      "56.543246": {
+        "1": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 35.775489807128906,
+          "fluc_u": 0.1914626955986023,
+          "growth_sign_accuracy": NaN,
+          "max_norm_ratio": 1.6371756792068481,
+          "radial_rms": 0.003060839604586363,
+          "scale_inflation": 0.7732617855072021,
+          "total_p": 0.41260039806365967,
+          "total_u": 0.0005557361291721463
+        },
+        "16": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 37.351158142089844,
+          "fluc_u": 7.528144836425781,
+          "growth_sign_accuracy": 0.9350347518920898,
+          "max_norm_ratio": 1.5697816610336304,
+          "radial_rms": 0.016215017065405846,
+          "scale_inflation": 0.8241584300994873,
+          "total_p": 0.43072348833084106,
+          "total_u": 0.02185795269906521
+        },
+        "2": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 35.87173080444336,
+          "fluc_u": 0.5965086221694946,
+          "growth_sign_accuracy": 1.0,
+          "max_norm_ratio": 1.6276284456253052,
+          "radial_rms": 0.0059728967025876045,
+          "scale_inflation": 0.7790520191192627,
+          "total_p": 0.41370195150375366,
+          "total_u": 0.0017319170292466879
+        },
+        "4": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 36.065311431884766,
+          "fluc_u": 1.5882045030593872,
+          "growth_sign_accuracy": 1.0,
+          "max_norm_ratio": 1.6099222898483276,
+          "radial_rms": 0.0124490512534976,
+          "scale_inflation": 0.7890267968177795,
+          "total_p": 0.41591498255729675,
+          "total_u": 0.004611370153725147
+        },
+        "8": {
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "fluc_p": 36.46925354003906,
+          "fluc_u": 3.579956293106079,
+          "growth_sign_accuracy": 0.9800994992256165,
+          "max_norm_ratio": 1.5853633880615234,
+          "radial_rms": 0.02198822610080242,
+          "scale_inflation": 0.8092939853668213,
+          "total_p": 0.42060840129852295,
+          "total_u": 0.010394545271992683
+        }
+      }
+    },
+    "hard_gate": true,
+    "hopf_gate": true,
+    "numeric_gate": true,
+    "score": 44.91329308049753,
+    "step": 0
+  },
+  "required_horizons": [
+    1,
+    4,
+    8,
+    16
+  ],
+  "schema": "hopf_vanilla_native_validation_smoke/v1",
+  "status": "PASS",
+  "test_truth_read": false
+}

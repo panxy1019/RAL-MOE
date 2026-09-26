@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/steady_specialist_v1/code/reproduce_s4_one_epoch.py", line 106, in <module>
+    main()
+  File "/root/panxy/particalMOE/steady_specialist_v1/code/reproduce_s4_one_epoch.py", line 64, in main
+    trainer = s4_module.S4(runtime_args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/panxy/particalMOE/steady_specialist_v1/code/train_s4_steady.py", line 61, in __init__
+    self.base = module.S3(base_args); self.base.init_eval_assets(); self.exp = self.base.exp
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/root/panxy/particalMOE/steady_specialist_v1/code/train_s3.py", line 34, in __init__
+    cfg=json.loads(Path(args.config).read_text()); cfg=copy.deepcopy(cfg); cfg['training']['learning_rate']=args.learning_rate; cfg['training']['max_steps']=3600; cfg['training']['base_budget_end']=3600; cfg['training']['curriculum']=[{'name':'K16','start':1,'end':3600,'k':16,'use_rollout':True}]
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/panxy/particalMOE/steady_specialist_v1/config/training_s2b_portable.json'

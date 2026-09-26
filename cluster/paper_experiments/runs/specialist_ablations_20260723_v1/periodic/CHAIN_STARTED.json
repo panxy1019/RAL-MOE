@@ -1,0 +1,15 @@
+{
+  "methods": [
+    "DataOnly-MoE",
+    "Vanilla-FNN-MoE"
+  ],
+  "pid": 25490,
+  "regime": "periodic",
+  "seeds": [
+    1600,
+    1700,
+    1800
+  ],
+  "started_unix": 1784821712.596944,
+  "status": "RUNNING"
+}

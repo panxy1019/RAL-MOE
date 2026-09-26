@@ -1,0 +1,1833 @@
+[
+  {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/assets/pressure_poisson_surrogate_periodic.npz",
+    "sha256": "bf64858428733e90bda185b504ab98ef7fc96f5e0f3bb3d6d788d758e2b15a09",
+    "fields": {
+      "Re_values_computed": {
+        "shape": [
+          63
+        ],
+        "dtype": "float64"
+      },
+      "Re_labels_computed": {
+        "shape": [
+          63
+        ],
+        "dtype": "<U13"
+      },
+      "pod_Re_values": {
+        "shape": [
+          63
+        ],
+        "dtype": "float64"
+      },
+      "pod_Re_labels": {
+        "shape": [
+          63
+        ],
+        "dtype": "<U13"
+      },
+      "mass_weights": {
+        "shape": [
+          97368
+        ],
+        "dtype": "float64"
+      },
+      "L": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "L_pinv": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "L_singular_values": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "L_pinv_rank": {
+        "shape": [],
+        "dtype": "int32",
+        "value": 32
+      },
+      "H_p": {
+        "shape": [
+          32,
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "H_tilde": {
+        "shape": [
+          32,
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "metadata_json": {
+        "shape": [],
+        "dtype": "<U655",
+        "value": "{\n  \"data_dir\": \"/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic\",\n  \"mesh_vtu\": \"/cephfs/shared/V17_RegimeIndependentROM/source_mesh/run_Re_100_7107.vtk\",\n  \"pod_dir\": \"/cephfs/shared/V17_IndependentMoEROM_v2/artifacts/periodic_r32_handoff/periodic/Global_POD_AreaWeighted_L2\",\n  \"equation\": \"L b = c_p + A_p a + H_p(a,a)\",\n  \"effective_equation\": \"b = c_tilde + A_tilde a + H_tilde(a,a)\",\n  \"L_definition\": \"L_mk = -int grad(psi_m) dot grad(psi_k) dOmega\",\n  \"rhs_sign_convention\": \"Delta p = -div((u dot grad)u); boundary terms are neglected in the projected weak form\",\n  \"pinv_rcond\": 1e-10,\n  \"r_u\": 32,\n  \"r_p\": 32\n}"
+      },
+      "Re_60p307745_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_60p307745_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_60p307745_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_60p307745_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_61p755954_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_61p755954_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_61p755954_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_61p755954_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_63p499817_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_63p499817_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_63p499817_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_63p499817_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_65p259829_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_65p259829_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_65p259829_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_65p259829_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_66p970112_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_66p970112_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_66p970112_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_66p970112_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_68p649714_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_68p649714_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_68p649714_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_68p649714_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_70p314635_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_70p314635_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_70p314635_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_70p314635_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_71p972931_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_71p972931_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_71p972931_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_71p972931_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_73p628287_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_73p628287_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_73p628287_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_73p628287_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_75p282340_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_75p282340_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_75p282340_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_75p282340_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_76p935803_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_76p935803_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_76p935803_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_76p935803_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_78p588971_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_78p588971_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_78p588971_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_78p588971_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_80p241943_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_80p241943_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_80p241943_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_80p241943_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_81p894708_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_81p894708_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_81p894708_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_81p894708_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_83p547164_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_83p547164_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_83p547164_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_83p547164_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_85p199103_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_85p199103_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_85p199103_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_85p199103_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_86p850168_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_86p850168_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_86p850168_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_86p850168_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_88p499815_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_88p499815_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_88p499815_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_88p499815_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_90p147341_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_90p147341_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_90p147341_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_90p147341_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_91p792204_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_91p792204_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_91p792204_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_91p792204_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_93p435204_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_93p435204_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_93p435204_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_93p435204_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_95p081752_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_95p081752_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_95p081752_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_95p081752_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_96p749308_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_96p749308_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_96p749308_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_96p749308_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_98p480345_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_98p480345_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_98p480345_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_98p480345_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_100p352251_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_100p352251_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_100p352251_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_100p352251_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_102p440042_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_102p440042_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_102p440042_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_102p440042_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_104p710911_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_104p710911_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_104p710911_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_104p710911_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_107p050737_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_107p050737_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_107p050737_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_107p050737_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_109p395985_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_109p395985_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_109p395985_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_109p395985_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_111p734011_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_111p734011_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_111p734011_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_111p734011_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_114p066308_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_114p066308_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_114p066308_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_114p066308_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_116p395488_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_116p395488_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_116p395488_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_116p395488_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_118p723173_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_118p723173_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_118p723173_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_118p723173_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_121p050171_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_121p050171_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_121p050171_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_121p050171_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_123p376833_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_123p376833_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_123p376833_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_123p376833_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_125p703274_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_125p703274_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_125p703274_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_125p703274_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_128p029461_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_128p029461_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_128p029461_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_128p029461_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_130p355225_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_130p355225_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_130p355225_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_130p355225_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_132p680203_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_132p680203_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_132p680203_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_132p680203_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_135p003744_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_135p003744_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_135p003744_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_135p003744_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_137p324830_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_137p324830_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_137p324830_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_137p324830_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_139p642302_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_139p642302_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_139p642302_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_139p642302_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_141p956319_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_141p956319_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_141p956319_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_141p956319_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_144p273459_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_144p273459_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_144p273459_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_144p273459_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_146p619578_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_146p619578_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_146p619578_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_146p619578_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_149p059229_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_149p059229_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_149p059229_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_149p059229_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_151p686208_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_151p686208_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_151p686208_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_151p686208_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_154p520852_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_154p520852_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_154p520852_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_154p520852_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_157p459588_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_157p459588_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_157p459588_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_157p459588_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_160p415176_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_160p415176_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_160p415176_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_160p415176_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_163p364123_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_163p364123_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_163p364123_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_163p364123_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_166p306373_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_166p306373_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_166p306373_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_166p306373_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_169p244893_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_169p244893_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_169p244893_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_169p244893_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_172p181708_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_172p181708_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_172p181708_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_172p181708_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_175p117940_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_175p117940_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_175p117940_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_175p117940_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_178p054368_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_178p054368_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_178p054368_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_178p054368_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_180p992055_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_180p992055_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_180p992055_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_180p992055_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_183p933395_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_183p933395_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_183p933395_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_183p933395_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_186p884600_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_186p884600_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_186p884600_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_186p884600_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_189p862278_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_189p862278_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_189p862278_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_189p862278_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_192p911664_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_192p911664_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_192p911664_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_192p911664_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_196p160723_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_196p160723_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_196p160723_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_196p160723_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_200p000000_c_p": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_200p000000_A_p": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_200p000000_c_tilde": {
+        "shape": [
+          32
+        ],
+        "dtype": "float64"
+      },
+      "Re_200p000000_A_tilde": {
+        "shape": [
+          32,
+          32
+        ],
+        "dtype": "float64"
+      }
+    }
+  },
+  {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainonly_pressure_r32.npz",
+    "sha256": "9df6f17413ff884a04b5bbba9e2b791563bde412b5d17649f9badda4e151e44c",
+    "fields": {
+      "Re_values_computed": {
+        "shape": [
+          29
+        ],
+        "dtype": "float64"
+      },
+      "c_tilde_all": {
+        "shape": [
+          29,
+          32
+        ],
+        "dtype": "float32"
+      },
+      "A_tilde_all": {
+        "shape": [
+          29,
+          32,
+          32
+        ],
+        "dtype": "float32"
+      },
+      "H_tilde": {
+        "shape": [
+          32,
+          32,
+          32
+        ],
+        "dtype": "float32"
+      }
+    }
+  },
+  {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainval_r32.npz",
+    "sha256": "53d05065d518de82432e55b191dcee6c3501e09822dfedbf6162e061151f4d45",
+    "fields": {
+      "coeff_uv": {
+        "shape": [
+          4317,
+          32
+        ],
+        "dtype": "float32"
+      },
+      "coeff_p": {
+        "shape": [
+          4317,
+          32
+        ],
+        "dtype": "float32"
+      },
+      "Re": {
+        "shape": [
+          4317
+        ],
+        "dtype": "float64"
+      },
+      "time": {
+        "shape": [
+          4317
+        ],
+        "dtype": "float64"
+      },
+      "split": {
+        "shape": [
+          4317
+        ],
+        "dtype": "<U10"
+      },
+      "source_row": {
+        "shape": [
+          4317
+        ],
+        "dtype": "int64"
+      },
+      "phi_uv": {
+        "shape": [
+          32,
+          194736
+        ],
+        "dtype": "float32"
+      },
+      "phi_p": {
+        "shape": [
+          32,
+          97368
+        ],
+        "dtype": "float32"
+      },
+      "point_areas": {
+        "shape": [
+          97368
+        ],
+        "dtype": "float32"
+      },
+      "mean_uv_train": {
+        "shape": [
+          194736
+        ],
+        "dtype": "float32"
+      },
+      "mean_p_train": {
+        "shape": [
+          97368
+        ],
+        "dtype": "float32"
+      }
+    }
+  }
+]

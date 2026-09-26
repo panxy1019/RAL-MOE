@@ -1,0 +1,41 @@
+{
+  "schema": "E0_NATIVE_SPECIALIST_REPRODUCTION_V1",
+  "date": "2026-07-22",
+  "scope": "Frozen native checkpoint evaluation only; no Router, no field mixture, no training.",
+  "overall": "PASS",
+  "specialists": {
+    "periodic": {
+      "checkpoint": "FINAL_PERIODIC_SPECIALIST.pt, epoch 85",
+      "reference": "reproduction/best_epoch85_heldout_eval_v2",
+      "common_numeric_fields": 318,
+      "maximum_absolute_difference": 0.0,
+      "heldout_preserved_count": "3/4",
+      "finite_fraction": 1.0,
+      "divergent_windows": 0,
+      "status": "PASS"
+    },
+    "hopf": {
+      "checkpoint": "final.pt, optimizer step 7200",
+      "reference": "final_evaluation/20260722_h4_expanded_final",
+      "common_numeric_fields": 254,
+      "maximum_absolute_difference": 0.0,
+      "K48_finite_and_zero_divergence_count": "3/3",
+      "strict_attractor_preserved_count": "0/3",
+      "status": "PASS"
+    },
+    "steady": {
+      "checkpoint": "frozen_s4_validation_step_1200.pt",
+      "reference": "portability_runs/best_checkpoint_evaluation_torch211",
+      "common_numeric_fields": 118974,
+      "maximum_absolute_difference": 0.0,
+      "clean_rollout_protection": "PASS",
+      "heldout_fixed_point_improvement": "20.27%",
+      "pressure_contraction_protection": "FAIL: K16 P95=4.788 vs 1.05*4.263; K56 P95=4.916 vs 1.05*4.628",
+      "native_finalizer_decision": "S4_FAILED",
+      "status": "PASS_REPRODUCTION_OF_EXISTING_S4_FAILED_DECISION"
+    }
+  },
+  "important_interpretation": "E0 passes because each native evaluation exactly reproduces its new-cluster reference output. Steady's S4_FAILED is an exactly reproduced scientific decision, not an E0 execution failure.",
+  "remote_output_root": "/root/panxy/particalMOE/e0_reproduction_20260722",
+  "first_steady_attempt": "steady_attempt1_missing_validation; preserved for provenance; failure occurred only at report aggregation because validation.json was absent from the fresh output directory."
+}

@@ -1,0 +1,43 @@
+{
+  "time": "2026-09-23T23:16:19+0800",
+  "summary": [
+    {
+      "K": 24,
+      "complete_seeds": 3,
+      "expected_seeds": 3,
+      "complete_windows": 96,
+      "total_windows": 96,
+      "Eu_mean": 1.5427879805210978,
+      "Eu_sample_sd": 0.5460727542778225,
+      "Ep_mean": 7.6426467947247945,
+      "Ep_sample_sd": 2.23168377842694,
+      "joint_mean": 9.185434775245893,
+      "joint_sample_sd": 2.7777554269317997,
+      "native_Eu_mean": 1.5301855230290027,
+      "native_Eu_sample_sd": 0.5450530706849538,
+      "native_Ep_mean": 7.598224906819976,
+      "native_Ep_sample_sd": 2.2436554409922387,
+      "native_joint_mean": 9.128410429848978,
+      "native_joint_sample_sd": 2.7887082525374294
+    },
+    {
+      "K": 48,
+      "complete_seeds": 3,
+      "expected_seeds": 3,
+      "complete_windows": 96,
+      "total_windows": 96,
+      "Eu_mean": 2.5059475927329102,
+      "Eu_sample_sd": 1.0955591499487018,
+      "Ep_mean": 11.557886427371868,
+      "Ep_sample_sd": 4.402825878202044,
+      "joint_mean": 14.063834020104776,
+      "joint_sample_sd": 5.497356457719919,
+      "native_Eu_mean": 2.494023165587957,
+      "native_Eu_sample_sd": 1.0923725499675063,
+      "native_Ep_mean": 11.520648146850162,
+      "native_Ep_sample_sd": 4.403620717034885,
+      "native_joint_mean": 14.014671312438116,
+      "native_joint_sample_sd": 5.494919568667679
+    }
+  ]
+}

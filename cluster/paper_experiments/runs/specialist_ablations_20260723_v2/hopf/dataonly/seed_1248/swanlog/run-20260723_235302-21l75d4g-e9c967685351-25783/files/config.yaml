@@ -1,0 +1,106 @@
+curriculum_horizons:
+  desc: ''
+  sort: 11
+  value:
+  - 1
+  - 2
+  - 4
+  - 8
+effective_batch:
+  desc: ''
+  sort: 8
+  value: 24
+log_every:
+  desc: ''
+  sort: 12
+  value: 20
+lr:
+  desc: ''
+  sort: 5
+  value: 0.00055
+max_steps:
+  desc: ''
+  sort: 4
+  value: 8000
+method:
+  desc: ''
+  sort: 16
+  value: direct discrete POD-state mapping; no RK4/Galerkin/pressure physics
+micro_batch:
+  desc: ''
+  sort: 7
+  value: 8
+output_dir:
+  desc: ''
+  sort: 3
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v2/hopf/dataonly/seed_1248
+regime:
+  desc: ''
+  sort: 1
+  value: hopf
+root:
+  desc: ''
+  sort: 0
+  value: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE
+seed:
+  desc: ''
+  sort: 2
+  value: 1248
+smoke_only:
+  desc: ''
+  sort: 14
+  value: false
+split_re:
+  desc: ''
+  sort: 15
+  value:
+    heldout: []
+    train:
+    - 45.5
+    - 45.8
+    - 46.1
+    - 46.3
+    - 46.5
+    - 46.9
+    - 47.2
+    - 47.4
+    - 47.6
+    - 47.722947
+    - 47.8
+    - 48.0
+    - 48.3
+    - 48.368688
+    - 48.7
+    - 49.3
+    - 49.6
+    - 49.68764
+    - 50.0
+    - 50.368054
+    - 51.066785
+    - 52.528767
+    - 53.294175
+    - 54.081508
+    - 54.88795
+    - 55.70961
+    - 57.38997
+    - 58.262636
+    - 59.201432
+    validation:
+    - 46.7
+    - 56.543246
+swanlab_project:
+  desc: ''
+  sort: 13
+  value: PaperSpecialistAblations20260723
+validation_every:
+  desc: ''
+  sort: 9
+  value: 200
+validation_horizon:
+  desc: ''
+  sort: 10
+  value: 16
+weight_decay:
+  desc: ''
+  sort: 6
+  value: 0.00015

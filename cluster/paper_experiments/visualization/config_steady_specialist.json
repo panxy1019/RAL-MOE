@@ -1,0 +1,29 @@
+{
+  "schema": "field_figure_config/v1",
+  "mode": "specialist",
+  "figure_stem": "Steady_specialist_best_case",
+  "bundle": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/cache/steady_merged/steady_k56_rollouts.npz",
+  "time_offset": 0,
+  "arrays": {
+    "re": "re",
+    "split": "split",
+    "times": "times",
+    "truth_a": "truth_a",
+    "truth_b": "truth_b"
+  },
+  "truth_basis": "steady",
+  "bases": {
+    "steady": {
+      "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+      "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+      "r_u": 32,
+      "r_p": 32
+    }
+  },
+  "methods": {
+    "vanilla": {"a": "vanilla_a", "b": "vanilla_b", "basis": "steady"},
+    "dataonly": {"a": "dataonly_a", "b": "dataonly_b", "basis": "steady"},
+    "proposed": {"a": "proposed_a", "b": "proposed_b", "basis": "steady"}
+  },
+  "plot_order": ["vanilla", "dataonly", "proposed"]
+}

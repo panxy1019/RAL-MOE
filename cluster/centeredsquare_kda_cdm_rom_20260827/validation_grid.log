@@ -1,0 +1,43 @@
+2026-08-27 21:24:34.753 | ERROR    | swanlab.sdk.internal.pkg.safe:block:101 - 
+Error executing 'on_run_initialized' in callback 'SwanLabLocalCallbacker': 
+dispatcher:65 -> on_run_initialized:353 -> ImportError: Please install swanboard
+to use 'local' mode: pip install 'swanlab[dashboard]'
+swanlab: Tracking run with swanlab version 0.9.7
+swanlab: 💾 Run data saved at 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsqua
+re_kda_cdm_rom_20260827/swanlog/run-20260827_212434-xr339p6a
+swanlab: 🌟 Run `swanlab watch 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsqua
+re_kda_cdm_rom_20260827/swanlog` to view SwanLab Experiment Dashboard
+swanlab: 🌟 Run `swanlab watch 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsqua
+re_kda_cdm_rom_20260827/swanlog` to view SwanLab Experiment Dashboard
+{
+  "best": {
+    "M0": {
+      "name": "M0_frozen",
+      "kind": 0,
+      "stable_6_of_6": true,
+      "J500_mean": 0.21985693339398904,
+      "J500_median": 0.22606802167317444,
+      "J500_max": 0.3016692240662967
+    },
+    "M1": {
+      "name": "M1_ridge_1e-06",
+      "kind": 1,
+      "stable_6_of_6": true,
+      "J500_mean": 0.2290554678304656,
+      "J500_median": 0.22473343651905608,
+      "J500_max": 0.27141398957850266
+    },
+    "M3": {
+      "name": "M3_gamma_0.25_eta_1_ridge_1e-06",
+      "kind": 2,
+      "stable_6_of_6": true,
+      "J500_mean": 0.22806414496615982,
+      "J500_median": 0.2236948411720179,
+      "J500_max": 0.26995305581623025
+    }
+  },
+  "mean_flow_J500_mean": 0.16341157744062454
+}

@@ -1,0 +1,14 @@
+{"event": "split_start", "experiment": "centered_square_periodic_optimized_r28_p26", "test_label": "Re100p500000", "test_Re": 100.5, "holdout_labels": ["Re100p500000", "Re102p000000", "Re120p689655", "Re144p827586"], "train_re_count": 27, "test_re_count": 4, "kept_train_samples": 3321, "dense_train_samples_before_time_sparsity": 3321, "compression_ratio_vs_dense_train": 1.0}
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/run_square_periodic_training_optimized.py", line 126, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/run_square_periodic_training_optimized.py", line 120, in main
+    trainer.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/train_square_periodic_moe_optimized.py", line 6892, in main
+    train_one_split(
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/train_square_periodic_moe_optimized.py", line 5280, in train_one_split
+    swan_run = swanlab_init_run(args, split_stats)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/train_square_periodic_moe_optimized.py", line 471, in swanlab_init_run
+    raise RuntimeError("SWANLAB_API_KEY is required for online SwanLab logging.")
+RuntimeError: SWANLAB_API_KEY is required for online SwanLab logging.

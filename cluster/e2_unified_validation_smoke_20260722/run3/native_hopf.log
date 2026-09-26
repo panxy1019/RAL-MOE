@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 390, in <module>
+    native_worker(arguments.native_only, arguments.root, arguments.output_dir)
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 298, in native_worker
+    result = hopf_native(root)
+             ^^^^^^^^^^^^^^^^^
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 159, in hopf_native
+    baseline.configure_math(args.allow_tf32)
+    ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'e2_smoke_hopf_baseline' has no attribute 'configure_math'

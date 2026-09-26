@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "split": "validation",
+  "variant": "b0",
+  "model_name": "B0_frozen_HPRS_MoE_ROM",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/final_evaluation/20260722_h4_expanded_final/HopfExpanded34_H4_NormalFormRadial_r32/final.pt",
+  "checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+  "checkpoint_step": 7200,
+  "seed": 1248,
+  "main_warmup_length": 3,
+  "main": {
+    "aggregate": {
+      "Eu": 0.00036466162782744505,
+      "Ep": 0.0026485652197152376,
+      "Ea": 0.23371342569589615,
+      "Eb": 0.2897057309746742,
+      "terminal_Eu": 0.0008516098532709293,
+      "terminal_Ep": 0.004901048727333546,
+      "worst_window_joint": 0.00878660473972559,
+      "pressure_drift": 0.011412132997065783,
+      "finite_fraction_min": 1.0,
+      "divergent_windows": 0,
+      "available_re_count": 2,
+      "requested_re_count": 2
+    },
+    "by_re": [
+      {
+        "Re": 46.7,
+        "warmup_length": 3,
+        "windows": 5,
+        "available": true,
+        "Eu": 0.00011199148866580799,
+        "Ep": 0.0024569525849074125,
+        "Ea": 0.2804756760597229,
+        "Eb": 0.33520564436912537,
+        "terminal_Eu": 0.00012172873539384454,
+        "terminal_Ep": 0.003412127960473299,
+        "worst_window_joint": 0.005235156510025263,
+        "pressure_drift": 0.013996337540447712,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0223040580749512,
+        "joint_K1": 0.005130435340106487,
+        "joint_K4": 0.006253949366509914,
+        "joint_K8": 0.005877430085092783,
+        "joint_K16": 0.0037365450989454985,
+        "joint_K32": 0.0008762095239944756,
+        "joint_K56": 0.003533856477588415
+      },
+      {
+        "Re": 56.543246,
+        "warmup_length": 3,
+        "windows": 16,
+        "available": true,
+        "Eu": 0.0006173317669890821,
+        "Ep": 0.0028401778545230627,
+        "Ea": 0.1869511753320694,
+        "Eb": 0.24420581758022308,
+        "terminal_Eu": 0.001581490971148014,
+        "terminal_Ep": 0.006389969494193792,
+        "worst_window_joint": 0.00878660473972559,
+        "pressure_drift": 0.008827928453683853,
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "max_norm_ratio": 1.0056794881820679,
+        "joint_K1": 0.001403228030540049,
+        "joint_K4": 0.0013043455546721816,
+        "joint_K8": 0.0013881376944482327,
+        "joint_K16": 0.00172090670093894,
+        "joint_K32": 0.0033246122766286135,
+        "joint_K56": 0.007971460931003094
+      }
+    ]
+  },
+  "capacity_warmup_diagnostics": {},
+  "timestep_consistency": [],
+  "memory_diagnostics": [],
+  "elapsed_seconds": 10.607380817178637,
+  "training_performance": {
+    "elapsed_seconds": 7125.846298522083,
+    "steps_per_min": 67.36042004735118
+  },
+  "gate_manifest": null,
+  "input_contract": {
+    "runtime_dimension": 493,
+    "checkpoint_first_weight_shape": [
+      256,
+      493
+    ],
+    "hopf_augmentation_role": "loss_only"
+  }
+}

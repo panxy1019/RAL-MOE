@@ -1,0 +1,14 @@
+{
+  "bundle": "/root/panxy/particalMOE/steady_specialist_v1/data/steady_trainval_modal_r32.npz",
+  "bundle_sha256": "044cbbe615c40fcef5d9c1f1b60865184fc40aeb716c0d226c7b0b5e12ecc70b",
+  "heldout_coefficients_loaded": false,
+  "heldout_fields_loaded": false,
+  "phase_contract": "exact indexed phase rows filtered by source_snapshot_id",
+  "snapshots": 1021,
+  "specialist_checkpoint_modified": false,
+  "split_counts": {
+    "train": 894,
+    "validation": 127
+  },
+  "status": "TEST_SEALED_TRAINVAL_RUNTIME_READY"
+}

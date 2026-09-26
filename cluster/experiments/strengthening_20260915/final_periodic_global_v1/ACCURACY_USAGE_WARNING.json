@@ -1,0 +1,5 @@
+{
+  "warning": "This native interface metric uses global projected truth and original pressure gauge. Do not use it in cross-chart accuracy comparison.",
+  "use_instead": "global_common_truth_v1/window_step_errors.csv, common local projected truth and centered pressure",
+  "runtime": "Runtime remains valid for the explicitly stated native modal implementation."
+}

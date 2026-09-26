@@ -1,0 +1,97 @@
+{
+  "schema": "specialist_ablation_contract/v1",
+  "date": "2026-07-23",
+  "methods": [
+    "Vanilla-FNN-MoE",
+    "DataOnly-MoE"
+  ],
+  "regimes": [
+    "steady",
+    "hopf",
+    "periodic"
+  ],
+  "seeds": {
+    "steady": [
+      202607251,
+      202607351,
+      202607451
+    ],
+    "hopf": [
+      1248,
+      1348,
+      1448
+    ],
+    "periodic": [
+      1600,
+      1700,
+      1800
+    ],
+    "policy": "the first seed is the native frozen specialist seed; +100 repetitions preserve the native scientific seed family"
+  },
+  "r_u": 32,
+  "r_p": 32,
+  "history_length": 3,
+  "checkpoint_selection": "minimum validation score within each method/regime/seed; test is never used for selection",
+  "vanilla_fnn": {
+    "retained": [
+      "specialist-local POD and scaler",
+      "native feature contract",
+      "MoE routers and expert count",
+      "native Galerkin and pressure closure",
+      "native RK4",
+      "native curriculum and training losses"
+    ],
+    "only_change": "replace PhysicsAwareExpert residual/linear/quadratic structure with a parameter-matched plain GELU FNN"
+  },
+  "data_only": {
+    "mapping": "[current and two historical local POD velocity/pressure states, Re, native deterministic phase harmonics where certified] -> next local POD velocity/pressure state",
+    "removed": [
+      "continuous-time RHS",
+      "RK4",
+      "Galerkin RHS",
+      "pressure physics correction",
+      "physics residual losses",
+      "fixed physics-operator features"
+    ],
+    "losses": [
+      "one-step normalized state loss",
+      "strict autonomous rollout state loss",
+      "router balance and entropy regularization"
+    ],
+    "budgets_optimizer_steps": {
+      "steady": 11000,
+      "hopf": 8000,
+      "periodic": 10080
+    }
+  },
+  "evaluation_horizons": [
+    1,
+    4,
+    8,
+    16,
+    56,
+    128
+  ],
+  "hopf_reporting": {
+    "independent_heldout_re": [
+      47.081355,
+      49.022357,
+      51.78645
+    ],
+    "requested_in_sample_strict_k56_cases": [
+      49.3,
+      49.6,
+      50.0
+    ],
+    "claim_boundary": "49.3/49.6/50.0 remain training-point case studies and are not used as independent test evidence"
+  },
+  "global_moe_user_override": {
+    "retain_existing_all_re_global_moe": true,
+    "blocks_specialist_ablation": false,
+    "internal_audit": "paper_experiments/audit/CURRENT_ASSET_AUDIT.json"
+  },
+  "swanlab": {
+    "project": "PaperSpecialistAblations20260723",
+    "mode": "online"
+  }
+}

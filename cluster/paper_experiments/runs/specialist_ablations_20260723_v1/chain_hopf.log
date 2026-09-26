@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_regime_ablation_chain.py", line 384, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_regime_ablation_chain.py", line 321, in main
+    run(
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_regime_ablation_chain.py", line 57, in run
+    raise RuntimeError(f"command failed with code {return_code}: {command}")
+RuntimeError: command failed with code 2: ['/root/miniconda3/envs/pt_env/bin/python', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v1/code/train_dataonly_moe.py', '--root', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE', '--regime', 'hopf', '--seed', '1248', '--output-dir', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v1/hopf/dataonly/seed_1248', '--max-steps', '8000', '--curriculum-horizons', '1,2,4,8', '--micro-batch', '8', '--effective-batch', '24', '--validation-every', '200', '--swanlab-project', 'PaperSpecialistAblations20260723']

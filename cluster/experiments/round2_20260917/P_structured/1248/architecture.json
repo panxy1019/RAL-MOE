@@ -1,0 +1,11 @@
+{
+  "kind": "single nonrouted structured correction per channel",
+  "target_active": 8308959,
+  "total_trainable": 8308782,
+  "expert_hidden": 2860,
+  "common_parameters": 433568,
+  "matching": "reference per-sample active parameters, not FLOPs or runtime",
+  "removed": "all learned routers, shared/routed expert banks",
+  "initialization_note": "Native zero initialization sets both quadratic factors to zero; this branch requires a separate effective-gradient audit before mechanistic claims.",
+  "retained": "encoder, linear+low-rank-quadratic+nonlinear map, native projected operators and pressure confidence"
+}

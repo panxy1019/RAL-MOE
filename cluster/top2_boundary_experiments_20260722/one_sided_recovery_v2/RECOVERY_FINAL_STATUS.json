@@ -1,0 +1,13 @@
+{
+  "canonical_final_test_report": "final_test/evaluation_attempt3_metric_matched_oracle/FINAL_TEST_REPORT.json",
+  "canonical_training": "training/S_H_routes_attempt3_test_sealed",
+  "decision": "S_H_ONLY_COMPLETE_H_P_BLOCKED",
+  "gates": {
+    "G_HP_native": "BLOCKED_TEST_SEAL_ASSET",
+    "G_SH_native": "PASS_TEST_SEALED"
+  },
+  "invalidated_attempts_manifest": "INVALIDATED_ATTEMPTS.md",
+  "promoted_method": "T2-C_LearnedConvexCorrection_FieldBlend",
+  "test_used_for_recovery_tuning": false,
+  "historically_blind_test_claimed": false
+}

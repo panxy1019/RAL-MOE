@@ -1,0 +1,11 @@
+{"event": "split_start", "experiment": "centered_square_periodic_optimized_r28_p26", "test_label": "Re100p500000", "test_Re": 100.5, "holdout_labels": ["Re100p500000", "Re102p000000", "Re120p689655", "Re144p827586"], "train_re_count": 27, "test_re_count": 4, "kept_train_samples": 3321, "dense_train_samples_before_time_sparsity": 3321, "compression_ratio_vs_dense_train": 1.0}
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+runs/optimized_long_seed1600/swanlog/run-20260729_090822-zvf5ux8r-e9c967685351-1
+09604
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE
+swanlab: 🚀 View run CenteredSquare-Periodic-optimized-long-resume at 
+https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE/runs/zvf5ux8r
+{"event": "resume_loaded", "epoch": 670, "scheduler_t_max_old": 720, "scheduler_t_max_new": 720}

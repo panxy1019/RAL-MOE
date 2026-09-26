@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "checkpoint": "best.pt",
+  "checkpoint_sha256": "7d88cf2e4bda5bd0b826c8cf0cbe951124b19ff030760c2919593508674da2a8",
+  "strict_state_dict_load": true,
+  "restored_contract": [
+    "model_state",
+    "feature_mean",
+    "feature_std",
+    "sensor_indices",
+    "seed",
+    "input_dim"
+  ],
+  "validation": {
+    "metrics_reproduced": true,
+    "max_probability_delta": 5.960464477539063e-08,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 1.0
+  },
+  "test": {
+    "metrics_reproduced": true,
+    "max_probability_delta": 5.960464477539063e-08,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 1.0
+  }
+}

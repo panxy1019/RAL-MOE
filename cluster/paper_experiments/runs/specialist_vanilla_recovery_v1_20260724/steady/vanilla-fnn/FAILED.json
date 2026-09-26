@@ -1,0 +1,5 @@
+{
+  "error": "RuntimeError('vanilla_train_s2 returned -15')",
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py\", line 577, in run_all\n    selected = formal / \"best_validation.pt\"\n                      ^^^^^^^^^^^^^^^^^^^^^\n  File \"/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py\", line 237, in vanilla_steady\n    self.command(\"vanilla_train_s2\", train, steady)\n  File \"/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py\", line 108, in command\n    raise RuntimeError(f\"{name} returned {code}\")\nRuntimeError: vanilla_train_s2 returned -15\n"
+}

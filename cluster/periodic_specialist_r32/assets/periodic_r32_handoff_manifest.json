@@ -1,0 +1,35 @@
+{
+  "artifacts": {
+    "normalization_periodic.npz": "a938909e01a6f16a5310b343a91e7077f86d0ca570388f9ea134f3bd115770c2",
+    "pressure_pod_periodic.npz": "f6e0a23432581c78e9f649d60bb0fceb9087a6a1d0631778bde444338c16239f",
+    "pressure_poisson_surrogate_periodic.npz": "bf64858428733e90bda185b504ab98ef7fc96f5e0f3bb3d6d788d758e2b15a09",
+    "velocity_pod_periodic.npz": "a2c12dc3ea25772e7bd4216b37683df9dbcce804063f9900bdaebac3e25dc7a2",
+    "velocity_rom_periodic.npz": "8af11eaaab376d7c146fa45884f5d56d8bc4a6e48780cbc57cd8cb3f8f4ce87b"
+  },
+  "construction": "independent randomized POD fit from train-only Periodic snapshots; not checkpoint/scaler/coefficient truncation",
+  "fit_split": {
+    "normalization": "train",
+    "pressure": "train",
+    "velocity": "train"
+  },
+  "not_equal_to_r80_prefix": {
+    "pressure_basis": true,
+    "pressure_coefficients": true,
+    "velocity_basis": true,
+    "velocity_coefficients": true
+  },
+  "pressure_gauge": "subtract_area_mean_per_snapshot",
+  "rank": {
+    "pressure_pod": 32,
+    "pressure_rom": 32,
+    "velocity_pod": 32,
+    "velocity_rom": 32
+  },
+  "schema_version": 1,
+  "split_counts": {
+    "heldout": 4,
+    "train": 53,
+    "validation": 6
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "chart": "steady",
+    "raw_rows": 2688,
+    "expected_rows": 2688,
+    "all_identifiers_unique": true,
+    "actual_gate_top2_agrees": true,
+    "max_absolute_mass_sum_error": 7.450580596923828e-08,
+    "hook_on_off_bitwise_equal_all_windows": true,
+    "model_and_checkpoint_unchanged": true
+  },
+  {
+    "chart": "hopf",
+    "raw_rows": 6720,
+    "expected_rows": 6720,
+    "all_identifiers_unique": true,
+    "actual_gate_top2_agrees": true,
+    "max_absolute_mass_sum_error": 6.80010998621583e-08,
+    "hook_on_off_bitwise_equal_all_windows": true,
+    "model_and_checkpoint_unchanged": true
+  },
+  {
+    "chart": "periodic",
+    "raw_rows": 19968,
+    "expected_rows": 19968,
+    "all_identifiers_unique": true,
+    "actual_gate_top2_agrees": true,
+    "max_absolute_mass_sum_error": 8.940696716308594e-08,
+    "hook_on_off_bitwise_equal_all_windows": true,
+    "model_and_checkpoint_unchanged": true
+  }
+]

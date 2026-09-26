@@ -1,0 +1,41 @@
+{
+  "schema": "revision5_supplement_audit/v1",
+  "revision4_preserved": true,
+  "inputs": {
+    "GLOBAL_K56_PHYSICAL_COMPACT.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\paper_reporting_tools\\revision5_downloads\\GLOBAL_K56_PHYSICAL_COMPACT.json",
+      "sha256": "b3bc24d1a8a5bbf7fa5d74269f43f7c4235f87f26f5aff6c946013604f512a2e"
+    },
+    "DATAONLY_MISSING_CONTRACTS.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\paper_reporting_tools\\revision5_downloads\\DATAONLY_MISSING_CONTRACTS.json",
+      "sha256": "1294a6987c298a7c9d2aee36f545d5bbd141c58d73740e2a1e087e86ef964b30"
+    },
+    "STEADY_PROPOSED_STRICT_PRESSURE_SCAN.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\paper_reporting_tools\\revision5_downloads\\STEADY_PROPOSED_STRICT_PRESSURE_SCAN.json",
+      "sha256": "d7ae3bae8c6720897222354fa40e0dd786f2de3429db0adef3aee23dbe8de9df"
+    },
+    "FIXED_POINT_QUALIFIED_SELECTION.json": {
+      "path": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\paper_reporting_tools\\revision5_downloads\\FIXED_POINT_QUALIFIED_SELECTION.json",
+      "sha256": "edc6240d5a521c1b0901276de32e977f7f28f348ec89b10a33101e4e0d0de74c"
+    }
+  },
+  "outputs": {
+    "report": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision5_supplemental_evaluation_20260725\\reports\\REVISION5_SUPPLEMENTAL_EVALUATION_ZH.md",
+    "manuscript_supplement": "C:\\Users\\panxy1019\\Desktop\\STABLEMOE\\V16STABLE\\final_paper_reports\\revisions\\revision5_supplemental_evaluation_20260725\\manuscript\\NUMERICAL_EXPERIMENTS_DRAFT_REVISION5_SUPPLEMENT.md"
+  },
+  "scientific_decisions": {
+    "steady_joint_strict_pass_count": 0,
+    "steady_fixed_point_qualified_secondary_count": 6,
+    "no_nearest_Re_substitution": true,
+    "global_exact_hopf_49p3_49p6_50_available": false,
+    "global_window_selection": "filter native-history-legal start positions first, then apply K56 stride"
+  },
+  "code": {
+    "global_evaluator_sha256": "8b7875efd0c621c3478c361c56fc55b776fc6a6b1bfcfdd124ee9afdd97fb785",
+    "report_builder_sha256": "83a848dd8592f9adc50231c434be2c2de24330c708951b3e661ec120b7c6bccd"
+  },
+  "preserved_versions": {
+    "revision3_manuscript_sha256": "cac3130685d08a543887b8088dec48309e4c4d18e9b9b8630e72b640ac23dff8",
+    "revision4_manuscript_sha256": "3845f3033d5c6312b9dcba9c1209537d81c80bf091a07b575e388e77eda7e493"
+  }
+}

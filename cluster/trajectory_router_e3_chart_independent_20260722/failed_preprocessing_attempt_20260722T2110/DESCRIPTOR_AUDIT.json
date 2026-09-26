@@ -1,0 +1,371 @@
+{
+  "definition": "same source database physical state projected to target chart; never pairs different-Re states",
+  "S_H_sampling_note": "Re ranges overlap, but there are no exactly shared sampled Re values",
+  "H_P_sampling_note": "Re ranges do not overlap; H-P results are extrapolative representation diagnostics, not overlap certification",
+  "directions": {
+    "Steady->Hopf": {
+      "histories": 8,
+      "source_Re": [
+        44.4783532118,
+        45.142702578,
+        45.7951936696,
+        46.440071584
+      ],
+      "descriptor_abs_mean_by_feature": [
+        4.08029894477524e-06,
+        2.3369110601967336e-05,
+        4.012331877039571e-07,
+        6.661271618633841e-07,
+        6.733830845009997e-07,
+        2.8492793095592936e-07,
+        2.519876877068254e-06,
+        9.69884757590444e-07
+      ],
+      "descriptor_abs_max": 3.7285268643216796e-05,
+      "descriptor_relative_median": 0.010724123189477104,
+      "descriptor_relative_p95": 0.369040774051267,
+      "descriptor_relative_l2_mean": 2.773437197673646e-06,
+      "velocity_sensor_relative_error_mean": 2.653455242574216e-05,
+      "pressure_sensor_relative_error_mean": 5.205018310566188e-05,
+      "rows": [
+        {
+          "Re": 44.4783532118,
+          "time": 1207.65005526,
+          "descriptor_abs_max": 9.389409135085458e-06,
+          "descriptor_rel_l2": 1.6308841130182396e-06,
+          "velocity_sensor_relative_error": 5.3808700798134825e-05,
+          "pressure_sensor_relative_error": 5.8822588798110834e-05
+        },
+        {
+          "Re": 44.4783532118,
+          "time": 1468.87932254,
+          "descriptor_abs_max": 1.807329030434346e-05,
+          "descriptor_rel_l2": 2.045076489248037e-06,
+          "velocity_sensor_relative_error": 2.613976857559882e-05,
+          "pressure_sensor_relative_error": 7.860880890191618e-05
+        },
+        {
+          "Re": 45.142702578,
+          "time": 1206.75518667,
+          "descriptor_abs_max": 2.3737017173175445e-05,
+          "descriptor_rel_l2": 2.8078791623319127e-06,
+          "velocity_sensor_relative_error": 3.324859363835082e-05,
+          "pressure_sensor_relative_error": 4.825041500383434e-05
+        },
+        {
+          "Re": 45.142702578,
+          "time": 1464.14003417,
+          "descriptor_abs_max": 2.113155800209654e-05,
+          "descriptor_rel_l2": 2.405505232195955e-06,
+          "velocity_sensor_relative_error": 2.328675003254433e-05,
+          "pressure_sensor_relative_error": 5.3605194235383846e-05
+        },
+        {
+          "Re": 45.7951936696,
+          "time": 1206.19852897,
+          "descriptor_abs_max": 3.0127802855162145e-05,
+          "descriptor_rel_l2": 3.467801005483138e-06,
+          "velocity_sensor_relative_error": 1.5008060889213353e-05,
+          "pressure_sensor_relative_error": 4.745149323259844e-05
+        },
+        {
+          "Re": 45.7951936696,
+          "time": 1459.91615058,
+          "descriptor_abs_max": 2.29039081460769e-05,
+          "descriptor_rel_l2": 2.6307803335802836e-06,
+          "velocity_sensor_relative_error": 2.1838178273737498e-05,
+          "pressure_sensor_relative_error": 3.767098276835555e-05
+        },
+        {
+          "Re": 46.440071584,
+          "time": 1205.85516107,
+          "descriptor_abs_max": 3.7285268643216796e-05,
+          "descriptor_rel_l2": 4.302886630813486e-06,
+          "velocity_sensor_relative_error": 1.3956430228302579e-05,
+          "pressure_sensor_relative_error": 5.578666017279676e-05
+        },
+        {
+          "Re": 46.440071584,
+          "time": 1456.04959925,
+          "descriptor_abs_max": 2.473185103113451e-05,
+          "descriptor_rel_l2": 2.896684614718112e-06,
+          "velocity_sensor_relative_error": 2.4989936970055055e-05,
+          "pressure_sensor_relative_error": 3.620532173229909e-05
+        }
+      ]
+    },
+    "Hopf->Steady": {
+      "histories": 8,
+      "source_Re": [
+        45.5,
+        45.8,
+        46.1,
+        46.3
+      ],
+      "descriptor_abs_mean_by_feature": [
+        8.547960815841193e-07,
+        1.3700797105720142e-06,
+        2.5439764979884598e-08,
+        5.748340948597344e-08,
+        4.9664918261820354e-08,
+        1.4528404232068359e-08,
+        4.446795324370987e-07,
+        2.8255560085346938e-08
+      ],
+      "descriptor_abs_max": 2.5974491411062672e-06,
+      "descriptor_relative_median": 0.00031241275496520095,
+      "descriptor_relative_p95": 0.0147291339579537,
+      "descriptor_relative_l2_mean": 2.113618252831283e-07,
+      "velocity_sensor_relative_error_mean": 9.010878905034276e-06,
+      "pressure_sensor_relative_error_mean": 8.417848639147463e-06,
+      "rows": [
+        {
+          "Re": 45.5,
+          "time": 1205.65149137,
+          "descriptor_abs_max": 1.2610012838365492e-06,
+          "descriptor_rel_l2": 2.19926569161436e-07,
+          "velocity_sensor_relative_error": 1.1550920869386507e-05,
+          "pressure_sensor_relative_error": 8.162901202622733e-06
+        },
+        {
+          "Re": 45.5,
+          "time": 1461.0151753,
+          "descriptor_abs_max": 2.5974491411062672e-06,
+          "descriptor_rel_l2": 3.07186505588107e-07,
+          "velocity_sensor_relative_error": 1.0396672160255876e-05,
+          "pressure_sensor_relative_error": 9.769538221223687e-06
+        },
+        {
+          "Re": 45.8,
+          "time": 1206.07194843,
+          "descriptor_abs_max": 9.112385051394717e-07,
+          "descriptor_rel_l2": 1.2772824827341627e-07,
+          "velocity_sensor_relative_error": 6.303543638597206e-06,
+          "pressure_sensor_relative_error": 6.690048923504777e-06
+        },
+        {
+          "Re": 45.8,
+          "time": 1459.76294448,
+          "descriptor_abs_max": 2.1814575603684716e-06,
+          "descriptor_rel_l2": 2.754357765974456e-07,
+          "velocity_sensor_relative_error": 1.1491916645712924e-05,
+          "pressure_sensor_relative_error": 9.791741453732389e-06
+        },
+        {
+          "Re": 46.1,
+          "time": 1206.48693317,
+          "descriptor_abs_max": 6.327549630924523e-07,
+          "descriptor_rel_l2": 8.710426838860016e-08,
+          "velocity_sensor_relative_error": 2.602380954676517e-06,
+          "pressure_sensor_relative_error": 5.955645568700984e-06
+        },
+        {
+          "Re": 46.1,
+          "time": 1458.52701167,
+          "descriptor_abs_max": 1.864815383001428e-06,
+          "descriptor_rel_l2": 2.597263323902682e-07,
+          "velocity_sensor_relative_error": 1.2636869919285973e-05,
+          "pressure_sensor_relative_error": 1.015726957597004e-05
+        },
+        {
+          "Re": 46.3,
+          "time": 1205.38928314,
+          "descriptor_abs_max": 1.2494313299526993e-06,
+          "descriptor_rel_l2": 1.8257340521882566e-07,
+          "velocity_sensor_relative_error": 4.84017508178833e-06,
+          "pressure_sensor_relative_error": 6.578935515685525e-06
+        },
+        {
+          "Re": 46.3,
+          "time": 1456.34063561,
+          "descriptor_abs_max": 1.5267533033380687e-06,
+          "descriptor_rel_l2": 2.312134966469275e-07,
+          "velocity_sensor_relative_error": 1.2264551970570873e-05,
+          "pressure_sensor_relative_error": 1.023670865173957e-05
+        }
+      ]
+    },
+    "Hopf->Periodic": {
+      "histories": 8,
+      "source_Re": [
+        56.5432463134,
+        57.3899704283,
+        58.2626356101,
+        59.2014322659
+      ],
+      "descriptor_abs_mean_by_feature": [
+        0.0003025142314376228,
+        0.010781415219705326,
+        2.5239314377323544e-05,
+        1.141778051780969e-05,
+        1.6092405328720994e-05,
+        5.9582668084531415e-06,
+        3.094085199318175e-05,
+        7.542955384366758e-05
+      ],
+      "descriptor_abs_max": 0.014782683557276854,
+      "descriptor_relative_median": 0.025140692278686053,
+      "descriptor_relative_p95": 0.8877522127804796,
+      "descriptor_relative_l2_mean": 0.0012966488848775509,
+      "velocity_sensor_relative_error_mean": 0.006175346830947381,
+      "pressure_sensor_relative_error_mean": 0.017902687969477193,
+      "rows": [
+        {
+          "Re": 56.5432463134,
+          "time": 854.66655444,
+          "descriptor_abs_max": 0.014782683557276854,
+          "descriptor_rel_l2": 0.0017652220153997933,
+          "velocity_sensor_relative_error": 0.004277198980002792,
+          "pressure_sensor_relative_error": 0.0201240005745877
+        },
+        {
+          "Re": 56.5432463134,
+          "time": 3790.2588,
+          "descriptor_abs_max": 0.012672464815539186,
+          "descriptor_rel_l2": 0.001512880765572862,
+          "velocity_sensor_relative_error": 0.0062017192521181905,
+          "pressure_sensor_relative_error": 0.02012679539665111
+        },
+        {
+          "Re": 57.3899704283,
+          "time": 824.78739409,
+          "descriptor_abs_max": 0.013295136991314571,
+          "descriptor_rel_l2": 0.001593569365220637,
+          "velocity_sensor_relative_error": 0.003740122138024272,
+          "pressure_sensor_relative_error": 0.017856308526306715
+        },
+        {
+          "Re": 57.3899704283,
+          "time": 3739.0344,
+          "descriptor_abs_max": 0.01063659997045896,
+          "descriptor_rel_l2": 0.0012745960149245508,
+          "velocity_sensor_relative_error": 0.007191906856372653,
+          "pressure_sensor_relative_error": 0.017588256240836684
+        },
+        {
+          "Re": 58.2626356101,
+          "time": 1604.36873388,
+          "descriptor_abs_max": 0.00996444251756401,
+          "descriptor_rel_l2": 0.001198404205240168,
+          "velocity_sensor_relative_error": 0.0038194460834413075,
+          "pressure_sensor_relative_error": 0.01608259012219026
+        },
+        {
+          "Re": 58.2626356101,
+          "time": 4191.0016,
+          "descriptor_abs_max": 0.00884078194655391,
+          "descriptor_rel_l2": 0.001084751383095506,
+          "velocity_sensor_relative_error": 0.009047221343125366,
+          "pressure_sensor_relative_error": 0.02259538629137149
+        },
+        {
+          "Re": 59.2014322659,
+          "time": 800.91313373,
+          "descriptor_abs_max": 0.01014614214081444,
+          "descriptor_rel_l2": 0.0012256863131752866,
+          "velocity_sensor_relative_error": 0.00324708010929137,
+          "pressure_sensor_relative_error": 0.013675606956406986
+        },
+        {
+          "Re": 59.2014322659,
+          "time": 3613.0081366,
+          "descriptor_abs_max": 0.005913069818120675,
+          "descriptor_rel_l2": 0.000718081016391604,
+          "velocity_sensor_relative_error": 0.011878079885203096,
+          "pressure_sensor_relative_error": 0.01517255964746659
+        }
+      ]
+    },
+    "Periodic->Hopf": {
+      "histories": 8,
+      "source_Re": [
+        60.3077454666,
+        61.7559536282,
+        63.499816815,
+        65.2598292316
+      ],
+      "descriptor_abs_mean_by_feature": [
+        0.0005493018587217624,
+        0.0008970942745282207,
+        4.7893167046957644e-05,
+        0.00015050029876257533,
+        2.9611055724565395e-05,
+        2.377021386303678e-05,
+        0.00012232912558155865,
+        0.00012248118159130603
+      ],
+      "descriptor_abs_max": 0.002147770170799923,
+      "descriptor_relative_median": 0.024963090760499403,
+      "descriptor_relative_p95": 0.7343225662394846,
+      "descriptor_relative_l2_mean": 0.00014838063883271946,
+      "velocity_sensor_relative_error_mean": 0.011017820019622053,
+      "pressure_sensor_relative_error_mean": 0.01791182221314192,
+      "rows": [
+        {
+          "Re": 60.3077454666,
+          "time": 952.32408713,
+          "descriptor_abs_max": 0.00042074762330468474,
+          "descriptor_rel_l2": 5.123763635422153e-05,
+          "velocity_sensor_relative_error": 0.0021451823817533254,
+          "pressure_sensor_relative_error": 0.005885174652399497
+        },
+        {
+          "Re": 60.3077454666,
+          "time": 3756.38945478,
+          "descriptor_abs_max": 0.002147770170799923,
+          "descriptor_rel_l2": 0.00027678444428851215,
+          "velocity_sensor_relative_error": 0.01201298306027989,
+          "pressure_sensor_relative_error": 0.01890465072583554
+        },
+        {
+          "Re": 61.7559536282,
+          "time": 1561.17172462,
+          "descriptor_abs_max": 0.0002352633157212125,
+          "descriptor_rel_l2": 2.9493188055998776e-05,
+          "velocity_sensor_relative_error": 0.0016754452316127108,
+          "pressure_sensor_relative_error": 0.005529970415202549
+        },
+        {
+          "Re": 61.7559536282,
+          "time": 3932.95184472,
+          "descriptor_abs_max": 0.001780603333233266,
+          "descriptor_rel_l2": 0.00024038085509038823,
+          "velocity_sensor_relative_error": 0.018413173654212623,
+          "pressure_sensor_relative_error": 0.023877101169214612
+        },
+        {
+          "Re": 63.499816815,
+          "time": 720.88409431,
+          "descriptor_abs_max": 0.0011415653004149817,
+          "descriptor_rel_l2": 0.0001605366546210037,
+          "velocity_sensor_relative_error": 0.0030548808884099097,
+          "pressure_sensor_relative_error": 0.008535989372511384
+        },
+        {
+          "Re": 63.499816815,
+          "time": 3309.51334207,
+          "descriptor_abs_max": 0.00162562971830571,
+          "descriptor_rel_l2": 0.00023005475333573187,
+          "velocity_sensor_relative_error": 0.021513210268121214,
+          "pressure_sensor_relative_error": 0.03363002762086965
+        },
+        {
+          "Re": 65.2598292316,
+          "time": 1441.10649148,
+          "descriptor_abs_max": 0.0004911648779115652,
+          "descriptor_rel_l2": 7.855775333910198e-05,
+          "velocity_sensor_relative_error": 0.003316630978626513,
+          "pressure_sensor_relative_error": 0.006281588351788622
+        },
+        {
+          "Re": 65.2598292316,
+          "time": 3630.47981507,
+          "descriptor_abs_max": 0.0005939216568098468,
+          "descriptor_rel_l2": 0.00011999982557679752,
+          "velocity_sensor_relative_error": 0.026011053693960243,
+          "pressure_sensor_relative_error": 0.04065007539731351
+        }
+      ]
+    }
+  }
+}

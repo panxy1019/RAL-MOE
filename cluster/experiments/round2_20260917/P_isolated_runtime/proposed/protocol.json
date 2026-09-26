@@ -1,0 +1,12 @@
+{
+  "method": "full",
+  "starts": [
+    976
+  ],
+  "horizon": 48,
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed/1248/Circular_P_proposed_round2_Re_70p314635_checkpoint.pt",
+  "checkpoint_sha256": "b48eaacc1deb923721f9fa0244169861a6b8a4111cab7a5255a61110679fa625",
+  "metric": "mean per-window relative physical L2 against POD-reconstructed truth, original pressure gauge; Ejoint=Eu+Ep",
+  "nonfinite_policy": "retain all windows and report NaN aggregate after any divergence; no survivor-only mean",
+  "scope": "Circular Periodic local chart; full denotes frozen RAL Periodic specialist, not two-specialist fusion"
+}

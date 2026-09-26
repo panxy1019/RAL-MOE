@@ -1,0 +1,291 @@
+{
+  "attractor": null,
+  "checkpoint_sha256": "64d061d29d013c383c7244361ad044a2c34b22bb487e1a6c42b76dae390817c4",
+  "horizons": {
+    "k1": {
+      "available": true,
+      "by_re": {
+        "Re_28p695138": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.0886979381729121,
+            "velocity_relative_l2": 0.0005426544272203481
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.11100080609321594,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.0603581736827136,
+            "velocity_relative_l2": 0.0002987166886892329
+          },
+          "pressure_drift": 0.11234541237354279,
+          "state_norm_max_multiple": 12.488971710205078,
+          "window_count": 61
+        },
+        "Re_43p797402": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.04465096324162373,
+            "velocity_relative_l2": 0.0003520970586813351
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.171037957072258,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.011442802576780856,
+            "velocity_relative_l2": 0.00012416202230844655
+          },
+          "pressure_drift": 0.17379091680049896,
+          "state_norm_max_multiple": 19.754846572875977,
+          "window_count": 60
+        }
+      },
+      "k": 1,
+      "overall_worst": {
+        "coefficient_space": {
+          "pressure_relative_l2": 0.0886979381729121,
+          "velocity_relative_l2": 0.0005426544272203481
+        },
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "fixed_point_residual": 0.171037957072258,
+        "physical_reconstruction_area_weighted": {
+          "pressure_relative_l2": 0.0603581736827136,
+          "velocity_relative_l2": 0.0002987166886892329
+        },
+        "pressure_drift": 0.17379091680049896,
+        "state_norm_max_multiple": 19.754846572875977
+      }
+    },
+    "k16": {
+      "available": true,
+      "by_re": {
+        "Re_28p695138": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.041901860669329154,
+            "velocity_relative_l2": 0.0016992108198268022
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.1097119078040123,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.028438735678693806,
+            "velocity_relative_l2": 0.0007167958040729993
+          },
+          "pressure_drift": 0.008806698024272919,
+          "state_norm_max_multiple": 21.411115646362305,
+          "window_count": 46
+        },
+        "Re_43p797402": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.036585007868973465,
+            "velocity_relative_l2": 0.0014028557597092473
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.044790320098400116,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.009384619655043551,
+            "velocity_relative_l2": 0.00034008052546141026
+          },
+          "pressure_drift": 0.010565788485109806,
+          "state_norm_max_multiple": 33.71769714355469,
+          "window_count": 45
+        }
+      },
+      "k": 16,
+      "overall_worst": {
+        "coefficient_space": {
+          "pressure_relative_l2": 0.041901860669329154,
+          "velocity_relative_l2": 0.0016992108198268022
+        },
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "fixed_point_residual": 0.1097119078040123,
+        "physical_reconstruction_area_weighted": {
+          "pressure_relative_l2": 0.028438735678693806,
+          "velocity_relative_l2": 0.0007167958040729993
+        },
+        "pressure_drift": 0.010565788485109806,
+        "state_norm_max_multiple": 33.71769714355469
+      }
+    },
+    "k4": {
+      "available": true,
+      "by_re": {
+        "Re_28p695138": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.06564420191978074,
+            "velocity_relative_l2": 0.0009928015702582273
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.1097119078040123,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.04460933659260302,
+            "velocity_relative_l2": 0.0004716955876054801
+          },
+          "pressure_drift": 0.04809372499585152,
+          "state_norm_max_multiple": 19.93012809753418,
+          "window_count": 58
+        },
+        "Re_43p797402": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.03742323231450683,
+            "velocity_relative_l2": 0.0007035686823076304
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.08567219227552414,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.009625639847208961,
+            "velocity_relative_l2": 0.00019808756018483098
+          },
+          "pressure_drift": 0.04439907148480415,
+          "state_norm_max_multiple": 25.57596206665039,
+          "window_count": 57
+        }
+      },
+      "k": 4,
+      "overall_worst": {
+        "coefficient_space": {
+          "pressure_relative_l2": 0.06564420191978074,
+          "velocity_relative_l2": 0.0009928015702582273
+        },
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "fixed_point_residual": 0.1097119078040123,
+        "physical_reconstruction_area_weighted": {
+          "pressure_relative_l2": 0.04460933659260302,
+          "velocity_relative_l2": 0.0004716955876054801
+        },
+        "pressure_drift": 0.04809372499585152,
+        "state_norm_max_multiple": 25.57596206665039
+      }
+    },
+    "k56": {
+      "available": true,
+      "by_re": {
+        "Re_28p695138": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.061399573039488606,
+            "velocity_relative_l2": 0.002744110961001393
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.15408247709274292,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.041569353999168064,
+            "velocity_relative_l2": 0.0009678820109380031
+          },
+          "pressure_drift": 0.05162733420729637,
+          "state_norm_max_multiple": 17.867752075195312,
+          "window_count": 6
+        },
+        "Re_43p797402": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.13614106215314042,
+            "velocity_relative_l2": 0.002544759519669599
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.6712116003036499,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.034681379688499284,
+            "velocity_relative_l2": 0.0005504927565597415
+          },
+          "pressure_drift": 0.2352283000946045,
+          "state_norm_max_multiple": 83.27139282226562,
+          "window_count": 5
+        }
+      },
+      "k": 56,
+      "overall_worst": {
+        "coefficient_space": {
+          "pressure_relative_l2": 0.13614106215314042,
+          "velocity_relative_l2": 0.002744110961001393
+        },
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "fixed_point_residual": 0.6712116003036499,
+        "physical_reconstruction_area_weighted": {
+          "pressure_relative_l2": 0.041569353999168064,
+          "velocity_relative_l2": 0.0009678820109380031
+        },
+        "pressure_drift": 0.2352283000946045,
+        "state_norm_max_multiple": 83.27139282226562
+      }
+    },
+    "k8": {
+      "available": true,
+      "by_re": {
+        "Re_28p695138": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.05237689194151337,
+            "velocity_relative_l2": 0.0013178733990745679
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.1097119078040123,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.035554181397778,
+            "velocity_relative_l2": 0.000591100502357068
+          },
+          "pressure_drift": 0.03829783573746681,
+          "state_norm_max_multiple": 19.93012809753418,
+          "window_count": 54
+        },
+        "Re_43p797402": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.03392478563071923,
+            "velocity_relative_l2": 0.0010108252717426437
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.06430930644273758,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.00872747730207531,
+            "velocity_relative_l2": 0.0002561298113683089
+          },
+          "pressure_drift": 0.02484222501516342,
+          "state_norm_max_multiple": 29.190589904785156,
+          "window_count": 53
+        }
+      },
+      "k": 8,
+      "overall_worst": {
+        "coefficient_space": {
+          "pressure_relative_l2": 0.05237689194151337,
+          "velocity_relative_l2": 0.0013178733990745679
+        },
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "fixed_point_residual": 0.1097119078040123,
+        "physical_reconstruction_area_weighted": {
+          "pressure_relative_l2": 0.035554181397778,
+          "velocity_relative_l2": 0.000591100502357068
+        },
+        "pressure_drift": 0.03829783573746681,
+        "state_norm_max_multiple": 29.190589904785156
+      }
+    }
+  },
+  "method": "vanilla-fnn",
+  "pressure_gauge": "native Steady finalizer gauge",
+  "regime": "steady",
+  "schema": "unified_specialist_physical_evaluator/v2",
+  "split": "validation"
+}

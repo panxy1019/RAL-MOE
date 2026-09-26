@@ -1,0 +1,199 @@
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+{
+  "status": "CACHE_COMPLETE",
+  "mode": "development",
+  "cache": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/resplit_20260723_v1/cache_development/G_SH_resplit_train_validation_cache.npz",
+  "cache_sha256": "f8becb2ae4875946dfd6aaddc589a1e43a1b31a73083bed3c6e4dce8acd0e291",
+  "selected_complete_Re": {
+    "train": [
+      40.711525,
+      43.093929,
+      43.2,
+      43.4,
+      43.6,
+      43.797394,
+      44.478355
+    ],
+    "validation": [
+      41.576575,
+      43.3,
+      43.7
+    ]
+  },
+  "windows_per_Re": 5,
+  "split_counts": {
+    "train": 35,
+    "validation": 15
+  },
+  "horizon": 56,
+  "source_audit": [
+    {
+      "assigned_split": "train",
+      "requested_Re": 40.711525,
+      "actual_Re": 40.71152114868164,
+      "source": "original_S_native",
+      "source_split_metadata": "train",
+      "label_id": 11,
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        705,
+        706,
+        707,
+        708,
+        710
+      ]
+    },
+    {
+      "assigned_split": "train",
+      "requested_Re": 43.093929,
+      "actual_Re": 43.093929290771484,
+      "source": "original_S_native",
+      "source_split_metadata": "train",
+      "label_id": 14,
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        896,
+        897,
+        898,
+        899,
+        901
+      ]
+    },
+    {
+      "assigned_split": "train",
+      "requested_Re": 43.2,
+      "source": "expanded_external_S_native",
+      "source_split_metadata": "train",
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "steady_native_ROM_Re": 43.0939251612,
+      "steady_native_ROM_label": "Re_43p093925"
+    },
+    {
+      "assigned_split": "train",
+      "requested_Re": 43.4,
+      "source": "expanded_external_S_native",
+      "source_split_metadata": "train",
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "steady_native_ROM_Re": 43.0939251612,
+      "steady_native_ROM_label": "Re_43p093925"
+    },
+    {
+      "assigned_split": "train",
+      "requested_Re": 43.6,
+      "source": "expanded_external_S_native",
+      "source_split_metadata": "train",
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "steady_native_ROM_Re": 43.7974019747,
+      "steady_native_ROM_label": "Re_43p797402"
+    },
+    {
+      "assigned_split": "train",
+      "requested_Re": 43.797394,
+      "actual_Re": 43.797393798828125,
+      "source": "original_S_native",
+      "source_split_metadata": "validation",
+      "label_id": 15,
+      "valid_K56_windows": 5,
+      "selected_windows": [
+        960,
+        961,
+        962,
+        963,
+        964
+      ]
+    },
+    {
+      "assigned_split": "train",
+      "requested_Re": 44.478355,
+      "actual_Re": 44.478355407714844,
+      "source": "original_S_native",
+      "source_split_metadata": "train",
+      "label_id": 16,
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        1023,
+        1024,
+        1025,
+        1026,
+        1028
+      ]
+    },
+    {
+      "assigned_split": "validation",
+      "requested_Re": 41.576575,
+      "actual_Re": 41.57658386230469,
+      "source": "original_S_native",
+      "source_split_metadata": "train",
+      "label_id": 12,
+      "valid_K56_windows": 5,
+      "selected_windows": [
+        769,
+        770,
+        771,
+        772,
+        773
+      ]
+    },
+    {
+      "assigned_split": "validation",
+      "requested_Re": 43.3,
+      "source": "expanded_external_S_native",
+      "source_split_metadata": "validation",
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "steady_native_ROM_Re": 43.0939251612,
+      "steady_native_ROM_label": "Re_43p093925"
+    },
+    {
+      "assigned_split": "validation",
+      "requested_Re": 43.7,
+      "source": "expanded_external_S_native",
+      "source_split_metadata": "validation",
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "steady_native_ROM_Re": 43.7974019747,
+      "steady_native_ROM_label": "Re_43p797402"
+    }
+  ],
+  "fusion_feedback": false,
+  "timestamps_shared": true,
+  "steady_checkpoint_sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+  "hopf_checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+  "expanded_modal_archive_sha256": "d6a065e7f9ca23bd48f6bb477b9b59cbbc28d8189be76f06292028ce661b9107",
+  "test_metrics_used_for_training_or_selection": false,
+  "known_prior_test_disclosure": true
+}

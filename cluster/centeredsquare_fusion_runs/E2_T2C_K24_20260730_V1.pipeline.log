@@ -1,0 +1,138 @@
+nohup: ignoring input
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsqua
+re_fusion_runs/E2_T2C_K24_20260730_V1/e2_router/swanlog/run-20260730_164620-m0mw
+906a
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C
+swanlab: 🚀 View run E2_centeredsquare_seed20260730 at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C/runs/m0mw906a
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C
+swanlab: 🚀 View run E2_centeredsquare_seed20260730 at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C/runs/m0mw906a
+swanlab: Upload complete: 614 records
+{
+  "schema_version": 1,
+  "boundary": "SH",
+  "native_source": "Steady",
+  "horizon": 24,
+  "windows_per_Re": 8,
+  "samples": 72,
+  "split_counts": {
+    "train": 56,
+    "validation": 16
+  },
+  "Re_by_split": {
+    "train": [
+      94.0,
+      95.0,
+      95.05,
+      95.15,
+      95.2,
+      95.35,
+      95.4
+    ],
+    "validation": [
+      94.5,
+      95.25
+    ]
+  },
+  "candidate_1_finite_fraction": 1.0,
+  "candidate_2_finite_fraction": 1.0,
+  "candidate_1_divergent_windows": 0,
+  "candidate_2_divergent_windows": 0,
+  "candidate_1_max_norm_ratio": 1.0649042252197463,
+  "candidate_2_max_norm_ratio": 1.0423181158978088,
+  "common_grid_area_match": true,
+  "history_length": 3,
+  "common_physical_timestamps": true,
+  "fusion_feedback": false,
+  "heldout_loaded": false,
+  "source_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/checkpoint/frozen_centeredsquare_steady_step3200.pt",
+  "source_checkpoint_sha256": "23c7b18fb44316fca28bef0aeac4458235c100b99b2b0c4503d7ae5770cc6fe9",
+  "target_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/selected_validation_step7200.pt",
+  "target_checkpoint_sha256": "07af06ec5506e5b6a12d9d00f557a4e48fa722be3c2a183df752f0883ad40beb",
+  "elapsed_seconds": 21.872075080871582,
+  "status": "PASS",
+  "cache_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_V1/cache_sh/sh_development_cache.npz",
+  "cache_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40"
+}
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsqua
+re_fusion_runs/E2_T2C_K24_20260730_V1/gate_sh/swanlog/run-20260730_164713-1oy5xe
+jo
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C
+swanlab: 🚀 View run T2C_SH_K24_seed42001 at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C/runs/1oy5xejo
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C
+swanlab: 🚀 View run T2C_SH_K24_seed42001 at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C/runs/1oy5xejo
+swanlab: Upload complete: 942 records
+{
+  "schema_version": 1,
+  "boundary": "HP",
+  "native_source": "Periodic",
+  "horizon": 24,
+  "windows_per_Re": 8,
+  "samples": 48,
+  "split_counts": {
+    "train": 32,
+    "validation": 16
+  },
+  "Re_by_split": {
+    "train": [
+      98.5,
+      99.5,
+      100.0,
+      101.0
+    ],
+    "validation": [
+      99.0,
+      101.5
+    ]
+  },
+  "candidate_1_finite_fraction": 1.0,
+  "candidate_2_finite_fraction": 1.0,
+  "candidate_1_divergent_windows": 0,
+  "candidate_2_divergent_windows": 0,
+  "candidate_1_max_norm_ratio": 1.0030551599940036,
+  "candidate_2_max_norm_ratio": 1.0569124116364017,
+  "common_grid_area_match": true,
+  "history_length": 3,
+  "common_physical_timestamps": true,
+  "fusion_feedback": false,
+  "heldout_loaded": false,
+  "source_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/runs/optimized_long_seed1600/best_validation.pt",
+  "source_checkpoint_sha256": "a84f355ae7eba1faa9e988f56fd89029e0aa15e2bd56163543bf5e7c66a4d988",
+  "target_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/selected_validation_step7200.pt",
+  "target_checkpoint_sha256": "07af06ec5506e5b6a12d9d00f557a4e48fa722be3c2a183df752f0883ad40beb",
+  "elapsed_seconds": 464.9047408103943,
+  "status": "PASS",
+  "cache_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_V1/cache_hp/hp_development_cache.npz",
+  "cache_sha256": "7479d7a8712efd7aace213b266c119a13764f9f902cb6917367914f6fba384a6"
+}
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsqua
+re_fusion_runs/E2_T2C_K24_20260730_V1/gate_hp/swanlog/run-20260730_165531-7rkw8g
+yx
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C
+swanlab: 🚀 View run T2C_HP_K24_seed42001 at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C/runs/7rkw8gyx
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C
+swanlab: 🚀 View run T2C_HP_K24_seed42001 at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Fusion_E2_T2C/runs/7rkw8gyx
+swanlab: Upload complete: 942 records

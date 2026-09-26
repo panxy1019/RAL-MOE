@@ -1,0 +1,95 @@
+{
+  "Re": 50.36805437027651,
+  "label": "Re_50p368054",
+  "regime": "hopf_transition",
+  "D": 1.0,
+  "nu": 0.001,
+  "U_inlet": 0.05036805437027651,
+  "retain_start_time": 988.09757989,
+  "n_times": 161,
+  "n_points": 97368,
+  "n_cells": 48128,
+  "diagnostics": {
+    "mode": "periodic",
+    "estimated_period": 164.68292998071638,
+    "chunks": [
+      {
+        "end_time": 123.51219749,
+        "samples": 78,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 247.02439497,
+        "samples": 148,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 370.53659246,
+        "samples": 216,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 494.04878994,
+        "samples": 282,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 617.56098743,
+        "samples": 349,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 741.07318492,
+        "samples": 416,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 864.5853824,
+        "samples": 483,
+        "recent_peak_count": 24,
+        "lift_peak_amplitude_cv": 0.009244876225125676,
+        "period_cv": 0.5534920476888971,
+        "detected_period": 130.81168829,
+        "reason": "limit cycle criteria not yet satisfied"
+      },
+      {
+        "end_time": 988.09757989,
+        "samples": 549,
+        "recent_peak_count": 25,
+        "lift_peak_amplitude_cv": 0.008785730100371038,
+        "period_cv": 0.011861416431246713,
+        "detected_period": 173.55049732749998,
+        "reason": "stable limit cycle detected"
+      }
+    ],
+    "status": "limit_cycle_detected",
+    "retained_period": 173.55049732749998
+  },
+  "arrays": {
+    "times": [
+      161
+    ],
+    "points": [
+      97368,
+      3
+    ],
+    "u": [
+      161,
+      97368
+    ],
+    "v": [
+      161,
+      97368
+    ],
+    "p": [
+      161,
+      97368
+    ]
+  },
+  "units": {
+    "times": "s",
+    "points": "m",
+    "u/v": "m/s",
+    "p": "m^2/s^2"
+  }
+}

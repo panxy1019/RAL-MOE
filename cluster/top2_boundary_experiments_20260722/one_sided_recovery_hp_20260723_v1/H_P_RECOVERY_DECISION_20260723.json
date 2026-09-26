@@ -1,0 +1,42 @@
+{
+  "schema": "hp_one_sided_recovery_decision/v1",
+  "decision": "FAIL_CLOSED_NO_HP_TRAINING",
+  "formal_gate": "G_HP_native_FULL_K56",
+  "formal_gate_result": "FAIL_CLOSED",
+  "development_Re_count": 59,
+  "development_split_counts": {
+    "train": 53,
+    "validation": 6
+  },
+  "periodic_finite_count": 59,
+  "periodic_divergent_count": 0,
+  "hopf_finite_count": 5,
+  "hopf_divergent_count": 54,
+  "validation_hopf_finite_count": 0,
+  "boundary_upper_Re": 79.3811581027,
+  "boundary_development_Re_count": 11,
+  "boundary_both_valid_count": 5,
+  "both_valid_Re": [
+    60.30774688720703,
+    61.75595474243164,
+    63.49981689453125,
+    65.25982666015625,
+    68.64971160888672
+  ],
+  "first_hopf_nonfinite": {
+    "split": "validation",
+    "Re_label": "Re_66p970112",
+    "Re": 66.9701156616211
+  },
+  "development_modal_bundle": {
+    "train_snapshots": 8539,
+    "validation_snapshots": 967,
+    "heldout_raw_files_opened": [],
+    "mixed_coefficient_members_read": []
+  },
+  "heldout_access": false,
+  "native_cache_created": false,
+  "route_training_started": false,
+  "route_checkpoints_created": false,
+  "authorized_next_action": "Keep H-P disabled and P-only in the Periodic domain, or warm-start/re-certify the Hopf specialist on a common H-P overlap train/validation set before retrying. Do not randomly retrain specialists."
+}

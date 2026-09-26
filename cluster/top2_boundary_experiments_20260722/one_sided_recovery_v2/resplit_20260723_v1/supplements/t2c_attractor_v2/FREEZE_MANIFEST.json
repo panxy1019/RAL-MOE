@@ -1,0 +1,15 @@
+{
+  "files": {
+    "PER_WINDOW_ATTRACTOR_METRICS.csv": "da8a8823317a4d8baefb322509ae60f4f817bb83425bb5d807d8f93cf7ebe947",
+    "T2C_ATTRACTOR_ANALYSIS.json": "454aefd942c931566614eb3c0b20f56c892f4e91cbd3441209f4d27d3a0dfbab",
+    "T2C_ATTRACTOR_ANALYSIS.md": "1ad64aa2269d48a1b2201496d8d44a91b49ce93079931f8eb41a76820962965f"
+  },
+  "source_sha256": {
+    "T2_C_checkpoint": "fe5a52813d03b52cb368d8129c625cd073da10b7abe51745cad1d07cf759202f",
+    "development_cache": "f8becb2ae4875946dfd6aaddc589a1e43a1b31a73083bed3c6e4dce8acd0e291",
+    "hopf_velocity_POD": "2f951192f6eeaa69e7d911aa21552454d1a99a49ab796166b4a13df16016a192",
+    "steady_velocity_POD": "abaab63d11e172a5b40e86b48715f247311eaf324a06094757f2f98870f40948",
+    "test_cache": "61b2f6b57a7c70700d9665ca71f1867c8b1f7e419870f50670afe5bee8b64558"
+  },
+  "status": "FROZEN_ATTRACTOR_SUPPLEMENT"
+}

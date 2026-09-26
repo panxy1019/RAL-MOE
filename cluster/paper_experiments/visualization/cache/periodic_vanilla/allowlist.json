@@ -1,0 +1,20 @@
+{
+  "ablation_mode": "vanilla-fnn",
+  "allowed_changes": [
+    "PhysicsAwareExpert implementation -> parameter-matched plain GELU FNN",
+    "none"
+  ],
+  "entrypoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/evaluate_periodic_export.py",
+  "entrypoint_sha256": "563ecf7204f6bbe9220ed0c2de18abe7f59b1f7c11a8e2eb762f5822a7185ea1",
+  "preserved_contract": [
+    "POD/mean/scaler and ru=rp=32",
+    "complete-Re split",
+    "feature builder and history length",
+    "MoE routers and expert count",
+    "RK4/Galerkin/pressure closure",
+    "loss/curriculum/optimizer budget/validation selector"
+  ],
+  "regime": "periodic",
+  "schema": "specialist_ablation_allowlist/v2",
+  "test_truth_read": false
+}

@@ -1,0 +1,23 @@
+CUDA ready: NVIDIA GeForce RTX 4090
+===== V16_1_SteadyPressureAnchor32_ru32_rp32 2026-07-24T23:56:03+08:00 =====
+case=V16_1_SteadyPressureAnchor32
+CUDA_VISIBLE_DEVICES=all
+{"event": "split_start", "experiment": "V16_1_SteadyPressureAnchor32_ru32_rp32", "test_label": "Re_24p630436", "test_Re": 24.630435943603516, "holdout_labels": ["Re_24p630436", "Re_32p740068", "Re_39p685479", "Re_45p142703", "Re_47p081355", "Re_49p022357", "Re_51p786450", "Re_70p314635", "Re_100p352251", "Re_149p059229", "Re_189p862278"], "train_re_count": 89, "test_re_count": 11, "kept_train_samples": 10970, "dense_train_samples_before_time_sparsity": 10970, "compression_ratio_vs_dense_train": 1.0}
+{"event": "eval_only_checkpoint_loaded", "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/reproduction/heldout_eval_frozen_checkpoint_20260723/V16_1_SteadyPressureAnchor32_ru32_rp32_reproduced_Re_24p630436_checkpoint.pt", "best_epoch": 225, "best_val_score": 0.482090595504269}
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/code/global_eval56_physical.py", line 6704, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/code/global_eval56_physical.py", line 6485, in main
+    train_one_split(
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/code/global_eval56_physical.py", line 5931, in train_one_split
+    rollout_autonomous = rollout_autonomous_pressure_eval_np(
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/code/global_eval56_physical.py", line 4282, in rollout_autonomous_pressure_eval_np
+    field_relative_l2_from_coefficients(
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/code/global_eval56_physical.py", line 4194, in field_relative_l2_from_coefficients
+    numerator = float(np.einsum("...i,ij,...j->", delta, gram, delta))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/site-packages/numpy/_core/einsumfunc.py", line 1610, in einsum
+    return c_einsum(*operands, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: output has more dimensions than subscripts given in einstein sum, but no '...' ellipsis provided to broadcast the extra dimensions.

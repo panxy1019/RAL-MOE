@@ -1,0 +1,296 @@
+{
+  "schema": "steady_strict_pressure_scan/v1",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s3b_contraction.pt",
+  "checkpoint_sha256": "b85f01bfcd8c209ee4ff6fe6f2a61dfa12acbcecd83da09b153fc0f15b19c23b",
+  "horizon": 56,
+  "gate_frozen_before_scan": {
+    "finite_fraction": 1.0,
+    "divergent_windows": 0,
+    "pressure_fixed_point_physical_relative_l2_max": 0.05,
+    "pressure_drift_coefficient_relative_l2_max": 0.05,
+    "interpretation": "Supplementary strict-pressure diagnostic gate; it is not the original S3 checkpoint-selection gate."
+  },
+  "splits": {
+    "train": {
+      "rows": [
+        {
+          "Re_label": "Re_20p000000",
+          "Re": 20.0,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.6075483546730036,
+          "pressure_drift_coefficient_relative_l2": 0.31204625964164734,
+          "K56_pressure_physical_relative_l2": 0.3304791316637452,
+          "K56_velocity_physical_relative_l2": 0.0036433181692515273,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_22p535676",
+          "Re": 22.535675048828125,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.38805402387523413,
+          "pressure_drift_coefficient_relative_l2": 0.34910961985588074,
+          "K56_pressure_physical_relative_l2": 0.2612274953795534,
+          "K56_velocity_physical_relative_l2": 0.002468250311127004,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_26p667332",
+          "Re": 26.66733169555664,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.18512228481312584,
+          "pressure_drift_coefficient_relative_l2": 0.3318050503730774,
+          "K56_pressure_physical_relative_l2": 0.16568656646025998,
+          "K56_velocity_physical_relative_l2": 0.0019525449806789298,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_30p720428",
+          "Re": 30.720428466796875,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.0875740128768853,
+          "pressure_drift_coefficient_relative_l2": 0.36001184582710266,
+          "K56_pressure_physical_relative_l2": 0.08028095852629344,
+          "K56_velocity_physical_relative_l2": 0.0011966907629952085,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_34p737570",
+          "Re": 34.73756790161133,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.022359939149963867,
+          "pressure_drift_coefficient_relative_l2": 0.2850019931793213,
+          "K56_pressure_physical_relative_l2": 0.029229526018364912,
+          "K56_velocity_physical_relative_l2": 0.0004687593555194584,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_36p657767",
+          "Re": 36.65776824951172,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.007888532161681994,
+          "pressure_drift_coefficient_relative_l2": 0.8433285355567932,
+          "K56_pressure_physical_relative_l2": 0.013849600358628467,
+          "K56_velocity_physical_relative_l2": 0.0002749575921406034,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_38p357249",
+          "Re": 38.35725021362305,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.02113739753214287,
+          "pressure_drift_coefficient_relative_l2": 1.4565156698226929,
+          "K56_pressure_physical_relative_l2": 0.014185353457180902,
+          "K56_velocity_physical_relative_l2": 0.00030414328964342886,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_40p711525",
+          "Re": 40.711524963378906,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.03878069192355604,
+          "pressure_drift_coefficient_relative_l2": 0.2727796137332916,
+          "K56_pressure_physical_relative_l2": 0.016044258895835866,
+          "K56_velocity_physical_relative_l2": 0.0004562536697552658,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_41p576575",
+          "Re": 41.576576232910156,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.04530638266560517,
+          "pressure_drift_coefficient_relative_l2": 0.2364792376756668,
+          "K56_pressure_physical_relative_l2": 0.015961711951627572,
+          "K56_velocity_physical_relative_l2": 0.0004735043237498378,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_42p359071",
+          "Re": 42.35906982421875,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.0523927908958486,
+          "pressure_drift_coefficient_relative_l2": 0.17053398489952087,
+          "K56_pressure_physical_relative_l2": 0.01674431772749234,
+          "K56_velocity_physical_relative_l2": 0.0005949695572376424,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_43p093925",
+          "Re": 43.09392547607422,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.058981674096742334,
+          "pressure_drift_coefficient_relative_l2": 0.2384842336177826,
+          "K56_pressure_physical_relative_l2": 0.019855593211169198,
+          "K56_velocity_physical_relative_l2": 0.0004799099227013331,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_44p478353",
+          "Re": 44.47835159301758,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.0550028597131604,
+          "pressure_drift_coefficient_relative_l2": 0.1253802627325058,
+          "K56_pressure_physical_relative_l2": 0.01937682983475088,
+          "K56_velocity_physical_relative_l2": 0.000639582050027549,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_45p795194",
+          "Re": 45.79519271850586,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.0793594617979151,
+          "pressure_drift_coefficient_relative_l2": 0.08893513679504395,
+          "K56_pressure_physical_relative_l2": 0.020826126839394776,
+          "K56_velocity_physical_relative_l2": 0.0007208758141204273,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_46p440072",
+          "Re": 46.44007110595703,
+          "split": "train",
+          "pressure_fixed_point_physical_relative_l2": 0.08212131242505344,
+          "pressure_drift_coefficient_relative_l2": 0.1879216879606247,
+          "K56_pressure_physical_relative_l2": 0.023200055890719024,
+          "K56_velocity_physical_relative_l2": 0.0006517355156178616,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        }
+      ],
+      "pass_Re": [],
+      "pass_count": 0,
+      "total_Re": 14
+    },
+    "validation": {
+      "rows": [
+        {
+          "Re_label": "Re_28p695138",
+          "Re": 28.69513702392578,
+          "split": "validation",
+          "pressure_fixed_point_physical_relative_l2": 0.13737536386004184,
+          "pressure_drift_coefficient_relative_l2": 0.3242586851119995,
+          "K56_pressure_physical_relative_l2": 0.1108495589939225,
+          "K56_velocity_physical_relative_l2": 0.0015082862770288018,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_43p797402",
+          "Re": 43.797401428222656,
+          "split": "validation",
+          "pressure_fixed_point_physical_relative_l2": 0.0654076244943042,
+          "pressure_drift_coefficient_relative_l2": 0.22041860222816467,
+          "K56_pressure_physical_relative_l2": 0.01967230516234758,
+          "K56_velocity_physical_relative_l2": 0.0005384405654574809,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        }
+      ],
+      "pass_Re": [],
+      "pass_count": 0,
+      "total_Re": 2
+    },
+    "heldout": {
+      "rows": [
+        {
+          "Re_label": "Re_24p630436",
+          "Re": 24.630435943603516,
+          "split": "heldout",
+          "pressure_fixed_point_physical_relative_l2": 0.2710480342799015,
+          "pressure_drift_coefficient_relative_l2": 0.35530900955200195,
+          "K56_pressure_physical_relative_l2": 0.18674056553045604,
+          "K56_velocity_physical_relative_l2": 0.002983799348133428,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_32p740068",
+          "Re": 32.74006652832031,
+          "split": "heldout",
+          "pressure_fixed_point_physical_relative_l2": 0.05017116957753183,
+          "pressure_drift_coefficient_relative_l2": 0.21936529874801636,
+          "K56_pressure_physical_relative_l2": 0.05081796493223964,
+          "K56_velocity_physical_relative_l2": 0.0007480746640813894,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_39p685479",
+          "Re": 39.68547821044922,
+          "split": "heldout",
+          "pressure_fixed_point_physical_relative_l2": 0.03150706986001693,
+          "pressure_drift_coefficient_relative_l2": 0.6347424387931824,
+          "K56_pressure_physical_relative_l2": 0.015264631918699555,
+          "K56_velocity_physical_relative_l2": 0.0003841535718005244,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        },
+        {
+          "Re_label": "Re_45p142703",
+          "Re": 45.142704010009766,
+          "split": "heldout",
+          "pressure_fixed_point_physical_relative_l2": 0.056248991161726505,
+          "pressure_drift_coefficient_relative_l2": 0.7524928450584412,
+          "K56_pressure_physical_relative_l2": 0.022503127559801273,
+          "K56_velocity_physical_relative_l2": 0.0006176526705933211,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "terminal_rollout_finite": true,
+          "strict_pressure_pass": false
+        }
+      ],
+      "pass_Re": [],
+      "pass_count": 0,
+      "total_Re": 4
+    }
+  }
+}

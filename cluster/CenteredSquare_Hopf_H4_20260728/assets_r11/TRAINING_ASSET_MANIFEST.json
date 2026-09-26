@@ -1,0 +1,74 @@
+{
+  "counts": {
+    "heldout_cases": 5,
+    "heldout_snapshots": 630,
+    "train_cases": 23,
+    "trainval_snapshots": 3654,
+    "validation_cases": 6
+  },
+  "dataset": "CenteredSquare CN09 graded mesh",
+  "fit_reynolds": [
+    94.0,
+    95.0,
+    95.05,
+    95.15,
+    95.2,
+    95.35,
+    95.4,
+    95.45,
+    95.55,
+    95.6,
+    95.75,
+    96.0,
+    96.25,
+    96.75,
+    97.0,
+    97.25,
+    97.75,
+    98.0,
+    98.5,
+    99.5,
+    100.0,
+    101.0,
+    101.724137931034
+  ],
+  "heldout_reynolds_sealed": [
+    95.1,
+    95.3,
+    96.5,
+    100.5,
+    102.0
+  ],
+  "heldout_rows_present": false,
+  "pressure_gauge_verified": true,
+  "projection_error_verified": true,
+  "projection_errors": {
+    "train_pressure_max_abs_coefficient_reproduction": 2.2730528144165874e-06,
+    "train_velocity_max_abs_coefficient_reproduction": 8.493661880493164e-07
+  },
+  "r_p": 11,
+  "r_u": 11,
+  "rom_tensor_verified": true,
+  "schema_version": 1,
+  "scope": "hopf_local_train_val_view",
+  "sha256": {
+    "coefficient_view": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891",
+    "galerkin": "6f2e6c9136a7da1c23fc960f7808e98b2e98dc9ab5f4061326301f873690313e",
+    "heldout_view": "b3b88204eb6529a3bbf6de5b7f7bb55ca52f457167281a9f11c00781e46a32c3",
+    "pressure": "bb7206d488dbcd0e5944f5516248824d125c528e7fada04534bc20e74eb1cc5d"
+  },
+  "source_sha256": {
+    "galerkin": "b8d2d97e03ce20930484e991af6c3089c63a7687893fc299dc9bd559f129f119",
+    "pod_rank_pack": "35625659f82215ef16ffda78887ef1435cf13ccc47051fa7cf57cdca4efd49b6",
+    "pressure": "e5be152fd4bd32749abf88b93b950427d3be38f14779f54089f488d0f0f5abe8"
+  },
+  "split_contract_verified": true,
+  "validation_reynolds": [
+    94.5,
+    95.25,
+    95.5,
+    97.5,
+    99.0,
+    101.5
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "method": "train-only regime-specific randomized block POD with lumped point-area L2",
+  "regime": "hopf",
+  "rank": 80,
+  "control_rank": 32,
+  "oversampling": 32,
+  "power_iterations": 2,
+  "seed": 20260721,
+  "centering": "single_train_only_regime_mean",
+  "pressure_gauge": "subtract_area_mean_per_snapshot",
+  "elapsed_seconds": 417.83585353847593
+}

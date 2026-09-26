@@ -1,0 +1,12 @@
+{
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v2/hopf/dataonly/seed_1248/best_validation.pt",
+  "checkpoint_sha256": "0d02a1d2e0e69cd370388e4548e7be9a2081a82004ff72cd98935debce1f7012",
+  "selection": {
+    "adopted_completed_training": true,
+    "best_step": 7600,
+    "final_step": 8000
+  },
+  "selection_source": "validation only",
+  "status": "FROZEN",
+  "test_read_before_freeze": false
+}

@@ -1,0 +1,178 @@
+{
+  "experiment": "E1",
+  "router": "oracle_trajectory_label",
+  "trainable_parameters": 0,
+  "test": {
+    "metrics": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "illegal_S_P_top2_count": 4
+    },
+    "rows": [
+      {
+        "Re": 24.6304355074,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 1.0,
+          "Hopf": 0.0,
+          "Periodic": 0.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 32.740068162,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 1.0,
+          "Hopf": 0.0,
+          "Periodic": 0.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 39.6854792076,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 1.0,
+          "Hopf": 0.0,
+          "Periodic": 0.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 45.142702578,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 1.0,
+          "Hopf": 0.0,
+          "Periodic": 0.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 47.0813545644,
+        "true": "Hopf",
+        "selected": "Hopf",
+        "probabilities": {
+          "Steady": 0.0,
+          "Hopf": 1.0,
+          "Periodic": 0.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 49.0223566571,
+        "true": "Hopf",
+        "selected": "Hopf",
+        "probabilities": {
+          "Steady": 0.0,
+          "Hopf": 1.0,
+          "Periodic": 0.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 51.7864496836,
+        "true": "Hopf",
+        "selected": "Hopf",
+        "probabilities": {
+          "Steady": 0.0,
+          "Hopf": 1.0,
+          "Periodic": 0.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 70.3146353337,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 0.0,
+          "Hopf": 0.0,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 100.352251335,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 0.0,
+          "Hopf": 0.0,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 149.059229449,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 0.0,
+          "Hopf": 0.0,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 2
+      },
+      {
+        "Re": 189.86227838,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 0.0,
+          "Hopf": 0.0,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 2
+      }
+    ]
+  },
+  "e0_evidence": {
+    "Steady": {
+      "path": "/root/panxy/particalMOE/e0_reproduction_20260722/steady/raw_metrics.json",
+      "sha256": "7df7abd889d62b62acd864b35b476ac3759ade77f246d5886aa790b7517d50d1"
+    },
+    "Hopf": {
+      "path": "/root/panxy/particalMOE/e0_reproduction_20260722/hopf/heldout_metrics.json",
+      "sha256": "1272698ae9abd8354cce087e3d5764f8d639e515d4ed5318be3ac0a5dd02dae7"
+    },
+    "Periodic": {
+      "path": "/root/panxy/particalMOE/e0_reproduction_20260722/periodic/periodic_r32_multihorizon_evaluation.json",
+      "sha256": "b17be4ec3459dfab11b760f1d3f326fb1b153161b9e65ca7c87e887990f2fc1e"
+    }
+  }
+}

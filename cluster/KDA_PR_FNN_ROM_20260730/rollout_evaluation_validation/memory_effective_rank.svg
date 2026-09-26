@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="520" viewBox="0 0 920 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="460.0" y="32" text-anchor="middle" font-size="22" font-family="Arial">KDA matrix-memory effective rank</text>
+<line x1="90" y1="450.00" x2="890" y2="450.00" stroke="#dddddd"/>
+<text x="80" y="455.00" text-anchor="end" font-size="12" font-family="Arial">2.5013</text>
+<line x1="90" y1="372.00" x2="890" y2="372.00" stroke="#dddddd"/>
+<text x="80" y="377.00" text-anchor="end" font-size="12" font-family="Arial">2.6684</text>
+<line x1="90" y1="294.00" x2="890" y2="294.00" stroke="#dddddd"/>
+<text x="80" y="299.00" text-anchor="end" font-size="12" font-family="Arial">2.8355</text>
+<line x1="90" y1="216.00" x2="890" y2="216.00" stroke="#dddddd"/>
+<text x="80" y="221.00" text-anchor="end" font-size="12" font-family="Arial">3.0026</text>
+<line x1="90" y1="138.00" x2="890" y2="138.00" stroke="#dddddd"/>
+<text x="80" y="143.00" text-anchor="end" font-size="12" font-family="Arial">3.1697</text>
+<line x1="90" y1="60.00" x2="890" y2="60.00" stroke="#dddddd"/>
+<text x="80" y="65.00" text-anchor="end" font-size="12" font-family="Arial">3.3368</text>
+<line x1="90.00" y1="450" x2="90.00" y2="456" stroke="#333"/>
+<text x="90.00" y="474" text-anchor="middle" font-size="12" font-family="Arial">0</text>
+<line x1="356.67" y1="450" x2="356.67" y2="456" stroke="#333"/>
+<text x="356.67" y="474" text-anchor="middle" font-size="12" font-family="Arial">1</text>
+<line x1="623.33" y1="450" x2="623.33" y2="456" stroke="#333"/>
+<text x="623.33" y="474" text-anchor="middle" font-size="12" font-family="Arial">2</text>
+<line x1="890.00" y1="450" x2="890.00" y2="456" stroke="#333"/>
+<text x="890.00" y="474" text-anchor="middle" font-size="12" font-family="Arial">3</text>
+<line x1="90" y1="60" x2="90" y2="450" stroke="#333"/>
+<line x1="90" y1="450" x2="890" y2="450" stroke="#333"/>
+<text x="490.0" y="502" text-anchor="middle" font-size="15" font-family="Arial">Memory head</text>
+<text x="22" y="255.0" text-anchor="middle" font-size="15" font-family="Arial" transform="rotate(-90 22 255.0)">Effective rank</text>
+<polyline points="90.00,404.63 356.67,381.64 623.33,131.82 890.00,105.37" fill="none" stroke="#c94c5d" stroke-width="3"/>
+<circle cx="90.00" cy="404.63" r="4" fill="#c94c5d"/>
+<circle cx="356.67" cy="381.64" r="4" fill="#c94c5d"/>
+<circle cx="623.33" cy="131.82" r="4" fill="#c94c5d"/>
+<circle cx="890.00" cy="105.37" r="4" fill="#c94c5d"/>
+<line x1="110" y1="78" x2="138" y2="78" stroke="#c94c5d" stroke-width="3"/>
+<text x="146" y="83" font-size="13" font-family="Arial">B2 KDA radial-off</text>
+<polyline points="90.00,333.56 356.67,276.94 623.33,230.61 890.00,151.96" fill="none" stroke="#e29b35" stroke-width="3"/>
+<circle cx="90.00" cy="333.56" r="4" fill="#e29b35"/>
+<circle cx="356.67" cy="276.94" r="4" fill="#e29b35"/>
+<circle cx="623.33" cy="230.61" r="4" fill="#e29b35"/>
+<circle cx="890.00" cy="151.96" r="4" fill="#e29b35"/>
+<line x1="355" y1="78" x2="383" y2="78" stroke="#e29b35" stroke-width="3"/>
+<text x="391" y="83" font-size="13" font-family="Arial">B3 KDA radial-on</text>
+</svg>

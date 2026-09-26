@@ -1,0 +1,14 @@
+{
+  "variant": "b3",
+  "model_name": "B3_Discrete_KDA_FNN",
+  "trainable_parameters": 2238718,
+  "total_parameters": 2238718,
+  "parameter_groups": {
+    "memory": 168862,
+    "heads": 2069856
+  },
+  "runtime_memory_state_per_trajectory": 1024,
+  "paired_variant": "b4",
+  "paired_trainable_parameters": 2238718,
+  "paired_parameter_shapes_identical": true
+}

@@ -1,0 +1,86 @@
+{
+  "Re": 47.8,
+  "label": "Re_47p800000",
+  "regime": "hopf_transition",
+  "D": 1.0,
+  "nu": 0.001,
+  "U_inlet": 0.047799999999999995,
+  "retain_start_time": 943.59969805,
+  "n_times": 162,
+  "n_points": 97368,
+  "n_cells": 48128,
+  "diagnostics": {
+    "mode": "periodic",
+    "estimated_period": 179.73327581868512,
+    "chunks": [
+      {
+        "end_time": 134.79995686,
+        "samples": 80,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 269.59991373,
+        "samples": 152,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 404.39987059,
+        "samples": 221,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 539.19982746,
+        "samples": 291,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 673.99978432,
+        "samples": 360,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 808.79974118,
+        "samples": 429,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 943.59969805,
+        "samples": 498,
+        "recent_peak_count": 23,
+        "lift_peak_amplitude_cv": 0.007462488621301527,
+        "period_cv": 0.023986398808388813,
+        "detected_period": 184.36967361,
+        "reason": "stable limit cycle detected"
+      }
+    ],
+    "status": "limit_cycle_detected",
+    "retained_period": 184.36967361
+  },
+  "arrays": {
+    "times": [
+      162
+    ],
+    "points": [
+      97368,
+      3
+    ],
+    "u": [
+      162,
+      97368
+    ],
+    "v": [
+      162,
+      97368
+    ],
+    "p": [
+      162,
+      97368
+    ]
+  },
+  "units": {
+    "times": "s",
+    "points": "m",
+    "u/v": "m/s",
+    "p": "m^2/s^2"
+  }
+}

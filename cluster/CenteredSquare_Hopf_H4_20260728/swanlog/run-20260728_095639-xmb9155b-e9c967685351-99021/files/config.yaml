@@ -1,0 +1,318 @@
+allow_tf32:
+  desc: ''
+  sort: 25
+  value: true
+amp:
+  desc: ''
+  sort: 24
+  value: true
+asset_audit:
+  desc: ''
+  sort: 48
+  value:
+    manifest:
+      counts:
+        heldout_cases: 5
+        heldout_snapshots: 630
+        train_cases: 23
+        trainval_snapshots: 3654
+        validation_cases: 6
+      dataset: CenteredSquare CN09 graded mesh
+      fit_reynolds:
+      - 94.0
+      - 95.0
+      - 95.05
+      - 95.15
+      - 95.2
+      - 95.35
+      - 95.4
+      - 95.45
+      - 95.55
+      - 95.6
+      - 95.75
+      - 96.0
+      - 96.25
+      - 96.75
+      - 97.0
+      - 97.25
+      - 97.75
+      - 98.0
+      - 98.5
+      - 99.5
+      - 100.0
+      - 101.0
+      - 101.724137931034
+      heldout_reynolds_sealed:
+      - 95.1
+      - 95.3
+      - 96.5
+      - 100.5
+      - 102.0
+      heldout_rows_present: false
+      pressure_gauge_verified: true
+      projection_error_verified: true
+      projection_errors:
+        train_pressure_max_abs_coefficient_reproduction: 2.2730528144165874e-06
+        train_velocity_max_abs_coefficient_reproduction: 8.493661880493164e-07
+      r_p: 11
+      r_u: 11
+      rom_tensor_verified: true
+      schema_version: 1
+      scope: hopf_local_train_val_view
+      sha256:
+        coefficient_view: 05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891
+        galerkin: 6f2e6c9136a7da1c23fc960f7808e98b2e98dc9ab5f4061326301f873690313e
+        heldout_view: b3b88204eb6529a3bbf6de5b7f7bb55ca52f457167281a9f11c00781e46a32c3
+        pressure: bb7206d488dbcd0e5944f5516248824d125c528e7fada04534bc20e74eb1cc5d
+      source_sha256:
+        galerkin: b8d2d97e03ce20930484e991af6c3089c63a7687893fc299dc9bd559f129f119
+        pod_rank_pack: 35625659f82215ef16ffda78887ef1435cf13ccc47051fa7cf57cdca4efd49b6
+        pressure: e5be152fd4bd32749abf88b93b950427d3be38f14779f54089f488d0f0f5abe8
+      split_contract_verified: true
+      validation_reynolds:
+      - 94.5
+      - 95.25
+      - 95.5
+      - 97.5
+      - 99.0
+      - 101.5
+    observed_sha256:
+      coefficient_view: 05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891
+      galerkin: 6f2e6c9136a7da1c23fc960f7808e98b2e98dc9ab5f4061326301f873690313e
+      pressure: bb7206d488dbcd0e5944f5516248824d125c528e7fada04534bc20e74eb1cc5d
+    passed: true
+asset_manifest:
+  desc: ''
+  sort: 5
+  value: assets_r11/TRAINING_ASSET_MANIFEST.json
+baseline_code_sha256:
+  desc: ''
+  sort: 45
+  value: 9dfcae35793252891faea430fca53cf15268bd1c3645a5b6f01af8aa4651693a
+baseline_trainer:
+  desc: ''
+  sort: 1
+  value: code/train_centeredsquare_hopf_base.py
+benchmark_horizon:
+  desc: ''
+  sort: 40
+  value: 8
+benchmark_steps:
+  desc: ''
+  sort: 39
+  value: 0
+coefficient_view:
+  desc: ''
+  sort: 2
+  value: assets_r11/centeredsquare_hopf_trainval_r11.npz
+contract:
+  desc: ''
+  sort: 6
+  value: trainonly_contract_mb46/trainonly_fluctuation_contract.npz
+contract_sha256:
+  desc: ''
+  sort: 47
+  value: 8e25a2791000ddc95ca153477d7edd4e981443b7f20a7138c1e157004bf0a63a
+device:
+  desc: ''
+  sort: 22
+  value: cuda
+early_stop_patience_evals:
+  desc: ''
+  sort: 30
+  value: 8
+eval_every:
+  desc: ''
+  sort: 27
+  value: 200
+experiment_name:
+  desc: ''
+  sort: 8
+  value: CenteredSquareHopf34_H4_NormalFormRadial_r11
+fused_adamw:
+  desc: ''
+  sort: 26
+  value: true
+galerkin_path:
+  desc: ''
+  sort: 3
+  value: assets_r11/centeredsquare_hopf_trainonly_galerkin_r11.npz
+gpu_memory_fraction:
+  desc: ''
+  sort: 23
+  value: 0.28
+grad_accum:
+  desc: ''
+  sort: 11
+  value: 1
+grad_clip:
+  desc: ''
+  sort: 15
+  value: 1.0
+heldout_hard_disabled:
+  desc: ''
+  sort: 44
+  value:
+  - 95.1
+  - 95.3
+  - 96.5
+  - 100.5
+  - 102.0
+hopf_grad_max:
+  desc: ''
+  sort: 17
+  value: 0.25
+hopf_grad_min:
+  desc: ''
+  sort: 16
+  value: 0.1
+hopf_grad_target:
+  desc: ''
+  sort: 18
+  value: 0.18
+initialization:
+  desc: ''
+  sort: 50
+  value:
+    model: stable_zero_update_with_operator_features
+    normal_form: strict neutral/zero-output
+    old_checkpoint_loaded: false
+long_eval_every:
+  desc: ''
+  sort: 28
+  value: 400
+lr:
+  desc: ''
+  sort: 13
+  value: 0.001
+max_steps:
+  desc: ''
+  sort: 12
+  value: 8000
+micro_batch:
+  desc: ''
+  sort: 10
+  value: 46
+model_input_semantics:
+  desc: ''
+  sort: 49
+  value: Galerkin and pressure ROM operators are input features; learned finite-difference
+    dynamics are integrated without directly adding the unstable continuous-time ROM
+    backbone
+nf_grad_max:
+  desc: ''
+  sort: 20
+  value: 0.12
+nf_grad_min:
+  desc: ''
+  sort: 19
+  value: 0.05
+nf_grad_target:
+  desc: ''
+  sort: 21
+  value: 0.08
+output_root:
+  desc: ''
+  sort: 7
+  value: runs_mb46_dataonly
+preflight_per_re:
+  desc: ''
+  sort: 37
+  value: false
+preflight_windows:
+  desc: ''
+  sort: 38
+  value: 8
+pressure_path:
+  desc: ''
+  sort: 4
+  value: assets_r11/centeredsquare_hopf_trainonly_pressure_r11.npz
+resume:
+  desc: ''
+  sort: 41
+  value: {}
+seed:
+  desc: ''
+  sort: 9
+  value: 1248
+selector:
+  desc: ''
+  sort: 51
+  value: Hopf-aware fluctuation/radial/growth primary; total-field safeguard secondary
+smoke_only:
+  desc: ''
+  sort: 36
+  value: false
+swanlab_group:
+  desc: ''
+  sort: 34
+  value: CenteredSquare_Hopf_r11_mb46
+swanlab_log_every:
+  desc: ''
+  sort: 35
+  value: 20
+swanlab_mode:
+  desc: ''
+  sort: 32
+  value: online
+swanlab_project:
+  desc: ''
+  sort: 33
+  value: CenteredSquare_Hopf_H4
+train_Re:
+  desc: ''
+  sort: 42
+  value:
+  - 94.0
+  - 95.0
+  - 95.05
+  - 95.15
+  - 95.2
+  - 95.35
+  - 95.4
+  - 95.45
+  - 95.55
+  - 95.6
+  - 95.75
+  - 96.0
+  - 96.25
+  - 96.75
+  - 97.0
+  - 97.25
+  - 97.75
+  - 98.0
+  - 98.5
+  - 99.5
+  - 100.0
+  - 101.0
+  - 101.724137931034
+trainer_code_sha256:
+  desc: ''
+  sort: 46
+  value: cf038f75a21635673d58ecdd7d9360faacf0af9536a35924e2049d00f844e967
+validation_Re:
+  desc: ''
+  sort: 43
+  value:
+  - 94.5
+  - 95.25
+  - 95.5
+  - 97.5
+  - 99.0
+  - 101.5
+validation_lock:
+  desc: ''
+  sort: 31
+  value: /tmp/centeredsquare_hopf_h4_validation_gpu.lock
+validation_windows_per_re:
+  desc: ''
+  sort: 29
+  value: 24
+variant:
+  desc: ''
+  sort: 0
+  value: h4
+weight_decay:
+  desc: ''
+  sort: 14
+  value: 0.0001

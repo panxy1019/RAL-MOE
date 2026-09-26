@@ -1,0 +1,22 @@
+{
+  "dense": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/strengthening_20260915/dense_periodic_v1/best_validation.pt",
+    "sha256": "59304c96e99ef8a3e349330aa388f4c9431db7994dcb43d9ce8663e1e703b4e1",
+    "selected_epoch": 20,
+    "best_val_score": 0.2836883185664192,
+    "state_tensor_elements": 48609532,
+    "finite_weights": true,
+    "inference_active_parameter_estimate": 48609532
+  },
+  "full": {
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt",
+    "sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5",
+    "selected_epoch": 85,
+    "best_val_score": 0.28529463210143147,
+    "state_tensor_elements": 48617547,
+    "finite_weights": true,
+    "common_parameter_elements": 1590861,
+    "inference_active_parameter_estimate": 8308959,
+    "active_definition": "one selected regime group; one shared plus two routed experts for each velocity/pressure channel; all common/router parameters counted; no training diversity stacks"
+  }
+}

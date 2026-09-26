@@ -1,0 +1,29 @@
+{"event": "split_start", "experiment": "centered_square_periodic_optimized_r28_p26", "test_label": "Re100p500000", "test_Re": 100.5, "holdout_labels": ["Re100p500000", "Re102p000000", "Re120p689655", "Re144p827586"], "train_re_count": 27, "test_re_count": 4, "kept_train_samples": 3321, "dense_train_samples_before_time_sparsity": 3321, "compression_ratio_vs_dense_train": 1.0}
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+runs/optimized_long_seed1600/swanlog/run-20260728_224551-j7p1eaz0-e9c967685351-1
+06695
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE
+swanlab: 🚀 View run CenteredSquare-Periodic-optimized-long-resume at 
+https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE/runs/j7p1eaz0
+swanlab: Error happened while training
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE
+swanlab: 🚀 View run CenteredSquare-Periodic-optimized-long-resume at 
+https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE/runs/j7p1eaz0
+swanlab: Upload complete: 25 records
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/run_square_periodic_training_optimized.py", line 125, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/run_square_periodic_training_optimized.py", line 119, in main
+    trainer.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/train_square_periodic_moe_optimized.py", line 6892, in main
+    train_one_split(
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/train_square_periodic_moe_optimized.py", line 5678, in train_one_split
+    restore_rng_state(resume["rng"])
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/train_square_periodic_moe_optimized.py", line 436, in restore_rng_state
+    torch.set_rng_state(state["torch"])
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/torch/random.py", line 36, in set_rng_state
+    default_generator.set_state(new_state)
+TypeError: RNG state must be a torch.ByteTensor

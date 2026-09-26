@@ -1,0 +1,10 @@
+Regime,Method,Strict attractor result,Notes
+Steady,Vanilla-FNN-MoE,No preregistered strict binary count,K56 finite; early-stopped checkpoint
+Steady,DataOnly-MoE,Generic tail diagnostics only,"center=0.0101356, amp=0.0094164"
+Steady,Proposed Specialist MoE,No preregistered strict binary count,K56 finite; fixed-point metrics available
+Hopf,Vanilla-FNN-MoE,Not evaluated on test,validation K16 non-finite; fail closed
+Hopf,DataOnly-MoE,No certified Hopf strict conjunction,"center=0.0791413, amp=0.0115456; divergent windows present"
+Hopf,Proposed Specialist MoE,3/29 train; 0/2 validation; 0/3 heldout,"strict train passes: Re=49.3, 49.6, 50.0"
+Periodic,Vanilla-FNN-MoE,1/4 heldout,native K48 cycle contract
+Periodic,DataOnly-MoE,No certified phase/frequency conjunction,"center=0.033325, amp=0.0106319"
+Periodic,Proposed Specialist MoE,3/4 heldout,native K48 cycle contract

@@ -1,0 +1,23 @@
+{
+  "method": "global",
+  "starts": [
+    4986,
+    5034,
+    5082,
+    7884,
+    7932,
+    7980,
+    11268,
+    11316,
+    11364,
+    13523,
+    13571,
+    13619
+  ],
+  "horizon": 48,
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision5_supplemental_evaluation_20260725/recovery/global_k56_valid_history_windows_v5/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+  "checkpoint_sha256": "9d7e2b861d8c501eff87a940b93f7fe64ca72fd976afc0c6fc1621ff8f0b284f",
+  "metric": "mean per-window relative physical L2 against POD-reconstructed truth, original pressure gauge; Ejoint=Eu+Ep",
+  "nonfinite_policy": "retain all windows and report NaN aggregate after any divergence; no survivor-only mean",
+  "scope": "Circular Periodic local chart; full denotes frozen RAL Periodic specialist, not two-specialist fusion"
+}

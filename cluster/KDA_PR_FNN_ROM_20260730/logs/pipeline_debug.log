@@ -1,0 +1,17 @@
++ set -euo pipefail
++ ROOT=/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE
++ BASE=/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728
++ EXP=/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/KDA_PR_FNN_ROM_20260730
++ PY=/root/miniconda3/envs/pt_env/bin/python
++ TRAIN=/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/KDA_PR_FNN_ROM_20260730/code/train_kda_pr_fnn_rom.py
++ COMMON=(--baseline-trainer "$BASE/code/train_centeredsquare_hopf_base.py" --coefficient-view "$BASE/assets_r11/centeredsquare_hopf_trainval_r11.npz" --galerkin-path "$BASE/assets_r11/centeredsquare_hopf_trainonly_galerkin_r11.npz" --pressure-path "$BASE/assets_r11/centeredsquare_hopf_trainonly_pressure_r11.npz" --asset-manifest "$BASE/assets_r11/TRAINING_ASSET_MANIFEST.json" --fluctuation-contract "$BASE/trainonly_contract_mb46/trainonly_fluctuation_contract.npz" --output-root "$EXP/runs_single_seed" --seed 1248 --max-steps 8000 --micro-batch 1536 --grad-accum 1 --gpu-memory-fraction 0.94 --swanlab-mode online)
++ /root/miniconda3/envs/pt_env/bin/python /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/KDA_PR_FNN_ROM_20260730/code/train_kda_pr_fnn_rom.py --variant b1 --experiment-name B1_Deep_FNN_H3_seed1248 --baseline-trainer /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/code/train_centeredsquare_hopf_base.py --coefficient-view /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz --galerkin-path /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainonly_galerkin_r11.npz --pressure-path /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainonly_pressure_r11.npz --asset-manifest /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/TRAINING_ASSET_MANIFEST.json --fluctuation-contract /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/trainonly_contract_mb46/trainonly_fluctuation_contract.npz --output-root /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/KDA_PR_FNN_ROM_20260730/runs_single_seed --seed 1248 --max-steps 8000 --micro-batch 1536 --grad-accum 1 --gpu-memory-fraction 0.94 --swanlab-mode online
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/swanlog/run-20260730_231845-ydqhx2i1-e9c967685351-120481
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Hopf_KDA_PR_FNN_ROM
+swanlab: 🚀 View run B1_Deep_FNN_H3_seed1248 at 
+https://swanlab.cn/@panxy1019/CenteredSquare_Hopf_KDA_PR_FNN_ROM/runs/ydqhx2i1

@@ -1,0 +1,215 @@
+{
+  "available_terminal_checkpoints": {
+    "final.pt": {
+      "model_sha256": "3671113fb75d8ef3fcfb35c958eeb28083083724e778aaf5638e75cc66fcde67",
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/runs/s2b_rank999/checkpoints/final.pt",
+      "sha256": "23c7b18fb44316fca28bef0aeac4458235c100b99b2b0c4503d7ae5770cc6fe9",
+      "step": 3200
+    },
+    "latest.pt": {
+      "model_sha256": "3671113fb75d8ef3fcfb35c958eeb28083083724e778aaf5638e75cc66fcde67",
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/runs/s2b_rank999/checkpoints/latest.pt",
+      "sha256": "ddc6f42194734145a2e90778bfcd5dee29e07f54d4d13e902e8c0ee8353e386e",
+      "step": 3200
+    }
+  },
+  "best_observed_validation_candidate": {
+    "contraction_ratio": 583.701416015625,
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "fixed_point_residual": 2.487459182739258,
+    "qualified": false,
+    "step": 2400,
+    "worst_pressure": 0.2132965910826833,
+    "worst_velocity": 0.6398052722607509
+  },
+  "heldout_used_for_selection": false,
+  "pre_registered_qualification": {
+    "contraction_ratio_less_than": 1.0,
+    "divergent_windows": 0,
+    "finite_fraction": 1.0
+  },
+  "qualified_checkpoint_count": 0,
+  "selected_checkpoint": {
+    "model_sha256": "3671113fb75d8ef3fcfb35c958eeb28083083724e778aaf5638e75cc66fcde67",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/checkpoint/frozen_centeredsquare_steady_step3200.pt",
+    "reason": "No validation checkpoint passed the contraction<1 gate. The training-produced final early-stop checkpoint is frozen for one-time heldout characterization, not promoted as a qualified deployment checkpoint.",
+    "sha256": "23c7b18fb44316fca28bef0aeac4458235c100b99b2b0c4503d7ae5770cc6fe9",
+    "source_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_steady_specialist_v1/runs/s2b_rank999/checkpoints/final.pt",
+    "step": 3200
+  },
+  "selection_data": "validation_only",
+  "status": "FROZEN_UNQUALIFIED_CANDIDATE",
+  "validation_history": [
+    {
+      "contraction_ratio": 622.6950073242188,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 6.7227783203125,
+      "qualified": false,
+      "step": 0,
+      "worst_pressure": 1.004268937724206,
+      "worst_velocity": 0.5340931089044977
+    },
+    {
+      "contraction_ratio": 609.730712890625,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 5.048031330108643,
+      "qualified": false,
+      "step": 200,
+      "worst_pressure": 0.6927118874216408,
+      "worst_velocity": 0.5227252560335245
+    },
+    {
+      "contraction_ratio": 602.94921875,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 5.100656509399414,
+      "qualified": false,
+      "step": 400,
+      "worst_pressure": 0.5123811016744835,
+      "worst_velocity": 0.5591908658943148
+    },
+    {
+      "contraction_ratio": 597.9880981445312,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 3.498789072036743,
+      "qualified": false,
+      "step": 600,
+      "worst_pressure": 0.38804820506685034,
+      "worst_velocity": 0.5713740953671215
+    },
+    {
+      "contraction_ratio": 593.0625,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.474585771560669,
+      "qualified": false,
+      "step": 800,
+      "worst_pressure": 0.3116694752478702,
+      "worst_velocity": 0.5760276299844808
+    },
+    {
+      "contraction_ratio": 590.6568603515625,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.5724055767059326,
+      "qualified": false,
+      "step": 1000,
+      "worst_pressure": 0.27200832051488677,
+      "worst_velocity": 0.5790355342664553
+    },
+    {
+      "contraction_ratio": 589.2681274414062,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.678927183151245,
+      "qualified": false,
+      "step": 1200,
+      "worst_pressure": 0.2568664162728164,
+      "worst_velocity": 0.6016105913775414
+    },
+    {
+      "contraction_ratio": 588.4783935546875,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.6327261924743652,
+      "qualified": false,
+      "step": 1400,
+      "worst_pressure": 0.24445141969206155,
+      "worst_velocity": 0.5969625926001069
+    },
+    {
+      "contraction_ratio": 586.2056274414062,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.533634901046753,
+      "qualified": false,
+      "step": 1600,
+      "worst_pressure": 0.23631339425501427,
+      "worst_velocity": 0.6236191760957448
+    },
+    {
+      "contraction_ratio": 584.84033203125,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.5382649898529053,
+      "qualified": false,
+      "step": 1800,
+      "worst_pressure": 0.2221836719878925,
+      "worst_velocity": 0.6356262827122141
+    },
+    {
+      "contraction_ratio": 584.6785278320312,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.5172014236450195,
+      "qualified": false,
+      "step": 2000,
+      "worst_pressure": 0.22298375766157844,
+      "worst_velocity": 0.6381197716924486
+    },
+    {
+      "contraction_ratio": 583.6866455078125,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.5631251335144043,
+      "qualified": false,
+      "step": 2200,
+      "worst_pressure": 0.22228190703930512,
+      "worst_velocity": 0.6396293754826061
+    },
+    {
+      "contraction_ratio": 583.701416015625,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.487459182739258,
+      "qualified": false,
+      "step": 2400,
+      "worst_pressure": 0.2132965910826833,
+      "worst_velocity": 0.6398052722607509
+    },
+    {
+      "contraction_ratio": 581.9409790039062,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.385613441467285,
+      "qualified": false,
+      "step": 2600,
+      "worst_pressure": 0.22354518739531307,
+      "worst_velocity": 0.5755056752286506
+    },
+    {
+      "contraction_ratio": 582.3240356445312,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.3386590480804443,
+      "qualified": false,
+      "step": 2800,
+      "worst_pressure": 0.22316850051430137,
+      "worst_velocity": 0.5559188032188932
+    },
+    {
+      "contraction_ratio": 581.7943115234375,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.334216356277466,
+      "qualified": false,
+      "step": 3000,
+      "worst_pressure": 0.21811417329917604,
+      "worst_velocity": 0.5522223349909762
+    },
+    {
+      "contraction_ratio": 581.9132690429688,
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "fixed_point_residual": 2.4071547985076904,
+      "qualified": false,
+      "step": 3200,
+      "worst_pressure": 0.21349041469661637,
+      "worst_velocity": 0.5492222868682
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "canonical_artifacts": {
+    "MULTI_SEED_H_ONLY_WEIGHT_DISTANCE_ABLATIONS.json": "478542040c0b75694f3b2815cecab367e0daa79561378a8cd12aa86a869fadf8",
+    "MULTI_SEED_H_ONLY_WEIGHT_DISTANCE_ABLATIONS.md": "db245fddff7ea712f5867c8a77cb6f906e7e24e269cd4514d30afc735259dc8a",
+    "MULTI_SEED_PER_WINDOW_ALPHA_H_AND_DISTANCE.csv": "00bbdbb5d287609b7d1e9cfd0a661e730b29df29f7e262dd1727ced218cd7a2d"
+  },
+  "development_cache_sha256": "f02e7c6c5ac2a6cefb9e9729dde1ae10d8c5bfdfbc20b7f7113ec0f23a3c51e6",
+  "heldout_cache_sha256": "390863add9ca6798ada08628696eef81c60b9f2895410c293b26a77e06484c9b",
+  "route_checkpoint_sha256_by_seed": {
+    "LookAheadShortRolloutRouter": {
+      "42003": "fae7626721eba9030454a1fd23d3540ebe975856077768366b09160316c63a5a",
+      "42103": "2899e899e2544e02400ef5dd02e468d69d21f3fc3540e8caf303f5828d1812a1",
+      "42203": "42b3d85111e165e2b2b1f778b9b744321de598f1a44fd1e65c3aecc5c16f557b"
+    },
+    "RiskPredictionRouter": {
+      "42002": "32882e37c754dfae23ce338e3c646360db0bbf38b4126f8b2dd9616da157a1b1",
+      "42102": "1328b187fa5315fc548267bff1144e48b189762b28826c64118bb86f427330d0",
+      "42202": "2344a73d6b5892585b22970f32d7a31a086ad455c89331fdff9e233779640dd9"
+    },
+    "T2-C_LearnedConvexCorrection_FieldBlend": {
+      "42001": "1287f9c1071f2830add29a72a1dca89cac03d603ac89f3cca79b7245863d1225",
+      "42101": "b39fa14b331a7b130c02b1b9d54260c20bee2504541ce3fd51daafa7c04f0f37",
+      "42201": "315d36bc78a573a7e2ea853875754fb719818bd3542f081ac650465e151cd2b1"
+    }
+  },
+  "scientific_conclusion": "Current S-H gains are overwhelmingly H-only. Risk critic and LookAhead scorer produce zero incremental output change on all evaluated windows across all three seeds.",
+  "specialist_checkpoints_modified": false,
+  "specialists_retrained": false,
+  "status": "FROZEN"
+}

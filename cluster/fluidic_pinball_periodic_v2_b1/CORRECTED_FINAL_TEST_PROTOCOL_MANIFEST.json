@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "evaluation_date": "2026-08-06",
+  "scope": "corrected_frozen_final_test_cadence_aligned",
+  "correction_reason": "The original evaluator used adjacent dt=0.25 test frames for a B1 H3 model trained with median dt=1.0, causing an input-cadence distribution shift.",
+  "checkpoint": "best_validation.pt",
+  "checkpoint_sha256": "c89a0cbf6cc0920664875f00234afaac49bc19b1c5c5f985cbba0b09e2dbdbda",
+  "checkpoint_unchanged": true,
+  "hyperparameter_updates_after_unseal": false,
+  "model_selection_after_unseal": false,
+  "test_view_sha256": "c2a768087caf541c6421006e9c41390eb50eaccbe8138ae9099dfa72e297be7c",
+  "temporal_stride": 4,
+  "all_temporal_offsets": true,
+  "effective_dt": 1.0,
+  "all_test_horizons": [1, 2, 4, 8, 16, 24, 32],
+  "periodic_core_horizons": [56],
+  "all_test_reynolds": [22.25, 24.0, 27.5, 31.0, 34.5, 38.0, 43.0, 50.0, 57.0],
+  "k56_reynolds": [27.5, 31.0, 34.5, 38.0, 43.0, 50.0, 57.0],
+  "original_dt025_results_status": "invalid_for_b1_performance_comparison_due_to_cadence_mismatch"
+}

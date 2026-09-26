@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "status": "FROZEN_USER_REQUESTED_EARLY_STOP",
+  "regime": "steady",
+  "method": "Vanilla-FNN-MoE",
+  "fixed_seed": 202607251,
+  "selection_contract": "user-requested freeze of the latest completed validation checkpoint; no test metric used",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/frozen_user_stop_step6200_20260724/steady_vanilla_final_ablation_step6200.pt",
+  "checkpoint_sha256": "64d061d29d013c383c7244361ad044a2c34b22bb487e1a6c42b76dae390817c4",
+  "checkpoint_step": 6200,
+  "curriculum_horizon_at_checkpoint": 16,
+  "config": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/frozen_user_stop_step6200_20260724/config.json",
+  "config_sha256": "70d0121d1299faafd211eab3c6982290c7dc27eed548558b0f7c643f17bd2862",
+  "validation_history": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/frozen_user_stop_step6200_20260724/validation_history.jsonl",
+  "selected_validation": {
+    "k1": {
+      "step": 6200,
+      "k": 1,
+      "worst_velocity": 0.0005427920405585342,
+      "worst_pressure": 0.08871148250672328,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0,
+      "pressure_drift": 0.1761721968650818,
+      "fixed_point_residual": 0.1733815222978592,
+      "contraction_ratio": null,
+      "contraction_by_re": null,
+      "by_re": {
+        "Re_28p695138": {
+          "velocity_rel_l2": 0.0005427920405585342,
+          "pressure_rel_l2": 0.08871148250672328
+        },
+        "Re_43p797402": {
+          "velocity_rel_l2": 0.0003519199558132357,
+          "pressure_rel_l2": 0.04505321882626794
+        }
+      }
+    },
+    "k4": {
+      "step": 6200,
+      "k": 4,
+      "worst_velocity": 0.0009924564249209184,
+      "worst_pressure": 0.06517097509317799,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0,
+      "pressure_drift": 0.04562998563051224,
+      "fixed_point_residual": 0.1092829778790474,
+      "contraction_ratio": null,
+      "contraction_by_re": null,
+      "by_re": {
+        "Re_28p695138": {
+          "velocity_rel_l2": 0.0009924564249209184,
+          "pressure_rel_l2": 0.06517097509317799
+        },
+        "Re_43p797402": {
+          "velocity_rel_l2": 0.0007036061861811085,
+          "pressure_rel_l2": 0.03757532302277138
+        }
+      }
+    },
+    "k8": {
+      "step": 6200,
+      "k": 8,
+      "worst_velocity": 0.0013169056729305808,
+      "worst_pressure": 0.052259434558970065,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0,
+      "pressure_drift": 0.03815796226263046,
+      "fixed_point_residual": 0.10928381234407425,
+      "contraction_ratio": null,
+      "contraction_by_re": null,
+      "by_re": {
+        "Re_28p695138": {
+          "velocity_rel_l2": 0.0013169056729305808,
+          "pressure_rel_l2": 0.052259434558970065
+        },
+        "Re_43p797402": {
+          "velocity_rel_l2": 0.0010110368868743544,
+          "pressure_rel_l2": 0.034065817044241185
+        }
+      }
+    },
+    "k16": {
+      "step": 6200,
+      "k": 16,
+      "worst_velocity": 0.0016984061520408647,
+      "worst_pressure": 0.0418798859462479,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0,
+      "pressure_drift": 0.013647043146193027,
+      "fixed_point_residual": 0.10928381234407425,
+      "contraction_ratio": 2044.0284423828125,
+      "contraction_by_re": {
+        "Re_28p695138": 2044.0284423828125,
+        "Re_43p797402": 1253.01953125
+      },
+      "by_re": {
+        "Re_28p695138": {
+          "velocity_rel_l2": 0.0016984061520408647,
+          "pressure_rel_l2": 0.0418798859462479
+        },
+        "Re_43p797402": {
+          "velocity_rel_l2": 0.001403189931538759,
+          "pressure_rel_l2": 0.0363656093638098
+        }
+      }
+    }
+  },
+  "strict_qualified_checkpoint": false,
+  "strict_qualification_failure": "K16 finite_fraction=1 and divergent_windows=0, but contraction_ratio >= 1 under the trainer strict attractor qualification rule",
+  "training_completion": "EARLY_STOPPED_BEFORE_PREREGISTERED_MAX_STEPS",
+  "original_max_steps": 11000,
+  "test_access_for_selection": false,
+  "source_checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/training/s2/checkpoints/latest.pt",
+  "source_process_pid": 35466,
+  "termination_reason": "Explicit user request on 2026-07-24 to stop current Steady Vanilla training and retain the checkpoint as the final ablation result.",
+  "audit_failed_json_retained": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/FAILED.json",
+  "created_unix": 1784894202.4051054
+}

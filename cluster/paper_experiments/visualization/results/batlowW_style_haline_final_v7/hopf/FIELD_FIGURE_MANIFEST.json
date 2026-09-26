@@ -1,0 +1,72 @@
+{
+  "schema": "field_figure_manifest/v1",
+  "qualitative_scope": "best-case qualitative snapshot; quantitative conclusions remain those of the frozen aggregate evaluator",
+  "mode": "specialist",
+  "selected": {
+    "window_index": 27,
+    "Re": 50.0,
+    "split": "train",
+    "time_index": 55,
+    "physical_time": 2427.914794921875,
+    "last_frame": true,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0006859427347905485,
+    "structure_score": 0.017005857080221176,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00012733187014474953,
+        "pressure_relative_l2": 0.0014222669407181563,
+        "joint_field_error": 0.0007747994054314529
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0010602262216872008,
+        "pressure_relative_l2": 28.88108706879031,
+        "joint_field_error": 14.441073647505998
+      },
+      "proposed": {
+        "velocity_relative_l2": 2.7291795438731227e-05,
+        "pressure_relative_l2": 0.00015042154584307745,
+        "joint_field_error": 8.885667064090433e-05
+      }
+    }
+  },
+  "style": {
+    "target_journals": [
+      "Journal of Computational Physics",
+      "CMAME"
+    ],
+    "velocity_colormap": "cividis",
+    "pressure_colormap": "RdBu_r centered at zero",
+    "error_colormap": "haline_r",
+    "colorbars": "shared horizontal bottom colorbar per physical variable",
+    "dpi": 400
+  },
+  "inputs": {
+    "config": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/config_hopf_specialist.json",
+    "config_sha256": "c916e20079641d1b13404bff59e71b488f1d4f7dde5b198c1e18e083969e2749",
+    "bundle": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/cache/hopf_merged_train/hopf_k56_rollouts.npz",
+    "bundle_sha256": "e1b4b079f26f8ad57b96495d86d09b758ff8838aca6c9aaf3d439636706ed15b",
+    "template_vtk": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/expanded_validation_20260723/visualization/Re_43p500000_last_snapshot_uvp.vtk",
+    "template_vtk_sha256": "fcc87caedde11bfc6b5c1756ef5df0b0a0e9f9d13fd6e5dbfabaa8811b678e59",
+    "weights_csv": null,
+    "weights_csv_sha256": null,
+    "bases": {
+      "hopf": {
+        "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/artifacts/hopf/velocity_pod_hopf.npz",
+        "velocity_sha256": "2f951192f6eeaa69e7d911aa21552454d1a99a49ab796166b4a13df16016a192",
+        "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/artifacts/hopf/pressure_pod_hopf.npz",
+        "pressure_sha256": "cc128a4361ab2a239165ac22a48407290de7d085b857bbff6726988457cfddf3"
+      }
+    }
+  },
+  "outputs": [
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/results/batlowW_style_haline_final_v7/hopf/Hopf_specialist_best_case_physical_fields.png",
+      "sha256": "e05d32b6e48ff269f75bd72413e9fe6ec5a0cad82ddb3e63de79238d57d73044"
+    },
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/results/batlowW_style_haline_final_v7/hopf/Hopf_specialist_best_case_pointwise_errors.png",
+      "sha256": "2a1ef1c1b00b9e8e299c59e45114967724c52e2f127e6458db67a55ed8caa07b"
+    }
+  ]
+}

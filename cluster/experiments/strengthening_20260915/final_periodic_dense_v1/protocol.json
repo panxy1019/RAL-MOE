@@ -1,0 +1,23 @@
+{
+  "method": "dense",
+  "starts": [
+    969,
+    1017,
+    1065,
+    3867,
+    3915,
+    3963,
+    7251,
+    7299,
+    7347,
+    9506,
+    9554,
+    9602
+  ],
+  "horizon": 48,
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/strengthening_20260915/dense_periodic_v1/best_validation.pt",
+  "checkpoint_sha256": "59304c96e99ef8a3e349330aa388f4c9431db7994dcb43d9ce8663e1e703b4e1",
+  "metric": "mean per-window relative physical L2 against POD-reconstructed truth, original pressure gauge; Ejoint=Eu+Ep",
+  "nonfinite_policy": "retain all windows and report NaN aggregate after any divergence; no survivor-only mean",
+  "scope": "Circular Periodic local chart; full denotes frozen RAL Periodic specialist, not two-specialist fusion"
+}

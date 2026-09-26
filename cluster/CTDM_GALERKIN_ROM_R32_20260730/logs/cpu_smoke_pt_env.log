@@ -1,0 +1,396 @@
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+{
+  "schema_version": 1,
+  "variant": "b1",
+  "shape_forward_backward": true,
+  "checkpoint_roundtrip": true,
+  "memory_fp32": true,
+  "continuous_memory_joint_rk4": true,
+  "discrete_memory_one_macro_update": true,
+  "rows": [
+    {
+      "horizon": 4,
+      "loss": 365.3312683105469,
+      "gradient_norm": 945.6285400390625,
+      "parts": {
+        "Ea": 11.061418533325195,
+        "Eb": 644.1060180664062,
+        "Eu_modal": 2.3407110347761773e-06,
+        "Ep_modal": 0.12101942300796509,
+        "memory": 0.0,
+        "total": 365.3312683105469
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    },
+    {
+      "horizon": 8,
+      "loss": 361.6405334472656,
+      "gradient_norm": 973.7787475585938,
+      "parts": {
+        "Ea": 26.549928665161133,
+        "Eb": 609.2345581054688,
+        "Eu_modal": 8.445867933914997e-06,
+        "Ep_modal": 0.12222432345151901,
+        "memory": 0.0,
+        "total": 361.6405334472656
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    },
+    {
+      "horizon": 16,
+      "loss": 390.5734558105469,
+      "gradient_norm": 1013.5245361328125,
+      "parts": {
+        "Ea": 53.7536735534668,
+        "Eb": 612.3781127929688,
+        "Eu_modal": 3.0020886697457172e-05,
+        "Ep_modal": 0.12446107715368271,
+        "memory": 0.0,
+        "total": 390.5734558105469
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    },
+    {
+      "horizon": 32,
+      "loss": 480.1919860839844,
+      "gradient_norm": 1109.205810546875,
+      "parts": {
+        "Ea": 78.8527603149414,
+        "Eb": 729.6854248046875,
+        "Eu_modal": 0.00010463117359904572,
+        "Ep_modal": 0.12839387357234955,
+        "memory": 0.0,
+        "total": 480.1919860839844
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    },
+    {
+      "horizon": 56,
+      "loss": 507.0273132324219,
+      "gradient_norm": 1159.1688232421875,
+      "parts": {
+        "Ea": 74.20170593261719,
+        "Eb": 786.9324340820312,
+        "Eu_modal": 0.0002882657863665372,
+        "Ep_modal": 0.1332312822341919,
+        "memory": 0.0,
+        "total": 507.0273132324219
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    }
+  ],
+  "checkpoint_sha256": "ddc1759d000f7e1e7c9c9874bd1d9ef83aa3ac277decb052d4e2a86a0c56567f"
+}
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+{
+  "schema_version": 1,
+  "variant": "b2",
+  "shape_forward_backward": true,
+  "checkpoint_roundtrip": true,
+  "memory_fp32": true,
+  "continuous_memory_joint_rk4": true,
+  "discrete_memory_one_macro_update": true,
+  "rows": [
+    {
+      "horizon": 4,
+      "loss": 365.3312683105469,
+      "gradient_norm": 986.51904296875,
+      "parts": {
+        "Ea": 11.061418533325195,
+        "Eb": 644.1060180664062,
+        "Eu_modal": 2.3407110347761773e-06,
+        "Ep_modal": 0.12101942300796509,
+        "memory": 0.0,
+        "total": 365.3312683105469
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    },
+    {
+      "horizon": 8,
+      "loss": 361.6400451660156,
+      "gradient_norm": 984.5045166015625,
+      "parts": {
+        "Ea": 26.5499324798584,
+        "Eb": 609.233642578125,
+        "Eu_modal": 8.445867933914997e-06,
+        "Ep_modal": 0.12222432345151901,
+        "memory": 0.0,
+        "total": 361.6400451660156
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    },
+    {
+      "horizon": 16,
+      "loss": 390.57293701171875,
+      "gradient_norm": 983.6053466796875,
+      "parts": {
+        "Ea": 53.753700256347656,
+        "Eb": 612.3771362304688,
+        "Eu_modal": 3.0020883059478365e-05,
+        "Ep_modal": 0.12446106970310211,
+        "memory": 0.0,
+        "total": 390.57293701171875
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    },
+    {
+      "horizon": 32,
+      "loss": 480.1914367675781,
+      "gradient_norm": 1052.3111572265625,
+      "parts": {
+        "Ea": 78.85272216796875,
+        "Eb": 729.6845092773438,
+        "Eu_modal": 0.00010463118087500334,
+        "Ep_modal": 0.12839388847351074,
+        "memory": 0.0,
+        "total": 480.1914367675781
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    },
+    {
+      "horizon": 56,
+      "loss": 507.02752685546875,
+      "gradient_norm": 1086.8646240234375,
+      "parts": {
+        "Ea": 74.2016372680664,
+        "Eb": 786.9329223632812,
+        "Eu_modal": 0.0002882657863665372,
+        "Ep_modal": 0.1332312822341919,
+        "memory": 0.0,
+        "total": 507.02752685546875
+      },
+      "memory_dtype": null,
+      "memory_changed_in_rk4_expected": null,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0
+    }
+  ],
+  "checkpoint_sha256": "bf2adfe01c2eda03f748a51c2e83e6f29e59f6aea2b6153ca15e285381bbaa92"
+}
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+{
+  "schema_version": 1,
+  "variant": "b3",
+  "shape_forward_backward": true,
+  "checkpoint_roundtrip": true,
+  "memory_fp32": true,
+  "continuous_memory_joint_rk4": true,
+  "discrete_memory_one_macro_update": true,
+  "rows": [
+    {
+      "horizon": 4,
+      "loss": 365.3312683105469,
+      "gradient_norm": 1090.4683837890625,
+      "parts": {
+        "Ea": 11.061418533325195,
+        "Eb": 644.1060180664062,
+        "Eu_modal": 2.3407110347761773e-06,
+        "Ep_modal": 0.12101942300796509,
+        "memory": 1.8691203877096996e-05,
+        "total": 365.3312683105469
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 4,
+      "memory_gradient_norm": 1.0870544209974884e-10
+    },
+    {
+      "horizon": 8,
+      "loss": 361.6390075683594,
+      "gradient_norm": 1088.642333984375,
+      "parts": {
+        "Ea": 26.5499324798584,
+        "Eb": 609.2317504882812,
+        "Eu_modal": 8.445867024420295e-06,
+        "Ep_modal": 0.12222432345151901,
+        "memory": 3.072449908358976e-05,
+        "total": 361.6390075683594
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 8,
+      "memory_gradient_norm": 0.03139583189334333
+    },
+    {
+      "horizon": 16,
+      "loss": 390.57073974609375,
+      "gradient_norm": 1080.6109619140625,
+      "parts": {
+        "Ea": 53.753684997558594,
+        "Eb": 612.3731689453125,
+        "Eu_modal": 3.002088487846777e-05,
+        "Ep_modal": 0.12446107715368271,
+        "memory": 4.2013263737317175e-05,
+        "total": 390.57073974609375
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 16,
+      "memory_gradient_norm": 0.0673391395902205
+    },
+    {
+      "horizon": 32,
+      "loss": 480.18792724609375,
+      "gradient_norm": 1141.4365234375,
+      "parts": {
+        "Ea": 78.852783203125,
+        "Eb": 729.677978515625,
+        "Eu_modal": 0.00010463118087500334,
+        "Ep_modal": 0.12839387357234955,
+        "memory": 4.71916027890984e-05,
+        "total": 480.18792724609375
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 32,
+      "memory_gradient_norm": 0.11535520165331627
+    },
+    {
+      "horizon": 56,
+      "loss": 507.0225830078125,
+      "gradient_norm": 1181.405517578125,
+      "parts": {
+        "Ea": 74.20172119140625,
+        "Eb": 786.9237670898438,
+        "Eu_modal": 0.0002882657863665372,
+        "Ep_modal": 0.13323131203651428,
+        "memory": 4.8473590140929446e-05,
+        "total": 507.0225830078125
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": false,
+      "discrete_memory_updates": 56,
+      "memory_gradient_norm": 0.1488090567884932
+    }
+  ],
+  "checkpoint_sha256": "ee010e75a38781cbd964718bdea27816db40266bedf399ec3e81a47c60fabb38"
+}
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+{
+  "schema_version": 1,
+  "variant": "b4",
+  "shape_forward_backward": true,
+  "checkpoint_roundtrip": true,
+  "memory_fp32": true,
+  "continuous_memory_joint_rk4": true,
+  "discrete_memory_one_macro_update": true,
+  "rows": [
+    {
+      "horizon": 4,
+      "loss": 365.3312683105469,
+      "gradient_norm": 1092.0426025390625,
+      "parts": {
+        "Ea": 11.061418533325195,
+        "Eb": 644.1060180664062,
+        "Eu_modal": 2.3407110347761773e-06,
+        "Ep_modal": 0.12101942300796509,
+        "memory": 1.7180813301820308e-05,
+        "total": 365.3312683105469
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": true,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 9.993330831771003e-11
+    },
+    {
+      "horizon": 8,
+      "loss": 361.6390075683594,
+      "gradient_norm": 1088.6734619140625,
+      "parts": {
+        "Ea": 26.5499324798584,
+        "Eb": 609.2317504882812,
+        "Eu_modal": 8.445867024420295e-06,
+        "Ep_modal": 0.12222432345151901,
+        "memory": 2.8291728085605428e-05,
+        "total": 361.6390075683594
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": true,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.0313687054504941
+    },
+    {
+      "horizon": 16,
+      "loss": 390.57080078125,
+      "gradient_norm": 1080.6710205078125,
+      "parts": {
+        "Ea": 53.753684997558594,
+        "Eb": 612.3732299804688,
+        "Eu_modal": 3.002088487846777e-05,
+        "Ep_modal": 0.12446107715368271,
+        "memory": 3.869993088301271e-05,
+        "total": 390.57080078125
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": true,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.06731329326166623
+    },
+    {
+      "horizon": 32,
+      "loss": 480.18792724609375,
+      "gradient_norm": 1141.4525146484375,
+      "parts": {
+        "Ea": 78.852783203125,
+        "Eb": 729.677978515625,
+        "Eu_modal": 0.00010463118087500334,
+        "Ep_modal": 0.12839387357234955,
+        "memory": 4.3496245780261233e-05,
+        "total": 480.18792724609375
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": true,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.11522975566745892
+    },
+    {
+      "horizon": 56,
+      "loss": 507.0225524902344,
+      "gradient_norm": 1180.8912353515625,
+      "parts": {
+        "Ea": 74.20172882080078,
+        "Eb": 786.9237060546875,
+        "Eu_modal": 0.0002882657863665372,
+        "Ep_modal": 0.13323131203651428,
+        "memory": 4.463172081159428e-05,
+        "total": 507.0225524902344
+      },
+      "memory_dtype": "torch.float32",
+      "memory_changed_in_rk4_expected": true,
+      "discrete_memory_updates": 0,
+      "memory_gradient_norm": 0.1488403273266125
+    }
+  ],
+  "checkpoint_sha256": "963844be0bb69e59d9f6ff4da15809690753f2d0370171e584df375241092a74"
+}

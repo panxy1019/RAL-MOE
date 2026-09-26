@@ -1,0 +1,4734 @@
+[
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 55,
+    "physical_time": 1631.7403564453125,
+    "last_frame": true,
+    "eligibility_tier": null,
+    "joint_advantage": -0.1741715791287574,
+    "structure_score": 0.2990102767944336,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0015695374851490362,
+        "pressure_relative_l2": 0.051365075786316515,
+        "joint_field_error": 0.026467306635732775
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.016344167391038965,
+        "pressure_relative_l2": 428.7395882752827,
+        "joint_field_error": 214.37796622133686
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00429169770129223,
+        "pressure_relative_l2": 0.3969860738276881,
+        "joint_field_error": 0.20063888576449015
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 54,
+    "physical_time": 1624.0069580078125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.073082013501543,
+    "structure_score": 0.2990224361419678,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0015549931817415512,
+        "pressure_relative_l2": 0.053002719799690755,
+        "joint_field_error": 0.027278856490716152
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.015094851482314986,
+        "pressure_relative_l2": 417.4136078196797,
+        "joint_field_error": 208.71435133558103
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.004253642950975838,
+        "pressure_relative_l2": 0.19646809703354248,
+        "joint_field_error": 0.10036086999225916
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 53,
+    "physical_time": 1616.273681640625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.12918114701352623,
+    "structure_score": 0.29903504252433777,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.001545198478812135,
+        "pressure_relative_l2": 0.04559067732435928,
+        "joint_field_error": 0.023567937901585706
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.013898894273820822,
+        "pressure_relative_l2": 405.92441083527876,
+        "joint_field_error": 202.9691548647763
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.004057605220485602,
+        "pressure_relative_l2": 0.3014405646097383,
+        "joint_field_error": 0.15274908491511194
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 52,
+    "physical_time": 1608.540283203125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0531161011441751,
+    "structure_score": 0.2990480661392212,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.001543477382626773,
+        "pressure_relative_l2": 0.03683196750583895,
+        "joint_field_error": 0.01918772244423286
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.012506501842269516,
+        "pressure_relative_l2": 395.7035205200126,
+        "joint_field_error": 197.85801351092744
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.004055799394157792,
+        "pressure_relative_l2": 0.14055184778265814,
+        "joint_field_error": 0.07230382358840796
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 51,
+    "physical_time": 1600.806884765625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.15878558557812789,
+    "structure_score": 0.2990615665912628,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0015395746310041922,
+        "pressure_relative_l2": 0.04130876105374284,
+        "joint_field_error": 0.02142416784237352
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.010714369377756284,
+        "pressure_relative_l2": 387.1829728123492,
+        "joint_field_error": 193.59684359086347
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0038447986384569457,
+        "pressure_relative_l2": 0.3565747082025459,
+        "joint_field_error": 0.1802097534205014
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 50,
+    "physical_time": 1593.073486328125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.12522814477722774,
+    "structure_score": 0.29907551407814026,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0015334902735896065,
+        "pressure_relative_l2": 0.05775889066028923,
+        "joint_field_error": 0.02964619046693942
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.008406439828034998,
+        "pressure_relative_l2": 381.57795486931525,
+        "joint_field_error": 190.79318065457164
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0036756336263017615,
+        "pressure_relative_l2": 0.3060730368620326,
+        "joint_field_error": 0.15487433524416716
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 49,
+    "physical_time": 1585.3402099609375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0916118770001845,
+    "structure_score": 0.2990899682044983,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0015209720121946377,
+        "pressure_relative_l2": 0.09218754535004449,
+        "joint_field_error": 0.046854258681119566
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.005940542282995037,
+        "pressure_relative_l2": 376.80052165093014,
+        "joint_field_error": 188.40323109660656
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.003528308638064083,
+        "pressure_relative_l2": 0.27340396272454404,
+        "joint_field_error": 0.13846613568130406
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 48,
+    "physical_time": 1577.6068115234375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.04705126618037128,
+    "structure_score": 0.2991048991680145,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0015054133124020631,
+        "pressure_relative_l2": 0.1305880716645052,
+        "joint_field_error": 0.06604674248845363
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0036202272640391045,
+        "pressure_relative_l2": 372.2993638639087,
+        "joint_field_error": 186.15149204558637
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.003422236709676773,
+        "pressure_relative_l2": 0.22277378062797304,
+        "joint_field_error": 0.11309800866882491
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 47,
+    "physical_time": 1569.8734130859375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.04338521923027213,
+    "structure_score": 0.29912030696868896,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014877283929493664,
+        "pressure_relative_l2": 0.11682568162202737,
+        "joint_field_error": 0.05915670500748837
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001717193667295729,
+        "pressure_relative_l2": 367.58876142587593,
+        "joint_field_error": 183.7952393097716
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0033320358319077425,
+        "pressure_relative_l2": 0.20175181264361325,
+        "joint_field_error": 0.1025419242377605
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 46,
+    "physical_time": 1562.14013671875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.02921988567080508,
+    "structure_score": 0.2991362512111664,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014739431564098097,
+        "pressure_relative_l2": 0.12749782487383707,
+        "joint_field_error": 0.06448588401512344
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0007607668778070176,
+        "pressure_relative_l2": 362.25545817773394,
+        "joint_field_error": 181.12810947230588
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0032559147388887336,
+        "pressure_relative_l2": 0.1841556246329683,
+        "joint_field_error": 0.09370576968592852
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 45,
+    "physical_time": 1554.40673828125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.08685082955869425,
+    "structure_score": 0.2991527318954468,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014607439912811759,
+        "pressure_relative_l2": 0.062155469897431294,
+        "joint_field_error": 0.031808106944356235
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001331918269544848,
+        "pressure_relative_l2": 355.82688180610705,
+        "joint_field_error": 177.9141068621883
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00313628874406438,
+        "pressure_relative_l2": 0.23418158426203659,
+        "joint_field_error": 0.11865893650305048
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 44,
+    "physical_time": 1546.67333984375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.056689962767848476,
+    "structure_score": 0.29916974902153015,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014500741642094006,
+        "pressure_relative_l2": 0.05706569178293258,
+        "joint_field_error": 0.02925788297357099
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002020858044732606,
+        "pressure_relative_l2": 347.9062508542318,
+        "joint_field_error": 173.95413585613827
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0030652993225049018,
+        "pressure_relative_l2": 0.16883039216033402,
+        "joint_field_error": 0.08594784574141946
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 43,
+    "physical_time": 1538.93994140625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.09329400782063427,
+    "structure_score": 0.2991873025894165,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014404503930350405,
+        "pressure_relative_l2": 0.06538240573635898,
+        "joint_field_error": 0.03341142806469701
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0025900281254800364,
+        "pressure_relative_l2": 338.3845166005312,
+        "joint_field_error": 169.19355331432834
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0029300302876202034,
+        "pressure_relative_l2": 0.2504808414830424,
+        "joint_field_error": 0.12670543588533129
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 42,
+    "physical_time": 1531.2066650390625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.01945180260998429,
+    "structure_score": 0.299205482006073,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014319822752696288,
+        "pressure_relative_l2": 0.06517578989080958,
+        "joint_field_error": 0.0333038860830396
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0031112229895061856,
+        "pressure_relative_l2": 327.2677389940802,
+        "joint_field_error": 163.63542510853486
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0029251515776485292,
+        "pressure_relative_l2": 0.10258622580839925,
+        "joint_field_error": 0.05275568869302389
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 41,
+    "physical_time": 1523.4732666015625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.11166834401612716,
+    "structure_score": 0.29922422766685486,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014238637946750513,
+        "pressure_relative_l2": 0.06897704925160796,
+        "joint_field_error": 0.0352004565231415
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.003636840972542725,
+        "pressure_relative_l2": 315.0869980738582,
+        "joint_field_error": 157.54531745741536
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0027926760460936957,
+        "pressure_relative_l2": 0.2909449250324436,
+        "joint_field_error": 0.14686880053926865
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 40,
+    "physical_time": 1515.7398681640625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0405686629282831,
+    "structure_score": 0.2992435693740845,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014192532468852938,
+        "pressure_relative_l2": 0.06792544584710843,
+        "joint_field_error": 0.03467234954699686
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.00419834058670246,
+        "pressure_relative_l2": 300.5243668434459,
+        "joint_field_error": 150.2642825920163
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0027122143658461794,
+        "pressure_relative_l2": 0.14776981058471375,
+        "joint_field_error": 0.07524101247527996
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 39,
+    "physical_time": 1508.0064697265625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.11072234258216748,
+    "structure_score": 0.2992635667324066,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014161916243385511,
+        "pressure_relative_l2": 0.04005469820903185,
+        "joint_field_error": 0.0207354449166852
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0046528885555741795,
+        "pressure_relative_l2": 286.56476581735313,
+        "joint_field_error": 143.28470935295437
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0026205088295248383,
+        "pressure_relative_l2": 0.2602950661681805,
+        "joint_field_error": 0.13145778749885267
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 38,
+    "physical_time": 1500.273193359375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.10181139386183424,
+    "structure_score": 0.2992841899394989,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014085290954587288,
+        "pressure_relative_l2": 0.04668757747581748,
+        "joint_field_error": 0.024048053285638103
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.004890914495970639,
+        "pressure_relative_l2": 274.51366884588003,
+        "joint_field_error": 137.259279880188
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0024866507518744546,
+        "pressure_relative_l2": 0.24923224354307028,
+        "joint_field_error": 0.12585944714747235
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 37,
+    "physical_time": 1492.539794921875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.08984111361918848,
+    "structure_score": 0.29930543899536133,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014029370379536877,
+        "pressure_relative_l2": 0.0531133085993314,
+        "joint_field_error": 0.027258122818642545
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.004852546157630463,
+        "pressure_relative_l2": 265.26459130902407,
+        "joint_field_error": 132.63472192759085
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0024146873630312288,
+        "pressure_relative_l2": 0.2317837855126308,
+        "joint_field_error": 0.11709923643783102
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 36,
+    "physical_time": 1484.806396484375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.09177941723028213,
+    "structure_score": 0.29932737350463867,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014047359878303445,
+        "pressure_relative_l2": 0.03683085553763314,
+        "joint_field_error": 0.019117795762731742
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0046016780279588086,
+        "pressure_relative_l2": 258.7329174807472,
+        "joint_field_error": 129.36875957938756
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0023106773505242885,
+        "pressure_relative_l2": 0.21948374863550346,
+        "joint_field_error": 0.11089721299301387
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 35,
+    "physical_time": 1477.072998046875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.07791488480051856,
+    "structure_score": 0.29934999346733093,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0014023879869962965,
+        "pressure_relative_l2": 0.05125982179839132,
+        "joint_field_error": 0.02633110489269381
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.004161276580984986,
+        "pressure_relative_l2": 253.8444347548152,
+        "joint_field_error": 126.9242980156981
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0022523678704986765,
+        "pressure_relative_l2": 0.20623961151592607,
+        "joint_field_error": 0.10424598969321237
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 34,
+    "physical_time": 1469.3397216796875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.051501237133408,
+    "structure_score": 0.2993732988834381,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.001401288922513385,
+        "pressure_relative_l2": 0.10173473822461208,
+        "joint_field_error": 0.051568013573562735
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0036083679748982536,
+        "pressure_relative_l2": 249.845711654709,
+        "joint_field_error": 124.92466001134194
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.002155613922420902,
+        "pressure_relative_l2": 0.20398288749152058,
+        "joint_field_error": 0.10306925070697073
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 33,
+    "physical_time": 1461.6063232421875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.030542931319857525,
+    "structure_score": 0.29939737915992737,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.001416584559416649,
+        "pressure_relative_l2": 0.1455221466745078,
+        "joint_field_error": 0.07346936561696223
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0027565220178346677,
+        "pressure_relative_l2": 239.24592531226415,
+        "joint_field_error": 119.624340917141
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0021121406291326576,
+        "pressure_relative_l2": 0.20591245324450685,
+        "joint_field_error": 0.10401229693681975
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 32,
+    "physical_time": 1453.8729248046875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0794073480324344,
+    "structure_score": 0.29942214488983154,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.001431319089331143,
+        "pressure_relative_l2": 0.11944677012556328,
+        "joint_field_error": 0.06043904460744721
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0019290748467382256,
+        "pressure_relative_l2": 230.65287177764787,
+        "joint_field_error": 115.32740042624731
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00196367049062516,
+        "pressure_relative_l2": 0.27772911478913803,
+        "joint_field_error": 0.1398463926398816
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 31,
+    "physical_time": 1446.1395263671875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.058005601610479664,
+    "structure_score": 0.2994476854801178,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.001419882996929943,
+        "pressure_relative_l2": 0.07936682176181496,
+        "joint_field_error": 0.04039335237937245
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0012686880388599045,
+        "pressure_relative_l2": 224.86333373849834,
+        "joint_field_error": 112.4323012132686
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0019198578928279078,
+        "pressure_relative_l2": 0.1948780500868763,
+        "joint_field_error": 0.09839895398985211
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 30,
+    "physical_time": 1438.40625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.09238156872121965,
+    "structure_score": 0.29947397112846375,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.001404460012839327,
+        "pressure_relative_l2": 0.04169824447505916,
+        "joint_field_error": 0.021551352243949246
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0009953633966197585,
+        "pressure_relative_l2": 222.87841382275292,
+        "joint_field_error": 111.43970459307477
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001809009621684025,
+        "pressure_relative_l2": 0.22605683230865375,
+        "joint_field_error": 0.1139329209651689
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 29,
+    "physical_time": 1430.6728515625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0698972854821788,
+    "structure_score": 0.29950106143951416,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013875453010033126,
+        "pressure_relative_l2": 0.04812158759600693,
+        "joint_field_error": 0.02475456644850512
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0010940561651735833,
+        "pressure_relative_l2": 225.24912242774235,
+        "joint_field_error": 112.62510824195377
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001766918372007306,
+        "pressure_relative_l2": 0.18753678548936054,
+        "joint_field_error": 0.09465185193068391
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 28,
+    "physical_time": 1422.939453125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.07130321682660837,
+    "structure_score": 0.29952898621559143,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013757620198587728,
+        "pressure_relative_l2": 0.05346076723733684,
+        "joint_field_error": 0.027418264628597804
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0010491753975605004,
+        "pressure_relative_l2": 222.91227399692264,
+        "joint_field_error": 111.4566615861601
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001680671728271866,
+        "pressure_relative_l2": 0.1957622911821405,
+        "joint_field_error": 0.09872148145520618
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 27,
+    "physical_time": 1415.2060546875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.057687077664449374,
+    "structure_score": 0.29955771565437317,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013681717391251732,
+        "pressure_relative_l2": 0.05170480682050138,
+        "joint_field_error": 0.026536489279813277
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0011759712591047583,
+        "pressure_relative_l2": 220.28580357750116,
+        "joint_field_error": 110.14348977438013
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0016424783389644207,
+        "pressure_relative_l2": 0.1668046555495609,
+        "joint_field_error": 0.08422356694426265
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 26,
+    "physical_time": 1407.4727783203125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.07040756013189399,
+    "structure_score": 0.29958727955818176,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013607053081041293,
+        "pressure_relative_l2": 0.0438323521292374,
+        "joint_field_error": 0.022596528718670763
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0021066627489452388,
+        "pressure_relative_l2": 210.1889959153852,
+        "joint_field_error": 105.09555128906707
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0015724036942910875,
+        "pressure_relative_l2": 0.18443577400683842,
+        "joint_field_error": 0.09300408885056476
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 25,
+    "physical_time": 1399.7393798828125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.06744630622213485,
+    "structure_score": 0.299617737531662,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013532663498235535,
+        "pressure_relative_l2": 0.04275936487837636,
+        "joint_field_error": 0.022056315614099955
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0032761735893214656,
+        "pressure_relative_l2": 199.93773402510706,
+        "joint_field_error": 99.97050509934819
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001530853439696519,
+        "pressure_relative_l2": 0.1774743902327731,
+        "joint_field_error": 0.08950262183623481
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 24,
+    "physical_time": 1392.0059814453125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.06750980300297882,
+    "structure_score": 0.29964905977249146,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013460247084297783,
+        "pressure_relative_l2": 0.04743642719303944,
+        "joint_field_error": 0.02439122595073461
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0028595516757590044,
+        "pressure_relative_l2": 192.86516704806093,
+        "joint_field_error": 96.43401329986834
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001471882866108271,
+        "pressure_relative_l2": 0.1823301750413186,
+        "joint_field_error": 0.09190102895371344
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 23,
+    "physical_time": 1384.272705078125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.06078433252615613,
+    "structure_score": 0.29968127608299255,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013373819642645576,
+        "pressure_relative_l2": 0.04734723054702324,
+        "joint_field_error": 0.0243423062556439
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0023247942031238236,
+        "pressure_relative_l2": 191.9051248717737,
+        "joint_field_error": 95.95372483298841
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0014424199979436471,
+        "pressure_relative_l2": 0.16881085756565642,
+        "joint_field_error": 0.08512663878180003
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 22,
+    "physical_time": 1376.539306640625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.06259419426880736,
+    "structure_score": 0.29971441626548767,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013275467212375668,
+        "pressure_relative_l2": 0.04080321122498228,
+        "joint_field_error": 0.021065378973109925
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0016882466841422609,
+        "pressure_relative_l2": 198.8496401537123,
+        "joint_field_error": 99.42566420019823
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0013911085332119005,
+        "pressure_relative_l2": 0.16592803795062266,
+        "joint_field_error": 0.08365957324191728
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 21,
+    "physical_time": 1368.805908203125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.050263838982164105,
+    "structure_score": 0.2997485399246216,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013174558993017003,
+        "pressure_relative_l2": 0.04458924417503297,
+        "joint_field_error": 0.022953350037167333
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0010954660551579453,
+        "pressure_relative_l2": 213.06905376519734,
+        "joint_field_error": 106.53507461562624
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0013801831777676837,
+        "pressure_relative_l2": 0.14505419486089519,
+        "joint_field_error": 0.07321718901933144
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 20,
+    "physical_time": 1361.072509765625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.03433283684583496,
+    "structure_score": 0.2997835874557495,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013150547496350328,
+        "pressure_relative_l2": 0.06294264913177633,
+        "joint_field_error": 0.03212885194070568
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0016806972941696057,
+        "pressure_relative_l2": 231.55188925866386,
+        "joint_field_error": 115.77678497797902
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0013421842212134488,
+        "pressure_relative_l2": 0.13158119335186783,
+        "joint_field_error": 0.06646168878654064
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 19,
+    "physical_time": 1353.3392333984375,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.00015601935061768796,
+    "structure_score": 0.2998196482658386,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013342008880116729,
+        "pressure_relative_l2": 0.12316986927079294,
+        "joint_field_error": 0.06225203507940231
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002188058055673359,
+        "pressure_relative_l2": 256.8113043295992,
+        "joint_field_error": 128.40674619382742
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0013145953645261335,
+        "pressure_relative_l2": 0.12287743609304311,
+        "joint_field_error": 0.06209601572878462
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 18,
+    "physical_time": 1345.6058349609375,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.00891808924367149,
+    "structure_score": 0.29985669255256653,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0013137397230932211,
+        "pressure_relative_l2": 0.14107900485492578,
+        "joint_field_error": 0.0711963722890095
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001625545055712893,
+        "pressure_relative_l2": 264.4878549293009,
+        "joint_field_error": 132.24474023717832
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0012939161204671534,
+        "pressure_relative_l2": 0.12326264997020887,
+        "joint_field_error": 0.062278283045338015
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 17,
+    "physical_time": 1337.8724365234375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.022616362004158733,
+    "structure_score": 0.2998947501182556,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0012911111500254157,
+        "pressure_relative_l2": 0.04316223911157169,
+        "joint_field_error": 0.02222667513079855
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001254088353433415,
+        "pressure_relative_l2": 265.2771881426608,
+        "joint_field_error": 132.63922111550713
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0012817104076266038,
+        "pressure_relative_l2": 0.08840436386228796,
+        "joint_field_error": 0.044843037134957284
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 16,
+    "physical_time": 1330.1390380859375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.009660840151389412,
+    "structure_score": 0.29993391036987305,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.001262874443573325,
+        "pressure_relative_l2": 0.0404926920610573,
+        "joint_field_error": 0.020877783252315315
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0011616329552162706,
+        "pressure_relative_l2": 259.2233382955888,
+        "joint_field_error": 129.612249964272
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001258389467892595,
+        "pressure_relative_l2": 0.059818857339516855,
+        "joint_field_error": 0.030538623403704727
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 15,
+    "physical_time": 1322.40576171875,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.001360855396134817,
+    "structure_score": 0.29997408390045166,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0012363768905258657,
+        "pressure_relative_l2": 0.025679339027620547,
+        "joint_field_error": 0.013457857959073206
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0013209813123328965,
+        "pressure_relative_l2": 247.49615861872167,
+        "joint_field_error": 123.748739800017
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0012324323111270656,
+        "pressure_relative_l2": 0.02296157281474971,
+        "joint_field_error": 0.01209700256293839
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 14,
+    "physical_time": 1314.67236328125,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0016175198840882952,
+    "structure_score": 0.3000153601169586,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0012114850221396675,
+        "pressure_relative_l2": 0.021779950152936732,
+        "joint_field_error": 0.0114957175875382
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0018106017616837757,
+        "pressure_relative_l2": 231.6929124872833,
+        "joint_field_error": 115.8473615445225
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001206125043095844,
+        "pressure_relative_l2": 0.018550270363803963,
+        "joint_field_error": 0.009878197703449904
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 13,
+    "physical_time": 1306.93896484375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0034319143152675147,
+    "structure_score": 0.3000577688217163,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0011854200605401408,
+        "pressure_relative_l2": 0.019347959168163648,
+        "joint_field_error": 0.010266689614351895
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002447773578988145,
+        "pressure_relative_l2": 213.89064618363423,
+        "joint_field_error": 106.9465469786066
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0011797692135782883,
+        "pressure_relative_l2": 0.02621743864566053,
+        "joint_field_error": 0.01369860392961941
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 12,
+    "physical_time": 1299.20556640625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0036619639396647304,
+    "structure_score": 0.30010131001472473,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0011575767758924028,
+        "pressure_relative_l2": 0.02800948001363892,
+        "joint_field_error": 0.014583528394765661
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0027696160295927943,
+        "pressure_relative_l2": 196.3288944618727,
+        "joint_field_error": 98.16583203895114
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0011526869333157714,
+        "pressure_relative_l2": 0.03533829773554501,
+        "joint_field_error": 0.01824549233443039
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 11,
+    "physical_time": 1291.4722900390625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0022616259194263924,
+    "structure_score": 0.3001460134983063,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0011279306295326071,
+        "pressure_relative_l2": 0.039881360477955805,
+        "joint_field_error": 0.020504645553744205
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002643709989248351,
+        "pressure_relative_l2": 183.04493042302838,
+        "joint_field_error": 91.52378706650882
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0011229091019589526,
+        "pressure_relative_l2": 0.04440963384438224,
+        "joint_field_error": 0.022766271473170598
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 10,
+    "physical_time": 1283.7388916015625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0028183000965584654,
+    "structure_score": 0.3001919090747833,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.001096468722599877,
+        "pressure_relative_l2": 0.04867290432151347,
+        "joint_field_error": 0.024884686522056675
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0012913899163861395,
+        "pressure_relative_l2": 171.842288045387,
+        "joint_field_error": 85.92178971765169
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001092907779296973,
+        "pressure_relative_l2": 0.05431306545793331,
+        "joint_field_error": 0.02770298661861514
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 9,
+    "physical_time": 1276.0054931640625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.004562271052775988,
+    "structure_score": 0.3002389967441559,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00106337920589428,
+        "pressure_relative_l2": 0.05784896599296425,
+        "joint_field_error": 0.029456172599429262
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.000925056253272586,
+        "pressure_relative_l2": 177.83744383585397,
+        "joint_field_error": 88.91918444605362
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0010608860864576104,
+        "pressure_relative_l2": 0.06697600121795289,
+        "joint_field_error": 0.03401844365220525
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 8,
+    "physical_time": 1268.2720947265625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.006124243182022399,
+    "structure_score": 0.30028730630874634,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0010282173019017591,
+        "pressure_relative_l2": 0.06366770313402692,
+        "joint_field_error": 0.03234796021796434
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0012371831397394461,
+        "pressure_relative_l2": 188.65170302217643,
+        "joint_field_error": 94.32647010265809
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001026611490956886,
+        "pressure_relative_l2": 0.0759177953090166,
+        "joint_field_error": 0.03847220339998674
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 7,
+    "physical_time": 1260.538818359375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.005290694327749049,
+    "structure_score": 0.30033689737319946,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0009932335985948753,
+        "pressure_relative_l2": 0.07201770137975883,
+        "joint_field_error": 0.03650546748917685
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001984740702378155,
+        "pressure_relative_l2": 209.03412005287035,
+        "joint_field_error": 104.51805239678636
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0009918717087926895,
+        "pressure_relative_l2": 0.0826004519250591,
+        "joint_field_error": 0.0417961618169259
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 6,
+    "physical_time": 1252.805419921875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0031178881055667074,
+    "structure_score": 0.30038774013519287,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0009527690502761061,
+        "pressure_relative_l2": 0.08093772234031277,
+        "joint_field_error": 0.04094524569529444
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0028555070140877607,
+        "pressure_relative_l2": 232.40738380720575,
+        "joint_field_error": 116.20511965710992
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0009516454313956767,
+        "pressure_relative_l2": 0.08717462217032662,
+        "joint_field_error": 0.044063133800861146
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 5,
+    "physical_time": 1245.072021484375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.007515663438321919,
+    "structure_score": 0.30043989419937134,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0009041836248814437,
+        "pressure_relative_l2": 0.07743612379350938,
+        "joint_field_error": 0.03917015370919541
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0036720155017714636,
+        "pressure_relative_l2": 242.38566568968247,
+        "joint_field_error": 121.19466885259212
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0009027872914205988,
+        "pressure_relative_l2": 0.09246884700361406,
+        "joint_field_error": 0.04668581714751733
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 4,
+    "physical_time": 1237.338623046875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.007968978558713154,
+    "structure_score": 0.30049338936805725,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0008471573409621241,
+        "pressure_relative_l2": 0.07827789741703604,
+        "joint_field_error": 0.03956252737899908
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.004346451591766094,
+        "pressure_relative_l2": 226.29705023312505,
+        "joint_field_error": 113.15069834235841
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0008464689310750989,
+        "pressure_relative_l2": 0.09421654294434938,
+        "joint_field_error": 0.047531505937712236
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 3,
+    "physical_time": 1229.6053466796875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.009164799443778245,
+    "structure_score": 0.3005482256412506,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007742274456882468,
+        "pressure_relative_l2": 0.08839165256792343,
+        "joint_field_error": 0.04458294000680584
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.004969065776435937,
+        "pressure_relative_l2": 185.05341779995297,
+        "joint_field_error": 92.5291934328647
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0007726111155350898,
+        "pressure_relative_l2": 0.10672286778563309,
+        "joint_field_error": 0.05374773945058409
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 2,
+    "physical_time": 1221.8719482421875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.01631428379805107,
+    "structure_score": 0.3006044328212738,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0006806926136275562,
+        "pressure_relative_l2": 0.09391144515712856,
+        "joint_field_error": 0.04729606888537806
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.005155861151899106,
+        "pressure_relative_l2": 138.69481602358212,
+        "joint_field_error": 69.34998594236701
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006829381349648148,
+        "pressure_relative_l2": 0.12653776723189344,
+        "joint_field_error": 0.06361035268342913
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 1,
+    "physical_time": 1214.1385498046875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.010249176912976159,
+    "structure_score": 0.30066201090812683,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005760206576758236,
+        "pressure_relative_l2": 0.1177797659415786,
+        "joint_field_error": 0.059177893299627214
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0043951959900081486,
+        "pressure_relative_l2": 111.64327110295626,
+        "joint_field_error": 55.82383314947314
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005764518225008036,
+        "pressure_relative_l2": 0.13827768860270595,
+        "joint_field_error": 0.06942707021260337
+      }
+    }
+  },
+  {
+    "window_index": 0,
+    "Re": 24.630435943603516,
+    "split": "heldout",
+    "time_index": 0,
+    "physical_time": 1206.4051513671875,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.0203617110860968,
+    "structure_score": 0.30072101950645447,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0003758733892649684,
+        "pressure_relative_l2": 0.07291353095602517,
+        "joint_field_error": 0.036644702172645066
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0018553414682599754,
+        "pressure_relative_l2": 65.88997521474747,
+        "joint_field_error": 32.94591527810786
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0003758733892649684,
+        "pressure_relative_l2": 0.032190108783831564,
+        "joint_field_error": 0.016282991086548265
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 55,
+    "physical_time": 1535.907470703125,
+    "last_frame": true,
+    "eligibility_tier": null,
+    "joint_advantage": -0.022239310649014975,
+    "structure_score": 0.09833132475614548,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0008003093027325803,
+        "pressure_relative_l2": 0.016839655293749464,
+        "joint_field_error": 0.008819982298241023
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002498848998732818,
+        "pressure_relative_l2": 208.59873263252953,
+        "joint_field_error": 104.30061574076413
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001350204097605996,
+        "pressure_relative_l2": 0.060768381796906,
+        "joint_field_error": 0.031059292947255998
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 54,
+    "physical_time": 1530.089599609375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.06388602602276511,
+    "structure_score": 0.09833314269781113,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007973119760378887,
+        "pressure_relative_l2": 0.015320023124863982,
+        "joint_field_error": 0.008058667550450935
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0012442923513113669,
+        "pressure_relative_l2": 206.31741888101095,
+        "joint_field_error": 103.15933158668113
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001265606930466028,
+        "pressure_relative_l2": 0.14262378021596606,
+        "joint_field_error": 0.07194469357321605
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 53,
+    "physical_time": 1524.271728515625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.02238218658398098,
+    "structure_score": 0.09833551943302155,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007932737850159786,
+        "pressure_relative_l2": 0.017143385908736028,
+        "joint_field_error": 0.008968329846876004
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0008535688871668117,
+        "pressure_relative_l2": 204.49469031268978,
+        "joint_field_error": 102.24777194078848
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0012606768258082424,
+        "pressure_relative_l2": 0.06144035603590573,
+        "joint_field_error": 0.031350516430856984
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 52,
+    "physical_time": 1518.4539794921875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.04119660299417315,
+    "structure_score": 0.09833849221467972,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007836160492901695,
+        "pressure_relative_l2": 0.02480141632042186,
+        "joint_field_error": 0.012792516184856014
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0005905308013169978,
+        "pressure_relative_l2": 201.71172096035423,
+        "joint_field_error": 100.85615574557777
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0011950166053904248,
+        "pressure_relative_l2": 0.10678322175266791,
+        "joint_field_error": 0.05398911917902917
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 51,
+    "physical_time": 1512.6361083984375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.01580187129484879,
+    "structure_score": 0.09834209084510803,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007822530995565725,
+        "pressure_relative_l2": 0.010252425462818683,
+        "joint_field_error": 0.005517339281187628
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0007340522605803588,
+        "pressure_relative_l2": 196.9912495586447,
+        "joint_field_error": 98.49599180545265
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001194046431397454,
+        "pressure_relative_l2": 0.04144437472067538,
+        "joint_field_error": 0.021319210576036418
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 50,
+    "physical_time": 1506.8182373046875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.005295460250201209,
+    "structure_score": 0.09834633767604828,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007405735193893974,
+        "pressure_relative_l2": 0.0866422753168154,
+        "joint_field_error": 0.0436914244181024
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0011567599485982456,
+        "pressure_relative_l2": 193.36078911403004,
+        "joint_field_error": 96.68097293698932
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0011372654084494034,
+        "pressure_relative_l2": 0.09683650392815782,
+        "joint_field_error": 0.04898688466830361
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 49,
+    "physical_time": 1501.00048828125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.018456048972083843,
+    "structure_score": 0.09835126250982285,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007297524499256939,
+        "pressure_relative_l2": 0.03337844749288912,
+        "joint_field_error": 0.017054099971407406
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0014234445930760866,
+        "pressure_relative_l2": 190.84330832343133,
+        "joint_field_error": 95.42236588401221
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0011085581534121234,
+        "pressure_relative_l2": 0.06991173973357037,
+        "joint_field_error": 0.03551014894349125
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 48,
+    "physical_time": 1495.1826171875,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.014785284468360443,
+    "structure_score": 0.09835688769817352,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000685203660683894,
+        "pressure_relative_l2": 0.09126097145108202,
+        "joint_field_error": 0.045973087555882954
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0015730492170123447,
+        "pressure_relative_l2": 189.349638408564,
+        "joint_field_error": 94.6756057288905
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.001078215420951625,
+        "pressure_relative_l2": 0.06129739075409339,
+        "joint_field_error": 0.03118780308752251
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 47,
+    "physical_time": 1489.36474609375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.007495812766359907,
+    "structure_score": 0.0983632355928421,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0006720781293868529,
+        "pressure_relative_l2": 0.03878931398640566,
+        "joint_field_error": 0.019730696057896256
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0016854456405419346,
+        "pressure_relative_l2": 188.67044168331887,
+        "joint_field_error": 94.3360635644797
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0010606567671508937,
+        "pressure_relative_l2": 0.053392360881361435,
+        "joint_field_error": 0.027226508824256163
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 46,
+    "physical_time": 1483.5469970703125,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.008138464601934396,
+    "structure_score": 0.09837032854557037,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0006349603377485305,
+        "pressure_relative_l2": 0.07875366688820341,
+        "joint_field_error": 0.03969431361297597
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0018236293639026506,
+        "pressure_relative_l2": 188.42373598840064,
+        "joint_field_error": 94.21277980888227
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0010335118066865788,
+        "pressure_relative_l2": 0.06207818621539657,
+        "joint_field_error": 0.031555849011041574
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 45,
+    "physical_time": 1477.7291259765625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.01700414789836601,
+    "structure_score": 0.09837821871042252,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0006305512482633858,
+        "pressure_relative_l2": 0.015502099266288847,
+        "joint_field_error": 0.008066325257276116
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002039441374883282,
+        "pressure_relative_l2": 188.0651873528292,
+        "joint_field_error": 94.03361339710204
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0010163523428551673,
+        "pressure_relative_l2": 0.04912459396842909,
+        "joint_field_error": 0.025070473155642127
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 44,
+    "physical_time": 1471.9112548828125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.005451621936507282,
+    "structure_score": 0.09838691353797913,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0006109987662096977,
+        "pressure_relative_l2": 0.047834358216937205,
+        "joint_field_error": 0.02422267849157345
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002370068767967007,
+        "pressure_relative_l2": 187.01559973783824,
+        "joint_field_error": 93.5089849033031
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0009859999286233492,
+        "pressure_relative_l2": 0.058362600927538116,
+        "joint_field_error": 0.02967430042808073
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 43,
+    "physical_time": 1466.093505859375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0018411255825336332,
+    "structure_score": 0.09839645773172379,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0006024155819725256,
+        "pressure_relative_l2": 0.023632329622709256,
+        "joint_field_error": 0.01211737260234089
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002789455210418773,
+        "pressure_relative_l2": 184.86023224990458,
+        "joint_field_error": 92.43151085255751
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0009869932709053843,
+        "pressure_relative_l2": 0.026930003098843663,
+        "joint_field_error": 0.013958498184874523
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 42,
+    "physical_time": 1460.275634765625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.01727703535908958,
+    "structure_score": 0.09840686619281769,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005939502171002706,
+        "pressure_relative_l2": 0.026151035989167827,
+        "joint_field_error": 0.013372493103134049
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0032271977897573093,
+        "pressure_relative_l2": 181.46191314619247,
+        "joint_field_error": 90.73257017199111
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0009575200740062873,
+        "pressure_relative_l2": 0.06034153685044097,
+        "joint_field_error": 0.03064952846222363
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 41,
+    "physical_time": 1454.457763671875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.005431172059634139,
+    "structure_score": 0.09841818362474442,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005890925936506455,
+        "pressure_relative_l2": 0.020656375820037386,
+        "joint_field_error": 0.010622734206844016
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0032991144391242098,
+        "pressure_relative_l2": 176.4707938486504,
+        "joint_field_error": 88.23704648154477
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0009434071067815786,
+        "pressure_relative_l2": 0.03116440542617473,
+        "joint_field_error": 0.016053906266478155
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 40,
+    "physical_time": 1448.6400146484375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.013222741493277266,
+    "structure_score": 0.09843043982982635,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005812252235150942,
+        "pressure_relative_l2": 0.029365677708079164,
+        "joint_field_error": 0.014973451465797129
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0032001710677476373,
+        "pressure_relative_l2": 170.25879038578873,
+        "joint_field_error": 85.13099527842824
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0009214088872111999,
+        "pressure_relative_l2": 0.05547097703093759,
+        "joint_field_error": 0.028196192959074395
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 39,
+    "physical_time": 1442.8221435546875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.011093622418262283,
+    "structure_score": 0.0984436497092247,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005744941786304616,
+        "pressure_relative_l2": 0.02785465127880048,
+        "joint_field_error": 0.014214572728715472
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.003156993771588172,
+        "pressure_relative_l2": 163.04690840324912,
+        "joint_field_error": 81.52503269851036
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0009057082231541646,
+        "pressure_relative_l2": 0.04971068207080134,
+        "joint_field_error": 0.025308195146977755
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 38,
+    "physical_time": 1437.0042724609375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.026252661551931573,
+    "structure_score": 0.09845787286758423,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000567421386689998,
+        "pressure_relative_l2": 0.0291427590098708,
+        "joint_field_error": 0.014855090198280399
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0032653850920268263,
+        "pressure_relative_l2": 156.3763100276898,
+        "joint_field_error": 78.18978770639092
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0008663611745400978,
+        "pressure_relative_l2": 0.08134914232588385,
+        "joint_field_error": 0.041107751750211974
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 37,
+    "physical_time": 1431.1865234375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.003346295110805444,
+    "structure_score": 0.09847313165664673,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005595422632892526,
+        "pressure_relative_l2": 0.03199949171312241,
+        "joint_field_error": 0.016279516988205834
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.003445495681935708,
+        "pressure_relative_l2": 152.9646367315257,
+        "joint_field_error": 76.48404111360382
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0008594171644252719,
+        "pressure_relative_l2": 0.03839220703359728,
+        "joint_field_error": 0.019625812099011278
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 36,
+    "physical_time": 1425.36865234375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.024917185166810817,
+    "structure_score": 0.09848945587873459,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005526057902654133,
+        "pressure_relative_l2": 0.03324318510502496,
+        "joint_field_error": 0.016897895447645188
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.003586539124129285,
+        "pressure_relative_l2": 154.28713260984932,
+        "joint_field_error": 77.14535957448673
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0008223974165816255,
+        "pressure_relative_l2": 0.08280776381233039,
+        "joint_field_error": 0.041815080614456004
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 35,
+    "physical_time": 1419.55078125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.009919853811602847,
+    "structure_score": 0.0985068827867508,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005478617426614053,
+        "pressure_relative_l2": 0.030999243731505196,
+        "joint_field_error": 0.0157735527370833
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.003680874897803525,
+        "pressure_relative_l2": 158.4779928757397,
+        "joint_field_error": 79.24083687531875
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0008154486625639686,
+        "pressure_relative_l2": 0.05057136443480833,
+        "joint_field_error": 0.025693406548686147
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 34,
+    "physical_time": 1413.7330322265625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.03468707538022521,
+    "structure_score": 0.09852545708417892,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005433275730460511,
+        "pressure_relative_l2": 0.03323369974140831,
+        "joint_field_error": 0.01688851365722718
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0037745719180862216,
+        "pressure_relative_l2": 161.71349423616093,
+        "joint_field_error": 80.8586344040395
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0007599430061377109,
+        "pressure_relative_l2": 0.10239123506876706,
+        "joint_field_error": 0.051575589037452386
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 33,
+    "physical_time": 1407.9151611328125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.006060119579049568,
+    "structure_score": 0.09854519367218018,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000538618845359214,
+        "pressure_relative_l2": 0.03575917813592185,
+        "joint_field_error": 0.018148898490640532
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0036366196008010957,
+        "pressure_relative_l2": 161.98798638378187,
+        "joint_field_error": 80.99581150169134
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0007512483111049116,
+        "pressure_relative_l2": 0.04766678782827529,
+        "joint_field_error": 0.0242090180696901
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 32,
+    "physical_time": 1402.0972900390625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.02562978793361,
+    "structure_score": 0.09856615215539932,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005332447793309356,
+        "pressure_relative_l2": 0.034896682452680634,
+        "joint_field_error": 0.017714963616005785
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.003779364069899108,
+        "pressure_relative_l2": 157.2297060504595,
+        "joint_field_error": 78.61674270726469
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0007071409579216808,
+        "pressure_relative_l2": 0.08598236214130989,
+        "joint_field_error": 0.043344751549615784
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 31,
+    "physical_time": 1396.279541015625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.007456481503229535,
+    "structure_score": 0.09858835488557816,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005246713770237839,
+        "pressure_relative_l2": 0.03477136306881315,
+        "joint_field_error": 0.017648017222918467
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.003849914859157829,
+        "pressure_relative_l2": 150.07418551199885,
+        "joint_field_error": 75.039017713429
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.000694551758363835,
+        "pressure_relative_l2": 0.04951444569393217,
+        "joint_field_error": 0.025104498726148002
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 30,
+    "physical_time": 1390.461669921875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.01992640018401967,
+    "structure_score": 0.09861186146736145,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005178613682611076,
+        "pressure_relative_l2": 0.025480270228540276,
+        "joint_field_error": 0.012999065798400692
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0037217748006614336,
+        "pressure_relative_l2": 142.62299131280668,
+        "joint_field_error": 71.31335654380366
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006649047908106922,
+        "pressure_relative_l2": 0.06518602717403003,
+        "joint_field_error": 0.03292546598242036
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 29,
+    "physical_time": 1384.643798828125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.012811842187523171,
+    "structure_score": 0.0986366719007492,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005102239674048658,
+        "pressure_relative_l2": 0.02799718888729316,
+        "joint_field_error": 0.014253706427349012
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0033927191306200163,
+        "pressure_relative_l2": 136.1081610214544,
+        "joint_field_error": 68.05577687029252
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006492146008352643,
+        "pressure_relative_l2": 0.0534818826289091,
+        "joint_field_error": 0.027065548614872183
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 28,
+    "physical_time": 1378.8260498046875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.015006820476833048,
+    "structure_score": 0.0986628606915474,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005051508592949011,
+        "pressure_relative_l2": 0.025808193556517377,
+        "joint_field_error": 0.01315667220790614
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002987994202673805,
+        "pressure_relative_l2": 130.56973607951286,
+        "joint_field_error": 65.28636203685777
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006269638010243929,
+        "pressure_relative_l2": 0.05570002156845398,
+        "joint_field_error": 0.028163492684739187
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 27,
+    "physical_time": 1373.0081787109375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.016070780606685122,
+    "structure_score": 0.0986904576420784,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000500872651566567,
+        "pressure_relative_l2": 0.02265252437671243,
+        "joint_field_error": 0.011576698514139498
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002580421716604025,
+        "pressure_relative_l2": 125.47593256853604,
+        "joint_field_error": 62.73925649512632
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.000610882157522017,
+        "pressure_relative_l2": 0.054684076084127224,
+        "joint_field_error": 0.02764747912082462
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 26,
+    "physical_time": 1367.1903076171875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.014701314627081965,
+    "structure_score": 0.09871950000524521,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00049636086976903,
+        "pressure_relative_l2": 0.023128611943501003,
+        "joint_field_error": 0.011812486406635016
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002220555550994026,
+        "pressure_relative_l2": 120.51812983896673,
+        "joint_field_error": 60.26017519725886
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005917500406444854,
+        "pressure_relative_l2": 0.05243585202678948,
+        "joint_field_error": 0.02651380103371698
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 25,
+    "physical_time": 1361.37255859375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0069586213424572795,
+    "structure_score": 0.0987500250339508,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004900277911276284,
+        "pressure_relative_l2": 0.030535039385846823,
+        "joint_field_error": 0.015512533588487226
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0019847086050291626,
+        "pressure_relative_l2": 116.58208799438496,
+        "joint_field_error": 58.292036351495
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005771509622024582,
+        "pressure_relative_l2": 0.044365158899686556,
+        "joint_field_error": 0.022471154930944506
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 24,
+    "physical_time": 1355.5546875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.02326659519075863,
+    "structure_score": 0.09878206998109818,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00048440881181414605,
+        "pressure_relative_l2": 0.0331274237989699,
+        "joint_field_error": 0.016805916305392025
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0019999348101556575,
+        "pressure_relative_l2": 113.89333502383613,
+        "joint_field_error": 56.947667479323144
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005511824786502823,
+        "pressure_relative_l2": 0.07959384051365102,
+        "joint_field_error": 0.04007251149615065
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 23,
+    "physical_time": 1349.73681640625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.016419673929414715,
+    "structure_score": 0.09881570190191269,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00048260782844260886,
+        "pressure_relative_l2": 0.02238768571537626,
+        "joint_field_error": 0.011435146771909434
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0016336528519480362,
+        "pressure_relative_l2": 110.61475226728918,
+        "joint_field_error": 55.30819296007056
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005427022313588926,
+        "pressure_relative_l2": 0.05516693917128941,
+        "joint_field_error": 0.02785482070132415
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 22,
+    "physical_time": 1343.9190673828125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.018166554070240135,
+    "structure_score": 0.09885093569755554,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004754509234755051,
+        "pressure_relative_l2": 0.042092788544572754,
+        "joint_field_error": 0.02128411973402413
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0014242429660614362,
+        "pressure_relative_l2": 108.89208401842278,
+        "joint_field_error": 54.44675413069442
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005101149938715464,
+        "pressure_relative_l2": 0.07839123261465698,
+        "joint_field_error": 0.039450673804264265
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 21,
+    "physical_time": 1338.1011962890625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.016009251225289678,
+    "structure_score": 0.09888782352209091,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00047238032383486095,
+        "pressure_relative_l2": 0.022957487596894623,
+        "joint_field_error": 0.011714933960364741
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001702412416352334,
+        "pressure_relative_l2": 109.41759740503211,
+        "joint_field_error": 54.70964990872423
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005060696334682228,
+        "pressure_relative_l2": 0.05494230073784062,
+        "joint_field_error": 0.02772418518565442
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 20,
+    "physical_time": 1332.2833251953125,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.0012419170861005108,
+    "structure_score": 0.09892642498016357,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004635971711904239,
+        "pressure_relative_l2": 0.05856647737858621,
+        "joint_field_error": 0.029515037274888318
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0018178497225019477,
+        "pressure_relative_l2": 109.13961491335529,
+        "joint_field_error": 54.570716381538894
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00048542233981417853,
+        "pressure_relative_l2": 0.05606081803776144,
+        "joint_field_error": 0.028273120188787807
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 19,
+    "physical_time": 1326.465576171875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0185987561339003,
+    "structure_score": 0.09896674752235413,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00046216697451901314,
+        "pressure_relative_l2": 0.01661149488086828,
+        "joint_field_error": 0.008536830927693646
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0018647299219671286,
+        "pressure_relative_l2": 105.6509644256298,
+        "joint_field_error": 52.82641457777588
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004692040671193974,
+        "pressure_relative_l2": 0.0538019700560685,
+        "joint_field_error": 0.027135587061593948
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 18,
+    "physical_time": 1320.647705078125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.015277743801773507,
+    "structure_score": 0.09900886565446854,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00045623276391252107,
+        "pressure_relative_l2": 0.024506106424695605,
+        "joint_field_error": 0.012481169594304063
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0019017751571366811,
+        "pressure_relative_l2": 103.54379225588467,
+        "joint_field_error": 51.7728470155209
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004549052232807616,
+        "pressure_relative_l2": 0.05506292156887438,
+        "joint_field_error": 0.02775891339607757
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 17,
+    "physical_time": 1314.829833984375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.008077063578495152,
+    "structure_score": 0.09905281662940979,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004484127115667605,
+        "pressure_relative_l2": 0.02406946246299944,
+        "joint_field_error": 0.0122589375872831
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0016742512691026458,
+        "pressure_relative_l2": 100.10144291976835,
+        "joint_field_error": 50.05155858551873
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004474895822931299,
+        "pressure_relative_l2": 0.04022451274926337,
+        "joint_field_error": 0.02033600116577825
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 16,
+    "physical_time": 1309.011962890625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.006369405772190424,
+    "structure_score": 0.09909863770008087,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00044025159826568136,
+        "pressure_relative_l2": 0.019648308555360865,
+        "joint_field_error": 0.010044280076813274
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0013615426431197034,
+        "pressure_relative_l2": 96.38977320842838,
+        "joint_field_error": 48.19556737553575
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004354193550968745,
+        "pressure_relative_l2": 0.03239195234291052,
+        "joint_field_error": 0.016413685849003698
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 15,
+    "physical_time": 1303.1942138671875,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0008296643744089838,
+    "structure_score": 0.09914638102054596,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004314954121439245,
+        "pressure_relative_l2": 0.022122774034995286,
+        "joint_field_error": 0.011277134723569605
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0013719610290471762,
+        "pressure_relative_l2": 94.65889399191234,
+        "joint_field_error": 47.33013297647069
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00042704725825714983,
+        "pressure_relative_l2": 0.020467893440064094,
+        "joint_field_error": 0.010447470349160621
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 14,
+    "physical_time": 1297.3763427734375,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0008579284327344221,
+    "structure_score": 0.09919609874486923,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00042354279169150083,
+        "pressure_relative_l2": 0.02127766443055838,
+        "joint_field_error": 0.01085060361112494
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0015427284283261184,
+        "pressure_relative_l2": 92.06988413198002,
+        "joint_field_error": 46.03571343020417
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004189868038549056,
+        "pressure_relative_l2": 0.01956636355292613,
+        "joint_field_error": 0.009992675178390517
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 13,
+    "physical_time": 1291.5584716796875,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0011022260472700086,
+    "structure_score": 0.09924781322479248,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004150788167001299,
+        "pressure_relative_l2": 0.02016362403610562,
+        "joint_field_error": 0.010289351426402875
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0021012166184363155,
+        "pressure_relative_l2": 91.02942360152967,
+        "joint_field_error": 45.51576240907406
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00041044611429036306,
+        "pressure_relative_l2": 0.01796380464397537,
+        "joint_field_error": 0.009187125379132867
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 12,
+    "physical_time": 1285.74072265625,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.00041863562087054995,
+    "structure_score": 0.09930159896612167,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00040550831740208244,
+        "pressure_relative_l2": 0.018006890109449485,
+        "joint_field_error": 0.009206199213425784
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002326272463985022,
+        "pressure_relative_l2": 88.55529828288604,
+        "joint_field_error": 44.278812277675016
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004013346572395062,
+        "pressure_relative_l2": 0.017173792527870962,
+        "joint_field_error": 0.008787563592555234
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 11,
+    "physical_time": 1279.9228515625,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.00019156285666225951,
+    "structure_score": 0.099357470870018,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0003954799702335274,
+        "pressure_relative_l2": 0.017613977462431086,
+        "joint_field_error": 0.009004728716332306
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0023092640506987075,
+        "pressure_relative_l2": 85.54836993810868,
+        "joint_field_error": 42.775339601079686
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00039143254459127495,
+        "pressure_relative_l2": 0.017234899174748818,
+        "joint_field_error": 0.008813165859670046
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 10,
+    "physical_time": 1274.10498046875,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0009422340976804819,
+    "structure_score": 0.09941551089286804,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0003845678625949997,
+        "pressure_relative_l2": 0.01696657729935624,
+        "joint_field_error": 0.008675572580975621
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0022631357993897813,
+        "pressure_relative_l2": 80.71558534332775,
+        "joint_field_error": 40.35892423956357
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00038074289439175466,
+        "pressure_relative_l2": 0.015085934072198524,
+        "joint_field_error": 0.007733338483295139
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 9,
+    "physical_time": 1268.2872314453125,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0008502776461625106,
+    "structure_score": 0.09947574883699417,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00037279179361303236,
+        "pressure_relative_l2": 0.016745873983295627,
+        "joint_field_error": 0.00855933288845433
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002331331842471822,
+        "pressure_relative_l2": 74.04067545477656,
+        "joint_field_error": 37.021503393309516
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00036931752590691483,
+        "pressure_relative_l2": 0.015048792958676725,
+        "joint_field_error": 0.00770905524229182
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 8,
+    "physical_time": 1262.4693603515625,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0011476827626803274,
+    "structure_score": 0.09953821450471878,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00036016173070140727,
+        "pressure_relative_l2": 0.01658299423670512,
+        "joint_field_error": 0.008471577983703264
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0017567874658257017,
+        "pressure_relative_l2": 68.13171136461065,
+        "joint_field_error": 34.06673407603824
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0003573096889777468,
+        "pressure_relative_l2": 0.014290480753068126,
+        "joint_field_error": 0.0073238952210229365
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 7,
+    "physical_time": 1256.6514892578125,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0012797788799115105,
+    "structure_score": 0.09960298985242844,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0003466868360443862,
+        "pressure_relative_l2": 0.015084907988719169,
+        "joint_field_error": 0.007715797412381778
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0010780682606680969,
+        "pressure_relative_l2": 67.08864922570325,
+        "joint_field_error": 33.54486364698196
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0003442777177052771,
+        "pressure_relative_l2": 0.012527759347235257,
+        "joint_field_error": 0.0064360185324702675
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 6,
+    "physical_time": 1250.833740234375,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0006709287642077061,
+    "structure_score": 0.09967009723186493,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0003310670003688602,
+        "pressure_relative_l2": 0.012648765963753897,
+        "joint_field_error": 0.006489916482061379
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0004979558119580147,
+        "pressure_relative_l2": 72.2388369376765,
+        "joint_field_error": 36.119667446744224
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0003294350096653061,
+        "pressure_relative_l2": 0.011308540426042039,
+        "joint_field_error": 0.005818987717853673
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 5,
+    "physical_time": 1245.015869140625,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.0006384544514601376,
+    "structure_score": 0.09973958879709244,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0003119237329715085,
+        "pressure_relative_l2": 0.012299273294138116,
+        "joint_field_error": 0.006305598513554812
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.00016988636275299947,
+        "pressure_relative_l2": 80.02066130146157,
+        "joint_field_error": 40.010415593912164
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00031038420280033146,
+        "pressure_relative_l2": 0.011023903921389019,
+        "joint_field_error": 0.005667144062094675
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 4,
+    "physical_time": 1239.197998046875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.00023112201546953218,
+    "structure_score": 0.09981151670217514,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00028945444616568634,
+        "pressure_relative_l2": 0.009975771616495814,
+        "joint_field_error": 0.00513261303133075
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.00015052558674762126,
+        "pressure_relative_l2": 83.9189970905907,
+        "joint_field_error": 41.95957380808872
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00028766735690960183,
+        "pressure_relative_l2": 0.010439802736690961,
+        "joint_field_error": 0.005363735046800282
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 3,
+    "physical_time": 1233.3802490234375,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0019645418288604206,
+    "structure_score": 0.09988592565059662,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00026081556774231336,
+        "pressure_relative_l2": 0.013102559278784606,
+        "joint_field_error": 0.006681687423263459
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.000411383292484603,
+        "pressure_relative_l2": 83.45684050810817,
+        "joint_field_error": 41.72862594570033
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00025885717301141886,
+        "pressure_relative_l2": 0.009175434015794659,
+        "joint_field_error": 0.004717145594403039
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 2,
+    "physical_time": 1227.5623779296875,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0038169754233546597,
+    "structure_score": 0.09996287524700165,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00022385036219033894,
+        "pressure_relative_l2": 0.017871736387296278,
+        "joint_field_error": 0.009047793374743308
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0008118351192275239,
+        "pressure_relative_l2": 82.84071894818571,
+        "joint_field_error": 41.420765391652466
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00022322399576235388,
+        "pressure_relative_l2": 0.010238411907014942,
+        "joint_field_error": 0.005230817951388648
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 1,
+    "physical_time": 1221.7445068359375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.005066019630474514,
+    "structure_score": 0.10004241019487381,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0001872508583064179,
+        "pressure_relative_l2": 0.017540515382641696,
+        "joint_field_error": 0.008863883120474057
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0005532049246622715,
+        "pressure_relative_l2": 78.10662664110593,
+        "joint_field_error": 39.053589923015295
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00018473341216156396,
+        "pressure_relative_l2": 0.02767507208973558,
+        "joint_field_error": 0.013929902750948572
+      }
+    }
+  },
+  {
+    "window_index": 1,
+    "Re": 32.74006652832031,
+    "split": "heldout",
+    "time_index": 0,
+    "physical_time": 1215.9267578125,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.006992849532464675,
+    "structure_score": 0.10012456774711609,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00011326531049539771,
+        "pressure_relative_l2": 0.02893082286516873,
+        "joint_field_error": 0.014522044087832064
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.00018450200608940122,
+        "pressure_relative_l2": 47.08644842208017,
+        "joint_field_error": 23.54331646204313
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00011326531049539771,
+        "pressure_relative_l2": 0.01494512380023938,
+        "joint_field_error": 0.007529194555367389
+      }
+    }
+  },
+  {
+    "window_index": 2,
+    "Re": 39.68547821044922,
+    "split": "heldout",
+    "time_index": 55,
+    "physical_time": 1478.29052734375,
+    "last_frame": true,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.008851440004135666,
+    "structure_score": 0.07440326362848282,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000355979817532246,
+        "pressure_relative_l2": 0.03275481645605712,
+        "joint_field_error": 0.016555398136794682
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0028931452053642657,
+        "pressure_relative_l2": 77.52949788234362,
+        "joint_field_error": 38.76619551377449
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00048793715337850746,
+        "pressure_relative_l2": 0.014919979111939524,
+        "joint_field_error": 0.007703958132659015
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 55,
+    "physical_time": 1443.04296875,
+    "last_frame": true,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0013945926206848768,
+    "structure_score": 0.2095523178577423,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007537435005652522,
+        "pressure_relative_l2": 0.017252809769803656,
+        "joint_field_error": 0.009003276635184455
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0030473720418016824,
+        "pressure_relative_l2": 72.72571534871088,
+        "joint_field_error": 36.36438136037634
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0007095209998245523,
+        "pressure_relative_l2": 0.020086217511914112,
+        "joint_field_error": 0.010397869255869331
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 54,
+    "physical_time": 1438.823486328125,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.017882069320815486,
+    "structure_score": 0.20952896773815155,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007410340800317085,
+        "pressure_relative_l2": 0.05031205428380619,
+        "joint_field_error": 0.02552654418191895
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0028664384567794908,
+        "pressure_relative_l2": 68.9752953152321,
+        "joint_field_error": 34.48908087684444
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0007018780770230451,
+        "pressure_relative_l2": 0.014587071645183886,
+        "joint_field_error": 0.0076444748611034655
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 53,
+    "physical_time": 1434.6041259765625,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.03248075104859435,
+    "structure_score": 0.20950545370578766,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0007121407378436073,
+        "pressure_relative_l2": 0.08063719517652601,
+        "joint_field_error": 0.04067466795718481
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002616805620101929,
+        "pressure_relative_l2": 66.68394299884623,
+        "joint_field_error": 33.34327990223317
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006920978051032666,
+        "pressure_relative_l2": 0.015695736012077646,
+        "joint_field_error": 0.008193916908590457
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 52,
+    "physical_time": 1430.3846435546875,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.02542869660289826,
+    "structure_score": 0.20948180556297302,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0006939195273194229,
+        "pressure_relative_l2": 0.0638415265009709,
+        "joint_field_error": 0.03226772301414516
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0021922866433875983,
+        "pressure_relative_l2": 65.2942876669029,
+        "joint_field_error": 32.64823997677315
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006855663401278397,
+        "pressure_relative_l2": 0.012992486482365966,
+        "joint_field_error": 0.006839026411246903
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 51,
+    "physical_time": 1426.1651611328125,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.056064618435724606,
+    "structure_score": 0.20945797860622406,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0006534794382661019,
+        "pressure_relative_l2": 0.13529658735517727,
+        "joint_field_error": 0.06797503339672169
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001879719515877172,
+        "pressure_relative_l2": 62.107425588457296,
+        "joint_field_error": 31.054652653986587
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006738008388519432,
+        "pressure_relative_l2": 0.023147029083142225,
+        "joint_field_error": 0.011910414960997085
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 50,
+    "physical_time": 1421.94580078125,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.034122194388259516,
+    "structure_score": 0.20943401753902435,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000632259831365705,
+        "pressure_relative_l2": 0.09657089566262668,
+        "joint_field_error": 0.048601577746996194
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0017540150737459337,
+        "pressure_relative_l2": 58.99976219094736,
+        "joint_field_error": 29.50075810301055
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006610036621483398,
+        "pressure_relative_l2": 0.028297763055325022,
+        "joint_field_error": 0.014479383358736681
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 49,
+    "physical_time": 1417.726318359375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0036903192212058705,
+    "structure_score": 0.2094099074602127,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0006183486932204442,
+        "pressure_relative_l2": 0.021352171444024827,
+        "joint_field_error": 0.010985260068622636
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001744184333251369,
+        "pressure_relative_l2": 58.05355223177009,
+        "joint_field_error": 29.027648208051673
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006467528497802192,
+        "pressure_relative_l2": 0.028704405729876793,
+        "joint_field_error": 0.014675579289828506
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 48,
+    "physical_time": 1413.5069580078125,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.001956525258351955,
+    "structure_score": 0.20938566327095032,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000600052388956036,
+        "pressure_relative_l2": 0.038715935094497146,
+        "joint_field_error": 0.019657993741726592
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0013647825496960618,
+        "pressure_relative_l2": 57.527692719116985,
+        "joint_field_error": 28.76452875083334
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006339634833778819,
+        "pressure_relative_l2": 0.03476897348337139,
+        "joint_field_error": 0.017701468483374637
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 47,
+    "physical_time": 1409.2874755859375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.007320463098689934,
+    "structure_score": 0.2093612551689148,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005903805195886692,
+        "pressure_relative_l2": 0.03276145384754551,
+        "joint_field_error": 0.01667591718356709
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.000655227661230009,
+        "pressure_relative_l2": 56.54487286667276,
+        "joint_field_error": 28.272764047166994
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006215544745241834,
+        "pressure_relative_l2": 0.04737120608998987,
+        "joint_field_error": 0.023996380282257024
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 46,
+    "physical_time": 1405.068115234375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0006271482218457095,
+    "structure_score": 0.20933672785758972,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005896340852584774,
+        "pressure_relative_l2": 0.02382592933621563,
+        "joint_field_error": 0.012207781710737053
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.00045894484714073406,
+        "pressure_relative_l2": 55.99720001783708,
+        "joint_field_error": 27.99882948134211
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006196233533088924,
+        "pressure_relative_l2": 0.025050236511856633,
+        "joint_field_error": 0.012834929932582763
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 45,
+    "physical_time": 1400.8486328125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.00268206950915704,
+    "structure_score": 0.2093120813369751,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005799165400025434,
+        "pressure_relative_l2": 0.00910797881157721,
+        "joint_field_error": 0.004843947675789877
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.00034841064947312275,
+        "pressure_relative_l2": 56.142844267501864,
+        "joint_field_error": 28.07159633907567
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006205968274239958,
+        "pressure_relative_l2": 0.014431437542469838,
+        "joint_field_error": 0.007526017184946917
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 44,
+    "physical_time": 1396.6292724609375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.004756196937494232,
+    "structure_score": 0.20928730070590973,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005727052425017714,
+        "pressure_relative_l2": 0.008171281999407864,
+        "joint_field_error": 0.004371993620954818
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.00046314396281155814,
+        "pressure_relative_l2": 56.82434607106182,
+        "joint_field_error": 28.412404607512315
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006205154898120896,
+        "pressure_relative_l2": 0.017635865627086012,
+        "joint_field_error": 0.00912819055844905
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 43,
+    "physical_time": 1392.4097900390625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0033428674000993367,
+    "structure_score": 0.2092624008655548,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005698291463852094,
+        "pressure_relative_l2": 0.018471259531665535,
+        "joint_field_error": 0.009520544339025373
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0010249236444299418,
+        "pressure_relative_l2": 58.9342549807483,
+        "joint_field_error": 29.467639952196365
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0006094045017093175,
+        "pressure_relative_l2": 0.0251174189765401,
+        "joint_field_error": 0.01286341173912471
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 42,
+    "physical_time": 1388.1904296875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.002276681786663043,
+    "structure_score": 0.20923739671707153,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005702804311051334,
+        "pressure_relative_l2": 0.024718561485750114,
+        "joint_field_error": 0.012644420958427624
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0013100901824026874,
+        "pressure_relative_l2": 60.53836289493582,
+        "joint_field_error": 30.26983649255911
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.000596742700527639,
+        "pressure_relative_l2": 0.029245462789653693,
+        "joint_field_error": 0.014921102745090667
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 41,
+    "physical_time": 1383.970947265625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0082134720979745,
+    "structure_score": 0.2092122882604599,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000570338619552903,
+        "pressure_relative_l2": 0.013048056151549522,
+        "joint_field_error": 0.006809197385551212
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0013644625811098621,
+        "pressure_relative_l2": 60.642316842833374,
+        "joint_field_error": 30.32184065270724
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005836603403413801,
+        "pressure_relative_l2": 0.029461678626710043,
+        "joint_field_error": 0.015022669483525711
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 40,
+    "physical_time": 1379.7515869140625,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.0008142163465617979,
+    "structure_score": 0.2091870754957199,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000570796101097324,
+        "pressure_relative_l2": 0.03004675043568771,
+        "joint_field_error": 0.015308773268392516
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0013867330381607734,
+        "pressure_relative_l2": 58.67939795159405,
+        "joint_field_error": 29.340392342316104
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005719282884238231,
+        "pressure_relative_l2": 0.028417185555237614,
+        "joint_field_error": 0.014494556921830718
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 39,
+    "physical_time": 1375.5321044921875,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.00534167338720022,
+    "structure_score": 0.20916175842285156,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005585078917536468,
+        "pressure_relative_l2": 0.03890624534102038,
+        "joint_field_error": 0.019732376616387014
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0014837520811872714,
+        "pressure_relative_l2": 54.6072633995777,
+        "joint_field_error": 27.30437357582944
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005639386737487404,
+        "pressure_relative_l2": 0.028217467784624847,
+        "joint_field_error": 0.014390703229186794
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 38,
+    "physical_time": 1371.312744140625,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.017348745001181522,
+    "structure_score": 0.20913635194301605,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005476841133791617,
+        "pressure_relative_l2": 0.04636761259036443,
+        "joint_field_error": 0.023457648351871797
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0016406154691886202,
+        "pressure_relative_l2": 49.07523509546311,
+        "joint_field_error": 24.53843785546615
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005621134453234211,
+        "pressure_relative_l2": 0.011655693256057129,
+        "joint_field_error": 0.006108903350690275
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 37,
+    "physical_time": 1367.09326171875,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.032830852556907625,
+    "structure_score": 0.20911088585853577,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005296384208340777,
+        "pressure_relative_l2": 0.07480705944859312,
+        "joint_field_error": 0.037668348934713596
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0012120134339710692,
+        "pressure_relative_l2": 45.14003648018379,
+        "joint_field_error": 22.57062424680888
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005549334461296755,
+        "pressure_relative_l2": 0.009120059309482273,
+        "joint_field_error": 0.004837496377805974
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 36,
+    "physical_time": 1362.8739013671875,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.02845293086271866,
+    "structure_score": 0.20908533036708832,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005145556257171055,
+        "pressure_relative_l2": 0.07043658038154559,
+        "joint_field_error": 0.035475568003631344
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0008835666015567365,
+        "pressure_relative_l2": 42.36713892188856,
+        "joint_field_error": 21.18401124424506
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005464080580753098,
+        "pressure_relative_l2": 0.013498866223750053,
+        "joint_field_error": 0.007022637140912682
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 35,
+    "physical_time": 1358.6544189453125,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.03173698065468754,
+    "structure_score": 0.2090597003698349,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0005012312318294154,
+        "pressure_relative_l2": 0.08970811533411285,
+        "joint_field_error": 0.04510467328297114
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.000668150011491919,
+        "pressure_relative_l2": 41.267752157703605,
+        "joint_field_error": 20.63421015385755
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.000534060853997389,
+        "pressure_relative_l2": 0.026201324402569816,
+        "joint_field_error": 0.013367692628283603
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 34,
+    "physical_time": 1354.43505859375,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.029471278976105315,
+    "structure_score": 0.2090340107679367,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004925776950326151,
+        "pressure_relative_l2": 0.08841478595127983,
+        "joint_field_error": 0.04445368182315622
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0005517789470043547,
+        "pressure_relative_l2": 41.5765377917185,
+        "joint_field_error": 20.788544785332753
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.000524745709063061,
+        "pressure_relative_l2": 0.029440059985038746,
+        "joint_field_error": 0.014982402847050904
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 33,
+    "physical_time": 1350.215576171875,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.01580437329121812,
+    "structure_score": 0.20900827646255493,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000487861384852649,
+        "pressure_relative_l2": 0.04609784319380693,
+        "joint_field_error": 0.02329285228932979
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0005233384919436267,
+        "pressure_relative_l2": 42.775083204353486,
+        "joint_field_error": 21.387803271422715
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005209775660280715,
+        "pressure_relative_l2": 0.014455980430195265,
+        "joint_field_error": 0.007488478998111669
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 32,
+    "physical_time": 1345.9962158203125,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.010309376064028403,
+    "structure_score": 0.20898249745368958,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004806455299183199,
+        "pressure_relative_l2": 0.03254468226804696,
+        "joint_field_error": 0.01651266389898264
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0005793834603062507,
+        "pressure_relative_l2": 44.78670519066719,
+        "joint_field_error": 22.39364228706375
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005161661843161036,
+        "pressure_relative_l2": 0.011890409485592368,
+        "joint_field_error": 0.006203287834954236
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 31,
+    "physical_time": 1341.7767333984375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.00252982360630696,
+    "structure_score": 0.20895667374134064,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004739119189676227,
+        "pressure_relative_l2": 0.015786751311523583,
+        "joint_field_error": 0.008130331615245602
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.000729108528563094,
+        "pressure_relative_l2": 47.57931547992616,
+        "joint_field_error": 23.79002229422736
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0005076761414283975,
+        "pressure_relative_l2": 0.020812634301676725,
+        "joint_field_error": 0.010660155221552562
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 30,
+    "physical_time": 1337.557373046875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.00026673483814696527,
+    "structure_score": 0.2089308351278305,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00046560945373636827,
+        "pressure_relative_l2": 0.014925487276721435,
+        "joint_field_error": 0.007695548365228902
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0009614977005215528,
+        "pressure_relative_l2": 51.10449038556455,
+        "joint_field_error": 25.552725941632538
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004963615138468206,
+        "pressure_relative_l2": 0.015428204892904912,
+        "joint_field_error": 0.007962283203375867
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 29,
+    "physical_time": 1333.337890625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0028620176933619682,
+    "structure_score": 0.20890496671199799,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004586176458874207,
+        "pressure_relative_l2": 0.016840641404015557,
+        "joint_field_error": 0.00864962952495149
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0011367725575539857,
+        "pressure_relative_l2": 54.53875347825792,
+        "joint_field_error": 27.269945125407734
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004836379992429298,
+        "pressure_relative_l2": 0.022539656437383985,
+        "joint_field_error": 0.011511647218313457
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 28,
+    "physical_time": 1329.1185302734375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0007191076577589793,
+    "structure_score": 0.20887909829616547,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00045164198308917844,
+        "pressure_relative_l2": 0.020631820380278113,
+        "joint_field_error": 0.010541731181683646
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001425858467857036,
+        "pressure_relative_l2": 57.564381738487356,
+        "joint_field_error": 28.782903798477605
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004733925696037473,
+        "pressure_relative_l2": 0.022048285109281505,
+        "joint_field_error": 0.011260838839442625
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 27,
+    "physical_time": 1324.8990478515625,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.006246796340907794,
+    "structure_score": 0.20885322988033295,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004453839182338255,
+        "pressure_relative_l2": 0.02566812001108283,
+        "joint_field_error": 0.013056751964658329
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0016325415425038454,
+        "pressure_relative_l2": 60.24936841319506,
+        "joint_field_error": 30.12550047736878
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00046260279643567533,
+        "pressure_relative_l2": 0.013157308451065395,
+        "joint_field_error": 0.006809955623750535
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 26,
+    "physical_time": 1320.6796875,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.0010110173757500503,
+    "structure_score": 0.20882736146450043,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00043961682067748597,
+        "pressure_relative_l2": 0.018674316081634192,
+        "joint_field_error": 0.009556966451155838
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0017753470246288444,
+        "pressure_relative_l2": 61.15361799265347,
+        "joint_field_error": 30.57769666983905
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00045159183050419075,
+        "pressure_relative_l2": 0.016640306320307385,
+        "joint_field_error": 0.008545949075405788
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 25,
+    "physical_time": 1316.460205078125,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.010868415551268235,
+    "structure_score": 0.2088015228509903,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004357644464054551,
+        "pressure_relative_l2": 0.038174533290006495,
+        "joint_field_error": 0.019305148868205974
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0017952390011587054,
+        "pressure_relative_l2": 60.13312900395576,
+        "joint_field_error": 30.06746212147846
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004420850456370538,
+        "pressure_relative_l2": 0.01643138158823842,
+        "joint_field_error": 0.008436733316937738
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 24,
+    "physical_time": 1312.24072265625,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.005798420786559913,
+    "structure_score": 0.20877571403980255,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004309378781400954,
+        "pressure_relative_l2": 0.0235508493277968,
+        "joint_field_error": 0.011990893602968447
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0016589451058013462,
+        "pressure_relative_l2": 54.81846272191904,
+        "joint_field_error": 27.41006083351242
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.000432546074798153,
+        "pressure_relative_l2": 0.011952399558018915,
+        "joint_field_error": 0.006192472816408534
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 23,
+    "physical_time": 1308.0213623046875,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 9.76855626168005e-05,
+    "structure_score": 0.2087499350309372,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004232706752489376,
+        "pressure_relative_l2": 0.014128776688017871,
+        "joint_field_error": 0.007276023681633405
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0015070904047946412,
+        "pressure_relative_l2": 47.89445474049793,
+        "joint_field_error": 23.94798091545136
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00042104950941036274,
+        "pressure_relative_l2": 0.013935626728622846,
+        "joint_field_error": 0.007178338119016604
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 22,
+    "physical_time": 1303.8018798828125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.004392708571566113,
+    "structure_score": 0.2087242156267166,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0004145733346460692,
+        "pressure_relative_l2": 0.012472847274235649,
+        "joint_field_error": 0.006443710304440859
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0013627818065026348,
+        "pressure_relative_l2": 40.7945889332201,
+        "joint_field_error": 20.397975857513302
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0004088807389723104,
+        "pressure_relative_l2": 0.021263957013041634,
+        "joint_field_error": 0.010836418876006972
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 21,
+    "physical_time": 1299.58251953125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.001580858616843507,
+    "structure_score": 0.2086985558271408,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00040779492376448825,
+        "pressure_relative_l2": 0.012674281237142182,
+        "joint_field_error": 0.006541038080453335
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0012439704671875277,
+        "pressure_relative_l2": 34.85407485179408,
+        "joint_field_error": 17.427659411130634
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.000398661734145805,
+        "pressure_relative_l2": 0.01584513166044788,
+        "joint_field_error": 0.008121896697296842
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 20,
+    "physical_time": 1295.363037109375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0019335064639879997,
+    "structure_score": 0.20867297053337097,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00040151798418450874,
+        "pressure_relative_l2": 0.011466449888158385,
+        "joint_field_error": 0.005933983936171447
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0011696470757894416,
+        "pressure_relative_l2": 30.643664264985045,
+        "joint_field_error": 15.322416956030418
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00039238034502887326,
+        "pressure_relative_l2": 0.01534260045529002,
+        "joint_field_error": 0.007867490400159447
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 19,
+    "physical_time": 1291.1436767578125,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.004138866618835322,
+    "structure_score": 0.2086474895477295,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0003886080039231538,
+        "pressure_relative_l2": 0.014974816391018164,
+        "joint_field_error": 0.007681712197470659
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0011654984469604865,
+        "pressure_relative_l2": 27.964959899135497,
+        "joint_field_error": 13.98306269879123
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0003830047930529389,
+        "pressure_relative_l2": 0.006702686364217735,
+        "joint_field_error": 0.003542845578635337
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 18,
+    "physical_time": 1286.9241943359375,
+    "last_frame": false,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0010201498687736196,
+    "structure_score": 0.20862209796905518,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00037389362404185983,
+        "pressure_relative_l2": 0.014784294729786084,
+        "joint_field_error": 0.007579094176913972
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0012563086050736921,
+        "pressure_relative_l2": 26.735179875766253,
+        "joint_field_error": 13.368218092185664
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00037216846841365176,
+        "pressure_relative_l2": 0.012745720147867052,
+        "joint_field_error": 0.006558944308140352
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 17,
+    "physical_time": 1282.704833984375,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.0024737607123984815,
+    "structure_score": 0.2085968255996704,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00035811351434414835,
+        "pressure_relative_l2": 0.015190713957707757,
+        "joint_field_error": 0.007774413736025953
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0014560149180462586,
+        "pressure_relative_l2": 27.18616599868216,
+        "joint_field_error": 13.593811006800102
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00035874067183230997,
+        "pressure_relative_l2": 0.010242565375422633,
+        "joint_field_error": 0.005300653023627471
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 16,
+    "physical_time": 1278.4853515625,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.0012198713139872693,
+    "structure_score": 0.2085716724395752,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00034259643585797897,
+        "pressure_relative_l2": 0.015228318573134204,
+        "joint_field_error": 0.007785457504496092
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0017815712560504066,
+        "pressure_relative_l2": 29.686465030576773,
+        "joint_field_error": 14.844123300916412
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00034395819207832623,
+        "pressure_relative_l2": 0.012787214188939319,
+        "joint_field_error": 0.006565586190508822
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 15,
+    "physical_time": 1274.2659912109375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -6.762693603846667e-06,
+    "structure_score": 0.20854665338993073,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00032833474443862013,
+        "pressure_relative_l2": 0.014405219708401201,
+        "joint_field_error": 0.00736677722641991
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0020249284439453506,
+        "pressure_relative_l2": 31.79836469101613,
+        "joint_field_error": 15.900194809730037
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00032941023638590524,
+        "pressure_relative_l2": 0.01441766960366161,
+        "joint_field_error": 0.007373539920023757
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 14,
+    "physical_time": 1270.0465087890625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -7.934613277278679e-05,
+    "structure_score": 0.2085217833518982,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0003139585375478956,
+        "pressure_relative_l2": 0.014501224978162013,
+        "joint_field_error": 0.007407591757854955
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002264956751414351,
+        "pressure_relative_l2": 34.57571679154992,
+        "joint_field_error": 17.288990874150667
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00031489401791563504,
+        "pressure_relative_l2": 0.014658981763339848,
+        "joint_field_error": 0.007486937890627742
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 13,
+    "physical_time": 1265.8271484375,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 6.806053476871108e-05,
+    "structure_score": 0.2084970921278,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00029976999210123767,
+        "pressure_relative_l2": 0.013885041733211964,
+        "joint_field_error": 0.007092405862656601
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.00274361035572828,
+        "pressure_relative_l2": 36.003706476656205,
+        "joint_field_error": 18.003225043505967
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00030042897210442825,
+        "pressure_relative_l2": 0.013748261683671352,
+        "joint_field_error": 0.00702434532788789
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 12,
+    "physical_time": 1261.607666015625,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.00011296468408852033,
+    "structure_score": 0.20847256481647491,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0002851963124903081,
+        "pressure_relative_l2": 0.01272595931293935,
+        "joint_field_error": 0.006505577812714829
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0026855934430850305,
+        "pressure_relative_l2": 36.40219622800212,
+        "joint_field_error": 18.2024409107226
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0002858582503830736,
+        "pressure_relative_l2": 0.012499368006869543,
+        "joint_field_error": 0.0063926131286263085
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 11,
+    "physical_time": 1257.3883056640625,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.00027246550991653646,
+    "structure_score": 0.20844824612140656,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.0002706429370854617,
+        "pressure_relative_l2": 0.011635422401821895,
+        "joint_field_error": 0.005953032669453678
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.002448824420633464,
+        "pressure_relative_l2": 37.829798630471274,
+        "joint_field_error": 18.916123727445953
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.000271243735362583,
+        "pressure_relative_l2": 0.012179752623377846,
+        "joint_field_error": 0.006225498179370214
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 10,
+    "physical_time": 1253.1688232421875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.00045050418019685744,
+    "structure_score": 0.2084241509437561,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000255988314714018,
+        "pressure_relative_l2": 0.010521267928591385,
+        "joint_field_error": 0.005388628121652701
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0021248651825333978,
+        "pressure_relative_l2": 37.79865481335012,
+        "joint_field_error": 18.900389839266325
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0002562349759178239,
+        "pressure_relative_l2": 0.011422029627781294,
+        "joint_field_error": 0.005839132301849559
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 9,
+    "physical_time": 1248.949462890625,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.00010057585684256683,
+    "structure_score": 0.20840027928352356,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00024024620295255857,
+        "pressure_relative_l2": 0.011749696293100634,
+        "joint_field_error": 0.005994971248026597
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0019230442993350904,
+        "pressure_relative_l2": 35.58222200948847,
+        "joint_field_error": 17.7920725268939
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00024046097911123573,
+        "pressure_relative_l2": 0.011548329803256823,
+        "joint_field_error": 0.00589439539118403
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 8,
+    "physical_time": 1244.72998046875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.00034924613020495716,
+    "structure_score": 0.20837664604187012,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00022382232579010853,
+        "pressure_relative_l2": 0.010368905593587382,
+        "joint_field_error": 0.005296363959688745
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0018643120310844643,
+        "pressure_relative_l2": 31.854864137866898,
+        "joint_field_error": 15.928364224948991
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00022404908014710392,
+        "pressure_relative_l2": 0.0110671710996403,
+        "joint_field_error": 0.005645610089893702
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 7,
+    "physical_time": 1240.5106201171875,
+    "last_frame": false,
+    "eligibility_tier": 2,
+    "joint_advantage": 0.00037475951704858766,
+    "structure_score": 0.20835329592227936,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00020623471689819724,
+        "pressure_relative_l2": 0.011985756135650456,
+        "joint_field_error": 0.0060959954262743265
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0018657496364364813,
+        "pressure_relative_l2": 30.15046523055137,
+        "joint_field_error": 15.076165490093903
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00020645843507182058,
+        "pressure_relative_l2": 0.011236013383379657,
+        "joint_field_error": 0.005721235909225739
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 6,
+    "physical_time": 1236.2911376953125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0008235311050687252,
+    "structure_score": 0.2083302140235901,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00018801055936360671,
+        "pressure_relative_l2": 0.01019687939744107,
+        "joint_field_error": 0.005192444978402338
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0019250258679131716,
+        "pressure_relative_l2": 32.12193444819417,
+        "joint_field_error": 16.06192973703104
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00018786034346255913,
+        "pressure_relative_l2": 0.011844091823479569,
+        "joint_field_error": 0.0060159760834710635
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 5,
+    "physical_time": 1232.07177734375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -8.462202490561177e-05,
+    "structure_score": 0.2083074301481247,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00016853384125466137,
+        "pressure_relative_l2": 0.01085985001392871,
+        "joint_field_error": 0.005514191927591686
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001908907098587833,
+        "pressure_relative_l2": 33.40328300339738,
+        "joint_field_error": 16.702595955247983
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00016845826615706453,
+        "pressure_relative_l2": 0.01102916963883753,
+        "joint_field_error": 0.005598813952497297
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 4,
+    "physical_time": 1227.852294921875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0013112805735813454,
+    "structure_score": 0.20828495919704437,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.000147717119179953,
+        "pressure_relative_l2": 0.00915425139111711,
+        "joint_field_error": 0.004650984255148531
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0018470117996732362,
+        "pressure_relative_l2": 31.30437230894155,
+        "joint_field_error": 15.65310966037061
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.0001473886996314177,
+        "pressure_relative_l2": 0.011777140957828336,
+        "joint_field_error": 0.0059622648287298765
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 3,
+    "physical_time": 1223.6329345703125,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0014632901592860148,
+    "structure_score": 0.2082628309726715,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 0.00012442360366320867,
+        "pressure_relative_l2": 0.008774310627884732,
+        "joint_field_error": 0.00444936711577397
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.001818759171164349,
+        "pressure_relative_l2": 24.879644780917477,
+        "joint_field_error": 12.440731770044321
+      },
+      "proposed": {
+        "velocity_relative_l2": 0.00012421805698266264,
+        "pressure_relative_l2": 0.011701096493137308,
+        "joint_field_error": 0.005912657275059985
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 2,
+    "physical_time": 1219.4134521484375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0008006531147828145,
+    "structure_score": 0.2082410752773285,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 9.780798969848582e-05,
+        "pressure_relative_l2": 0.01085849141625495,
+        "joint_field_error": 0.005478149702976718
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0013434228013926828,
+        "pressure_relative_l2": 17.83415691513724,
+        "joint_field_error": 8.917750168969317
+      },
+      "proposed": {
+        "velocity_relative_l2": 9.763707210752573e-05,
+        "pressure_relative_l2": 0.01245996856341154,
+        "joint_field_error": 0.006278802817759533
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 1,
+    "physical_time": 1215.194091796875,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0004808055549229782,
+    "structure_score": 0.20821969211101532,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 7.490515405226816e-05,
+        "pressure_relative_l2": 0.011826378054210386,
+        "joint_field_error": 0.005950641604131327
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0006836208362818495,
+        "pressure_relative_l2": 16.913466824266983,
+        "joint_field_error": 8.457075222551632
+      },
+      "proposed": {
+        "velocity_relative_l2": 7.475682373995084e-05,
+        "pressure_relative_l2": 0.01278813749436866,
+        "joint_field_error": 0.006431447159054305
+      }
+    }
+  },
+  {
+    "window_index": 3,
+    "Re": 45.142704010009766,
+    "split": "heldout",
+    "time_index": 0,
+    "physical_time": 1210.974609375,
+    "last_frame": false,
+    "eligibility_tier": null,
+    "joint_advantage": -0.0002890330860896978,
+    "structure_score": 0.2081986963748932,
+    "metrics": {
+      "vanilla": {
+        "velocity_relative_l2": 4.0458608430332034e-05,
+        "pressure_relative_l2": 0.0036374263700836183,
+        "joint_field_error": 0.001838942489256975
+      },
+      "dataonly": {
+        "velocity_relative_l2": 0.0002766646899033423,
+        "pressure_relative_l2": 13.936340662004177,
+        "joint_field_error": 6.96830866334704
+      },
+      "proposed": {
+        "velocity_relative_l2": 4.0458608430332034e-05,
+        "pressure_relative_l2": 0.0042154925422630135,
+        "joint_field_error": 0.002127975575346673
+      }
+    }
+  }
+]

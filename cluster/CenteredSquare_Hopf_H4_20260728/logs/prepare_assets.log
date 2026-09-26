@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "output_dir": "assets_r11",
+  "counts": {
+    "train_cases": 23,
+    "validation_cases": 6,
+    "heldout_cases": 5,
+    "trainval_snapshots": 3654,
+    "heldout_snapshots": 630
+  },
+  "projection_errors": {
+    "train_velocity_max_abs_coefficient_reproduction": 8.493661880493164e-07,
+    "train_pressure_max_abs_coefficient_reproduction": 2.2730528144165874e-06
+  }
+}

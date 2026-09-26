@@ -1,0 +1,244 @@
+{
+  "aggregate": {
+    "1": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.005461805189649264,
+      "joint_terminal": 0.005461805189649264,
+      "joint_worst_window": 0.023880302906036377,
+      "pressure_field_mean": 0.004209648786733548,
+      "velocity_field_mean": 0.001252156391274184
+    },
+    "16": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.006700334014991919,
+      "joint_terminal": 0.006936277945836385,
+      "joint_worst_window": 0.03441089019179344,
+      "pressure_field_mean": 0.0047778858027110495,
+      "velocity_field_mean": 0.0019224482122808695
+    },
+    "2": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.00572879525522391,
+      "joint_terminal": 0.005980122027297815,
+      "joint_worst_window": 0.024145999923348427,
+      "pressure_field_mean": 0.004350249112273256,
+      "velocity_field_mean": 0.0013785460731014609
+    },
+    "24": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.006624642635385195,
+      "joint_terminal": 0.007044627238065005,
+      "joint_worst_window": 0.03141070529818535,
+      "pressure_field_mean": 0.004735455879320701,
+      "velocity_field_mean": 0.0018891867638255158
+    },
+    "32": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.006659495054433743,
+      "joint_terminal": 0.007728172124673923,
+      "joint_worst_window": 0.026762638241052628,
+      "pressure_field_mean": 0.004771488066762686,
+      "velocity_field_mean": 0.0018880068945387998
+    },
+    "4": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 0.9999999403953552,
+      "joint_field_mean": 0.0062699755653738976,
+      "joint_terminal": 0.006936123656729857,
+      "joint_worst_window": 0.027894534170627594,
+      "pressure_field_mean": 0.004664196679368615,
+      "velocity_field_mean": 0.0016057789015273252
+    },
+    "8": {
+      "divergent_windows": 0,
+      "finite_fraction_min": 1.0,
+      "joint_field_mean": 0.006664578927059969,
+      "joint_terminal": 0.007045508300264677,
+      "joint_worst_window": 0.03269162029027939,
+      "pressure_field_mean": 0.004830246651545167,
+      "velocity_field_mean": 0.0018343323841691016
+    }
+  },
+  "asset_audit": {
+    "manifest": {
+      "curriculum": [
+        [
+          0,
+          1600,
+          4
+        ],
+        [
+          1600,
+          3200,
+          8
+        ],
+        [
+          3200,
+          5200,
+          16
+        ],
+        [
+          5200,
+          6800,
+          24
+        ],
+        [
+          6800,
+          8000,
+          32
+        ]
+      ],
+      "dataset": "FluidicPinball_V2_Periodic",
+      "fit_reynolds": [
+        21.25,
+        21.75,
+        22.0,
+        22.5,
+        22.75,
+        23.0,
+        23.5,
+        23.75,
+        24.25,
+        24.5,
+        25.0,
+        25.5,
+        26.5,
+        27.0,
+        28.0,
+        28.5,
+        29.0,
+        30.0,
+        30.5,
+        31.5,
+        32.0,
+        32.5,
+        33.5,
+        34.0,
+        35.0,
+        35.5,
+        36.0,
+        37.0,
+        37.5,
+        38.5,
+        39.0,
+        39.5,
+        41.0,
+        42.0,
+        44.0,
+        45.0,
+        46.0,
+        48.0,
+        49.0,
+        51.0,
+        52.0,
+        53.0,
+        55.0,
+        56.0,
+        58.0,
+        59.0,
+        60.0
+      ],
+      "heldout_reynolds": [
+        22.25,
+        24.0,
+        27.5,
+        31.0,
+        34.5,
+        38.0,
+        43.0,
+        50.0,
+        57.0
+      ],
+      "pressure_gauge_verified": true,
+      "projection_error_verified": true,
+      "projection_errors": {
+        "pressure_energy_tail": 0.0008477996510218855,
+        "velocity_energy_tail": 0.0009024094598510946
+      },
+      "r_p": 16,
+      "r_u": 17,
+      "rom_tensor_verified": true,
+      "schema_version": 2,
+      "scope": "periodic_train_only_with_train_validation_view",
+      "sha256": {
+        "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+        "fluctuation_contract": "f6397d3dbd9f388deb6f5cc9c9edfd27779fa4b49288ed1f5bbb5a6f275997a7",
+        "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+        "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+      },
+      "split_contract_verified": true,
+      "validation_horizons": [
+        4,
+        8,
+        16,
+        24,
+        32,
+        56
+      ],
+      "validation_reynolds": [
+        21.5,
+        23.25,
+        26.0,
+        29.5,
+        33.0,
+        36.5,
+        40.0,
+        47.0,
+        54.0
+      ]
+    },
+    "observed_sha256": {
+      "coefficient_view": "6766fd216bd5956e8dc3e7fe8d4d24b909e9b76e320a9257e814d93448d5482e",
+      "galerkin": "c067c9c0eb26aee77ed1cf103e4d2be8a65c64f6f5a7249e02b5ebf1d68ab3dc",
+      "pressure": "ac65f34aede9f3f8183eaf134319d5ad5e55b2a66032fe5fabccf4e4cf4c5d73"
+    },
+    "passed": true
+  },
+  "best_step": 8000,
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinball_periodic_v2_b1/runs/FluidicPinballV2_B1_Deep_FNN_H3_seed1248/best_validation.pt",
+  "evaluation_re": [
+    41.0,
+    42.0,
+    44.0,
+    45.0,
+    46.0,
+    48.0,
+    49.0,
+    51.0,
+    52.0,
+    53.0,
+    55.0,
+    56.0,
+    58.0,
+    59.0,
+    60.0
+  ],
+  "heldout_hard_disabled": [
+    22.25,
+    24.0,
+    27.5,
+    31.0,
+    34.5,
+    38.0,
+    43.0,
+    50.0,
+    57.0
+  ],
+  "horizons": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    24,
+    32
+  ],
+  "optimizer_step": 8000,
+  "scope": "frozen_checkpoint_train_diagnostic_no_heldout_loaded",
+  "split": "train"
+}

@@ -1,0 +1,52 @@
+[
+  {
+    "regime": "H",
+    "label": "Re_46p700000",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_validation/Re_46p700000_uvp_pointData.npz",
+    "sha256": "f6b2b38f09162ffa3e481b36d067f9a3ce1f1930248267c59610a9804d5d9cc5",
+    "frames": [
+      0,
+      3,
+      7,
+      11,
+      15,
+      19,
+      23,
+      27,
+      31,
+      35,
+      39,
+      43,
+      47,
+      51,
+      55,
+      59,
+      63
+    ]
+  },
+  {
+    "regime": "H",
+    "label": "Re_56p543246",
+    "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/raw_validation/Re_56p543246_uvp_pointData.npz",
+    "sha256": "3b7981f3160278af2d1f34a2f228005745b021e119eac6ff2d27eb818f58ff10",
+    "frames": [
+      0,
+      10,
+      20,
+      30,
+      40,
+      50,
+      60,
+      70,
+      80,
+      90,
+      100,
+      110,
+      120,
+      130,
+      140,
+      150,
+      160
+    ]
+  }
+]

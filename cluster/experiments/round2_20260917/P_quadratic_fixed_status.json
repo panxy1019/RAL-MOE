@@ -1,0 +1,98 @@
+[
+  {
+    "regime": "P",
+    "kind": "proposed",
+    "seed": 1248,
+    "smoke": true,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/quadratic_fixed/P/proposed/smoke",
+    "status": "completed",
+    "start": 1789700437.6856287,
+    "pid": 27164,
+    "returncode": 0,
+    "end": 1789700509.0414433
+  },
+  {
+    "regime": "P",
+    "kind": "structured",
+    "seed": 1248,
+    "smoke": true,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/quadratic_fixed/P/structured/smoke",
+    "status": "completed",
+    "start": 1789700509.082423,
+    "pid": 27262,
+    "returncode": 0,
+    "end": 1789700531.4940753
+  },
+  {
+    "regime": "P",
+    "kind": "proposed",
+    "seed": 1248,
+    "smoke": false,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/quadratic_fixed/P/proposed/1248",
+    "status": "completed",
+    "start": 1789700531.5354793,
+    "pid": 27388,
+    "returncode": 0,
+    "end": 1789713570.164812
+  },
+  {
+    "regime": "P",
+    "kind": "structured",
+    "seed": 1248,
+    "smoke": false,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/quadratic_fixed/P/structured/1248",
+    "status": "completed",
+    "start": 1789713570.2062376,
+    "pid": 30564,
+    "returncode": 0,
+    "end": 1789716354.20707
+  },
+  {
+    "regime": "P",
+    "kind": "proposed",
+    "seed": 1600,
+    "smoke": false,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/quadratic_fixed/P/proposed/1600",
+    "status": "completed",
+    "start": 1789716354.2489471,
+    "pid": 30860,
+    "returncode": 0,
+    "end": 1789726517.9857986
+  },
+  {
+    "regime": "P",
+    "kind": "structured",
+    "seed": 1600,
+    "smoke": false,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/quadratic_fixed/P/structured/1600",
+    "status": "completed",
+    "start": 1789726518.0259316,
+    "pid": 31891,
+    "returncode": 0,
+    "end": 1789729560.7993195
+  },
+  {
+    "regime": "P",
+    "kind": "proposed",
+    "seed": 2026,
+    "smoke": false,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/quadratic_fixed/P/proposed/2026",
+    "status": "completed",
+    "start": 1789729560.8386254,
+    "pid": 32214,
+    "returncode": 0,
+    "end": 1789739585.275884
+  },
+  {
+    "regime": "P",
+    "kind": "structured",
+    "seed": 2026,
+    "smoke": false,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/quadratic_fixed/P/structured/2026",
+    "status": "completed",
+    "start": 1789739585.316701,
+    "pid": 33230,
+    "returncode": 0,
+    "end": 1789742314.4453285
+  }
+]

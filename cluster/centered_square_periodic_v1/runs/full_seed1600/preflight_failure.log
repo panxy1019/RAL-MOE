@@ -1,0 +1,9 @@
+nohup: ignoring input
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/run_square_periodic_training.py", line 75, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/run_square_periodic_training.py", line 69, in main
+    trainer.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/train_square_periodic_moe.py", line 6519, in main
+    raise AssertionError("Periodic split must be exactly 53 train / 6 validation / 4 heldout Re.")
+AssertionError: Periodic split must be exactly 53 train / 6 validation / 4 heldout Re.

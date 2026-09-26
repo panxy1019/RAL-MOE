@@ -1,0 +1,492 @@
+{
+  "experiment": "E3",
+  "router": "Re+physical-descriptors",
+  "specialists_frozen_and_not_loaded": true,
+  "best_step": 5500,
+  "best_validation_metrics": {
+    "accuracy": 1.0,
+    "balanced_accuracy": 1.0,
+    "macro_f1": 1.0,
+    "confusion_matrix": [
+      [
+        2,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        0
+      ],
+      [
+        0,
+        0,
+        6
+      ]
+    ],
+    "illegal_S_P_top2_count": 6
+  },
+  "validation": {
+    "metrics": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "confusion_matrix": [
+        [
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          6
+        ]
+      ],
+      "illegal_S_P_top2_count": 6
+    },
+    "rows": [
+      {
+        "Re": 28.695137758,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 0.9999994039535522,
+          "Hopf": 9.73839746620797e-07,
+          "Periodic": 6.646674877153202e-11
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 43.7974019747,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 0.9511255025863647,
+          "Hopf": 0.0488741509616375,
+          "Periodic": 2.774174845399102e-07
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 46.7,
+        "true": "Hopf",
+        "selected": "Hopf",
+        "probabilities": {
+          "Steady": 0.19765092432498932,
+          "Hopf": 0.802344560623169,
+          "Periodic": 4.46731291958713e-06
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 56.5432463134,
+        "true": "Hopf",
+        "selected": "Hopf",
+        "probabilities": {
+          "Steady": 5.93498192813513e-08,
+          "Hopf": 0.9999999403953552,
+          "Periodic": 9.776238840686347e-08
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 66.9701121204,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 5.778485689944546e-09,
+          "Hopf": 9.255169408639574e-10,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 91.792204085,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 2.68114766499572e-11,
+          "Hopf": 8.127589448897812e-15,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 121.05017082,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 1.8081935948544015e-10,
+          "Hopf": 1.3204225852905122e-13,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 139.642302099,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 4.5416455318747495e-11,
+          "Hopf": 5.168028802620501e-15,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 169.244893107,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 1.3685262992280123e-11,
+          "Hopf": 5.642046756991492e-16,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 196.160723205,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 3.12977838090589e-10,
+          "Hopf": 8.349535798000962e-15,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      }
+    ]
+  },
+  "test": {
+    "metrics": {
+      "accuracy": 1.0,
+      "balanced_accuracy": 1.0,
+      "macro_f1": 1.0,
+      "confusion_matrix": [
+        [
+          4,
+          0,
+          0
+        ],
+        [
+          0,
+          3,
+          0
+        ],
+        [
+          0,
+          0,
+          4
+        ]
+      ],
+      "illegal_S_P_top2_count": 4
+    },
+    "rows": [
+      {
+        "Re": 24.6304355074,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 0.9999998807907104,
+          "Hopf": 3.507754513520922e-07,
+          "Periodic": 5.0717711280734434e-11
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 32.740068162,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 0.9999952912330627,
+          "Hopf": 4.577191248245072e-06,
+          "Periodic": 1.5314438606139902e-10
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 39.6854792076,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 0.9995270371437073,
+          "Hopf": 0.00047302909661084414,
+          "Periodic": 4.351710103378537e-09
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 45.142702578,
+        "true": "Steady",
+        "selected": "Steady",
+        "probabilities": {
+          "Steady": 0.7382097244262695,
+          "Hopf": 0.2617885172367096,
+          "Periodic": 1.6499649291290552e-06
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 47.0813545644,
+        "true": "Hopf",
+        "selected": "Hopf",
+        "probabilities": {
+          "Steady": 0.0031486779917031527,
+          "Hopf": 0.9968512058258057,
+          "Periodic": 5.758312923709319e-11
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 49.0223566571,
+        "true": "Hopf",
+        "selected": "Hopf",
+        "probabilities": {
+          "Steady": 4.507105040829629e-05,
+          "Hopf": 0.9999548196792603,
+          "Periodic": 3.134823650663421e-11
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 51.7864496836,
+        "true": "Hopf",
+        "selected": "Hopf",
+        "probabilities": {
+          "Steady": 1.29930938896905e-07,
+          "Hopf": 0.9999999403953552,
+          "Periodic": 7.502510765422521e-12
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 70.3146353337,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 6.964531173991872e-10,
+          "Hopf": 6.856928653348193e-12,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 100.352251335,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 3.2656494175498096e-10,
+          "Hopf": 3.514354876988507e-13,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 149.059229449,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 3.4239341917263744e-10,
+          "Hopf": 1.4438623907597758e-13,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      },
+      {
+        "Re": 189.86227838,
+        "true": "Periodic",
+        "selected": "Periodic",
+        "probabilities": {
+          "Steady": 7.114386163520336e-11,
+          "Hopf": 4.1452864937548215e-15,
+          "Periodic": 1.0
+        },
+        "correct": true,
+        "windows": 32
+      }
+    ]
+  },
+  "split_Re": {
+    "Steady": {
+      "train": [
+        20.0,
+        22.5356758074,
+        26.6673319278,
+        30.7204283434,
+        34.7375697369,
+        36.6577674843,
+        38.357249335,
+        40.7115247449,
+        41.5765746111,
+        42.3590705675,
+        43.0939251612,
+        44.4783532118,
+        45.7951936696,
+        46.440071584
+      ],
+      "validation": [
+        28.695137758,
+        43.7974019747
+      ],
+      "test": [
+        24.6304355074,
+        32.740068162,
+        39.6854792076,
+        45.142702578
+      ]
+    },
+    "Hopf": {
+      "train": [
+        45.5,
+        45.8,
+        46.1,
+        46.3,
+        46.5,
+        46.9,
+        47.2,
+        47.4,
+        47.6,
+        47.7229474482,
+        47.8,
+        48.0,
+        48.3,
+        48.3686884481,
+        48.7,
+        49.3,
+        49.6,
+        49.6876404962,
+        50.0,
+        50.3680543703,
+        51.066784903,
+        52.5287670834,
+        53.2941749584,
+        54.0815080552,
+        54.887950068,
+        55.709610114,
+        57.3899704283,
+        58.2626356101,
+        59.2014322659
+      ],
+      "validation": [
+        46.7,
+        56.5432463134
+      ],
+      "test": [
+        47.0813545644,
+        49.0223566571,
+        51.7864496836
+      ]
+    },
+    "Periodic": {
+      "train": [
+        60.3077454666,
+        61.7559536282,
+        63.499816815,
+        65.2598292316,
+        68.6497139288,
+        71.9729308789,
+        73.6282869994,
+        75.2823402819,
+        76.9358029334,
+        78.5889708164,
+        80.2419430177,
+        81.8947080155,
+        83.5471642516,
+        85.1991031321,
+        86.8501684903,
+        88.4998153335,
+        90.1473406471,
+        93.4352043333,
+        95.0817519005,
+        96.749307569,
+        98.4803451202,
+        102.440041809,
+        104.710910987,
+        107.050736557,
+        109.395985153,
+        111.734011486,
+        114.066307867,
+        116.395488165,
+        118.723173369,
+        123.376832843,
+        125.703273692,
+        128.029461168,
+        130.355224828,
+        132.680202796,
+        135.003743604,
+        137.324829556,
+        141.956318757,
+        144.273459297,
+        146.619578296,
+        151.686208001,
+        154.520851959,
+        157.45958766,
+        160.415175616,
+        163.364122702,
+        166.306372744,
+        172.181708206,
+        175.117940142,
+        178.05436806,
+        180.992054605,
+        183.933394636,
+        186.884600344,
+        192.911663952,
+        200.0
+      ],
+      "validation": [
+        66.9701121204,
+        91.792204085,
+        121.05017082,
+        139.642302099,
+        169.244893107,
+        196.160723205
+      ],
+      "test": [
+        70.3146353337,
+        100.352251335,
+        149.059229449,
+        189.86227838
+      ]
+    }
+  },
+  "e0_evidence": {
+    "Steady": {
+      "path": "/root/panxy/particalMOE/e0_reproduction_20260722/steady/raw_metrics.json",
+      "sha256": "7df7abd889d62b62acd864b35b476ac3759ade77f246d5886aa790b7517d50d1"
+    },
+    "Hopf": {
+      "path": "/root/panxy/particalMOE/e0_reproduction_20260722/hopf/heldout_metrics.json",
+      "sha256": "1272698ae9abd8354cce087e3d5764f8d639e515d4ed5318be3ac0a5dd02dae7"
+    },
+    "Periodic": {
+      "path": "/root/panxy/particalMOE/e0_reproduction_20260722/periodic/periodic_r32_multihorizon_evaluation.json",
+      "sha256": "b17be4ec3459dfab11b760f1d3f326fb1b153161b9e65ca7c87e887990f2fc1e"
+    }
+  }
+}

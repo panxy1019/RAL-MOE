@@ -1,0 +1,61 @@
+{
+  "status": "FINAL_ACCEPTANCE_PASS",
+  "raw_cases": {
+    "Re_43p200000": {
+      "snapshots": 64,
+      "points": 97368,
+      "sha256": "52a3ff004905154bfe5d16a9c6c4cd1ee55b4e8de7e6ba563e8610cff446d0fe"
+    },
+    "Re_43p300000": {
+      "snapshots": 64,
+      "points": 97368,
+      "sha256": "9af8919e644392ece95543c5e4e6889dd97f1aebe7181e01fe61a5ccb73ca231"
+    },
+    "Re_43p400000": {
+      "snapshots": 64,
+      "points": 97368,
+      "sha256": "af108e4599596a5c2dd8dba43bda51a20d3bc7ad6b14e9e1c41bfc17fabacce7"
+    },
+    "Re_43p500000": {
+      "snapshots": 64,
+      "points": 97368,
+      "sha256": "cfb56bca821bd3ab583edfa5ae1af677b645fb6ba8cf39709b5473e496f80a96"
+    },
+    "Re_43p600000": {
+      "snapshots": 64,
+      "points": 97368,
+      "sha256": "0ecb0044b7b1438046153b2b4522f7e04fc4c475bab39cff755459235715c2fb"
+    },
+    "Re_43p700000": {
+      "snapshots": 64,
+      "points": 97368,
+      "sha256": "8fb1a0a8eabb7ee6a1bbff9d046f13cb454d96f6622780e996ad56373a4d3d96"
+    },
+    "Re_43p900000": {
+      "snapshots": 64,
+      "points": 97368,
+      "sha256": "4666bd8028d7d9db2ee961bdf6de867ee5e349320d5f7445a0bf2225a485772c"
+    }
+  },
+  "case_split_counts": {
+    "train": 3,
+    "validation": 2,
+    "heldout": 2
+  },
+  "snapshot_split_counts": {
+    "train": 192,
+    "validation": 128,
+    "heldout": 128
+  },
+  "modal_rank": 32,
+  "pod_refit": false,
+  "frozen_artifacts_unchanged": true,
+  "frozen_artifact_sha256": {
+    "velocity_pod_steady.npz": "abaab63d11e172a5b40e86b48715f247311eaf324a06094757f2f98870f40948",
+    "pressure_pod_steady.npz": "5056f7470f2439bccc2cfb68448e9a4dd61d89145aa7108ab8672ba6dd2be997",
+    "normalization_steady.npz": "87a5a2326d70adb3e57901168f0ac1b555f23c742ae64a09132031452b51f6bb"
+  },
+  "source_manifest_verified": true,
+  "expert_access_path": "/root/panxy/particalMOE/steady_specialist_v1/expanded_validation_20260723",
+  "storage_target": "/root/siton-tmp/panxy/particalMOE/steady_specialist_v1/expanded_validation_20260723"
+}

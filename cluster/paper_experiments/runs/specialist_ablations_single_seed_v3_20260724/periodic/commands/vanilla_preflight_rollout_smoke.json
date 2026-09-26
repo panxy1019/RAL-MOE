@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/root/miniconda3/envs/pt_env/bin/python",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/evaluate_specialist_ablation.py",
+    "--root",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE",
+    "--regime",
+    "periodic",
+    "--method",
+    "vanilla-fnn",
+    "--checkpoint",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/periodic/vanilla-fnn/preflight/best_validation.pt",
+    "--split",
+    "validation",
+    "--output-dir",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/periodic/vanilla-fnn/preflight_rollout_smoke"
+  ],
+  "finished_unix": 1784825558.394521,
+  "return_code": 1,
+  "status": "FAILED"
+}

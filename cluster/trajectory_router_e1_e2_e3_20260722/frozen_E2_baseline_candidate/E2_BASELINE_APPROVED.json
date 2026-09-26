@@ -1,0 +1,22 @@
+{
+  "status": "FORMAL_BASELINE_APPROVED",
+  "baseline_name": "E2_ReOnly_TrajectoryTop1_UnifiedSystem",
+  "approved_date": "2026-07-22",
+  "routing_contract": "trajectory-level fixed Top-1 for complete fixed-Re trajectories",
+  "router_claim": "temporal-consistent regime router",
+  "checkpoint": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/frozen_E2_baseline_candidate/best.pt",
+  "checkpoint_sha256": "f0286a9974f16b513bb42cd94232c397123dcd3e0a01eab475ff1593f7881dcd",
+  "checkpoint_step": 6300,
+  "validation_router_oracle_match": "10/10",
+  "unified_wrapper_smoke": {
+    "decision": "PASS",
+    "result": "/root/panxy/particalMOE/e2_unified_validation_smoke_20260722/E2_UNIFIED_VALIDATION_SMOKE.json",
+    "result_sha256": "26628e1107774603489534c495bf8df85b6276c7f421e936606b40d6aa4d124f",
+    "actual_native_invocations": ["Steady", "Hopf", "Periodic"],
+    "all_native_finite_fraction": 1.0,
+    "all_native_divergent_windows": 0,
+    "structural_contract_pass": true
+  },
+  "scope": "Official routing-and-integration baseline. This approval does not override specialist-specific scientific gates or claim genuine cross-regime temporal transitions.",
+  "top2_executed": false
+}

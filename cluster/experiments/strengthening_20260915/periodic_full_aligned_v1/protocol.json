@@ -1,0 +1,23 @@
+{
+  "method": "full",
+  "starts": [
+    969,
+    1017,
+    1065,
+    3867,
+    3915,
+    3963,
+    7251,
+    7299,
+    7347,
+    9506,
+    9554,
+    9602
+  ],
+  "horizon": 48,
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt",
+  "checkpoint_sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5",
+  "metric": "mean per-window relative physical L2 against POD-reconstructed truth, original pressure gauge; Ejoint=Eu+Ep",
+  "nonfinite_policy": "retain all windows and report NaN aggregate after any divergence; no survivor-only mean",
+  "scope": "Circular Periodic local chart; full denotes frozen RAL Periodic specialist, not two-specialist fusion"
+}

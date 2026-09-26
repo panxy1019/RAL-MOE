@@ -1,0 +1,9 @@
+{
+  "best_checkpoint_sha256": "2899e899e2544e02400ef5dd02e468d69d21f3fc3540e8caf303f5828d1812a1",
+  "config_sha256": "d2e7506f092dc878f7b4026ef9098fb5c9bb02c0f80f1b2faf9bb67a0dac9667",
+  "elapsed_seconds": 22.786715745925903,
+  "method": "LookAheadShortRolloutRouter",
+  "status": "VALIDATION_FROZEN",
+  "test_access": false,
+  "threshold": 0.05
+}

@@ -1,0 +1,13 @@
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/quadratic_init_fix.py:25: UserWarning: Converting a tensor with requires_grad=True to a scalar may lead to unexpected behavior.
+Consider using tensor.detach() first. (Triggered internally at /pytorch/torch/csrc/autograd/generated/python_variable_methods.cpp:836.)
+  assert float(q)==0 and torch.count_nonzero(gl)>0 and torch.count_nonzero(gr)==0
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/hopf_control.py", line 58, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/hopf_control.py", line 55, in main
+    m.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_h4_expanded.py", line 238, in main
+    if not math.isfinite(gn):raise FloatingPointError('nonfinite gradient')
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FloatingPointError: nonfinite gradient

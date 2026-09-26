@@ -1,0 +1,1113 @@
+{
+  "contract": {
+    "checkpoint_pod_reused_without_refit": true,
+    "heldout_raw_files_opened": [],
+    "mixed_coeff_members_read": [],
+    "phase": "indexed time and estimated_period; phase=(time-time0)/period mod 1",
+    "pressure_gauge": "preserve_raw_database_and_frozen_per_Re_mean_contract",
+    "rank": 32
+  },
+  "decision": "PASS",
+  "frozen_assets": {
+    "pressure_pod": "/home/ray/Desktop/HP_ONE_SIDED_RECOVERY_20260723/periodic_projection_contract_no_coeff.npz",
+    "pressure_pod_sha256": "663fe53aaed012ca4ec8ba9fd851136b1d6a596c9ea4de39896c829d5918aa76",
+    "projection_contract": "/home/ray/Desktop/HP_ONE_SIDED_RECOVERY_20260723/periodic_projection_contract_no_coeff.npz",
+    "snapshot_index": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Regime_ROM_Library/periodic/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+    "snapshot_index_sha256": "db50c7b5346257e5af823212c8d2ff354b871dda46bded8ac24d3134352f6fa6",
+    "velocity_pod": "/home/ray/Desktop/HP_ONE_SIDED_RECOVERY_20260723/periodic_projection_contract_no_coeff.npz",
+    "velocity_pod_sha256": "663fe53aaed012ca4ec8ba9fd851136b1d6a596c9ea4de39896c829d5918aa76"
+  },
+  "heldout_labels_sealed": [
+    "Re_100p352251",
+    "Re_149p059229",
+    "Re_189p862278",
+    "Re_70p314635"
+  ],
+  "orthogonality_max_abs": {
+    "pressure": 8.344650268554688e-07,
+    "velocity": 1.6689300537109375e-06
+  },
+  "outputs": {
+    "train": {
+      "Re_labels": [
+        "Re_102p440042",
+        "Re_104p710911",
+        "Re_107p050737",
+        "Re_109p395985",
+        "Re_111p734011",
+        "Re_114p066308",
+        "Re_116p395488",
+        "Re_118p723173",
+        "Re_123p376833",
+        "Re_125p703274",
+        "Re_128p029461",
+        "Re_130p355225",
+        "Re_132p680203",
+        "Re_135p003744",
+        "Re_137p324830",
+        "Re_141p956319",
+        "Re_144p273459",
+        "Re_146p619578",
+        "Re_151p686208",
+        "Re_154p520852",
+        "Re_157p459588",
+        "Re_160p415176",
+        "Re_163p364123",
+        "Re_166p306373",
+        "Re_172p181708",
+        "Re_175p117940",
+        "Re_178p054368",
+        "Re_180p992055",
+        "Re_183p933395",
+        "Re_186p884600",
+        "Re_192p911664",
+        "Re_200p000000",
+        "Re_60p307745",
+        "Re_61p755954",
+        "Re_63p499817",
+        "Re_65p259829",
+        "Re_68p649714",
+        "Re_71p972931",
+        "Re_73p628287",
+        "Re_75p282340",
+        "Re_76p935803",
+        "Re_78p588971",
+        "Re_80p241943",
+        "Re_81p894708",
+        "Re_83p547164",
+        "Re_85p199103",
+        "Re_86p850168",
+        "Re_88p499815",
+        "Re_90p147341",
+        "Re_93p435204",
+        "Re_95p081752",
+        "Re_96p749308",
+        "Re_98p480345"
+      ],
+      "path": "/home/ray/Desktop/HP_ONE_SIDED_RECOVERY_20260723/dev_bundle_v2/periodic_train_modal_r32.npz",
+      "sha256": "38d1788b8edcf2018654cc8599e317791143fb65b7eb714bc7b535efa3e1ba20",
+      "snapshots": 8539
+    },
+    "validation": {
+      "Re_labels": [
+        "Re_121p050171",
+        "Re_139p642302",
+        "Re_169p244893",
+        "Re_196p160723",
+        "Re_66p970112",
+        "Re_91p792204"
+      ],
+      "path": "/home/ray/Desktop/HP_ONE_SIDED_RECOVERY_20260723/dev_bundle_v2/periodic_validation_modal_r32.npz",
+      "sha256": "3ccba21ca046770c48a1a5b9651d316454a4d42fb5030530e4aed6cbd4f61553",
+      "snapshots": 967
+    }
+  },
+  "projection_diagnostics": [
+    {
+      "Re_label": "Re_60p307745",
+      "pressure_area_mean_abs_max": 1.056916698871646e-05,
+      "pressure_relative_l2_max": 0.04724571108818054,
+      "pressure_relative_l2_mean": 0.028821904212236404,
+      "split": "train",
+      "velocity_relative_l2_max": 0.008482432924211025,
+      "velocity_relative_l2_mean": 0.0036717632319778204
+    },
+    {
+      "Re_label": "Re_61p755954",
+      "pressure_area_mean_abs_max": 1.8293778339284472e-05,
+      "pressure_relative_l2_max": 0.049586765468120575,
+      "pressure_relative_l2_mean": 0.03177642077207565,
+      "split": "train",
+      "velocity_relative_l2_max": 0.008118478581309319,
+      "velocity_relative_l2_mean": 0.005106098018586636
+    },
+    {
+      "Re_label": "Re_63p499817",
+      "pressure_area_mean_abs_max": 2.1021704014856368e-05,
+      "pressure_relative_l2_max": 0.04714176431298256,
+      "pressure_relative_l2_mean": 0.026163462549448013,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007872490212321281,
+      "velocity_relative_l2_mean": 0.004334746859967709
+    },
+    {
+      "Re_label": "Re_65p259829",
+      "pressure_area_mean_abs_max": 2.431113534839824e-05,
+      "pressure_relative_l2_max": 0.044334087520837784,
+      "pressure_relative_l2_mean": 0.030926905572414398,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007656519301235676,
+      "velocity_relative_l2_mean": 0.005769107025116682
+    },
+    {
+      "Re_label": "Re_66p970112",
+      "pressure_area_mean_abs_max": 2.7553729523788206e-05,
+      "pressure_relative_l2_max": 0.04190848395228386,
+      "pressure_relative_l2_mean": 0.02647232823073864,
+      "split": "validation",
+      "velocity_relative_l2_max": 0.007504431530833244,
+      "velocity_relative_l2_mean": 0.005354865919798613
+    },
+    {
+      "Re_label": "Re_68p649714",
+      "pressure_area_mean_abs_max": 3.118834865745157e-05,
+      "pressure_relative_l2_max": 0.04106514900922775,
+      "pressure_relative_l2_mean": 0.029319727793335915,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007604155223816633,
+      "velocity_relative_l2_mean": 0.0058303759433329105
+    },
+    {
+      "Re_label": "Re_71p972931",
+      "pressure_area_mean_abs_max": 3.899895091308281e-05,
+      "pressure_relative_l2_max": 0.03862350806593895,
+      "pressure_relative_l2_mean": 0.027038585394620895,
+      "split": "train",
+      "velocity_relative_l2_max": 0.00804907362908125,
+      "velocity_relative_l2_mean": 0.005524005275219679
+    },
+    {
+      "Re_label": "Re_73p628287",
+      "pressure_area_mean_abs_max": 4.27361301262863e-05,
+      "pressure_relative_l2_max": 0.036970872431993484,
+      "pressure_relative_l2_mean": 0.025910627096891403,
+      "split": "train",
+      "velocity_relative_l2_max": 0.008348625153303146,
+      "velocity_relative_l2_mean": 0.005391344893723726
+    },
+    {
+      "Re_label": "Re_75p282340",
+      "pressure_area_mean_abs_max": 4.722369703813456e-05,
+      "pressure_relative_l2_max": 0.038206517696380615,
+      "pressure_relative_l2_mean": 0.02488543838262558,
+      "split": "train",
+      "velocity_relative_l2_max": 0.008711762726306915,
+      "velocity_relative_l2_mean": 0.005164834205061197
+    },
+    {
+      "Re_label": "Re_76p935803",
+      "pressure_area_mean_abs_max": 5.2356561354827136e-05,
+      "pressure_relative_l2_max": 0.039167240262031555,
+      "pressure_relative_l2_mean": 0.023965880274772644,
+      "split": "train",
+      "velocity_relative_l2_max": 0.009169156663119793,
+      "velocity_relative_l2_mean": 0.004913161974400282
+    },
+    {
+      "Re_label": "Re_78p588971",
+      "pressure_area_mean_abs_max": 5.7514713262207806e-05,
+      "pressure_relative_l2_max": 0.040803201496601105,
+      "pressure_relative_l2_mean": 0.02318468503654003,
+      "split": "train",
+      "velocity_relative_l2_max": 0.009710531681776047,
+      "velocity_relative_l2_mean": 0.004651379305869341
+    },
+    {
+      "Re_label": "Re_80p241943",
+      "pressure_area_mean_abs_max": 6.241640949156135e-05,
+      "pressure_relative_l2_max": 0.04095951467752457,
+      "pressure_relative_l2_mean": 0.021837841719388962,
+      "split": "train",
+      "velocity_relative_l2_max": 0.009584656916558743,
+      "velocity_relative_l2_mean": 0.004144887439906597
+    },
+    {
+      "Re_label": "Re_81p894708",
+      "pressure_area_mean_abs_max": 6.728056905558333e-05,
+      "pressure_relative_l2_max": 0.04321623221039772,
+      "pressure_relative_l2_mean": 0.02118915505707264,
+      "split": "train",
+      "velocity_relative_l2_max": 0.009905562736093998,
+      "velocity_relative_l2_mean": 0.0038586759474128485
+    },
+    {
+      "Re_label": "Re_83p547164",
+      "pressure_area_mean_abs_max": 7.2847367846407e-05,
+      "pressure_relative_l2_max": 0.044852107763290405,
+      "pressure_relative_l2_mean": 0.021475007757544518,
+      "split": "train",
+      "velocity_relative_l2_max": 0.010366184636950493,
+      "velocity_relative_l2_mean": 0.0038505697157233953
+    },
+    {
+      "Re_label": "Re_85p199103",
+      "pressure_area_mean_abs_max": 7.859760080464184e-05,
+      "pressure_relative_l2_max": 0.04542343318462372,
+      "pressure_relative_l2_mean": 0.0210627019405365,
+      "split": "train",
+      "velocity_relative_l2_max": 0.010190327651798725,
+      "velocity_relative_l2_mean": 0.0036143790930509567
+    },
+    {
+      "Re_label": "Re_86p850168",
+      "pressure_area_mean_abs_max": 8.440435340162367e-05,
+      "pressure_relative_l2_max": 0.04565407708287239,
+      "pressure_relative_l2_mean": 0.020697131752967834,
+      "split": "train",
+      "velocity_relative_l2_max": 0.009920412674546242,
+      "velocity_relative_l2_mean": 0.003412626450881362
+    },
+    {
+      "Re_label": "Re_88p499815",
+      "pressure_area_mean_abs_max": 9.073988621821627e-05,
+      "pressure_relative_l2_max": 0.043707575649023056,
+      "pressure_relative_l2_mean": 0.019425278529524803,
+      "split": "train",
+      "velocity_relative_l2_max": 0.008480117656290531,
+      "velocity_relative_l2_mean": 0.002999131567776203
+    },
+    {
+      "Re_label": "Re_90p147341",
+      "pressure_area_mean_abs_max": 9.765561117092147e-05,
+      "pressure_relative_l2_max": 0.04710410535335541,
+      "pressure_relative_l2_mean": 0.01998562552034855,
+      "split": "train",
+      "velocity_relative_l2_max": 0.009637762792408466,
+      "velocity_relative_l2_mean": 0.0031329207122325897
+    },
+    {
+      "Re_label": "Re_91p792204",
+      "pressure_area_mean_abs_max": 0.0001042973090079613,
+      "pressure_relative_l2_max": 0.04716125875711441,
+      "pressure_relative_l2_mean": 0.01957939751446247,
+      "split": "validation",
+      "velocity_relative_l2_max": 0.009902707301080227,
+      "velocity_relative_l2_mean": 0.0030499324202537537
+    },
+    {
+      "Re_label": "Re_93p435204",
+      "pressure_area_mean_abs_max": 0.00011240423191338778,
+      "pressure_relative_l2_max": 0.04722341522574425,
+      "pressure_relative_l2_mean": 0.019143525511026382,
+      "split": "train",
+      "velocity_relative_l2_max": 0.009909977205097675,
+      "velocity_relative_l2_mean": 0.0030025916639715433
+    },
+    {
+      "Re_label": "Re_95p081752",
+      "pressure_area_mean_abs_max": 0.00011948352766921744,
+      "pressure_relative_l2_max": 0.040046628564596176,
+      "pressure_relative_l2_mean": 0.017727511003613472,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007883732207119465,
+      "velocity_relative_l2_mean": 0.002741210162639618
+    },
+    {
+      "Re_label": "Re_96p749308",
+      "pressure_area_mean_abs_max": 0.00012728221190627664,
+      "pressure_relative_l2_max": 0.03888334333896637,
+      "pressure_relative_l2_mean": 0.017209568992257118,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007480263710021973,
+      "velocity_relative_l2_mean": 0.002740493742749095
+    },
+    {
+      "Re_label": "Re_98p480345",
+      "pressure_area_mean_abs_max": 0.00013678458344656974,
+      "pressure_relative_l2_max": 0.03727401793003082,
+      "pressure_relative_l2_mean": 0.016638202592730522,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007046062033623457,
+      "velocity_relative_l2_mean": 0.0027514873072504997
+    },
+    {
+      "Re_label": "Re_102p440042",
+      "pressure_area_mean_abs_max": 0.00015898849233053625,
+      "pressure_relative_l2_max": 0.03412478044629097,
+      "pressure_relative_l2_mean": 0.015258291736245155,
+      "split": "train",
+      "velocity_relative_l2_max": 0.006282986607402563,
+      "velocity_relative_l2_mean": 0.002775077009573579
+    },
+    {
+      "Re_label": "Re_104p710911",
+      "pressure_area_mean_abs_max": 0.00017059373203665018,
+      "pressure_relative_l2_max": 0.03353431820869446,
+      "pressure_relative_l2_mean": 0.014550183899700642,
+      "split": "train",
+      "velocity_relative_l2_max": 0.005961191840469837,
+      "velocity_relative_l2_mean": 0.0027862824499607086
+    },
+    {
+      "Re_label": "Re_107p050737",
+      "pressure_area_mean_abs_max": 0.0001876485621323809,
+      "pressure_relative_l2_max": 0.0324896015226841,
+      "pressure_relative_l2_mean": 0.013824430294334888,
+      "split": "train",
+      "velocity_relative_l2_max": 0.005543259903788567,
+      "velocity_relative_l2_mean": 0.00277321576140821
+    },
+    {
+      "Re_label": "Re_109p395985",
+      "pressure_area_mean_abs_max": 0.0002011472242884338,
+      "pressure_relative_l2_max": 0.042922552675008774,
+      "pressure_relative_l2_mean": 0.013996552675962448,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007333430927246809,
+      "velocity_relative_l2_mean": 0.0028470121324062347
+    },
+    {
+      "Re_label": "Re_111p734011",
+      "pressure_area_mean_abs_max": 0.00021836279483977705,
+      "pressure_relative_l2_max": 0.03029526211321354,
+      "pressure_relative_l2_mean": 0.012259295210242271,
+      "split": "train",
+      "velocity_relative_l2_max": 0.005304955877363682,
+      "velocity_relative_l2_mean": 0.0025866953656077385
+    },
+    {
+      "Re_label": "Re_114p066308",
+      "pressure_area_mean_abs_max": 0.00023557078384328634,
+      "pressure_relative_l2_max": 0.028989965096116066,
+      "pressure_relative_l2_mean": 0.011764503084123135,
+      "split": "train",
+      "velocity_relative_l2_max": 0.005222007632255554,
+      "velocity_relative_l2_mean": 0.0025102419313043356
+    },
+    {
+      "Re_label": "Re_116p395488",
+      "pressure_area_mean_abs_max": 0.0002473352651577443,
+      "pressure_relative_l2_max": 0.034946393221616745,
+      "pressure_relative_l2_mean": 0.011883463710546494,
+      "split": "train",
+      "velocity_relative_l2_max": 0.006535832304507494,
+      "velocity_relative_l2_mean": 0.0025130524300038815
+    },
+    {
+      "Re_label": "Re_118p723173",
+      "pressure_area_mean_abs_max": 0.0002600833249744028,
+      "pressure_relative_l2_max": 0.02979055792093277,
+      "pressure_relative_l2_mean": 0.011118884198367596,
+      "split": "train",
+      "velocity_relative_l2_max": 0.0057512554340064526,
+      "velocity_relative_l2_mean": 0.002338420134037733
+    },
+    {
+      "Re_label": "Re_121p050171",
+      "pressure_area_mean_abs_max": 0.0002901251136790961,
+      "pressure_relative_l2_max": 0.03911040723323822,
+      "pressure_relative_l2_mean": 0.011369979940354824,
+      "split": "validation",
+      "velocity_relative_l2_max": 0.006439108867198229,
+      "velocity_relative_l2_mean": 0.002329136710613966
+    },
+    {
+      "Re_label": "Re_123p376833",
+      "pressure_area_mean_abs_max": 0.0003039954463019967,
+      "pressure_relative_l2_max": 0.03053019754588604,
+      "pressure_relative_l2_mean": 0.010682732798159122,
+      "split": "train",
+      "velocity_relative_l2_max": 0.006398431956768036,
+      "velocity_relative_l2_mean": 0.0021880706772208214
+    },
+    {
+      "Re_label": "Re_125p703274",
+      "pressure_area_mean_abs_max": 0.00030228265677578747,
+      "pressure_relative_l2_max": 0.024438392370939255,
+      "pressure_relative_l2_mean": 0.010108820162713528,
+      "split": "train",
+      "velocity_relative_l2_max": 0.00562405725941062,
+      "velocity_relative_l2_mean": 0.0020425559487193823
+    },
+    {
+      "Re_label": "Re_128p029461",
+      "pressure_area_mean_abs_max": 0.0003483261098153889,
+      "pressure_relative_l2_max": 0.034661561250686646,
+      "pressure_relative_l2_mean": 0.010374284349381924,
+      "split": "train",
+      "velocity_relative_l2_max": 0.0073086912743747234,
+      "velocity_relative_l2_mean": 0.0021006353199481964
+    },
+    {
+      "Re_label": "Re_130p355225",
+      "pressure_area_mean_abs_max": 0.0003646979748737067,
+      "pressure_relative_l2_max": 0.02871333807706833,
+      "pressure_relative_l2_mean": 0.009816882200539112,
+      "split": "train",
+      "velocity_relative_l2_max": 0.006419436540454626,
+      "velocity_relative_l2_mean": 0.002008788986131549
+    },
+    {
+      "Re_label": "Re_132p680203",
+      "pressure_area_mean_abs_max": 0.00038031110307201743,
+      "pressure_relative_l2_max": 0.021041881293058395,
+      "pressure_relative_l2_mean": 0.009376676753163338,
+      "split": "train",
+      "velocity_relative_l2_max": 0.006168505176901817,
+      "velocity_relative_l2_mean": 0.001948887831531465
+    },
+    {
+      "Re_label": "Re_135p003744",
+      "pressure_area_mean_abs_max": 0.00034233805490657687,
+      "pressure_relative_l2_max": 0.018035342916846275,
+      "pressure_relative_l2_mean": 0.009013950824737549,
+      "split": "train",
+      "velocity_relative_l2_max": 0.0049002147279679775,
+      "velocity_relative_l2_mean": 0.0019118242198601365
+    },
+    {
+      "Re_label": "Re_137p324830",
+      "pressure_area_mean_abs_max": 0.0004413655260577798,
+      "pressure_relative_l2_max": 0.027857407927513123,
+      "pressure_relative_l2_mean": 0.009389086626470089,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007372839376330376,
+      "velocity_relative_l2_mean": 0.002118125092238188
+    },
+    {
+      "Re_label": "Re_139p642302",
+      "pressure_area_mean_abs_max": 0.0004202460404485464,
+      "pressure_relative_l2_max": 0.024282367900013924,
+      "pressure_relative_l2_mean": 0.008948036469519138,
+      "split": "validation",
+      "velocity_relative_l2_max": 0.006734494585543871,
+      "velocity_relative_l2_mean": 0.0020948173478245735
+    },
+    {
+      "Re_label": "Re_141p956319",
+      "pressure_area_mean_abs_max": 0.0004311503143981099,
+      "pressure_relative_l2_max": 0.017506279051303864,
+      "pressure_relative_l2_mean": 0.008574914187192917,
+      "split": "train",
+      "velocity_relative_l2_max": 0.005876917392015457,
+      "velocity_relative_l2_mean": 0.002081189537420869
+    },
+    {
+      "Re_label": "Re_144p273459",
+      "pressure_area_mean_abs_max": 0.00038271548692137003,
+      "pressure_relative_l2_max": 0.01561947725713253,
+      "pressure_relative_l2_mean": 0.008282897993922234,
+      "split": "train",
+      "velocity_relative_l2_max": 0.004900210537016392,
+      "velocity_relative_l2_mean": 0.0020821939688175917
+    },
+    {
+      "Re_label": "Re_146p619578",
+      "pressure_area_mean_abs_max": 0.0005481179687194526,
+      "pressure_relative_l2_max": 0.025740046054124832,
+      "pressure_relative_l2_mean": 0.008659451268613338,
+      "split": "train",
+      "velocity_relative_l2_max": 0.00882396288216114,
+      "velocity_relative_l2_mean": 0.0023179450072348118
+    },
+    {
+      "Re_label": "Re_151p686208",
+      "pressure_area_mean_abs_max": 0.0004611921322066337,
+      "pressure_relative_l2_max": 0.01828896999359131,
+      "pressure_relative_l2_mean": 0.00783873163163662,
+      "split": "train",
+      "velocity_relative_l2_max": 0.006935793906450272,
+      "velocity_relative_l2_mean": 0.0022393332328647375
+    },
+    {
+      "Re_label": "Re_154p520852",
+      "pressure_area_mean_abs_max": 0.00045712824794463813,
+      "pressure_relative_l2_max": 0.015164182521402836,
+      "pressure_relative_l2_mean": 0.00747990608215332,
+      "split": "train",
+      "velocity_relative_l2_max": 0.00497960252687335,
+      "velocity_relative_l2_mean": 0.0021949722431600094
+    },
+    {
+      "Re_label": "Re_157p459588",
+      "pressure_area_mean_abs_max": 0.0006226222612895072,
+      "pressure_relative_l2_max": 0.03048691898584366,
+      "pressure_relative_l2_mean": 0.007910803891718388,
+      "split": "train",
+      "velocity_relative_l2_max": 0.011572025716304779,
+      "velocity_relative_l2_mean": 0.0024280063807964325
+    },
+    {
+      "Re_label": "Re_160p415176",
+      "pressure_area_mean_abs_max": 0.0006220848299562931,
+      "pressure_relative_l2_max": 0.02620430290699005,
+      "pressure_relative_l2_mean": 0.0074669308960437775,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007736802101135254,
+      "velocity_relative_l2_mean": 0.002312655095010996
+    },
+    {
+      "Re_label": "Re_163p364123",
+      "pressure_area_mean_abs_max": 0.0004895227029919624,
+      "pressure_relative_l2_max": 0.0228765569627285,
+      "pressure_relative_l2_mean": 0.007047634571790695,
+      "split": "train",
+      "velocity_relative_l2_max": 0.007942871190607548,
+      "velocity_relative_l2_mean": 0.0022277706302702427
+    },
+    {
+      "Re_label": "Re_166p306373",
+      "pressure_area_mean_abs_max": 0.0004657766257878393,
+      "pressure_relative_l2_max": 0.01917549967765808,
+      "pressure_relative_l2_mean": 0.006661157589405775,
+      "split": "train",
+      "velocity_relative_l2_max": 0.005883727688342333,
+      "velocity_relative_l2_mean": 0.002129420405253768
+    },
+    {
+      "Re_label": "Re_169p244893",
+      "pressure_area_mean_abs_max": 0.0004764958575833589,
+      "pressure_relative_l2_max": 0.01735050044953823,
+      "pressure_relative_l2_mean": 0.006379263941198587,
+      "split": "validation",
+      "velocity_relative_l2_max": 0.005424591712653637,
+      "velocity_relative_l2_mean": 0.0020576470997184515
+    },
+    {
+      "Re_label": "Re_172p181708",
+      "pressure_area_mean_abs_max": 0.0008267795783467591,
+      "pressure_relative_l2_max": 0.04319218546152115,
+      "pressure_relative_l2_mean": 0.007301402278244495,
+      "split": "train",
+      "velocity_relative_l2_max": 0.015005898661911488,
+      "velocity_relative_l2_mean": 0.0024281383957713842
+    },
+    {
+      "Re_label": "Re_175p117940",
+      "pressure_area_mean_abs_max": 0.0005784127279184759,
+      "pressure_relative_l2_max": 0.024157557636499405,
+      "pressure_relative_l2_mean": 0.006788735277950764,
+      "split": "train",
+      "velocity_relative_l2_max": 0.009732235223054886,
+      "velocity_relative_l2_mean": 0.0022763987071812153
+    },
+    {
+      "Re_label": "Re_178p054368",
+      "pressure_area_mean_abs_max": 0.0005397035274654627,
+      "pressure_relative_l2_max": 0.02500768192112446,
+      "pressure_relative_l2_mean": 0.006586063653230667,
+      "split": "train",
+      "velocity_relative_l2_max": 0.008801577612757683,
+      "velocity_relative_l2_mean": 0.002214376349002123
+    },
+    {
+      "Re_label": "Re_180p992055",
+      "pressure_area_mean_abs_max": 0.0005627789651043713,
+      "pressure_relative_l2_max": 0.02434171736240387,
+      "pressure_relative_l2_mean": 0.00648662680760026,
+      "split": "train",
+      "velocity_relative_l2_max": 0.006662664003670216,
+      "velocity_relative_l2_mean": 0.002192898653447628
+    },
+    {
+      "Re_label": "Re_183p933395",
+      "pressure_area_mean_abs_max": 0.0005853060283698142,
+      "pressure_relative_l2_max": 0.021006489172577858,
+      "pressure_relative_l2_mean": 0.006549113895744085,
+      "split": "train",
+      "velocity_relative_l2_max": 0.0062924656085669994,
+      "velocity_relative_l2_mean": 0.002236676402390003
+    },
+    {
+      "Re_label": "Re_186p884600",
+      "pressure_area_mean_abs_max": 0.0006074943812564015,
+      "pressure_relative_l2_max": 0.018280446529388428,
+      "pressure_relative_l2_mean": 0.006810721009969711,
+      "split": "train",
+      "velocity_relative_l2_max": 0.005486879963427782,
+      "velocity_relative_l2_mean": 0.002336663892492652
+    },
+    {
+      "Re_label": "Re_192p911664",
+      "pressure_area_mean_abs_max": 0.0006525666103698313,
+      "pressure_relative_l2_max": 0.031926967203617096,
+      "pressure_relative_l2_mean": 0.008714528754353523,
+      "split": "train",
+      "velocity_relative_l2_max": 0.011766803450882435,
+      "velocity_relative_l2_mean": 0.0030294531024992466
+    },
+    {
+      "Re_label": "Re_196p160723",
+      "pressure_area_mean_abs_max": 0.0006800976116210222,
+      "pressure_relative_l2_max": 0.03349094092845917,
+      "pressure_relative_l2_mean": 0.009239176288247108,
+      "split": "validation",
+      "velocity_relative_l2_max": 0.010480684228241444,
+      "velocity_relative_l2_mean": 0.0031786197796463966
+    },
+    {
+      "Re_label": "Re_200p000000",
+      "pressure_area_mean_abs_max": 0.0007134151528589427,
+      "pressure_relative_l2_max": 0.025256644934415817,
+      "pressure_relative_l2_mean": 0.00995413027703762,
+      "split": "train",
+      "velocity_relative_l2_max": 0.00837223045527935,
+      "velocity_relative_l2_mean": 0.0034233927726745605
+    }
+  ],
+  "schema": "periodic_development_modal_bundle/v1",
+  "sources_opened": [
+    {
+      "Re": 60.3077454666,
+      "Re_label": "Re_60p307745",
+      "snapshots": 162,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_60p307745_uvp_pointData.npz",
+      "source_sha256": "f8892dceff0bfaeef3bdb61e220bc9ed55218de950c7c7253e3b4ceb8a72c7be",
+      "split": "train"
+    },
+    {
+      "Re": 61.7559536282,
+      "Re_label": "Re_61p755954",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_61p755954_uvp_pointData.npz",
+      "source_sha256": "cb388408af7ea8fe23a9852ece0eb7499cee36032d238c59ecbe8c09e56a07e0",
+      "split": "train"
+    },
+    {
+      "Re": 63.499816815,
+      "Re_label": "Re_63p499817",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_63p499817_uvp_pointData.npz",
+      "source_sha256": "7925ee85eafb24646e34fad5a3b37a79c38f6d8002ab549e2981bb47aaa9d9bb",
+      "split": "train"
+    },
+    {
+      "Re": 65.2598292316,
+      "Re_label": "Re_65p259829",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_65p259829_uvp_pointData.npz",
+      "source_sha256": "0553072974ee79f574b7792ae1383c2a2750eb89e9ff093a9b26a859c1b507e1",
+      "split": "train"
+    },
+    {
+      "Re": 66.9701121204,
+      "Re_label": "Re_66p970112",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_66p970112_uvp_pointData.npz",
+      "source_sha256": "53e8b439459b2aee9f98ae7fef4742290194a2d76f260419f158f627f6718e5a",
+      "split": "validation"
+    },
+    {
+      "Re": 68.6497139288,
+      "Re_label": "Re_68p649714",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_68p649714_uvp_pointData.npz",
+      "source_sha256": "a7b1cb48ed197205a01b1a260059a3a3994ec70fcfbbe44a5c7e73a7c785c50d",
+      "split": "train"
+    },
+    {
+      "Re": 71.9729308789,
+      "Re_label": "Re_71p972931",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_71p972931_uvp_pointData.npz",
+      "source_sha256": "1a33e2eebc1a8096b7fcf95bec757c3367b01a37d43c6e19b0ddcca142001090",
+      "split": "train"
+    },
+    {
+      "Re": 73.6282869994,
+      "Re_label": "Re_73p628287",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_73p628287_uvp_pointData.npz",
+      "source_sha256": "c2121e8b3e92e7918e3fa4340bb555cf2644e0e9fd084b7cc2da674138390ead",
+      "split": "train"
+    },
+    {
+      "Re": 75.2823402819,
+      "Re_label": "Re_75p282340",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_75p282340_uvp_pointData.npz",
+      "source_sha256": "76deea808e1d0ba22684940847d552d384ffee15661550c6ade80d7c2bdb14bd",
+      "split": "train"
+    },
+    {
+      "Re": 76.9358029334,
+      "Re_label": "Re_76p935803",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_76p935803_uvp_pointData.npz",
+      "source_sha256": "68557069c2bbe4871fd9d4f64aefe98645fd54ed5cb84ca6649fbe09ea08cc16",
+      "split": "train"
+    },
+    {
+      "Re": 78.5889708164,
+      "Re_label": "Re_78p588971",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_78p588971_uvp_pointData.npz",
+      "source_sha256": "17f4dc231fe72e943bff531bc9446cbc4a2ce8ab6abb9b206907946fd7fb4243",
+      "split": "train"
+    },
+    {
+      "Re": 80.2419430177,
+      "Re_label": "Re_80p241943",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_80p241943_uvp_pointData.npz",
+      "source_sha256": "71eb6b141e0ba07296bb95d644ee468b9f12a13defb47096267e1dcad6794f77",
+      "split": "train"
+    },
+    {
+      "Re": 81.8947080155,
+      "Re_label": "Re_81p894708",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_81p894708_uvp_pointData.npz",
+      "source_sha256": "bda9b437e67285ca0f70e26d1c9b4ea12df9ab500fd69225cdef0ea48392fbe9",
+      "split": "train"
+    },
+    {
+      "Re": 83.5471642516,
+      "Re_label": "Re_83p547164",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_83p547164_uvp_pointData.npz",
+      "source_sha256": "1e18e97efb865d6d10667db63f0c4d9ffba457d31e2483027a7851bd5211193b",
+      "split": "train"
+    },
+    {
+      "Re": 85.1991031321,
+      "Re_label": "Re_85p199103",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_85p199103_uvp_pointData.npz",
+      "source_sha256": "2f10c65b66f3ca39a6fd4fed02958fc88f5ea1af25422771005f97c0736b353d",
+      "split": "train"
+    },
+    {
+      "Re": 86.8501684903,
+      "Re_label": "Re_86p850168",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_86p850168_uvp_pointData.npz",
+      "source_sha256": "055dc288249a2c074d55d4bbfd641d924cbce0af1f17410027035679abb9c043",
+      "split": "train"
+    },
+    {
+      "Re": 88.4998153335,
+      "Re_label": "Re_88p499815",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_88p499815_uvp_pointData.npz",
+      "source_sha256": "82bf47acd145aa0312ae3a4f4ac22bca8c3e4c5f7b2d0be7135ed3051db17314",
+      "split": "train"
+    },
+    {
+      "Re": 90.1473406471,
+      "Re_label": "Re_90p147341",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_90p147341_uvp_pointData.npz",
+      "source_sha256": "f1795235b56d038bb1f153737e6251dcead5f35da82ed0b58554c0f7bcdcc0cd",
+      "split": "train"
+    },
+    {
+      "Re": 91.792204085,
+      "Re_label": "Re_91p792204",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_91p792204_uvp_pointData.npz",
+      "source_sha256": "f01df163a3518e091f2c49015eca6ca6928294917b2c5ee1626bee482003517c",
+      "split": "validation"
+    },
+    {
+      "Re": 93.4352043333,
+      "Re_label": "Re_93p435204",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_93p435204_uvp_pointData.npz",
+      "source_sha256": "13b6dd43afff155031502d3e895e09a3a2b9ada8d9787eece812d33672a2350e",
+      "split": "train"
+    },
+    {
+      "Re": 95.0817519005,
+      "Re_label": "Re_95p081752",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_95p081752_uvp_pointData.npz",
+      "source_sha256": "6467de1ba7eaa20e0d73dbd6fd2de80438088caaf8d863241d9daa49493f580e",
+      "split": "train"
+    },
+    {
+      "Re": 96.749307569,
+      "Re_label": "Re_96p749308",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_96p749308_uvp_pointData.npz",
+      "source_sha256": "b03001875d496320c0c30f39ddf0ba7593ef51d773a0c28dd6979148f595eb86",
+      "split": "train"
+    },
+    {
+      "Re": 98.4803451202,
+      "Re_label": "Re_98p480345",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_98p480345_uvp_pointData.npz",
+      "source_sha256": "f459f7b179b4746b1e4c861dbb8558870065edf275bb28539d50c24af9f93c2a",
+      "split": "train"
+    },
+    {
+      "Re": 102.440041809,
+      "Re_label": "Re_102p440042",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_102p440042_uvp_pointData.npz",
+      "source_sha256": "fd558be8f26101fa9bd7c7542f11f93373bf41d11eae7fd5b307f189b29f5a82",
+      "split": "train"
+    },
+    {
+      "Re": 104.710910987,
+      "Re_label": "Re_104p710911",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_104p710911_uvp_pointData.npz",
+      "source_sha256": "addf78f70997b544806993bc1eb851b3bfc00ea09c0dacc5381e1050dd43444e",
+      "split": "train"
+    },
+    {
+      "Re": 107.050736557,
+      "Re_label": "Re_107p050737",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_107p050737_uvp_pointData.npz",
+      "source_sha256": "a4d207d38da1c2b4384cce89b4173aa5078e2b97ff5328a8bcf447fbc8b96836",
+      "split": "train"
+    },
+    {
+      "Re": 109.395985153,
+      "Re_label": "Re_109p395985",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_109p395985_uvp_pointData.npz",
+      "source_sha256": "3ee7873d56cf5439452f87e9ab25c4ea76b9604dd8b73bb752a129fbb229d5f1",
+      "split": "train"
+    },
+    {
+      "Re": 111.734011486,
+      "Re_label": "Re_111p734011",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_111p734011_uvp_pointData.npz",
+      "source_sha256": "17fff688e484bb6b31c79b5558d0afd20e8a916e0bdcf2237b8cadbbf99ed4eb",
+      "split": "train"
+    },
+    {
+      "Re": 114.066307867,
+      "Re_label": "Re_114p066308",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_114p066308_uvp_pointData.npz",
+      "source_sha256": "f313a7ba52c86cc11ad784971cc22f2a9c447de1c261716b08a8df89a0d37250",
+      "split": "train"
+    },
+    {
+      "Re": 116.395488165,
+      "Re_label": "Re_116p395488",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_116p395488_uvp_pointData.npz",
+      "source_sha256": "a14cc7e4e9633eb92867134c0284612486ea4ce93f6f87618c964ad134fc7e4e",
+      "split": "train"
+    },
+    {
+      "Re": 118.723173369,
+      "Re_label": "Re_118p723173",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_118p723173_uvp_pointData.npz",
+      "source_sha256": "37a3bea7112751f2ed86cc235dcae60ed30249e70956d865cf564a64419a7012",
+      "split": "train"
+    },
+    {
+      "Re": 121.05017082,
+      "Re_label": "Re_121p050171",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_121p050171_uvp_pointData.npz",
+      "source_sha256": "0e79de3013c7fa160e326bf29b8d3c9b898e0622a971f1691cda7ef5d1657b74",
+      "split": "validation"
+    },
+    {
+      "Re": 123.376832843,
+      "Re_label": "Re_123p376833",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_123p376833_uvp_pointData.npz",
+      "source_sha256": "f610958edab2b367737f8a6d887bd80f3bb2c73f5ef4a517385007b5ec67e11c",
+      "split": "train"
+    },
+    {
+      "Re": 125.703273692,
+      "Re_label": "Re_125p703274",
+      "snapshots": 162,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_125p703274_uvp_pointData.npz",
+      "source_sha256": "8731c87710671dcccc7a8ee4dc5bf2d3453f8b60afc70433b47a8eac3a4a391e",
+      "split": "train"
+    },
+    {
+      "Re": 128.029461168,
+      "Re_label": "Re_128p029461",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_128p029461_uvp_pointData.npz",
+      "source_sha256": "8baba8a91f79e62ffdc81b94876e807f6769cdc83186dc89094e263b13593f4b",
+      "split": "train"
+    },
+    {
+      "Re": 130.355224828,
+      "Re_label": "Re_130p355225",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_130p355225_uvp_pointData.npz",
+      "source_sha256": "05f41236c5d93e2607e5b3a8cb4555d833c7e98370bceec1df329e980d8e94ac",
+      "split": "train"
+    },
+    {
+      "Re": 132.680202796,
+      "Re_label": "Re_132p680203",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_132p680203_uvp_pointData.npz",
+      "source_sha256": "5569e0326e3b2d8fdfb9ee1e77a32ae4abb8e622e1d70908bc329d9a507fb71c",
+      "split": "train"
+    },
+    {
+      "Re": 135.003743604,
+      "Re_label": "Re_135p003744",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_135p003744_uvp_pointData.npz",
+      "source_sha256": "9464701d5978a32969b88f6ba95372e4fdd3539bff1dc3a1407d0fca6858279f",
+      "split": "train"
+    },
+    {
+      "Re": 137.324829556,
+      "Re_label": "Re_137p324830",
+      "snapshots": 162,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_137p324830_uvp_pointData.npz",
+      "source_sha256": "89085c3454322932fac8c5763c9ad7999a7b5340ce0ca8f3247f9898e1febcf4",
+      "split": "train"
+    },
+    {
+      "Re": 139.642302099,
+      "Re_label": "Re_139p642302",
+      "snapshots": 162,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_139p642302_uvp_pointData.npz",
+      "source_sha256": "3220861698164fbc1b32580a3bbfe3de2a8633f6c4b9576c1e5283a7bce0347e",
+      "split": "validation"
+    },
+    {
+      "Re": 141.956318757,
+      "Re_label": "Re_141p956319",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_141p956319_uvp_pointData.npz",
+      "source_sha256": "325533055b50eaeeccdd31ce170ec03053602223b28a83c6c0f460280e95ed72",
+      "split": "train"
+    },
+    {
+      "Re": 144.273459297,
+      "Re_label": "Re_144p273459",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_144p273459_uvp_pointData.npz",
+      "source_sha256": "b1863939c160dd46289b7d0f2341513580fff7cc0c16a71d9eb7bfba7d1d0a61",
+      "split": "train"
+    },
+    {
+      "Re": 146.619578296,
+      "Re_label": "Re_146p619578",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_146p619578_uvp_pointData.npz",
+      "source_sha256": "68529569ab54c57e108ae5cb062ac8611fd6beaed226ed7f7a7a4be639982ab0",
+      "split": "train"
+    },
+    {
+      "Re": 151.686208001,
+      "Re_label": "Re_151p686208",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_151p686208_uvp_pointData.npz",
+      "source_sha256": "dbf13c3a75e4a199c88a3a6d21c864ee4de3358dd72a798c00f5d46dceaf24e6",
+      "split": "train"
+    },
+    {
+      "Re": 154.520851959,
+      "Re_label": "Re_154p520852",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_154p520852_uvp_pointData.npz",
+      "source_sha256": "9d4351c3bee681490a41d4854ff1d3eff19df87294dad4e962c5e0aedcce449a",
+      "split": "train"
+    },
+    {
+      "Re": 157.45958766,
+      "Re_label": "Re_157p459588",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_157p459588_uvp_pointData.npz",
+      "source_sha256": "4ffe897eee37011de3bb6971fd0bb9ce85256c3273fc72d655b48520397832b1",
+      "split": "train"
+    },
+    {
+      "Re": 160.415175616,
+      "Re_label": "Re_160p415176",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_160p415176_uvp_pointData.npz",
+      "source_sha256": "99ac5bc2116d3434e8d3f5dbef050d7fe35b7821fd352ff8173f54668bf31f28",
+      "split": "train"
+    },
+    {
+      "Re": 163.364122702,
+      "Re_label": "Re_163p364123",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_163p364123_uvp_pointData.npz",
+      "source_sha256": "a0e332a94fc9ccdfec35674fece4b11f3e82adf1bfc0c16512b6bdcd9a661288",
+      "split": "train"
+    },
+    {
+      "Re": 166.306372744,
+      "Re_label": "Re_166p306373",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_166p306373_uvp_pointData.npz",
+      "source_sha256": "1409521273ca2f130841210fc904c2b56c7ba06b94b4d8cf96ab03b418a3b65a",
+      "split": "train"
+    },
+    {
+      "Re": 169.244893107,
+      "Re_label": "Re_169p244893",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_169p244893_uvp_pointData.npz",
+      "source_sha256": "05543c1d1e3a8e1970b462a97a1b486dd67682f8b12918de788b8d72e9243c12",
+      "split": "validation"
+    },
+    {
+      "Re": 172.181708206,
+      "Re_label": "Re_172p181708",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_172p181708_uvp_pointData.npz",
+      "source_sha256": "e2909d198ccf3bc3e5b0dbe70dec923bf483ba08422c3e7ac4e67aa4638d68e6",
+      "split": "train"
+    },
+    {
+      "Re": 175.117940142,
+      "Re_label": "Re_175p117940",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_175p117940_uvp_pointData.npz",
+      "source_sha256": "c5c29ad87ee96c58836daaa75784c1b8d2d37b9c1ccd952bd8b6ba1da4789392",
+      "split": "train"
+    },
+    {
+      "Re": 178.05436806,
+      "Re_label": "Re_178p054368",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_178p054368_uvp_pointData.npz",
+      "source_sha256": "6383af556fc162bb93b223e876167811e3cb490ca24542a39d11ae7ce4587e34",
+      "split": "train"
+    },
+    {
+      "Re": 180.992054605,
+      "Re_label": "Re_180p992055",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_180p992055_uvp_pointData.npz",
+      "source_sha256": "e0b7edbe233a4910791804eab02c0216c0ec58f2646ec7d89211d993cd938a7c",
+      "split": "train"
+    },
+    {
+      "Re": 183.933394636,
+      "Re_label": "Re_183p933395",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_183p933395_uvp_pointData.npz",
+      "source_sha256": "fd938ebe75d660c6cd2e89511733d089ded8b74eadecf0c34333728bb4e281f1",
+      "split": "train"
+    },
+    {
+      "Re": 186.884600344,
+      "Re_label": "Re_186p884600",
+      "snapshots": 162,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_186p884600_uvp_pointData.npz",
+      "source_sha256": "1cfba74721646098a8a3316c6b53f7cda27cb40e01736ad416e2a01b0a567bd1",
+      "split": "train"
+    },
+    {
+      "Re": 192.911663952,
+      "Re_label": "Re_192p911664",
+      "snapshots": 162,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_192p911664_uvp_pointData.npz",
+      "source_sha256": "c9238de6ae286a0f42fc68dda805a6c45bd3685fe6a2ba8ae788f229b674b114",
+      "split": "train"
+    },
+    {
+      "Re": 196.160723205,
+      "Re_label": "Re_196p160723",
+      "snapshots": 161,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_196p160723_uvp_pointData.npz",
+      "source_sha256": "b47c89f0639dcbe012f53ab08562c52c68c84eab391a793c3f4bf28ddccdeaea",
+      "split": "validation"
+    },
+    {
+      "Re": 200.0,
+      "Re_label": "Re_200p000000",
+      "snapshots": 162,
+      "source": "/home/ray/Desktop/Cylinder_ROM_PhysicsGeneralizable_Re20_200_100Re/Re_200p000000_uvp_pointData.npz",
+      "source_sha256": "4b83a6a1772e11b1ae1a3c2af40824361ad28c83533440a0439552147adb51ea",
+      "split": "train"
+    }
+  ]
+}

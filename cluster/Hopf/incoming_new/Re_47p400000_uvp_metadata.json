@@ -1,0 +1,86 @@
+{
+  "Re": 47.4,
+  "label": "Re_47p400000",
+  "regime": "hopf_transition",
+  "D": 1.0,
+  "nu": 0.001,
+  "U_inlet": 0.0474,
+  "retain_start_time": 957.22568647,
+  "n_times": 162,
+  "n_points": 97368,
+  "n_cells": 48128,
+  "diagnostics": {
+    "mode": "periodic",
+    "estimated_period": 182.32870218429784,
+    "chunks": [
+      {
+        "end_time": 136.74652664,
+        "samples": 81,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 273.49305328,
+        "samples": 152,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 410.23957991,
+        "samples": 223,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 546.98610655,
+        "samples": 292,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 683.73263319,
+        "samples": 362,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 820.47915983,
+        "samples": 431,
+        "reason": "not enough lift samples or minimum transient time not reached"
+      },
+      {
+        "end_time": 957.22568647,
+        "samples": 500,
+        "recent_peak_count": 28,
+        "lift_peak_amplitude_cv": 0.00766076947655984,
+        "period_cv": 0.020708229277049597,
+        "detected_period": 186.8603279775,
+        "reason": "stable limit cycle detected"
+      }
+    ],
+    "status": "limit_cycle_detected",
+    "retained_period": 186.8603279775
+  },
+  "arrays": {
+    "times": [
+      162
+    ],
+    "points": [
+      97368,
+      3
+    ],
+    "u": [
+      162,
+      97368
+    ],
+    "v": [
+      162,
+      97368
+    ],
+    "p": [
+      162,
+      97368
+    ]
+  },
+  "units": {
+    "times": "s",
+    "points": "m",
+    "u/v": "m/s",
+    "p": "m^2/s^2"
+  }
+}

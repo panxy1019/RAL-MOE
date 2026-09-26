@@ -1,0 +1,819 @@
+{
+  "baselines": {
+    "E2_pair_Top1": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.0034254230558872223,
+          "joint_worst": 0.0051374114118516445,
+          "pressure_mean": 0.0033928260672837496,
+          "velocity_mean": 3.2597108656773344e-05
+        },
+        "K16": {
+          "joint_mean": 0.01569983921945095,
+          "joint_worst": 0.016108930110931396,
+          "pressure_mean": 0.015410668216645718,
+          "velocity_mean": 0.0002891726908273995
+        },
+        "K4": {
+          "joint_mean": 0.007881860248744488,
+          "joint_worst": 0.009700614959001541,
+          "pressure_mean": 0.007778918836265802,
+          "velocity_mean": 0.00010294101957697421
+        },
+        "K56": {
+          "joint_mean": 0.04670979082584381,
+          "joint_worst": 0.15658387541770935,
+          "pressure_mean": 0.046082742512226105,
+          "velocity_mean": 0.0006270476151257753
+        },
+        "K8": {
+          "joint_mean": 0.009302090853452682,
+          "joint_worst": 0.010019251145422459,
+          "pressure_mean": 0.009125984273850918,
+          "velocity_mean": 0.0001761061867000535
+        }
+      },
+      "joint_all_mean": 0.018360596150159836,
+      "joint_all_worst": 0.15658387541770935,
+      "per_Re": {
+        "42.359071": {
+          "mean": 0.017103029415011406,
+          "worst": 0.12973274290561676
+        },
+        "43.5": {
+          "mean": 0.018540864810347557,
+          "worst": 0.10834242403507233
+        },
+        "43.9": {
+          "mean": 0.019437892362475395,
+          "worst": 0.15658387541770935
+        }
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.000196380978933187,
+        "worst": 0.00021468418138757383
+      },
+      "top2_usage": 0.0
+    },
+    "E2_pair_probability_blend": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005198610946536064,
+          "joint_worst": 0.00592063507065177,
+          "pressure_mean": 0.005161203444004059,
+          "velocity_mean": 3.7407295167213306e-05
+        },
+        "K16": {
+          "joint_mean": 0.028271745890378952,
+          "joint_worst": 0.08116951584815979,
+          "pressure_mean": 0.02800959162414074,
+          "velocity_mean": 0.00026215601246804
+        },
+        "K4": {
+          "joint_mean": 0.007198721636086702,
+          "joint_worst": 0.010496127419173717,
+          "pressure_mean": 0.007123330608010292,
+          "velocity_mean": 7.539047510363162e-05
+        },
+        "K56": {
+          "joint_mean": 0.04175645858049393,
+          "joint_worst": 0.10782461613416672,
+          "pressure_mean": 0.0411725752055645,
+          "velocity_mean": 0.0005838757497258484
+        },
+        "K8": {
+          "joint_mean": 0.022805145010352135,
+          "joint_worst": 0.08020234853029251,
+          "pressure_mean": 0.022663073614239693,
+          "velocity_mean": 0.00014207213826011866
+        }
+      },
+      "joint_all_mean": 0.030540455132722855,
+      "joint_all_worst": 0.10782461613416672,
+      "per_Re": {
+        "42.359071": {
+          "mean": 0.05138559639453888,
+          "worst": 0.10782461613416672
+        },
+        "43.5": {
+          "mean": 0.020321376621723175,
+          "worst": 0.09012661874294281
+        },
+        "43.9": {
+          "mean": 0.019914396107196808,
+          "worst": 0.09073058515787125
+        }
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.000191285428262494,
+        "worst": 0.00019935412286725663
+      },
+      "top2_usage": 1.0
+    },
+    "H_only": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.009279667399823666,
+          "joint_worst": 0.014927135780453682,
+          "pressure_mean": 0.009198262356221676,
+          "velocity_mean": 8.140590216498822e-05
+        },
+        "K16": {
+          "joint_mean": 0.07051114737987518,
+          "joint_worst": 0.23023389279842377,
+          "pressure_mean": 0.06997587531805038,
+          "velocity_mean": 0.0005352732841856778
+        },
+        "K4": {
+          "joint_mean": 0.009900792501866817,
+          "joint_worst": 0.030507396906614304,
+          "pressure_mean": 0.009800824336707592,
+          "velocity_mean": 9.996842709369957e-05
+        },
+        "K56": {
+          "joint_mean": 0.05606842413544655,
+          "joint_worst": 0.18211568892002106,
+          "pressure_mean": 0.05466867610812187,
+          "velocity_mean": 0.001399745000526309
+        },
+        "K8": {
+          "joint_mean": 0.06011328846216202,
+          "joint_worst": 0.22416338324546814,
+          "pressure_mean": 0.05987117066979408,
+          "velocity_mean": 0.0002421087265247479
+        }
+      },
+      "joint_all_mean": 0.0805332213640213,
+      "joint_all_worst": 0.31622418761253357,
+      "per_Re": {
+        "42.359071": {
+          "mean": 0.1785530149936676,
+          "worst": 0.31622418761253357
+        },
+        "43.5": {
+          "mean": 0.03345450386404991,
+          "worst": 0.2513602077960968
+        },
+        "43.9": {
+          "mean": 0.029592126607894897,
+          "worst": 0.22513914108276367
+        }
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.0002087727962364689,
+        "worst": 0.00025143247999989405
+      },
+      "top2_usage": 0.0
+    },
+    "S_only": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.0034254230558872223,
+          "joint_worst": 0.0051374114118516445,
+          "pressure_mean": 0.0033928260672837496,
+          "velocity_mean": 3.2597108656773344e-05
+        },
+        "K16": {
+          "joint_mean": 0.01569983921945095,
+          "joint_worst": 0.016108930110931396,
+          "pressure_mean": 0.015410668216645718,
+          "velocity_mean": 0.0002891726908273995
+        },
+        "K4": {
+          "joint_mean": 0.007881860248744488,
+          "joint_worst": 0.009700614959001541,
+          "pressure_mean": 0.007778918836265802,
+          "velocity_mean": 0.00010294101957697421
+        },
+        "K56": {
+          "joint_mean": 0.04670979082584381,
+          "joint_worst": 0.15658387541770935,
+          "pressure_mean": 0.046082742512226105,
+          "velocity_mean": 0.0006270476151257753
+        },
+        "K8": {
+          "joint_mean": 0.009302090853452682,
+          "joint_worst": 0.010019251145422459,
+          "pressure_mean": 0.009125984273850918,
+          "velocity_mean": 0.0001761061867000535
+        }
+      },
+      "joint_all_mean": 0.018360596150159836,
+      "joint_all_worst": 0.15658387541770935,
+      "per_Re": {
+        "42.359071": {
+          "mean": 0.017103029415011406,
+          "worst": 0.12973274290561676
+        },
+        "43.5": {
+          "mean": 0.018540864810347557,
+          "worst": 0.10834242403507233
+        },
+        "43.9": {
+          "mean": 0.019437892362475395,
+          "worst": 0.15658387541770935
+        }
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.000196380978933187,
+        "worst": 0.00021468418138757383
+      },
+      "top2_usage": 0.0
+    },
+    "fixed_0.5": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.006212984211742878,
+          "joint_worst": 0.008471920154988766,
+          "pressure_mean": 0.0061670392751693726,
+          "velocity_mean": 4.594478741637431e-05
+        },
+        "K16": {
+          "joint_mean": 0.039048340171575546,
+          "joint_worst": 0.11083084344863892,
+          "pressure_mean": 0.03872526064515114,
+          "velocity_mean": 0.0003230827860534191
+        },
+        "K4": {
+          "joint_mean": 0.007752398028969765,
+          "joint_worst": 0.01533348299562931,
+          "pressure_mean": 0.00767856789752841,
+          "velocity_mean": 7.383168122032657e-05
+        },
+        "K56": {
+          "joint_mean": 0.04474643990397453,
+          "joint_worst": 0.10604654252529144,
+          "pressure_mean": 0.04396364465355873,
+          "velocity_mean": 0.0007827937952242792
+        },
+        "K8": {
+          "joint_mean": 0.032133180648088455,
+          "joint_worst": 0.10893366485834122,
+          "pressure_mean": 0.031974561512470245,
+          "velocity_mean": 0.00015861866995692253
+        }
+      },
+      "joint_all_mean": 0.043553609400987625,
+      "joint_all_worst": 0.15544907748699188,
+      "per_Re": {
+        "42.359071": {
+          "mean": 0.08724015951156616,
+          "worst": 0.15544907748699188
+        },
+        "43.5": {
+          "mean": 0.022341987118124962,
+          "worst": 0.12230205535888672
+        },
+        "43.9": {
+          "mean": 0.021078698337078094,
+          "worst": 0.10884454101324081
+        }
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.00019322698257200042,
+        "worst": 0.00020646652840877763
+      },
+      "top2_usage": 1.0
+    },
+    "per_window_convex_oracle": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.004772951826453209,
+          "joint_worst": 0.007423346396535635,
+          "pressure_mean": 0.0047377594746649265,
+          "velocity_mean": 3.519229358062148e-05
+        },
+        "K16": {
+          "joint_mean": 0.009864416904747486,
+          "joint_worst": 0.016463663429021835,
+          "pressure_mean": 0.009705577045679092,
+          "velocity_mean": 0.00015884145977906883
+        },
+        "K4": {
+          "joint_mean": 0.005672820843756199,
+          "joint_worst": 0.008585025556385517,
+          "pressure_mean": 0.005607021041214466,
+          "velocity_mean": 6.579903129022568e-05
+        },
+        "K56": {
+          "joint_mean": 0.024811318144202232,
+          "joint_worst": 0.1274457573890686,
+          "pressure_mean": 0.02445259876549244,
+          "velocity_mean": 0.0003587164974305779
+        },
+        "K8": {
+          "joint_mean": 0.007795347832143307,
+          "joint_worst": 0.010465107858181,
+          "pressure_mean": 0.007692233193665743,
+          "velocity_mean": 0.00010311530786566436
+        }
+      },
+      "joint_all_mean": 0.01110287755727768,
+      "joint_all_worst": 0.1274457573890686,
+      "per_Re": {
+        "42.359071": {
+          "mean": 0.0160002950578928,
+          "worst": 0.1274457573890686
+        },
+        "43.5": {
+          "mean": 0.00977365579456091,
+          "worst": 0.10476374626159668
+        },
+        "43.9": {
+          "mean": 0.007534680422395468,
+          "worst": 0.032780926674604416
+        }
+      },
+      "top2_usage": 1.0
+    }
+  },
+  "cache_sha256": "61b2f6b57a7c70700d9665ca71f1867c8b1f7e419870f50670afe5bee8b64558",
+  "complete_Re": [
+    42.359071,
+    43.5,
+    43.9
+  ],
+  "decision_sha256": "242101ecc40070eb8cebf755ae94c580a7a9b78489a4aed4b6bd417a6f56fd8c",
+  "inference": {
+    "LookAheadShortRolloutRouter": {
+      "relative_native_rollout_calls": 2,
+      "routing_seconds_per_trajectory": 1.938873901963234e-05
+    },
+    "RiskPredictionRouter": {
+      "relative_native_rollout_calls": 2,
+      "routing_seconds_per_trajectory": 2.0763867845137914e-05
+    },
+    "T2-C_LearnedConvexCorrection_FieldBlend": {
+      "relative_native_rollout_calls": 2,
+      "routing_seconds_per_trajectory": 4.7351932153105736e-05
+    }
+  },
+  "known_prior_test_disclosure": true,
+  "promoted_method_validation_frozen": "T2-C_LearnedConvexCorrection_FieldBlend",
+  "protocol": "one-sided S-native S-H output-only Top-2 Re-resplit 20260723",
+  "routes": {
+    "LookAheadShortRolloutRouter": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "gate_only_ablation": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "horizons": {
+          "K1": {
+            "joint_mean": 0.004922919906675816,
+            "joint_worst": 0.00763330515474081,
+            "pressure_mean": 0.00488270865753293,
+            "velocity_mean": 4.0211201849160716e-05
+          },
+          "K16": {
+            "joint_mean": 0.017765533179044724,
+            "joint_worst": 0.13182173669338226,
+            "pressure_mean": 0.01758514903485775,
+            "velocity_mean": 0.00018038522102870047
+          },
+          "K4": {
+            "joint_mean": 0.005647660698741674,
+            "joint_worst": 0.008584069088101387,
+            "pressure_mean": 0.005578949116170406,
+            "velocity_mean": 6.871102232253179e-05
+          },
+          "K56": {
+            "joint_mean": 0.030450010672211647,
+            "joint_worst": 0.12973155081272125,
+            "pressure_mean": 0.030020879581570625,
+            "velocity_mean": 0.0004291317018214613
+          },
+          "K8": {
+            "joint_mean": 0.01577826589345932,
+            "joint_worst": 0.12922056019306183,
+            "pressure_mean": 0.01567200757563114,
+            "velocity_mean": 0.00010625951836118475
+          }
+        },
+        "joint_all_mean": 0.015508461743593216,
+        "joint_all_worst": 0.14502297341823578,
+        "per_Re": {
+          "42.359071": {
+            "mean": 0.017019152641296387,
+            "worst": 0.12973155081272125
+          },
+          "43.5": {
+            "mean": 0.021971384063363075,
+            "worst": 0.14502297341823578
+          },
+          "43.9": {
+            "mean": 0.007534853182733059,
+            "worst": 0.03278736770153046
+          }
+        },
+        "top2_usage": 1.0
+      },
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.004922919906675816,
+          "joint_worst": 0.00763330515474081,
+          "pressure_mean": 0.00488270865753293,
+          "velocity_mean": 4.0211201849160716e-05
+        },
+        "K16": {
+          "joint_mean": 0.017765533179044724,
+          "joint_worst": 0.13182173669338226,
+          "pressure_mean": 0.01758514903485775,
+          "velocity_mean": 0.00018038522102870047
+        },
+        "K4": {
+          "joint_mean": 0.005647660698741674,
+          "joint_worst": 0.008584069088101387,
+          "pressure_mean": 0.005578949116170406,
+          "velocity_mean": 6.871102232253179e-05
+        },
+        "K56": {
+          "joint_mean": 0.030450010672211647,
+          "joint_worst": 0.12973155081272125,
+          "pressure_mean": 0.030020879581570625,
+          "velocity_mean": 0.0004291317018214613
+        },
+        "K8": {
+          "joint_mean": 0.01577826589345932,
+          "joint_worst": 0.12922056019306183,
+          "pressure_mean": 0.01567200757563114,
+          "velocity_mean": 0.00010625951836118475
+        }
+      },
+      "joint_all_mean": 0.015508461743593216,
+      "joint_all_worst": 0.14502297341823578,
+      "per_Re": {
+        "42.359071": {
+          "mean": 0.017019152641296387,
+          "worst": 0.12973155081272125
+        },
+        "43.5": {
+          "mean": 0.021971384063363075,
+          "worst": 0.14502297341823578
+        },
+        "43.9": {
+          "mean": 0.007534853182733059,
+          "worst": 0.03278736770153046
+        }
+      },
+      "relative_oracle_gap": 0.0044055841863155365,
+      "risk": {
+        "ranking_accuracy": 0.6,
+        "risk_mse": 0.00035030863364227116
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.0001897734874833692,
+        "worst": 0.00019729490358796003
+      },
+      "top2_usage": 1.0,
+      "weights": {
+        "alpha_H": {
+          "max": 1.0,
+          "mean": 0.5753481984138489,
+          "min": 1.3709068298339844e-05
+        },
+        "alpha_S": {
+          "max": 0.9999862909317017,
+          "mean": 0.4246518015861511,
+          "min": 8.872168000273462e-10
+        },
+        "per_Re": {
+          "42.359071": {
+            "alpha_H_mean": 0.0012506127823144197,
+            "alpha_S_max": 0.9999862909317017,
+            "alpha_S_mean": 0.9987494349479675,
+            "alpha_S_min": 0.9959233999252319
+          },
+          "43.5": {
+            "alpha_H_mean": 0.9138921499252319,
+            "alpha_S_max": 0.4118993282318115,
+            "alpha_S_mean": 0.08610780537128448,
+            "alpha_S_min": 0.0004590229655150324
+          },
+          "43.9": {
+            "alpha_H_mean": 0.8109018206596375,
+            "alpha_S_max": 0.9454910159111023,
+            "alpha_S_mean": 0.18909822404384613,
+            "alpha_S_min": 8.872168000273462e-10
+          }
+        }
+      }
+    },
+    "RiskPredictionRouter": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "gate_only_ablation": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "horizons": {
+          "K1": {
+            "joint_mean": 0.004922919906675816,
+            "joint_worst": 0.00763330515474081,
+            "pressure_mean": 0.00488270865753293,
+            "velocity_mean": 4.0211201849160716e-05
+          },
+          "K16": {
+            "joint_mean": 0.017765533179044724,
+            "joint_worst": 0.13182173669338226,
+            "pressure_mean": 0.01758514903485775,
+            "velocity_mean": 0.00018038522102870047
+          },
+          "K4": {
+            "joint_mean": 0.005647660698741674,
+            "joint_worst": 0.008584069088101387,
+            "pressure_mean": 0.005578949116170406,
+            "velocity_mean": 6.871102232253179e-05
+          },
+          "K56": {
+            "joint_mean": 0.030450010672211647,
+            "joint_worst": 0.12973155081272125,
+            "pressure_mean": 0.030020879581570625,
+            "velocity_mean": 0.0004291317018214613
+          },
+          "K8": {
+            "joint_mean": 0.01577826589345932,
+            "joint_worst": 0.12922056019306183,
+            "pressure_mean": 0.01567200757563114,
+            "velocity_mean": 0.00010625951836118475
+          }
+        },
+        "joint_all_mean": 0.015508461743593216,
+        "joint_all_worst": 0.14502297341823578,
+        "per_Re": {
+          "42.359071": {
+            "mean": 0.017019152641296387,
+            "worst": 0.12973155081272125
+          },
+          "43.5": {
+            "mean": 0.021971384063363075,
+            "worst": 0.14502297341823578
+          },
+          "43.9": {
+            "mean": 0.007534853182733059,
+            "worst": 0.03278736770153046
+          }
+        },
+        "top2_usage": 1.0
+      },
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.004922919906675816,
+          "joint_worst": 0.00763330515474081,
+          "pressure_mean": 0.00488270865753293,
+          "velocity_mean": 4.0211201849160716e-05
+        },
+        "K16": {
+          "joint_mean": 0.017765533179044724,
+          "joint_worst": 0.13182173669338226,
+          "pressure_mean": 0.01758514903485775,
+          "velocity_mean": 0.00018038522102870047
+        },
+        "K4": {
+          "joint_mean": 0.005647660698741674,
+          "joint_worst": 0.008584069088101387,
+          "pressure_mean": 0.005578949116170406,
+          "velocity_mean": 6.871102232253179e-05
+        },
+        "K56": {
+          "joint_mean": 0.030450010672211647,
+          "joint_worst": 0.12973155081272125,
+          "pressure_mean": 0.030020879581570625,
+          "velocity_mean": 0.0004291317018214613
+        },
+        "K8": {
+          "joint_mean": 0.01577826589345932,
+          "joint_worst": 0.12922056019306183,
+          "pressure_mean": 0.01567200757563114,
+          "velocity_mean": 0.00010625951836118475
+        }
+      },
+      "joint_all_mean": 0.015508461743593216,
+      "joint_all_worst": 0.14502297341823578,
+      "per_Re": {
+        "42.359071": {
+          "mean": 0.017019152641296387,
+          "worst": 0.12973155081272125
+        },
+        "43.5": {
+          "mean": 0.021971384063363075,
+          "worst": 0.14502297341823578
+        },
+        "43.9": {
+          "mean": 0.007534853182733059,
+          "worst": 0.03278736770153046
+        }
+      },
+      "relative_oracle_gap": 0.0044055841863155365,
+      "risk": {
+        "ranking_accuracy": 0.6,
+        "risk_mse": 0.0003502627951093018
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.0001897734874833692,
+        "worst": 0.00019729490358796003
+      },
+      "top2_usage": 1.0,
+      "weights": {
+        "alpha_H": {
+          "max": 1.0,
+          "mean": 0.5753481984138489,
+          "min": 1.3709068298339844e-05
+        },
+        "alpha_S": {
+          "max": 0.9999862909317017,
+          "mean": 0.4246518015861511,
+          "min": 8.872168000273462e-10
+        },
+        "per_Re": {
+          "42.359071": {
+            "alpha_H_mean": 0.0012506127823144197,
+            "alpha_S_max": 0.9999862909317017,
+            "alpha_S_mean": 0.9987494349479675,
+            "alpha_S_min": 0.9959233999252319
+          },
+          "43.5": {
+            "alpha_H_mean": 0.9138921499252319,
+            "alpha_S_max": 0.4118993282318115,
+            "alpha_S_mean": 0.08610780537128448,
+            "alpha_S_min": 0.0004590229655150324
+          },
+          "43.9": {
+            "alpha_H_mean": 0.8109018206596375,
+            "alpha_S_max": 0.9454910159111023,
+            "alpha_S_mean": 0.18909822404384613,
+            "alpha_S_min": 8.872168000273462e-10
+          }
+        }
+      }
+    },
+    "T2-C_LearnedConvexCorrection_FieldBlend": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "gate_only_ablation": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "horizons": {
+          "K1": {
+            "joint_mean": 0.004922919906675816,
+            "joint_worst": 0.00763330515474081,
+            "pressure_mean": 0.00488270865753293,
+            "velocity_mean": 4.0211201849160716e-05
+          },
+          "K16": {
+            "joint_mean": 0.017765533179044724,
+            "joint_worst": 0.13182173669338226,
+            "pressure_mean": 0.01758514903485775,
+            "velocity_mean": 0.00018038522102870047
+          },
+          "K4": {
+            "joint_mean": 0.005647660698741674,
+            "joint_worst": 0.008584069088101387,
+            "pressure_mean": 0.005578949116170406,
+            "velocity_mean": 6.871102232253179e-05
+          },
+          "K56": {
+            "joint_mean": 0.030450010672211647,
+            "joint_worst": 0.12973155081272125,
+            "pressure_mean": 0.030020879581570625,
+            "velocity_mean": 0.0004291317018214613
+          },
+          "K8": {
+            "joint_mean": 0.01577826589345932,
+            "joint_worst": 0.12922056019306183,
+            "pressure_mean": 0.01567200757563114,
+            "velocity_mean": 0.00010625951836118475
+          }
+        },
+        "joint_all_mean": 0.015508461743593216,
+        "joint_all_worst": 0.14502297341823578,
+        "per_Re": {
+          "42.359071": {
+            "mean": 0.017019152641296387,
+            "worst": 0.12973155081272125
+          },
+          "43.5": {
+            "mean": 0.021971384063363075,
+            "worst": 0.14502297341823578
+          },
+          "43.9": {
+            "mean": 0.007534853182733059,
+            "worst": 0.03278736770153046
+          }
+        },
+        "top2_usage": 1.0
+      },
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.004922919906675816,
+          "joint_worst": 0.00763330515474081,
+          "pressure_mean": 0.00488270865753293,
+          "velocity_mean": 4.0211201849160716e-05
+        },
+        "K16": {
+          "joint_mean": 0.017765533179044724,
+          "joint_worst": 0.13182173669338226,
+          "pressure_mean": 0.01758514903485775,
+          "velocity_mean": 0.00018038522102870047
+        },
+        "K4": {
+          "joint_mean": 0.005647660698741674,
+          "joint_worst": 0.008584069088101387,
+          "pressure_mean": 0.005578949116170406,
+          "velocity_mean": 6.871102232253179e-05
+        },
+        "K56": {
+          "joint_mean": 0.030450010672211647,
+          "joint_worst": 0.12973155081272125,
+          "pressure_mean": 0.030020879581570625,
+          "velocity_mean": 0.0004291317018214613
+        },
+        "K8": {
+          "joint_mean": 0.01577826589345932,
+          "joint_worst": 0.12922056019306183,
+          "pressure_mean": 0.01567200757563114,
+          "velocity_mean": 0.00010625951836118475
+        }
+      },
+      "joint_all_mean": 0.015508461743593216,
+      "joint_all_worst": 0.14502297341823578,
+      "per_Re": {
+        "42.359071": {
+          "mean": 0.017019152641296387,
+          "worst": 0.12973155081272125
+        },
+        "43.5": {
+          "mean": 0.021971384063363075,
+          "worst": 0.14502297341823578
+        },
+        "43.9": {
+          "mean": 0.007534853182733059,
+          "worst": 0.03278736770153046
+        }
+      },
+      "relative_oracle_gap": 0.0044055841863155365,
+      "risk": {},
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.0001897734874833692,
+        "worst": 0.00019729490358796003
+      },
+      "top2_usage": 1.0,
+      "weights": {
+        "alpha_H": {
+          "max": 1.0,
+          "mean": 0.5753481984138489,
+          "min": 1.3709068298339844e-05
+        },
+        "alpha_S": {
+          "max": 0.9999862909317017,
+          "mean": 0.4246518015861511,
+          "min": 8.872168000273462e-10
+        },
+        "per_Re": {
+          "42.359071": {
+            "alpha_H_mean": 0.0012506127823144197,
+            "alpha_S_max": 0.9999862909317017,
+            "alpha_S_mean": 0.9987494349479675,
+            "alpha_S_min": 0.9959233999252319
+          },
+          "43.5": {
+            "alpha_H_mean": 0.9138921499252319,
+            "alpha_S_max": 0.4118993282318115,
+            "alpha_S_mean": 0.08610780537128448,
+            "alpha_S_min": 0.0004590229655150324
+          },
+          "43.9": {
+            "alpha_H_mean": 0.8109018206596375,
+            "alpha_S_max": 0.9454910159111023,
+            "alpha_S_mean": 0.18909822404384613,
+            "alpha_S_min": 8.872168000273462e-10
+          }
+        }
+      }
+    }
+  },
+  "split": "heldout",
+  "status": "HELDOUT_EVALUATION_COMPLETE",
+  "test_used_for_selection": false,
+  "training_freeze_marker_sha256": "8688d979fa711b2d39dec79435ece5dcfc95096c2971fb45b09c58e74b3d10dd",
+  "windows": 15
+}

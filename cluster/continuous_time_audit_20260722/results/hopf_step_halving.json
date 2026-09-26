@@ -1,0 +1,97 @@
+{
+  "specialist": "Hopf",
+  "restore": {
+    "strict_load_state_dict": true,
+    "best_step": 7200,
+    "sample_id": 3722
+  },
+  "operator_contract": {
+    "name": "Hopf",
+    "velocity_operator": "continuous_time_derivative",
+    "pressure_operator": "algebraic_next_state_closure",
+    "dt_is_network_input": false,
+    "supports_full_state_rhs": false
+  },
+  "native_integrator": "RK4 for velocity; one algebraic pressure closure after the velocity macro-step",
+  "history_differences_divided_by_dt": false,
+  "step_halving": [
+    {
+      "dt": 4.061326020000024,
+      "velocity_state_relative_l2": 1.950277692230884e-06,
+      "pressure_state_relative_l2": 0.0031361847650259733,
+      "velocity_field_relative_l2": 2.0296269441813677e-07,
+      "pressure_field_relative_l2": 0.0006073125271470746,
+      "velocity_rhs_norm": 1.7669875887804665e-05,
+      "pressure_closure_norm": 0.0014799227938055992
+    },
+    {
+      "dt": 4.113956599999938,
+      "velocity_state_relative_l2": 1.953028913703747e-06,
+      "pressure_state_relative_l2": 0.0031346087343990803,
+      "velocity_field_relative_l2": 2.0324898212006637e-07,
+      "pressure_field_relative_l2": 0.000607007433847147,
+      "velocity_rhs_norm": 1.7669875887804665e-05,
+      "pressure_closure_norm": 0.0014799227938055992
+    },
+    {
+      "dt": 16.371099999999842,
+      "velocity_state_relative_l2": 8.670094757690094e-06,
+      "pressure_state_relative_l2": 0.002763323485851288,
+      "velocity_field_relative_l2": 9.022884942463625e-07,
+      "pressure_field_relative_l2": 0.0005351119615247804,
+      "velocity_rhs_norm": 1.7669875887804665e-05,
+      "pressure_closure_norm": 0.0014799227938055992
+    },
+    {
+      "dt": 19.458673190000354,
+      "velocity_state_relative_l2": 1.2586014236148912e-05,
+      "pressure_state_relative_l2": 0.002693147398531437,
+      "velocity_field_relative_l2": 1.3098157815446489e-06,
+      "pressure_field_relative_l2": 0.0005215235060883081,
+      "velocity_rhs_norm": 1.7669875887804665e-05,
+      "pressure_closure_norm": 0.0014799227938055992
+    },
+    {
+      "dt": 21.87310588000014,
+      "velocity_state_relative_l2": 1.8285360056324862e-05,
+      "pressure_state_relative_l2": 0.002645087195560336,
+      "velocity_field_relative_l2": 1.9029431667689413e-06,
+      "pressure_field_relative_l2": 0.0005122177011140463,
+      "velocity_rhs_norm": 1.7669875887804665e-05,
+      "pressure_closure_norm": 0.0014799227938055992
+    }
+  ],
+  "observed_orders": {
+    "velocity_state_relative_l2": [
+      0.10948423218829323,
+      1.0791856918703973,
+      2.157174545415767,
+      3.193388581384221
+    ],
+    "pressure_state_relative_l2": [
+      -0.03903918852608456,
+      -0.09128035009620347,
+      -0.14888453037548346,
+      -0.1539479628283563
+    ],
+    "velocity_field_relative_l2": [
+      0.10947349428458875,
+      1.0791888077049145,
+      2.1571802064704846,
+      3.193394512256827
+    ],
+    "pressure_field_relative_l2": [
+      -0.03902637063115081,
+      -0.09127658154855454,
+      -0.1488734228524246,
+      -0.15393171806369577
+    ]
+  },
+  "phase_contract": {
+    "harmonics": 0,
+    "source": "phase-free",
+    "dt_is_network_input": false
+  },
+  "full_state_continuous_rhs": false,
+  "decision": "FAIL_FULL_STATE_RHS_CONTRACT"
+}

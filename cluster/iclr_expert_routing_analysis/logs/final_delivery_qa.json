@@ -1,0 +1,48 @@
+{
+  "all_analysis_scripts_parse": true,
+  "steady": {
+    "saved_predictions_all_finite": true,
+    "stream_recomputed_primary_statistics_match_csv": true,
+    "macro_rows_per_channel": {
+      "u": 1344,
+      "p": 1344
+    },
+    "checkpoint_sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d"
+  },
+  "hopf": {
+    "saved_predictions_all_finite": true,
+    "stream_recomputed_primary_statistics_match_csv": true,
+    "macro_rows_per_channel": {
+      "u": 840,
+      "p": 840
+    },
+    "checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235"
+  },
+  "periodic": {
+    "saved_predictions_all_finite": true,
+    "stream_recomputed_primary_statistics_match_csv": true,
+    "macro_rows_per_channel": {
+      "u": 2496,
+      "p": 2496
+    },
+    "checkpoint_sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5"
+  },
+  "pdf_structure": [
+    {
+      "file": "circular_internal_expert_routing.pdf",
+      "pages": 1,
+      "text_characters": 1492
+    },
+    {
+      "file": "group_usage_and_fixed_shared_mass.pdf",
+      "pages": 1,
+      "text_characters": 528
+    },
+    {
+      "file": "periodic_rollout_step_routing.pdf",
+      "pages": 1,
+      "text_characters": 614
+    }
+  ],
+  "pdf_visual_review": "Three PDFs rendered with Poppler and inspected; main pressure annotations moved to avoid bar overlap."
+}

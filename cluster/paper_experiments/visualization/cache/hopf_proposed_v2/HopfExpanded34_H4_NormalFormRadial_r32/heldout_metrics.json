@@ -1,0 +1,380 @@
+{
+  "experiment_name": "HopfExpanded34_H4_NormalFormRadial_r32",
+  "variant": "h4",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/cache/hopf_proposed_v2/HopfExpanded34_H4_NormalFormRadial_r32/final.pt",
+  "checkpoint_optimizer_step": 7200,
+  "checkpoint_validation_score": 0.8787674976061681,
+  "heldout_Re": [
+    47.081355,
+    49.022357,
+    51.78645
+  ],
+  "horizons": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    24,
+    48,
+    56
+  ],
+  "window_stride": 8,
+  "by_re": {
+    "47.081355": {
+      "horizons": {
+        "1": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 6.4177630173279125e-06,
+          "pressure_area_weighted_physical_relative_l2": 0.0007482104857611717,
+          "velocity_modal_relative_l2": 8.367289410671219e-05,
+          "pressure_modal_relative_l2": 0.004555064253509045,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 1.3219864388154654e-06,
+          "pressure_energy_drift": 0.0008996964998850791
+        },
+        "2": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 8.03979858083392e-06,
+          "pressure_area_weighted_physical_relative_l2": 0.0006271727781151852,
+          "velocity_modal_relative_l2": 0.00010482461948413402,
+          "pressure_modal_relative_l2": 0.0038185114972293377,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 2.064056843118837e-06,
+          "pressure_energy_drift": 0.0006995516113576453
+        },
+        "4": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 9.781556744428607e-06,
+          "pressure_area_weighted_physical_relative_l2": 0.0005727986567202381,
+          "velocity_modal_relative_l2": 0.0001275426329812035,
+          "pressure_modal_relative_l2": 0.003487956477329135,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 2.481100739193339e-06,
+          "pressure_energy_drift": 0.0005205763196014936
+        },
+        "8": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 1.0874645065204963e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.00048223414352364274,
+          "velocity_modal_relative_l2": 0.00014180995640344918,
+          "pressure_modal_relative_l2": 0.002937106415629387,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 1.3931942287642699e-06,
+          "pressure_energy_drift": 0.0003806093597266843
+        },
+        "16": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 1.380959485562953e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.000419392610373222,
+          "velocity_modal_relative_l2": 0.00018010521307587624,
+          "pressure_modal_relative_l2": 0.0025550092104822397,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 3.2863714061250956e-06,
+          "pressure_energy_drift": 0.0002430317612490793
+        },
+        "24": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 1.6878220687602866e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.00037330425258924756,
+          "velocity_modal_relative_l2": 0.000220141708268784,
+          "pressure_modal_relative_l2": 0.002274543745443225,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 8.541633364497788e-06,
+          "pressure_energy_drift": 0.00021564085035497078
+        },
+        "48": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 2.435516601094894e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.0002886421631134247,
+          "velocity_modal_relative_l2": 0.0003176913596689701,
+          "pressure_modal_relative_l2": 0.0017590054776519537,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 2.30462215239545e-05,
+          "pressure_energy_drift": 0.00019952018309673085
+        },
+        "56": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 2.6361496886262134e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.00027242100568542453,
+          "velocity_modal_relative_l2": 0.00034386676270514727,
+          "pressure_modal_relative_l2": 0.0016601982060819864,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 2.7317448136285238e-05,
+          "pressure_energy_drift": 0.0001989689292573649
+        }
+      },
+      "hopf_diagnostics_k48": {
+        "rms_amplitude_error": 0.006163469470852365,
+        "peak_to_peak_amplitude_error": 0.13054266345265947,
+        "growth_sign_accuracy": 0.7661431064572426,
+        "true_local_log_growth": 0.00012816655576241065,
+        "predicted_local_log_growth": -0.00208360906169892,
+        "local_growth_mae": 0.037394039064488294,
+        "false_growth": false,
+        "frequency_true": 3.131125666795529e-06,
+        "frequency_pred": 1.9060437424606634e-06,
+        "frequency_relative_error": 0.39125913918667626,
+        "phase_rms_rad": 0.10431914567106476,
+        "terminal_phase_drift_cycles": 0.006161784238669593,
+        "normalized_orbit_distance": 0.06052918912431777,
+        "one_step_rhs_relative_l2": 0.07457055896520615,
+        "one_step_pressure_closure_relative_l2": 0.004555064253509045
+      },
+      "hopf_attractor_preserved": false
+    },
+    "49.022357": {
+      "horizons": {
+        "1": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 6.7378300326133245e-06,
+          "pressure_area_weighted_physical_relative_l2": 0.0008617987333934281,
+          "velocity_modal_relative_l2": 0.00019815877021756023,
+          "pressure_modal_relative_l2": 0.011482232250273228,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 1.6019322853948185e-06,
+          "pressure_energy_drift": 0.000540679508261813
+        },
+        "2": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 7.4258162772846655e-06,
+          "pressure_area_weighted_physical_relative_l2": 0.0012773817097950972,
+          "velocity_modal_relative_l2": 0.0002184281765948981,
+          "pressure_modal_relative_l2": 0.017024951055645943,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 1.7221352439253981e-06,
+          "pressure_energy_drift": 4.7359589376673e-05
+        },
+        "4": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 1.0453280396087584e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.0016679206188193675,
+          "velocity_modal_relative_l2": 0.00030756412888877094,
+          "pressure_modal_relative_l2": 0.022242357954382896,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 1.1733411773730247e-07,
+          "pressure_energy_drift": 0.0001943950990816901
+        },
+        "8": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 2.1435805018191204e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.0034548730394675046,
+          "velocity_modal_relative_l2": 0.0006309439777396619,
+          "pressure_modal_relative_l2": 0.04610765725374222,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 5.993677213183095e-06,
+          "pressure_energy_drift": 0.0009830181170799143
+        },
+        "16": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 7.777905580755422e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.004602756436051046,
+          "velocity_modal_relative_l2": 0.002290313597768545,
+          "pressure_modal_relative_l2": 0.061476197093725204,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 2.9586998855184624e-05,
+          "pressure_energy_drift": 0.001697142472676933
+        },
+        "24": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 0.00011716150500951423,
+          "pressure_area_weighted_physical_relative_l2": 0.003980320350143429,
+          "velocity_modal_relative_l2": 0.003450685413554311,
+          "pressure_modal_relative_l2": 0.053182076662778854,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 5.1142674673293e-05,
+          "pressure_energy_drift": 0.001452070311311017
+        },
+        "48": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 0.00017128584028422314,
+          "pressure_area_weighted_physical_relative_l2": 0.0028904152217519258,
+          "velocity_modal_relative_l2": 0.005045957863330841,
+          "pressure_modal_relative_l2": 0.038634441792964935,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 8.621083926528755e-05,
+          "pressure_energy_drift": 0.0008551746262805143
+        },
+        "56": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 0.00017875896756855333,
+          "pressure_area_weighted_physical_relative_l2": 0.0026815437104237513,
+          "velocity_modal_relative_l2": 0.005266303662210703,
+          "pressure_modal_relative_l2": 0.03584453836083412,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 9.210220525641005e-05,
+          "pressure_energy_drift": 0.0007500867162020937
+        }
+      },
+      "hopf_diagnostics_k48": {
+        "rms_amplitude_error": 0.4042410140541076,
+        "peak_to_peak_amplitude_error": 3.7810903819947925,
+        "growth_sign_accuracy": 0.6720720720720721,
+        "true_local_log_growth": -0.0028826360252461407,
+        "predicted_local_log_growth": 0.0022994159839192646,
+        "local_growth_mae": 0.046830702927731165,
+        "false_growth": false,
+        "frequency_true": 0.0053801703613056305,
+        "frequency_pred": 0.00531761005882488,
+        "frequency_relative_error": 0.011627940802592072,
+        "phase_rms_rad": 1.627881680454321,
+        "terminal_phase_drift_cycles": -0.012233488672478336,
+        "normalized_orbit_distance": 0.25455692317054923,
+        "one_step_rhs_relative_l2": 0.0836496576666832,
+        "one_step_pressure_closure_relative_l2": 0.011482232250273228
+      },
+      "hopf_attractor_preserved": false
+    },
+    "51.786450": {
+      "horizons": {
+        "1": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 2.8616151686950903e-06,
+          "pressure_area_weighted_physical_relative_l2": 0.00041705469421901917,
+          "velocity_modal_relative_l2": 0.0001328959915554151,
+          "pressure_modal_relative_l2": 0.011218569241464138,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 6.388346324687815e-07,
+          "pressure_energy_drift": 0.0001982488035740143
+        },
+        "2": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 3.915139675737523e-06,
+          "pressure_area_weighted_physical_relative_l2": 0.00035714046344638564,
+          "velocity_modal_relative_l2": 0.0001818192977225408,
+          "pressure_modal_relative_l2": 0.00960646104067564,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 2.5187160423353265e-06,
+          "pressure_energy_drift": 2.6053466841845237e-05
+        },
+        "4": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 6.53270717417368e-06,
+          "pressure_area_weighted_physical_relative_l2": 0.0003610239687181606,
+          "velocity_modal_relative_l2": 0.0003033690736629069,
+          "pressure_modal_relative_l2": 0.009709990583360195,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 3.5373556454648726e-06,
+          "pressure_energy_drift": 0.000268748057144195
+        },
+        "8": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 1.2293569172517025e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.0003465604315144768,
+          "velocity_modal_relative_l2": 0.0005708622047677636,
+          "pressure_modal_relative_l2": 0.009319459088146687,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 7.1580032946492095e-06,
+          "pressure_energy_drift": 0.00042064147061250385
+        },
+        "16": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 2.0399490200624645e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.00033191683884790024,
+          "velocity_modal_relative_l2": 0.0009471916127949953,
+          "pressure_modal_relative_l2": 0.008923614397644997,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 1.557653556989322e-05,
+          "pressure_energy_drift": 0.0004820497711336617
+        },
+        "24": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 2.799551608463604e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.0003360288860348716,
+          "velocity_modal_relative_l2": 0.0012998244492337108,
+          "pressure_modal_relative_l2": 0.009032816626131535,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 2.394636061231237e-05,
+          "pressure_energy_drift": 0.0005250736684014933
+        },
+        "48": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 5.003936273419205e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.00039093170185660524,
+          "velocity_modal_relative_l2": 0.0023231368977576494,
+          "pressure_modal_relative_l2": 0.01050632819533348,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 4.889232286820262e-05,
+          "pressure_energy_drift": 0.0006488693543831128
+        },
+        "56": {
+          "num_windows": 13,
+          "velocity_area_weighted_physical_relative_l2": 5.765360305560206e-05,
+          "pressure_area_weighted_physical_relative_l2": 0.00040823706497068697,
+          "velocity_modal_relative_l2": 0.0026766040828078985,
+          "pressure_modal_relative_l2": 0.010970964096486568,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "first_divergence_step": null,
+          "velocity_energy_drift": 5.7264373698137253e-05,
+          "pressure_energy_drift": 0.0006752712439844521
+        }
+      },
+      "hopf_diagnostics_k48": {
+        "rms_amplitude_error": 0.2097141200398421,
+        "peak_to_peak_amplitude_error": 0.2734742568171511,
+        "growth_sign_accuracy": 0.9440559440559441,
+        "true_local_log_growth": 0.009619877160543135,
+        "predicted_local_log_growth": 0.002012595880983864,
+        "local_growth_mae": 0.013619907589679967,
+        "false_growth": false,
+        "frequency_true": 0.0058503769187140415,
+        "frequency_pred": 0.00577671882816084,
+        "frequency_relative_error": 0.012590315387200969,
+        "phase_rms_rad": 0.33783392383304567,
+        "terminal_phase_drift_cycles": -0.07808678872319687,
+        "normalized_orbit_distance": 0.28010757149920623,
+        "one_step_rhs_relative_l2": 0.3571096360683441,
+        "one_step_pressure_closure_relative_l2": 0.011218569241464138
+      },
+      "hopf_attractor_preserved": false
+    }
+  },
+  "heldout_preserved_count": 0
+}

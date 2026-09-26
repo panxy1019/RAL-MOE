@@ -1,0 +1,57 @@
+{
+  "checkpoint_schema": {
+    "checkpoint/frozen_s2b_validation.pt": {
+      "model_tensor_count": 1414,
+      "step": 8200
+    },
+    "checkpoint/frozen_s3b_contraction.pt": {
+      "model_tensor_count": 1414,
+      "step": 600
+    },
+    "checkpoint/frozen_s4_validation_step_1200.pt": {
+      "model_tensor_count": 1414,
+      "step": 1200
+    }
+  },
+  "files": {
+    "checkpoint/frozen_s2b_validation.pt": "3ec8bdedbe2f953a181d71ae819980cbbdfd65c8fee33aac9237a16d780a682d",
+    "checkpoint/frozen_s3b_contraction.pt": "b85f01bfcd8c209ee4ff6fe6f2a61dfa12acbcecd83da09b153fc0f15b19c23b",
+    "checkpoint/frozen_s4_validation_step_1200.pt": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+    "code/audit_paired_gain_metrics.py": "fea1d9ad5de1158828fa1a5d1a633cc6e8be88aff6cb7aa9b18ee5f44004523d",
+    "code/evaluate_s3_heldout.py": "11e8f1aca2858c5185510601603a9a999ff2a620c4ad52be7764ce4936cd11b6",
+    "code/finalize_s2b_3090.py": "05ab315e359817c0a03aa66c3f1b79e573e4efcb21fa7a24a2dccd6cf1cec2ce",
+    "code/finalize_s4_one_time.py": "adfc220093d7beab7d99ee3689b5cd30d93a8197320ef0af168daebf16150961",
+    "code/reproduce_s4_one_epoch.py": "65424fec62ee83d6ec42d58288b22e9dc6309da8971eabfda7f6d1943d1dbcfa",
+    "code/train_s2b_3090.py": "b7f1ffaf8a341501a504f08663035f4e8863a8f28eca1946b57bb871961a08e2",
+    "code/train_s3.py": "ee67fa264386d5a5e6d48c58e5ae52504be441850c10f902afcbbef10d2bb5d2",
+    "code/train_s4_steady.py": "98b92e5d32119d7b0ae43d8fb5afa84589093f46a644747ab6a6b59d242da4c8",
+    "code/train_v16_4_v2_r32_compat.py": "11099078fe195c1f571acc2ea35e30338ae46c0cc8c9911e9d9b1a5ce65ddb2c",
+    "code/training_s2b_portable.json": "c5f44462e1a68ad6470461479615a72d21a9c025b1d21fef784b49c903f67455",
+    "data/perturbation_bank_train_validation.npz": "69fa522aa4c06f26cad26718dd99b5dcce0b7dd60c30b3efff8a31a154d891c8",
+    "evaluation_inputs/s3_heldout_metrics.json": "93805a2466b1e90efd43a9f92b429f27bc5ede2d7645ca6f8f016caf85f8c55d",
+    "evaluation_inputs/s3_paired_gain_metric_audit_raw.json": "31657680e8dbacf734db740ce4650988067f82363f867cc3d40a1b8d701c5cb7",
+    "source_artifacts/steady/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv": "b1584b874576161757e827d090702791c0ce4e14c8dc0d02df5ec15f09ad98d5",
+    "source_artifacts/steady/normalization_steady.npz": "87a5a2326d70adb3e57901168f0ac1b555f23c742ae64a09132031452b51f6bb",
+    "source_artifacts/steady/pressure_pod_steady.npz": "5056f7470f2439bccc2cfb68448e9a4dd61d89145aa7108ab8672ba6dd2be997",
+    "source_artifacts/steady/pressure_poisson_surrogate_steady.npz": "8e6c5b689b96acf8f651fc64d8d0f82526e6a5bf5098722e5e1ce51469cc2b1c",
+    "source_artifacts/steady/velocity_pod_steady.npz": "abaab63d11e172a5b40e86b48715f247311eaf324a06094757f2f98870f40948",
+    "source_artifacts/steady/velocity_rom_steady.npz": "780eb5be79311290a2f36837651ae2a97a107c48e1df4cf683b2d344805b325c"
+  },
+  "gpu_used": false,
+  "heldout_used_for_training": false,
+  "pressure_gauge": "subtract_area_mean_per_snapshot",
+  "root": "/root/panxy/particalMOE/steady_specialist_v1",
+  "rp": 32,
+  "ru": 32,
+  "runtime": {
+    "numpy": "2.4.4",
+    "python": "3.11.15 (main, Jun 11 2026, 15:20:16) [GCC 14.3.0]",
+    "torch": "2.11.0+cu126"
+  },
+  "split_counts": {
+    "heldout": 256,
+    "train": 894,
+    "validation": 127
+  },
+  "status": "PASS"
+}

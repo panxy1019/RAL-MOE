@@ -1,0 +1,78 @@
+% Requires booktabs and graphicx. Supplementary material, not a replacement for
+% original tables with different windows, references, or aggregation rules.
+\begin{table}[t]
+\centering\small
+\caption{Constant-weight fusion controls on centered-square held-out overlap windows. Values are K24 terminal mean $E_u+E_p$ in percent. The train-fitted scalar minimizes the full-horizon squared field loss; the validation-selected scalar is a separate sensitivity control. Oracle weights use future reference trajectories and are diagnostic only.}
+\label{tab:constant_alpha_supplement}
+\begin{tabular}{lrr}
+\toprule Method & S--H & H--P\\\midrule
+Equal blend & 3.0321 & 1.6146\\
+E2 probability blend & 2.1847 & 1.6618\\
+Constant alpha (train fit) & 2.5590 & 1.1549\\
+Constant alpha (validation sensitivity) & 1.7340 & 1.1607\\
+T2-C (original checkpoint) & 1.1958 & 0.8465\\
+Convex oracle (diagnostic) & 1.1842 & 0.8384\\
+\bottomrule\end{tabular}
+\end{table}
+
+On the evaluated centered-square overlap windows, T2-C outperforms both
+constant-weight controls at K24. This supports adaptive physical-space fusion
+beyond the tested fixed mixing ratios. Attribution specifically to history
+conditioning also requires the separate parameter-only input ablation.
+The convex oracle uses future reference trajectories and is not deployable;
+because it optimizes a full-horizon objective, it is not a strict lower bound
+for every individual rollout step.
+
+\begin{table}[t]
+\centering\small
+\caption{Circular Periodic supplement: K48 terminal errors on 12 aligned held-out windows. The common reference is the local POD-reconstructed field, not the full-order snapshot. Pressure is centered using area weights. Existing native auxiliary time/phase features are retained. Dense is a single-seed, total-parameter-matched control.}
+\label{tab:dense_aligned_supplement}
+\begin{tabular}{lrrr}
+\toprule Method & $E_u$ (\%) & $E_p$ (\%) & $E_u+E_p$ (\%)\\\midrule
+POD-Galerkin & 9.1217 & 36.2473 & 45.3691\\
+Dense correction & 5.4590 & 20.1153 & 25.5743\\
+Global MoE & 1.6072 & 5.8646 & 7.4719\\
+RAL Periodic specialist & 1.9352 & 7.4275 & 9.3627\\
+\bottomrule\end{tabular}
+\end{table}
+
+The structured local specialist improves K48 error over the tested
+total-parameter-matched dense correction. However, Global MoE yields lower
+terminal errors on these particular periodic windows. Thus, the results do
+not establish uniform superiority of local specialists across regimes or
+horizons. The global/local comparison also changes representation, mean-field
+handling, and native auxiliary features, and should not be interpreted as a
+single-factor causal test of locality.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\linewidth]{aligned_rollout_figures/four_method_error_growth.pdf}
+\caption{Stepwise errors on the same 12 Circular Periodic held-out windows, with common POD-reconstructed reference and aligned pressure gauge. Logarithmic error axes are used. Step count is not a common physical duration across Reynolds numbers; per-Re native-time curves are supplied separately.}
+\label{fig:aligned_error_growth_supplement}
+\end{figure}
+
+\begin{table}[t]
+\centering\small
+\caption{Native-implementation cost on one host (Xeon Platinum 8358P and RTX 4090): single-window K48 rollout, three warm-ups and ten synchronized repeats. The same first aligned window is used. Values exclude model/data loading, field decoding, and error computation. Neural models use GPU corrections; POD-Galerkin uses its native CPU NumPy path. GPU allocation is not total host memory. These are not full Top-2 pipeline timings.}
+\label{tab:native_runtime_supplement}
+\begin{tabular}{lrr}
+\toprule Method & Median time (s) & Peak GPU allocated (MiB)\\\midrule
+POD-Galerkin (CPU) & 0.3745 & 0.00\\
+Dense correction & 0.5761 & 194.80\\
+RAL Periodic specialist & 2.1264 & 194.78\\
+Global MoE & 4.3295 & 194.78\\
+\bottomrule\end{tabular}
+\end{table}
+
+Lower active parameter count does not imply lower latency: the dense control
+is faster than the structured specialist in this native implementation,
+despite evaluating more parameters. No general acceleration claim follows.
+Our cross-regime claims concern evaluated regime transitions within
+parameterized incompressible flows, not unseen physics or arbitrary regime
+switching.
+
+% Interpretation guide for existing ablations:
+% DataOnly vs Full: physical backbone plus any native advancement changes.
+% Vanilla-FNN-MoE vs Full: structured expert functions with routing retained.
+% Global vs local: combined representation/model-decomposition effects.
+% These controls do not individually prove that MoE itself causes all gains.

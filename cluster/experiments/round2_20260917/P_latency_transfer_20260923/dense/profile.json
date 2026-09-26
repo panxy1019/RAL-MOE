@@ -1,0 +1,164 @@
+{
+  "profiler_wall_seconds": 0.805790982209146,
+  "warning": "Profiler overhead; not a speed benchmark. Nested inclusive ranges and CPU/GPU time must not be summed.",
+  "calls": {
+    "native_rollout": 1,
+    "integration_step": 48,
+    "model_outputs": 192,
+    "galerkin_rhs": 192,
+    "features": 192,
+    "encoder": 192,
+    "module:encoder": 192,
+    "dense_correction": 192,
+    "module:dense_correction": 192,
+    "closure_confidence_head": 192,
+    "module:closure_confidence_head": 192,
+    "pressure_surrogate": 48
+  },
+  "transfer": {
+    "host_to_device_calls": 192,
+    "host_to_device_bytes": 384768,
+    "device_to_host_calls": 768,
+    "device_to_host_bytes": 98304
+  },
+  "events": [
+    {
+      "key": "audit.native_rollout",
+      "count": 1,
+      "self_cpu_us": 1996.885999999824,
+      "cpu_total_us": 733757.284,
+      "self_device_us": 0.0,
+      "device_total_us": 15893.316999999828
+    },
+    {
+      "key": "audit.integration_step",
+      "count": 48,
+      "self_cpu_us": 5980.966000000182,
+      "cpu_total_us": 731760.3980000002,
+      "self_device_us": 0.0,
+      "device_total_us": 15893.316999999828
+    },
+    {
+      "key": "audit.model_outputs",
+      "count": 192,
+      "self_cpu_us": 81178.80799999741,
+      "cpu_total_us": 631700.5170000001,
+      "self_device_us": 0.0,
+      "device_total_us": 15893.316999999828
+    },
+    {
+      "key": "audit.galerkin_rhs",
+      "count": 192,
+      "self_cpu_us": 295242.7540000004,
+      "cpu_total_us": 295242.7540000004,
+      "self_device_us": 0,
+      "device_total_us": 0
+    },
+    {
+      "key": "audit.features",
+      "count": 192,
+      "self_cpu_us": 22296.724999999158,
+      "cpu_total_us": 22296.724999999158,
+      "self_device_us": 0,
+      "device_total_us": 0
+    },
+    {
+      "key": "aten::to",
+      "count": 1728,
+      "self_cpu_us": 2032.2929999996063,
+      "cpu_total_us": 27878.248999999174,
+      "self_device_us": 0.0,
+      "device_total_us": 1009.3340000010558
+    },
+    {
+      "key": "aten::_to_copy",
+      "count": 960,
+      "self_cpu_us": 2291.7039999983435,
+      "cpu_total_us": 24714.138999999566,
+      "self_device_us": 0.0,
+      "device_total_us": 1009.3340000010558
+    },
+    {
+      "key": "aten::copy_",
+      "count": 960,
+      "self_cpu_us": 6356.018999999035,
+      "cpu_total_us": 19748.86100000123,
+      "self_device_us": 1009.3340000010558,
+      "device_total_us": 1009.3340000010558
+    },
+    {
+      "key": "audit.model_outputs",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 284174.80000000005,
+      "device_total_us": 284174.80000000005
+    },
+    {
+      "key": "audit.encoder",
+      "count": 192,
+      "self_cpu_us": 22904.495999997547,
+      "cpu_total_us": 70062.84300000008,
+      "self_device_us": 0.0,
+      "device_total_us": 3263.7610000011646
+    },
+    {
+      "key": "audit.encoder",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 54237.40999999983,
+      "device_total_us": 54237.40999999983
+    },
+    {
+      "key": "aten::cat",
+      "count": 384,
+      "self_cpu_us": 3296.28099999973,
+      "cpu_total_us": 5556.187000000169,
+      "self_device_us": 568.221000000156,
+      "device_total_us": 568.221000000156
+    },
+    {
+      "key": "audit.dense_correction",
+      "count": 192,
+      "self_cpu_us": 17852.75199999824,
+      "cpu_total_us": 49257.202999999616,
+      "self_device_us": 0.0,
+      "device_total_us": 6013.205999995974
+    },
+    {
+      "key": "audit.dense_correction",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 37471.89499999959,
+      "device_total_us": 37471.89499999959
+    },
+    {
+      "key": "audit.closure_confidence_head",
+      "count": 192,
+      "self_cpu_us": 7430.034999999492,
+      "cpu_total_us": 20868.538000000073,
+      "self_device_us": 0.0,
+      "device_total_us": 919.6970000010806
+    },
+    {
+      "key": "audit.closure_confidence_head",
+      "count": 192,
+      "self_cpu_us": 0,
+      "cpu_total_us": 0,
+      "self_device_us": 10318.631000000381,
+      "device_total_us": 10318.631000000381
+    },
+    {
+      "key": "audit.pressure_surrogate",
+      "count": 48,
+      "self_cpu_us": 94078.91499999982,
+      "cpu_total_us": 94078.91499999982,
+      "self_device_us": 0,
+      "device_total_us": 0
+    }
+  ],
+  "max_modal_difference_from_uninstrumented": 0.0,
+  "source_sha256": "9a57c91c8751a52926d79dcd23d72503a9edf483351e295f39779f0a4838764f"
+}

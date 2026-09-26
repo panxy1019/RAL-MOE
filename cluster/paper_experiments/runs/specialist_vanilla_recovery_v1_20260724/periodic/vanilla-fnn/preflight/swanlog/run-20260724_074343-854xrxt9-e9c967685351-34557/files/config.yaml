@@ -1,0 +1,248 @@
+attractor_adapter_dim:
+  desc: ''
+  sort: 38
+  value: 64
+attractor_balanced_sampling:
+  desc: ''
+  sort: 36
+  value: false
+attractor_conditioned:
+  desc: ''
+  sort: 37
+  value: false
+batch_size:
+  desc: ''
+  sort: 19
+  value: 256
+closure_mode:
+  desc: ''
+  sort: 2
+  value: adaptive_gate
+compression_ratio_vs_dense_train:
+  desc: ''
+  sort: 59
+  value: 1.0
+curriculum_steps:
+  desc: ''
+  sort: 24
+  value: 4,8,12,16
+epochs:
+  desc: ''
+  sort: 18
+  value: 1
+experiment_name:
+  desc: ''
+  sort: 0
+  value: VanillaFNN_periodic_seed1600
+experiment_tag:
+  desc: ''
+  sort: 1
+  value: Periodic-only V16_1 public-loss physical-zero-residual r32
+expert_hidden:
+  desc: ''
+  sort: 13
+  value: 768
+experts_per_group:
+  desc: ''
+  sort: 15
+  value: 6
+film_base_hidden:
+  desc: ''
+  sort: 5
+  value: 64
+film_base_scale:
+  desc: ''
+  sort: 6
+  value: 0.2
+group_top_k:
+  desc: ''
+  sort: 17
+  value: 1
+hidden_dim:
+  desc: ''
+  sort: 12
+  value: 224
+holdout_Re:
+  desc: ''
+  sort: 57
+  value:
+  - 70.31462860107422
+  - 100.35224914550781
+  - 149.05923461914062
+  - 189.86228942871094
+hopf_focus_re:
+  desc: ''
+  sort: 29
+  value: 51.78645
+hopf_focus_sample_weight:
+  desc: ''
+  sort: 34
+  value: 1.0
+hopf_pair:
+  desc: ''
+  sort: 26
+  value: 0,1
+hopf_re_max:
+  desc: ''
+  sort: 28
+  value: 55.0
+hopf_re_min:
+  desc: ''
+  sort: 27
+  value: 46.0
+hopf_rollout_weight:
+  desc: ''
+  sort: 35
+  value: 1.0
+hopf_sample_weight:
+  desc: ''
+  sort: 33
+  value: 1.0
+kept_train_samples:
+  desc: ''
+  sort: 58
+  value: 8380
+lambda_attractor_ce:
+  desc: ''
+  sort: 39
+  value: 0.0
+lambda_attractor_hopf_onset:
+  desc: ''
+  sort: 44
+  value: 0.0
+lambda_attractor_hopf_overshoot:
+  desc: ''
+  sort: 43
+  value: 0.0
+lambda_attractor_hopf_radius:
+  desc: ''
+  sort: 42
+  value: 0.0
+lambda_hopf_energy:
+  desc: ''
+  sort: 31
+  value: 0.0
+lambda_hopf_log_amp:
+  desc: ''
+  sort: 30
+  value: 0.0
+lambda_hopf_overshoot:
+  desc: ''
+  sort: 32
+  value: 0.0
+lambda_periodic_energy:
+  desc: ''
+  sort: 45
+  value: 0.0
+lambda_periodic_radius:
+  desc: ''
+  sort: 46
+  value: 0.0
+lambda_proto_energy:
+  desc: ''
+  sort: 47
+  value: 0.0
+lambda_proto_radius:
+  desc: ''
+  sort: 48
+  value: 0.0
+lambda_steady_rhs:
+  desc: ''
+  sort: 40
+  value: 0.0
+lambda_steady_state:
+  desc: ''
+  sort: 41
+  value: 0.0
+lr:
+  desc: ''
+  sort: 20
+  value: 0.00055
+num_regime_groups:
+  desc: ''
+  sort: 14
+  value: 3
+num_uniform_test_re:
+  desc: ''
+  sort: 54
+  value: 10
+pressure_base_mode:
+  desc: ''
+  sort: 3
+  value: static
+pressure_input_mode:
+  desc: ''
+  sort: 8
+  value: pressure_only
+pressure_target:
+  desc: ''
+  sort: 7
+  value: closure
+r_p:
+  desc: ''
+  sort: 11
+  value: 32
+r_u:
+  desc: ''
+  sort: 10
+  value: 32
+regime_balanced_sampling:
+  desc: ''
+  sort: 51
+  value: false
+regime_rom_root:
+  desc: ''
+  sort: 4
+  value: /root/moe/ROM_PhysicsGeneralizable/Regime_ROM_Library
+rhs_target:
+  desc: ''
+  sort: 9
+  value: residual
+rollout_steps:
+  desc: ''
+  sort: 22
+  value: 24
+scheduled_sampling_end:
+  desc: ''
+  sort: 25
+  value: 1.0
+test_re_count:
+  desc: ''
+  sort: 56
+  value: 4
+test_re_selection:
+  desc: ''
+  sort: 52
+  value: values
+test_re_values:
+  desc: ''
+  sort: 53
+  value:
+  - 70.314635
+  - 100.352251
+  - 149.059229
+  - 189.862278
+top_k:
+  desc: ''
+  sort: 16
+  value: 2
+train_re_count:
+  desc: ''
+  sort: 55
+  value: 53
+train_re_stride:
+  desc: ''
+  sort: 50
+  value: 1
+train_rollout_steps:
+  desc: ''
+  sort: 23
+  value: 16
+train_time_stride:
+  desc: ''
+  sort: 49
+  value: 1
+weight_decay:
+  desc: ''
+  sort: 21
+  value: 0.00015

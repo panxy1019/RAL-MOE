@@ -1,0 +1,38 @@
+{
+  "all_routes_marker_sha256": "8688d979fa711b2d39dec79435ece5dcfc95096c2971fb45b09c58e74b3d10dd",
+  "candidates": [
+    {
+      "complexity_rank": 2,
+      "method": "LookAheadShortRolloutRouter",
+      "validation_joint_all_mean": 0.013205032795667648,
+      "validation_joint_all_worst": 0.10878930240869522,
+      "validation_worst_Re_mean": 0.01652998849749565
+    },
+    {
+      "complexity_rank": 1,
+      "method": "RiskPredictionRouter",
+      "validation_joint_all_mean": 0.013205032795667648,
+      "validation_joint_all_worst": 0.10878930240869522,
+      "validation_worst_Re_mean": 0.01652998849749565
+    },
+    {
+      "complexity_rank": 0,
+      "method": "T2-C_LearnedConvexCorrection_FieldBlend",
+      "validation_joint_all_mean": 0.013205032795667648,
+      "validation_joint_all_worst": 0.10878930240869522,
+      "validation_worst_Re_mean": 0.01652998849749565
+    }
+  ],
+  "comparison_sha256": "725601d001a4774c94c60119f5d2b4126a7c96b82a4a1168a34b3ae3d4326461",
+  "decision_basis": "validation only",
+  "known_prior_test_disclosure": true,
+  "promoted_method": "T2-C_LearnedConvexCorrection_FieldBlend",
+  "selection_order": [
+    "finite_fraction == 1 and divergent_windows == 0",
+    "minimum validation worst-Re mean joint physical-field error",
+    "minimum validation overall mean joint physical-field error",
+    "lower complexity only as a final tie-break"
+  ],
+  "status": "VALIDATION_DECISION_FROZEN_BEFORE_FINAL_TEST_CACHE",
+  "test_used_for_selection": false
+}

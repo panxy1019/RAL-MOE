@@ -1,0 +1,16 @@
+{"event": "split_start", "experiment": "fluidic_pinball_periodic_v2_rank999_ru17_rp16", "test_label": "Re_022.250", "test_Re": 22.25, "holdout_labels": ["Re_022.250", "Re_024.000", "Re_027.500", "Re_031.000", "Re_034.500", "Re_038.000", "Re_043.000", "Re_050.000", "Re_057.000"], "train_re_count": 47, "test_re_count": 9, "kept_train_samples": 2291, "dense_train_samples_before_time_sparsity": 2291, "compression_ratio_vs_dense_train": 1.0}
+2026-08-06 15:24:13.153 | ERROR    | swanlab.sdk.internal.pkg.safe:block:101 - 
+Error executing 'on_run_initialized' in callback 'SwanLabLocalCallbacker': 
+dispatcher:65 -> on_run_initialized:346 -> ImportError: Please install swanboard
+to use 'local' mode: pip install 'swanlab[dashboard]'
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinb
+all_periodic_v2/runs/smoke_k4_epoch1/swanlog/run-20260806_152413-04pzhixt-ae991e
+48f12f-6403
+swanlab: 🌟 Run `swanlab watch 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinb
+all_periodic_v2/runs/smoke_k4_epoch1/swanlog` to view SwanLab Experiment 
+Dashboard
+{"event": "epoch_performance", "epoch": 1, "rollout_steps": 4, "rollout_updates": 1, "rollout_batch": 8, "train_seconds": 9.520107988268137, "peak_memory_gib": 0.6074924468994141, "amp_mode": "bf16"}
+{"event": "epoch_eval", "experiment": "fluidic_pinball_periodic_v2_rank999_ru17_rp16", "test_label": "Re_022.250", "epoch": 1, "train_loss": 1880.8171725802952, "val_score": 0.3722124047577381, "val_rhs_relative_l2": 0.029258718714118004, "val_alpha_relative_l2": 0.014789758250117302, "val_pressure_relative_l2": 0.9376112222671509, "scheduled_sampling": 1.0, "rollout_steps": 4, "epoch_train_seconds": 9.520107988268137, "peak_memory_gib": 0.6074924468994141}

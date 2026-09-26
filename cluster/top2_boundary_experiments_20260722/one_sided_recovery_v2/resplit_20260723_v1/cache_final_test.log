@@ -1,0 +1,77 @@
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+{
+  "status": "CACHE_COMPLETE",
+  "mode": "final_test",
+  "cache": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/resplit_20260723_v1/cache_final_test/G_SH_resplit_final_test_cache.npz",
+  "cache_sha256": "61b2f6b57a7c70700d9665ca71f1867c8b1f7e419870f50670afe5bee8b64558",
+  "selected_complete_Re": {
+    "heldout": [
+      42.359071,
+      43.5,
+      43.9
+    ]
+  },
+  "windows_per_Re": 5,
+  "split_counts": {
+    "heldout": 15
+  },
+  "horizon": 56,
+  "source_audit": [
+    {
+      "assigned_split": "heldout",
+      "requested_Re": 42.359071,
+      "actual_Re": 42.35906982421875,
+      "source": "original_S_native",
+      "source_split_metadata": "train",
+      "label_id": 13,
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        832,
+        833,
+        834,
+        835,
+        837
+      ]
+    },
+    {
+      "assigned_split": "heldout",
+      "requested_Re": 43.5,
+      "source": "expanded_external_S_native",
+      "source_split_metadata": "heldout",
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "steady_native_ROM_Re": 43.7974019747,
+      "steady_native_ROM_label": "Re_43p797402"
+    },
+    {
+      "assigned_split": "heldout",
+      "requested_Re": 43.9,
+      "source": "expanded_external_S_native",
+      "source_split_metadata": "heldout",
+      "valid_K56_windows": 6,
+      "selected_windows": [
+        2,
+        3,
+        4,
+        5,
+        7
+      ],
+      "steady_native_ROM_Re": 43.7974019747,
+      "steady_native_ROM_label": "Re_43p797402"
+    }
+  ],
+  "fusion_feedback": false,
+  "timestamps_shared": true,
+  "steady_checkpoint_sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+  "hopf_checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+  "expanded_modal_archive_sha256": "d6a065e7f9ca23bd48f6bb477b9b59cbbc28d8189be76f06292028ce661b9107",
+  "test_metrics_used_for_training_or_selection": false,
+  "known_prior_test_disclosure": true
+}

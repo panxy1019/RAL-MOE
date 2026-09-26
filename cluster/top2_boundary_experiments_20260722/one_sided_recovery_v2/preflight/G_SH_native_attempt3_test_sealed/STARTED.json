@@ -1,0 +1,9 @@
+{
+  "gate": "G_SH_native",
+  "horizon": 16,
+  "source_split_access": [
+    "train",
+    "validation"
+  ],
+  "test_physical_modal_or_metric_data_loaded": false
+}

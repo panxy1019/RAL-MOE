@@ -1,0 +1,70 @@
+[
+  {
+    "kind": "proposed",
+    "seed": 1600,
+    "status": "completed",
+    "start": 1789700102.3941348,
+    "pid": 26148,
+    "returncode": 0,
+    "end": 1789700104.536454
+  },
+  {
+    "kind": "proposed",
+    "seed": 2026,
+    "status": "completed",
+    "start": 1789700104.5371234,
+    "pid": 26157,
+    "returncode": 0,
+    "end": 1789700122.3673227
+  },
+  {
+    "kind": "structured",
+    "seed": 1248,
+    "status": "completed",
+    "start": 1789701202.3870988,
+    "pid": 28068,
+    "returncode": 0,
+    "end": 1789701208.4715104
+  },
+  {
+    "kind": "structured",
+    "seed": 1600,
+    "status": "completed",
+    "start": 1789702978.5055075,
+    "pid": 29284,
+    "returncode": 0,
+    "end": 1789702984.1547432
+  },
+  {
+    "kind": "structured",
+    "seed": 2026,
+    "status": "completed",
+    "start": 1789704784.20349,
+    "pid": 29505,
+    "returncode": 0,
+    "end": 1789704789.9509213
+  },
+  {
+    "kind": "dense",
+    "seed": 1248,
+    "status": "training_failed_no_test"
+  },
+  {
+    "kind": "dense",
+    "seed": 1600,
+    "status": "completed",
+    "start": 1789704789.9529722,
+    "pid": 29512,
+    "returncode": 0,
+    "end": 1789704794.6309679
+  },
+  {
+    "kind": "dense",
+    "seed": 2026,
+    "status": "completed",
+    "start": 1789704794.6318307,
+    "pid": 29519,
+    "returncode": 0,
+    "end": 1789704799.3044066
+  }
+]

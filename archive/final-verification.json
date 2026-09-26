@@ -1,0 +1,46 @@
+{
+  "passed": true,
+  "manifest_files": 11686,
+  "git_files_hashed": 9905,
+  "large_assets_verified_against_github": 25,
+  "large_asset_bytes": 26643445865,
+  "max_git_file_bytes": 9298950,
+  "sensitive_scan_hits": 0,
+  "redacted_public_copies": [
+    {
+      "path": ".transfer_square_periodic/resume_optimized_long.sh",
+      "reason": "credential literal redacted in published copy"
+    },
+    {
+      "path": "fusion_source_snapshot/centered_square_periodic_v1/code/resume_optimized_long.sh",
+      "reason": "credential literal redacted in published copy"
+    },
+    {
+      "path": "cluster/centered_square_periodic_v1/code/resume_optimized_long.sh",
+      "reason": "credential literal redacted in published copy"
+    }
+  ],
+  "package_content_verification": {
+    "local": {
+      "passed": true,
+      "files_verified": 5012,
+      "assets_verified": 5,
+      "method": "streamed archived members and Git files; checked SHA256, sizes, exact member sets and duplicate references"
+    },
+    "cluster": {
+      "passed": true,
+      "files_verified": 6631,
+      "assets_verified": 17,
+      "method": "streamed archived members and Git files; checked SHA256, sizes, exact member sets and duplicate references"
+    },
+    "cluster_extra": {
+      "passed": true,
+      "files_verified": 43,
+      "assets_verified": 3,
+      "method": "streamed archived members and Git files; checked SHA256, sizes, exact member sets and duplicate references"
+    }
+  },
+  "release_id": 397102185,
+  "release_is_draft": true,
+  "verification": "all Git files rehashed; all expected Release assets matched by name, size, state and GitHub SHA256; credential signatures absent"
+}

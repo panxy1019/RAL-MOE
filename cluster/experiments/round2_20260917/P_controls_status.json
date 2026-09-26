@@ -1,0 +1,103 @@
+{
+  "lane": "controls",
+  "policy": "one process per lane; at least 8 GiB free before each launch; three total training lanes including H",
+  "runs": [
+    {
+      "architecture": "dense",
+      "seed": 1248,
+      "smoke": true,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_dense_smoke/1248",
+      "pid": 22627,
+      "start_unix": 1789652904.1292143,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_dense_1248_smoke.log",
+      "returncode": 0,
+      "end_unix": 1789652921.5275095
+    },
+    {
+      "architecture": "structured",
+      "seed": 1248,
+      "smoke": true,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_structured_smoke/1248",
+      "pid": 22643,
+      "start_unix": 1789652921.5677767,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_structured_1248_smoke.log",
+      "returncode": 0,
+      "end_unix": 1789652942.1929042
+    },
+    {
+      "architecture": "dense",
+      "seed": 1248,
+      "smoke": false,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_dense/1248",
+      "pid": 22764,
+      "start_unix": 1789652942.2096164,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_dense_1248_formal.log",
+      "returncode": 0,
+      "end_unix": 1789656172.4845598
+    },
+    {
+      "architecture": "structured",
+      "seed": 1248,
+      "smoke": false,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_structured/1248",
+      "pid": 23163,
+      "start_unix": 1789656172.5508657,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_structured_1248_formal.log",
+      "returncode": 0,
+      "end_unix": 1789659952.1682959
+    },
+    {
+      "architecture": "dense",
+      "seed": 1600,
+      "smoke": false,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_dense/1600",
+      "pid": 23304,
+      "start_unix": 1789659952.227763,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_dense_1600_formal.log",
+      "returncode": 0,
+      "end_unix": 1789663120.0357287
+    },
+    {
+      "architecture": "structured",
+      "seed": 1600,
+      "smoke": false,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_structured/1600",
+      "pid": 23313,
+      "start_unix": 1789663120.0821965,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_structured_1600_formal.log",
+      "returncode": 0,
+      "end_unix": 1789666948.32062
+    },
+    {
+      "architecture": "dense",
+      "seed": 2026,
+      "smoke": false,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_dense/2026",
+      "pid": 23322,
+      "start_unix": 1789666948.3774421,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_dense_2026_formal.log",
+      "returncode": 0,
+      "end_unix": 1789671627.846701
+    },
+    {
+      "architecture": "structured",
+      "seed": 2026,
+      "smoke": false,
+      "status": "completed",
+      "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_structured/2026",
+      "pid": 23472,
+      "start_unix": 1789671627.9184785,
+      "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_structured_2026_formal.log",
+      "returncode": 0,
+      "end_unix": 1789675869.580079
+    }
+  ],
+  "status": "completed"
+}

@@ -1,0 +1,115 @@
+{
+  "schema": "paper_experiments_asset_audit/v1",
+  "date": "2026-07-23",
+  "status": "BLOCKED_BY_PREREGISTERED_HARD_STOP",
+  "training_started": false,
+  "global_evaluation": {
+    "existing_frozen_checkpoint_rollout_status": "COMPLETE",
+    "runtime_seconds": 538.706113576889,
+    "scope": "existing transient heldout evaluator only; unified attractor evaluation not yet run"
+  },
+  "checkpoints": {
+    "steady": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s4_validation_step_1200.pt",
+      "sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+      "ru": 32,
+      "rp": 32,
+      "selected_step": 1200
+    },
+    "hopf": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/runs/HopfExpanded34_H4_NormalFormRadial_r32/best_validation.pt",
+      "sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+      "ru": 32,
+      "rp": 32,
+      "selected_optimizer_step": 7200
+    },
+    "periodic": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt",
+      "sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5",
+      "ru": 32,
+      "rp": 32,
+      "selected_epoch": 85
+    },
+    "global_moe": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/source/test_results_v16_1/results/V16_1_SteadyPressureAnchor32/V16_1_SteadyPressureAnchor32_ru32_rp32/V16_1_SteadyPressureAnchor32_ru32_rp32_Re_24p630436_checkpoint.pt",
+      "sha256": "9d7e2b861d8c501eff87a940b93f7fe64ca72fd976afc0c6fc1621ff8f0b284f",
+      "ru": 32,
+      "rp": 32,
+      "selected_epoch": 225
+    }
+  },
+  "implementation_audit": {
+    "vanilla_fnn_ablation_identifiable": true,
+    "reason": "The proposed PhysicsAwareExpert contains residual ExpandedFFN blocks, an explicit linear state branch, and a low-rank quadratic state branch; replacing only that expert with a plain FNN is a meaningful controlled ablation.",
+    "data_only_definition_identifiable": true,
+    "reason_data_only": "The supplied contract explicitly requires a direct discrete history-to-next-state mapping and removes RK4, Galerkin RHS, pressure physics correction, physical residual losses, and fixed physics features.",
+    "swanlab": {
+      "installed": true,
+      "version": "0.9.0"
+    }
+  },
+  "hard_stop_findings": [
+    {
+      "id": "GLOBAL_POD_TEST_CONTAMINATION",
+      "severity": "blocking",
+      "contract_clause": "Stop if POD used validation or test data.",
+      "evidence": {
+        "pod_metadata_total_snapshots": 14167,
+        "pod_index_re_count": 100,
+        "pod_index_re_range": [
+          20.0,
+          200.0
+        ],
+        "global_model_training_re_count": 89,
+        "global_model_heldout_re_count": 11,
+        "project_split_contract_disclosure": "the frozen existing global POD and Re-specific means were fit using all 100 Re cases"
+      },
+      "affected_claim": "Global MoE cannot be presented as a leakage-free heldout baseline under the supplied paper contract."
+    },
+    {
+      "id": "HOPF_REQUESTED_TEST_OVERLAPS_TRAIN",
+      "severity": "blocking_if_labeled_test",
+      "contract_clause": "Same-Re windows must remain in one split and train/validation/test Re must be disjoint.",
+      "requested_values": [
+        49.3,
+        49.6,
+        50.0
+      ],
+      "observed_role": "all three are Hopf training Reynolds numbers",
+      "allowed_reporting_role": "in-sample strict-K56 preservation case study; not independent test"
+    }
+  ],
+  "global_pod_assets": {
+    "velocity": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/assets/common_global_data/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+      "sha256": "11633d29b3c7db8cf73a0d813504521829689f32e6e9d2d233d90062becf76c5",
+      "phi_shape": [
+        80,
+        194736
+      ],
+      "coeff_shape": [
+        14167,
+        80
+      ]
+    },
+    "pressure": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/assets/common_global_data/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+      "sha256": "6103c45d77da830aa5cb29f081047440ad561ec27bfad36594b381e2770abcc8",
+      "phi_shape": [
+        80,
+        97368
+      ],
+      "coeff_shape": [
+        14167,
+        80
+      ]
+    },
+    "snapshot_index_sha256": "bde29f13e59c84335c1810f53172f701a8633c5eaa704802a9b4a72f1d884aee",
+    "metadata_sha256": "a6c13616be19f09525e3ce7d7d4c98b1a60a8dfe7b4edfc45f887f9a7a65a911"
+  },
+  "permitted_next_routes": [
+    "Rebuild a train-only global POD/mean/scaler/ROM and warm-start or retrain the Global MoE before a leakage-free full-system comparison.",
+    "Explicitly revise the paper contract and report the current Global MoE only as a transductive all-Re representation baseline, never as heldout POD generalization.",
+    "Keep Re 49.3/49.6/50.0 as named Hopf in-sample attractor-preservation cases while retaining the actual disjoint heldout set for test claims."
+  ]
+}

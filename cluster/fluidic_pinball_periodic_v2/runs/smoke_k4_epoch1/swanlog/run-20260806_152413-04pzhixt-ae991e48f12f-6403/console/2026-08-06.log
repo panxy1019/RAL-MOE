@@ -1,0 +1,11 @@
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinb
+all_periodic_v2/runs/smoke_k4_epoch1/swanlog/run-20260806_152413-04pzhixt-ae991e
+48f12f-6403
+swanlab: 🌟 Run `swanlab watch
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/fluidic_pinb
+all_periodic_v2/runs/smoke_k4_epoch1/swanlog` to view SwanLab Experiment
+Dashboard
+{"event": "epoch_performance", "epoch": 1, "rollout_steps": 4, "rollout_updates": 1, "rollout_batch": 8, "train_seconds": 9.520107988268137, "peak_memory_gib": 0.6074924468994141, "amp_mode": "bf16"}
+{"event": "epoch_eval", "experiment": "fluidic_pinball_periodic_v2_rank999_ru17_rp16", "test_label": "Re_022.250", "epoch": 1, "train_loss": 1880.8171725802952, "val_score": 0.3722124047577381, "val_rhs_relative_l2": 0.029258718714118004, "val_alpha_relative_l2": 0.014789758250117302, "val_pressure_relative_l2": 0.9376112222671509, "scheduled_sampling": 1.0, "rollout_steps": 4, "epoch_train_seconds": 9.520107988268137, "peak_memory_gib": 0.6074924468994141}

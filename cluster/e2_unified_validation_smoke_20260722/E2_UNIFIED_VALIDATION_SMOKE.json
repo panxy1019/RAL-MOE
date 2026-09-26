@@ -1,0 +1,473 @@
+{
+  "actual_native_invocations": [
+    "Steady",
+    "Hopf",
+    "Periodic"
+  ],
+  "decision": "PASS",
+  "finished_time": 1784725626.2455347,
+  "native_execution": {
+    "Hopf": {
+      "by_re_keys": [
+        "46.700000",
+        "56.543246"
+      ],
+      "checkpoint": "/root/panxy/particalMOE/Hopf/migrated_h4_expanded/runs/HopfExpanded34_H4_NormalFormRadial_r32/best_validation.pt",
+      "checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+      "class": "Hopf",
+      "divergent_windows": 0,
+      "elapsed_seconds": 5.8082075119018555,
+      "finite_fraction": 1.0,
+      "horizons": [
+        1,
+        2,
+        4,
+        8,
+        16
+      ],
+      "native_entrypoint": "train_h4_expanded.validate(...)",
+      "native_result": {
+        "by_re": {
+          "46.700000": {
+            "1": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 0.46516475081443787,
+              "fluc_u": 0.044774726033210754,
+              "growth_sign_accuracy": null,
+              "max_norm_ratio": 1.0223562717437744,
+              "radial_rms": 1.3822773694992065,
+              "scale_inflation": 2.32304048538208,
+              "total_p": 0.005954996682703495,
+              "total_u": 0.000192066072486341
+            },
+            "16": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 0.8070313930511475,
+              "fluc_u": 0.10596352815628052,
+              "growth_sign_accuracy": 0.7333333492279053,
+              "max_norm_ratio": 0.9993979930877686,
+              "radial_rms": 8.310647010803223,
+              "scale_inflation": 8.745420455932617,
+              "total_p": 0.010292045772075653,
+              "total_u": 0.00045438704546540976
+            },
+            "2": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 1.1614538431167603,
+              "fluc_u": 0.04504655301570892,
+              "growth_sign_accuracy": 1.0,
+              "max_norm_ratio": 1.000058889389038,
+              "radial_rms": 1.4330496788024902,
+              "scale_inflation": 2.3698089122772217,
+              "total_p": 0.014864588156342506,
+              "total_u": 0.00019322730076964945
+            },
+            "4": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 1.1855714321136475,
+              "fluc_u": 0.08174791187047958,
+              "growth_sign_accuracy": 0.6666666865348816,
+              "max_norm_ratio": 1.0000349283218384,
+              "radial_rms": 2.9380884170532227,
+              "scale_inflation": 3.8257522583007812,
+              "total_p": 0.015164709649980068,
+              "total_u": 0.000350641057593748
+            },
+            "8": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 1.2346497774124146,
+              "fluc_u": 0.10700780153274536,
+              "growth_sign_accuracy": 0.5714285969734192,
+              "max_norm_ratio": 0.9998750686645508,
+              "radial_rms": 4.8531107902526855,
+              "scale_inflation": 5.647749423980713,
+              "total_p": 0.015775464475154877,
+              "total_u": 0.00045894537470303476
+            }
+          },
+          "56.543246": {
+            "1": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 0.508938729763031,
+              "fluc_u": 0.005046998616307974,
+              "growth_sign_accuracy": null,
+              "max_norm_ratio": 0.999955415725708,
+              "radial_rms": 0.028931759297847748,
+              "scale_inflation": 0.48546698689460754,
+              "total_p": 0.005881785415112972,
+              "total_u": 1.4661425666417927e-05
+            },
+            "16": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 0.06138245388865471,
+              "fluc_u": 0.023177912458777428,
+              "growth_sign_accuracy": 0.9285714626312256,
+              "max_norm_ratio": 1.000747799873352,
+              "radial_rms": 0.1344587355852127,
+              "scale_inflation": 0.35263144969940186,
+              "total_p": 0.0007081797230057418,
+              "total_u": 6.730901804985479e-05
+            },
+            "2": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 0.6427385807037354,
+              "fluc_u": 0.009364396333694458,
+              "growth_sign_accuracy": 1.0,
+              "max_norm_ratio": 0.9999854564666748,
+              "radial_rms": 7.254673164425185e-06,
+              "scale_inflation": 0.5116137862205505,
+              "total_p": 0.007426666095852852,
+              "total_u": 2.720167140068952e-05
+            },
+            "4": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 0.4676288962364197,
+              "fluc_u": 0.011780849657952785,
+              "growth_sign_accuracy": 1.0,
+              "max_norm_ratio": 0.9999775290489197,
+              "radial_rms": 0.06216275319457054,
+              "scale_inflation": 0.4508172571659088,
+              "total_p": 0.005401466973125935,
+              "total_u": 3.421883229748346e-05
+            },
+            "8": {
+              "divergent_windows": 0,
+              "finite_fraction": 1.0,
+              "fluc_p": 0.25004640221595764,
+              "fluc_u": 0.014346733689308167,
+              "growth_sign_accuracy": 1.0,
+              "max_norm_ratio": 1.0000189542770386,
+              "radial_rms": 0.05781970173120499,
+              "scale_inflation": 0.3679291605949402,
+              "total_p": 0.0028866822831332684,
+              "total_u": 4.166778307990171e-05
+            }
+          }
+        },
+        "hard_gate": false,
+        "hopf_gate": false,
+        "numeric_gate": true,
+        "score": 3.433393011166481,
+        "step": 1
+      },
+      "output_keys": [
+        "by_re",
+        "hard_gate",
+        "hopf_gate",
+        "numeric_gate",
+        "score",
+        "step"
+      ],
+      "pass": true,
+      "validation_Re_count": 2
+    },
+    "Periodic": {
+      "by_re_keys": [
+        "121.0501708984",
+        "139.6423034668",
+        "169.2448883057",
+        "196.1607208252",
+        "66.9701156616",
+        "91.7922058105"
+      ],
+      "checkpoint": "/root/panxy/particalMOE/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt",
+      "checkpoint_sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5",
+      "class": "Periodic",
+      "divergent_windows": 0,
+      "elapsed_seconds": 5.959836006164551,
+      "finite_fraction": 1.0,
+      "horizon": 4,
+      "native_entrypoint": "train_periodic_moe.integrate_autonomous_step_np(...), K4",
+      "native_result": {
+        "by_re": {
+          "121.0501708984": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "first_divergent_step": null,
+            "horizon": 4,
+            "pressure_coefficient_relative_l2": 0.011536632664501667,
+            "velocity_coefficient_relative_l2": 0.010176483541727066
+          },
+          "139.6423034668": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "first_divergent_step": null,
+            "horizon": 4,
+            "pressure_coefficient_relative_l2": 0.013677462935447693,
+            "velocity_coefficient_relative_l2": 0.0056250374764204025
+          },
+          "169.2448883057": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "first_divergent_step": null,
+            "horizon": 4,
+            "pressure_coefficient_relative_l2": 0.015487332828342915,
+            "velocity_coefficient_relative_l2": 0.004930657800287008
+          },
+          "196.1607208252": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "first_divergent_step": null,
+            "horizon": 4,
+            "pressure_coefficient_relative_l2": 0.03005765937268734,
+            "velocity_coefficient_relative_l2": 0.008172191679477692
+          },
+          "66.9701156616": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "first_divergent_step": null,
+            "horizon": 4,
+            "pressure_coefficient_relative_l2": 0.006822146475315094,
+            "velocity_coefficient_relative_l2": 0.005144958849996328
+          },
+          "91.7922058105": {
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "first_divergent_step": null,
+            "horizon": 4,
+            "pressure_coefficient_relative_l2": 0.009703554213047028,
+            "velocity_coefficient_relative_l2": 0.005587859079241753
+          }
+        }
+      },
+      "output_keys": [
+        "by_re",
+        "finite_fraction",
+        "divergent_windows"
+      ],
+      "pass": true,
+      "validation_Re_count": 6
+    },
+    "Steady": {
+      "by_re_keys": [
+        "Re_28p695138",
+        "Re_43p797402"
+      ],
+      "checkpoint": "/root/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s4_validation_step_1200.pt",
+      "checkpoint_sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+      "class": "Steady",
+      "divergent_windows": 0,
+      "elapsed_seconds": 8.196681499481201,
+      "finite_fraction": 1.0,
+      "horizon": 4,
+      "native_entrypoint": "finalize_s4_one_time.evaluate_horizon(exp, 'validation', 4)",
+      "native_result": {
+        "available": true,
+        "by_re": {
+          "Re_28p695138": {
+            "coefficient_space": {
+              "pressure_relative_l2": 0.06844752012340861,
+              "velocity_relative_l2": 0.0009877243717265098
+            },
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "first_divergent_step": null,
+            "fixed_point_residual": 0.12330629676580429,
+            "physical_reconstruction_area_weighted": {
+              "pressure_relative_l2": 0.046542857025578276,
+              "velocity_relative_l2": 0.0004610345312714664
+            },
+            "pressure_drift": 0.0919070914387703,
+            "state_norm_max_multiple": 19.044282913208008,
+            "window_count": 58
+          },
+          "Re_43p797402": {
+            "coefficient_space": {
+              "pressure_relative_l2": 0.0415600130982327,
+              "velocity_relative_l2": 0.0007049308567141137
+            },
+            "divergent_windows": 0,
+            "finite_fraction": 1.0,
+            "first_divergent_step": null,
+            "fixed_point_residual": 0.11917530745267868,
+            "physical_reconstruction_area_weighted": {
+              "pressure_relative_l2": 0.010638032007451344,
+              "velocity_relative_l2": 0.00019828631508405479
+            },
+            "pressure_drift": 0.048722971230745316,
+            "state_norm_max_multiple": 26.19634246826172,
+            "window_count": 57
+          }
+        },
+        "k": 4,
+        "overall_worst": {
+          "coefficient_space": {
+            "pressure_relative_l2": 0.06844752012340861,
+            "velocity_relative_l2": 0.0009877243717265098
+          },
+          "divergent_windows": 0,
+          "finite_fraction": 1.0,
+          "first_divergent_step": null,
+          "fixed_point_residual": 0.12330629676580429,
+          "physical_reconstruction_area_weighted": {
+            "pressure_relative_l2": 0.046542857025578276,
+            "velocity_relative_l2": 0.0004610345312714664
+          },
+          "pressure_drift": 0.0919070914387703,
+          "state_norm_max_multiple": 26.19634246826172
+        }
+      },
+      "output_keys": [
+        "available",
+        "by_re",
+        "k",
+        "overall_worst"
+      ],
+      "pass": true,
+      "validation_Re_count": 2
+    }
+  },
+  "router": {
+    "all_oracle_match": true,
+    "checkpoint": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/frozen_E2_baseline_candidate/best.pt",
+    "checkpoint_sha256": "f0286a9974f16b513bb42cd94232c397123dcd3e0a01eab475ff1593f7881dcd",
+    "checkpoint_step": 6300,
+    "oracle_match_count": 10,
+    "rows": [
+      {
+        "Re": 28.695137758,
+        "oracle_class": "Steady",
+        "oracle_id": 0,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 0.00925248023122549,
+          "Periodic": 1.1997292858723085e-05,
+          "Steady": 0.9907354712486267
+        },
+        "selected_class": "Steady",
+        "selected_id": 0
+      },
+      {
+        "Re": 43.7974019747,
+        "oracle_class": "Steady",
+        "oracle_id": 0,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 0.3945371210575104,
+          "Periodic": 0.004971073474735022,
+          "Steady": 0.6004917621612549
+        },
+        "selected_class": "Steady",
+        "selected_id": 0
+      },
+      {
+        "Re": 46.7,
+        "oracle_class": "Hopf",
+        "oracle_id": 1,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 0.6070734858512878,
+          "Periodic": 0.013278894126415253,
+          "Steady": 0.3796476721763611
+        },
+        "selected_class": "Hopf",
+        "selected_id": 1
+      },
+      {
+        "Re": 56.5432463134,
+        "oracle_class": "Hopf",
+        "oracle_id": 1,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 0.825053870677948,
+          "Periodic": 0.15003778040409088,
+          "Steady": 0.024908320978283882
+        },
+        "selected_class": "Hopf",
+        "selected_id": 1
+      },
+      {
+        "Re": 66.9701121204,
+        "oracle_class": "Periodic",
+        "oracle_id": 2,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 0.3163257837295532,
+          "Periodic": 0.6831941604614258,
+          "Steady": 0.0004799969319719821
+        },
+        "selected_class": "Periodic",
+        "selected_id": 2
+      },
+      {
+        "Re": 91.792204085,
+        "oracle_class": "Periodic",
+        "oracle_id": 2,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 0.0036959066055715084,
+          "Periodic": 0.9963040351867676,
+          "Steady": 3.4821141525753774e-08
+        },
+        "selected_class": "Periodic",
+        "selected_id": 2
+      },
+      {
+        "Re": 121.05017082,
+        "oracle_class": "Periodic",
+        "oracle_id": 2,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 0.00024005713930819184,
+          "Periodic": 0.9997599720954895,
+          "Steady": 1.6529198842984982e-10
+        },
+        "selected_class": "Periodic",
+        "selected_id": 2
+      },
+      {
+        "Re": 139.642302099,
+        "oracle_class": "Periodic",
+        "oracle_id": 2,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 0.0001029624036164023,
+          "Periodic": 0.9998970031738281,
+          "Steady": 3.747900254036374e-11
+        },
+        "selected_class": "Periodic",
+        "selected_id": 2
+      },
+      {
+        "Re": 169.244893107,
+        "oracle_class": "Periodic",
+        "oracle_id": 2,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 5.160154978511855e-05,
+          "Periodic": 0.9999483823776245,
+          "Steady": 1.2989480151215371e-11
+        },
+        "selected_class": "Periodic",
+        "selected_id": 2
+      },
+      {
+        "Re": 196.160723205,
+        "oracle_class": "Periodic",
+        "oracle_id": 2,
+        "oracle_match": true,
+        "probabilities": {
+          "Hopf": 3.853062662528828e-05,
+          "Periodic": 0.9999614953994751,
+          "Steady": 9.044365083255013e-12
+        },
+        "selected_class": "Periodic",
+        "selected_id": 2
+      }
+    ],
+    "trajectory_count": 10
+  },
+  "schema": "E2_UNIFIED_VALIDATION_TOP1_SMOKE_V1",
+  "status": "COMPLETE",
+  "structural_contract_pass": true,
+  "top2_executed": false
+}

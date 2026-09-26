@@ -1,0 +1,83 @@
+{
+  "status": "COMPLETE",
+  "experiment": "E3_chart_independent",
+  "date": "2026-07-22",
+  "contract": {
+    "input": "Re plus current and previous two timestamps and velocity/pressure observations at 64 fixed common-mesh sensors",
+    "descriptor_count": 8,
+    "descriptor_function_uses_chart_or_label": false,
+    "sensor_selection_uses_geometry_only": true,
+    "common_point_order_exact": true,
+    "common_cell_area_exact": true,
+    "common_pressure_gauge_exact": true,
+    "specialists_frozen_and_not_loaded": true
+  },
+  "data": {
+    "split": "original complete-Re and complete-trajectory train/validation/test split",
+    "seed": 31003,
+    "steps": 8000,
+    "batch_size": 256,
+    "windows_per_Re": 32,
+    "train_windows": 3072,
+    "validation_windows": 320,
+    "test_windows": 352
+  },
+  "representation_invariance": {
+    "definition": "same source physical state projected into target chart; no pairing of different-Re states",
+    "Steady_to_Hopf_descriptor_relative_l2_mean": 2.773437197673646e-06,
+    "Hopf_to_Steady_descriptor_relative_l2_mean": 2.113618252831283e-07,
+    "Hopf_to_Periodic_descriptor_relative_l2_mean": 0.0012966488848775509,
+    "Periodic_to_Hopf_descriptor_relative_l2_mean": 0.00014838063883271946,
+    "S_H_note": "Re ranges overlap but sampled Re values are not exactly shared",
+    "H_P_note": "Re ranges do not overlap; figures are extrapolative representation diagnostics, not overlap certification"
+  },
+  "results": {
+    "best_step": 5500,
+    "validation_balanced_accuracy": 1.0,
+    "validation_macro_f1": 1.0,
+    "test_accuracy": 1.0,
+    "test_balanced_accuracy": 1.0,
+    "test_macro_f1": 1.0,
+    "test_confusion_matrix": [[4, 0, 0], [0, 3, 0], [0, 0, 4]],
+    "test_nll": 0.027786821126937866,
+    "test_brier": 0.0100067093727709,
+    "test_ece10": 0.0248300162228671,
+    "test_mean_confidence": 0.9751699837771329,
+    "minimum_top1_margin": 0.5380337983369827,
+    "minimum_margin_Re": 45.142702578,
+    "validation_illegal_S_P_top2_count": 6,
+    "test_illegal_S_P_top2_count": 4
+  },
+  "checkpoint_reload": {
+    "strict_state_dict_load": true,
+    "validation_max_probability_delta": 5.960464477539063e-08,
+    "test_max_probability_delta": 5.960464477539063e-08,
+    "validation_metrics_reproduced": true,
+    "test_metrics_reproduced": true
+  },
+  "comparison_to_E2": {
+    "same_top1_accuracy_balanced_accuracy_macro_f1": true,
+    "E2_test_nll": 0.18381598940587332,
+    "E2_test_brier": 0.09327966036259339,
+    "E2_test_ece10": 0.15009304068305276,
+    "E2_minimum_top1_margin": 0.004594564437866211,
+    "E2_validation_nll": 0.15958376795563547,
+    "E3_validation_nll": 0.020913568309418675,
+    "E2_validation_brier": 0.0868355560511868,
+    "E3_validation_brier": 0.005225393744008837,
+    "E2_validation_ece10": 0.12975799441337585,
+    "E3_validation_ece10": 0.019458246231079123,
+    "E2_validation_minimum_top1_margin": 0.20595481991767883,
+    "E3_validation_minimum_top1_margin": 0.6854454725980759,
+    "assessment": "E3 improves confidence and calibration but does not improve any held-out Top-1 decision metric; it is more complex and still gives non-adjacent S-P secondary rankings.",
+    "recommendation": "KEEP_E2_AS_FORMAL_BASELINE"
+  },
+  "sha256": {
+    "script": "f9dec0d44b29d855e2b68f397cd11cc68b0cb922dd69819f6b257756554c3826",
+    "best_pt": "7d88cf2e4bda5bd0b826c8cf0cbe951124b19ff030760c2919593508674da2a8",
+    "last_pt": "f09eb40d112a42093ad72aa6bd2146969c314f627843840e8a7ef6c1c6664982",
+    "metrics": "a98359aa9ba096889a4827282acfb0f36d0f5d057b1fae9c81cb4825935aa191",
+    "descriptor_audit": "d67f94f8c155a53684001211acd0aa0c013e621ae09040b4c07fc9d24080fa26"
+  },
+  "swanlab": "https://swanlab.cn/@panxy1019/V17_TrajectoryLevel_Hierarchical_MoE/runs/1wi4t1c3"
+}

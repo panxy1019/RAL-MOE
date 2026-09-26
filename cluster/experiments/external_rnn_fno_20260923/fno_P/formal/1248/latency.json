@@ -1,0 +1,111 @@
+{
+  "results": [
+    {
+      "K": 24,
+      "include_mapping": false,
+      "seconds": [
+        1.3575118239969015,
+        1.3680879129096866,
+        1.3552742917090654,
+        1.353935981169343,
+        1.3543531354516745,
+        1.3536608591675758,
+        1.361017931252718,
+        1.3501334423199296,
+        1.364450803026557,
+        1.3535213181748986
+      ],
+      "median": 1.35481371358037,
+      "iqr": 0.006411764770746231,
+      "mean": 1.357194749917835,
+      "sample_sd": 0.005619960597269338,
+      "peak_gpu_allocated_bytes": 2294204416,
+      "warmups": 3,
+      "repeats": 10,
+      "batch": 1,
+      "scope": "pre-mapped normalized grid history on GPU -> all native physical output fields transferred to CPU; no FV mapping"
+    },
+    {
+      "K": 24,
+      "include_mapping": true,
+      "seconds": [
+        1.8322515180334449,
+        1.8262736788019538,
+        1.8198726559057832,
+        1.800530880689621,
+        1.8190407613292336,
+        1.8269729670137167,
+        1.809216276742518,
+        1.8206113474443555,
+        1.8222229229286313,
+        1.805401736870408
+      ],
+      "median": 1.8202420016750693,
+      "iqr": 0.013588591944426298,
+      "mean": 1.8182394745759667,
+      "sample_sd": 0.01012029083315257,
+      "peak_gpu_allocated_bytes": 2294204416,
+      "warmups": 3,
+      "repeats": 10,
+      "batch": 1,
+      "scope": "in-memory physical FV history -> normalized grid -> all output fields transferred CPU -> inverse FV mapping/gauge"
+    },
+    {
+      "K": 48,
+      "include_mapping": false,
+      "seconds": [
+        2.7005479726940393,
+        2.702406022697687,
+        2.702852630056441,
+        2.702104289084673,
+        2.7016322007402778,
+        2.701676059514284,
+        2.702441843226552,
+        2.701860752888024,
+        2.7021456751972437,
+        2.7018783390522003
+      ],
+      "median": 2.7019913140684366,
+      "iqr": 0.0006187029648572206,
+      "mean": 2.701954578515142,
+      "sample_sd": 0.000621942514300245,
+      "peak_gpu_allocated_bytes": 2294204416,
+      "warmups": 3,
+      "repeats": 10,
+      "batch": 1,
+      "scope": "pre-mapped normalized grid history on GPU -> all native physical output fields transferred to CPU; no FV mapping"
+    },
+    {
+      "K": 48,
+      "include_mapping": true,
+      "seconds": [
+        3.656652175821364,
+        3.6027315659448504,
+        3.599321980960667,
+        3.6092675924301147,
+        3.607653555460274,
+        3.5960032185539603,
+        3.654336136765778,
+        3.6009801188483834,
+        3.5963922422379255,
+        3.6072158589959145
+      ],
+      "median": 3.6049737124703825,
+      "iqr": 0.009127567755058408,
+      "mean": 3.6130554446019234,
+      "sample_sd": 0.022832346016005152,
+      "peak_gpu_allocated_bytes": 2294204416,
+      "warmups": 3,
+      "repeats": 10,
+      "batch": 1,
+      "scope": "in-memory physical FV history -> normalized grid -> all output fields transferred CPU -> inverse FV mapping/gauge"
+    }
+  ],
+  "device": "NVIDIA GeForce RTX 4090",
+  "dtype": "FP32/complex64 neural; sparse interpolation stored FP64",
+  "cpu_threads": 2,
+  "initial_global_id": 976,
+  "Re": 70.3146353337,
+  "IO_excluded": true,
+  "synchronization": "before/after each repetition"
+}

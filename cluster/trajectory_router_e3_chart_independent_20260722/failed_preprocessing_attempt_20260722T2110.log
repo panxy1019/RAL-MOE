@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/trajectory_router_e3_chart_independent_20260722/code/run_e3_chart_independent.py", line 489, in <module>
+    main()
+  File "/root/panxy/particalMOE/trajectory_router_e3_chart_independent_20260722/code/run_e3_chart_independent.py", line 454, in main
+    raise RuntimeError(f"refusing non-empty output directory: {args.output_dir}")
+RuntimeError: refusing non-empty output directory: formal_E3_chart_independent

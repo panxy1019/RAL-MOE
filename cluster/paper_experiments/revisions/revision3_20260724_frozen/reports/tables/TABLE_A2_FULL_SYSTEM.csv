@@ -1,0 +1,5 @@
+System,Region,Metric contract,one-step u,one-step p,long/rollout,worst,Interpretation
+Global MoE,all available heldout Re,"modal, not unified physical K56",0.03993944705209949,0.12290623851797798,0.22570159980519247,0.2966855564578013,Not numerically commensurate with S-H cache
+E2 Top-1,S-H boundary,area-weighted physical joint,,,0.04670979082584381,0.15658387541770935,E2 selects S on this S-native cache
+Multi-chart + T2-C,S-H boundary,area-weighted physical joint,,,0.030450010672211647,0.14502297341823578,window-conditioned convex field blend
+Multi-chart admissibility,H-P boundary,validation admissibility,,,,,H inadmissible; forced P-only / hard routing

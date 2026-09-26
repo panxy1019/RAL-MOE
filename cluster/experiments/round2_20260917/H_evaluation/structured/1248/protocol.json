@@ -1,0 +1,11 @@
+{
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/H_structured/1248/HopfExpanded34_H4_NormalFormRadial_r32/best_validation.pt",
+  "checkpoint_sha256": "90fe9ba0d431985d1459d0c08e69333632c7156a81d991cf6bdd82c069bf3b4b",
+  "reference": "native POD reconstructed fields; not full FOM",
+  "kind": "structured",
+  "seed": 1248,
+  "window_stride": 8,
+  "horizon": 48,
+  "modified_source_sha256": "01441d4a298063ee1aa658dd34525c333f766f482abd8e38a8283db04f9d0aa2",
+  "timing": "not measured during concurrent training"
+}

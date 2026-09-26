@@ -1,0 +1,25 @@
+{
+  "command": [
+    "/root/miniconda3/envs/pt_env/bin/python",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py",
+    "--ablation-mode",
+    "vanilla-fnn",
+    "--regime",
+    "steady",
+    "--entrypoint",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_s2b_3090.py",
+    "--contract-output",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/allowlist_train.json",
+    "--config",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/config.json",
+    "--run-dir",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/steady/vanilla-fnn/training/s2/runtime",
+    "--resume",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v2/steady/vanilla_fnn/seed_202607251/s2/checkpoints/latest.pt",
+    "--mode",
+    "train"
+  ],
+  "finished_unix": 1784894158.6145616,
+  "return_code": -15,
+  "status": "FAILED"
+}

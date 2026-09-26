@@ -1,0 +1,16 @@
+/usr/lib/python3/dist-packages/paramiko/pkey.py:82: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "cipher": algorithms.TripleDES,
+/usr/lib/python3/dist-packages/paramiko/transport.py:261: CryptographyDeprecationWarning: TripleDES has been moved to cryptography.hazmat.decrepit.ciphers.algorithms.TripleDES and will be removed from cryptography.hazmat.primitives.ciphers.algorithms in 48.0.0.
+  "class": algorithms.TripleDES,
+COPY checkpoint/FINAL_PERIODIC_SPECIALIST.pt 134217728/780313433
+COPY checkpoint/FINAL_PERIODIC_SPECIALIST.pt 268435456/780313433
+COPY checkpoint/FINAL_PERIODIC_SPECIALIST.pt 402653184/780313433
+COPY checkpoint/FINAL_PERIODIC_SPECIALIST.pt 536870912/780313433
+COPY checkpoint/FINAL_PERIODIC_SPECIALIST.pt 671088640/780313433
+COPY checkpoint/FINAL_PERIODIC_SPECIALIST.pt 780313433/780313433
+Traceback (most recent call last):
+  File "/home/ray/Desktop/transfer/periodic_specialist_r32/tools/transfer_final_periodic_to_vm.py", line 83, in <module>
+    main()
+  File "/home/ray/Desktop/transfer/periodic_specialist_r32/tools/transfer_final_periodic_to_vm.py", line 69, in main
+    os.replace(partial, target)
+FileNotFoundError: [Errno 2] No such file or directory: '/home/ray/Desktop/transfer/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt.partial' -> '/home/ray/Desktop/transfer/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt'

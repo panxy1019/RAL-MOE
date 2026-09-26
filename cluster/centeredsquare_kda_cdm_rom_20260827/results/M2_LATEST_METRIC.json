@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "method": "legacy fixed-pole CDM refit unchanged; evaluated with current absolute full-field J500",
+  "rates": [
+    0.01,
+    0.05
+  ],
+  "ridge": 10.0,
+  "train_pair_stride": 4,
+  "selection_max_step": 0.2,
+  "final_max_step": 0.05,
+  "train_pairs": 864,
+  "train_residual_fit_relative_l2": 0.013983107435243744,
+  "initialization": "truth_a_at_t0_and_memory_equal_a0_over_scale",
+  "phase_pair": [
+    1,
+    2
+  ],
+  "per_case": [
+    {
+      "Re": 99.0,
+      "J500": 0.07150160208595999,
+      "finite": true,
+      "coefficient_norm_max": 2.5799798662607,
+      "memory_norm_max": 15.811383233594439,
+      "phase_error_final_abs": 210.16828599870388,
+      "frequency_relative_error": 0.9707489790905357,
+      "amplitude_relative_error": 0.9848392998794437
+    },
+    {
+      "Re": 101.5,
+      "J500": 0.09442535833311107,
+      "finite": true,
+      "coefficient_norm_max": 2.5799798662607,
+      "memory_norm_max": 15.811383233594439,
+      "phase_error_final_abs": 151.0476211235653,
+      "frequency_relative_error": 0.78097176990096,
+      "amplitude_relative_error": 0.9896237376058076
+    },
+    {
+      "Re": 110.344827586207,
+      "J500": 0.15085566257707106,
+      "finite": true,
+      "coefficient_norm_max": 2.5799798662607,
+      "memory_norm_max": 15.811383233594439,
+      "phase_error_final_abs": 24.791767539898757,
+      "frequency_relative_error": 0.22123176624847182,
+      "amplitude_relative_error": 0.8317624039861983
+    },
+    {
+      "Re": 125.862068965517,
+      "J500": 0.2282777711623889,
+      "finite": true,
+      "coefficient_norm_max": 2.5799798662607,
+      "memory_norm_max": 15.811383233594439,
+      "phase_error_final_abs": 30.028412838507677,
+      "frequency_relative_error": 0.1255738874519772,
+      "amplitude_relative_error": 0.4382047014699573
+    },
+    {
+      "Re": 141.379310344828,
+      "J500": 0.24709454779064607,
+      "finite": true,
+      "coefficient_norm_max": 2.5799798662607,
+      "memory_norm_max": 15.811383233594439,
+      "phase_error_final_abs": 33.777778209621346,
+      "frequency_relative_error": 0.15391874158965607,
+      "amplitude_relative_error": 0.09520715376430756
+    },
+    {
+      "Re": 150.0,
+      "J500": 0.27968580517288855,
+      "finite": true,
+      "coefficient_norm_max": 2.5799798662607,
+      "memory_norm_max": 15.811383233594439,
+      "phase_error_final_abs": 52.410517002641484,
+      "frequency_relative_error": 0.2468725354920263,
+      "amplitude_relative_error": 0.008750213050216038
+    }
+  ],
+  "aggregate": {
+    "name": "M2_rates_0.01_0.05_ridge_10",
+    "kind": 2,
+    "stable_6_of_6": true,
+    "J500_mean": 0.17864012452034428,
+    "J500_median": 0.18956671686972998,
+    "J500_max": 0.27968580517288855
+  },
+  "heldout_loaded": false
+}

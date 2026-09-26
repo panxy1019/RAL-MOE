@@ -1,0 +1,27 @@
+nohup: ignoring input
+{"event": "split_start", "experiment": "centered_square_periodic_v16_public_r28_p26", "test_label": "Re100p500000", "test_Re": 100.5, "holdout_labels": ["Re100p500000", "Re102p000000", "Re120p689655", "Re144p827586"], "train_re_count": 27, "test_re_count": 4, "kept_train_samples": 3321, "dense_train_samples_before_time_sparsity": 3321, "compression_ratio_vs_dense_train": 1.0}
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_squ
+are_periodic_v1/runs/full_seed1600/swanlog/run-20260728_092815-il18qjre-e9c96768
+5351-96272
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE
+swanlab: 🚀 View run CenteredSquare-Periodic-ru28-rp26 at 
+https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE/runs/il18qjre
+swanlab: Error happened while training
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE
+swanlab: 🚀 View run CenteredSquare-Periodic-ru28-rp26 at 
+https://swanlab.cn/@panxy1019/V17SquarePeriodicMOE/runs/il18qjre
+swanlab: Upload complete: 26 records
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/run_square_periodic_training.py", line 75, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/run_square_periodic_training.py", line 69, in main
+    trainer.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/train_square_periodic_moe.py", line 6530, in main
+    train_one_split(
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/code/train_square_periodic_moe.py", line 5687, in train_one_split
+    raise FloatingPointError(
+FloatingPointError: Non-finite training loss at epoch=1, rollout_steps=4.

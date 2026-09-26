@@ -1,0 +1,96 @@
+{
+  "status": "completed_cached_metrics",
+  "interfaces": {
+    "SH": {
+      "development_sha256": "b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40",
+      "heldout_sha256": "5d27b47202ef9d296f0c384dd7e367b2547410634c81c4af9b2bc7adb0443a88",
+      "gate_sha256": "732059a2cf19acf6b4681590fa2a8a43ad4babdc2c5814638ed438c1dc5cafb0",
+      "constant_alpha": 0.3578505549623222,
+      "constant_logit_beta": 0.4909639741804737,
+      "validation_fixed_candidate": 2,
+      "feature_input": 9,
+      "candidate_1": "Steady",
+      "candidate_2": "Hopf",
+      "cache_keys": [
+        "schema_version",
+        "boundary",
+        "source_name",
+        "horizon",
+        "split",
+        "re",
+        "starts",
+        "target_ids",
+        "timestamps",
+        "features",
+        "pair_indices",
+        "quad_u",
+        "quad_p",
+        "candidate_1_a",
+        "candidate_1_b",
+        "candidate_2_a",
+        "candidate_2_b",
+        "truth_a",
+        "truth_b",
+        "candidate_1_finite",
+        "candidate_2_finite",
+        "candidate_1_divergent",
+        "candidate_2_divergent"
+      ],
+      "candidate_finite": {
+        "1": true,
+        "2": true
+      },
+      "candidate_divergent": {
+        "1": 0,
+        "2": 0
+      }
+    },
+    "HP": {
+      "development_sha256": "178624d16cc72d528591ae1cfbde61101aca69b9af79363b0b9b3e2bb3070663",
+      "heldout_sha256": "bb2a70a3aae3988b1031b3791def1607177ef7b622c455733cf70c7a8491d0d8",
+      "gate_sha256": "fb154d2d3decb68c59b242a17c95c062e24f4443f5034692ec0abfaa55e9c887",
+      "constant_alpha": 0.928683495425285,
+      "constant_logit_beta": 3.4808028263153705,
+      "validation_fixed_candidate": 1,
+      "feature_input": 9,
+      "candidate_1": "Periodic",
+      "candidate_2": "Hopf",
+      "cache_keys": [
+        "schema_version",
+        "boundary",
+        "source_name",
+        "horizon",
+        "split",
+        "re",
+        "starts",
+        "target_ids",
+        "timestamps",
+        "features",
+        "pair_indices",
+        "quad_u",
+        "quad_p",
+        "candidate_1_a",
+        "candidate_1_b",
+        "candidate_2_a",
+        "candidate_2_b",
+        "truth_a",
+        "truth_b",
+        "candidate_1_finite",
+        "candidate_2_finite",
+        "candidate_1_divergent",
+        "candidate_2_divergent"
+      ],
+      "candidate_finite": {
+        "1": true,
+        "2": true
+      },
+      "candidate_divergent": {
+        "1": 0,
+        "2": 0
+      }
+    }
+  },
+  "aggregation": "time-step average, then window average within Re, then equal Re; pooled curves separate",
+  "exclusions": "No windows excluded. Physical residuals, energy, mu-only replay and end-to-end timing are not provided by this script.",
+  "reference": "archived physical-field quadratic cache; FOM lineage audit remains separate"
+}

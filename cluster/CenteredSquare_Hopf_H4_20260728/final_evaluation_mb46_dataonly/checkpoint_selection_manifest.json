@@ -1,0 +1,80 @@
+{
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/final_evaluation_mb46_dataonly/selected_validation_step7200.pt",
+  "checkpoint_optimizer_step": 7200,
+  "checkpoint_sha256": "07af06ec5506e5b6a12d9d00f557a4e48fa722be3c2a183df752f0883ad40beb",
+  "created_utc": "2026-07-28T06:57:35.229703+00:00",
+  "eligible_and_late_candidates": [
+    {
+      "hard_gate": false,
+      "hopf_gate": false,
+      "numeric_gate": true,
+      "score": 2.3179847577004695,
+      "step": 6400
+    },
+    {
+      "hard_gate": false,
+      "hopf_gate": false,
+      "numeric_gate": true,
+      "score": 2.4160073756065685,
+      "step": 6600
+    },
+    {
+      "hard_gate": false,
+      "hopf_gate": false,
+      "numeric_gate": true,
+      "score": 2.471251544565894,
+      "step": 6800
+    },
+    {
+      "hard_gate": false,
+      "hopf_gate": false,
+      "numeric_gate": true,
+      "score": 2.527164807775989,
+      "step": 7000
+    },
+    {
+      "hard_gate": true,
+      "hopf_gate": true,
+      "numeric_gate": true,
+      "score": 2.4238653451902787,
+      "step": 7200
+    },
+    {
+      "hard_gate": false,
+      "hopf_gate": false,
+      "numeric_gate": true,
+      "score": 2.483812272653449,
+      "step": 7400
+    },
+    {
+      "hard_gate": false,
+      "hopf_gate": false,
+      "numeric_gate": true,
+      "score": 2.3880168471892826,
+      "step": 7600
+    },
+    {
+      "hard_gate": false,
+      "hopf_gate": false,
+      "numeric_gate": true,
+      "score": 2.214505912177265,
+      "step": 7800
+    },
+    {
+      "hard_gate": false,
+      "hopf_gate": false,
+      "numeric_gate": true,
+      "score": 2.259730727865826,
+      "step": 8000
+    }
+  ],
+  "heldout_evaluation_started_after_checkpoint_copy": true,
+  "heldout_loaded_before_freeze": false,
+  "schema_version": 1,
+  "selected_hopf_gate": true,
+  "selected_numeric_gate": true,
+  "selected_step": 7200,
+  "selected_validation_score": 2.4238653451902787,
+  "selection_rule": "step >= 6400 and hard_gate=true; minimize validation score among eligible checkpoints",
+  "selection_split": "validation_only"
+}

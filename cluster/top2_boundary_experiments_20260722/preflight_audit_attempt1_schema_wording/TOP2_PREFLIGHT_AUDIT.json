@@ -1,0 +1,162 @@
+{
+  "authorized_next_action": "no cache construction, training, validation selection, or test access",
+  "charts": {
+    "Hopf": {
+      "checkpoint": "/root/panxy/particalMOE/Hopf/migrated_h4_expanded/runs/HopfExpanded34_H4_NormalFormRadial_r32/best_validation.pt",
+      "checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+      "future_truth_free_cross_source_phase_contract": true,
+      "index": "/root/panxy/particalMOE/Hopf/artifacts/hopf/projection_snapshots_velocity_hopf.csv",
+      "index_audit_train_validation_only": {
+        "columns": [
+          "snapshot_id",
+          "Re",
+          "Re_label",
+          "source_regime",
+          "target_regime",
+          "split",
+          "time",
+          "local_snapshot_index",
+          "velocity_local_r32_full_relative_l2",
+          "velocity_local_r80_full_relative_l2",
+          "velocity_global_r32_full_relative_l2"
+        ],
+        "dt": {
+          "count": 4286,
+          "max": 23.633552030000374,
+          "median": 21.69381217,
+          "min": 0.43349441999998817,
+          "p05": 4.113956599999938,
+          "p95": 23.608120899999903
+        },
+        "period_column": false,
+        "phase_column": false,
+        "train_validation_Re_count": 31
+      },
+      "native_reads_indexed_phase": false,
+      "phase_harmonics": 0,
+      "phase_uses_full_trajectory_endpoint_fallback": false
+    },
+    "Periodic": {
+      "checkpoint": "/root/panxy/particalMOE/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt",
+      "checkpoint_sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5",
+      "future_truth_free_cross_source_phase_contract": false,
+      "index": "/root/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+      "index_audit_train_validation_only": {
+        "columns": [
+          "snapshot_id",
+          "Re",
+          "Re_label",
+          "regime",
+          "target_regime",
+          "split",
+          "time",
+          "local_snapshot_index"
+        ],
+        "dt": {
+          "count": 9447,
+          "max": 17.635631250000188,
+          "median": 6.528878889999987,
+          "min": 0.2712677000000099,
+          "p05": 3.6447495400000207,
+          "p95": 15.410097489999771
+        },
+        "period_column": false,
+        "phase_column": false,
+        "train_validation_Re_count": 59
+      },
+      "native_reads_indexed_phase": true,
+      "phase_harmonics": 4,
+      "phase_uses_full_trajectory_endpoint_fallback": true
+    },
+    "Steady": {
+      "checkpoint": "/root/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s4_validation_step_1200.pt",
+      "checkpoint_sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+      "future_truth_free_cross_source_phase_contract": false,
+      "index": "/root/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+      "index_audit_train_validation_only": {
+        "columns": [
+          "snapshot_id",
+          "Re",
+          "Re_label",
+          "regime",
+          "target_regime",
+          "split",
+          "time",
+          "local_snapshot_index"
+        ],
+        "dt": {
+          "count": 1005,
+          "max": 9.523809530000108,
+          "median": 4.678679850000208,
+          "min": 0.6198950000000423,
+          "p05": 4.101548170000115,
+          "p95": 9.523809519999986
+        },
+        "period_column": false,
+        "phase_column": false,
+        "train_validation_Re_count": 16
+      },
+      "native_reads_indexed_phase": true,
+      "phase_harmonics": 4,
+      "phase_uses_full_trajectory_endpoint_fallback": true
+    }
+  },
+  "decision": "FAIL_CLOSED",
+  "failures": [
+    "Hopf-Periodic: cannot run both frozen specialists from the same arbitrary physical history without database phase/endpoint metadata",
+    "Periodic: native forward is coupled to arrays['phase'][current] and exposes no certified source-independent phase argument",
+    "Periodic: phase_harmonics=4, index has no phase/period, and native loader derives phase from full trajectory endpoint",
+    "Steady-Hopf: cannot run both frozen specialists from the same arbitrary physical history without database phase/endpoint metadata",
+    "Steady: native forward is coupled to arrays['phase'][current] and exposes no certified source-independent phase argument",
+    "Steady: phase_harmonics=4, index has no phase/period, and native loader derives phase from full trajectory endpoint"
+  ],
+  "mesh_pressure_contract": {
+    "charts": {
+      "Hopf": {
+        "common_areas_equal": true,
+        "common_points_equal": true,
+        "common_pressure_gauge": true,
+        "pressure_gauge": "subtract_area_mean_per_snapshot",
+        "velocity_pressure_areas_equal": true,
+        "velocity_pressure_points_equal": true
+      },
+      "Periodic": {
+        "common_areas_equal": true,
+        "common_points_equal": true,
+        "common_pressure_gauge": true,
+        "pressure_gauge": "subtract_area_mean_per_snapshot",
+        "velocity_pressure_areas_equal": true,
+        "velocity_pressure_points_equal": true
+      },
+      "Steady": {
+        "common_areas_equal": true,
+        "common_points_equal": true,
+        "common_pressure_gauge": true,
+        "pressure_gauge": "subtract_area_mean_per_snapshot",
+        "velocity_pressure_areas_equal": true,
+        "velocity_pressure_points_equal": true
+      }
+    },
+    "passed": true
+  },
+  "pair_contract": {
+    "Hopf-Periodic": {
+      "adjacent": true,
+      "future_truth_free_dual_native_start": false
+    },
+    "Steady-Hopf": {
+      "adjacent": true,
+      "future_truth_free_dual_native_start": false
+    },
+    "Steady-Periodic": {
+      "adjacent": false,
+      "forbidden": true
+    }
+  },
+  "schema": "TOP2_OUTPUT_FIELD_PREFLIGHT_V1",
+  "test_data_loaded": false,
+  "time_alignment": {
+    "reason": "dt ranges overlap, but no frozen cross-source wrapper has been certified to drive both indexed native feature builders on one query clock; phase failure prevents a valid dual-rollout alignment smoke",
+    "status": "NOT_CERTIFIED"
+  }
+}

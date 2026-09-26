@@ -1,0 +1,43 @@
+{
+  "domain_count": 34,
+  "heldout_Re": [
+    95.1,
+    95.3,
+    96.5,
+    100.5,
+    102.0
+  ],
+  "heldout_count": 5,
+  "pod": [
+    {
+      "analysis_rank": 256,
+      "captured": 0.9990961454045632,
+      "field": "velocity",
+      "path": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/weighted_pod_velocity.npz",
+      "rank_99": 5,
+      "rank_999": 11,
+      "stored_modes": 11
+    },
+    {
+      "analysis_rank": 256,
+      "captured": 0.9992009994513844,
+      "field": "pressure",
+      "path": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/weighted_pod_pressure.npz",
+      "rank_99": 5,
+      "rank_999": 11,
+      "stored_modes": 11
+    }
+  ],
+  "regime": "hopf",
+  "train_count": 23,
+  "train_snapshots": 2898,
+  "validation_Re": [
+    94.5,
+    95.25,
+    95.5,
+    97.5,
+    99.0,
+    101.5
+  ],
+  "validation_count": 6
+}

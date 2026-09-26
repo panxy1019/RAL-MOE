@@ -1,0 +1,115 @@
+{
+  "amp_dtype": "torch.bfloat16",
+  "basis_and_pressure_gauge": {
+    "pressure_basis_area_mean_max_abs": 5.533089542097969e-10,
+    "pressure_gauge": "subtract_area_mean_per_snapshot",
+    "pressure_weighted_gram_max_abs_error": 5.918741226196289e-05,
+    "velocity_weighted_gram_max_abs_error": 2.6404857635498047e-05
+  },
+  "config": {
+    "path": "/root/panxy/particalMOE/steady_specialist_v1/code/training_s2b_portable.json",
+    "sha256": "c5f44462e1a68ad6470461479615a72d21a9c025b1d21fef784b49c903f67455"
+  },
+  "directions_per_re_scale": 20,
+  "heldout_bank": {
+    "path": "/root/panxy/particalMOE/unified_rollout_eval_heldout_v1/steady/heldout_perturbation_bank.npz",
+    "sha256": "12b0fc179323ad4eb39b7d75f39ccf0b5fdd05bd29fa291205a78709ae224526"
+  },
+  "heldout_re": [
+    "Re_24p630436",
+    "Re_32p740068",
+    "Re_39p685479",
+    "Re_45p142703"
+  ],
+  "horizons": [
+    1,
+    4,
+    8,
+    16,
+    56,
+    128
+  ],
+  "perturbation_scales": [
+    0.0010000000474974513,
+    0.004999999888241291,
+    0.009999999776482582,
+    0.019999999552965164,
+    0.05000000074505806
+  ],
+  "rp": 32,
+  "ru": 32,
+  "runtime_base_checkpoint": {
+    "path": "/root/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s2b_validation.pt",
+    "sha256": "3ec8bdedbe2f953a181d71ae819980cbbdfd65c8fee33aac9237a16d780a682d"
+  },
+  "scalers": {
+    "pressure": {
+      "five_smallest_modes_zero_based": [
+        {
+          "mode": 12,
+          "std": 1.0000000116860974e-07
+        },
+        {
+          "mode": 13,
+          "std": 1.0000000116860974e-07
+        },
+        {
+          "mode": 15,
+          "std": 1.0000000116860974e-07
+        },
+        {
+          "mode": 14,
+          "std": 1.0000000116860974e-07
+        },
+        {
+          "mode": 10,
+          "std": 1.0000000116860974e-07
+        }
+      ],
+      "max": 0.0006140500190667808,
+      "max_over_min": 6140.5,
+      "median": 1.0000000116860974e-07,
+      "min": 1.0000000116860974e-07,
+      "p01": 1.0000000116860974e-07
+    },
+    "velocity": {
+      "five_smallest_modes_zero_based": [
+        {
+          "mode": 31,
+          "std": 7.055348874018819e-07
+        },
+        {
+          "mode": 30,
+          "std": 7.185338972703903e-07
+        },
+        {
+          "mode": 29,
+          "std": 7.815436333657999e-07
+        },
+        {
+          "mode": 28,
+          "std": 1.0812199207066442e-06
+        },
+        {
+          "mode": 27,
+          "std": 1.1826208492493606e-06
+        }
+      ],
+      "max": 0.20676228404045105,
+      "max_over_min": 293057.5,
+      "median": 6.305445367615903e-06,
+      "min": 7.055348874018819e-07,
+      "p01": 7.095645742083434e-07
+    }
+  },
+  "schema_version": 1,
+  "selected_checkpoint": {
+    "path": "/root/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s4_validation_step_1200.pt",
+    "sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+    "step": 1200
+  },
+  "training_bank": {
+    "path": "/root/panxy/particalMOE/steady_specialist_v1/data/perturbation_bank_train_validation.npz",
+    "sha256": "69fa522aa4c06f26cad26718dd99b5dcce0b7dd60c30b3efff8a31a154d891c8"
+  }
+}

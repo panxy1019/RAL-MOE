@@ -1,0 +1,17 @@
+{
+  "artifacts": {
+    "PER_WINDOW_S_H_CAPABILITY_SCAN.csv": "5d5cf257e2236988261a6f77bdada1da9015ef15b45992536c54b142e3820f44",
+    "S_H_CAPABILITY_CURVES.csv": "79f96cdd9f7f95369a9857f8503d72e1a4d90d341188a15753da572385b64fdc",
+    "S_H_CAPABILITY_SCAN.json": "05231ac5b6f02cfc82a734d5e7c541c5c0188e992adc73dd0f594fd7318e03c3",
+    "S_H_CAPABILITY_SCAN.md": "49e4d7c89a018d82e8ee30acc69f1bd6fdaac9c4ae8b8c06f0e35c492f6dc2a2",
+    "S_H_K56_CAPABILITY_CURVES.svg": "e89f59e2bc51d8670f20d49ba495ee9b855a55320a5adc9b245087c3f08e4ef9"
+  },
+  "capacity_crossing_linear_interpolation": 43.392785247219635,
+  "hopf_checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+  "k128_field_error": "UNAVAILABLE: native S trajectories contain only 63-64 snapshots, so no true K128 targets exist after history.",
+  "new_CFD_data_created": false,
+  "specialist_checkpoints_modified": false,
+  "specialists_retrained": false,
+  "steady_checkpoint_sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+  "status": "FROZEN"
+}

@@ -1,0 +1,90 @@
+Diagnostic log bound to file: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/swanlog/run-20260728_095639-xmb9155b-e9c967685351-99021/debug/debug.log
+2026-07-28 11:51:01.035 | ERROR    | swanlab.sdk.internal.pkg.safe:block:101 - record chunk upload failed, record_type='scalar': Traceback (most recent call last):
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/connection.py", line 204, in _new_conn
+    sock = connection.create_connection(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/socket.py", line 974, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -3] Temporary failure in name resolution
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 788, in urlopen
+    response = self._make_request(
+               ^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 1106, in _validate_conn
+    conn.connect()
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/connection.py", line 759, in connect
+    self.sock = sock = self._new_conn()
+                       ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/connection.py", line 211, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: HTTPSConnection(host='api.swanlab.cn', port=443): Failed to resolve 'api.swanlab.cn' ([Errno -3] Temporary failure in name resolution)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/requests/adapters.py", line 696, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/connectionpool.py", line 842, in urlopen
+    retries = retries.increment(
+              ^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/pkg/client/session.py", line 37, in increment
+    new_retry = super().increment(*args, **kwargs)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/urllib3/util/retry.py", line 543, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.swanlab.cn', port=443): Max retries exceeded with url: /api/house/metrics (Caused by NameResolutionError("HTTPSConnection(host='api.swanlab.cn', port=443): Failed to resolve 'api.swanlab.cn' ([Errno -3] Temporary failure in name resolution)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/pkg/safe/__init__.py", line 98, in block
+    yield
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/core_python/transport/dispatch.py", line 73, in _upload_chunk
+    self._sender.upload(record_type, chunk)
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/core_python/transport/sender.py", line 138, in upload
+    handler(records)
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/core_python/transport/sender.py", line 179, in upload_scalar
+    upload_scalar(self._project_id, self._experiment_id, metrics=metrics)
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/core_python/api/upload.py", line 125, in upload_scalar
+    client.post("/house/metrics", data, retries=0)
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/core_python/client/__init__.py", line 59, in post
+    return _get_client().post(url, data=data, retries=retries, log_error=log_error)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/pkg/client/__init__.py", line 110, in post
+    return self.request("POST", url, json=data, retries=retries, log_error=log_error)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/pkg/client/__init__.py", line 103, in request
+    resp = self._session.request(method, full_url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/pkg/client/session.py", line 92, in request
+    return super().request(method, url, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/requests/sessions.py", line 651, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/pkg/client/session.py", line 111, in send
+    response = super().send(request, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/requests/sessions.py", line 784, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/swanlab/sdk/internal/pkg/client/session.py", line 75, in send
+    return super(TimeoutHTTPAdapter, adapter).send(request, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/requests/adapters.py", line 729, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.swanlab.cn', port=443): Max retries exceeded with url: /api/house/metrics (Caused by NameResolutionError("HTTPSConnection(host='api.swanlab.cn', port=443): Failed to resolve 'api.swanlab.cn' ([Errno -3] Temporary failure in name resolution)"))
+2026-07-28 11:51:01.077 | WARNING  | swanlab.sdk.internal.core_python.transport.thread:warn:187 - Upload failed due to network or server issues, retrying automatically.

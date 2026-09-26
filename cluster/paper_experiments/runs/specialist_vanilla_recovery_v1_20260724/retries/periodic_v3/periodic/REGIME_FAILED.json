@@ -1,0 +1,12 @@
+{
+  "error": "RuntimeError('terminal method failures: {\\'vanilla-fnn\\': \"RuntimeError(\\'vanilla_train returned 1\\')\"}')",
+  "finished_unix": 1784851732.9004874,
+  "regime": "periodic",
+  "return_codes": {
+    "vanilla_preflight": 0,
+    "vanilla_preflight_rollout_smoke": 0,
+    "vanilla_train": 1
+  },
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py\", line 676, in main\n    runner = Runner(args)\n    ^^^^^^^^^^^^^^^^\n  File \"/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py\", line 629, in run_all\n    if errors:\n        ^^^^^^^\nRuntimeError: terminal method failures: {'vanilla-fnn': \"RuntimeError('vanilla_train returned 1')\"}\n"
+}

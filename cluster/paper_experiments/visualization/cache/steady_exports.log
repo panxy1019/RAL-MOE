@@ -1,0 +1,19 @@
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/export_steady_rollouts.py", line 112, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/export_steady_rollouts.py", line 65, in main
+    runtime = s3.S3(init)
+              ^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_s3.py", line 37, in __init__
+    self.exp=trainer.Experiment(SimpleNamespace(run_dir=str(self.run/'runtime'),resume=None),cfg)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_s2b_3090.py", line 93, in __init__
+    self.vendor = load_vendor(Path(cfg["vendor_trainer"]))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_s2b_3090.py", line 42, in load_vendor
+    module = importlib.util.module_from_spec(spec); spec.loader.exec_module(module); return module
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap_external>", line 936, in exec_module
+  File "<frozen importlib._bootstrap_external>", line 1073, in get_code
+  File "<frozen importlib._bootstrap_external>", line 1130, in get_data
+FileNotFoundError: [Errno 2] No such file or directory: '/root/panxy/particalMOE/steady_specialist_v1/code/train_v16_4_v2_r32_compat.py'

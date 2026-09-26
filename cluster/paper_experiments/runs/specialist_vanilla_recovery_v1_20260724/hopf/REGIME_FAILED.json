@@ -1,0 +1,10 @@
+{
+  "error": "RuntimeError('terminal method failures: {\\'vanilla-fnn\\': \"RuntimeError(\\'vanilla_smoke returned 1\\')\"}')",
+  "finished_unix": 1784850225.8232186,
+  "regime": "hopf",
+  "return_codes": {
+    "vanilla_smoke": 1
+  },
+  "status": "FAILED",
+  "traceback": "Traceback (most recent call last):\n  File \"/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py\", line 664, in main\n    runner.run_all()\n  File \"/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_single_seed_regime.py\", line 617, in run_all\n    raise RuntimeError(f\"terminal method failures: {errors}\")\nRuntimeError: terminal method failures: {'vanilla-fnn': \"RuntimeError('vanilla_smoke returned 1')\"}\n"
+}

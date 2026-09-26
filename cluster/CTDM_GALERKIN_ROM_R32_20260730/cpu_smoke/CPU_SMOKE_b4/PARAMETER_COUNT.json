@@ -1,0 +1,14 @@
+{
+  "variant": "b4",
+  "model_name": "B4_CTDM_Galerkin_ROM",
+  "trainable_parameters": 2256004,
+  "total_parameters": 2256004,
+  "parameter_groups": {
+    "memory": 186148,
+    "heads": 2069856
+  },
+  "runtime_memory_state_per_trajectory": 1024,
+  "paired_variant": "b3",
+  "paired_trainable_parameters": 2256004,
+  "paired_parameter_shapes_identical": true
+}

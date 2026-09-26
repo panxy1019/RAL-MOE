@@ -1,0 +1,125 @@
+[     1.2s] 数据目录: /cephfs/shared/V17_HopfExpanded34_POD_20260721/artifacts/hopf
+[     1.2s] 网格文件: /cephfs/shared/V17_RegimeIndependentROM/source_mesh/run_Re_100_7107.vtk
+[     1.2s] Re labels: ['Re_45p500000', 'Re_45p800000', 'Re_46p100000', 'Re_46p300000', 'Re_46p500000', 'Re_46p700000', 'Re_46p900000', 'Re_47p081355', 'Re_47p200000', 'Re_47p400000', 'Re_47p600000', 'Re_47p722947', 'Re_47p800000', 'Re_48p000000', 'Re_48p300000', 'Re_48p368688', 'Re_48p700000', 'Re_49p022357', 'Re_49p300000', 'Re_49p600000', 'Re_49p687640', 'Re_50p000000', 'Re_50p368054', 'Re_51p066785', 'Re_51p786450', 'Re_52p528767', 'Re_53p294175', 'Re_54p081508', 'Re_54p887950', 'Re_55p709610', 'Re_56p543246', 'Re_57p389970', 'Re_58p262636', 'Re_59p201432']
+[     1.2s] r_u=80, r_p=80, nu=0.001
+[     1.4s] 读取 area-weighted L2 point_areas 作为质量权重
+[     1.4s] mass sum=5.992146803695e+02, min=1.042e-05, max=1.319e-02
+[     1.4s] 计算速度模态导数：r_u=80
+[    17.2s]   velocity mode derivatives 8/80
+[    32.8s]   velocity mode derivatives 16/80
+[    49.0s]   velocity mode derivatives 24/80
+[    64.6s]   velocity mode derivatives 32/80
+[    80.3s]   velocity mode derivatives 40/80
+[    95.9s]   velocity mode derivatives 48/80
+[   111.6s]   velocity mode derivatives 56/80
+[   127.2s]   velocity mode derivatives 64/80
+[   142.8s]   velocity mode derivatives 72/80
+[   158.5s]   velocity mode derivatives 80/80
+[   158.5s] 计算压力模态梯度：r_p=80
+[   159.8s]   pressure mode gradients 8/80
+[   161.0s]   pressure mode gradients 16/80
+[   162.3s]   pressure mode gradients 24/80
+[   163.6s]   pressure mode gradients 32/80
+[   164.9s]   pressure mode gradients 40/80
+[   166.1s]   pressure mode gradients 48/80
+[   167.4s]   pressure mode gradients 56/80
+[   168.7s]   pressure mode gradients 64/80
+[   170.0s]   pressure mode gradients 72/80
+[   171.2s]   pressure mode gradients 80/80
+[   171.2s] 计算共享 Gram/P/H
+[   173.1s] 计算二次对流张量 H：r_u=80, chunks=48
+[   193.6s]   H chunks 2/48
+[   214.1s]   H chunks 4/48
+[   234.6s]   H chunks 6/48
+[   255.1s]   H chunks 8/48
+[   275.5s]   H chunks 10/48
+[   296.0s]   H chunks 12/48
+[   316.5s]   H chunks 14/48
+[   336.9s]   H chunks 16/48
+[   357.5s]   H chunks 18/48
+[   377.9s]   H chunks 20/48
+[   398.4s]   H chunks 22/48
+[   418.9s]   H chunks 24/48
+[   439.4s]   H chunks 26/48
+[   459.9s]   H chunks 28/48
+[   480.4s]   H chunks 30/48
+[   500.9s]   H chunks 32/48
+[   521.4s]   H chunks 34/48
+[   544.0s]   H chunks 36/48
+[   574.2s]   H chunks 38/48
+[   602.9s]   H chunks 40/48
+[   629.0s]   H chunks 42/48
+[   649.5s]   H chunks 44/48
+[   670.0s]   H chunks 46/48
+[   685.8s]   H chunks 48/48
+[   685.8s] 计算均值场导数：Re_45p500000
+[   687.9s] 计算均值相关 c/A：Re_45p500000
+[   689.5s] 计算均值场导数：Re_45p800000
+[   691.7s] 计算均值相关 c/A：Re_45p800000
+[   693.2s] 计算均值场导数：Re_46p100000
+[   695.5s] 计算均值相关 c/A：Re_46p100000
+[   697.0s] 计算均值场导数：Re_46p300000
+[   699.3s] 计算均值相关 c/A：Re_46p300000
+[   700.8s] 计算均值场导数：Re_46p500000
+[   703.1s] 计算均值相关 c/A：Re_46p500000
+[   704.6s] 计算均值场导数：Re_46p700000
+[   706.9s] 计算均值相关 c/A：Re_46p700000
+[   708.4s] 计算均值场导数：Re_46p900000
+[   710.7s] 计算均值相关 c/A：Re_46p900000
+[   712.3s] 计算均值场导数：Re_47p081355
+[   714.6s] 计算均值相关 c/A：Re_47p081355
+[   716.1s] 计算均值场导数：Re_47p200000
+[   718.4s] 计算均值相关 c/A：Re_47p200000
+[   719.9s] 计算均值场导数：Re_47p400000
+[   722.2s] 计算均值相关 c/A：Re_47p400000
+[   723.8s] 计算均值场导数：Re_47p600000
+[   726.0s] 计算均值相关 c/A：Re_47p600000
+[   727.6s] 计算均值场导数：Re_47p722947
+[   729.9s] 计算均值相关 c/A：Re_47p722947
+[   731.4s] 计算均值场导数：Re_47p800000
+[   733.7s] 计算均值相关 c/A：Re_47p800000
+[   735.3s] 计算均值场导数：Re_48p000000
+[   737.5s] 计算均值相关 c/A：Re_48p000000
+[   739.0s] 计算均值场导数：Re_48p300000
+[   741.3s] 计算均值相关 c/A：Re_48p300000
+[   742.9s] 计算均值场导数：Re_48p368688
+[   745.2s] 计算均值相关 c/A：Re_48p368688
+[   746.8s] 计算均值场导数：Re_48p700000
+[   749.1s] 计算均值相关 c/A：Re_48p700000
+[   750.6s] 计算均值场导数：Re_49p022357
+[   752.9s] 计算均值相关 c/A：Re_49p022357
+[   754.4s] 计算均值场导数：Re_49p300000
+[   756.7s] 计算均值相关 c/A：Re_49p300000
+[   758.3s] 计算均值场导数：Re_49p600000
+[   760.5s] 计算均值相关 c/A：Re_49p600000
+[   762.1s] 计算均值场导数：Re_49p687640
+[   764.4s] 计算均值相关 c/A：Re_49p687640
+[   766.1s] 计算均值场导数：Re_50p000000
+[   768.3s] 计算均值相关 c/A：Re_50p000000
+[   769.8s] 计算均值场导数：Re_50p368054
+[   772.1s] 计算均值相关 c/A：Re_50p368054
+[   773.7s] 计算均值场导数：Re_51p066785
+[   776.0s] 计算均值相关 c/A：Re_51p066785
+[   777.5s] 计算均值场导数：Re_51p786450
+[   779.7s] 计算均值相关 c/A：Re_51p786450
+[   781.3s] 计算均值场导数：Re_52p528767
+[   783.6s] 计算均值相关 c/A：Re_52p528767
+[   785.1s] 计算均值场导数：Re_53p294175
+[   787.4s] 计算均值相关 c/A：Re_53p294175
+[   789.0s] 计算均值场导数：Re_54p081508
+[   791.3s] 计算均值相关 c/A：Re_54p081508
+[   792.8s] 计算均值场导数：Re_54p887950
+[   795.1s] 计算均值相关 c/A：Re_54p887950
+[   796.7s] 计算均值场导数：Re_55p709610
+[   799.0s] 计算均值相关 c/A：Re_55p709610
+[   800.5s] 计算均值场导数：Re_56p543246
+[   802.8s] 计算均值相关 c/A：Re_56p543246
+[   804.3s] 计算均值场导数：Re_57p389970
+[   806.6s] 计算均值相关 c/A：Re_57p389970
+[   808.1s] 计算均值场导数：Re_58p262636
+[   810.4s] 计算均值相关 c/A：Re_58p262636
+[   812.0s] 计算均值场导数：Re_59p201432
+[   814.2s] 计算均值相关 c/A：Re_59p201432
+[   815.7s] 保存张量: /cephfs/shared/V17_HopfExpanded34_POD_20260721/artifacts/hopf/velocity_rom_hopf.npz
+[   815.8s] 写 Markdown 报告: /cephfs/shared/V17_HopfExpanded34_POD_20260721/artifacts/hopf/velocity_rom_hopf.md
+[   816.3s] 完成

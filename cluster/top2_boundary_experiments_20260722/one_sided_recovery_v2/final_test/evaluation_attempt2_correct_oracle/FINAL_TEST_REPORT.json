@@ -1,0 +1,403 @@
+{
+  "baselines": {
+    "E2_pair_Top1": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005981774535030127,
+          "joint_worst": 0.006716759875416756,
+          "pressure_mean": 0.00593852624297142,
+          "velocity_mean": 4.324788460507989e-05
+        },
+        "K16": {
+          "joint_mean": 0.015487383119761944,
+          "joint_worst": 0.01565423235297203,
+          "pressure_mean": 0.015152816660702229,
+          "velocity_mean": 0.00033456450910307467
+        },
+        "K4": {
+          "joint_mean": 0.012776029296219349,
+          "joint_worst": 0.013194379396736622,
+          "pressure_mean": 0.012645576149225235,
+          "velocity_mean": 0.00013045337982475758
+        },
+        "K56": {
+          "joint_mean": 0.06130737066268921,
+          "joint_worst": 0.1700870394706726,
+          "pressure_mean": 0.06057870760560036,
+          "velocity_mean": 0.0007286631152965128
+        },
+        "K8": {
+          "joint_mean": 0.011713596992194653,
+          "joint_worst": 0.01180858165025711,
+          "pressure_mean": 0.011499728076159954,
+          "velocity_mean": 0.00021387002198025584
+        }
+      },
+      "joint_all_mean": 0.021864084526896477,
+      "joint_all_worst": 0.19341298937797546,
+      "per_Re": {
+        "45.142704010009766": {
+          "mean": 0.021864084526896477,
+          "worst": 0.19341298937797546
+        }
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.00021018882763438877,
+        "worst": 0.0002663378106072043
+      },
+      "top2_usage": 0.0
+    },
+    "E2_pair_probability_blend": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005252262577414513,
+          "joint_worst": 0.00622653029859066,
+          "pressure_mean": 0.005217002239078283,
+          "velocity_mean": 3.525990177877247e-05
+        },
+        "K16": {
+          "joint_mean": 0.007333001587539911,
+          "joint_worst": 0.007902675308287144,
+          "pressure_mean": 0.007161045912653208,
+          "velocity_mean": 0.0001719566498650238
+        },
+        "K4": {
+          "joint_mean": 0.0064913020469248295,
+          "joint_worst": 0.007086415309458971,
+          "pressure_mean": 0.006411464884877205,
+          "velocity_mean": 7.983712566783652e-05
+        },
+        "K56": {
+          "joint_mean": 0.029931416735053062,
+          "joint_worst": 0.08475074917078018,
+          "pressure_mean": 0.029566915705800056,
+          "velocity_mean": 0.00036449870094656944
+        },
+        "K8": {
+          "joint_mean": 0.005719317588955164,
+          "joint_worst": 0.00616491911932826,
+          "pressure_mean": 0.0055996025912463665,
+          "velocity_mean": 0.00011971549247391522
+        }
+      },
+      "joint_all_mean": 0.011070760898292065,
+      "joint_all_worst": 0.09652829170227051,
+      "per_Re": {
+        "45.142704010009766": {
+          "mean": 0.011070760898292065,
+          "worst": 0.09652829170227051
+        }
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.00018609937265107187,
+        "worst": 0.0002002910713641664
+      },
+      "top2_usage": 1.0
+    },
+    "fixed_0.5": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005249907728284597,
+          "joint_worst": 0.006232253275811672,
+          "pressure_mean": 0.005214646924287081,
+          "velocity_mean": 3.5259785363450646e-05
+        },
+        "K16": {
+          "joint_mean": 0.007296623196452856,
+          "joint_worst": 0.007867071777582169,
+          "pressure_mean": 0.007125336676836014,
+          "velocity_mean": 0.00017128727631643414
+        },
+        "K4": {
+          "joint_mean": 0.006467314437031746,
+          "joint_worst": 0.007060278672724962,
+          "pressure_mean": 0.006387640256434679,
+          "velocity_mean": 7.967389683471993e-05
+        },
+        "K56": {
+          "joint_mean": 0.029785851016640663,
+          "joint_worst": 0.08435379713773727,
+          "pressure_mean": 0.029422985389828682,
+          "velocity_mean": 0.000362868799129501
+        },
+        "K8": {
+          "joint_mean": 0.005695223808288574,
+          "joint_worst": 0.006140661891549826,
+          "pressure_mean": 0.0055758454836905,
+          "velocity_mean": 0.00011937764793401584
+        }
+      },
+      "joint_all_mean": 0.011021886020898819,
+      "joint_all_worst": 0.09607759863138199,
+      "per_Re": {
+        "45.142704010009766": {
+          "mean": 0.011021886020898819,
+          "worst": 0.09607759863138199
+        }
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.0001860236138572876,
+        "worst": 0.00020005797802447617
+      },
+      "top2_usage": 1.0
+    },
+    "per_window_convex_oracle": {
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005007600411772728,
+          "joint_worst": 0.007377761881798506,
+          "pressure_mean": 0.004966218024492264,
+          "velocity_mean": 4.138231815886684e-05
+        },
+        "K16": {
+          "joint_mean": 0.0024312392342835665,
+          "joint_worst": 0.006961169186979532,
+          "pressure_mean": 0.0023426543921232224,
+          "velocity_mean": 8.858466753736138e-05
+        },
+        "K4": {
+          "joint_mean": 0.004594676196575165,
+          "joint_worst": 0.00842797290533781,
+          "pressure_mean": 0.004531049635261297,
+          "velocity_mean": 6.362691783579066e-05
+        },
+        "K56": {
+          "joint_mean": 0.003148938762024045,
+          "joint_worst": 0.003557775868102908,
+          "pressure_mean": 0.0030369155574589968,
+          "velocity_mean": 0.00011202343011973426
+        },
+        "K8": {
+          "joint_mean": 0.0038844833616167307,
+          "joint_worst": 0.0070037818513810635,
+          "pressure_mean": 0.0038001686334609985,
+          "velocity_mean": 8.431406604358926e-05
+        }
+      },
+      "joint_all_mean": 0.002300375374034047,
+      "joint_all_worst": 0.020235370844602585,
+      "per_Re": {
+        "45.142704010009766": {
+          "mean": 0.002300375374034047,
+          "worst": 0.020235370844602585
+        }
+      },
+      "top2_usage": 1.0
+    }
+  },
+  "decision_sha256": "a6b1668bd3dbb271c286eba62c8ede06b6232561ffc4bc3df85c89e23f686212",
+  "inference": {
+    "LookAheadShortRolloutRouter": {
+      "gate_seconds_per_trajectory": 5.1956973038613796e-05,
+      "relative_native_rollout_calls": 2
+    },
+    "RiskPredictionRouter": {
+      "gate_seconds_per_trajectory": 4.298368003219366e-05,
+      "relative_native_rollout_calls": 2
+    },
+    "T2-C_LearnedConvexCorrection_FieldBlend": {
+      "gate_seconds_per_trajectory": 9.547651279717684e-05,
+      "relative_native_rollout_calls": 2
+    }
+  },
+  "not_blind_test_statement": "Legacy test results were known before this recovery; this recovery did not use test fields or metrics for tuning, thresholding, checkpoint selection, or promotion.",
+  "promoted_method_validation_frozen": "T2-C_LearnedConvexCorrection_FieldBlend",
+  "protocol": "one-sided S-native S-H output-only Top-2",
+  "routes": {
+    "LookAheadShortRolloutRouter": {
+      "alpha_S": {
+        "max": 0.038063663989305496,
+        "mean": 0.008633851073682308,
+        "min": 0.0005555739044211805
+      },
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005015593022108078,
+          "joint_worst": 0.007422409951686859,
+          "pressure_mean": 0.004973777569830418,
+          "velocity_mean": 4.18152631027624e-05
+        },
+        "K16": {
+          "joint_mean": 0.0024871688801795244,
+          "joint_worst": 0.007301416713744402,
+          "pressure_mean": 0.002397814765572548,
+          "velocity_mean": 8.935409277910367e-05
+        },
+        "K4": {
+          "joint_mean": 0.004641890060156584,
+          "joint_worst": 0.008722163736820221,
+          "pressure_mean": 0.004577509593218565,
+          "velocity_mean": 6.43800085526891e-05
+        },
+        "K56": {
+          "joint_mean": 0.0030967446509748697,
+          "joint_worst": 0.003495714860036969,
+          "pressure_mean": 0.0029840143397450447,
+          "velocity_mean": 0.00011273034033365548
+        },
+        "K8": {
+          "joint_mean": 0.0039292327128350735,
+          "joint_worst": 0.007287234533578157,
+          "pressure_mean": 0.0038440022617578506,
+          "velocity_mean": 8.523057476850227e-05
+        }
+      },
+      "joint_all_mean": 0.002294353675097227,
+      "joint_all_worst": 0.020750146359205246,
+      "per_Re": {
+        "45.142704010009766": {
+          "mean": 0.002294353675097227,
+          "worst": 0.020750146359205246
+        }
+      },
+      "relative_oracle_gap": -6.02169893682003e-06,
+      "risk": {
+        "ranking_accuracy": 0.3333333333333333,
+        "risk_mse": 2.6285308649676153e-06
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.0001796104866000381,
+        "worst": 0.00018895442310457283
+      },
+      "top2_usage": 1.0
+    },
+    "RiskPredictionRouter": {
+      "alpha_S": {
+        "max": 0.02859722636640072,
+        "mean": 0.006918253842741251,
+        "min": 0.0010973236057907343
+      },
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005019404459744692,
+          "joint_worst": 0.0074476199224591255,
+          "pressure_mean": 0.0049773394130170345,
+          "velocity_mean": 4.20648320869077e-05
+        },
+        "K16": {
+          "joint_mean": 0.002518883440643549,
+          "joint_worst": 0.007494646590203047,
+          "pressure_mean": 0.002429020358249545,
+          "velocity_mean": 8.986325701698661e-05
+        },
+        "K4": {
+          "joint_mean": 0.004669622052460909,
+          "joint_worst": 0.008889248594641685,
+          "pressure_mean": 0.0046047973446547985,
+          "velocity_mean": 6.482453318312764e-05
+        },
+        "K56": {
+          "joint_mean": 0.0030889681074768305,
+          "joint_worst": 0.003517045406624675,
+          "pressure_mean": 0.0029756927397102118,
+          "velocity_mean": 0.00011327557149343193
+        },
+        "K8": {
+          "joint_mean": 0.003956167493015528,
+          "joint_worst": 0.007448086980730295,
+          "pressure_mean": 0.0038703707978129387,
+          "velocity_mean": 8.57968334457837e-05
+        }
+      },
+      "joint_all_mean": 0.002290731994435191,
+      "joint_all_worst": 0.021040774881839752,
+      "per_Re": {
+        "45.142704010009766": {
+          "mean": 0.002290731994435191,
+          "worst": 0.021040774881839752
+        }
+      },
+      "relative_oracle_gap": -9.643379598855972e-06,
+      "risk": {
+        "ranking_accuracy": 1.0,
+        "risk_mse": 2.1378662495408207e-05
+      },
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.00017963229457220074,
+        "worst": 0.00018907855353613145
+      },
+      "top2_usage": 1.0
+    },
+    "T2-C_LearnedConvexCorrection_FieldBlend": {
+      "alpha_S": {
+        "max": 0.04606620594859123,
+        "mean": 0.009826733730733395,
+        "min": 0.0017658618744462729
+      },
+      "divergent_windows": 0,
+      "finite_fraction": 1.0,
+      "horizons": {
+        "K1": {
+          "joint_mean": 0.005011203233152628,
+          "joint_worst": 0.007401119451969862,
+          "pressure_mean": 0.0049695963971316814,
+          "velocity_mean": 4.1606694139773026e-05
+        },
+        "K16": {
+          "joint_mean": 0.0024588413070887327,
+          "joint_worst": 0.0071388366632163525,
+          "pressure_mean": 0.0023698911536484957,
+          "velocity_mean": 8.89499788172543e-05
+        },
+        "K4": {
+          "joint_mean": 0.004617816768586636,
+          "joint_worst": 0.00858159177005291,
+          "pressure_mean": 0.00455379718914628,
+          "velocity_mean": 6.401899736374617e-05
+        },
+        "K56": {
+          "joint_mean": 0.0031195245683193207,
+          "joint_worst": 0.0035332110710442066,
+          "pressure_mean": 0.0030071877408772707,
+          "velocity_mean": 0.00011233656550757587
+        },
+        "K8": {
+          "joint_mean": 0.003906454425305128,
+          "joint_worst": 0.007151830475777388,
+          "pressure_mean": 0.003821677528321743,
+          "velocity_mean": 8.477704250253737e-05
+        }
+      },
+      "joint_all_mean": 0.0022984317038208246,
+      "joint_all_worst": 0.02050468511879444,
+      "per_Re": {
+        "45.142704010009766": {
+          "mean": 0.0022984317038208246,
+          "worst": 0.02050468511879444
+        }
+      },
+      "relative_oracle_gap": -1.9436702132225037e-06,
+      "risk": {},
+      "steady_fixed_point": {
+        "definition": "area-weighted final-step field drift relative to final true field norm",
+        "mean": 0.00017959497445354646,
+        "worst": 0.00018885342289095606
+      },
+      "top2_usage": 1.0
+    }
+  },
+  "status": "FINAL_TEST_COMPLETE",
+  "test_Re": [
+    45.142704010009766
+  ],
+  "test_cache_sha256": "390863add9ca6798ada08628696eef81c60b9f2895410c293b26a77e06484c9b",
+  "test_used_for_selection": false,
+  "windows": 6
+}

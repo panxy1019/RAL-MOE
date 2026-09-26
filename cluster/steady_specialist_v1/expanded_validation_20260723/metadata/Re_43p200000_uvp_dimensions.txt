@@ -1,0 +1,9 @@
+Re = 43.2
+regime = pre_hopf_steady
+data_file = Re_43p200000_uvp_pointData.npz
+times shape = (64,)
+points shape = (97368, 3)
+u shape = (64, 97368)
+v shape = (64, 97368)
+p shape = (64, 97368)
+indexing = u[t, i], v[t, i], p[t, i] at coordinate points[i]

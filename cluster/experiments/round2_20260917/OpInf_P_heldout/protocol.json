@@ -1,0 +1,9 @@
+{
+  "regime": "P",
+  "reference": "same POD reconstructed fields as neural evaluator, not FOM",
+  "windows": 32,
+  "horizon": 48,
+  "validation_selected_lambda": 100.0,
+  "integrator": "fixed 4-substep RK4; 8-substep diagnostic not used for model selection",
+  "failure": "retain incomplete windows and NaN errors; no survivor-only aggregate"
+}

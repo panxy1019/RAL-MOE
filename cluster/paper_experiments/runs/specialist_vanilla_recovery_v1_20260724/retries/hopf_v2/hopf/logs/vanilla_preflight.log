@@ -1,0 +1,14 @@
+{"event": "vanilla_fnn_nonfinite_gate", "nonfinite_windows": 1, "legacy_magnitude_bad_windows": 1}
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py", line 481, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py", line 428, in main
+    trainer.main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_h4_expanded.py", line 218, in main
+    result=per_re_forward_backward_smoke(B,fc,model,head,roll,data,rom,stats,scale_t,gu,gp,device,args,base_args);atomic_json(result,outdir/'per_re_forward_backward_smoke.json');print(json.dumps({'passed':True,'variant':args.variant,'rows':len(result['rows'])}));return
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_h4_expanded.py", line 195, in per_re_forward_backward_smoke
+    diag={n:float(v.detach()) for n,v in {'common':common,'scale':sl,'fluc':fl,'nf':nf,**cparts,**sparts,**fparts,**nparts}.items()};raise RuntimeError(f'preflight forward failed Re={rv:.6f} K{k} safety={safety} loss={float(loss.detach())} parts={diag}')
+                                                                                                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: preflight forward failed Re=51.066785 K8 safety={'finite_fraction': 0.875, 'max_norm_ratio': inf, 'bad_count': 1, 'legacy_magnitude_bad_windows': 1, 'ablation_allowlist': 'vanilla-fnn:finite-only-training-gate'} loss=nan parts={'common': nan, 'scale': nan, 'fluc': nan, 'nf': nan, 'coeff': nan, 'dynamics': nan, 'pressure': nan, 'rollout_u': nan, 'rollout_p': nan, 'energy': nan, 'amplitude': nan, 'growth': nan, 'sign': nan, 'fluc_modal_u': nan, 'fluc_modal_p': nan, 'fluc_field_u': nan, 'fluc_field_p': nan, 'radial': nan, 'growth_normalized': nan, 'nf_derivative': 0.0013426858931779861, 'nf_step': 0.007061230484396219, 'nf_growth_sign': 0.3990492820739746, 'nf_saturation': 0.7500016093254089, 'nf_consistency': nan, 'mu_mean': 0.0, 'beta_mean': 4.24835413113866e-18}

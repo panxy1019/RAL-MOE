@@ -1,0 +1,210 @@
+{
+  "schema_version": 1,
+  "purpose": "read-only final unified three-regime rollout evaluation",
+  "heldout_only": true,
+  "rank": {
+    "velocity": 32,
+    "pressure": 32
+  },
+  "pressure_gauge": "subtract_area_mean_per_snapshot",
+  "source_split_contract_sha256": "ac68c90c74cb623d25b4342d03ad65b94666943b568b316a8fe6fee6b004295b",
+  "regimes": {
+    "steady": {
+      "heldout_Re": [
+        {
+          "Re_label": "Re_24p630436",
+          "Re": 24.6304355074
+        },
+        {
+          "Re_label": "Re_32p740068",
+          "Re": 32.740068162
+        },
+        {
+          "Re_label": "Re_39p685479",
+          "Re": 39.6854792076
+        },
+        {
+          "Re_label": "Re_45p142703",
+          "Re": 45.142702578
+        }
+      ],
+      "expected_heldout": [
+        {
+          "Re_label": "Re_24p630436",
+          "Re": 24.6304355074,
+          "source_regime": "steady_wake",
+          "split": "heldout",
+          "snapshots": 64
+        },
+        {
+          "Re_label": "Re_32p740068",
+          "Re": 32.740068162,
+          "source_regime": "steady_wake",
+          "split": "heldout",
+          "snapshots": 64
+        },
+        {
+          "Re_label": "Re_39p685479",
+          "Re": 39.6854792076,
+          "source_regime": "steady_wake",
+          "split": "heldout",
+          "snapshots": 64
+        },
+        {
+          "Re_label": "Re_45p142703",
+          "Re": 45.142702578,
+          "source_regime": "pre_hopf_steady",
+          "split": "heldout",
+          "snapshots": 64
+        }
+      ],
+      "snapshots": 256,
+      "valid_rollout_starts_history3": 240,
+      "all_split_labels": [
+        "heldout"
+      ]
+    },
+    "hopf": {
+      "heldout_Re": [
+        {
+          "Re_label": "Re_47p081355",
+          "Re": 47.0813545644
+        },
+        {
+          "Re_label": "Re_49p022357",
+          "Re": 49.0223566571
+        },
+        {
+          "Re_label": "Re_51p786450",
+          "Re": 51.7864496836
+        }
+      ],
+      "expected_heldout": [
+        {
+          "Re_label": "Re_47p081355",
+          "Re": 47.0813545644,
+          "source_regime": "hopf_transition",
+          "split": "heldout",
+          "snapshots": 161
+        },
+        {
+          "Re_label": "Re_49p022357",
+          "Re": 49.0223566571,
+          "source_regime": "hopf_transition",
+          "split": "heldout",
+          "snapshots": 161
+        },
+        {
+          "Re_label": "Re_51p786450",
+          "Re": 51.7864496836,
+          "source_regime": "hopf_transition",
+          "split": "heldout",
+          "snapshots": 161
+        }
+      ],
+      "snapshots": 483,
+      "valid_rollout_starts_history3": 471,
+      "all_split_labels": [
+        "heldout"
+      ]
+    },
+    "periodic": {
+      "heldout_Re": [
+        {
+          "Re_label": "Re_70p314635",
+          "Re": 70.3146353337
+        },
+        {
+          "Re_label": "Re_100p352251",
+          "Re": 100.352251335
+        },
+        {
+          "Re_label": "Re_149p059229",
+          "Re": 149.059229449
+        },
+        {
+          "Re_label": "Re_189p862278",
+          "Re": 189.86227838
+        }
+      ],
+      "expected_heldout": [
+        {
+          "Re_label": "Re_70p314635",
+          "Re": 70.3146353337,
+          "source_regime": "developing_periodic_shedding",
+          "split": "heldout",
+          "snapshots": 161
+        },
+        {
+          "Re_label": "Re_100p352251",
+          "Re": 100.352251335,
+          "source_regime": "mature_periodic_shedding",
+          "split": "heldout",
+          "snapshots": 161
+        },
+        {
+          "Re_label": "Re_149p059229",
+          "Re": 149.059229449,
+          "source_regime": "mature_periodic_shedding",
+          "split": "heldout",
+          "snapshots": 161
+        },
+        {
+          "Re_label": "Re_189p862278",
+          "Re": 189.86227838,
+          "source_regime": "high_re_2d_periodic_near_modeA",
+          "split": "heldout",
+          "snapshots": 161
+        }
+      ],
+      "snapshots": 644,
+      "valid_rollout_starts_history3": 628,
+      "all_split_labels": [
+        "heldout"
+      ]
+    }
+  },
+  "files": {
+    "contract/MOE_HANDOFF_CONTRACT.json": {
+      "bytes": 6051,
+      "sha256": "ac9c66111f045d492db26060164d2ef71a4ce2f42bacc6bc2400c56a9957d93e"
+    },
+    "contract/split_contract_resolved.json": {
+      "bytes": 21393,
+      "sha256": "ac68c90c74cb623d25b4342d03ad65b94666943b568b316a8fe6fee6b004295b"
+    },
+    "hopf/heldout_modal_r32.npz": {
+      "bytes": 242268,
+      "sha256": "bf770756708add2501927f0e4a56ebc53b0bad3e6e6c33da0b15f57ed246d7d6"
+    },
+    "hopf/pod_runtime_r32.npz": {
+      "bytes": 35596893,
+      "sha256": "5fe3b10ce1939aff1da39eeb91adc5705556b4c772cee46bd95a91069f6bcb80"
+    },
+    "periodic/heldout_modal_r32.npz": {
+      "bytes": 323064,
+      "sha256": "fd03cb2c44128755376dacfdb2255dc0541931c77b194aa9fc152c3c43aacc42"
+    },
+    "periodic/pod_runtime_r32.npz": {
+      "bytes": 35642895,
+      "sha256": "b4fb5000cdcb9320ff143bd09b5ddb3e150164fdb7beb20534059680fb731c0e"
+    },
+    "steady/heldout_modal_r32.npz": {
+      "bytes": 131563,
+      "sha256": "8e5ee8b6b74f8204260a2177588c2f273b08510ed45351acf7f2d99547e3f23e"
+    },
+    "steady/heldout_perturbation_bank.npz": {
+      "bytes": 66573,
+      "sha256": "12b0fc179323ad4eb39b7d75f39ccf0b5fdd05bd29fa291205a78709ae224526"
+    },
+    "steady/pod_runtime_r32.npz": {
+      "bytes": 35237730,
+      "sha256": "31a48d273e78583c87374953102b831ff3d9a91438d8365a0d3c67eeddec4893"
+    }
+  },
+  "perturbation_bank": {
+    "steady": "copied existing frozen S3 heldout bank",
+    "hopf": "not present in source; not fabricated",
+    "periodic": "not present in source; not fabricated"
+  }
+}

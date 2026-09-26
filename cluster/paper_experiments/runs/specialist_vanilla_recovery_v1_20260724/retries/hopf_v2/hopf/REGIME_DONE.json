@@ -1,0 +1,14 @@
+{
+  "errors": {
+    "vanilla-fnn": "RuntimeError('vanilla_preflight returned 1')"
+  },
+  "finished_unix": 1784850607.5953999,
+  "methods": [
+    "vanilla-fnn"
+  ],
+  "regime": "hopf",
+  "return_codes": {
+    "vanilla_preflight": 1
+  },
+  "status": "FAILED"
+}

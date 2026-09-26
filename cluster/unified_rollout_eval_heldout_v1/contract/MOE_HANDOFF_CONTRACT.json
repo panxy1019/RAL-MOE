@@ -1,0 +1,165 @@
+{
+  "schema_version": 1,
+  "status": "READY_FOR_THREE_INDEPENDENT_MOE_TASKS",
+  "shared_trainable_parameters_allowed": false,
+  "pressure_gauge": "subtract_area_mean_per_snapshot",
+  "centering": "single_train_only_regime_mean",
+  "retained_rank": 80,
+  "fixed_control_rank": 32,
+  "recommended_training_order": [
+    {
+      "name": "fixed_rank_control",
+      "ranks": {
+        "steady": {
+          "r_u": 32,
+          "r_p": 32
+        },
+        "hopf": {
+          "r_u": 32,
+          "r_p": 32
+        },
+        "periodic": {
+          "r_u": 32,
+          "r_p": 32
+        }
+      },
+      "purpose": "same-dimensional local-POD versus global-POD fairness control"
+    },
+    {
+      "name": "training_only_dynamics_candidate",
+      "ranks": {
+        "steady": {
+          "r_u": 32,
+          "r_p": 32
+        },
+        "hopf": {
+          "r_u": 80,
+          "r_p": 80
+        },
+        "periodic": {
+          "r_u": 80,
+          "r_p": 80
+        }
+      },
+      "purpose": "retain Hopf training-only critical-frequency candidates beyond mode 32 and reduce Periodic training reconstruction/phase loss; no validation or held-out metric selected these ranks"
+    }
+  ],
+  "training_split": "train",
+  "validation_split": "validation",
+  "test_split": "heldout",
+  "specialists": {
+    "steady": {
+      "velocity_pod": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/steady/velocity_pod_steady.npz",
+      "pressure_pod": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/steady/pressure_pod_steady.npz",
+      "normalization": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/steady/normalization_steady.npz",
+      "snapshot_index": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/steady/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+      "velocity_physics_rom": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/steady/velocity_rom_steady.npz",
+      "pressure_physics_rom": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/steady/pressure_poisson_surrogate_steady.npz",
+      "dynamics_diagnostics": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/steady/dynamics_reconstruction_diagnostics_steady.json",
+      "train_Re_labels": [
+        "Re_20p000000",
+        "Re_22p535676",
+        "Re_26p667332",
+        "Re_30p720428",
+        "Re_34p737570",
+        "Re_36p657767",
+        "Re_38p357249",
+        "Re_40p711525",
+        "Re_41p576575",
+        "Re_42p359071",
+        "Re_43p093925",
+        "Re_44p478353",
+        "Re_45p795194",
+        "Re_46p440072"
+      ]
+    },
+    "hopf": {
+      "velocity_pod": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/hopf/velocity_pod_hopf.npz",
+      "pressure_pod": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/hopf/pressure_pod_hopf.npz",
+      "normalization": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/hopf/normalization_hopf.npz",
+      "snapshot_index": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/hopf/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+      "velocity_physics_rom": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/hopf/velocity_rom_hopf.npz",
+      "pressure_physics_rom": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/hopf/pressure_poisson_surrogate_hopf.npz",
+      "dynamics_diagnostics": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/hopf/dynamics_reconstruction_diagnostics_hopf.json",
+      "train_Re_labels": [
+        "Re_47p722947",
+        "Re_48p368688",
+        "Re_49p687640",
+        "Re_51p066785",
+        "Re_52p528767",
+        "Re_53p294175",
+        "Re_54p081508",
+        "Re_54p887950",
+        "Re_55p709610",
+        "Re_57p389970",
+        "Re_58p262636",
+        "Re_59p201432"
+      ]
+    },
+    "periodic": {
+      "velocity_pod": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/periodic/velocity_pod_periodic.npz",
+      "pressure_pod": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/periodic/pressure_pod_periodic.npz",
+      "normalization": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/periodic/normalization_periodic.npz",
+      "snapshot_index": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/periodic/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+      "velocity_physics_rom": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/periodic/velocity_rom_periodic.npz",
+      "pressure_physics_rom": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/periodic/pressure_poisson_surrogate_periodic.npz",
+      "dynamics_diagnostics": "/cephfs/shared/V17_RegimeIndependentROM/artifacts/periodic/dynamics_reconstruction_diagnostics_periodic.json",
+      "train_Re_labels": [
+        "Re_102p440042",
+        "Re_104p710911",
+        "Re_107p050737",
+        "Re_109p395985",
+        "Re_111p734011",
+        "Re_114p066308",
+        "Re_116p395488",
+        "Re_118p723173",
+        "Re_123p376833",
+        "Re_125p703274",
+        "Re_128p029461",
+        "Re_130p355225",
+        "Re_132p680203",
+        "Re_135p003744",
+        "Re_137p324830",
+        "Re_141p956319",
+        "Re_144p273459",
+        "Re_146p619578",
+        "Re_151p686208",
+        "Re_154p520852",
+        "Re_157p459588",
+        "Re_160p415176",
+        "Re_163p364123",
+        "Re_166p306373",
+        "Re_172p181708",
+        "Re_175p117940",
+        "Re_178p054368",
+        "Re_180p992055",
+        "Re_183p933395",
+        "Re_186p884600",
+        "Re_192p911664",
+        "Re_200p000000",
+        "Re_60p307745",
+        "Re_61p755954",
+        "Re_63p499817",
+        "Re_65p259829",
+        "Re_68p649714",
+        "Re_71p972931",
+        "Re_73p628287",
+        "Re_75p282340",
+        "Re_76p935803",
+        "Re_78p588971",
+        "Re_80p241943",
+        "Re_81p894708",
+        "Re_83p547164",
+        "Re_85p199103",
+        "Re_86p850168",
+        "Re_88p499815",
+        "Re_90p147341",
+        "Re_93p435204",
+        "Re_95p081752",
+        "Re_96p749308",
+        "Re_98p480345"
+      ]
+    }
+  },
+  "scope_note": "This handoff freezes POD/physics-ROM interfaces only. No MoE checkpoint or trainable specialist parameter is created here."
+}

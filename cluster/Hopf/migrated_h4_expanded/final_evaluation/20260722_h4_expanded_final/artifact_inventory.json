@@ -1,0 +1,91 @@
+{
+  "schema_version": 2,
+  "root": "/root/panxy/particalMOE/Hopf/migrated_h4_expanded/final_evaluation/20260722_h4_expanded_final",
+  "artifacts": [
+    {
+      "path": "FINALIZATION_COMPLETE.json",
+      "bytes": 182,
+      "sha256": "ae2e274ed42e207d2565bef49429c9caddec6ae72be9fbcfd5b2f8a6e316aef9"
+    },
+    {
+      "path": "FINAL_H4_EXPANDED_REPORT.md",
+      "bytes": 3116,
+      "sha256": "cf417344b231f3622f7276c3e6d8cf4ade996beae2c53c7fec68a6428e722d79"
+    },
+    {
+      "path": "FINAL_H4_EXPANDED_SUMMARY.json",
+      "bytes": 3377,
+      "sha256": "9f23484d8c805abe41d3bc5f669f6dedbe80f556bf163374d7e0e596a79d5fd7"
+    },
+    {
+      "path": "FREEZE_DONE.json",
+      "bytes": 64,
+      "sha256": "02fe54c635d4f34c199c2f2c270bee92f3eef2f0b0681bfe2ba6b1ed1e742be3"
+    },
+    {
+      "path": "HELDOUT_EVALUATION_DONE.json",
+      "bytes": 71,
+      "sha256": "69cf4d46c93a633f66229271b348964ef9e4356bc7766a12f601efa8171cb9dd"
+    },
+    {
+      "path": "HELDOUT_EVALUATION_STARTED.json",
+      "bytes": 87,
+      "sha256": "dcd95954c5da0803de65293738d34de4f16fa14db361bc3f6c925e0e324d214b"
+    },
+    {
+      "path": "HOPF_SPECIALIST_PAPER_AND_UNIFIED_FRAMEWORK_HANDOFF.md",
+      "bytes": 16598,
+      "sha256": "72e673f240b317caef8d4b531e960182b6f98370bc515533afe37c47319aff3a"
+    },
+    {
+      "path": "HopfExpanded34_H4_NormalFormRadial_r32/config.json",
+      "bytes": 11850,
+      "sha256": "6da6442fd44d23db960bfefe7c95c00ce1c5146566456f33ec5aaf21cece4e0e"
+    },
+    {
+      "path": "HopfExpanded34_H4_NormalFormRadial_r32/final.pt",
+      "bytes": 383345403,
+      "sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235"
+    },
+    {
+      "path": "HopfExpanded34_H4_NormalFormRadial_r32/gradient_audits.json",
+      "bytes": 1867,
+      "sha256": "02b20a3f36eed6f5c1da2ff0e6f8f3591934a56c4554216afe04d4b8938b6406"
+    },
+    {
+      "path": "HopfExpanded34_H4_NormalFormRadial_r32/heldout_metrics.json",
+      "bytes": 15194,
+      "sha256": "9dc6a2cf3e21bb6fb9f9adda0db2505b552f09e4f6dd4e6c419af4ab8fe54156"
+    },
+    {
+      "path": "HopfExpanded34_H4_NormalFormRadial_r32/normal_form_train_nodes.json",
+      "bytes": 2309,
+      "sha256": "f5ac9126ff9f3a70265ddca4d268e32d2c7b1ac5520fc1c6edd99808bdcc85bd"
+    },
+    {
+      "path": "HopfExpanded34_H4_NormalFormRadial_r32/throughput.json",
+      "bytes": 80,
+      "sha256": "cb5f97f8a575c0bdf32801813fd6ab4855b10aac7cab8be08cebf21e94604fe9"
+    },
+    {
+      "path": "HopfExpanded34_H4_NormalFormRadial_r32/trainonly_manifest.json",
+      "bytes": 13320,
+      "sha256": "43254edc35193c403e4c65d55f462cfcb0136a23c939d82218c430040d25f121"
+    },
+    {
+      "path": "HopfExpanded34_H4_NormalFormRadial_r32/validation_history.json",
+      "bytes": 217422,
+      "sha256": "1d97d108af5c8249ad12d91482dea30fb99ca2ac44de7169885e6f0c0076c572"
+    },
+    {
+      "path": "checkpoint_selection_manifest.json",
+      "bytes": 8139,
+      "sha256": "9237db59e3a0abb1ec9cb5ba0536ee25fab2cc47c4e19c064ddcb9594fd03ec3"
+    },
+    {
+      "path": "heldout_metrics.json",
+      "bytes": 17623,
+      "sha256": "255d495f1b404ee67cf423a8413c2edd96b708ef69e75eed87674355c05bd74d"
+    }
+  ]
+}

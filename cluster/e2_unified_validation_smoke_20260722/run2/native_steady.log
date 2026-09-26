@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 390, in <module>
+    native_worker(arguments.native_only, arguments.root, arguments.output_dir)
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 296, in native_worker
+    result = steady_native(root, output_dir)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 124, in steady_native
+    native = instance.base.finalizer.evaluate_horizon(instance.exp, "validation", 4)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 's3_finalizer' has no attribute 'evaluate_horizon'

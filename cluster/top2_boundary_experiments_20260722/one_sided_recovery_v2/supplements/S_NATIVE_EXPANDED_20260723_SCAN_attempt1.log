@@ -1,0 +1,17 @@
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+{
+  "status": "EXPANDED_S_NATIVE_FROZEN_CAPABILITY_SCAN_COMPLETE",
+  "Re_count": 7,
+  "window_count": 42,
+  "crossings": [
+    {
+      "left_Re": 43.2,
+      "right_Re": 43.3,
+      "left_difference": -0.08868615649953175,
+      "right_difference": 0.03413434767581914,
+      "linear_interpolated_Re_cap": 43.27220794043714,
+      "interpretation_warning": "This is a descriptive crossing only; S uses nearest frozen ROM nodes."
+    }
+  ]
+}

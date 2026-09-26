@@ -1,0 +1,26 @@
+[
+  {
+    "regime": "H",
+    "kind": "proposed",
+    "quadratic_pairs": 14,
+    "nonzero_left_factors": 14,
+    "largest_left_magnitude": 0.008066975511610508,
+    "largest_right_magnitude": 0.0686846449971199
+  },
+  {
+    "regime": "P",
+    "kind": "proposed",
+    "quadratic_pairs": 42,
+    "nonzero_left_factors": 42,
+    "largest_left_magnitude": 0.0193671565502882,
+    "largest_right_magnitude": 0.0821630209684372
+  },
+  {
+    "regime": "P",
+    "kind": "structured",
+    "quadratic_pairs": 2,
+    "nonzero_left_factors": 2,
+    "largest_left_magnitude": 0.01995312236249447,
+    "largest_right_magnitude": 0.08029352128505707
+  }
+]

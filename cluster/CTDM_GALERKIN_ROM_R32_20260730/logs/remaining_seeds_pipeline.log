@@ -1,0 +1,19 @@
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/swanlog/run-20260731_204939-tz7i4jpu-e9c967685351-136911
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B1_Deep_FNN_H3_seed2248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/tz7i4jpu
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B1_Deep_FNN_H3_seed2248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/tz7i4jpu
+swanlab: Upload complete: 8730 records
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/code/train_ctdm_comparison.py", line 1590, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/code/train_ctdm_comparison.py", line 1576, in main
+    "horizon": rollout_horizon(step),
+               ^^^^^^^^^^^^^^^
+NameError: name 'rollout_horizon' is not defined

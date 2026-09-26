@@ -1,0 +1,223 @@
+{
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/checkpoint/frozen_s4_validation_step_1200.pt",
+  "sha256_before_and_after": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+  "model_state_unchanged": true,
+  "model_class": "OperatorSpaceMoEROM",
+  "strict_load": {
+    "missing": [],
+    "unexpected": []
+  },
+  "original_runtime": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_s2b_3090.py",
+  "original_evaluator": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/finalize_s2b_3090.py",
+  "asset_hashes": {
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_s2b_3090.py": "b7f1ffaf8a341501a504f08663035f4e8863a8f28eca1946b57bb871961a08e2",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/finalize_s2b_3090.py": "05ab315e359817c0a03aa66c3f1b79e573e4efcb21fa7a24a2dccd6cf1cec2ce",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/training_s2b_portable.json": "c5f44462e1a68ad6470461479615a72d21a9c025b1d21fef784b49c903f67455",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/velocity_pod_steady.npz": "abaab63d11e172a5b40e86b48715f247311eaf324a06094757f2f98870f40948",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/pressure_pod_steady.npz": "5056f7470f2439bccc2cfb68448e9a4dd61d89145aa7108ab8672ba6dd2be997",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/normalization_steady.npz": "87a5a2326d70adb3e57901168f0ac1b555f23c742ae64a09132031452b51f6bb",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/velocity_rom_steady.npz": "780eb5be79311290a2f36837651ae2a97a107c48e1df4cf683b2d344805b325c",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/pressure_poisson_surrogate_steady.npz": "8e6c5b689b96acf8f651fc64d8d0f82526e6a5bf5098722e5e1ce51469cc2b1c"
+  },
+  "precision": "torch.bfloat16",
+  "tf32": true,
+  "integrator": "Original Experiment.rollout: forward Euler velocity; additive algebraic pressure closure",
+  "routing_config": {
+    "history_len": 3,
+    "phase_harmonics": 4,
+    "hidden_dim": 224,
+    "num_blocks": 3,
+    "num_regime_groups": 3,
+    "experts_per_group": 6,
+    "shared_experts_per_group": 1,
+    "top_k": 2,
+    "group_top_k": 1,
+    "expert_hidden": 768,
+    "expert_blocks": 3,
+    "quadratic_rank": 4,
+    "quadratic_scale": 0.05,
+    "dropout": 0.04,
+    "temperature": 0.95,
+    "gate_floor": 0.0,
+    "group_temperature": 0.9,
+    "group_gate_floor": 0.0,
+    "shared_scale": 1.0,
+    "routed_scale": 0.85
+  },
+  "smoke_forward_shapes": [
+    {
+      "input": [
+        2,
+        501
+      ],
+      "outputs": [
+        [
+          2,
+          32
+        ],
+        [
+          2,
+          32
+        ],
+        "list",
+        [
+          0,
+          18,
+          32
+        ]
+      ]
+    },
+    {
+      "input": [
+        2,
+        501
+      ],
+      "outputs": [
+        [
+          2,
+          32
+        ],
+        [
+          2,
+          32
+        ],
+        "list",
+        [
+          0,
+          18,
+          32
+        ]
+      ]
+    },
+    {
+      "input": [
+        2,
+        501
+      ],
+      "outputs": [
+        [
+          2,
+          32
+        ],
+        [
+          2,
+          32
+        ],
+        "list",
+        [
+          0,
+          18,
+          32
+        ]
+      ]
+    }
+  ],
+  "metrics": {
+    "available": true,
+    "k": 56,
+    "by_re": {
+      "Re_24p630436": {
+        "window_count": 6,
+        "coefficient_space": {
+          "velocity_relative_l2": 0.00453338960389467,
+          "pressure_relative_l2": 0.15188598525579258
+        },
+        "physical_reconstruction_area_weighted": {
+          "velocity_relative_l2": 0.0030919079689245574,
+          "pressure_relative_l2": 0.18655330074510995
+        },
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "first_divergent_step": null,
+        "state_norm_max_multiple": 54.599422454833984,
+        "pressure_drift": 0.36582663655281067,
+        "fixed_point_residual": 0.36354154348373413
+      },
+      "Re_32p740068": {
+        "window_count": 6,
+        "coefficient_space": {
+          "velocity_relative_l2": 0.0058838818033166655,
+          "pressure_relative_l2": 0.17671695500345386
+        },
+        "physical_reconstruction_area_weighted": {
+          "velocity_relative_l2": 0.0008850684430497637,
+          "pressure_relative_l2": 0.054522467531659555
+        },
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "first_divergent_step": null,
+        "state_norm_max_multiple": 33.11245346069336,
+        "pressure_drift": 0.24839088320732117,
+        "fixed_point_residual": 0.29414117336273193
+      },
+      "Re_39p685479": {
+        "window_count": 6,
+        "coefficient_space": {
+          "velocity_relative_l2": 0.004121967410738907,
+          "pressure_relative_l2": 0.1630465304105084
+        },
+        "physical_reconstruction_area_weighted": {
+          "velocity_relative_l2": 0.00038527719259100895,
+          "pressure_relative_l2": 0.01593066470996884
+        },
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "first_divergent_step": null,
+        "state_norm_max_multiple": 28.509815216064453,
+        "pressure_drift": 0.6822032332420349,
+        "fixed_point_residual": 0.6028967499732971
+      },
+      "Re_45p142703": {
+        "window_count": 6,
+        "coefficient_space": {
+          "velocity_relative_l2": 0.002552477485256068,
+          "pressure_relative_l2": 0.08198404320750473
+        },
+        "physical_reconstruction_area_weighted": {
+          "velocity_relative_l2": 0.0006162098985990788,
+          "pressure_relative_l2": 0.024440022723522213
+        },
+        "finite_fraction": 1.0,
+        "divergent_windows": 0,
+        "first_divergent_step": null,
+        "state_norm_max_multiple": 67.48371124267578,
+        "pressure_drift": 0.2738880515098572,
+        "fixed_point_residual": 0.3943597674369812
+      }
+    },
+    "overall_worst": {
+      "coefficient_space": {
+        "velocity_relative_l2": 0.0058838818033166655,
+        "pressure_relative_l2": 0.17671695500345386
+      },
+      "physical_reconstruction_area_weighted": {
+        "velocity_relative_l2": 0.0030919079689245574,
+        "pressure_relative_l2": 0.18655330074510995
+      },
+      "finite_fraction": 1.0,
+      "divergent_windows": 0,
+      "first_divergent_step": null,
+      "state_norm_max_multiple": 67.48371124267578,
+      "pressure_drift": 0.6822032332420349,
+      "fixed_point_residual": 0.6028967499732971
+    }
+  },
+  "observed_Eu_percent_range": [
+    0.038527719259100895,
+    0.30919079689245577
+  ],
+  "observed_Ep_percent_range": [
+    1.593066470996884,
+    18.655330074510996
+  ],
+  "requested_paper_Eu_percent_range": [
+    0.033,
+    0.1723
+  ],
+  "requested_paper_Ep_percent_range": [
+    0.25,
+    1.3249
+  ],
+  "paper_range_reproduced": false,
+  "elapsed_seconds": 13.388993950560689
+}

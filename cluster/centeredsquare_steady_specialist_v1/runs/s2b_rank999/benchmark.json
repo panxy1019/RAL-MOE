@@ -1,0 +1,32 @@
+{
+  "candidates": [
+    {
+      "grad_accum": 4,
+      "micro_batch": 16,
+      "peak_gpu_gib": 0.9635014533996582,
+      "seconds_per_optimizer_step": 11.587980608828365,
+      "status": "PASS"
+    },
+    {
+      "grad_accum": 8,
+      "micro_batch": 8,
+      "peak_gpu_gib": 0.9635014533996582,
+      "seconds_per_optimizer_step": 19.400023053213953,
+      "status": "PASS"
+    },
+    {
+      "grad_accum": 16,
+      "micro_batch": 4,
+      "peak_gpu_gib": 0.9635014533996582,
+      "seconds_per_optimizer_step": 26.390986806619914,
+      "status": "PASS"
+    }
+  ],
+  "selected": {
+    "grad_accum": 4,
+    "micro_batch": 16,
+    "peak_gpu_gib": 0.9635014533996582,
+    "seconds_per_optimizer_step": 11.587980608828365,
+    "status": "PASS"
+  }
+}

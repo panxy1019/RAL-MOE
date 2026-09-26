@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="920" height="520" viewBox="0 0 920 520">
+<rect width="100%" height="100%" fill="white"/>
+<text x="460.0" y="32" text-anchor="middle" font-size="22" font-family="Arial">Validation rollout error growth</text>
+<line x1="90" y1="450.00" x2="890" y2="450.00" stroke="#dddddd"/>
+<text x="80" y="455.00" text-anchor="end" font-size="12" font-family="Arial">0.0277</text>
+<line x1="90" y1="372.00" x2="890" y2="372.00" stroke="#dddddd"/>
+<text x="80" y="377.00" text-anchor="end" font-size="12" font-family="Arial">0.0406</text>
+<line x1="90" y1="294.00" x2="890" y2="294.00" stroke="#dddddd"/>
+<text x="80" y="299.00" text-anchor="end" font-size="12" font-family="Arial">0.0535</text>
+<line x1="90" y1="216.00" x2="890" y2="216.00" stroke="#dddddd"/>
+<text x="80" y="221.00" text-anchor="end" font-size="12" font-family="Arial">0.0664</text>
+<line x1="90" y1="138.00" x2="890" y2="138.00" stroke="#dddddd"/>
+<text x="80" y="143.00" text-anchor="end" font-size="12" font-family="Arial">0.0793</text>
+<line x1="90" y1="60.00" x2="890" y2="60.00" stroke="#dddddd"/>
+<text x="80" y="65.00" text-anchor="end" font-size="12" font-family="Arial">0.0922</text>
+<line x1="90.00" y1="450" x2="90.00" y2="456" stroke="#333"/>
+<text x="90.00" y="474" text-anchor="middle" font-size="12" font-family="Arial">1</text>
+<line x1="104.55" y1="450" x2="104.55" y2="456" stroke="#333"/>
+<text x="104.55" y="474" text-anchor="middle" font-size="12" font-family="Arial">2</text>
+<line x1="133.64" y1="450" x2="133.64" y2="456" stroke="#333"/>
+<text x="133.64" y="474" text-anchor="middle" font-size="12" font-family="Arial">4</text>
+<line x1="191.82" y1="450" x2="191.82" y2="456" stroke="#333"/>
+<text x="191.82" y="474" text-anchor="middle" font-size="12" font-family="Arial">8</text>
+<line x1="308.18" y1="450" x2="308.18" y2="456" stroke="#333"/>
+<text x="308.18" y="474" text-anchor="middle" font-size="12" font-family="Arial">16</text>
+<line x1="540.91" y1="450" x2="540.91" y2="456" stroke="#333"/>
+<text x="540.91" y="474" text-anchor="middle" font-size="12" font-family="Arial">32</text>
+<line x1="890.00" y1="450" x2="890.00" y2="456" stroke="#333"/>
+<text x="890.00" y="474" text-anchor="middle" font-size="12" font-family="Arial">56</text>
+<line x1="90" y1="60" x2="90" y2="450" stroke="#333"/>
+<line x1="90" y1="450" x2="890" y2="450" stroke="#333"/>
+<text x="490.0" y="502" text-anchor="middle" font-size="15" font-family="Arial">Rollout horizon K</text>
+<text x="22" y="255.0" text-anchor="middle" font-size="15" font-family="Arial" transform="rotate(-90 22 255.0)">Mean joint field error (%)</text>
+<polyline points="90.00,399.11 104.55,403.65 133.64,408.78 191.82,412.26 308.18,411.86 540.91,404.64 890.00,390.58" fill="none" stroke="#315b8a" stroke-width="3"/>
+<circle cx="90.00" cy="399.11" r="4" fill="#315b8a"/>
+<circle cx="104.55" cy="403.65" r="4" fill="#315b8a"/>
+<circle cx="133.64" cy="408.78" r="4" fill="#315b8a"/>
+<circle cx="191.82" cy="412.26" r="4" fill="#315b8a"/>
+<circle cx="308.18" cy="411.86" r="4" fill="#315b8a"/>
+<circle cx="540.91" cy="404.64" r="4" fill="#315b8a"/>
+<circle cx="890.00" cy="390.58" r="4" fill="#315b8a"/>
+<line x1="110" y1="78" x2="138" y2="78" stroke="#315b8a" stroke-width="3"/>
+<text x="146" y="83" font-size="13" font-family="Arial">B1 Deep-FNN-H3</text>
+<polyline points="90.00,216.58 104.55,229.36 133.64,243.57 191.82,249.42 308.18,255.29 540.91,244.00 890.00,175.73" fill="none" stroke="#c94c5d" stroke-width="3"/>
+<circle cx="90.00" cy="216.58" r="4" fill="#c94c5d"/>
+<circle cx="104.55" cy="229.36" r="4" fill="#c94c5d"/>
+<circle cx="133.64" cy="243.57" r="4" fill="#c94c5d"/>
+<circle cx="191.82" cy="249.42" r="4" fill="#c94c5d"/>
+<circle cx="308.18" cy="255.29" r="4" fill="#c94c5d"/>
+<circle cx="540.91" cy="244.00" r="4" fill="#c94c5d"/>
+<circle cx="890.00" cy="175.73" r="4" fill="#c94c5d"/>
+<line x1="355" y1="78" x2="383" y2="78" stroke="#c94c5d" stroke-width="3"/>
+<text x="391" y="83" font-size="13" font-family="Arial">B2 KDA radial-off</text>
+<polyline points="90.00,97.74 104.55,140.60 133.64,174.63 191.82,219.62 308.18,240.57 540.91,238.61 890.00,216.22" fill="none" stroke="#e29b35" stroke-width="3"/>
+<circle cx="90.00" cy="97.74" r="4" fill="#e29b35"/>
+<circle cx="104.55" cy="140.60" r="4" fill="#e29b35"/>
+<circle cx="133.64" cy="174.63" r="4" fill="#e29b35"/>
+<circle cx="191.82" cy="219.62" r="4" fill="#e29b35"/>
+<circle cx="308.18" cy="240.57" r="4" fill="#e29b35"/>
+<circle cx="540.91" cy="238.61" r="4" fill="#e29b35"/>
+<circle cx="890.00" cy="216.22" r="4" fill="#e29b35"/>
+<line x1="600" y1="78" x2="628" y2="78" stroke="#e29b35" stroke-width="3"/>
+<text x="636" y="83" font-size="13" font-family="Arial">B3 KDA radial-on</text>
+</svg>

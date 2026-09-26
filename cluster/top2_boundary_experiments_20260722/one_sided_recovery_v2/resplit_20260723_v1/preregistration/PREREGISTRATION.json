@@ -1,0 +1,38 @@
+{
+  "complete_Re_split": {
+    "heldout": [
+      42.359071,
+      43.5,
+      43.9
+    ],
+    "train": [
+      40.711525,
+      43.093929,
+      43.2,
+      43.4,
+      43.6,
+      43.797394,
+      44.478355
+    ],
+    "validation": [
+      41.576575,
+      43.3,
+      43.7
+    ]
+  },
+  "config_sha256": {
+    "LookAheadShortRolloutRouter.json": "f28f6d55a7dde33fb5a59fad8cc381bc18278c4cb49975e72b31c2367c9b4f96",
+    "RiskPredictionRouter.json": "a3487bcd5a1f95f4d9724ce428b5c106c6ad332386013b24773a66f273bb9e19",
+    "T2-C_LearnedConvexCorrection_FieldBlend.json": "ba2414a51df3cdc02ec8d0a795c6e6d54496e49eeaf23f5121dc8019ea57696e"
+  },
+  "fusion_feedback": false,
+  "known_prior_test_disclosure": true,
+  "protocol_version": "ONE_SIDED_NATIVE_SUPPORTED_RESPLIT_20260723_V1",
+  "same_native_cache_across_methods": true,
+  "same_optimizer_steps": 8000,
+  "same_seed": 42001,
+  "specialists_frozen": true,
+  "status": "PREREGISTERED",
+  "test_sealed_until_validation_freeze": true,
+  "windows_per_Re": 5
+}

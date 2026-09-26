@@ -1,0 +1,35 @@
+{
+  "assets": [
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/data/steady_trainval_modal_r32.npz",
+      "sha256": "044cbbe615c40fcef5d9c1f1b60865184fc40aeb716c0d226c7b0b5e12ecc70b"
+    }
+  ],
+  "pid": 32870,
+  "regime": "steady",
+  "seed": 202607251,
+  "split_re": {
+    "heldout": [],
+    "train": [
+      20.0,
+      22.535676,
+      26.667332,
+      30.720428,
+      34.73757,
+      36.657767,
+      38.357249,
+      40.711525,
+      41.576575,
+      42.359071,
+      43.093925,
+      44.478353,
+      45.795194,
+      46.440072
+    ],
+    "validation": [
+      28.695138,
+      43.797402
+    ]
+  },
+  "status": "RUNNING"
+}

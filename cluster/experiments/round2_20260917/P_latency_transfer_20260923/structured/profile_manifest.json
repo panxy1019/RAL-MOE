@@ -1,0 +1,11 @@
+{
+  "profile_source_sha256": "3ce4258d97c400f5d204f9ca7eca694a28d200bbe8914d2c4b1617adc03af266",
+  "archived_evaluator_sha256": "9a57c91c8751a52926d79dcd23d72503a9edf483351e295f39779f0a4838764f",
+  "checkpoint_sha256": "aea99d3eea9ceaf55241be5d7a4561e8af4d28f9dbf3a9582337b92d9ef1887f",
+  "environment": {
+    "OMP_NUM_THREADS": "2",
+    "OPENBLAS_NUM_THREADS": "2",
+    "MKL_NUM_THREADS": "2"
+  },
+  "diagnostic_only": true
+}

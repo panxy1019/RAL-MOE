@@ -1,0 +1,118 @@
+{
+  "excluded_heldout_re": [
+    "Re_24p630436",
+    "Re_32p740068",
+    "Re_39p685479",
+    "Re_45p142703"
+  ],
+  "files": {
+    "checkpoint/frozen_s4_validation_step_1200.pt": {
+      "bytes": 397948073,
+      "sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d",
+      "source": "/data/V17indepentMOEV2/s4_steady/results/final_20260719_step3480/frozen_s4_validation_step_1200.pt"
+    },
+    "code/train_s4_steady.py": {
+      "bytes": 25776,
+      "sha256": "98b92e5d32119d7b0ae43d8fb5afa84589093f46a644747ab6a6b59d242da4c8",
+      "source": "/data/V17indepentMOEV2/s4_steady/code/train_s4_steady.py"
+    },
+    "code/train_v16_4_v2_r32_compat.py": {
+      "bytes": 363606,
+      "sha256": "11099078fe195c1f571acc2ea35e30338ae46c0cc8c9911e9d9b1a5ce65ddb2c",
+      "source": "/cephfs/shared/V17_IndependentMoEROM_v2/vendor/train_v16_4_v2_r32_compat.py"
+    },
+    "code/training_s2b_3090.json": {
+      "bytes": 2117,
+      "sha256": "a5cf9b72ea112e53c11eaabf390a7a6784f8bd37f7517cd51a8ecb4149790540",
+      "source": "/data/V17indepentMOEV2/s2b_3090/config/training_s2b_3090.json"
+    },
+    "data/perturbation_bank_train_validation.npz": {
+      "bytes": 657721,
+      "sha256": "69fa522aa4c06f26cad26718dd99b5dcce0b7dd60c30b3efff8a31a154d891c8"
+    },
+    "data/steady_pod_runtime_r32.npz": {
+      "bytes": 35238380,
+      "sha256": "94e6baf066f315ee81b898269019a6cac62d14e5fd88707745f079b0b88a609f"
+    },
+    "data/steady_trainval_modal_r32.npz": {
+      "bytes": 513034,
+      "sha256": "044cbbe615c40fcef5d9c1f1b60865184fc40aeb716c0d226c7b0b5e12ecc70b"
+    },
+    "physics/pressure_poisson_trainval_r32.npz": {
+      "bytes": 791449,
+      "sha256": "5a473a31f49f0df684c2ef9f07620b06d938762da202a2ad96b7b8433b1c56c3"
+    },
+    "physics/velocity_galerkin_trainval_r32.npz": {
+      "bytes": 412673,
+      "sha256": "2a20e657a407b7562a8f58384561831089b3d21a20c9a376dbade62f3d87de40"
+    },
+    "provenance/PREREGISTRATION.json": {
+      "bytes": 4209,
+      "sha256": "913919e732cfa18f1031d5bccfe0878dd6cf4d464116606c5cbb54a51473a583",
+      "source": "/data/V17indepentMOEV2/s4_steady/results/final_20260719_step3480/PREREGISTRATION.json"
+    },
+    "provenance/checkpoint_selection_manifest.json": {
+      "bytes": 7594,
+      "sha256": "97c36cac3d915d26198b347f40e7c1613171c5f743f9744502e58447c13b4fb5",
+      "source": "/data/V17indepentMOEV2/s4_steady/results/final_20260719_step3480/checkpoint_selection_manifest.json"
+    },
+    "provenance/configuration.json": {
+      "bytes": 3112,
+      "sha256": "bbbcbac0ac72d97c9d80b0dc9174236580bf1660526f6146e35029bf86b00a84",
+      "source": "/data/V17indepentMOEV2/s4_steady/results/final_20260719_step3480/configuration.json"
+    },
+    "provenance/experiment_report.md": {
+      "bytes": 11905,
+      "sha256": "2621d6b4be66ec76430a0d7d1cbff2e499c34678792a947551179e6023a78a0c",
+      "source": "/data/V17indepentMOEV2/s4_steady/results/final_20260719_step3480/experiment_report.md"
+    },
+    "provenance/fairness_manifest.json": {
+      "bytes": 568,
+      "sha256": "92777d3258038b48c174c1070136a92ccf0a9fe0f8ab622685d34bd078554a67",
+      "source": "/data/V17indepentMOEV2/s4_steady/results/final_20260719_step3480/fairness_manifest.json"
+    },
+    "provenance/gradient_calibration.json": {
+      "bytes": 893,
+      "sha256": "c0061584c7718c6894c4667fb3fd40cb94e4048d2392daa62520c7a80f031716",
+      "source": "/data/V17indepentMOEV2/s4_steady/results/final_20260719_step3480/gradient_calibration.json"
+    }
+  },
+  "frozen_checkpoint": {
+    "relative_path": "checkpoint/frozen_s4_validation_step_1200.pt",
+    "sha256": "bcab5661af39e3262103ed887ce9846415467452b453f3dcc14e133f0f8bd80d"
+  },
+  "heldout_included": false,
+  "purpose": "minimal Steady specialist train/validation bundle for unified graph-dynamics development",
+  "rank": {
+    "pressure": 32,
+    "velocity": 32
+  },
+  "re_by_split": {
+    "train": [
+      "Re_20p000000",
+      "Re_22p535676",
+      "Re_26p667332",
+      "Re_30p720428",
+      "Re_34p737570",
+      "Re_36p657767",
+      "Re_38p357249",
+      "Re_40p711525",
+      "Re_41p576575",
+      "Re_42p359071",
+      "Re_43p093925",
+      "Re_44p478353",
+      "Re_45p795194",
+      "Re_46p440072"
+    ],
+    "validation": [
+      "Re_28p695138",
+      "Re_43p797402"
+    ]
+  },
+  "schema_version": 1,
+  "snapshot_counts": {
+    "total_train_validation": 1021,
+    "train": 894,
+    "validation": 127
+  }
+}

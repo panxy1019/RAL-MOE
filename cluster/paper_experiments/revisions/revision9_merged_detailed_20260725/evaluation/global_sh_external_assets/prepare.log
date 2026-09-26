@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision9_merged_detailed_20260725/code/prepare_global_sh_external_assets.py", line 236, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision9_merged_detailed_20260725/code/prepare_global_sh_external_assets.py", line 48, in main
+    raise RuntimeError(f"refusing non-empty output: {args.output_dir}")
+RuntimeError: refusing non-empty output: /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision9_merged_detailed_20260725/evaluation/global_sh_external_assets

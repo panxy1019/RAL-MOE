@@ -1,0 +1,57 @@
+{
+  "A_all_shape": [
+    23,
+    5,
+    5
+  ],
+  "G_u_shape": [
+    5,
+    5
+  ],
+  "H_p_shape": [
+    5,
+    5,
+    5
+  ],
+  "H_shape": [
+    5,
+    5,
+    5
+  ],
+  "H_tilde_shape": [
+    5,
+    5,
+    5
+  ],
+  "L_shape": [
+    5,
+    5
+  ],
+  "P_shape": [
+    5,
+    5
+  ],
+  "c_all_shape": [
+    23,
+    5
+  ],
+  "cond_G_u": 1.0000000034060057,
+  "dataset": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf",
+  "eig_L_max": -0.23676890843256232,
+  "eig_L_min": -4.443433063706757,
+  "finite": true,
+  "label": "rank99",
+  "max_abs_G_u_minus_I": 1.7245552763611727e-09,
+  "norm_H_fro": 1.3509065342719047,
+  "norm_P_fro": 0.09854539891856695,
+  "num_cells": 9400,
+  "num_re": 23,
+  "output_dir": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/rom/rank99_ru5_rp5",
+  "pod_rank_pack": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/rom/rank99_ru5_rp5/pod_rank_pack_Re50_150_N100_rank99_ru5_rp5.npz",
+  "pressure_H_tilde_relative_residual": 3.6969775172918826e-16,
+  "pressure_tensor_file": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/rom/rank99_ru5_rp5/pressure_poisson_surrogate_tensors_Re50_150_N100_rank99_ru5_rp5.npz",
+  "rank_L": 5,
+  "rp": 5,
+  "ru": 5,
+  "velocity_tensor_file": "/home/ray/Desktop/centeredSquare/three_regime_overlap_v1/subsets/hopf/pod/rom/rank99_ru5_rp5/semi_intrusive_galerkin_tensors_Re50_150_N100_rank99_ru5_rp5_compact.npz"
+}

@@ -1,0 +1,140 @@
+{
+  "all_oracle_match": true,
+  "checkpoint": "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/frozen_E2_baseline_candidate/best.pt",
+  "checkpoint_sha256": "f0286a9974f16b513bb42cd94232c397123dcd3e0a01eab475ff1593f7881dcd",
+  "checkpoint_step": 6300,
+  "oracle_match_count": 10,
+  "rows": [
+    {
+      "Re": 28.695137758,
+      "oracle_class": "Steady",
+      "oracle_id": 0,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 0.00925248023122549,
+        "Periodic": 1.1997292858723085e-05,
+        "Steady": 0.9907354712486267
+      },
+      "selected_class": "Steady",
+      "selected_id": 0
+    },
+    {
+      "Re": 43.7974019747,
+      "oracle_class": "Steady",
+      "oracle_id": 0,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 0.3945371210575104,
+        "Periodic": 0.004971073474735022,
+        "Steady": 0.6004917621612549
+      },
+      "selected_class": "Steady",
+      "selected_id": 0
+    },
+    {
+      "Re": 46.7,
+      "oracle_class": "Hopf",
+      "oracle_id": 1,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 0.6070734858512878,
+        "Periodic": 0.013278894126415253,
+        "Steady": 0.3796476721763611
+      },
+      "selected_class": "Hopf",
+      "selected_id": 1
+    },
+    {
+      "Re": 56.5432463134,
+      "oracle_class": "Hopf",
+      "oracle_id": 1,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 0.825053870677948,
+        "Periodic": 0.15003778040409088,
+        "Steady": 0.024908320978283882
+      },
+      "selected_class": "Hopf",
+      "selected_id": 1
+    },
+    {
+      "Re": 66.9701121204,
+      "oracle_class": "Periodic",
+      "oracle_id": 2,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 0.3163257837295532,
+        "Periodic": 0.6831941604614258,
+        "Steady": 0.0004799969319719821
+      },
+      "selected_class": "Periodic",
+      "selected_id": 2
+    },
+    {
+      "Re": 91.792204085,
+      "oracle_class": "Periodic",
+      "oracle_id": 2,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 0.0036959066055715084,
+        "Periodic": 0.9963040351867676,
+        "Steady": 3.4821141525753774e-08
+      },
+      "selected_class": "Periodic",
+      "selected_id": 2
+    },
+    {
+      "Re": 121.05017082,
+      "oracle_class": "Periodic",
+      "oracle_id": 2,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 0.00024005713930819184,
+        "Periodic": 0.9997599720954895,
+        "Steady": 1.6529198842984982e-10
+      },
+      "selected_class": "Periodic",
+      "selected_id": 2
+    },
+    {
+      "Re": 139.642302099,
+      "oracle_class": "Periodic",
+      "oracle_id": 2,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 0.0001029624036164023,
+        "Periodic": 0.9998970031738281,
+        "Steady": 3.747900254036374e-11
+      },
+      "selected_class": "Periodic",
+      "selected_id": 2
+    },
+    {
+      "Re": 169.244893107,
+      "oracle_class": "Periodic",
+      "oracle_id": 2,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 5.160154978511855e-05,
+        "Periodic": 0.9999483823776245,
+        "Steady": 1.2989480151215371e-11
+      },
+      "selected_class": "Periodic",
+      "selected_id": 2
+    },
+    {
+      "Re": 196.160723205,
+      "oracle_class": "Periodic",
+      "oracle_id": 2,
+      "oracle_match": true,
+      "probabilities": {
+        "Hopf": 3.853062662528828e-05,
+        "Periodic": 0.9999614953994751,
+        "Steady": 9.044365083255013e-12
+      },
+      "selected_class": "Periodic",
+      "selected_id": 2
+    }
+  ],
+  "trajectory_count": 10
+}

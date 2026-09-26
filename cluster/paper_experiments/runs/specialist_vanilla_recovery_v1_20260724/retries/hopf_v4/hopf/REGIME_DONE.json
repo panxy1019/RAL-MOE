@@ -1,0 +1,16 @@
+{
+  "errors": {
+    "vanilla-fnn": "RuntimeError('vanilla_throughput returned 1')"
+  },
+  "finished_unix": 1784851120.951046,
+  "methods": [
+    "vanilla-fnn"
+  ],
+  "regime": "hopf",
+  "return_codes": {
+    "vanilla_preflight": 0,
+    "vanilla_throughput": 1,
+    "vanilla_validation_rollout_smoke": 0
+  },
+  "status": "FAILED"
+}

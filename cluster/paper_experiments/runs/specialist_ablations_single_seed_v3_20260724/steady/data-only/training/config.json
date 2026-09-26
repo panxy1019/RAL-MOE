@@ -1,0 +1,70 @@
+{
+  "ablation_mode": "data-only",
+  "allowed_changes": [
+    "direct discrete POD-state mapping",
+    "no continuous RHS/RK4/Galerkin/pressure fixed operator",
+    "data-supervised one-step and autonomous rollout losses only"
+  ],
+  "args": {
+    "ablation_mode": "data-only",
+    "curriculum_horizons": [
+      1,
+      4,
+      8,
+      16
+    ],
+    "effective_batch": 24,
+    "log_every": 20,
+    "lr": 0.00055,
+    "max_steps": 11000,
+    "micro_batch": 8,
+    "output_dir": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/steady/data-only/training",
+    "regime": "steady",
+    "root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE",
+    "seed": 202607251,
+    "smoke_only": false,
+    "swanlab_project": "PaperSpecialistAblationsSingleSeed20260724",
+    "validation_every": 200,
+    "validation_horizon": 16,
+    "weight_decay": 0.00015
+  },
+  "model_parameter_count": 29566677,
+  "preserved_contract": [
+    "specialist-local POD state and ru=rp=32",
+    "complete-Re split and history length 3",
+    "hierarchical sparse MoE router and native expert counts",
+    "validation-only checkpoint selection"
+  ],
+  "router_contract": {
+    "group_top_k": 1,
+    "groups": 3,
+    "local_top_k": 2,
+    "routed_experts_per_group": 6,
+    "shared_experts_per_group": 1
+  },
+  "schema": "dataonly_specialist_ablation/v2",
+  "split_re": {
+    "heldout": [],
+    "train": [
+      20.0,
+      22.535676,
+      26.667332,
+      30.720428,
+      34.73757,
+      36.657767,
+      38.357249,
+      40.711525,
+      41.576575,
+      42.359071,
+      43.093925,
+      44.478353,
+      45.795194,
+      46.440072
+    ],
+    "validation": [
+      28.695138,
+      43.797402
+    ]
+  },
+  "test_truth_read": false
+}

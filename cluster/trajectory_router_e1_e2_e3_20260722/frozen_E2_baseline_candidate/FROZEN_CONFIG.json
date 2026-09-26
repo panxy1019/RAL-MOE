@@ -1,0 +1,15 @@
+{
+  "batch_size": 256,
+  "best_step": 6300,
+  "checkpoint": "best.pt",
+  "checkpoint_sha256": "f0286a9974f16b513bb42cd94232c397123dcd3e0a01eab475ff1593f7881dcd",
+  "experiment": "E2",
+  "feature_contract": "Re only",
+  "learning_rate": 0.0003,
+  "router": "Re-only trajectory-level fixed Top-1",
+  "seed": 31002,
+  "specialists": "frozen and not loaded during outer-router training",
+  "split": "complete Re and complete trajectories",
+  "steps": 8000,
+  "windows_per_Re": 32
+}

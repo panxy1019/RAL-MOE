@@ -1,0 +1,28 @@
+boundary:
+  desc: ''
+  sort: 1
+  value: SH
+cache_sha256:
+  desc: ''
+  sort: 4
+  value: b5f37a5482b1d461d8ceedda0f7216417ce96a30e6a1d1a3851330685222bb40
+fusion_feedback:
+  desc: ''
+  sort: 6
+  value: false
+method:
+  desc: ''
+  sort: 0
+  value: T2-C_LearnedConvexCorrection_FieldBlend
+seed:
+  desc: ''
+  sort: 3
+  value: 42001
+specialists_frozen:
+  desc: ''
+  sort: 5
+  value: true
+steps:
+  desc: ''
+  sort: 2
+  value: 8000

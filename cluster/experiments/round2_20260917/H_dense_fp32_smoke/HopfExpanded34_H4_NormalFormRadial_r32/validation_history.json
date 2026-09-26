@@ -1,0 +1,137 @@
+{
+  "history": [
+    {
+      "step": 8,
+      "by_re": {
+        "46.700000": {
+          "1": {
+            "fluc_u": 0.3012807369232178,
+            "fluc_p": 16.2419376373291,
+            "total_u": 0.0012902641901746392,
+            "total_p": 0.2047140896320343,
+            "radial_rms": 22.543142318725586,
+            "scale_inflation": 46.53915786743164,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.00015389919281
+          },
+          "2": {
+            "fluc_u": 2.762697696685791,
+            "fluc_p": 377.3818664550781,
+            "total_u": 0.011738563887774944,
+            "total_p": 4.739561080932617,
+            "radial_rms": 218.45101928710938,
+            "scale_inflation": 475.1336669921875,
+            "growth_sign_accuracy": 0.53125,
+            "finite_fraction": 1.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": 29.11154556274414
+          },
+          "4": {
+            "fluc_u": 17516.568359375,
+            "fluc_p": 45127372.0,
+            "total_u": 64.90914154052734,
+            "total_p": 418805.5,
+            "radial_rms": 310302.125,
+            "scale_inflation": 576285.4375,
+            "growth_sign_accuracy": 0.5416666865348816,
+            "finite_fraction": 1.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": 8689463.0
+          },
+          "8": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.2142857313156128,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.08125000447034836,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        },
+        "56.543246": {
+          "1": {
+            "fluc_u": 1.7187187671661377,
+            "fluc_p": 8.208491325378418,
+            "total_u": 0.00498780095949769,
+            "total_p": 0.09290003776550293,
+            "radial_rms": 2.005423069000244,
+            "scale_inflation": 8.043754577636719,
+            "growth_sign_accuracy": NaN,
+            "finite_fraction": 1.0,
+            "divergent_windows": 0,
+            "max_norm_ratio": 1.5547058582305908
+          },
+          "2": {
+            "fluc_u": 12.637359619140625,
+            "fluc_p": 233.06591796875,
+            "total_u": 0.03623500466346741,
+            "total_p": 2.631373405456543,
+            "radial_rms": 16.368148803710938,
+            "scale_inflation": 57.036136627197266,
+            "growth_sign_accuracy": 0.8275861740112305,
+            "finite_fraction": 1.0,
+            "divergent_windows": 30,
+            "max_norm_ratio": 20.23713493347168
+          },
+          "4": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": 7085698318336.0,
+            "total_p": Infinity,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.6022727489471436,
+            "finite_fraction": 0.1875,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          },
+          "8": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.24378108978271484,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          },
+          "16": {
+            "fluc_u": NaN,
+            "fluc_p": NaN,
+            "total_u": NaN,
+            "total_p": NaN,
+            "radial_rms": NaN,
+            "scale_inflation": NaN,
+            "growth_sign_accuracy": 0.10904871672391891,
+            "finite_fraction": 0.0,
+            "divergent_windows": 32,
+            "max_norm_ratio": NaN
+          }
+        }
+      },
+      "numeric_gate": false,
+      "hopf_gate": false,
+      "score": NaN,
+      "hard_gate": false
+    }
+  ]
+}

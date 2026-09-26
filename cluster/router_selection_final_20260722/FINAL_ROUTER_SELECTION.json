@@ -1,0 +1,51 @@
+{
+  "status": "COMPLETE",
+  "decision": "KEEP_E2_AS_FORMAL_BASELINE",
+  "date": "2026-07-22",
+  "formal_baseline": "E2_ReOnly_TrajectoryTop1_UnifiedSystem",
+  "top2_router_candidate": "E2_ReOnly_TrajectoryTop1_UnifiedSystem",
+  "top2_executed": false,
+  "e2": {
+    "checkpoint_sha256": "f0286a9974f16b513bb42cd94232c397123dcd3e0a01eab475ff1593f7881dcd",
+    "checkpoint_step": 6300,
+    "frozen": true,
+    "validation_router_oracle_match": "10/10",
+    "unified_wrapper_smoke": "PASS",
+    "native_specialists_invoked": ["Steady", "Hopf", "Periodic"],
+    "native_finite_fraction": 1.0,
+    "native_divergent_windows": 0,
+    "baseline_approval_sha256": "cb02dc510bccffa9412955f796c433c8d0024067ea47254e614eeef0bf644ecf"
+  },
+  "e3_repaired": {
+    "checkpoint_sha256": "7d88cf2e4bda5bd0b826c8cf0cbe951124b19ff030760c2919593508674da2a8",
+    "checkpoint_step": 5500,
+    "no_leak_interface": "PASS",
+    "common_mesh_and_gauge_contract": "PASS",
+    "validation_balanced_accuracy": 1.0,
+    "validation_macro_f1": 1.0,
+    "validation_nll": 0.020913568309418675,
+    "validation_brier": 0.005225393744008837,
+    "validation_ece10": 0.019458246231079123,
+    "validation_minimum_top1_margin": 0.6854454725980759,
+    "validation_illegal_S_P_top2_count": 6,
+    "test_illegal_S_P_top2_count": 4,
+    "selection_status": "RETAINED_AS_ABLATION_NOT_SELECTED"
+  },
+  "comparison": {
+    "primary_top1_metrics": "E2 and repaired E3 are identical on validation and test accuracy, balanced accuracy, macro-F1, and confusion matrices.",
+    "secondary_metrics": "E3 materially improves NLL, Brier, ECE, and minimum margin.",
+    "why_e3_is_not_declared_clearly_superior": [
+      "No validation or held-out Top-1 decision changes from incorrect to correct.",
+      "No new certified boundary or cross-regime trajectories were added.",
+      "E3 is more complex and its raw secondary ranking still produces non-adjacent S-P pairs.",
+      "H-P has no real sampled Re overlap; its representation audit is extrapolative."
+    ]
+  },
+  "future_top2_gate": {
+    "required_router": "E2",
+    "required_topology": "Explicit S-H-P adjacency mask; direct S-P Top-2 is forbidden.",
+    "allowed_pairs": ["Steady-Hopf", "Hopf-Periodic"],
+    "method_scope": "Adjacent boundary output-level physical-field blending under the corrected paper design; not continuous-RHS fusion.",
+    "transition_claim": "temporal-consistent regime router only; no genuine S-H-P temporal-transition claim"
+  }
+}

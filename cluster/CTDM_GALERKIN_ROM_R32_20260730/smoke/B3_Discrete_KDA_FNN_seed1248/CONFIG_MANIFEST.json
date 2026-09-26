@@ -1,0 +1,402 @@
+{
+  "variant": "b3",
+  "baseline_trainer": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py",
+  "h4_trainer": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_h4_expanded.py",
+  "coefficient_view": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainval_r32.npz",
+  "galerkin_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainonly_galerkin_r32.npz",
+  "pressure_path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainonly_pressure_r32.npz",
+  "asset_manifest": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/TRAINING_ASSET_MANIFEST.json",
+  "fluctuation_contract": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/trainonly_contract/trainonly_fluctuation_contract.npz",
+  "output_root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/smoke",
+  "experiment_name": "B3_Discrete_KDA_FNN_seed1248",
+  "seed": 1248,
+  "max_steps": 8000,
+  "micro_batch": 4,
+  "grad_accum": 4,
+  "tbptt_steps": 16,
+  "lr": 0.001,
+  "weight_decay": 0.0001,
+  "grad_clip": 1.0,
+  "lambda_memory": 1e-06,
+  "gamma_min": 0.001,
+  "eta_max": 0.25,
+  "v_max": 1.0,
+  "warmup_length": 3,
+  "eval_every": 400,
+  "validation_windows_per_re": 16,
+  "device": "cuda",
+  "gpu_memory_fraction": 0.42,
+  "amp": true,
+  "allow_tf32": true,
+  "fused_adamw": true,
+  "smoke_only": true,
+  "benchmark_steps": 0,
+  "benchmark_horizon": 56,
+  "resume": null,
+  "swanlab_mode": "disabled",
+  "swanlab_project": "CTDM_Galerkin_ROM_R32",
+  "swanlab_group": "B1_B4_single_seed",
+  "swanlab_log_every": 20,
+  "schema_version": 1,
+  "model_name": "B3_Discrete_KDA_FNN",
+  "train_re": [
+    45.5,
+    45.8,
+    46.1,
+    46.3,
+    46.5,
+    46.9,
+    47.2,
+    47.4,
+    47.6,
+    47.722947,
+    47.8,
+    48.0,
+    48.3,
+    48.368688,
+    48.7,
+    49.3,
+    49.6,
+    49.68764,
+    50.0,
+    50.368054,
+    51.066785,
+    52.528767,
+    53.294175,
+    54.081508,
+    54.88795,
+    55.70961,
+    57.38997,
+    58.262636,
+    59.201432
+  ],
+  "validation_re": [
+    46.7,
+    56.543246
+  ],
+  "heldout_re_hard_disabled": [
+    47.081355,
+    49.022357,
+    51.78645
+  ],
+  "curriculum": [
+    [
+      0,
+      1200,
+      4
+    ],
+    [
+      1200,
+      2800,
+      8
+    ],
+    [
+      2800,
+      4800,
+      16
+    ],
+    [
+      4800,
+      6400,
+      32
+    ],
+    [
+      6400,
+      8000,
+      56
+    ]
+  ],
+  "current_feature_dimension": 109,
+  "full_history_dimension": 493,
+  "asset_audit": {
+    "manifest": {
+      "schema_version": 2,
+      "scope": "hopf_local_train_val_view",
+      "r_u": 32,
+      "r_p": 32,
+      "fit_reynolds": [
+        45.5,
+        45.8,
+        46.1,
+        46.3,
+        46.5,
+        46.9,
+        47.2,
+        47.4,
+        47.6,
+        47.722947,
+        47.8,
+        48.0,
+        48.3,
+        48.368688,
+        48.7,
+        49.3,
+        49.6,
+        49.68764,
+        50.0,
+        50.368054,
+        51.066785,
+        52.528767,
+        53.294175,
+        54.081508,
+        54.88795,
+        55.70961,
+        57.38997,
+        58.262636,
+        59.201432
+      ],
+      "validation_reynolds": [
+        46.7,
+        56.543246
+      ],
+      "heldout_reynolds_sealed": [
+        47.081355,
+        49.022357,
+        51.78645
+      ],
+      "heldout_rows_present": false,
+      "pressure_gauge_verified": true,
+      "projection_error_verified": true,
+      "critical_mode_pair_verified": true,
+      "shift_mode_verified": true,
+      "frequency_retention_verified": true,
+      "projection_errors": {
+        "schema_version": 1,
+        "regime": "hopf",
+        "fit_contract": {
+          "fit_split": "train",
+          "centering": "single_train_only_regime_mean",
+          "pressure_gauge": "subtract_area_mean_per_snapshot",
+          "validation_or_heldout_used_for_fit": false,
+          "train_Re_labels": [
+            "Re_45p500000",
+            "Re_45p800000",
+            "Re_46p100000",
+            "Re_46p300000",
+            "Re_46p500000",
+            "Re_46p900000",
+            "Re_47p200000",
+            "Re_47p400000",
+            "Re_47p600000",
+            "Re_47p722947",
+            "Re_47p800000",
+            "Re_48p000000",
+            "Re_48p300000",
+            "Re_48p368688",
+            "Re_48p700000",
+            "Re_49p300000",
+            "Re_49p600000",
+            "Re_49p687640",
+            "Re_50p000000",
+            "Re_50p368054",
+            "Re_51p066785",
+            "Re_52p528767",
+            "Re_53p294175",
+            "Re_54p081508",
+            "Re_54p887950",
+            "Re_55p709610",
+            "Re_57p389970",
+            "Re_58p262636",
+            "Re_59p201432"
+          ],
+          "validation_Re_labels": [
+            "Re_46p700000",
+            "Re_56p543246"
+          ],
+          "heldout_Re_labels": [
+            "Re_47p081355",
+            "Re_49p022357",
+            "Re_51p786450"
+          ]
+        },
+        "counts": {
+          "train": {
+            "Re": 29,
+            "snapshots": 4092
+          },
+          "validation": {
+            "Re": 2,
+            "snapshots": 225
+          },
+          "heldout": {
+            "Re": 3,
+            "snapshots": 483
+          }
+        },
+        "velocity_projection_full_field_relative_l2": {
+          "train": {
+            "local_r32": {
+              "mean": 3.7156015064624074e-06,
+              "median": 1.864953425092804e-06,
+              "p95": 1.2177200355262434e-05,
+              "worst": 6.787481810461244e-05
+            },
+            "local_r80": {
+              "mean": 2.2548333508166965e-07,
+              "median": 1.5493215689663907e-07,
+              "p95": 6.752736117020886e-07,
+              "worst": 1.955997453498879e-06
+            },
+            "global_r32": {
+              "mean": 0.00047104292022920617,
+              "median": 0.00011921080148377317,
+              "p95": 0.0021429145374693716,
+              "worst": 0.006490094566884291
+            }
+          },
+          "validation": {
+            "local_r32": {
+              "mean": 6.370885763206768e-06,
+              "median": 5.2535100954069575e-06,
+              "p95": 1.2968371232834145e-05,
+              "worst": 2.155941553777911e-05
+            },
+            "local_r80": {
+              "mean": 4.0536996644476897e-07,
+              "median": 3.9056097249703883e-07,
+              "p95": 7.049279601732567e-07,
+              "worst": 1.1489695921228926e-06
+            },
+            "global_r32": {
+              "mean": 0.00046346230458874825,
+              "median": 0.0002871610803594109,
+              "p95": 0.0012014555060325545,
+              "worst": 0.0023429633364749317
+            }
+          },
+          "heldout": {
+            "local_r32": {
+              "mean": 2.4602172333100563e-06,
+              "median": 1.561765352225682e-06,
+              "p95": 4.917120887602405e-06,
+              "worst": 1.6012583149382026e-05
+            },
+            "local_r80": {
+              "mean": 2.458412354296861e-07,
+              "median": 2.1695659283317142e-07,
+              "p95": 3.8284439299522385e-07,
+              "worst": 1.0211380096208211e-06
+            },
+            "global_r32": {
+              "mean": 0.00018582596610398818,
+              "median": 0.00015115208751054294,
+              "p95": 0.0006232385298229803,
+              "worst": 0.0025186936743329547
+            }
+          }
+        },
+        "pressure_projection_full_field_relative_l2_gauge_fixed": {
+          "train": {
+            "local_r32": {
+              "mean": 1.1362816066808783e-05,
+              "median": 5.545626203001525e-06,
+              "p95": 3.589584234897871e-05,
+              "worst": 0.00020756041778667426
+            },
+            "local_r80": {
+              "mean": 1.287689855001965e-06,
+              "median": 7.279995726193069e-07,
+              "p95": 3.6360878956007103e-06,
+              "worst": 1.6573136291148257e-05
+            },
+            "global_r32": {
+              "mean": 0.0024033156103928015,
+              "median": 0.0008586482073331246,
+              "p95": 0.010985808822027964,
+              "worst": 0.03386752147550628
+            }
+          },
+          "validation": {
+            "local_r32": {
+              "mean": 1.8407939026615392e-05,
+              "median": 1.4122605315610373e-05,
+              "p95": 3.5734033979155475e-05,
+              "worst": 8.574299504739629e-05
+            },
+            "local_r80": {
+              "mean": 2.2738525448629683e-06,
+              "median": 1.8896137869792807e-06,
+              "p95": 4.124286895067881e-06,
+              "worst": 2.9177985973730316e-05
+            },
+            "global_r32": {
+              "mean": 0.002666856835463563,
+              "median": 0.0016805224690554252,
+              "p95": 0.008367929236925574,
+              "worst": 0.018398073961887737
+            }
+          },
+          "heldout": {
+            "local_r32": {
+              "mean": 8.576820185949025e-06,
+              "median": 7.082157987067383e-06,
+              "p95": 1.678981697190044e-05,
+              "worst": 5.705109956034005e-05
+            },
+            "local_r80": {
+              "mean": 1.5938140525348077e-06,
+              "median": 9.055624822490444e-07,
+              "p95": 2.982646142989828e-06,
+              "worst": 5.1377209567968566e-06
+            },
+            "global_r32": {
+              "mean": 0.0013495403704199354,
+              "median": 0.0011014811747630756,
+              "p95": 0.004518905546440759,
+              "worst": 0.018956926985946938
+            }
+          }
+        },
+        "training_only_spectrum": {
+          "velocity": {
+            "rank_99pct": 1,
+            "rank_99p9pct": 4,
+            "rank_99p99pct": 5,
+            "captured_at_rank32": 0.9999999920981687,
+            "captured_at_retained_rank": 0.9999999999789514
+          },
+          "pressure": {
+            "rank_99pct": 3,
+            "rank_99p9pct": 5,
+            "rank_99p99pct": 8,
+            "captured_at_rank32": 0.9999999779490344,
+            "captured_at_retained_rank": 0.9999999997704886
+          },
+          "rank_selection_used_validation_or_heldout": false,
+          "note": "Hopf rank must additionally use training-only oscillatory-mode diagnostics; energy alone is not authoritative."
+        },
+        "global_control_disclosure": "Frozen global-r32 comparison is reported only for legacy labels present in the frozen global asset; new labels are explicitly unavailable for that control."
+      },
+      "rank_semantics": "first 32 modes of the new train-only Hopf-local r80 basis; report fair-control rank",
+      "source_sha256": {
+        "velocity_pod_hopf.npz": "2f951192f6eeaa69e7d911aa21552454d1a99a49ab796166b4a13df16016a192",
+        "pressure_pod_hopf.npz": "cc128a4361ab2a239165ac22a48407290de7d085b857bbff6726988457cfddf3",
+        "velocity_rom_hopf.npz": "7d16ca813efa0f92109689a686de0c3de02cdd269a4b31029c53c3ed1309d3e9",
+        "pressure_poisson_surrogate_hopf.npz": "a6646aa3eb3814d8648293ee3cd798a6abe268bf46a79ec0c0b8b17b30aaf06d"
+      },
+      "sha256": {
+        "coefficient_view": "53d05065d518de82432e55b191dcee6c3501e09822dfedbf6162e061151f4d45",
+        "galerkin": "ebfb05f23c7fe909cb9b92fdea9098d849927bc732652a3881a4f32bbc6e6e26",
+        "pressure": "9df6f17413ff884a04b5bbba9e2b791563bde412b5d17649f9badda4e151e44c"
+      }
+    },
+    "observed_sha256": {
+      "coefficient_view": "53d05065d518de82432e55b191dcee6c3501e09822dfedbf6162e061151f4d45",
+      "galerkin": "ebfb05f23c7fe909cb9b92fdea9098d849927bc732652a3881a4f32bbc6e6e26",
+      "pressure": "9df6f17413ff884a04b5bbba9e2b791563bde412b5d17649f9badda4e151e44c"
+    },
+    "passed": true
+  },
+  "source_hashes": {
+    "trainer": "80e9878b1bfce9aeaed7705130a7940f44983ee1a538c52c6ce729cbd949d71f",
+    "memory": "7e711be1f34d8d0b06084af26cdc9549fc68452783b01eea0c7566f49e808e9e",
+    "baseline": "f7facb3b6070290e9d6725f09fdd0810f0cf7e1775d35c20563a1b691d2c6975",
+    "h4": "bf25d3fee9ed1b51a02437eaba64ad6d9d618955eed2b54f4a218e14d25c4ee4",
+    "coefficient_view": "53d05065d518de82432e55b191dcee6c3501e09822dfedbf6162e061151f4d45",
+    "galerkin": "ebfb05f23c7fe909cb9b92fdea9098d849927bc732652a3881a4f32bbc6e6e26",
+    "pressure": "9df6f17413ff884a04b5bbba9e2b791563bde412b5d17649f9badda4e151e44c",
+    "asset_manifest": "5e7b0c50c8b1d1a29f275d1b64c7ba0f886464945e5014fa8b8a7bd9558ddd69",
+    "fluctuation_contract": "2e3aa04095ab0ccceed2a98e3582a7096d1a80993ab486a7896f2dff7afc1e19"
+  },
+  "test_access": "not_loaded_by_this_program"
+}

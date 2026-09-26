@@ -1,0 +1,29 @@
+{
+  "schema": "steady_fixed_point_qualified_selection/v1",
+  "source": "STEADY_PROPOSED_STRICT_PRESSURE_SCAN.json",
+  "source_sha256": "d7ae3bae8c6720897222354fa40e0dd786f2de3429db0adef3aee23dbe8de9df",
+  "horizon": 56,
+  "joint_strict_gate": {
+    "finite_fraction_min": 1.0,
+    "divergent_windows_max": 0,
+    "pressure_fixed_point_physical_relative_l2_max": 0.05,
+    "pressure_drift_coefficient_relative_l2_max": 0.05,
+    "passing_Re": []
+  },
+  "fixed_point_qualified_only": {
+    "criterion": "pressure_fixed_point_physical_relative_l2 < 0.05",
+    "status": "secondary_diagnostic_subset_not_a_joint_strict_pass",
+    "train_Re": [
+      34.737568,
+      36.657768,
+      38.357250,
+      40.711525,
+      41.576576
+    ],
+    "validation_Re": [],
+    "test_Re": [
+      39.685479
+    ]
+  },
+  "interpretation": "No Proposed Steady trajectory passes the preregistered joint fixed-point-and-drift gate. The six-point subset is retained only for fixed-point-qualified cross-method diagnostics; drift remains reported and must not be described as strict attractor preservation."
+}

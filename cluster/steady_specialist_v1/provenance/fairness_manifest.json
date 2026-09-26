@@ -1,0 +1,16 @@
+{
+  "canonical_best_modified": false,
+  "execution_attempt_count": 2,
+  "failed_attempt_before_metrics_or_decision": true,
+  "four_space_gain": true,
+  "heldout_evaluation_count": 1,
+  "heldout_used_for_selection": false,
+  "perturbed_to_truth_not_used_as_paired_gain": true,
+  "pressure_gauge": "subtract_area_mean_per_snapshot",
+  "relative_errors_stored_as_fraction": true,
+  "report_display_multiplier": 100,
+  "same_space_numerator_denominator": true,
+  "schema_version": 1,
+  "successful_artifact_count": 1,
+  "validation_selection_frozen_before_heldout": true
+}

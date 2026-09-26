@@ -1,0 +1,29 @@
+{
+  "method": "proposed",
+  "seed": 1248,
+  "start": 976,
+  "Re": 70.31463623046875,
+  "seconds": [
+    3.148343619890511
+  ],
+  "median": 3.148343619890511,
+  "iqr": 0.0,
+  "warmups": 3,
+  "repeats": 10,
+  "batch": 1,
+  "K": 48,
+  "dtype": "FP32 neural, FP64 physical encode/decode",
+  "cpu": "x86_64",
+  "gpu": "NVIDIA GeForce RTX 4090",
+  "torch": "2.11.0+cu126",
+  "intraop_threads": 2,
+  "interop_threads": 64,
+  "peak_gpu_allocated_bytes": 204238336,
+  "peak_process_rss_bytes": 1498611712,
+  "peak_rss_scope": "whole process high-water mark, including loaded evaluation assets",
+  "scope": "in-memory common POD-reconstructed physical history -> all decoded and gauge-fixed velocity/pressure fields; includes encoding, history RHS, rollout, transfers; excludes loading and disk IO",
+  "synchronization": "CUDA synchronize before and after each repetition",
+  "max_modal_difference_from_cached": 1.6391277313232422e-07,
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/P_proposed/1248/Circular_P_proposed_round2_Re_70p314635_checkpoint.pt",
+  "checkpoint_sha256": "b48eaacc1deb923721f9fa0244169861a6b8a4111cab7a5255a61110679fa625"
+}

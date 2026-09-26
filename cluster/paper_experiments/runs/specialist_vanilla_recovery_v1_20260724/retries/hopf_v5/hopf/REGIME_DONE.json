@@ -1,0 +1,17 @@
+{
+  "errors": {
+    "vanilla-fnn": "RuntimeError('vanilla_train returned 1')"
+  },
+  "finished_unix": 1784851388.453147,
+  "methods": [
+    "vanilla-fnn"
+  ],
+  "regime": "hopf",
+  "return_codes": {
+    "vanilla_preflight": 0,
+    "vanilla_throughput": 0,
+    "vanilla_train": 1,
+    "vanilla_validation_rollout_smoke": 0
+  },
+  "status": "FAILED"
+}

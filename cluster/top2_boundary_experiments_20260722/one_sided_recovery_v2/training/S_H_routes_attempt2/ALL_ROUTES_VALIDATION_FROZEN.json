@@ -1,0 +1,10 @@
+{
+  "known_legacy_test_disclosure": true,
+  "methods": [
+    "T2-C_LearnedConvexCorrection_FieldBlend",
+    "RiskPredictionRouter",
+    "LookAheadShortRolloutRouter"
+  ],
+  "status": "FROZEN",
+  "test_access_now_authorized_for_mechanical_final_evaluator": true
+}

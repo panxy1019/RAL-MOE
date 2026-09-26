@@ -1,0 +1,21 @@
+{
+  "command": [
+    "/root/miniconda3/envs/pt_env/bin/python",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/evaluate_specialist_ablation.py",
+    "--root",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE",
+    "--regime",
+    "hopf",
+    "--method",
+    "vanilla-fnn",
+    "--checkpoint",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/hopf_v6/hopf/vanilla-fnn/training/HopfExpanded34_H4_NormalFormRadial_r32/best_validation.pt",
+    "--split",
+    "test",
+    "--output-dir",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/hopf_v6/hopf/vanilla-fnn/evaluation/test"
+  ],
+  "finished_unix": 1784861160.3896985,
+  "return_code": 1,
+  "status": "FAILED"
+}

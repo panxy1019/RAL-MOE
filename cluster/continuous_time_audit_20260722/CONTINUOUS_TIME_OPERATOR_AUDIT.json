@@ -1,0 +1,139 @@
+{
+  "schema": "CONTINUOUS_TIME_OPERATOR_AUDIT_V1",
+  "audit_date": "2026-07-22",
+  "mode": "read_only_and_minimal_execution",
+  "training_started": false,
+  "specialists_modified": false,
+  "verdict": "COMMON_TIME_RETRAIN_REQUIRED",
+  "current_safe_fallback": "NATIVE_TIME_HARD_ROUTING_ONLY",
+  "gates": {
+    "continuous_time_full_state_rhs": {
+      "passed": false,
+      "reason": "All velocity branches expose da/dt, but all pressure branches are algebraic next-state closures rather than db/dt. Steady's certified wrapper also integrates velocity with Euler while Hopf and Periodic use RK4."
+    },
+    "autonomous_phase_and_history": {
+      "passed": false,
+      "reason": "Periodic and Steady four-harmonic features use database-normalized trajectory progress requiring the trajectory endpoint; native history differences are raw differences without elapsed-time normalization."
+    },
+    "common_time_recertification": {
+      "passed": false,
+      "reason": "No common-time full-state operator has been certified; native dt distributions overlap but differ by chart and Re trajectory."
+    },
+    "overlap_projection": {
+      "passed": false,
+      "reason": "S-H has exact Re overlap and stable affine projections on sampled support, but H-P has no exact Re overlap (59.2014322659 to 60.3077454666 gap) and only a boundary proxy could be audited."
+    }
+  },
+  "specialists": {
+    "Steady": {
+      "strict_checkpoint_restore": true,
+      "velocity_network_output": "continuous_time_derivative_da_dt",
+      "pressure_network_output": "algebraic_pressure_residual_added_to_pressure_surrogate",
+      "dt_role": "external_Euler_parameter_in_final_S2_S3_S4_wrapper",
+      "dt_is_network_input": false,
+      "training_derivative_divides_by_actual_dt": true,
+      "history_differences_divide_by_elapsed_time": false,
+      "phase_harmonics": 4,
+      "phase_source": "database_normalized_trajectory_progress_fallback",
+      "autonomous_rhs_from_state_history_Re_clock_only": false,
+      "full_state_rhs_available": false
+    },
+    "Hopf": {
+      "strict_checkpoint_restore": true,
+      "velocity_network_output": "continuous_time_derivative_da_dt",
+      "pressure_network_output": "algebraic_pressure_residual_with_adaptive_gate_closure",
+      "dt_role": "external_RK4_parameter_for_velocity_only",
+      "dt_is_network_input": false,
+      "training_derivative_divides_by_actual_dt": true,
+      "history_differences_divide_by_elapsed_time": false,
+      "phase_harmonics": 0,
+      "phase_source": "phase_free",
+      "autonomous_velocity_rhs_from_state_history_Re_clock_only": true,
+      "full_state_rhs_available": false
+    },
+    "Periodic": {
+      "strict_checkpoint_restore": true,
+      "velocity_network_output": "continuous_time_derivative_da_dt",
+      "pressure_network_output": "algebraic_pressure_residual_with_adaptive_gate_closure",
+      "dt_role": "external_RK4_parameter_for_velocity_only",
+      "dt_is_network_input": false,
+      "training_derivative_divides_by_actual_dt": true,
+      "history_differences_divide_by_elapsed_time": false,
+      "phase_harmonics": 4,
+      "phase_source": "database_normalized_trajectory_progress_fallback",
+      "autonomous_rhs_from_state_history_Re_clock_only": false,
+      "full_state_rhs_available": false
+    }
+  },
+  "step_halving_summary": {
+    "Steady": {
+      "dt_tested": [4.1014404296875, 4.1015625, 4.219482421875, 4.4967041015625, 4.9659423828125],
+      "velocity_field_relative_l2_range": [8.192210508908121e-06, 1.1128210311815012e-05],
+      "pressure_field_relative_l2_range": [0.11063645124058738, 0.11557861118183811],
+      "velocity_observed_order_range": [1.561799780982482, 1.7213739145797151],
+      "pressure_observed_order_range": [-0.2403759728959601, -0.2006893962338851]
+    },
+    "Hopf": {
+      "dt_tested": [4.061326020000024, 4.113956599999938, 16.371099999999842, 19.458673190000354, 21.87310588000014],
+      "velocity_field_relative_l2_range": [2.0296269441813677e-07, 1.9029431667689413e-06],
+      "pressure_field_relative_l2_range": [0.0005122177011140463, 0.0006073125271470746],
+      "velocity_observed_order_range": [0.10947349428458875, 3.193394512256827],
+      "pressure_observed_order_range": [-0.15393171806369577, -0.03902637063115081]
+    },
+    "Periodic": {
+      "dt_tested": [3.50146484375, 3.71002197265625, 4.1402587890625, 5.2635498046875, 7.038348388671875],
+      "velocity_field_relative_l2_range": [0.0006166769458184495, 0.004147795909774539],
+      "pressure_field_relative_l2_range": [0.019237492342917394, 0.02834339975269173],
+      "velocity_observed_order_range": [2.095609738235171, 2.9381741441589093],
+      "pressure_observed_order_range": [0.23285074212454154, 0.8496712833092742]
+    }
+  },
+  "periodic_phase_probe": {
+    "estimator": "train_only_PCA_observation_pair_then_atan2_and_online_unwrap",
+    "uses_future_truth_at_runtime": false,
+    "validation_phase_mae_rad_mean": 1.5668443320455927,
+    "validation_frequency_relative_error_mean": 0.9782636722224779,
+    "validation_long_phase_drift_rad_mean": 6.14661193185582,
+    "heldout_phase_mae_rad_mean": 1.5681821044745972,
+    "heldout_frequency_relative_error_mean": 0.9589152871807339,
+    "heldout_long_phase_drift_rad_mean": 6.025042443243882,
+    "certified_as_drop_in_replacement": false
+  },
+  "adapter_summary": {
+    "S_H": {
+      "support": "exact_Re_overlap_45.5_to_46.440071584",
+      "velocity_projection_floor_mean_range": [0.00012645574880896707, 0.0002708067053788176],
+      "pressure_projection_floor_mean_range": [6.124370389137211e-07, 1.7223548814991124e-05],
+      "minimum_shared_direction_count_cos_ge_0_9": 10,
+      "principal_angle_aware_mask_recommended": true
+    },
+    "H_P": {
+      "support": "nearest_three_Re_boundary_proxy_only_no_exact_overlap",
+      "Re_gap": [59.2014322659, 60.3077454666],
+      "velocity_projection_floor_mean_range": [0.0032728354849605942, 0.02213551577140717],
+      "pressure_projection_floor_mean_range": [0.007716893897190762, 0.05703653591168706],
+      "minimum_shared_direction_count_cos_ge_0_9": 9,
+      "principal_angle_aware_mask_recommended": true
+    }
+  },
+  "history_switch_contract": {
+    "runtime_state": "last_three_predicted_physical_modal_states_and_physical_timestamps",
+    "switch": "affinely_map_all_three_states_to_target_chart_then_recompute_target_Galerkin_RHS_history_and_native_features",
+    "forbidden": [
+      "copy_source_493_or_501_dimensional_feature_tensor",
+      "read_future_true_state_or_phase",
+      "apply_affine_mean_offset_to_RHS",
+      "change_raw_history_differences_to_dt_normalized_differences_without_specialist_recertification"
+    ],
+    "certified_with_current_frozen_checkpoints": false
+  },
+  "router_claim": "temporal-consistent regime router",
+  "certified_true_cross_regime_trajectories_present": false,
+  "formal_training_started": false,
+  "raw_evidence": {
+    "steady_step_halving": "raw/steady_step_halving.json",
+    "hopf_step_halving": "raw/hopf_step_halving.json",
+    "periodic_step_halving": "raw/periodic_step_halving.json",
+    "phase_and_projection": "raw/phase_projection_audit.json"
+  }
+}

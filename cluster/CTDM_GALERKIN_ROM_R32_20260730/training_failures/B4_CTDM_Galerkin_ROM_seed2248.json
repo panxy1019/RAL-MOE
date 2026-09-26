@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "status": "training_failed",
+  "variant": "b4",
+  "seed": 2248,
+  "exit_code": 1,
+  "last_finite_step": 1540,
+  "last_horizon": 8,
+  "error": "FloatingPointError: nonfinite gradient at step 1541",
+  "run_dir": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/multi_seed/B4_CTDM_Galerkin_ROM_seed2248",
+  "log": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/logs/remaining_seeds_pipeline_resume.log",
+  "log_sha256": "9c0825fa7aa70b6fb992feebbb20771c7da0ec230d8f589665f42e6f74fa19b5",
+  "final_training_checkpoint_present": false,
+  "heldout_evaluation_performed": false
+}

@@ -1,0 +1,10 @@
+{
+  "variant": "b1",
+  "model_name": "B1_Deep_FNN_H3",
+  "trainable_parameters": 2379284,
+  "total_parameters": 2379284,
+  "parameter_groups": {
+    "heads": 2379284
+  },
+  "runtime_memory_state_per_trajectory": 0
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "seed": 1248,
+    "smoke": true,
+    "status": "completed",
+    "start": 1789699693.7050424,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/H_dense_fp32_smoke",
+    "pid": 24920,
+    "returncode": 0,
+    "end": 1789699699.7588341
+  },
+  {
+    "seed": 1248,
+    "smoke": false,
+    "status": "failed",
+    "start": 1789699699.7596776,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/H_dense_fp32/1248",
+    "pid": 24933,
+    "returncode": 1,
+    "end": 1789699847.8353806
+  },
+  {
+    "seed": 1600,
+    "smoke": false,
+    "status": "completed",
+    "start": 1789700102.398473,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/H_dense_fp32/1600",
+    "pid": 26149,
+    "returncode": 0,
+    "end": 1789701133.7003934
+  },
+  {
+    "seed": 2026,
+    "smoke": false,
+    "status": "completed",
+    "start": 1789701133.7012193,
+    "output": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/H_dense_fp32/2026",
+    "pid": 28030,
+    "returncode": 0,
+    "end": 1789702099.2150044
+  }
+]

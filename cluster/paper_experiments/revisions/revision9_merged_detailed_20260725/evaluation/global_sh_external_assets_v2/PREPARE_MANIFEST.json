@@ -1,0 +1,78 @@
+{
+  "checkpoint_modified": false,
+  "derived": {
+    "global_pressure_pod_area_weighted_l2.npz": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision9_merged_detailed_20260725/evaluation/global_sh_external_assets_v2/global_pressure_pod_area_weighted_l2.npz",
+      "sha256": "3c93d69a494e670dac82030b8b595bb786f10a06936f480a011a729949510b5e"
+    },
+    "global_velocity_pod_area_weighted_l2.npz": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision9_merged_detailed_20260725/evaluation/global_sh_external_assets_v2/global_velocity_pod_area_weighted_l2.npz",
+      "sha256": "f1d5e1e537aca0d76a369aed83cd02e79595a8e48a85dc843a5311482868853d"
+    },
+    "pod_snapshot_index.csv": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision9_merged_detailed_20260725/evaluation/global_sh_external_assets_v2/pod_snapshot_index.csv",
+      "sha256": "4c2d3e3fef0ce8b5d7f6837d20f4124ee0c5de1a6cdd9804073d2471c4d85376"
+    },
+    "pressure_poisson_surrogate_tensors_allRe100_areaWeightedL2_ru80_rp80.npz": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision9_merged_detailed_20260725/evaluation/global_sh_external_assets_v2/pressure_poisson_surrogate_tensors_allRe100_areaWeightedL2_ru80_rp80.npz",
+      "sha256": "a5c71082f0d76fab9ff4264125daa4f32ed589908400e36b24e202bc12ea25f0"
+    },
+    "semi_intrusive_galerkin_tensors_allRe100_areaWeightedL2_ru80_rp80_compact.npz": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/revisions/revision9_merged_detailed_20260725/evaluation/global_sh_external_assets_v2/semi_intrusive_galerkin_tensors_allRe100_areaWeightedL2_ru80_rp80_compact.npz",
+      "sha256": "41d58c6de761e5f81ff6b47278edd093507b11306ba4af24947edd927bd872fa"
+    }
+  },
+  "external_nodes": [
+    {
+      "Re": 43.5,
+      "global_r32_pressure_projection_floor": 0.01403691656703871,
+      "global_r32_velocity_projection_floor": 0.001691772686098098,
+      "label": "Re_43p500000",
+      "operator_source_label": "Re_43p797402",
+      "pressure_gauge": "subtract_area_mean_per_snapshot",
+      "raw_sha256": "cfb56bca821bd3ab583edfa5ae1af677b645fb6ba8cf39709b5473e496f80a96",
+      "snapshots": 64,
+      "time_end": 1475.64313081,
+      "time_start": 1200.0
+    },
+    {
+      "Re": 43.9,
+      "global_r32_pressure_projection_floor": 0.013911176440969246,
+      "global_r32_velocity_projection_floor": 0.0016770595310909783,
+      "label": "Re_43p900000",
+      "operator_source_label": "Re_43p797402",
+      "pressure_gauge": "subtract_area_mean_per_snapshot",
+      "raw_sha256": "4666bd8028d7d9db2ee961bdf6de867ee5e349320d5f7445a0bf2225a485772c",
+      "snapshots": 64,
+      "time_end": 1470.87536609,
+      "time_start": 1200.0
+    }
+  ],
+  "global_pod_basis_modified": false,
+  "global_scaler_modified": false,
+  "representation": "transductive per-Re mean, matching frozen Global baseline",
+  "schema": "global_external_sh_eval_assets/v1",
+  "sources": {
+    "galerkin": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/assets/common_global_data/semi_intrusive_galerkin_tensors_allRe100_areaWeightedL2_ru80_rp80_compact.npz",
+      "sha256": "5bf4d93d321a29eefd9eb3c1495479828e5623a7fbfec956818d56264c3979c2"
+    },
+    "pressure": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/assets/common_global_data/pressure_poisson_surrogate_tensors_allRe100_areaWeightedL2_ru80_rp80.npz",
+      "sha256": "6da81c2ba23a6f162ee592243f3583b1c95ea9056abaad649c25b231a338f4ca"
+    },
+    "pressure_pod": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/assets/common_global_data/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+      "sha256": "6103c45d77da830aa5cb29f081047440ad561ec27bfad36594b381e2770abcc8"
+    },
+    "snapshot_index": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/assets/common_global_data/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+      "sha256": "bde29f13e59c84335c1810f53172f701a8633c5eaa704802a9b4a72f1d884aee"
+    },
+    "velocity_pod": {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/V16_1_SteadyPressureAnchor32/assets/common_global_data/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+      "sha256": "11633d29b3c7db8cf73a0d813504521829689f32e6e9d2d233d90062becf76c5"
+    }
+  },
+  "status": "PASS"
+}

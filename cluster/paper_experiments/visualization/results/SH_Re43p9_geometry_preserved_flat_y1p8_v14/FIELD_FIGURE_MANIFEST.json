@@ -1,0 +1,78 @@
+{
+  "schema": "field_figure_manifest/v1",
+  "qualitative_scope": "best-case qualitative snapshot; quantitative conclusions remain those of the frozen aggregate evaluator",
+  "mode": "sh_fusion",
+  "selected": {
+    "window_index": 12,
+    "Re": 43.9,
+    "split": "heldout",
+    "time_index": 55,
+    "physical_time": 1457.85876993,
+    "last_frame": true,
+    "eligibility_tier": 0,
+    "joint_advantage": 3.991105797847977e-09,
+    "structure_score": 0.17877912521362305,
+    "metrics": {
+      "s_only": {
+        "velocity_relative_l2": 0.0006402726192404215,
+        "pressure_relative_l2": 0.10347908077038269,
+        "joint_field_error": 0.052059676694811555
+      },
+      "h_only": {
+        "velocity_relative_l2": 0.00016948619349450197,
+        "pressure_relative_l2": 0.007298124031840442,
+        "joint_field_error": 0.003733805112667472
+      },
+      "t2c": {
+        "velocity_relative_l2": 0.0001694861879833825,
+        "pressure_relative_l2": 0.007298116055139966,
+        "joint_field_error": 0.003733801121561674
+      }
+    }
+  },
+  "style": {
+    "target_journals": [
+      "Journal of Computational Physics",
+      "CMAME"
+    ],
+    "velocity_colormap": "cividis",
+    "pressure_colormap": "RdBu_r centered at zero",
+    "error_colormap": "haline_r",
+    "colorbars": "shared horizontal bottom colorbar per physical variable",
+    "dpi": 400
+  },
+  "inputs": {
+    "config": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/config_sh_fusion.json",
+    "config_sha256": "3c4a491c7a3537b585355ac5862571cbe255c8ff0a3c9faab1b60bba9ba23895",
+    "bundle": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/top2_boundary_experiments_20260722/one_sided_recovery_v2/resplit_20260723_v1/cache_final_test/G_SH_resplit_final_test_cache.npz",
+    "bundle_sha256": "61b2f6b57a7c70700d9665ca71f1867c8b1f7e419870f50670afe5bee8b64558",
+    "template_vtk": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/expanded_validation_20260723/visualization/Re_43p500000_last_snapshot_uvp.vtk",
+    "template_vtk_sha256": "fcc87caedde11bfc6b5c1756ef5df0b0a0e9f9d13fd6e5dbfabaa8811b678e59",
+    "weights_csv": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/PER_WINDOW_T2C_WEIGHTS.csv",
+    "weights_csv_sha256": "d843fdb8b1988e970bfaff8879e787e00cabb1f5c482e1bd0c9ccb818d7a3865",
+    "bases": {
+      "steady": {
+        "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+        "velocity_sha256": "abaab63d11e172a5b40e86b48715f247311eaf324a06094757f2f98870f40948",
+        "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+        "pressure_sha256": "5056f7470f2439bccc2cfb68448e9a4dd61d89145aa7108ab8672ba6dd2be997"
+      },
+      "hopf": {
+        "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/artifacts/hopf/velocity_pod_hopf.npz",
+        "velocity_sha256": "2f951192f6eeaa69e7d911aa21552454d1a99a49ab796166b4a13df16016a192",
+        "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/artifacts/hopf/pressure_pod_hopf.npz",
+        "pressure_sha256": "cc128a4361ab2a239165ac22a48407290de7d085b857bbff6726988457cfddf3"
+      }
+    }
+  },
+  "outputs": [
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/results/SH_Re43p9_geometry_preserved_flat_y1p8_v14/SH_boundary_best_case_physical_fields_geometry_preserved_compact.png",
+      "sha256": "18891bc8f41e7d5c555fa49a2439cc11d21f0977698dd09789d15d9c6c7b1f48"
+    },
+    {
+      "path": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/visualization/results/SH_Re43p9_geometry_preserved_flat_y1p8_v14/SH_boundary_best_case_pointwise_errors_geometry_preserved_compact.png",
+      "sha256": "b73c39fffa151f35cfdf3dc0099f2eef49876d14172e8a9e9ea9ce2808f2cb5a"
+    }
+  ]
+}

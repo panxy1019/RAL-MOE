@@ -1,0 +1,11 @@
+{
+  "passed": true,
+  "checks": [
+    "dense: 12 complete K48 windows; joint component identity; 10 timed repeats",
+    "full: 12 complete K48 windows; joint component identity; 10 timed repeats",
+    "global: 12 complete K48 windows; joint component identity; 10 timed repeats",
+    "galerkin: 12 complete K48 windows; joint component identity; 10 timed repeats",
+    "Final plotted K48 values match terminal summary",
+    "Global independent replay passed"
+  ]
+}

@@ -1,0 +1,124 @@
+calibration:
+  desc: ''
+  sort: 3
+  value:
+    fixed_batch:
+    - 2023
+    - 5602
+    - 8133
+    - 7776
+    - 4190
+    - 4941
+    - 5374
+    - 5483
+    - 4833
+    - 4106
+    - 7233
+    - 1958
+    - 5740
+    - 1228
+    - 5345
+    - 1969
+    gradient_norms:
+      anchor: 0.6000123620033264
+      base: 0.9009758234024048
+      one: 0.8388550281524658
+      rollout: 1.9480479955673218
+    initial_model_sha256: f0f1d23be643d88c2cee693f5827d82f3f1f4f35ed5f49ba509332d7f64f5966
+    lambda_anchor: 0.07507977172288743
+    lambda_rollout: 0.0430613121474027
+    regime: steady
+    schema_version: 1
+    source_experiment: CenteredSquare-Steady-S2B-rank999
+experiment:
+  desc: ''
+  sort: 0
+  value: CenteredSquare-Steady-S2B-rank999
+grad_accum:
+  desc: ''
+  sort: 6
+  value: 4
+initial_model_sha256:
+  desc: ''
+  sort: 4
+  value: f0f1d23be643d88c2cee693f5827d82f3f1f4f35ed5f49ba509332d7f64f5966
+micro_batch:
+  desc: ''
+  sort: 5
+  value: 16
+model:
+  desc: ''
+  sort: 2
+  value:
+    dropout: 0.04
+    expert_blocks: 3
+    expert_hidden: 768
+    experts_per_group: 6
+    gate_floor: 0.0
+    group_gate_floor: 0.0
+    group_temperature: 0.9
+    group_top_k: 1
+    hidden_dim: 224
+    history_len: 3
+    num_blocks: 3
+    num_regime_groups: 3
+    phase_harmonics: 4
+    quadratic_rank: 4
+    quadratic_scale: 0.05
+    routed_scale: 0.85
+    shared_experts_per_group: 1
+    shared_scale: 1.0
+    temperature: 0.95
+    top_k: 2
+training:
+  desc: ''
+  sort: 1
+  value:
+    anchor_gradient_ratio: 0.05
+    base_budget_end: 3600
+    benchmark_candidates:
+    - grad_accum: 4
+      micro_batch: 16
+    - grad_accum: 8
+      micro_batch: 8
+    - grad_accum: 16
+      micro_batch: 4
+    benchmark_timed_steps: 5
+    benchmark_warmup_steps: 2
+    curriculum:
+    - end: 400
+      k: 1
+      name: ONE
+      start: 1
+      use_rollout: false
+    - end: 1200
+      k: 4
+      name: K4
+      start: 401
+      use_rollout: true
+    - end: 2400
+      k: 8
+      name: K8
+      start: 1201
+      use_rollout: true
+    - end: 4000
+      k: 16
+      name: K16
+      start: 2401
+      use_rollout: true
+    early_stop_start: 3200
+    gpu_test_seconds: 20
+    grad_clip: 1.0
+    latest_every: 200
+    learning_rate: 1.5516372391099407e-05
+    log_every: 20
+    max_steps: 4000
+    patience_validations: 4
+    ramp_steps: 200
+    relative_improvement_threshold: 0.01
+    rollout_gradient_ratio: 0.1
+    rollout_pressure_weight: 2.0
+    steady_shared_lr_factor: 0.1
+    validation_batch: 128
+    validation_every: 200
+    weight_decay: 0.0001

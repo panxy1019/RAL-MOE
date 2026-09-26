@@ -1,0 +1,58 @@
+{
+  "results": [
+    {
+      "best_epoch": 1,
+      "best_val_score": 0.3726789804175496,
+      "deep_moe": {
+        "pressure_head_relative_l2": NaN,
+        "rhs_relative_l2": NaN
+      },
+      "test_Re": 66.970112
+    },
+    {
+      "best_epoch": 1,
+      "best_val_score": 0.3726789804175496,
+      "deep_moe": {
+        "pressure_head_relative_l2": NaN,
+        "rhs_relative_l2": NaN
+      },
+      "test_Re": 91.792204
+    },
+    {
+      "best_epoch": 1,
+      "best_val_score": 0.3726789804175496,
+      "deep_moe": {
+        "pressure_head_relative_l2": NaN,
+        "rhs_relative_l2": NaN
+      },
+      "test_Re": 121.050171
+    },
+    {
+      "best_epoch": 1,
+      "best_val_score": 0.3726789804175496,
+      "deep_moe": {
+        "pressure_head_relative_l2": NaN,
+        "rhs_relative_l2": NaN
+      },
+      "test_Re": 139.642302
+    },
+    {
+      "best_epoch": 1,
+      "best_val_score": 0.3726789804175496,
+      "deep_moe": {
+        "pressure_head_relative_l2": NaN,
+        "rhs_relative_l2": NaN
+      },
+      "test_Re": 169.244893
+    },
+    {
+      "best_epoch": 1,
+      "best_val_score": 0.3726789804175496,
+      "deep_moe": {
+        "pressure_head_relative_l2": NaN,
+        "rhs_relative_l2": NaN
+      },
+      "test_Re": 196.160723
+    }
+  ]
+}

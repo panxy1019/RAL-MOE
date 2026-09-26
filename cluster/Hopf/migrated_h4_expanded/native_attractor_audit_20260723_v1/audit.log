@@ -1,0 +1,68 @@
+{"split": "train", "Re": 45.5, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 45.79999923706055, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 46.099998474121094, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 46.29999923706055, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 46.5, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 46.900001525878906, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+{"split": "train", "Re": 47.20000076293945, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 47.400001525878906, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 47.599998474121094, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 47.72294616699219, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 47.79999923706055, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 48.0, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 48.29999923706055, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 48.36868667602539, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 48.70000076293945, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 49.29999923706055, "preserved": true, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 49.599998474121094, "preserved": true, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 49.68764114379883, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 50.0, "preserved": true, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 50.3680534362793, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 51.0667839050293, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 52.52876663208008, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 53.29417419433594, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 54.08150863647461, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 54.8879508972168, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 55.7096061706543, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 57.38996887207031, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 58.26263427734375, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "train", "Re": 59.20143127441406, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "validation", "Re": 46.70000076293945, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "validation", "Re": 56.54324722290039, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "heldout", "Re": 47.081356048583984, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "heldout", "Re": 49.02235412597656, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{"split": "heldout", "Re": 51.78644943237305, "preserved": false, "K56_finite": 1.0, "K56_divergent": 0}
+{
+  "status": "COMPLETE",
+  "by_split": {
+    "train": {
+      "Re_count": 29,
+      "attractor_preserved_count": 3,
+      "K56_all_finite_count": 29,
+      "K56_zero_divergence_count": 29,
+      "K128_available_count": 23,
+      "K128_all_finite_count": 23,
+      "K128_zero_divergence_count": 23
+    },
+    "validation": {
+      "Re_count": 2,
+      "attractor_preserved_count": 0,
+      "K56_all_finite_count": 2,
+      "K56_zero_divergence_count": 2,
+      "K128_available_count": 1,
+      "K128_all_finite_count": 1,
+      "K128_zero_divergence_count": 1
+    },
+    "heldout": {
+      "Re_count": 3,
+      "attractor_preserved_count": 0,
+      "K56_all_finite_count": 3,
+      "K56_zero_divergence_count": 3,
+      "K128_available_count": 3,
+      "K128_all_finite_count": 3,
+      "K128_zero_divergence_count": 3
+    }
+  }
+}

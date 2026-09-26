@@ -1,0 +1,87 @@
+FNO_RAW_PREPARED Re_102p440042
+FNO_RAW_PREPARED Re_104p710911
+FNO_RAW_PREPARED Re_107p050737
+FNO_RAW_PREPARED Re_109p395985
+FNO_RAW_PREPARED Re_111p734011
+FNO_RAW_PREPARED Re_114p066308
+FNO_RAW_PREPARED Re_116p395488
+FNO_RAW_PREPARED Re_118p723173
+FNO_RAW_PREPARED Re_121p050171
+FNO_RAW_PREPARED Re_123p376833
+FNO_RAW_PREPARED Re_125p703274
+FNO_RAW_PREPARED Re_128p029461
+FNO_RAW_PREPARED Re_130p355225
+FNO_RAW_PREPARED Re_132p680203
+FNO_RAW_PREPARED Re_135p003744
+FNO_RAW_PREPARED Re_137p324830
+FNO_RAW_PREPARED Re_139p642302
+FNO_RAW_PREPARED Re_141p956319
+FNO_RAW_PREPARED Re_144p273459
+FNO_RAW_PREPARED Re_146p619578
+FNO_RAW_PREPARED Re_151p686208
+FNO_RAW_PREPARED Re_154p520852
+FNO_RAW_PREPARED Re_157p459588
+FNO_RAW_PREPARED Re_160p415176
+FNO_RAW_PREPARED Re_163p364123
+FNO_RAW_PREPARED Re_166p306373
+FNO_RAW_PREPARED Re_169p244893
+FNO_RAW_PREPARED Re_172p181708
+FNO_RAW_PREPARED Re_175p117940
+FNO_RAW_PREPARED Re_178p054368
+FNO_RAW_PREPARED Re_180p992055
+FNO_RAW_PREPARED Re_183p933395
+FNO_RAW_PREPARED Re_186p884600
+FNO_RAW_PREPARED Re_192p911664
+FNO_RAW_PREPARED Re_196p160723
+FNO_RAW_PREPARED Re_200p000000
+FNO_RAW_PREPARED Re_60p307745
+FNO_RAW_PREPARED Re_61p755954
+FNO_RAW_PREPARED Re_63p499817
+FNO_RAW_PREPARED Re_65p259829
+FNO_RAW_PREPARED Re_66p970112
+FNO_RAW_PREPARED Re_68p649714
+FNO_RAW_PREPARED Re_71p972931
+FNO_RAW_PREPARED Re_73p628287
+FNO_RAW_PREPARED Re_75p282340
+FNO_RAW_PREPARED Re_76p935803
+FNO_RAW_PREPARED Re_78p588971
+FNO_RAW_PREPARED Re_80p241943
+FNO_RAW_PREPARED Re_81p894708
+FNO_RAW_PREPARED Re_83p547164
+FNO_RAW_PREPARED Re_85p199103
+FNO_RAW_PREPARED Re_86p850168
+FNO_RAW_PREPARED Re_88p499815
+FNO_RAW_PREPARED Re_90p147341
+FNO_RAW_PREPARED Re_91p792204
+FNO_RAW_PREPARED Re_93p435204
+FNO_RAW_PREPARED Re_95p081752
+FNO_RAW_PREPARED Re_96p749308
+FNO_RAW_PREPARED Re_98p480345
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/code/fno_experiment.py:60: UserWarning: Sparse invariant checks are implicitly disabled. Memory errors (e.g. SEGFAULT) will occur when operating on a sparse tensor which violates the invariants, but checks incur performance overhead. To silence this warning, explicitly opt in or out. See `torch.sparse.check_sparse_tensor_invariants.__doc__` for guidance.  (Triggered internally at /pytorch/aten/src/ATen/Context.cpp:760.)
+  a=load_npz(path).tocoo();return torch.sparse_coo_tensor(torch.tensor(np.stack([a.row,a.col]),device='cuda'),torch.tensor(a.data,device='cuda',dtype=torch.float32),a.shape).coalesce()
+FNO_TRAIN screen 0 1248 {'step': 200, 'K': 4, 'loss': 0.02600545738823712, 'gradient_norm': 0.12460553646087646, 'validation_worst': 84.48325872514397, 'validation_macro': 73.56499217279877, 'complete': True, 'elapsed': 154.08222464472055}
+FNO_TRAIN screen 0 1248 {'step': 400, 'K': 16, 'loss': 0.07767487713135779, 'gradient_norm': 0.2827940285205841, 'validation_worst': 61.7629376372012, 'validation_macro': 35.8041391732016, 'complete': True, 'elapsed': 516.1380516253412}
+FNO_TRAIN screen 1 1248 {'step': 200, 'K': 4, 'loss': 0.012584875337779522, 'gradient_norm': 0.11296644806861877, 'validation_worst': 53.311788999165096, 'validation_macro': 35.8313353072024, 'complete': True, 'elapsed': 151.05817963462323}
+FNO_TRAIN screen 1 1248 {'step': 400, 'K': 16, 'loss': 0.08046840946190059, 'gradient_norm': 1.4768818616867065, 'validation_worst': 52.479211488738656, 'validation_macro': 28.005919735154347, 'complete': True, 'elapsed': 512.2541900966316}
+FNO_TRAIN screen 2 1248 {'step': 200, 'K': 4, 'loss': 0.01879416429437697, 'gradient_norm': 0.10437635332345963, 'validation_worst': 63.17243516227851, 'validation_macro': 55.987281557974505, 'complete': True, 'elapsed': 151.2486874293536}
+FNO_TRAIN screen 2 1248 {'step': 400, 'K': 16, 'loss': 0.0894331515301019, 'gradient_norm': 0.24683865904808044, 'validation_worst': 50.05056469817646, 'validation_macro': 33.19548837756479, 'complete': True, 'elapsed': 512.7305698357522}
+FNO_TRAIN screen 3 1248 {'step': 200, 'K': 4, 'loss': 0.04407028714194894, 'gradient_norm': 0.2633490562438965, 'validation_worst': 62.65509119319419, 'validation_macro': 58.18625849773849, 'complete': True, 'elapsed': 210.53662652987987}
+FNO_TRAIN screen 3 1248 {'step': 400, 'K': 16, 'loss': 0.07268124865368009, 'gradient_norm': 0.2709007263183594, 'validation_worst': 42.38487697718665, 'validation_macro': 29.208180393842568, 'complete': True, 'elapsed': 715.781009927392}
+FNO_TRAIN screen 4 1248 {'step': 200, 'K': 4, 'loss': 0.03422468830831349, 'gradient_norm': 0.2648797929286957, 'validation_worst': 77.12327297683805, 'validation_macro': 62.8126321484516, 'complete': True, 'elapsed': 275.7786090578884}
+FNO_TRAIN screen 4 1248 {'step': 400, 'K': 16, 'loss': 0.09078758116811514, 'gradient_norm': 0.337806761264801, 'validation_worst': 54.9942967928946, 'validation_macro': 37.176856639588046, 'complete': True, 'elapsed': 935.6489955373108}
+FNO_TRAIN screen 5 1248 {'step': 200, 'K': 4, 'loss': 0.02638664492405951, 'gradient_norm': 0.24551047384738922, 'validation_worst': 66.65729542635381, 'validation_macro': 61.060414046320766, 'complete': True, 'elapsed': 151.52123192884028}
+FNO_TRAIN screen 5 1248 {'step': 400, 'K': 16, 'loss': 0.05393988994183019, 'gradient_norm': 0.11729437857866287, 'validation_worst': 44.50622763453672, 'validation_macro': 29.235714304053946, 'complete': True, 'elapsed': 514.010163529776}
+FNO_TRAIN formal 3 1248 {'step': 1000, 'K': 1, 'loss': 0.007135077845305204, 'gradient_norm': 0.08292890340089798, 'validation_worst': 67.98233702072564, 'validation_macro': 50.42767002996212, 'complete': True, 'elapsed': 292.52437764406204}
+FNO_TRAIN formal 3 1248 {'step': 2000, 'K': 4, 'loss': 0.0021076285338494927, 'gradient_norm': 0.05834353715181351, 'validation_worst': 52.538874368843004, 'validation_macro': 27.18907029073711, 'complete': True, 'elapsed': 1050.165166051127}
+FNO_TRAIN formal 3 1248 {'step': 3000, 'K': 8, 'loss': 0.0015891004441073164, 'gradient_norm': 0.02281101606786251, 'validation_worst': 45.252217403030954, 'validation_macro': 17.01707681134576, 'complete': True, 'elapsed': 2427.4677830785513}
+FNO_TRAIN formal 3 1248 {'step': 4000, 'K': 16, 'loss': 0.012034958774165716, 'gradient_norm': 0.22099986672401428, 'validation_worst': 39.489046189041495, 'validation_macro': 21.659321348603246, 'complete': True, 'elapsed': 5044.997457778081}
+FNO_TRAIN formal 3 1600 {'step': 1000, 'K': 1, 'loss': 0.0005164098693057895, 'gradient_norm': 0.0074050938710570335, 'validation_worst': 89.18647643877193, 'validation_macro': 62.7482191047683, 'complete': True, 'elapsed': 291.76949131209403}
+FNO_TRAIN formal 3 1600 {'step': 2000, 'K': 4, 'loss': 0.001123166483012028, 'gradient_norm': 0.02192242257297039, 'validation_worst': 49.64385826489888, 'validation_macro': 23.12933003238868, 'complete': True, 'elapsed': 1049.2539451671764}
+FNO_TRAIN formal 3 1600 {'step': 3000, 'K': 8, 'loss': 0.00037384492316050455, 'gradient_norm': 0.00616732332855463, 'validation_worst': 40.282804449593336, 'validation_macro': 17.380819622976965, 'complete': True, 'elapsed': 2683.7198944948614}
+FNO_TRAIN formal 3 1600 {'step': 4000, 'K': 16, 'loss': 0.00040995615472638747, 'gradient_norm': 0.003780632046982646, 'validation_worst': 37.91220842720941, 'validation_macro': 13.34241073816601, 'complete': True, 'elapsed': 8339.717702434398}
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/code/fno_controller.py", line 17, in <module>
+    subprocess.run([sys.executable,str(OUT/'code/fno_experiment.py'),'campaign'],check=True)
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/lib/python3.11/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/.runtime/pt_env/bin/python', '/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/external_rnn_fno_20260923/code/fno_experiment.py', 'campaign']' died with <Signals.SIGTERM: 15>.

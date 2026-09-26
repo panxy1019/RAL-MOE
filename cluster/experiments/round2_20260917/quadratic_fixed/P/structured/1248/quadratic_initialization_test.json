@@ -1,0 +1,18 @@
+{
+  "passed": true,
+  "change": "restore native random right factor; left stays zero; no extra RNG draws",
+  "modules": [
+    {
+      "module": "structured_correction.0",
+      "initial_output": 0,
+      "left_gradient_norm": 1.8655145168304443,
+      "right_gradient_norm": 0.0
+    },
+    {
+      "module": "structured_correction.1",
+      "initial_output": 0,
+      "left_gradient_norm": 3.7017738819122314,
+      "right_gradient_norm": 0.0
+    }
+  ]
+}

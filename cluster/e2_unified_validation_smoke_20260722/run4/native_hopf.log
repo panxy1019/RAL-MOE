@@ -1,0 +1,31 @@
+/root/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py:352: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /__w/pytorch/pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  hi = torch.searchsorted(nodes, re).clamp(1, nodes.numel() - 1)
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 390, in <module>
+    native_worker(arguments.native_only, arguments.root, arguments.output_dir)
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 305, in native_worker
+    atomic_json(output_dir / f"native_{class_name.lower()}.json", result)
+  File "/root/panxy/particalMOE/trajectory_router_e1_e2_e3_20260722/code/e2_unified_validation_smoke.py", line 40, in atomic_json
+    temporary.write_text(json.dumps(value, indent=2, sort_keys=True, allow_nan=False), encoding="utf-8")
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/json/__init__.py", line 238, in dumps
+    **kw).encode(obj)
+          ^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/json/encoder.py", line 202, in encode
+    chunks = list(chunks)
+             ^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/json/encoder.py", line 432, in _iterencode
+    yield from _iterencode_dict(o, _current_indent_level)
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/json/encoder.py", line 406, in _iterencode_dict
+    yield from chunks
+  [Previous line repeated 1 more time]
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/json/encoder.py", line 398, in _iterencode_dict
+    yield _floatstr(value)
+          ^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/json/encoder.py", line 240, in floatstr
+    raise ValueError(
+ValueError: Out of range float values are not JSON compliant: nan

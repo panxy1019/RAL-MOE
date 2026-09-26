@@ -1,0 +1,98 @@
+[
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 1243.2479248046875,
+    "score": 1243.4229736328125,
+    "step": 200,
+    "velocity_modal_relative_l2": 0.17506973445415497
+  },
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 926.4251708984375,
+    "score": 926.5409545898438,
+    "step": 400,
+    "velocity_modal_relative_l2": 0.11580552905797958
+  },
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 1205.961669921875,
+    "score": 1206.11572265625,
+    "step": 600,
+    "velocity_modal_relative_l2": 0.1540946513414383
+  },
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 1173.266357421875,
+    "score": 1173.3843994140625,
+    "step": 800,
+    "velocity_modal_relative_l2": 0.1180165559053421
+  },
+  {
+    "divergent_windows": 17,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 1217.4591064453125,
+    "score": 1217.5958251953125,
+    "step": 1000,
+    "velocity_modal_relative_l2": 0.13668425381183624
+  },
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 1094.07666015625,
+    "score": 1094.1964111328125,
+    "step": 1200,
+    "velocity_modal_relative_l2": 0.11970247328281403
+  },
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 816.4085083007812,
+    "score": 816.4797973632812,
+    "step": 1400,
+    "velocity_modal_relative_l2": 0.07126733660697937
+  },
+  {
+    "divergent_windows": 5,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 1143.7218017578125,
+    "score": 1143.8607177734375,
+    "step": 1600,
+    "velocity_modal_relative_l2": 0.13893626630306244
+  },
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 757.5617065429688,
+    "score": 757.63134765625,
+    "step": 1800,
+    "velocity_modal_relative_l2": 0.06963511556386948
+  },
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 670.3530883789062,
+    "score": 670.4613037109375,
+    "step": 2000,
+    "velocity_modal_relative_l2": 0.10823449492454529
+  },
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 832.0003662109375,
+    "score": 832.1398315429688,
+    "step": 2200,
+    "velocity_modal_relative_l2": 0.1394949108362198
+  },
+  {
+    "divergent_windows": 0,
+    "finite_fraction": 1.0,
+    "pressure_modal_relative_l2": 666.9849853515625,
+    "score": 667.0606689453125,
+    "step": 2400,
+    "velocity_modal_relative_l2": 0.07567006349563599
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "seed": 1248,
+  "phase": "screen",
+  "budget": 400,
+  "architecture": {
+    "id": 5,
+    "width": 32,
+    "modes": 24,
+    "increment": true,
+    "lr": 0.001,
+    "weight_decay": 0.0001
+  },
+  "code_sha256": "a8851746642f531af0f00de5268623390b2ff0986e6a0a6798b6089ae6763052",
+  "real_parameter_count": 9446499,
+  "protocol_sha256": "9f3327f9ecd9c58abdcc99cdb6ff0db610265e46c4e2ae76c5cb4a004967d616"
+}

@@ -1,0 +1,8 @@
+{
+  "kind": "proposed",
+  "seed": 1600,
+  "best_step": -1,
+  "last_step": 8000,
+  "reason": "No checkpoint passed original validation gate; no heldout evaluation",
+  "completed_training": true
+}

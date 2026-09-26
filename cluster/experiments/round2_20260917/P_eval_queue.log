@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/experiments/round2_20260917/code/evaluation_queue.py", line 18, in <module>
+    if rc:raise RuntimeError(str(rec))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+RuntimeError: {'kind': 'proposed', 'seed': 1248, 'status': 'failed', 'start': 1789699613.6198869, 'pid': 24697, 'returncode': 1, 'end': 1789699615.598607}

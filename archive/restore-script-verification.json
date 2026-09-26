@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "verified": [
+    "archive extraction",
+    "SHA-256 verification",
+    "duplicate restoration",
+    "verify-only mode",
+    "modified-file overwrite protection"
+  ]
+}

@@ -1,0 +1,93 @@
+{
+  "archives": [
+    {
+      "members": [
+        "Re_labels.npy",
+        "Re_values.npy",
+        "centering.npy",
+        "coeff_train_mean.npy",
+        "coeff_train_std.npy",
+        "coeff_uv.npy",
+        "cumulative_energy_uv.npy",
+        "fit_split.npy",
+        "mean_uv_by_Re.npy",
+        "mean_uv_regime.npy",
+        "phi_uv.npy",
+        "phi_uv_weighted.npy",
+        "point_areas.npy",
+        "points.npy",
+        "regimes.npy",
+        "singular_values_uv.npy",
+        "snapshot_Re_labels.npy",
+        "snapshot_splits.npy",
+        "split_by_Re.npy",
+        "sqrt_point_areas.npy",
+        "total_weighted_energy_uv.npy"
+      ],
+      "path": "/root/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_velocity_pod_area_weighted_l2.npz",
+      "sha256": "a2c12dc3ea25772e7bd4216b37683df9dbcce804063f9900bdaebac3e25dc7a2"
+    },
+    {
+      "members": [
+        "Re_labels.npy",
+        "Re_values.npy",
+        "centering.npy",
+        "coeff_p.npy",
+        "coeff_train_mean.npy",
+        "coeff_train_std.npy",
+        "cumulative_energy_p.npy",
+        "fit_split.npy",
+        "mean_p_by_Re.npy",
+        "mean_p_regime.npy",
+        "phi_p.npy",
+        "phi_p_weighted.npy",
+        "point_areas.npy",
+        "points.npy",
+        "pressure_gauge.npy",
+        "regimes.npy",
+        "singular_values_p.npy",
+        "snapshot_Re_labels.npy",
+        "snapshot_splits.npy",
+        "split_by_Re.npy",
+        "sqrt_point_areas.npy",
+        "total_weighted_energy_p.npy"
+      ],
+      "path": "/root/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/global_pressure_pod_area_weighted_l2.npz",
+      "sha256": "f6e0a23432581c78e9f649d60bb0fceb9087a6a1d0631778bde444338c16239f"
+    }
+  ],
+  "audit_mode": "metadata/schema only; NPZ coefficient arrays were not loaded",
+  "authorized_next_action": "Do not construct H-P cache or train H-P routes. A mechanically separated train/validation Periodic modal bundle may be materialized in a future audited data-preparation step without changing specialist checkpoints.",
+  "coefficient_members_detected": [
+    "global_velocity_pod_area_weighted_l2.npz:coeff_train_mean.npy",
+    "global_velocity_pod_area_weighted_l2.npz:coeff_train_std.npy",
+    "global_velocity_pod_area_weighted_l2.npz:coeff_uv.npy",
+    "global_pressure_pod_area_weighted_l2.npz:coeff_p.npy",
+    "global_pressure_pod_area_weighted_l2.npz:coeff_train_mean.npy",
+    "global_pressure_pod_area_weighted_l2.npz:coeff_train_std.npy"
+  ],
+  "decision": "BLOCKED_TEST_SEAL_ASSET",
+  "failure_reason": "Periodic native POD coefficient archives couple train/validation/test snapshots to one coefficient member and no independently materialized train/validation modal bundle exists. Loading the native rollout arrays before freeze would breach the recovery test seal.",
+  "gate": "G_HP_native",
+  "independent_boundary_effect": "G_SH_native authorization is unaffected.",
+  "index_columns": [
+    "snapshot_id",
+    "Re",
+    "Re_label",
+    "regime",
+    "target_regime",
+    "split",
+    "time",
+    "local_snapshot_index"
+  ],
+  "index_path": "/root/panxy/particalMOE/periodic_specialist_r32/assets/Global_POD_AreaWeighted_L2/pod_snapshot_index.csv",
+  "index_sha256": "94525b6d5b4318aa1c6f11762ef2b1021b14d6da3e12f882a48e97c6cc0dd358",
+  "index_split_counts": {
+    "heldout": 644,
+    "train": 8539,
+    "validation": 967
+  },
+  "protocol": "Periodic database-native phase/time plus phase-free Hopf",
+  "separate_periodic_trainval_modal_assets": [],
+  "test_physical_modal_or_metric_data_loaded": false
+}

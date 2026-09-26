@@ -1,0 +1,12 @@
+device:
+  desc: ''
+  sort: 1
+  value: cuda
+heldout_loaded:
+  desc: ''
+  sort: 2
+  value: false
+max_step:
+  desc: ''
+  sort: 0
+  value: 0.05

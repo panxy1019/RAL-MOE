@@ -1,0 +1,18 @@
+{
+  "audits": [
+    {
+      "step": 0,
+      "common_grad_norm": 4739.166015625,
+      "h3_raw_grad_norm": 44411.171875,
+      "h3_weight": 0.019208001379969378,
+      "h3_weighted_ratio": 0.18,
+      "h3_raw": 204299.640625,
+      "h3_weighted": 3924.187744140625,
+      "nf_raw_grad_norm": 37.881046295166016,
+      "nf_weight": 10.00852139690195,
+      "nf_weighted_ratio": 0.08,
+      "nf_raw": 1.1385265588760376,
+      "nf_weighted": 11.394967079162598
+    }
+  ]
+}

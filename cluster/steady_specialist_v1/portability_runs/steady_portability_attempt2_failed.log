@@ -1,0 +1,22 @@
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/steady_specialist_v1/code/reproduce_s4_one_epoch.py", line 106, in <module>
+    main()
+  File "/root/panxy/particalMOE/steady_specialist_v1/code/reproduce_s4_one_epoch.py", line 64, in main
+    trainer = s4_module.S4(runtime_args)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/panxy/particalMOE/steady_specialist_v1/code/train_s4_steady.py", line 61, in __init__
+    self.base = module.S3(base_args); self.base.init_eval_assets(); self.exp = self.base.exp
+                ^^^^^^^^^^^^^^^^^^^^
+  File "/root/panxy/particalMOE/steady_specialist_v1/code/train_s3.py", line 38, in __init__
+    source=torch.load(args.checkpoint,map_location='cpu',weights_only=False); self.exp.model.load_state_dict(source['model'],strict=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/torch/serialization.py", line 1561, in load
+    with _open_file_like(f, "rb") as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/torch/serialization.py", line 795, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/root/miniconda3/envs/pt_env/lib/python3.11/site-packages/torch/serialization.py", line 776, in __init__
+    super().__init__(open(name, mode))  # noqa: SIM115
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/root/panxy/particalMOE/steady_specialist_v1/checkpoints/frozen_s2b_validation.pt'

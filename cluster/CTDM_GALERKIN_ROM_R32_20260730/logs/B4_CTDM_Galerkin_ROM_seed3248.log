@@ -1,0 +1,18 @@
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/swanlog/run-20260803_145747-g8fa8q2s-e9c967685351-142498
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B4_CTDM_Galerkin_ROM_seed3248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/g8fa8q2s
+swanlab: 📁 View project at https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32
+swanlab: 🚀 View run B4_CTDM_Galerkin_ROM_seed3248 at 
+https://swanlab.cn/@panxy1019/CTDM_Galerkin_ROM_R32/runs/g8fa8q2s
+swanlab: Upload complete: 3608 records
+Traceback (most recent call last):
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/code/train_ctdm_comparison.py", line 1590, in <module>
+    main()
+  File "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CTDM_GALERKIN_ROM_R32_20260730/code/train_ctdm_comparison.py", line 1432, in main
+    raise FloatingPointError(f"nonfinite gradient at step {step}")
+FloatingPointError: nonfinite gradient at step 3958

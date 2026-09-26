@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/root/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_h4_expanded.py", line 267, in <module>
+    if __name__=='__main__':main()
+                            ^^^^^^
+  File "/root/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_h4_expanded.py", line 221, in main
+    import swanlab;run=swanlab.init(project=args.swanlab_project,group=args.swanlab_group,mode=args.swanlab_mode,name=args.experiment_name,config=config,reinit=True,parallel='shared')
+    ^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'swanlab'

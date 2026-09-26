@@ -1,0 +1,32 @@
+{
+  "command": [
+    "/root/miniconda3/envs/pt_env/bin/python",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/train_dataonly_moe.py",
+    "--ablation-mode",
+    "data-only",
+    "--root",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE",
+    "--regime",
+    "periodic",
+    "--seed",
+    "1600",
+    "--max-steps",
+    "10080",
+    "--curriculum-horizons",
+    "4,8,12,16",
+    "--micro-batch",
+    "8",
+    "--effective-batch",
+    "24",
+    "--validation-every",
+    "200",
+    "--swanlab-project",
+    "PaperSpecialistAblationsSingleSeed20260724",
+    "--output-dir",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_single_seed_v3_20260724/periodic/data-only/smoke",
+    "--smoke-only"
+  ],
+  "finished_unix": 1784825704.7306507,
+  "return_code": 0,
+  "status": "DONE"
+}

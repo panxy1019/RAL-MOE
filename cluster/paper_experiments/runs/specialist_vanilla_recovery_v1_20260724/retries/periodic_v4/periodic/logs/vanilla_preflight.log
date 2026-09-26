@@ -1,0 +1,23 @@
+{"event": "split_start", "experiment": "VanillaFNN_periodic_seed1600", "test_label": "Re_70p314635", "test_Re": 70.31463623046875, "holdout_labels": ["Re_70p314635", "Re_100p352251", "Re_149p059229", "Re_189p862278"], "train_re_count": 53, "test_re_count": 4, "kept_train_samples": 8380, "dense_train_samples_before_time_sparsity": 8380, "compression_ratio_vs_dense_train": 1.0}
+swanlab: Currently logged in as: panxy1019 to https://api.swanlab.cn. Use 
+`swanlab login --relogin` to force relogin
+swanlab: Tracking run with swanlab version 0.9.0
+swanlab: 💾 Run data saved at 
+/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experi
+ments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v4/periodic/
+vanilla-fnn/preflight/swanlog/run-20260724_081002-f02256x1-e9c967685351-40034
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblationsSingleSeed20260724
+swanlab: 🚀 View run Vanilla-FNN-periodic-seed1600 at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblationsSingleSeed20260724/runs/f0
+2256x1
+{"event": "epoch_eval", "experiment": "VanillaFNN_periodic_seed1600", "test_label": "Re_70p314635", "epoch": 1, "train_loss": 4.4319883621100225, "val_score": 0.3726789804175496, "val_rhs_relative_l2": 0.22943086922168732, "val_alpha_relative_l2": 0.12746313214302063, "val_pressure_relative_l2": 0.04509994015097618, "scheduled_sampling": 1.0, "rollout_steps": 4}
+swanlab: 📁 View project at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblationsSingleSeed20260724
+swanlab: 🚀 View run Vanilla-FNN-periodic-seed1600 at 
+https://swanlab.cn/@panxy1019/PaperSpecialistAblationsSingleSeed20260724/runs/f0
+2256x1
+swanlab: Upload complete: 713 records
+{"scheme": "v16_attractor_moe_rom_re20_200_closed_loop_rk4", "experiment_name": "VanillaFNN_periodic_seed1600", "metrics_json": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v4/periodic/vanilla-fnn/preflight/VanillaFNN_periodic_seed1600_metrics.json", "summary_md": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v4/periodic/vanilla-fnn/preflight/VanillaFNN_periodic_seed1600_summary.md", "runtime_seconds": 218.50410747528076, "test_Re": [70.31463623046875, 100.35224914550781, 149.05923461914062, 189.86227416992188]}
+Wrote /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v4/periodic/vanilla-fnn/preflight/VanillaFNN_periodic_seed1600_metrics.json
+Wrote /root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_vanilla_recovery_v1_20260724/retries/periodic_v4/periodic/vanilla-fnn/preflight/VanillaFNN_periodic_seed1600_summary.md

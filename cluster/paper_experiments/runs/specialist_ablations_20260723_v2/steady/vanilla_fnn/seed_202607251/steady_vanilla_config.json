@@ -1,0 +1,94 @@
+{
+  "artifact_dir": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/source_artifacts/steady",
+  "checkpoint_root": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v2/steady/vanilla_fnn/seed_202607251/s2/checkpoints",
+  "model": {
+    "dropout": 0.04,
+    "expert_blocks": 3,
+    "expert_hidden": 768,
+    "experts_per_group": 6,
+    "gate_floor": 0.0,
+    "group_gate_floor": 0.0,
+    "group_temperature": 0.9,
+    "group_top_k": 1,
+    "hidden_dim": 224,
+    "history_len": 3,
+    "num_blocks": 3,
+    "num_regime_groups": 3,
+    "phase_harmonics": 4,
+    "quadratic_rank": 4,
+    "quadratic_scale": 0.05,
+    "routed_scale": 0.85,
+    "shared_experts_per_group": 1,
+    "shared_scale": 1.0,
+    "temperature": 0.95,
+    "top_k": 2
+  },
+  "r_p": 32,
+  "r_u": 32,
+  "schema_version": 3,
+  "seed": 202607251,
+  "swanlab": {
+    "experiment": "Vanilla-FNN-steady-seed202607251",
+    "group": "Vanilla-FNN-steady",
+    "project": "PaperSpecialistAblations20260723"
+  },
+  "training": {
+    "anchor_gradient_ratio": 0.05,
+    "base_budget_end": 9500,
+    "benchmark_candidates": [
+      {
+        "grad_accum": 8,
+        "micro_batch": 8
+      }
+    ],
+    "benchmark_timed_steps": 20,
+    "benchmark_warmup_steps": 5,
+    "curriculum": [
+      {
+        "end": 1000,
+        "k": 1,
+        "name": "ONE",
+        "start": 1,
+        "use_rollout": false
+      },
+      {
+        "end": 2500,
+        "k": 4,
+        "name": "K4",
+        "start": 1001,
+        "use_rollout": true
+      },
+      {
+        "end": 5000,
+        "k": 8,
+        "name": "K8",
+        "start": 2501,
+        "use_rollout": true
+      },
+      {
+        "end": 11000,
+        "k": 16,
+        "name": "K16",
+        "start": 5001,
+        "use_rollout": true
+      }
+    ],
+    "early_stop_start": 8500,
+    "gpu_test_seconds": 15,
+    "grad_clip": 1.0,
+    "latest_every": 200,
+    "learning_rate": 0.0002,
+    "log_every": 20,
+    "max_steps": 11000,
+    "patience_validations": 8,
+    "ramp_steps": 400,
+    "relative_improvement_threshold": 0.01,
+    "rollout_gradient_ratio": 0.1,
+    "rollout_pressure_weight": 2.0,
+    "steady_shared_lr_factor": 0.1,
+    "validation_batch": 128,
+    "validation_every": 200,
+    "weight_decay": 0.0001
+  },
+  "vendor_trainer": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_v16_4_v2_r32_compat.py"
+}

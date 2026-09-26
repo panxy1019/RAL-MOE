@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "role": "periodic_validation",
+  "cases": [
+    {
+      "Re": 99.0,
+      "repository_path": "dataset_Re95_102_refined_N31_npz/cases_npz/snapshots_Re099p000000.npz",
+      "local_path": "/home/ray/Desktop/centeredSquare_validation_20260827/dataset_Re95_102_refined_N31_npz/cases_npz/snapshots_Re099p000000.npz"
+    },
+    {
+      "Re": 101.5,
+      "repository_path": "dataset_Re95_102_refined_N31_npz/cases_npz/snapshots_Re101p500000.npz",
+      "local_path": "/home/ray/Desktop/centeredSquare_validation_20260827/dataset_Re95_102_refined_N31_npz/cases_npz/snapshots_Re101p500000.npz"
+    },
+    {
+      "Re": 110.344827586,
+      "repository_path": "dataset_Re50_150_N100_npz/cases_npz/snapshots_Re110p344828.npz",
+      "local_path": "/home/ray/Desktop/centeredSquare_validation_20260827/dataset_Re50_150_N100_npz/cases_npz/snapshots_Re110p344828.npz"
+    },
+    {
+      "Re": 125.862068966,
+      "repository_path": "dataset_Re50_150_N100_npz/cases_npz/snapshots_Re125p862069.npz",
+      "local_path": "/home/ray/Desktop/centeredSquare_validation_20260827/dataset_Re50_150_N100_npz/cases_npz/snapshots_Re125p862069.npz"
+    },
+    {
+      "Re": 141.379310345,
+      "repository_path": "dataset_Re50_150_N100_npz/cases_npz/snapshots_Re141p379310.npz",
+      "local_path": "/home/ray/Desktop/centeredSquare_validation_20260827/dataset_Re50_150_N100_npz/cases_npz/snapshots_Re141p379310.npz"
+    },
+    {
+      "Re": 150.0,
+      "repository_path": "dataset_Re50_150_N100_npz/cases_npz/snapshots_Re150p000000.npz",
+      "local_path": "/home/ray/Desktop/centeredSquare_validation_20260827/dataset_Re50_150_N100_npz/cases_npz/snapshots_Re150p000000.npz"
+    }
+  ],
+  "validation_case_count": 6,
+  "heldout_snapshots_downloaded": false
+}

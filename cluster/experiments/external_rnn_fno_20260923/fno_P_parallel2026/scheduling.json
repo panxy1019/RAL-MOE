@@ -1,0 +1,8 @@
+{
+  "started": "2026-09-23T20:44:09+0800",
+  "original_campaign_pid": 64616,
+  "seed": 2026,
+  "reason": "explicit user requested parallel seed2026",
+  "training_protocol_changed": false,
+  "timing_note": "training overlaps seed1600; final latency remains serial"
+}

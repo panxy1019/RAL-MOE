@@ -1,0 +1,555 @@
+{
+  "schema_version": 1,
+  "selection_scope": "periodic_train_only",
+  "phase_pair": [
+    1,
+    2
+  ],
+  "candidate_count": 12,
+  "candidates": [
+    {
+      "gamma": 0.0625,
+      "eta": 0.1,
+      "asset": "gamma_0p0625_eta_0p1.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.034744558019036795,
+          "coefficient_norm": 0.395208635190728
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.03474455801903699,
+          "coefficient_norm": 0.39520862469307105
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.03474455801905629,
+          "coefficient_norm": 0.3952085197165891
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.03474455802098672,
+          "coefficient_norm": 0.3952074699605204
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.034744558214006856,
+          "coefficient_norm": 0.3951969732749351
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.03474457749291316,
+          "coefficient_norm": 0.39509209383229466
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.03474648253333379,
+          "coefficient_norm": 0.394051944937898
+        }
+      ]
+    },
+    {
+      "gamma": 0.0625,
+      "eta": 0.25,
+      "asset": "gamma_0p0625_eta_0p25.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.03499626336858269,
+          "coefficient_norm": 0.2536491056334375
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.03499626336858271,
+          "coefficient_norm": 0.25364910385834605
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.034996263368584794,
+          "coefficient_norm": 0.25364908610743403
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.03499626336879279,
+          "coefficient_norm": 0.2536489085985801
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.034996263389592136,
+          "coefficient_norm": 0.2536471335366539
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.0349962654690474,
+          "coefficient_norm": 0.25362938557797354
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.0349964729363632,
+          "coefficient_norm": 0.2534521712507523
+        }
+      ]
+    },
+    {
+      "gamma": 0.0625,
+      "eta": 0.5,
+      "asset": "gamma_0p0625_eta_0p5.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.03600923768604009,
+          "coefficient_norm": 0.20993516357903866
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.0360092376860401,
+          "coefficient_norm": 0.20993516272119142
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.03600923768604091,
+          "coefficient_norm": 0.20993515414272038
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.036009237686121756,
+          "coefficient_norm": 0.20993506835805115
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.03600923769420723,
+          "coefficient_norm": 0.20993421051554054
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.036009238502683956,
+          "coefficient_norm": 0.2099256325084943
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.036009319279904924,
+          "coefficient_norm": 0.20983989421653082
+        }
+      ]
+    },
+    {
+      "gamma": 0.0625,
+      "eta": 1.0,
+      "asset": "gamma_0p0625_eta_1.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.03592927948918657,
+          "coefficient_norm": 0.19067576973386263
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.035929279489186575,
+          "coefficient_norm": 0.19067576909764114
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.035929279489187116,
+          "coefficient_norm": 0.19067576273542702
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.035929279489241704,
+          "coefficient_norm": 0.19067569911331014
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.035929279494700296,
+          "coefficient_norm": 0.19067506289454159
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.03592928004052171,
+          "coefficient_norm": 0.19066870094692348
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.03592933458519905,
+          "coefficient_norm": 0.19060510546726075
+        }
+      ]
+    },
+    {
+      "gamma": 0.125,
+      "eta": 0.1,
+      "asset": "gamma_0p125_eta_0p1.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.03791968974855349,
+          "coefficient_norm": 0.5456731693222172
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.03791968974855395,
+          "coefficient_norm": 0.5456731498823015
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.03791968974859917,
+          "coefficient_norm": 0.5456729554833123
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.03791968975312173,
+          "coefficient_norm": 0.5456710115101792
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.037919690205319254,
+          "coefficient_norm": 0.5456515734546233
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.037919735366626094,
+          "coefficient_norm": 0.545457360216939
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.0379241938290962,
+          "coefficient_norm": 0.5435317045388758
+        }
+      ]
+    },
+    {
+      "gamma": 0.125,
+      "eta": 0.25,
+      "asset": "gamma_0p125_eta_0p25.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.03733174681561245,
+          "coefficient_norm": 0.3172408456850633
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.03733174681561249,
+          "coefficient_norm": 0.3172408425525578
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.037331746815616795,
+          "coefficient_norm": 0.31724081122750647
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.03733174681604716,
+          "coefficient_norm": 0.31724049797746
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.03733174685908188,
+          "coefficient_norm": 0.3172373655236279
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.037331751161485065,
+          "coefficient_norm": 0.3172060456471859
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.03733218033361267,
+          "coefficient_norm": 0.3168933117522602
+        }
+      ]
+    },
+    {
+      "gamma": 0.125,
+      "eta": 0.5,
+      "asset": "gamma_0p125_eta_0p5.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.037081861019486816,
+          "coefficient_norm": 0.2433410526959092
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.03708186101948682,
+          "coefficient_norm": 0.2433410513700588
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.03708186101948823,
+          "coefficient_norm": 0.24334103811155577
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.03708186101962889,
+          "coefficient_norm": 0.2433409055266065
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.037081861033694916,
+          "coefficient_norm": 0.24333957968520023
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.03708186244014094,
+          "coefficient_norm": 0.24332632207977395
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.03708200292813924,
+          "coefficient_norm": 0.24319382683628846
+        }
+      ]
+    },
+    {
+      "gamma": 0.125,
+      "eta": 1.0,
+      "asset": "gamma_0p125_eta_1.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.036245669216177744,
+          "coefficient_norm": 0.2079986009748602
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.03624566921617776,
+          "coefficient_norm": 0.20799860014510005
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.03624566921617853,
+          "coefficient_norm": 0.20799859184749958
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.03624566921625551,
+          "coefficient_norm": 0.207998508871533
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.036245669223953565,
+          "coefficient_norm": 0.20799767911567904
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.036245669993695495,
+          "coefficient_norm": 0.20798938193831798
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.036245746903942014,
+          "coefficient_norm": 0.20790644826172178
+        }
+      ]
+    },
+    {
+      "gamma": 0.25,
+      "eta": 0.1,
+      "asset": "gamma_0p25_eta_0p1.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.03977268892813312,
+          "coefficient_norm": 0.8243824670780312
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.03977268892813494,
+          "coefficient_norm": 0.8243824128773191
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.03977268892831656,
+          "coefficient_norm": 0.8243818708706797
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.03977268894647882,
+          "coefficient_norm": 0.8243764508524307
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.03977269076242693,
+          "coefficient_norm": 0.8243222554838894
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.03977287207968413,
+          "coefficient_norm": 0.8237807824831606
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.03979072735640581,
+          "coefficient_norm": 0.8184134279113473
+        }
+      ]
+    },
+    {
+      "gamma": 0.25,
+      "eta": 0.25,
+      "asset": "gamma_0p25_eta_0p25.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.03882313024680137,
+          "coefficient_norm": 0.43234864175549825
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.0388231302468015,
+          "coefficient_norm": 0.4323486342409559
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.03882313024681503,
+          "coefficient_norm": 0.43234855909554587
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.038823130248167956,
+          "coefficient_norm": 0.43234780764293645
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.038823130383455286,
+          "coefficient_norm": 0.4323402932658398
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.03882314390732485,
+          "coefficient_norm": 0.432265164391304
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.038824491424470205,
+          "coefficient_norm": 0.4315153619390838
+        }
+      ]
+    },
+    {
+      "gamma": 0.25,
+      "eta": 0.5,
+      "asset": "gamma_0p25_eta_0p5.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.03775132935003257,
+          "coefficient_norm": 0.30261533907671917
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.03775132935003261,
+          "coefficient_norm": 0.30261533652382405
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.03775132935003592,
+          "coefficient_norm": 0.3026153109948748
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.03775132935036676,
+          "coefficient_norm": 0.3026150557056222
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.037751329383450286,
+          "coefficient_norm": 0.30261250283710067
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.037751332691234395,
+          "coefficient_norm": 0.3025869765520232
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.037751662900841476,
+          "coefficient_norm": 0.30233195347788927
+        }
+      ]
+    },
+    {
+      "gamma": 0.25,
+      "eta": 1.0,
+      "asset": "gamma_0p25_eta_1.npz",
+      "ridge_reports": [
+        {
+          "ridge": 1e-06,
+          "train_rmse": 0.03636100972186209,
+          "coefficient_norm": 0.23833107942849513
+        },
+        {
+          "ridge": 1e-05,
+          "train_rmse": 0.036361009721862105,
+          "coefficient_norm": 0.2383310781709942
+        },
+        {
+          "ridge": 0.0001,
+          "train_rmse": 0.03636100972186343,
+          "coefficient_norm": 0.23833106559598605
+        },
+        {
+          "ridge": 0.001,
+          "train_rmse": 0.036361009721996684,
+          "coefficient_norm": 0.23833093984598316
+        },
+        {
+          "ridge": 0.01,
+          "train_rmse": 0.03636100973532196,
+          "coefficient_norm": 0.23832968235383967
+        },
+        {
+          "ridge": 0.1,
+          "train_rmse": 0.03636101106769945,
+          "coefficient_norm": 0.2383171082208865
+        },
+        {
+          "ridge": 1.0,
+          "train_rmse": 0.03636114415587371,
+          "coefficient_norm": 0.23819144567557995
+        }
+      ]
+    }
+  ],
+  "markov_phase_ridge_reports": [
+    {
+      "ridge": 1e-06,
+      "train_rmse": 0.043228638477366334,
+      "coefficient_norm": 0.16936533475100232
+    },
+    {
+      "ridge": 1e-05,
+      "train_rmse": 0.043228638477366334,
+      "coefficient_norm": 0.16936533423534506
+    },
+    {
+      "ridge": 0.0001,
+      "train_rmse": 0.04322863847736666,
+      "coefficient_norm": 0.16936532907877247
+    },
+    {
+      "ridge": 0.001,
+      "train_rmse": 0.04322863847739933,
+      "coefficient_norm": 0.1693652775130732
+    },
+    {
+      "ridge": 0.01,
+      "train_rmse": 0.04322863848066549,
+      "coefficient_norm": 0.1693647618586805
+    },
+    {
+      "ridge": 0.1,
+      "train_rmse": 0.04322863880725547,
+      "coefficient_norm": 0.16935960557474625
+    },
+    {
+      "ridge": 1.0,
+      "train_rmse": 0.04322867143943663,
+      "coefficient_norm": 0.1693080687121867
+    }
+  ],
+  "initialization": "zero_at_each_train_trajectory_start",
+  "validation_loaded": false,
+  "heldout_loaded": false
+}

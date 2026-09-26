@@ -1,0 +1,296 @@
+{
+  "schema_version": 1,
+  "history": [
+    {
+      "schema_version": 1,
+      "selection_split": "validation_only",
+      "step": 400,
+      "variant": "b4",
+      "warmup_length": 3,
+      "by_re": {
+        "46.700000": {
+          "Re": 46.7,
+          "windows": 3,
+          "Eu": 0.002273888560011983,
+          "Ep": 0.06003889441490173,
+          "Ea": 2.102952480316162,
+          "Eb": 2.53605318069458,
+          "terminal_Eu": 0.002760622650384903,
+          "terminal_Ep": 0.06016867235302925,
+          "worst_window_joint": 0.062381207942962646,
+          "pressure_drift": 0.5064808130264282,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 0.9999898076057434,
+          "error_growth_curve": {
+            "1": 0.05999986082315445,
+            "4": 0.05970072001218796,
+            "8": 0.060630764812231064,
+            "16": 0.0623338520526886,
+            "32": 0.06361605226993561,
+            "56": 0.06292930245399475
+          }
+        },
+        "56.543246": {
+          "Re": 56.543246,
+          "windows": 16,
+          "Eu": 0.004037888254970312,
+          "Ep": 0.06962155550718307,
+          "Ea": 1.2610193490982056,
+          "Eb": 0.9913997650146484,
+          "terminal_Eu": 0.008071360178291798,
+          "terminal_Ep": 0.07366044074296951,
+          "worst_window_joint": 0.07506547123193741,
+          "pressure_drift": 0.5879594087600708,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 0.9998036026954651,
+          "error_growth_curve": {
+            "1": 0.06950618326663971,
+            "4": 0.06772898882627487,
+            "8": 0.0680391788482666,
+            "16": 0.07002408802509308,
+            "32": 0.07415232062339783,
+            "56": 0.08173179626464844
+          }
+        }
+      },
+      "aggregate": {
+        "Eu_mean": 0.0031558884074911475,
+        "Ep_mean": 0.0648302249610424,
+        "worst_window_joint_max": 0.07506547123193741,
+        "finite_fraction_min": 1.0,
+        "divergent_windows_total": 0
+      },
+      "memory_diagnostics": [
+        {
+          "Re": 46.7,
+          "gamma_mean": 0.021025676280260086,
+          "gamma_min": 0.007229438982903957,
+          "gamma_max": 0.042626772075891495,
+          "timescale_mean": 51.0789909362793,
+          "half_life_mean": 35.4052619934082,
+          "eta_mean": 0.02140192873775959,
+          "eta_min": 0.01910402439534664,
+          "eta_max": 0.026097221300005913,
+          "memory_frobenius_mean": 0.39342188835144043,
+          "memory_max_singular_mean": 0.39297568798065186,
+          "memory_effective_rank_mean": 1.306467890739441,
+          "delta_error_mean": 0.42464885115623474
+        },
+        {
+          "Re": 56.543246,
+          "gamma_mean": 0.021971620619297028,
+          "gamma_min": 0.0010754851391538978,
+          "gamma_max": 0.15888331830501556,
+          "timescale_mean": 102.67207336425781,
+          "half_life_mean": 71.16687774658203,
+          "eta_mean": 0.022236445918679237,
+          "eta_min": 0.012163624167442322,
+          "eta_max": 0.049853451550006866,
+          "memory_frobenius_mean": 1.5720610618591309,
+          "memory_max_singular_mean": 1.5715925693511963,
+          "memory_effective_rank_mean": 1.189232349395752,
+          "delta_error_mean": 0.5079258680343628
+        }
+      ],
+      "hard_gate": true,
+      "score": 0.0867524811765179,
+      "elapsed_seconds": 1.3607017509639263
+    },
+    {
+      "schema_version": 1,
+      "selection_split": "validation_only",
+      "step": 800,
+      "variant": "b4",
+      "warmup_length": 3,
+      "by_re": {
+        "46.700000": {
+          "Re": 46.7,
+          "windows": 3,
+          "Eu": 0.001098370412364602,
+          "Ep": 0.020645080134272575,
+          "Ea": 1.547875165939331,
+          "Eb": 1.8167318105697632,
+          "terminal_Eu": 0.00154524901881814,
+          "terminal_Ep": 0.01935032196342945,
+          "worst_window_joint": 0.021801767870783806,
+          "pressure_drift": 0.19558697938919067,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 0.9999614357948303,
+          "error_growth_curve": {
+            "1": 0.02285589836537838,
+            "4": 0.021649621427059174,
+            "8": 0.02174028381705284,
+            "16": 0.021224886178970337,
+            "32": 0.02215825766324997,
+            "56": 0.020895570516586304
+          }
+        },
+        "56.543246": {
+          "Re": 56.543246,
+          "windows": 16,
+          "Eu": 0.003586685284972191,
+          "Ep": 0.02149164490401745,
+          "Ea": 1.122658610343933,
+          "Eb": 3.8631985187530518,
+          "terminal_Eu": 0.006731088273227215,
+          "terminal_Ep": 0.030056394636631012,
+          "worst_window_joint": 0.028873002156615257,
+          "pressure_drift": 0.1982002556324005,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 1.060439109802246,
+          "error_growth_curve": {
+            "1": 0.008854418992996216,
+            "4": 0.01612401008605957,
+            "8": 0.01809101179242134,
+            "16": 0.020971141755580902,
+            "32": 0.026921847835183144,
+            "56": 0.0367874838411808
+          }
+        }
+      },
+      "aggregate": {
+        "Eu_mean": 0.0023425278486683965,
+        "Ep_mean": 0.021068362519145012,
+        "worst_window_joint_max": 0.028873002156615257,
+        "finite_fraction_min": 1.0,
+        "divergent_windows_total": 0
+      },
+      "memory_diagnostics": [
+        {
+          "Re": 46.7,
+          "gamma_mean": 0.023228337988257408,
+          "gamma_min": 0.00529024563729763,
+          "gamma_max": 0.10732045769691467,
+          "timescale_mean": 52.538761138916016,
+          "half_life_mean": 36.41709518432617,
+          "eta_mean": 0.02256150357425213,
+          "eta_min": 0.012501006945967674,
+          "eta_max": 0.04063771665096283,
+          "memory_frobenius_mean": 0.29898184537887573,
+          "memory_max_singular_mean": 0.2887799143791199,
+          "memory_effective_rank_mean": 2.179016590118408,
+          "delta_error_mean": 0.6768618226051331
+        },
+        {
+          "Re": 56.543246,
+          "gamma_mean": 0.020017169415950775,
+          "gamma_min": 0.0011334891896694899,
+          "gamma_max": 0.14023438096046448,
+          "timescale_mean": 73.89507293701172,
+          "half_life_mean": 51.220157623291016,
+          "eta_mean": 0.01947176642715931,
+          "eta_min": 0.007392874453216791,
+          "eta_max": 0.04649992659687996,
+          "memory_frobenius_mean": 0.8015745878219604,
+          "memory_max_singular_mean": 0.8013670444488525,
+          "memory_effective_rank_mean": 1.122330665588379,
+          "delta_error_mean": 0.48692557215690613
+        }
+      ],
+      "hard_gate": true,
+      "score": 0.030629140906967223,
+      "elapsed_seconds": 1.3389866421930492
+    },
+    {
+      "schema_version": 1,
+      "selection_split": "validation_only",
+      "step": 1200,
+      "variant": "b4",
+      "warmup_length": 3,
+      "by_re": {
+        "46.700000": {
+          "Re": 46.7,
+          "windows": 3,
+          "Eu": 0.0008949689799919724,
+          "Ep": 0.012906622141599655,
+          "Ea": 1.526797890663147,
+          "Eb": 1.9669883251190186,
+          "terminal_Eu": 0.0012525719357654452,
+          "terminal_Ep": 0.014518115669488907,
+          "worst_window_joint": 0.013889973051846027,
+          "pressure_drift": 0.10188327729701996,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 0.9999606013298035,
+          "error_growth_curve": {
+            "1": 0.014072030782699585,
+            "4": 0.013826794922351837,
+            "8": 0.013798538595438004,
+            "16": 0.013443432748317719,
+            "32": 0.012957352213561535,
+            "56": 0.01577068865299225
+          }
+        },
+        "56.543246": {
+          "Re": 56.543246,
+          "windows": 16,
+          "Eu": 0.00348041788674891,
+          "Ep": 0.01899223029613495,
+          "Ea": 0.7574520111083984,
+          "Eb": 1.3960511684417725,
+          "terminal_Eu": 0.005840518977493048,
+          "terminal_Ep": 0.02494530752301216,
+          "worst_window_joint": 0.026589225977659225,
+          "pressure_drift": 0.16505278646945953,
+          "finite_fraction": 1.0,
+          "divergent_windows": 0,
+          "max_norm_ratio": 0.9997196197509766,
+          "error_growth_curve": {
+            "1": 0.011131472885608673,
+            "4": 0.01406683586537838,
+            "8": 0.015315931290388107,
+            "16": 0.018379487097263336,
+            "32": 0.023409271612763405,
+            "56": 0.030785826966166496
+          }
+        }
+      },
+      "aggregate": {
+        "Eu_mean": 0.002187693433370441,
+        "Ep_mean": 0.015949426218867302,
+        "worst_window_joint_max": 0.026589225977659225,
+        "finite_fraction_min": 1.0,
+        "divergent_windows_total": 0
+      },
+      "memory_diagnostics": [
+        {
+          "Re": 46.7,
+          "gamma_mean": 0.023225709795951843,
+          "gamma_min": 0.005212581250816584,
+          "gamma_max": 0.13856278359889984,
+          "timescale_mean": 53.178627014160156,
+          "half_life_mean": 36.86061477661133,
+          "eta_mean": 0.024844005703926086,
+          "eta_min": 0.010993807576596737,
+          "eta_max": 0.051027532666921616,
+          "memory_frobenius_mean": 0.49019473791122437,
+          "memory_max_singular_mean": 0.4876664876937866,
+          "memory_effective_rank_mean": 1.5842905044555664,
+          "delta_error_mean": 0.6411781311035156
+        },
+        {
+          "Re": 56.543246,
+          "gamma_mean": 0.02824556455016136,
+          "gamma_min": 0.001138166757300496,
+          "gamma_max": 0.17746247351169586,
+          "timescale_mean": 121.33089447021484,
+          "half_life_mean": 84.10017395019531,
+          "eta_mean": 0.01844472624361515,
+          "eta_min": 0.008007509633898735,
+          "eta_max": 0.03292551636695862,
+          "memory_frobenius_mean": 1.6411361694335938,
+          "memory_max_singular_mean": 1.6401346921920776,
+          "memory_effective_rank_mean": 1.207966685295105,
+          "delta_error_mean": 0.5641880631446838
+        }
+      ],
+      "hard_gate": true,
+      "score": 0.02478442614665255,
+      "elapsed_seconds": 1.3235215372405946
+    }
+  ]
+}

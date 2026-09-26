@@ -1,0 +1,77 @@
+{
+  "by_re_keys": [
+    "121.0501708984",
+    "139.6423034668",
+    "169.2448883057",
+    "196.1607208252",
+    "66.9701156616",
+    "91.7922058105"
+  ],
+  "checkpoint": "/root/panxy/particalMOE/periodic_specialist_r32/checkpoint/FINAL_PERIODIC_SPECIALIST.pt",
+  "checkpoint_sha256": "b2052a746fdaab60f83e65d1b91d038a9dded8255ce74f41e3f6fca4c9e717c5",
+  "class": "Periodic",
+  "divergent_windows": 0,
+  "elapsed_seconds": 5.959836006164551,
+  "finite_fraction": 1.0,
+  "horizon": 4,
+  "native_entrypoint": "train_periodic_moe.integrate_autonomous_step_np(...), K4",
+  "native_result": {
+    "by_re": {
+      "121.0501708984": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "horizon": 4,
+        "pressure_coefficient_relative_l2": 0.011536632664501667,
+        "velocity_coefficient_relative_l2": 0.010176483541727066
+      },
+      "139.6423034668": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "horizon": 4,
+        "pressure_coefficient_relative_l2": 0.013677462935447693,
+        "velocity_coefficient_relative_l2": 0.0056250374764204025
+      },
+      "169.2448883057": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "horizon": 4,
+        "pressure_coefficient_relative_l2": 0.015487332828342915,
+        "velocity_coefficient_relative_l2": 0.004930657800287008
+      },
+      "196.1607208252": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "horizon": 4,
+        "pressure_coefficient_relative_l2": 0.03005765937268734,
+        "velocity_coefficient_relative_l2": 0.008172191679477692
+      },
+      "66.9701156616": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "horizon": 4,
+        "pressure_coefficient_relative_l2": 0.006822146475315094,
+        "velocity_coefficient_relative_l2": 0.005144958849996328
+      },
+      "91.7922058105": {
+        "divergent_windows": 0,
+        "finite_fraction": 1.0,
+        "first_divergent_step": null,
+        "horizon": 4,
+        "pressure_coefficient_relative_l2": 0.009703554213047028,
+        "velocity_coefficient_relative_l2": 0.005587859079241753
+      }
+    }
+  },
+  "output_keys": [
+    "by_re",
+    "finite_fraction",
+    "divergent_windows"
+  ],
+  "pass": true,
+  "validation_Re_count": 6
+}

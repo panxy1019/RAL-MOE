@@ -1,0 +1,10 @@
+{
+  "variant": "b2",
+  "model_name": "B2_Deep_FNN_current",
+  "trainable_parameters": 1984532,
+  "total_parameters": 1984532,
+  "parameter_groups": {
+    "heads": 1984532
+  },
+  "runtime_memory_state_per_trajectory": 0
+}

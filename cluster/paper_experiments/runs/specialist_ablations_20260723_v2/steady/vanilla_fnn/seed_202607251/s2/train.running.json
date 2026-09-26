@@ -1,0 +1,18 @@
+{
+  "command": [
+    "/root/miniconda3/envs/pt_env/bin/python",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/code/run_vanilla_fnn_moe.py",
+    "--regime",
+    "steady",
+    "--trainer",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/steady_specialist_v1/code/train_s2b_3090.py",
+    "--config",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v2/steady/vanilla_fnn/seed_202607251/steady_vanilla_config.json",
+    "--run-dir",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/paper_experiments/runs/specialist_ablations_20260723_v2/steady/vanilla_fnn/seed_202607251/s2/runtime",
+    "--mode",
+    "train"
+  ],
+  "pid": 27267,
+  "status": "RUNNING"
+}

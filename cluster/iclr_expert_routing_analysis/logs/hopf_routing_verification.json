@@ -1,0 +1,122 @@
+{
+  "chart": "hopf",
+  "checkpoint": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/final_evaluation/20260722_h4_expanded_final/HopfExpanded34_H4_NormalFormRadial_r32/final.pt",
+  "checkpoint_sha256": "02148741ed8bc9fbec88709f69b10492e263514b2edcee76652485b399962235",
+  "checkpoint_unchanged": true,
+  "model_state_unchanged": true,
+  "hook_on_off_predictions_bitwise_equal_all_windows": true,
+  "strict_load_missing_unexpected_keys": [
+    [],
+    []
+  ],
+  "routing_config": {
+    "num_regime_groups": 1,
+    "experts_per_group": 6,
+    "shared_per_group": 1,
+    "top_k": 2,
+    "group_top_k": 1,
+    "temperature": 0.8,
+    "group_temperature": 1.0,
+    "gate_floor": 0.0,
+    "group_gate_floor": 0.0,
+    "shared_scale": 1.0,
+    "routed_scale": 0.75
+  },
+  "rows": [
+    {
+      "Re": 47.081356048583984,
+      "label": "Re_47.081356",
+      "windows": 5,
+      "legal_window_count": 102,
+      "starts": [
+        449,
+        474,
+        499,
+        524,
+        550
+      ],
+      "Eu_percent": 0.0032075548550635166,
+      "Ep_percent": 0.03551875900586877,
+      "reference_Eu_percent": 0.0032075548550635166,
+      "reference_Ep_percent": 0.03551875900586877,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0
+    },
+    {
+      "Re": 49.02235412597656,
+      "label": "Re_49.022354",
+      "windows": 5,
+      "legal_window_count": 102,
+      "starts": [
+        2061,
+        2086,
+        2111,
+        2136,
+        2162
+      ],
+      "Eu_percent": 0.028787521520837963,
+      "Ep_percent": 0.4321343565488563,
+      "reference_Eu_percent": 0.028787521520837963,
+      "reference_Ep_percent": 0.4321343565488563,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0
+    },
+    {
+      "Re": 51.78644943237305,
+      "label": "Re_51.786449",
+      "windows": 5,
+      "legal_window_count": 102,
+      "starts": [
+        3190,
+        3215,
+        3240,
+        3265,
+        3291
+      ],
+      "Eu_percent": 0.006095649270779026,
+      "Ep_percent": 0.041411763594408735,
+      "reference_Eu_percent": 0.006095649270779026,
+      "reference_Ep_percent": 0.041411763594408735,
+      "finite_fraction": 1.0,
+      "divergent_windows": 0
+    }
+  ],
+  "raw_routing_rows": 6720,
+  "tf32_matmul": false,
+  "tf32_cudnn": true,
+  "device": "NVIDIA GeForce RTX 4090",
+  "torch": "2.11.0+cu126",
+  "numpy": "2.4.4",
+  "elapsed_seconds": 19.39131796453148,
+  "integrator": "Native RK4; pressure from stage 1 closure with predicted next velocity",
+  "precision": "float32; no autocast in original native audit",
+  "state_sha256": "5ff39d82fed76559a74a8727362b658ee61b75f698d2a55fb5447d95a46fd937",
+  "normalization_vs_checkpoint_max_absolute_difference": {
+    "x_mean": 0.0,
+    "x_scale": 0.0,
+    "rhs_mean": 0.0,
+    "rhs_scale": 0.0,
+    "pressure_mean": 0.0,
+    "pressure_scale": 0.0,
+    "a_scale": 0.0,
+    "b_state_scale": 0.0,
+    "a_rel_floor": 0.0,
+    "b_rel_floor": 0.0
+  },
+  "window_policy": "Original native audit: five evenly spaced legal K56 windows per heldout Re",
+  "paper_identity": "Specified H4 checkpoint; compare against same-checkpoint native K56 audit",
+  "source_sha256": {
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/train_hopf_moe_expanded.py": "f7facb3b6070290e9d6725f09fdd0810f0cf7e1775d35c20563a1b691d2c6975",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/code/evaluate_h4_expanded.py": "3cc9562ae07175f0272fd6ede561cd9df60d4d8b52c20fda7b100e49816f2b34",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/native_attractor_audit_20260723_v1/code/audit_hopf_native_attractor.py": "2a26492fdd40f0c97f7f973aaea336bb430a795f898d3c63db6265b614415d56",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/periodic_moe_3090/train_periodic_moe.py": "500c2179734e6c3a6db6469629d4727637ae4552843b4d3154ca7b281a102314",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/native_attractor_audit_20260723_v1/results/HOPF_NATIVE_ATTRACTOR_AUDIT.json": "de6211930abd0eff9815cb45eba6b39b396bb64c2e45d7c3024b8820645499d9",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainval_r32.npz": "53d05065d518de82432e55b191dcee6c3501e09822dfedbf6162e061151f4d45",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainonly_galerkin_r32.npz": "ebfb05f23c7fe909cb9b92fdea9098d849927bc732652a3881a4f32bbc6e6e26",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/assets_r32/expanded_h4_trainonly_pressure_r32.npz": "9df6f17413ff884a04b5bbba9e2b791563bde412b5d17649f9badda4e151e44c",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/migrated_h4_expanded/trainonly_contract/trainonly_fluctuation_contract.npz": "2e3aa04095ab0ccceed2a98e3582a7096d1a80993ab486a7896f2dff7afc1e19",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/artifacts/hopf/velocity_pod_hopf.npz": "2f951192f6eeaa69e7d911aa21552454d1a99a49ab796166b4a13df16016a192",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/artifacts/hopf/pressure_pod_hopf.npz": "cc128a4361ab2a239165ac22a48407290de7d085b857bbff6726988457cfddf3",
+    "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/Hopf/artifacts/hopf/projection_snapshots_velocity_hopf.csv": "9f54039d14e084bb8da8a4291edc561e9228219626e94f51745743ef7baa6c5a"
+  }
+}

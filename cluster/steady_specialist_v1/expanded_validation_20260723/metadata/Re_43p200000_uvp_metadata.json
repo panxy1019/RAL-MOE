@@ -1,0 +1,47 @@
+{
+  "Re": 43.2,
+  "label": "Re_43p200000",
+  "regime": "pre_hopf_steady",
+  "D": 1.0,
+  "nu": 0.001,
+  "U_inlet": 0.0432,
+  "retain_start_time": 1200.0,
+  "n_times": 64,
+  "n_points": 97368,
+  "n_cells": 48128,
+  "diagnostics": {
+    "samples": 61,
+    "reason": "not enough force samples",
+    "mode": "steady_simpleFoam_initialisation",
+    "status": "steady_solver_completed_fallback",
+    "simpleFoam_end_time": 1200.0,
+    "simpleFoam_max_iterations": 1200.0
+  },
+  "arrays": {
+    "times": [
+      64
+    ],
+    "points": [
+      97368,
+      3
+    ],
+    "u": [
+      64,
+      97368
+    ],
+    "v": [
+      64,
+      97368
+    ],
+    "p": [
+      64,
+      97368
+    ]
+  },
+  "units": {
+    "times": "s",
+    "points": "m",
+    "u/v": "m/s",
+    "p": "m^2/s^2"
+  }
+}

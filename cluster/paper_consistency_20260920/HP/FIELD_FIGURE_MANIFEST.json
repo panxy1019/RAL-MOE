@@ -1,0 +1,78 @@
+{
+  "schema": "field_figure_manifest/v1",
+  "qualitative_scope": "best-case qualitative snapshot; quantitative conclusions remain those of the frozen aggregate evaluator",
+  "mode": "boundary_fusion",
+  "selected": {
+    "window_index": 5,
+    "Re": 100.5,
+    "split": "heldout",
+    "time_index": 23,
+    "physical_time": 384.0,
+    "last_frame": true,
+    "eligibility_tier": 0,
+    "joint_advantage": 0.0016751419383406359,
+    "structure_score": 0.1971757709980011,
+    "metrics": {
+      "p_only": {
+        "velocity_relative_l2": 0.007175677728857269,
+        "pressure_relative_l2": 0.007474574853810655,
+        "joint_field_error": 0.007325126291333962
+      },
+      "h_only": {
+        "velocity_relative_l2": 0.006583916333949354,
+        "pressure_relative_l2": 0.005816578296484991,
+        "joint_field_error": 0.0062002473152171726
+      },
+      "t2c": {
+        "velocity_relative_l2": 0.004695410151263592,
+        "pressure_relative_l2": 0.004354800602489482,
+        "joint_field_error": 0.004525105376876537
+      }
+    }
+  },
+  "style": {
+    "target_journals": [
+      "Journal of Computational Physics",
+      "CMAME"
+    ],
+    "velocity_colormap": "cividis",
+    "pressure_colormap": "RdBu_r centered at zero",
+    "error_colormap": "haline_r",
+    "colorbars": "shared horizontal bottom colorbar per physical variable",
+    "dpi": 400
+  },
+  "inputs": {
+    "config": "config_hp_boundary_figure.json",
+    "config_sha256": "1c527b9cb0fcd85f681fbd5fe98ce173fcec5054b71601345b7583b798f2bbaf",
+    "bundle": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/heldout_evaluation_20260730_V1/cache_hp/hp_heldout_cache.npz",
+    "bundle_sha256": "bb2a70a3aae3988b1031b3791def1607177ef7b622c455733cf70c7a8491d0d8",
+    "template_vtk": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/centeredSquare_CN09_graded_Re100_internal_final_reference.vtk",
+    "template_vtk_sha256": "57423d8ebcca3f1aaf8d18311366c7f05a0df6b9f10f5973ed75e3334c7d5175",
+    "weights_csv": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centeredsquare_fusion_runs/E2_T2C_K24_20260730_STRICT_V3/paper_boundary_figures_20260730_V1/inputs/HP_T2C_weights.csv",
+    "weights_csv_sha256": "14a9cf549a033f38b36ad76602e42d61536ab03d556cd7650a81283cb29e6fe8",
+    "bases": {
+      "periodic": {
+        "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_velocity_pod_area_weighted_l2.npz",
+        "velocity_sha256": "a959f76ca57e1cf4666e3ee2c74a1863485866d8c214899e750fec65b65b87ba",
+        "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/centered_square_periodic_v1/assets/global_pressure_pod_area_weighted_l2.npz",
+        "pressure_sha256": "e8567f554ff609e1c3cbd17985365aefedf578915017adb8170d53dfeb958141"
+      },
+      "hopf": {
+        "velocity": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+        "velocity_sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891",
+        "pressure": "/root/siton-data-ecd30b0dd03a4b6c86d4ad3b98458111/panxy/particalMOE/CenteredSquare_Hopf_H4_20260728/assets_r11/centeredsquare_hopf_trainval_r11.npz",
+        "pressure_sha256": "05dd5328c3242c18f1703032accc1cae072c18f070eb775ca8160c43584e7891"
+      }
+    }
+  },
+  "outputs": [
+    {
+      "path": "HP/CenteredSquare_HP_boundary_T2C_physical_fields_ultra_compact_wide.png",
+      "sha256": "7de0117e52ca11ae40eff07ba4d7782b0763ad21b38d247ad36b5332754d1381"
+    },
+    {
+      "path": "HP/CenteredSquare_HP_boundary_T2C_pointwise_errors_ultra_compact_wide.png",
+      "sha256": "8a61561712e9ea518fdf3eb199daf6170c97cc5c3a9091957db08059bf3bb461"
+    }
+  ]
+}
